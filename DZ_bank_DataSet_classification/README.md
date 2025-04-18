@@ -60,7 +60,7 @@ We utilized customer data, including:
 
 ## 📚 References
 1. **Bank Marketing Dataset** – https://archive.ics.uci.edu/dataset/222/bank+marketing
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/My%20CV-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/NenadBalaneskovic/blob/10d7becf6425c54ff874f933a582310f21f825dd/NenadBalaneskovicCV_2025.pdf) 
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/My%20CV-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/03d304db3daf8b6e50d33c4706835dbf9eefa9c5/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.ipynb) 
 3. **Scikit-Learn Documentation** – https://scikit-learn.org  
 4. **XGBoost Library** – https://xgboost.readthedocs.io
 5. Robert H. Shumway, David S. Stoffer: "__Time Series Analysis and Its Applications with R Examples__", Springer (2011).
