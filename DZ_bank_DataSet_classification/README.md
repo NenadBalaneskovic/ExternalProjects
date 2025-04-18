@@ -60,27 +60,28 @@ We utilized customer data, including:
 
 ## 📚 References
 1. **Bank Marketing Dataset** – https://archive.ics.uci.edu/dataset/222/bank+marketing
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/03d304db3daf8b6e50d33c4706835dbf9eefa9c5/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.ipynb) 
-3. **Scikit-Learn Documentation** – https://scikit-learn.org  
-4. **XGBoost Library** – https://xgboost.readthedocs.io
-5. Robert H. Shumway, David S. Stoffer: "__Time Series Analysis and Its Applications with R Examples__", Springer (2011).
-6. Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, Jonathan Taylor: "__An Introduction to Statistical Learning with Applications in Python__", Springer (2023).
-7. Cornelis W. Oosterlee, Lech A. Grzelak: "__Mathematical Modeling and Computation in Finance with Exercises and Python and MATLAB Computer Codes__", World Scientific (2020).
-8. Richard Szeliski: "__Computer Vision - Algorithms and Applications__", Springer (2022).
-9. Anthony Scopatz, Kathryn D. Huff: "__Effective Computation in Physics - Field Guide to Research with Python__", O'Reilly Media (2015).
-10. Alex Gezerlis: "__Numerical Methods in Physics with Python__", Cambridge University Press (2020).
-11. Gary Hutson, Matt Jackson: "__Graph Data Modeling in Python. A practical guide__", Packt-Publishing (2023).
-12. Hagen Kleinert: "__Path Integrals in Quantum Mechanics, Statistics, Polymer Physics, and Financial Markets__", 5th Edition, World Scientific Publishing Company (2009).
-13. Peter Richmond, Jurgen Mimkes, Stefan Hutzler: "__Econophysics and Physical Economics__", Oxford University Press (2013).
-14. A. Coryn , L. Bailer Jones: "__Practical Bayesian Inference A Primer for Physical Scientists__", Cambridge University Press (2017).
-15. Avram Sidi: "__Practical Extrapolation Methods - Theory and Applications__", Cambridge university Press (2003).
-16. Volker Ziemann: "__Physics and Finance__", Springer (2021).
-17. Zhi-Hua Zhou: "__Ensemble methods, foundations and algorithms__", CRC Press (2012).
-18. B. S. Everitt, et al.: "__Cluster analysis__", Wiley (2011).
-19. Lior Rokach, Oded Maimon: "__Data Mining With Decision Trees - Theory and Applications__", World Scientific (2015).
-20. Bernhard Schölkopf, Alexander J. Smola: ""__Learning with kernels - support vector machines, regularization, optimization and beyond__", MIT Press (2009).
-21. Johan A.K. Suykens: "__Regularization, Optimization, Kernels, and Support Vector Machines__", CRC Press (2014).
-22. Sarah Depaoli: "__Bayesian Structural Equation Modeling__", Guilford Press (2021).
-23. Rex B. Kline: "__Principles and Practice of Structural Equation Modeling__", Guilford Press (2023).
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/03d304db3daf8b6e50d33c4706835dbf9eefa9c5/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.ipynb)
+3. [![Jupyter PDF | English](https://img.shields.io/badge/Jupyter%20PDF-English-yellowblue?logoColor=green&labelColor=blue)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/2c1d8b6a1e675e22a79dd0741c3b4e684d24eb6f/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.pdf) 
+4. **Scikit-Learn Documentation** – https://scikit-learn.org  
+5. **XGBoost Library** – https://xgboost.readthedocs.io
+6. Robert H. Shumway, David S. Stoffer: "__Time Series Analysis and Its Applications with R Examples__", Springer (2011).
+7. Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, Jonathan Taylor: "__An Introduction to Statistical Learning with Applications in Python__", Springer (2023).
+8. Cornelis W. Oosterlee, Lech A. Grzelak: "__Mathematical Modeling and Computation in Finance with Exercises and Python and MATLAB Computer Codes__", World Scientific (2020).
+9. Richard Szeliski: "__Computer Vision - Algorithms and Applications__", Springer (2022).
+10. Anthony Scopatz, Kathryn D. Huff: "__Effective Computation in Physics - Field Guide to Research with Python__", O'Reilly Media (2015).
+11. Alex Gezerlis: "__Numerical Methods in Physics with Python__", Cambridge University Press (2020).
+12. Gary Hutson, Matt Jackson: "__Graph Data Modeling in Python. A practical guide__", Packt-Publishing (2023).
+13. Hagen Kleinert: "__Path Integrals in Quantum Mechanics, Statistics, Polymer Physics, and Financial Markets__", 5th Edition, World Scientific Publishing Company (2009).
+14. Peter Richmond, Jurgen Mimkes, Stefan Hutzler: "__Econophysics and Physical Economics__", Oxford University Press (2013).
+15. A. Coryn , L. Bailer Jones: "__Practical Bayesian Inference A Primer for Physical Scientists__", Cambridge University Press (2017).
+16. Avram Sidi: "__Practical Extrapolation Methods - Theory and Applications__", Cambridge university Press (2003).
+17. Volker Ziemann: "__Physics and Finance__", Springer (2021).
+18. Zhi-Hua Zhou: "__Ensemble methods, foundations and algorithms__", CRC Press (2012).
+19. B. S. Everitt, et al.: "__Cluster analysis__", Wiley (2011).
+20. Lior Rokach, Oded Maimon: "__Data Mining With Decision Trees - Theory and Applications__", World Scientific (2015).
+21. Bernhard Schölkopf, Alexander J. Smola: ""__Learning with kernels - support vector machines, regularization, optimization and beyond__", MIT Press (2009).
+22. Johan A.K. Suykens: "__Regularization, Optimization, Kernels, and Support Vector Machines__", CRC Press (2014).
+23. Sarah Depaoli: "__Bayesian Structural Equation Modeling__", Guilford Press (2021).
+24. Rex B. Kline: "__Principles and Practice of Structural Equation Modeling__", Guilford Press (2023).
 
 ---
