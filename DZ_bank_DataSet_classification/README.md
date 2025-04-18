@@ -29,13 +29,13 @@ We utilized customer data, including:
 - **Bagging & Boosting**
 
 ## 📊 Evaluation Metrics
-| Model | Accuracy | Precision | Recall | F1-Score |
-|-------|---------|----------|--------|----------|
-| Logistic Regression | 89.2% | 91.0% | 85.5% | 88.2% |
-| Decision Tree | 85.7% | 87.4% | 83.1% | 85.2% |
-| Random Forest | 91.8% | 93.2% | 88.5% | 90.8% |
-| XGBoost | 92.3% | 94.0% | 89.7% | 91.8% |
-| **Stacking Ensemble** | **94.1%** | **95.6%** | **90.9%** | **93.2%** |
+| Model | Accuracy | Precision | Recall | F1-Score |Tuned Hyperparameters |
+|-------|---------|----------|--------|----------|-----------------------|
+| Logistic Regression | 89.2% | 91.0% | 85.5% | 88.2% | `C=1.0`, `solver='liblinear'` |
+| Decision Tree | 85.7% | 87.4% | 83.1% | 85.2% | `max_depth=10`, `min_samples_split=5` |
+| Random Forest | 91.8% | 93.2% | 88.5% | 90.8% |`n_estimators=100`, `max_features='sqrt'` |
+| XGBoost | 92.3% | 94.0% | 89.7% | 91.8% |`learning_rate=0.05`, `n_estimators=300`, `max_depth=7` |
+| **Stacking Ensemble** | **94.1%** | **95.6%** | **90.9%** | **93.2%** |`class_weight='balanced'`, `n_estimators=200`, `random_state=42` |
 
 ## 📈 Results & Insights
 ✔ **Ensemble models improved accuracy significantly**.  
