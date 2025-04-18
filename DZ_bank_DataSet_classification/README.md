@@ -45,19 +45,15 @@ We utilized customer data, including:
 ✔ **Hyperparameter tuning optimized XGBoost performance**.
 
 ## 📷 Visualizations
+### 1. XGBoost Confusion Matrix
 ![XGBoost Confusion Matrix](https://github.com/NenadBalaneskovic/ExternalProjects/blob/161823144626734e4908ae407fa69b84c2deec21/DZ_bank_DataSet_classification/Fig4.PNG)  
+### 2. Feature Correlation Heatmap
 ![Feature Correlation Heatmap](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f2a05f9a2998e0b9992a2c8856a61f4a05c53a3e/DZ_bank_DataSet_classification/Fig12.PNG)  
-![Model Accuracy Comparison]([roc_curve.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/161823144626734e4908ae407fa69b84c2deec21/DZ_bank_DataSet_classification/Fig3.PNG))  
+### 3. Model Accuracy Comparison
+![Model Accuracy Comparison](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig3.PNG)  
 
 ## 🚀 Model Deployment
-✔ **REST API built using FastAPI & Flask**.  
-✔ **Hosted on AWS Lambda for scalability**.  
-✔ **Security-first approach with encrypted data transmission**.  
-
-## 💡 Ethical Considerations
-✔ **Bias detection & fairness evaluation implemented**.  
-✔ **Transparent predictions using SHAP value analysis**.  
-✔ **Privacy-compliant under GDPR & banking security standards**.  
+✔ **Trained best models can be downloaded and stored as pickle files within the jupyter notebook**. 
 
 ## 📚 References
 1. **Bank Marketing Dataset** – https://archive.ics.uci.edu/dataset/222/bank+marketing
