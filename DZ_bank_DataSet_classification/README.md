@@ -81,7 +81,7 @@ We utilized customer data, including:
 20. B. S. Everitt, et al.: "__Cluster analysis__", Wiley (2011).
 21. Lior Rokach, Oded Maimon: "__Data Mining With Decision Trees - Theory and Applications__", World Scientific (2015).
 22. Bernhard Schölkopf, Alexander J. Smola: ""__Learning with kernels - support vector machines, regularization, optimization and beyond__", MIT Press (2009).
-23. Johan A.K. Suykens: "__Regularization, Optimization, Kernels, and Support Vector Machines__", CRC Press (2014).
+23. Johan A. K. Suykens: "__Regularization, Optimization, Kernels, and Support Vector Machines__", CRC Press (2014).
 24. Sarah Depaoli: "__Bayesian Structural Equation Modeling__", Guilford Press (2021).
 25. Rex B. Kline: "__Principles and Practice of Structural Equation Modeling__", Guilford Press (2023).
 
