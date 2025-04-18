@@ -1,8 +1,8 @@
 # Bank Marketing Campaign - Predictive Modeling
 
 ## 📌 Introduction
-This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies (see references 1 - 4 below).
-[References](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/Academic-research#quantum-darwinism)
+This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DZ_bank_DataSet_classification/README.md#-references) 1 - 4 below).
 
 ## 📂 Dataset Overview
 We utilized customer data, including:
