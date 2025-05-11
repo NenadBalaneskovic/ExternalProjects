@@ -50,7 +50,7 @@ We utilized customer data, including:
 ### 2. Feature Correlation Heatmap
 ![Feature Correlation Heatmap](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45626d2f08709ceda9271262b2f1fd978228ede3/Bank_MarketingDataSet_classification/Fig12.PNG)  
 ### 3. Model Accuracy Comparison
-![Model Accuracy Comparison](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig3.PNG)  
+![Model Accuracy Comparison](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d5e3275ce36a30061058dbf4faf2888f7260b163/Bank_MarketingDataSet_classification/Fig3.PNG)  
 
 ## 🚀 Model Deployment
 ✔ **Trained best models can be downloaded and stored as pickle files within the jupyter notebook**. 
