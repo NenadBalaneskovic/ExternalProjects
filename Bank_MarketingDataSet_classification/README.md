@@ -48,7 +48,7 @@ We utilized customer data, including:
 ### 1. XGBoost Confusion Matrix
 ![XGBoost Confusion Matrix](https://github.com/NenadBalaneskovic/ExternalProjects/blob/874e252d580e216684661ef5fbb0a0fd3d81acbf/Bank_MarketingDataSet_classification/Fig4.PNG)  
 ### 2. Feature Correlation Heatmap
-![Feature Correlation Heatmap](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f2a05f9a2998e0b9992a2c8856a61f4a05c53a3e/DZ_bank_DataSet_classification/Fig12.PNG)  
+![Feature Correlation Heatmap](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45626d2f08709ceda9271262b2f1fd978228ede3/Bank_MarketingDataSet_classification/Fig12.PNG)  
 ### 3. Model Accuracy Comparison
 ![Model Accuracy Comparison](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig3.PNG)  
 
