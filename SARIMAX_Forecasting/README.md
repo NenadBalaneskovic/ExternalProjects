@@ -48,7 +48,7 @@ __Abbreviations__:
 ### 1. Train/Test Split of the data set
 ![Train/Test Split](https://github.com/NenadBalaneskovic/ExternalProjects/blob/38282a127c23c84d4e22d16a1319ac2b67bbdf49/SARIMAX_Forecasting/Fig3.PNG)  
 ### 2. Customized cross-validated SARIMAX grid search
-![Customized SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f2a05f9a2998e0b9992a2c8856a61f4a05c53a3e/DZ_bank_DataSet_classification/Fig12.PNG)  
+![Customized SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/82c9ae2568f146e93a47285d4c6c73c0d2991f8e/SARIMAX_Forecasting/Fig1.PNG)  
 ### 3. Automated cross-validated SARIMAX grid search
 ![Automated SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig3.PNG)  
 
