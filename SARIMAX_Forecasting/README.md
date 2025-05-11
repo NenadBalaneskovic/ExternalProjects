@@ -16,8 +16,7 @@ We utilized boarder crossing data, including:
 
 ## 🔄 Data Preprocessing
 ✔ **Extraction of relevant columns** – Extract relevant data set columns by means of DuckDB: 'Date Stamp' and 'Total Entry Volume per Month' and their upload into a pandas Data Frame.  
-✔ **Aggregation** – Aggregate the extracted data set by summing the Entry Volume values within each month. This yields a Data Frame containing columns '1996' to '2024',  
-with each column containing aggregated (summed) Entry Volumes for months '0' (January) to '11' (December).  
+✔ **Aggregation** – Aggregate the extracted data set by summing the Entry Volume values within each month. This yields a Data Frame containing columns '1996' to '2024',  with each column containing aggregated (summed) Entry Volumes for months '0' (January) to '11' (December).  
 ✔ **Train/Test Split** – Split the data set into an 80 % - 20 % train/test partition.  
 ✔ **SARIMAX-GridSearch** – Implement a SARIMAX grid search functionality.  
 
