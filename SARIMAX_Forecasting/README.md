@@ -50,7 +50,7 @@ __Abbreviations__:
 ### 2. Customized cross-validated SARIMAX grid search
 ![Customized SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/82c9ae2568f146e93a47285d4c6c73c0d2991f8e/SARIMAX_Forecasting/Fig1.PNG)  
 ### 3. Automated cross-validated SARIMAX grid search
-![Automated SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig3.PNG)  
+![Automated SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b66630faa503337e814bcbf39e662510bd27f0cd/SARIMAX_Forecasting/Fig2.PNG)  
 
 ## 🚀 Model Parameter Storage
 ✔ **Parameters of the trained best models can be stored as dictionaries within the jupyter notebook**. 
