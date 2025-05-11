@@ -57,7 +57,7 @@ We utilized customer data, including:
 
 ## 📚 References
 1. **Bank Marketing Dataset** – https://archive.ics.uci.edu/dataset/222/bank+marketing
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/03d304db3daf8b6e50d33c4706835dbf9eefa9c5/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/24514fbd8cc1e2788656b35a623dea2b1f0e7257/Bank_MarketingDataSet_classification/Bank_ClassificationAssignment.ipynb)
 3. [![Jupyter PDF | English](https://img.shields.io/badge/Jupyter%20PDF-English-yellowblue?logoColor=green&labelColor=blue)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/2c1d8b6a1e675e22a79dd0741c3b4e684d24eb6f/DZ_bank_DataSet_classification/DZ_Bank_HomeAssignment.pdf)
 4. [![Classification Report | English](https://img.shields.io/badge/Classification%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd2cfa231369855a7f61906c3cf3fb1ed9825042/DZ_bank_DataSet_classification/MarketingDataSetAnalysis.pdf) 
 5. **Scikit-Learn Documentation** – https://scikit-learn.org  
