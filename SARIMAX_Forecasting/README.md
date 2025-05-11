@@ -23,8 +23,8 @@ We utilized boarder crossing data, including:
 ## 🤖 Model Implementation
 ### **Individual Models**
 - **SARIMAX forecasting (including FFT period estimation)**
-- - **Customized cross validation**
-- - **Automated cross validation**
+  - **Customized cross validation**
+  - **Automated cross validation**
 
 ### **Ensemble Learning Techniques**
 - **Automated SARIMAX Grid Search**
