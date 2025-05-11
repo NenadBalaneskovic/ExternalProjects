@@ -59,7 +59,7 @@ We utilized customer data, including:
 1. **Bank Marketing Dataset** – https://archive.ics.uci.edu/dataset/222/bank+marketing
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/24514fbd8cc1e2788656b35a623dea2b1f0e7257/Bank_MarketingDataSet_classification/Bank_ClassificationAssignment.ipynb)
 3. [![Jupyter PDF | English](https://img.shields.io/badge/Jupyter%20PDF-English-yellowblue?logoColor=green&labelColor=blue)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1413206ea65b3e5ed6d16ed18f136d2fb6ded8d7/Bank_MarketingDataSet_classification/Bank_ClassificationAssignment.pdf)
-4. [![Classification Report | English](https://img.shields.io/badge/Classification%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd2cfa231369855a7f61906c3cf3fb1ed9825042/DZ_bank_DataSet_classification/MarketingDataSetAnalysis.pdf) 
+4. [![Classification Report | English](https://img.shields.io/badge/Classification%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bf09fd4649bee376e4c49d0377b4dada518b9ac5/Bank_MarketingDataSet_classification/MarketingDataSetAnalysis.pdf) 
 5. **Scikit-Learn Documentation** – https://scikit-learn.org  
 6. **XGBoost Library** – https://xgboost.readthedocs.io
 7. Robert H. Shumway, David S. Stoffer: "__Time Series Analysis and Its Applications with R Examples__", Springer (2011).
