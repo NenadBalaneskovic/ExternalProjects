@@ -31,10 +31,10 @@ with each column containing aggregated (summed) Entry Volumes for months '0' (Ja
 - **Automated SARIMAX Grid Search**
 
 ## 📊 Evaluation Metrics
-| Model | RMSE score | MAPE | Duration [sec] |Tuned Hyperparameters |
+| Model | RMSE | MAPE | Duration [sec] |Tuned Hyperparameters |
 |-------|---------|----------|--------|-----------------------|
-| Customized SARIMAX Grid Search | 3622052 | - | 191 | `p=2.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
-| **Automated SARIMAX Grid Search**| - | **0.06** | **261** | `p=4.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |  
+| Customized SARIMAX Grid Search | 3622052 | 1.65 | 191 | `p=2.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
+| **Automated SARIMAX Grid Search**| **2731641** | **0.06** | **261** | `p=4.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |  
 
 __Abbreviations__:  
 1. __RMSE__: Root Mean Squared Error
