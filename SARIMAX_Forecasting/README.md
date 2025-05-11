@@ -3,7 +3,7 @@
 ## 📌 Introduction
 This project attempts at **forecasting the number of boarder crossings** between USA and Canada based on the corresponding kaggle data set of The Bureau of 
 Transportation Statistics (BTS) containing entries from 1996 to 2024, employing Python's SARIMAX forecasing scheme to optimize predictive accuracy and improve future security strategies 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DZ_bank_DataSet_classification/README.md#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
 
 ## 📂 Dataset Overview
 We utilized boarder crossing data, including:
@@ -34,8 +34,11 @@ with each column containing aggregated (summed) Entry Volumes for months '0' (Ja
 | Model | RMSE score | MAPE | Duration [sec] |Tuned Hyperparameters |
 |-------|---------|----------|--------|-----------------------|
 | Customized SARIMAX Grid Search | 3622052 | - | 191 | `p=2.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
-| **Automated SARIMAX Grid Search**| - | **0.06** | **261** | `p=4.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
-| Abbreviations | __RMSE__ | Root Mean Squared Error | __MAPE__ |Mean Absolute Percentage Error|
+| **Automated SARIMAX Grid Search**| - | **0.06** | **261** | `p=4.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |  
+
+__Abbreviations__:  
+1. __RMSE__: Root Mean Squared Error
+2. __MAPE__: Mean Absolute Percentage Error
 
 ## 📈 Results & Insights
 ✔ **An automated SARIMAX cross-validated grid search improved forecasting accuracy significantly**.  
