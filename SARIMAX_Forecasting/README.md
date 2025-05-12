@@ -32,7 +32,7 @@ We utilized boarder crossing data, including:
 ## 📊 Evaluation Metrics
 | Model | RMSE | MAPE | Duration [sec] |Tuned Hyperparameters |
 |-------|---------|----------|--------|-----------------------|
-| Customized SARIMAX Grid Search | 3622052 | 1.65 | 191 | `p=2.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
+| Customized SARIMAX Grid Search | 3622052 | 1.25 | 191 | `p=2.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |
 | **Automated SARIMAX Grid Search**| **2331641** | **0.06** | **261** | `p=4.0`, `d=1.0`, `q=2.0`, `P=2.0`, `D=2.0`,`Q=2.0`,`s=12` |  
 
 __Abbreviations__:  
