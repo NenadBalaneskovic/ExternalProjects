@@ -1,4 +1,4 @@
-# Boarder Crossing Forecasting - SARIMAX Modeling
+# Stock Price Forecasting - SARIMAX Modeling with Akima Interpolation
 
 ## 📌 Introduction
 This project attempts at **forecasting the temporal stock prices evolution** based on a ficticious csv file containing daily stock prices by means of Akima interpolated stock price data subject to SARIMAX and
