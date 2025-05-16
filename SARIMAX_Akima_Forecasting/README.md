@@ -54,7 +54,7 @@ Abbreviations:
 ### 1. Akima interpolated stock price data set
 ![Akima-interpolated_StockPrice](https://github.com/NenadBalaneskovic/ExternalProjects/blob/2daa0d102acfab8246b18b13d3e3b7a62fea82f5/SARIMAX_Akima_Forecasting/Fig8.PNG)  
 ### 2. Adaptive Trend Detection of Stock Prices
-![Customized SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f2a05f9a2998e0b9992a2c8856a61f4a05c53a3e/DZ_bank_DataSet_classification/Fig5.PNG)  
+![Adaptive_Trend_Detection](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a65a1a9bb848746884ad6c6da0e8e711fa3cef5c/SARIMAX_Akima_Forecasting/Fig9.PNG)  
 ### 3. SARIMAX-forecasted Stock Prices
 ![Automated SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig5.PNG)  
 
