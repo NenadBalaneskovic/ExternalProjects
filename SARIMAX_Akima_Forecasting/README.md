@@ -62,7 +62,7 @@ Abbreviations:
 ✔ **Trend forecasts are stored in a separate file "critical_trends.csv"**. 
 
 ## 📚 References
-1. **Boarder Crossings Dataset** – https://www.kaggle.com/datasets/akhilv11/border-crossing-entry-data
+1. **Stock Price Dataset** – https://github.com/NenadBalaneskovic/ExternalProjects/blob/ed9803c1f9859b5a93e2c195f175efca6a80f3c6/SARIMAX_Akima_Forecasting/stock_prices.csv
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5836d4c0485ce1bdae77807c6d70b178d4082e5f/SARIMAX_Akima_Forecasting/AkimaInterpolationStocks.ipynb)
 3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/46d18260fd260e83bc10f019c8e0dbdc7a48b5a5/SARIMAX_Akima_Forecasting/SARIMAX_Akima_Stock_Price_ForecastingReport.pdf) 
 4. **Scikit-Learn Documentation** – https://scikit-learn.org  
