@@ -27,10 +27,10 @@ In addition, the Pythonic customized Akima interpolator function creates an inte
 ## 🤖 Model Implementation
 ### **Individual Models**
 - **Critical Point Estimation and Trend Characterisation of Time Series**
-- - **Akima-interpolation of stock price time series**
+  - **Akima-interpolation of stock price time series**
 - **SARIMAX forecasting**
-- - **Customized forecasting of time series via critical point extraction**
-- - **Batched customized forecasting of time series via critical point extraction**
+  - **Customized forecasting of time series via critical point extraction**
+  - **Batched customized forecasting of time series via critical point extraction**
 
 ### **Ensemble Learning Techniques**
 - **Automated SARIMAX Grid Search**
