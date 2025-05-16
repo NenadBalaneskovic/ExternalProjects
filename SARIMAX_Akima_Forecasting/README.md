@@ -64,7 +64,7 @@ Abbreviations:
 ## 📚 References
 1. **Boarder Crossings Dataset** – https://www.kaggle.com/datasets/akhilv11/border-crossing-entry-data
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5836d4c0485ce1bdae77807c6d70b178d4082e5f/SARIMAX_Akima_Forecasting/AkimaInterpolationStocks.ipynb)
-3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd2cfa231369855a7f61906c3cf3fb1ed9825042/DZ_bank_DataSet_classification/MarketingDataSetAnalysis.pdf) 
+3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/46d18260fd260e83bc10f019c8e0dbdc7a48b5a5/SARIMAX_Akima_Forecasting/SARIMAX_Akima_Stock_Price_ForecastingReport.pdf) 
 4. **Scikit-Learn Documentation** – https://scikit-learn.org  
 5. **XGBoost Library** – https://xgboost.readthedocs.io
 6. **SARIMAX statsmodel** - https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_sarimax_stata.html
