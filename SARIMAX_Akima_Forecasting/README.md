@@ -56,7 +56,7 @@ Abbreviations:
 ### 2. Adaptive Trend Detection of Stock Prices
 ![Adaptive_Trend_Detection](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a65a1a9bb848746884ad6c6da0e8e711fa3cef5c/SARIMAX_Akima_Forecasting/Fig9.PNG)  
 ### 3. SARIMAX-forecasted Stock Prices
-![Automated SARIMAX](https://github.com/NenadBalaneskovic/ExternalProjects/blob/735f0d2547281074c02e432d3615e20cbf2197b9/DZ_bank_DataSet_classification/Fig5.PNG)  
+![SARIMAX-forecasted_StockPrices](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1c95064d638fb108ae3cc1a3e3ca679a9e6cd3c2/SARIMAX_Akima_Forecasting/Fig5.PNG)  
 
 ## 🚀 Storage of Forecast results
 ✔ **Trend forecasts are stored in a separate file "critical_trends.csv"**. 
