@@ -19,9 +19,9 @@ In addition, the Pythonic customized Akima interpolator function creates an inte
 - **Trend Type** → Characterises the type of trend shifts as "Bullish Surge" or "Sharp Decline".
 
 ## 🔄 Data Preprocessing  
-✔ **Generation of a stock price data set** – Generate an artificial stock price data set. 
-✔ **Akima interpolation of stock price time series** – Perform the Akima-interpolation of stock price time series. 
-✔ **Extraction of critical points of the stock price time series** – Extract critical points from the stock price time series (first, second and third derivative).   
+✔ **Generation of a stock price data set** – Generate an artificial stock price data set.  
+✔ **Akima interpolation of stock price time series** – Perform the Akima-interpolation of stock price time series.  
+✔ **Extraction of critical points of the stock price time series** – Extract critical points from the stock price time series (first, second and third derivative).  
 ✔ **Storage of critical points** – Store extracted critical points from a stock price data set into a separate csv file for further processing.  
 
 ## 🤖 Model Implementation
