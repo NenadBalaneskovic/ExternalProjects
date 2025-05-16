@@ -5,6 +5,6 @@ This is a public folder containing some of my external Pythonic ML projects and 
 
 [![Boarder Crossings_DataSet | English](https://img.shields.io/badge/Boarder_Crossings_DataSet%20(SARIMAX_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Forecasting/README.md)
 
-[![Stock_Price_DataSet | English](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ce6b32fa167bd4d7721c517021a478e952ecde4e/SARIMAX_Akima_Forecasting/README.md)
+[![Stock_Price_DataSet | English](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1d5b93d956f277d937ef2aa66841608f5b60ba7b/SARIMAX_Akima_Forecasting/README.md)
 
 
