@@ -59,7 +59,7 @@ Abbreviations:
 ![SARIMAX-forecasted_StockPrices](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1c95064d638fb108ae3cc1a3e3ca679a9e6cd3c2/SARIMAX_Akima_Forecasting/Fig5.PNG)  
 
 ## 🚀 Storage of Forecast results
-✔ **Trend forecasts are stored in a separate file "critical_trends.csv"**. 
+✔ **Trend forecasts are stored in a separate file "critical_trends.csv"**, Link: https://github.com/NenadBalaneskovic/ExternalProjects/blob/b5e78e44a1badea730403197176cf920456fbb22/SARIMAX_Akima_Forecasting/critical_trends.csv. 
 
 ## 📚 References
 1. **Stock Price Dataset** – https://github.com/NenadBalaneskovic/ExternalProjects/blob/ed9803c1f9859b5a93e2c195f175efca6a80f3c6/SARIMAX_Akima_Forecasting/stock_prices.csv
