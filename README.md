@@ -7,4 +7,4 @@ This is a public folder containing some of my external Pythonic ML projects and 
 
 [![Stock_Price_DataSet | English](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1d5b93d956f277d937ef2aa66841608f5b60ba7b/SARIMAX_Akima_Forecasting/README.md)
 
-
+https://github.com/NenadBalaneskovic/ExternalProjects/blob/623803f798f54d8bad7dad1c8cabc06fbbcdaad1/SentimentAnalysis_NewsHeadlines/README.md
