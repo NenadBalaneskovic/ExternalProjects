@@ -55,9 +55,15 @@ The goal of this project is to **experiment with and understand the inner workin
 - `PyQtGraph` → Real-time trend visualization  
 - `Pandas` → Data processing & CSV export functionality  
 
-## 📷 Visualizations
+## 📷 Visualizations  
+
+### 1. Sketch of the Pythonic Sentiment Analysis GUI
 ![Sketch of the Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7b92d75a56d4a1cdbd783a1da458b21783ec8825/SentimentAnalysis_NewsHeadlines/Generate%20a%20PyQt%20UI%20layout%202.png)  
+
+### 2. Implemented Pythonic Sentiment Analysis GUI
 ![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a61db895abb9801f797a8384e21e593873913b2b/SentimentAnalysis_NewsHeadlines/Fig2.PNG)  
+
+### 3. Generated csv file of sentiment results
 ![A csv file with the Latest Sentiment Result](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e0b96b7c0d5a944664884470f7bf0576e67fd372/SentimentAnalysis_NewsHeadlines/Fig3.PNG)  
 
 ## 🚀 GUI Deployment & Improvements
