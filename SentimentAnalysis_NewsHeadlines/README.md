@@ -92,7 +92,7 @@ By analyzing **real-world news headlines**, the project demonstrates how **machi
 
 ## 📚 References
 1. **Ground News Website** – https://ground.news/
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/CargoDataSet_Analysis.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5265153e1e549faf088761873cf125b24c82c752/SentimentAnalysis_NewsHeadlines/NewsSentimentAnalysis.ipynb)
 3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
 4. **NLTK Documentation** – https://www.nltk.org/
 5. **SpaCy Documentation** – https://pypi.org/project/spacy/, https://spacy.io/
