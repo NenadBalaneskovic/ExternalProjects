@@ -93,7 +93,7 @@ By analyzing **real-world news headlines**, the project demonstrates how **machi
 ## 📚 References
 1. **Ground News Website** – https://ground.news/
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5265153e1e549faf088761873cf125b24c82c752/SentimentAnalysis_NewsHeadlines/NewsSentimentAnalysis.ipynb)
-3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
+3. [![Sentiment Analysis Report | English](https://img.shields.io/badge/Sentiment%20Analysis%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b3e61153529509359db93ea53cd6945443f6befb/SentimentAnalysis_NewsHeadlines/NewsSentimentAnalysis.pdf) 
 4. **NLTK Documentation** – https://www.nltk.org/
 5. **SpaCy Documentation** – https://pypi.org/project/spacy/, https://spacy.io/
 6. **Beautiful Soup & WordCloud Documentation** - https://pypi.org/project/beautifulsoup4/, https://www.crummy.com/software/BeautifulSoup/bs4/doc/, https://pypi.org/project/wordcloud/, https://amueller.github.io/word_cloud/
