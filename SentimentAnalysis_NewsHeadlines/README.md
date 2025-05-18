@@ -2,7 +2,7 @@
 
 ## 📌 Introduction
 This project analyzes sentiments of news headlines contained within the Groundnews website by means of a customized Pythonic GUI 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SentimentAnalysis_NewsHeadlines#-references) 1 - 3 below).
 
 ### **Overview**
 The **News Sentiment Analysis GUI** is a **PyQt5-based application** designed to analyze sentiment trends of **news headlines fetched from Ground News**. 
