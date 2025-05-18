@@ -57,7 +57,7 @@ The goal of this project is to **experiment with and understand the inner workin
 
 ## 📷 Visualizations
 ![Sketch of the Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7b92d75a56d4a1cdbd783a1da458b21783ec8825/SentimentAnalysis_NewsHeadlines/Generate%20a%20PyQt%20UI%20layout%202.png)  
-![Implemented Sentiment Analysis GUI](feature_importance.png)  
+![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a61db895abb9801f797a8384e21e593873913b2b/SentimentAnalysis_NewsHeadlines/Fig2.PNG)  
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
 ## 🚀 GUI Deployment & Improvements
