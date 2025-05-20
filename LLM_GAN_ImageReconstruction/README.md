@@ -55,7 +55,9 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ## 🚀 Results  
 
 ✔ GAN trainings have been performed via Google Colabs free access to a T4 GPU for  
--- 1. 5000 epochs, batch size of 64 and 200 chessboard images (duration 2h),
+
+-- 1. 5000 epochs, batch size of 64 and 200 chessboard images (duration 2h),  
+
 -- 2. 10000 epochs, batch size of 32 and 200 chessboard images (duration 5 - 6 hours).  
 
 ✔ After 10000 epochs for batch sizes 32 the GAN model was capable of draving an (8x8) rectangular boundary around the 
