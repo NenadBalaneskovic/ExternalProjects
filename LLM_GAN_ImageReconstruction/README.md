@@ -4,7 +4,7 @@
 This project aims to compare traditional **OpenCV-based** methods for chessboard image reconstruction with
 **Generative Adversarial Network (GAN)-driven** approaches. The goal is to evaluate the effectiveness of deep learning 
 in reconstructing **secluded or obscured chessboard sections** more accurately than conventional techniques 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md#-references) 1 - 3 below).
 
 ## 🚀 Features
 - **OpenCV Reconstruction**: Uses contour detection and perspective transformation to restore missing parts.
