@@ -44,7 +44,7 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ### 2. GAN-induced Reconstruction of Chessboard Images
 ![GAN-induced Reconstruction of Chessboard Images](https://github.com/NenadBalaneskovic/ExternalProjects/blob/372401f6476fbaf9224bcf0964badcb5220d197e/LLM_GAN_ImageReconstruction/SecludedReconstructed.png)  
 ### 3. Google Colab terminal - GAN model training session
-![Google Colab terminal](roc_curve.png)  
+![Google Colab terminal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1dae994977816bd5ae1d81dc7112939a555540a1/LLM_GAN_ImageReconstruction/GoogleColab_Terminal.PNG)  
 
 ## 🚀 Results  
 ✔ GAN trainings have been performed via Google Colabs free access to a T4 GPU for  
