@@ -38,10 +38,13 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
    - reconstruct_chessboard.py  # Reconstruction script
 ```
    
-## 📷 Visualizations
+## 📷 Visualizations  
+### 1. Standard Edge Detection via OpenCV
 ![Standard Edge Detection via OpenCV](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9658c9a261c518adf596dc7539602e029b391bc3/LLM_GAN_ImageReconstruction/ReconstructedStandardResults.PNG)  
-![Implemented Sentiment Analysis GUI](feature_importance.png)  
-![A csv file with the Latest Sentiment Result](roc_curve.png)  
+### 2. GAN-induced Reconstruction of Chessboard Images
+![GAN-induced Reconstruction of Chessboard Images](feature_importance.png)  
+### 3. Google Colab terminal - GAN model training session
+![Google Colab terminal](roc_curve.png)  
 
 ## 🚀 Results  
 ✔ GAN trainings have been performed via Google Colabs free access to a T4 GPU for  
