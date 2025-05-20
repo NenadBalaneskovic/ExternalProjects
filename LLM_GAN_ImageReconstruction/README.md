@@ -39,7 +39,7 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ```
    
 ## 📷 Visualizations
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)  
+![Standard Edge Detection via OpenCV](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9658c9a261c518adf596dc7539602e029b391bc3/LLM_GAN_ImageReconstruction/ReconstructedStandardResults.PNG)  
 ![Implemented Sentiment Analysis GUI](feature_importance.png)  
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
