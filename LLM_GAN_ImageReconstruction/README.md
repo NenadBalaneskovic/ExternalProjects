@@ -1,16 +1,19 @@
 # GAN vs OpenCV Chessboard Reconstruction
 
-## 📌 Project Overview
+## 📌 Project Overview  
+
 This project aims to compare traditional **OpenCV-based** methods for chessboard image reconstruction with
 **Generative Adversarial Network (GAN)-driven** approaches. The goal is to evaluate the effectiveness of deep learning 
 in reconstructing **secluded or obscured chessboard sections** more accurately than conventional techniques 
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md#-references) 1 - 3 below).
 
-## 🚀 Features
+## 🚀 Features  
+
 - **OpenCV Reconstruction**: Uses contour detection and perspective transformation to restore missing parts.
 - **GAN-Based Reconstruction**: Trained with a dataset of **chessboard images** to generate missing squares using adversarial learning.
 
-## 📊 Methodology
+## 📊 Methodology  
+
 1. **Preprocessing**: Chessboard images are converted to grayscale and normalized.
 2. **OpenCV Approach**:
    - Detects edges using `cv2.Canny()`.
@@ -21,12 +24,14 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
    - Fine-tunes output through **loss function optimization**.
    - Adjusts resolution dynamically with `cv2.resize()`.
 
-## 🔬 Comparison Goals
+## 🔬 Comparison Goals  
+
 - **Accuracy of square reconstruction** in obstructed images.
 - **Performance on tilted chessboards** vs. frontal views (future implementation).
 - **Processing speed and computational efficiency**.
 
-## 📂 Repository Structure
+## 📂 Repository Structure  
+
 ```plaintext
 - dataset/
    - secluded/  # Chessboards with missing sections
@@ -39,6 +44,7 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ```
    
 ## 📷 Visualizations  
+
 ### 1. Standard Edge Detection via OpenCV
 ![Standard Edge Detection via OpenCV](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9658c9a261c518adf596dc7539602e029b391bc3/LLM_GAN_ImageReconstruction/ReconstructedStandardResults.PNG)  
 ### 2. GAN-induced Reconstruction of Chessboard Images
@@ -47,9 +53,11 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ![Google Colab terminal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1dae994977816bd5ae1d81dc7112939a555540a1/LLM_GAN_ImageReconstruction/GoogleColab_Terminal.PNG)  
 
 ## 🚀 Results  
+
 ✔ GAN trainings have been performed via Google Colabs free access to a T4 GPU for  
 -- 1. 5000 epochs, batch size of 64 and 200 chessboard images (duration 2h),
--- 2. 10000 epochs, batch size of 32 and 200 chessboard images (duration 5 - 6 hours).
+-- 2. 10000 epochs, batch size of 32 and 200 chessboard images (duration 5 - 6 hours).  
+
 ✔ After 10000 epochs for batch sizes 32 the GAN model was capable of draving an (8x8) rectangular boundary around the 
 originally secluded (8x7) portion of the chessboard and reconstructing its rectangles
 (the last 8th row is the missing corrected chessboard portion).  
