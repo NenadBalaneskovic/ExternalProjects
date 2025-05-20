@@ -35,7 +35,8 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
    - gan_chessboard_model.h5  # Trained GAN model
 - scripts/
    - train_gan.py  # GAN training function
-   - reconstruct_chessboard.py  # Reconstruction script```
+   - reconstruct_chessboard.py  # Reconstruction script
+```
    
 ## 📷 Visualizations
 ![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)  
@@ -77,7 +78,8 @@ originally secluded (8x7) portion of the chessboard and reconstructing its recta
 ### 4️⃣ Install Dependencies
 
 ```bash
-!pip install tensorflow keras numpy matplotlib opencv-python```  
+!pip install tensorflow keras numpy matplotlib opencv-python
+```  
 
 ### 2️⃣ Run Reconstruction  
 
@@ -85,14 +87,16 @@ originally secluded (8x7) portion of the chessboard and reconstructing its recta
 
 2️⃣  Load our script and start training:  
 ```python
-!python train_gan.py```
+!python train_gan.py
+```
 
 ### 3️⃣  Download the h5 model file ("gan_chessboard_model.h5"):
 1️⃣. Once training is complete, save the trained GAN model:  
 ```python
 from tensorflow.keras.models import save_model
 
-generator.save("/content/gan_chessboard_model.h5")  # Save model in Colab```  
+generator.save("/content/gan_chessboard_model.h5")  # Save model in Colab
+```  
 
 2️⃣  Then download it manually by clicking the file in the Colab sidebar. 
 
@@ -138,3 +142,4 @@ generator.save("/content/gan_chessboard_model.h5")  # Save model in Colab```
 28. David Foster: "__Generative Deep Learning__", O'Reilly(2023).
 29. Rowel Atienza: "__Advanced Deep Learning with Keras: Applying GANs and other new deep learning algorithms to the real world__", Packt Publishing (2018).
 30. Josh Kalin: "__Generative Adversarial Networks Cookbook__", Packt Publishing (2018).
+---
