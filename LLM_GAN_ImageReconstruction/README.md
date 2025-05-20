@@ -42,7 +42,7 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
 ### 1. Standard Edge Detection via OpenCV
 ![Standard Edge Detection via OpenCV](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9658c9a261c518adf596dc7539602e029b391bc3/LLM_GAN_ImageReconstruction/ReconstructedStandardResults.PNG)  
 ### 2. GAN-induced Reconstruction of Chessboard Images
-![GAN-induced Reconstruction of Chessboard Images](feature_importance.png)  
+![GAN-induced Reconstruction of Chessboard Images](https://github.com/NenadBalaneskovic/ExternalProjects/blob/372401f6476fbaf9224bcf0964badcb5220d197e/LLM_GAN_ImageReconstruction/SecludedReconstructed.png)  
 ### 3. Google Colab terminal - GAN model training session
 ![Google Colab terminal](roc_curve.png)  
 
