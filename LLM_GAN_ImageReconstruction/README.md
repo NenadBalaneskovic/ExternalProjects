@@ -113,8 +113,8 @@ generator.save("/content/gan_chessboard_model.h5")  # Save model in Colab
 
 ## 📚 References
 1. **Generative Adversarial Networks** – https://realpython.com/generative-adversarial-networks/, https://www.tensorflow.org/tutorials/generative/dcgan 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/CargoDataSet_Analysis.ipynb)
-3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ea3c345a0d55882a5cad502f77d41a6e7e50402f/LLM_GAN_ImageReconstruction/LLM_OpenCV_ImageReconstruction.ipynb)
+3. [![GAN Report | English](https://img.shields.io/badge/LLM_GAN%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
 4. **pygan Documentation** – https://pypi.org/project/pygan/
 5. **GAN with pytorch** – https://medium.com/the-research-nest/how-to-program-a-simple-gan-559ad707e201
 6. **GAN in Python** - https://www.codemotion.com/magazine/ai-ml/deep-learning/how-to-build-a-gan-in-python/
