@@ -329,7 +329,7 @@ mlflow ui --port 5000
 - **Average recall, precision and f1-score**: 0.83.
 
 ## 📂 Repository Structure
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
+![MongoDB-Python_Airflow-MLflow repository structure](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0ae13210b7c313d46af4671d715fdd5e71709033/RealEstateAnalysis/Fig6.PNG)
    
 ## 📷 Visualizations
 ![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)  
