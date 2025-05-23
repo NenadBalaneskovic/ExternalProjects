@@ -337,7 +337,11 @@ mlflow ui --port 5000
 ![Property price evolution across districts](https://github.com/NenadBalaneskovic/ExternalProjects/blob/77dd3737b0aa0ead474a71b496a3983fc7b566e5/RealEstateAnalysis/Fig1.PNG)  
 ![Property price evolution of the Costal district](https://github.com/NenadBalaneskovic/ExternalProjects/blob/231b49c620fdb2135d9f7595f5ab9883d1e617f0/RealEstateAnalysis/Fig2.PNG)  
 
-![Implemented Sentiment Analysis GUI](feature_importance.png)  
+### District Growth Clustering and Buyer Segmentation
+![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5fec4f98ed3c0fd3cd6bb4230f62c092929fb85f/RealEstateAnalysis/Fig3.PNG)
+![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5fec4f98ed3c0fd3cd6bb4230f62c092929fb85f/RealEstateAnalysis/Fig3.PNG)
+
+![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5fec4f98ed3c0fd3cd6bb4230f62c092929fb85f/RealEstateAnalysis/Fig3.PNG)
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
 ## 🚀 Results  
