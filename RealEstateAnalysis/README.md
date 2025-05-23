@@ -340,7 +340,7 @@ mlflow ui --port 5000
 ### District Growth Clustering and Buyer Segmentation
 ![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5fec4f98ed3c0fd3cd6bb4230f62c092929fb85f/RealEstateAnalysis/Fig3.PNG)  
 
-### Urban Expansion, Market Control and Price Comparison Analysis
+### Urban Expansion, Market Control and Comparative Price Analysis
 ![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/294b3c9120821e0377256a094c805364b82fd43a/RealEstateAnalysis/Fig4.PNG)
 
 ![Implemented Sentiment Analysis GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5fec4f98ed3c0fd3cd6bb4230f62c092929fb85f/RealEstateAnalysis/Fig3.PNG)
