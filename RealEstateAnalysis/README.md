@@ -323,8 +323,7 @@ mlflow ui --port 5000
 ✔ **MLflow logs** execution results, tracking numerical values and figures. 
 
 ## 🔬 Comparison Goals: District identification and Resale Probability predictions for new property via Random Forest
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
+![Training Accuracy of the Random Forest Classifier](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6d57a58906694bb30fcab466b17cc8e8428b34a6/RealEstateAnalysis/Fig7.PNG)
 - **Average Accuracy of the Random Forest Classifier**: 0.83.
 - Classification hyperparameters: **n_estimators = 100**, **random_state = 42**.
 - **Average recall, precision and f1-score**: 0.83.
