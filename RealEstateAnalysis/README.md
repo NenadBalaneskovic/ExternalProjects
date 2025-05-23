@@ -4,7 +4,7 @@
 This project involves a large data set related to real estate sales for a fictional town of Flower Hill. The aim is to combine the analysis of this data set with PyMongo,
 MLflow, Python (SARIMAX times series forecasting, classification, Neural Networks, Kohonen Maps) and DAG-like process organization of ML-tasks.
 Thus, we are blending data engineering, machine learning, forecasting, and process automation into a well-structured framework
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/RealEstateAnalysis#-references) 1 - 3 below).
 
 ## 📜 Flower Hill's Story
 Flower Hill is a flourishing City, consisting of 7 districts: Costal, Central, Mercantil, Faunarium, Technica, Academia and Historica. 
