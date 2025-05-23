@@ -432,7 +432,7 @@ Outlier properties reaching 10,000,000 indicate a premium market segment, likely
 ## 📚 References
 1. **Kohonen Maps** – https://pypi.org/project/sklearn-som/, https://www.geeksforgeeks.org/self-organising-maps-kohonen-maps/, https://pypi.org/project/kohonen/, https://github.com/Kursula/Kohonen_SOM
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3c79ca5422db323da28488a34c72af642e402c05/RealEstateAnalysis/RealEstateAnalysis.ipynb)
-3. [![Real_Estate Report | English](https://img.shields.io/badge/Real_Estate%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
+3. [![Real_Estate Report | English](https://img.shields.io/badge/Real_Estate%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/58210f0bae58d438d6c53e16cc19f939f3958e87/RealEstateAnalysis/RealEstateDataSetAnalysis.pdf) 
 4. **Apache Airflow Documentation** – https://pypi.org/project/apache-airflow/, https://airflow.apache.org/
 5. **MLflow Python API** – https://mlflow.org/docs/latest/api_reference/python_api/index.html, https://pypi.org/project/mlflow/
 6. **PyMongo Documentation** - https://pymongo.readthedocs.io/en/stable/, https://pypi.org/project/pymongo/, https://www.w3schools.com/python/python_mongodb_getstarted.asp
