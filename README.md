@@ -9,4 +9,6 @@ This is a public folder containing some of my external Pythonic ML projects and 
 
 [![Sentiment_Analysis_DataSet | English](https://img.shields.io/badge/Sentiment_Analysis_DataSet%20(NLTK_SpaCy_BeautifulSoup)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5092e58e2599919c1bd9d909be27321b06f80375/SentimentAnalysis_NewsHeadlines/README.md)
 
-[![LLM_GAN_Chessboard_Image_DataSet | English](https://img.shields.io/badge/GAN_LLM_Chessboard_Image_DataSet%20(GAN_LLM)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md)
+[![LLM_GAN_Chessboard_Image_DataSet | English](https://img.shields.io/badge/GAN_LLM_Chessboard_Image_DataSet%20(GAN_LLM)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md)  
+
+[![Real_Estate_DataSet | English](https://img.shields.io/badge/Real_Estate_DataSet%20(SOM_SARIMAX_RandomForest)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/561392eb414897e5ef3e3a6b36b148ac2fc42153/RealEstateAnalysis/README.md)
