@@ -334,7 +334,8 @@ mlflow ui --port 5000
 ## 📷 Visualizations  
 
 ### Property price analysis
-![Property price evolution across districts](confusion_matrix.png)  
+![Property price evolution across districts](https://github.com/NenadBalaneskovic/ExternalProjects/blob/77dd3737b0aa0ead474a71b496a3983fc7b566e5/RealEstateAnalysis/Fig1.PNG)  
+![Property price evolution of the Costal district](https://github.com/NenadBalaneskovic/ExternalProjects/blob/77dd3737b0aa0ead474a71b496a3983fc7b566e5/RealEstateAnalysis/Fig1.PNG)
 ![Implemented Sentiment Analysis GUI](feature_importance.png)  
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
