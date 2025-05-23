@@ -331,8 +331,10 @@ mlflow ui --port 5000
 ## 📂 Repository Structure
 ![MongoDB-Python_Airflow-MLflow repository structure](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0ae13210b7c313d46af4671d715fdd5e71709033/RealEstateAnalysis/Fig6.PNG)
    
-## 📷 Visualizations
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)  
+## 📷 Visualizations  
+
+### Property price analysis
+![Property price evolution across districts](confusion_matrix.png)  
 ![Implemented Sentiment Analysis GUI](feature_importance.png)  
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
