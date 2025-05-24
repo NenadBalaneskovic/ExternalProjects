@@ -1,7 +1,7 @@
 # External Projects
 This is a public folder containing some of my external Pythonic ML projects and analyses.  
 
-### 🌟 Dataset Analysis Links
+### 🌟 [Dataset Analysis Links](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
 
 - ### 1. **Bank Marketing DataSet (Classification)**  
   [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b628164a6e5e62fbfef9919acf1fb9cc307d7a8/Bank_MarketingDataSet_classification/README.md)
