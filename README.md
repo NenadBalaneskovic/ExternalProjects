@@ -1,4 +1,5 @@
-# External Projects
+# External Projects  [![GitHub Wiki](https://img.shields.io/badge/GitHub-Wiki-blue?style=flat&logo=github)](https://github.com/NenadBalaneskovic/ExternalProjects/wiki)
+
 This is a public folder containing some of my external Pythonic ML projects and analyses.  
 
 ### 🌟 [Dataset Analysis Links](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
