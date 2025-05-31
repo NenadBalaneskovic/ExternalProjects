@@ -4,7 +4,7 @@
 Noise contamination is a fundamental challenge in **signal processing**, affecting the accuracy and reliability of measurements across various domains, 
 from biomedical signals to communications and industrial data analysis. This project aims to **experiment with different noise mitigation techniques**, 
 particularly **non-deep-learning approaches**, and optimize them to identify the **most flexible noise suppression strategy** 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md#-references) 1 - 3 below).
 
 ## 2. 🔎 Motivation  
 While deep learning-based denoising has gained popularity, traditional and hybrid techniques remain essential in scenarios where:
