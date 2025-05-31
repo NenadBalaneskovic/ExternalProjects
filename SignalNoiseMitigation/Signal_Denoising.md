@@ -1,4 +1,4 @@
-# 🚀 Project Introduction: Adaptive Denoising Framework
+# A 🚀 Project Introduction: Adaptive Denoising Framework
 
 ## 🎯 1. Objective  
 Noise contamination is a fundamental challenge in **signal processing**, affecting the accuracy and reliability of measurements across various domains, 
@@ -44,7 +44,7 @@ The goal is to enhance **real-time signal processing capabilities** while mainta
 
 ---
 
-# 📖 Theoretical Introduction to Advanced Signal Denoising
+# B 📖 Theoretical Introduction to Advanced Signal Denoising
 
 ## 🏗️ 1. Introduction  
 Noise contamination is a critical issue in **signal processing**, leading to distortions and reduced accuracy in measured data. The need for
@@ -202,7 +202,7 @@ This **adaptive signal denoising framework** integrates **variance estimation, m
 to achieve **robust and efficient noise reduction**. The incorporation of **real-time adaptability** ensures that signals retain essential properties while effectively mitigating noise distortions.
 
 ---
-# Implementation Details of the Denoising Framework  
+# C Implementation Details of the Denoising Framework  
 
 ## 1. Introduction  
 This document describes the implementation details of the **ensemble-based denoising framework**, outlining the individual functions, their integration, and the rationale behind their design.
@@ -459,7 +459,7 @@ This framework provides a **multi-modal, adaptable noise suppression strategy**,
 The **flexible selection mechanism** ensures that the most effective method is applied in real-time, enhancing **signal fidelity and robustness** while maintaining **computational efficiency**.
 
 ---
-# Generate Noisy Signals: Function Overview  
+# D Generate Noisy Signals: Function Overview  
 
 ## 1. Introduction  
 In signal processing, testing denoising algorithms requires synthetic noisy signals that simulate real-world conditions. 
@@ -567,7 +567,7 @@ The `generate_noisy_signals()` function is a **powerful tool** for testing denoi
 This modular design **supports benchmarking and research applications**, making it an integral component of noise mitigation studies.
 
 ---
-# Signal Processing Experiment Results I: Sine Wave Signal
+# E Signal Processing Experiment Results I: Sine Wave Signal
 
 ## 1. Introduction
 This document presents the results of a signal processing experiment using various noise mitigation techniques. The primary focus is 
@@ -623,7 +623,7 @@ balancing **noise removal and signal preservation** effectively.
 Further refinements could involve **optimizing fusion weights** in the **Flexible Dynamic Denoiser** to enhance adaptability across signal types.
 
 ---
-# Signal Processing Experiment Results II: Square Wave Signal
+# F Signal Processing Experiment Results II: Square Wave Signal
 
 ## 1. Introduction  
 This document presents the experimental results of **noise reduction techniques** applied to a **square wave signal** contaminated with noise. The primary objective 
@@ -690,7 +690,7 @@ The **Flexible Dynamic Denoiser** also showed promising results, making it a via
 Future research could explore **fusion-based optimization strategies** to enhance **edge preservation** while maximizing noise suppression.
 
 ---
-# Signal Processing Experiment Results III: Sawtooth Wave Signal
+# G Signal Processing Experiment Results III: Sawtooth Wave Signal
 
 ## 1. Introduction  
 This document presents the experimental results of **noise reduction techniques** applied to a **sawtooth wave signal** contaminated with noise. 
@@ -756,7 +756,7 @@ The results suggest that **Hybrid Correlated Beta-Sigma Denoiser** is the **most
 Further refinements could involve **adaptive fusion enhancements** to fine-tune edge preservation and dynamic signal complexity adjustments.
 
 ---
-# Signal Processing Experiment Results IV: Gaussian Wave Signal
+# H Signal Processing Experiment Results IV: Gaussian Wave Signal
 
 ## 1. Introduction  
 This document presents the experimental results of **noise reduction techniques** applied to a **Gaussian signal** contaminated with noise. The primary goal is to evaluate different 
@@ -823,7 +823,7 @@ The **Hybrid Correlated Beta-Sigma Denoiser** also performed well, offering a st
 Future enhancements may explore **ensemble-based fusion strategies** to refine real-time adaptability and **optimize signal preservation**.
 
 ---
-# Interpretation  
+# I Interpretation  
 
 We offer a structured overview of the results, highlighting each method's performance based on RMSE values and overall effectiveness.
 
@@ -857,7 +857,7 @@ Based on the observed RMSE values and overall effectiveness across the different
 - **Enhanced Correlation-Based Denoising** provides **moderate results**, but not the best option overall.  
 - **Hybrid Multi-Pass Median Filtering** may need adjustments or modifications to improve reliability.  
 ---
-# 🔎 Future refinements and improvements  
+# J 🔎 Future refinements and improvements  
 
 Below is a **structured overview** of possible refinements for each denoising technique based on the observed performance results:
 
