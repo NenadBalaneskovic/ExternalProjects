@@ -676,7 +676,7 @@ Performance was assessed using **Root Mean Square Error (RMSE)**, which quantifi
 ## 5. Visual Representation  
 The following plot illustrates the **comparative performance of different denoising techniques** applied to the square wave signal:
 
-![Placeholder for Plot](path/to/your/plot.png)  
+![Noisy Square Signal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7e583cf2d27a2d0e3cd5c9aa52035511d1c96647/SignalNoiseMitigation/res2.PNG)  
 
 The square wave structure makes noise mitigation more challenging due to its sharp transitions. The Hybrid Correlated Beta-Sigma Denoiser appears to be the most effective in 
 preserving the waveform while reducing unwanted variations.
