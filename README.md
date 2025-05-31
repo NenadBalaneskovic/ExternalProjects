@@ -23,4 +23,4 @@ This is a public folder containing some of my external Pythonic ML projects and 
   [![Real_Estate_DataSet](https://img.shields.io/badge/Real_Estate_DataSet%20(SOM_SARIMAX_RandomForest)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/561392eb414897e5ef3e3a6b36b148ac2fc42153/RealEstateAnalysis/README.md)
 
 - ### 7. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy)**  
-  [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/README.md)
+  [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md)
