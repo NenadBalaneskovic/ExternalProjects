@@ -809,7 +809,7 @@ Performance was assessed using **Root Mean Square Error (RMSE)**, measuring devi
 ## 5. Visual Representation  
 The following plot illustrates the **comparative performance of different denoising techniques** applied to the Gaussian signal:
 
-![Placeholder for Plot](path/to/your/plot.png)  
+![Noisy Gaussian Signal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/2601597a60bea77e9345eea149df42d9ca779354/SignalNoiseMitigation/res4.PNG)  
 
 This result suggests that Flexible Dynamic Denoiser is the most effective in preserving the waveform while reducing unwanted variations. 
 The Hybrid Correlated Beta-Sigma Denoiser also performed well, offering a strong balance between noise suppression and signal preservation.
