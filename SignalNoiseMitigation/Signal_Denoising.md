@@ -743,7 +743,7 @@ Performance was assessed using **Root Mean Square Error (RMSE)**, which quantifi
 ## 5. Visual Representation  
 The following plot illustrates the **comparative performance of different denoising techniques** applied to the sawtooth wave signal:
 
-![Placeholder for Plot](path/to/your/plot.png)  
+![Noisy Sawtooth Signal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8a9ac174ff282954baf8cd5f4807a3faf8643854/SignalNoiseMitigation/res3.PNG)  
 
 The results suggest that Hybrid Correlated Beta-Sigma Denoiser is the most effective in preserving the waveform while reducing unwanted 
 variations. The Adaptive Beta-Sigma Resampling method also performed well, balancing noise suppression and signal fidelity.
