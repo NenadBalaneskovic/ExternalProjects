@@ -880,7 +880,7 @@ This refinement strategy should improve overall denoising effectiveness while en
 
 # 📚 References
 1. **Scipy Signal** –  https://docs.scipy.org/doc/scipy/reference/signal.html, https://scipy.org/, https://docs.scipy.org/doc/scipy/tutorial/signal.html
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/CargoDataSet_Analysis.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ec17bd68fcaadcf322445315762ab7a2884050b6/SignalNoiseMitigation/Signal_Denoising.ipynb)
 3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
 4. **Statsmodel package documentation** – https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.acf.html, https://www.statsmodels.org/stable/index.html
 5. **NumPy Documentation** – https://numpy.org/
