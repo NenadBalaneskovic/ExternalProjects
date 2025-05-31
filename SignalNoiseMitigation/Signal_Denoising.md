@@ -444,7 +444,153 @@ The **Flexible Dynamic Denoiser** serves as the **central selection mechanism**,
 1️⃣ **Signal Preprocessing:** Estimate noise variance using **Median-Filtered** or **Correlation-Based techniques**.  
 2️⃣ **Denoising Application:** Apply **Hybrid Adaptive Filtering**, **Beta-Sigma Resampling**, or **Correlation-Based Noise Reduction**.  
 3️⃣ **Dynamic Optimization:** The **Flexible Denoiser** selects and blends techniques in **real-time** to optimize noise mitigation.  
-4️⃣ **Visualization & Evaluation:** Compute RMSE and compare methods for **benchmarking performance**.
+4️⃣ **Visualization & Evaluation:** Compute RMSE and compare methods for **benchmarking performance**.  
+
+### **Pythonic workflow implementation**  
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as signal
+from statsmodels.tsa.stattools import acf
+
+# 📌 1️⃣ Hybrid Multi-Pass Adaptive Median Filtering
+def hybrid_multi_pass_adaptive_median_filter(signal_data, min_kernel=3, max_kernel=9, passes=3, alpha=0.5):
+    """Apply multi-pass adaptive median filtering with kernel tuning based on signal complexity and hybrid smoothing."""
+    N = len(signal_data)
+    filtered_signal = np.copy(signal_data)
+
+    for _ in range(passes):
+        temp_signal = np.zeros_like(filtered_signal)
+
+        for i in range(N):
+            local_complexity = np.abs(filtered_signal[i] - np.mean(filtered_signal[max(0, i-5):min(N, i+5)]))
+            kernel_size = int(min_kernel + (max_kernel - min_kernel) * (1 - local_complexity / np.max(filtered_signal)))
+            if kernel_size % 2 == 0:
+                kernel_size += 1
+            start_idx = max(0, i - kernel_size // 2)
+            end_idx = min(N, i + kernel_size // 2 + 1)
+            temp_signal[i] = np.median(filtered_signal[start_idx:end_idx])
+
+        filtered_signal = alpha * temp_signal + (1 - alpha) * filtered_signal
+
+    return filtered_signal
+
+# 📌 2️⃣ Enhanced Correlation-Based Noise Reduction
+def correlation_based_denoising(signal_data, smoothing_factor=0.8):
+    """Estimate noise via autocorrelation with adaptive correction."""
+    auto_corr = acf(signal_data, fft=True)
+    noise_est = np.mean(auto_corr[len(auto_corr)//2:] * (1 - smoothing_factor))  
+    corrected_signal = signal_data - (noise_est * smoothing_factor)
+
+    return corrected_signal
+
+# 📌 3️⃣ Adaptive βσ-Resampling
+def beta_sigma_resampling(signal_data, base_beta=0.1, sigma_factor=0.5, offset_factor=0.01, noise_scale=0.02):
+    """Apply βσ-resampling with adaptive noise mitigation and fine-tuned smoothing."""
+    N = len(signal_data)
+    noise_levels = np.array([
+        np.std(signal_data[max(0, i-10):min(N, i+10)]) if len(signal_data[max(0, i-10):min(N, i+10)]) > 1 else offset_factor
+        for i in range(N)
+    ])
+    max_noise = np.max(noise_levels) if np.max(noise_levels) > 0 else 1.0
+    adaptive_beta = base_beta * (1 - np.exp(-noise_levels / max_noise)) + offset_factor
+    resampled_signal = np.zeros_like(signal_data)
+
+    for i in range(N):
+        sigma_dynamic = int(sigma_factor * (1 + noise_levels[i]))
+        lower_bound = max(0, i - sigma_dynamic)
+        upper_bound = min(N - 1, i + sigma_dynamic)
+        subset = signal_data[lower_bound:upper_bound]
+        weighted_mean = np.mean(subset) if len(subset) > 1 else signal_data[i]
+        resampled_signal[i] = weighted_mean * (1 - adaptive_beta[i]) + signal_data[i] * adaptive_beta[i]
+        resampled_signal[i] += np.random.normal(scale=noise_scale)
+
+    return resampled_signal
+
+# 📌 4️⃣ Hybrid Correlated Beta-Sigma Denoiser
+def correlated_beta_sigma_denoiser(signal_data, alpha=0.6):
+    """Hybrid method combining correlation-based denoising and adaptive βσ-resampling."""
+    correlation_denoised = correlation_based_denoising(signal_data)
+    beta_sigma_denoised = beta_sigma_resampling(signal_data)
+    hybrid_signal = alpha * correlation_denoised + (1 - alpha) * beta_sigma_denoised
+
+    return hybrid_signal
+
+# 📌 5️⃣ Flexible Denoiser (Real-Time Adaptive Mode Selection)
+def flexible_denoiser(signal_data):
+    """Selects and adjusts denoising techniques dynamically based on real-time signal properties."""
+    N = len(signal_data)
+    
+    # ✅ Compute noise levels for real-time fusion strategy
+    local_noise = np.array([
+        np.std(signal_data[max(0, i-10):min(N, i+10)]) if len(signal_data[max(0, i-10):min(N, i+10)]) > 1 else 0.01
+        for i in range(N)
+    ])
+    
+    # ✅ Adjust fusion weight dynamically based on local signal complexity and noise intensity
+    noise_intensity = np.mean(local_noise)
+    complexity_factor = np.mean(np.abs(np.diff(signal_data)))  # Evaluate signal fluctuations
+    fusion_alpha = min(1.0, max(0.3, (1 - noise_intensity) * (1 - complexity_factor)))  
+
+    # ✅ Apply methods dynamically
+    median_filtered = hybrid_multi_pass_adaptive_median_filter(signal_data)
+    correlation_filtered = correlation_based_denoising(signal_data)
+    beta_sigma_filtered = beta_sigma_resampling(signal_data)
+    hybrid_filtered = correlated_beta_sigma_denoiser(signal_data)
+
+    # ✅ Combine methods dynamically based on real-time signal fluctuations
+    flexible_signal = (
+        fusion_alpha * median_filtered +
+        (1 - fusion_alpha) * correlation_filtered +
+        0.5 * beta_sigma_filtered +
+        0.5 * hybrid_filtered
+    ) / 2.0
+
+    return flexible_signal
+
+# 📌 Main Function for Denoising & Visualization
+def compare_denoising_methods(signal_data, t):
+    """Compare all denoising methods and visualize results."""
+    hybrid_median_filtered = hybrid_multi_pass_adaptive_median_filter(signal_data)
+    correlation_denoised = correlation_based_denoising(signal_data)
+    beta_sigma_denoised = beta_sigma_resampling(signal_data)
+    hybrid_denoised = correlated_beta_sigma_denoiser(signal_data)
+    flexible_filtered = flexible_denoiser(signal_data)
+
+    def compute_rmse(original, denoised):
+        return np.sqrt(np.mean((original - denoised) ** 2))
+
+    stats = {
+        "Hybrid Multi-Pass Median Filtering RMSE": compute_rmse(signal_data, hybrid_median_filtered),
+        "Enhanced Correlation-Based RMSE": compute_rmse(signal_data, correlation_denoised),
+        "Adaptive Beta-Sigma Resampling RMSE": compute_rmse(signal_data, beta_sigma_denoised),
+        "Hybrid Correlated Beta-Sigma Denoiser RMSE": compute_rmse(signal_data, hybrid_denoised),
+        "Flexible Dynamic Denoiser RMSE": compute_rmse(signal_data, flexible_filtered)
+    }
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(t, signal_data, label="Noisy Signal", color="black", alpha=0.6)
+    plt.plot(t, hybrid_median_filtered, label="Hybrid Multi-Pass Median Filtered", linestyle="dashed")
+    plt.plot(t, correlation_denoised, label="Enhanced Correlation-Based", linestyle="dashed")
+    plt.plot(t, beta_sigma_denoised, label="Adaptive Beta-Sigma Resampling", linestyle="dashed")
+    plt.plot(t, hybrid_denoised, label="Hybrid Correlated Beta-Sigma Denoiser", linestyle="dashed")
+    plt.plot(t, flexible_filtered, label="Flexible Dynamic Denoiser", linestyle="dashed", linewidth=2)
+    plt.xlabel("Time")
+    plt.ylabel("Amplitude")
+    plt.title("📉 Comparison of Advanced Noise Mitigation Methods")
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+    print("\n📊 Evaluation Statistics:")
+    for method, rmse in stats.items():
+        print(f"{method}: {rmse:.4f}")
+
+# 🔬 Example Usage
+t, noisy_signal = generate_noisy_signal(freq=5, duration=2, sampling_rate=1000, noise_std=0.2)
+compare_denoising_methods(noisy_signal, t)
+```
 
 ---
 
