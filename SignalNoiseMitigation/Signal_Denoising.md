@@ -224,45 +224,49 @@ Designed to **smooth signals while preserving edges**, this technique applies an
 - Implements **hybrid smoothing**, where the new signal is blended with the previous signal using an **adjustable weighting factor** \( \alpha \).
 
 #### **Mathematical Formulation:**  
-Given a **signal \( x \)** of length \( N \), the local complexity at position \( i \) is defined as:
+Given a **signal $$\( x \)$$** of length $$\( N \)$$, the local complexity at position $$\( i \)$$ is defined as:
 
 
-
+$$
 \[
 C_i = \left| x_i - \frac{1}{L} \sum_{k=i-5}^{i+5} x_k \right|
 \]
+$$
 
 
 
-where \( L \) is the local window size.
+where $$\( L \)$$ is the local window size.
 
 The kernel size is then dynamically adjusted:
 
 
-
+$$
 \[
 K_i = K_{\min} + (K_{\max} - K_{\min}) \left( 1 - \frac{C_i}{\max(C)} \right)
 \]
+$$
 
 
 
 Ensuring **odd-sized kernels** prevents artifacts in filtering:
 
 
-
+$$
 \[
 K_i = K_i + 1 \quad \text{(if \( K_i \) is even)}
 \]
+$$
 
 
 
-Each pass refines the signal \( x \), blending the filtered version:
+Each pass refines the signal $$\( x \)$$, blending the filtered version:
 
 
-
+$$
 \[
 x_{\text{filtered}} = \alpha x_{\text{median}} + (1 - \alpha) x_{\text{original}}
 \]
+$$
 
 
 
@@ -281,30 +285,33 @@ Leverages **autocorrelation properties** to estimate and mitigate noise dynamica
 #### **Mathematical Formulation:**  
 
 
-
+$$
 \[
 \text{ACF}(k) = \sum_{i=1}^{N-k} x_i \cdot x_{i+k}
 \]
+$$
 
 
 
 Noise estimation:
 
 
-
+$$
 \[
 \sigma_{\text{noise}} = \frac{1}{M} \sum_{k=M/2}^{M} \text{ACF}(k)
 \]
+$$
 
 
 
 Corrected signal:
 
 
-
+$$
 \[
 x_{\text{corrected}} = x - (\sigma_{\text{noise}} \cdot \text{Correction Factor})
 \]
+$$
 
 
 
@@ -325,30 +332,33 @@ This method applies **βσ-scaling** to mitigate noise variations and resample s
 Noise level estimation:
 
 
-
+$$
 \[
 \sigma_{\text{local}, i} = \sqrt{\frac{1}{L} \sum_{k=i-10}^{i+10} (x_k - \mu)^2}
 \]
+$$
 
 
 
 Adaptive β-scaling:
 
 
-
+$$
 \[
 \beta_i = \beta_0 \left( 1 - \exp\left(- \frac{\sigma_{\text{local}, i}}{\max(\sigma_{\text{local}})} \right) \right) + \text{Offset}
 \]
+$$
 
 
 
 Resampled signal:
 
 
-
+$$
 \[
 x_{\text{resampled}, i} = (1 - \beta_i) x_i + \beta_i \cdot \text{Local Mean}
 \]
+$$
 
 
 
@@ -367,14 +377,15 @@ Combines **correlation-based denoising** and **βσ-resampling** to achieve an *
 #### **Mathematical Formulation:**  
 
 
-
+$$
 \[
 x_{\text{hybrid}} = \alpha \cdot x_{\text{corr}} + (1-\alpha) \cdot x_{\text{resampled}}
 \]
+$$
 
 
 
-where \( \alpha \) controls the weighting.
+where $$\( \alpha \)$$ controls the weighting.
 
 ---
 
@@ -393,30 +404,33 @@ Designed to **adaptively select** the best noise mitigation strategy **based on 
 Local noise estimation:
 
 
-
+$$
 \[
 \sigma_{\text{noise}} = \frac{1}{N} \sum_{i=1}^{N} \left( x_i - \mu \right)^2
 \]
+$$
 
 
 
 Fusion weighting:
 
 
-
+$$
 \[
 \alpha_{\text{fusion}} = \min(1.0, \max(0.3, (1 - \sigma_{\text{noise}}) \cdot (1 - \text{Complexity Factor})))
 \]
+$$
 
 
 
 Final adaptive signal:
 
 
-
+$$
 \[
 x_{\text{flexible}} = \frac{1}{2} \left( \alpha_{\text{fusion}} \cdot x_{\text{median}} + (1-\alpha_{\text{fusion}}) \cdot x_{\text{corr}} + 0.5 x_{\text{resampled}} + 0.5 x_{\text{hybrid}} \right)
 \]
+$$
 
 
 
@@ -487,10 +501,11 @@ This function enables **benchmarking of denoising methods** by providing a diver
 The function first **constructs the time vector** with evenly spaced samples:
 
 
-
+$$
 \[
 t = \text{linspace}(0, \text{duration}, \text{sampling_rate} \times \text{duration})
 \]
+$$
 
 
 
@@ -498,7 +513,7 @@ where `linspace` ensures consistent time intervals.
 
 #### **Step 2: Clean Signal Generation**  
 Based on the selected `signal_type`, the function generates the clean waveform:
-- **Sine wave** → \( \sin(2\pi f t) \)  
+- **Sine wave** → $$\( \sin(2\pi f t) \)$$  
 - **Square wave** → Alternating high/low states.
 - **Sawtooth wave** → Linearly increasing ramp signal.
 - **Gaussian noise** → Random normally distributed values.
@@ -507,14 +522,15 @@ Based on the selected `signal_type`, the function generates the clean waveform:
 To simulate realistic conditions, **Gaussian noise** is applied:
 
 
-
+$$
 \[
 \text{noisy signal} = \text{clean signal} + \mathcal{N}(0, \text{noise_std})
 \]
+$$
 
 
 
-where \( \mathcal{N}(0, \text{noise_std}) \) represents a **zero-mean normal distribution**.
+where $$\( \mathcal{N}(0, \text{noise_std}) \)$$ represents a **zero-mean normal distribution**.
 
 #### **Step 4: Return Values**  
 The function returns:
@@ -528,10 +544,11 @@ The function returns:
 The function includes a safeguard to **prevent invalid input types**:
 
 
-
+$$
 \[
 \text{if signal type is invalid} \Rightarrow \text{raise ValueError}
 \]
+$$
 
 
 
