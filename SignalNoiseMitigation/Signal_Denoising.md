@@ -728,7 +728,7 @@ The results suggest that **Hybrid Correlated Beta-Sigma Denoiser** is the **most
 Further refinements could involve **adaptive fusion enhancements** to fine-tune edge preservation and dynamic signal complexity adjustments.
 
 ---
-# Signal Processing Experiment Results III: Gaussian Wave Signal
+# Signal Processing Experiment Results IV: Gaussian Wave Signal
 
 ## 1. Introduction  
 This document presents the experimental results of **noise reduction techniques** applied to a **Gaussian signal** contaminated with noise. The primary goal is to evaluate different 
