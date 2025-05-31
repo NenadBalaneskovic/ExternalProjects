@@ -558,7 +558,8 @@ This ensures that users provide a **supported signal type**.
 
 ## 5. Conclusion  
 
-The `generate_noisy_signals()` function is a **powerful tool** for testing denoising algorithms, offering:
+The `generate_noisy_signals()` function is a **powerful tool** for testing denoising algorithms, offering:  
+
 ✔ Multiple signal types.  
 ✔ Adjustable noise levels.  
 ✔ Customizable frequency and duration.  
