@@ -607,7 +607,7 @@ The performance of each method was assessed using the **Root Mean Square Error (
 ## 5. Visual Representation
 Below is a **plot illustrating the comparative results** of the different denoising techniques applied to the noisy signal:
 
-![Noisy Sine Signal]([path/to/your/plot.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d362de448c47a098c9443715619d20e57f8bd75f/SignalNoiseMitigation/res1.PNG))  
+![Noisy Sine Signal](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c76c76aab44c215e883d596dcc9dcfb51295fb44/SignalNoiseMitigation/res1.PNG)  
 
 Looking at the results, the graph presents a detailed comparison of different noise mitigation techniques applied to the noisy signal.  
 The evaluation statistics indicate how well each method reduces noise based on their Root Mean Square Error (RMSE) values. 
