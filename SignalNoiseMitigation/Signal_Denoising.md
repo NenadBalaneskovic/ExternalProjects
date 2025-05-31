@@ -59,36 +59,39 @@ noise levels dynamically. The variance \( \sigma^2 \) is computed as:
 
 
 
+$$
 \[
 \sigma^2 = \text{median}(|x_i - \text{median}(x)|)
 \]
+$$
 
 
 
-where \( x_i \) represents local signal samples.
+where $$\( x_i \)$$ represents local signal samples.
 
 **Distribution-Specific Adjustments**:
 
 | **Noise Type**  | **Variance Adjustment Formula** |
 |-----------------|--------------------------------|
-| **Gaussian Noise**  | \( \sigma^2_{\text{adj}} = 0.8 \cdot \sigma^2 \) |
-| **Uniform Noise**   | \( \sigma^2_{\text{adj}} = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 \) |
-| **Laplace Noise**   | \( \sigma^2_{\text{adj}} = 2 \cdot \sigma^2 \) |
+| **Gaussian Noise**  | $$\( \sigma^2_{\text{adj}} = 0.8 \cdot \sigma^2 \)$$ |
+| **Uniform Noise**   | $$\( \sigma^2_{\text{adj}} = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 \)$$ |
+| **Laplace Noise**   | $$\( \sigma^2_{\text{adj}} = 2 \cdot \sigma^2 \)$$ |
 
-where \( \mu \) is the signal mean and \( N \) is the number of samples.
+where $$\( \mu \)$$ is the signal mean and $$\( N \)$$ is the number of samples.
 
 ### 🔹 2.2 Correlation-Based Noise Variance Estimation  
 Another approach uses **autocorrelation properties** to estimate noise variance dynamically:
 
 
-
+$$
 \[
 \sigma^2_{\text{corr}} = \frac{1}{M} \sum_{k=1}^{M} \text{ACF}(k)
 \]
+$$
 
 
 
-where \( \text{ACF}(k) \) represents the autocorrelation function at lag \( k \), and \( M \) is the number of lags used.
+where $$\( \text{ACF}(k) \)$$ represents the autocorrelation function at lag $$\( k \)$$, and $$\( M \)$$ is the number of lags used.
 
 ## ⚙️ 3. Adaptive Noise Variance Estimation  
 
@@ -96,23 +99,25 @@ where \( \text{ACF}(k) \) represents the autocorrelation function at lag \( k \)
 To enhance robustness in **non-stationary noise environments**, a **real-time complexity analysis** adapts variance estimation:
 
 
-
+$$
 \[
 \sigma^2_{\text{dyn}} = \alpha \cdot \sigma^2_{\text{median}} + (1-\alpha) \cdot \sigma^2_{\text{corr}}
 \]
+$$
 
 
 
-where \( \alpha \) is an adaptive weighting factor dependent on **local signal complexity**.
+where $$\( \alpha \)$$ is an adaptive weighting factor dependent on **local signal complexity**.
 
 ### 🎭 3.2 Hybrid Variance Estimation Framework  
 A hybrid approach combining **median-filtered** and **correlation-based variance estimation** offers greater adaptability:
 
 
-
+$$
 \[
 \sigma^2_{\text{hybrid}} = \frac{1}{2} \left( \sigma^2_{\text{median}} + \sigma^2_{\text{corr}} \right)
 \]
+$$
 
 
 
@@ -124,27 +129,29 @@ This framework optimally adjusts for diverse **multi-modal noise distributions**
 By integrating multiple filtering stages, signal integrity is preserved while enhancing noise suppression. A **dynamic kernel adjustment** is employed:
 
 
-
+$$
 \[
 K_{\text{opt}} = K_{\text{min}} + (K_{\text{max}} - K_{\text{min}}) \left( 1 - \frac{\sigma^2_{\text{local}}}{\sigma^2_{\text{max}}} \right)
 \]
+$$
 
 
 
-where \( K_{\text{opt}} \) is the optimal kernel size, dynamically tuned based on local **noise variance \( \sigma^2_{\text{local}} \)**.
+where $$\( K_{\text{opt}} \)$$ is the optimal kernel size, dynamically tuned based on local **noise variance $$\( \sigma^2_{\text{local}} \)$$**.
 
 ### 🔗 4.2 Hybrid Statistical Noise Reduction  
 Combining **correlation-based denoising** and **adaptive variance estimation**, this technique enhances **adaptability**:
 
 
-
+$$
 \[
 x_{\text{filtered}} = \beta \cdot x_{\text{median}} + (1-\beta) \cdot x_{\text{corr}}
 \]
+$$
 
 
 
-where \( \beta \) adapts to signal **complexity levels**.
+where $$\( \beta \)$$ adapts to signal **complexity levels**.
 
 ## 🔄 5. Real-Time Adaptive Noise Suppression  
 
@@ -152,40 +159,43 @@ where \( \beta \) adapts to signal **complexity levels**.
 An **adaptive weighting mechanism** selects optimal noise suppression strategies dynamically:
 
 
-
+$$
 \[
 x_{\text{fusion}} = \sum_{i=1}^{N} \omega_i \cdot x_{\text{denoised}, i}
 \]
+$$
 
 
 
-where \( \omega_i \) is the fusion weight and \( x_{\text{denoised}, i} \) represents denoised signals from various methods.
+where $$\( \omega_i \)$$ is the fusion weight and $$\( x_{\text{denoised}, i} \)$$ represents denoised signals from various methods.
 
 ### 🔀 5.2 Multi-Stage Hybrid Filtering  
 This method integrates **variance estimation, correlation-based denoising, and adaptive resampling** into a **multi-step framework**:
 
 
-
+$$
 \[
 x_{\text{final}} = \lambda_1 \cdot x_{\text{median}} + \lambda_2 \cdot x_{\text{corr}} + \lambda_3 \cdot x_{\text{adaptive}}
 \]
+$$
 
 
 
-where \( \lambda_i \) are **adaptive fusion parameters**.
+where $$\( \lambda_i \)$$ are **adaptive fusion parameters**.
 
 ### 🎯 5.3 Optimized Signal Reconstruction  
 Final reconstruction includes **error correction mechanisms**:
 
 
-
+$$
 \[
 x_{\text{corrected}} = x_{\text{final}} - \gamma \cdot \text{Error}(x_{\text{final}})
 \]
+$$
 
 
 
-where \( \gamma \) scales the correction factor based on residual noise levels.
+where $$\( \gamma \)$$ scales the correction factor based on residual noise levels.
 
 ## 🏁 6. Conclusion  
 This **adaptive signal denoising framework** integrates **variance estimation, multi-stage filtering, and fusion-based noise suppression** 
