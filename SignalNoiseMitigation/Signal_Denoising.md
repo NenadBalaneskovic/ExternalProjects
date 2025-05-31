@@ -710,7 +710,34 @@ The `generate_noisy_signals()` function is a **powerful tool** for testing denoi
 ✔ Adjustable noise levels.  
 ✔ Customizable frequency and duration.  
 
-This modular design **supports benchmarking and research applications**, making it an integral component of noise mitigation studies.
+This modular design **supports benchmarking and research applications**, making it an integral component of noise mitigation studies.  
+
+### **Pythonic implementation:**  
+```python
+import numpy as np
+import scipy.signal as signal
+
+def generate_noisy_signals(signal_type="sine", freq=5, duration=2, sampling_rate=1000, noise_std=0.2):
+    """Generate synthetic noisy signals for testing denoising methods."""
+    t = np.linspace(0, duration, int(sampling_rate * duration), endpoint=False)
+
+    # Generate the clean signal
+    if signal_type == "sine":
+        clean_signal = np.sin(2 * np.pi * freq * t)
+    elif signal_type == "square":
+        clean_signal = signal.square(2 * np.pi * freq * t)
+    elif signal_type == "sawtooth":
+        clean_signal = signal.sawtooth(2 * np.pi * freq * t)
+    elif signal_type == "gaussian":
+        clean_signal = np.random.normal(0, 1, size=len(t))
+    else:
+        raise ValueError("Unsupported signal type. Choose from: 'sine', 'square', 'sawtooth', 'gaussian'.")
+
+    # Add Gaussian noise
+    noisy_signal = clean_signal + np.random.normal(0, noise_std, size=len(t))
+
+    return t, noisy_signal
+```
 
 ---
 # E Signal Processing Experiment Results I: Sine Wave Signal
