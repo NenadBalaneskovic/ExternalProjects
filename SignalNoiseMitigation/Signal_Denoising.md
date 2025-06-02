@@ -1,4 +1,4 @@
-# A 🚀 Project Introduction: Adaptive Denoising Framework
+# A 🚀 Adaptive Denoising Framework
 
 ## 🎯 1. Objective  
 Noise contamination is a fundamental challenge in **signal processing**, affecting the accuracy and reliability of measurements across various domains, 
