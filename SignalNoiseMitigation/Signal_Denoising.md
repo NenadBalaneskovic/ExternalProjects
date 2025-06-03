@@ -27,7 +27,8 @@ The study will evaluate an **ensemble of noise reduction techniques**, including
 Each method will be **benchmarked** against various signal types, with performance assessed using metrics like **Root Mean Square Error (RMSE)** and **signal preservation fidelity**.
 
 ### ⚡ 3.2 Optimization Strategy  
-The project will refine each technique by:
+The project will refine each technique by:  
+
 ✅ **Enhancing dynamic kernel selection** to improve adaptability.  
 ✅ **Optimizing hybrid fusion approaches** for balancing noise suppression and signal integrity.  
 ✅ **Developing real-time variance estimation techniques** to improve robustness in non-stationary environments.  
