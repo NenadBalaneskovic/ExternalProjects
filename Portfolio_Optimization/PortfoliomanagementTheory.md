@@ -213,7 +213,7 @@ $$
 
 ---
 
-🎯 **Key Takeaways**  
+### 🎯 **Key Takeaways**  
 
 ✔ **Use binomial trees to price put & American options**  
 ✔ **Apply early exercise condition** for American-style options  
