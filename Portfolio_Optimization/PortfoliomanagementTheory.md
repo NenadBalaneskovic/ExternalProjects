@@ -81,8 +81,8 @@ Perform this recursively **backward** until reaching $\( C_0 \)$, the fair optio
 
 ### 🔢 **Concrete Example Calculation**
 #### **Given Parameters**:
-- $\( S_0 = 100 \), \( K = 100 \), \( r = 5\% \), \( \sigma = 20\% \), \( T = 2 \)$
-- $\( \Delta t = 1 \), \( u = e^{0.2 \times \sqrt{1}} \approx 1.2214 \), \( d = \frac{1}{u} \approx 0.8187 \)$
+- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 5\% \)$, $\( \sigma = 20\% \)$, $\( T = 2 \)$
+- $\( \Delta t = 1 \)$, $\( u = e^{0.2 \times \sqrt{1}} \approx 1.2214 \)$, $\( d = \frac{1}{u} \approx 0.8187 \)$
 - $\( p = \frac{e^{0.05} - 0.8187}{1.2214 - 0.8187} \approx 0.577 \)$
 
 #### **Binomial Tree Construction**
@@ -127,7 +127,8 @@ $$
 ## Chapter 2: American and Put Options in CRR
 
 ### 🚀 **Pricing American and Put Options in the Cox-Ross-Rubinstein Model**
-Now let’s extend the binomial pricing approach for:
+Now let’s extend the binomial pricing approach for:  
+
 1️⃣ **American options**, which can be exercised at any time before expiration  
 2️⃣ **Put options**, where the payoff is $\( P_T = \max(K - S_T, 0) \)$  
 
