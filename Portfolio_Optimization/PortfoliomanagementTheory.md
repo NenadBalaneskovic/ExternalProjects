@@ -135,27 +135,35 @@ Now let’s extend the binomial pricing approach for:
 ---
 
 ### 🔍 **1️⃣ American Option Pricing**
-An **American option** differs from a **European option** because it can be exercised **before expiration**. This means we must compare:
+An **American option** differs from a **European option** because it can be exercised **before expiration**. This means we must compare:  
+
 $$
 C_t = \max \left( C_{\text{European}}, S_t - K \right)
-$$
+$$  
+
 At each node, we check **if early exercise is more profitable** than waiting.
 
 ---
 
 ### 🔍 **2️⃣ Put Option Pricing**
-For a **put option**, the final payoff is:
+For a **put option**, the final payoff is:  
+
 $$
 P_T = \max(K - S_T, 0)
-$$
-We still use backward induction:
+$$  
+
+We still use backward induction:  
+
 $$
 P_t = e^{-r \Delta t} \cdot (p P_{t+1}^{up} + (1-p) P_{t+1}^{down})
-$$
-For an **American put**, apply:
+$$  
+
+For an **American put**, apply: 
+
 $$
 P_t = \max \left( P_{\text{European}}, K - S_t \right)
-$$
+$$  
+
 at each node.
 
 ---
@@ -266,60 +274,74 @@ The **equivalent martingale measure (EMM)** is a fundamental concept in financia
 ---
 
 ### 🚀 **Step-by-Step Algorithm for Calculating Equivalent Martingale Measures**
-We assume a **continuous-time financial market** with a stock \( S_t \) and a risk-free bond \( B_t \). Our goal is to find the **risk-neutral probability measure \( Q \)**.
+We assume a **continuous-time financial market** with a stock $\( S_t \)$ and a risk-free bond $\( B_t \)$. Our goal is to find the **risk-neutral probability measure $\( Q \)$**.
 
 #### **Step 1: Define the Stochastic Process for Asset Price**
-Under the **physical measure \( P \)**, the asset price follows a geometric Brownian motion:
+Under the **physical measure $\( P \)$**, the asset price follows a geometric Brownian motion:  
+
 $$
 dS_t = \mu S_t dt + \sigma S_t dW_t
-$$
-where:
-- \( \mu \) = drift (expected return)
-- \( \sigma \) = volatility
-- \( W_t \) = standard Brownian motion
+$$  
 
-The **risk-free bond** grows as:
+where:  
+
+- $\( \mu \)$ = drift (expected return)
+- $\( \sigma \)$ = volatility
+- $\( W_t \)$ = standard Brownian motion
+
+The **risk-free bond** grows as:  
+
 $$
 B_t = e^{rt}
-$$
-where \( r \) is the risk-free rate.
+$$  
+
+where $\( r \)$ is the risk-free rate.
 
 ---
 
 #### **Step 2: Find the Radon-Nikodym Derivative**
-The **equivalent martingale measure \( Q \)** transforms the drift from \( \mu \) to \( r \), adjusting the probability distribution of asset prices.
+The **equivalent martingale measure $\( Q \)$** transforms the drift from $\( \mu \)$ to $\( r \)$, adjusting the probability distribution of asset prices.
 
-Define the **Radon-Nikodym derivative**:
+Define the **Radon-Nikodym derivative**:  
+
 $$
 \frac{dQ}{dP} = e^{-\theta W_T - \frac{1}{2} \theta^2 T}
-$$
-where:
+$$  
+
+where:  
+
 $$
 \theta = \frac{\mu - r}{\sigma}
-$$
-This is the **market price of risk**, ensuring the discounted process \( S_t/B_t \) is a **martingale** under \( Q \).
+$$  
+
+This is the **market price of risk**, ensuring the discounted process $\( S_t/B_t \)$ is a **martingale** under $\( Q \)$.
 
 ---
 
-#### **Step 3: Convert the Asset Dynamics Under \( Q \)**
-Applying Girsanov’s Theorem, the asset price under \( Q \) follows:
+#### **Step 3: Convert the Asset Dynamics Under $\( Q \)$**
+Applying Girsanov’s Theorem, the asset price under $\( Q \)$ follows:  
+
 $$
 dS_t = r S_t dt + \sigma S_t dW_t^Q
-$$
-where \( W_t^Q \) is a Brownian motion under \( Q \).
+$$  
 
-**This eliminates the drift term \( \mu \), replacing it with \( r \), creating a risk-neutral measure.**
+where $\( W_t^Q \)$ is a Brownian motion under $\( Q \)$.
+
+**This eliminates the drift term $\( \mu \)$, replacing it with $\( r \)$, creating a risk-neutral measure.**
 
 ---
 
 #### **Step 4: Compute the Risk-Neutral Probabilities**
-For discrete-time models (e.g., Binomial trees), the **risk-neutral probability** is:
+For discrete-time models (e.g., Binomial trees), the **risk-neutral probability** is:  
+
 $$
 p^Q = \frac{e^{r \Delta t} - d}{u - d}
-$$
-where \( u \) and \( d \) are the up and down movement factors.
+$$  
 
-For continuous-time models (Black-Scholes), the asset price under \( Q \) satisfies:
+where $\( u \)$ and $\( d \)$ are the up and down movement factors.
+
+For continuous-time models (Black-Scholes), the asset price under $\( Q \)$ satisfies:  
+
 $$
 S_T = S_0 e^{(r - \frac{1}{2} \sigma^2)T + \sigma W_T^Q}
 $$
@@ -327,49 +349,55 @@ $$
 ---
 
 ### 🔢 **Concrete Calculated Example**
-Let’s compute \( Q \) in a **Binomial tree model** with:
-- \( S_0 = 100 \)
-- \( K = 100 \)
-- \( r = 5\% \), \( \sigma = 20\% \)
-- \( T = 1 \), \( \Delta t = 1 \)
-- \( u = e^{0.2} \approx 1.2214 \), \( d = 1/u \approx 0.8187 \)
+Let’s compute $\( Q \)$ in a **Binomial tree model** with:
+- $\( S_0 = 100 \)$
+- $\( K = 100 \)$
+- $\( r = 5\% \)$, $\( \sigma = 20\% \)$
+- $\( T = 1 \)$, $\( \Delta t = 1 \)$
+- $\( u = e^{0.2} \approx 1.2214 \)$, $\( d = 1/u \approx 0.8187 \)$
 
 #### **Step 1: Compute Risk-Neutral Probability**
+
 $$
 p^Q = \frac{e^{0.05} - 0.8187}{1.2214 - 0.8187} \approx 0.577
 $$
 
 #### **Step 2: Compute European Call Option Price Using \( Q \)**
 Final stock prices:
-- **Up state:** \( S_T^{up} = 100 \times 1.2214 = 122.14 \)
-- **Down state:** \( S_T^{down} = 100 \times 0.8187 = 81.87 \)
+- **Up state:** $\( S_T^{up} = 100 \times 1.2214 = 122.14 \)$
+- **Down state:** $\( S_T^{down} = 100 \times 0.8187 = 81.87 \)$
 
-Option payoffs:
+Option payoffs:  
+
 $$
 C_T^{up} = \max(122.14 - 100, 0) = 22.14
-$$
+$$  
+
 $$
 C_T^{down} = \max(81.87 - 100, 0) = 0
 $$
 
-Discounted expectation under \( Q \):
+Discounted expectation under $\( Q \)$:  
+
 $$
 C_0 = e^{-r} (p^Q C_T^{up} + (1-p^Q) C_T^{down})
-$$
+$$   
+
 $$
 C_0 = e^{-0.05} (0.577 \times 22.14 + 0.423 \times 0)
-$$
+$$  
+
 $$
 C_0 = e^{-0.05} \times 12.79 \approx 12.18
 $$
 
-✅ **Fair option price under \( Q \): $12.18$**  
+✅ **Fair option price under $\( Q \)$: $12.18$**  
 ✅ **Ensures no arbitrage using risk-neutral valuation**
 
 ---
 
 ### 🎯 **Key Takeaways**
-✔ **Risk-neutral measure removes drift \( \mu \) and replaces it with \( r \)**  
+✔ **Risk-neutral measure removes drift $\( \mu \)$ and replaces it with $\( r \)$**  
 ✔ **Martingale property ensures no arbitrage**  
 ✔ **Used in Black-Scholes, binomial trees, and stochastic models**  
 
