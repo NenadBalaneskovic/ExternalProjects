@@ -45,7 +45,7 @@ For each time step \( t \), the stock price evolves as:
 $$
 S_t = S_0 \cdot u^i \cdot d^{t-i}
 $$
-where \( i \) represents the number of upward movements.
+where $\( i \)$ represents the number of upward movements.
 
 ---
 
@@ -73,16 +73,16 @@ Perform this recursively **backward** until reaching \( C_0 \), the fair option 
 
 ### 🔢 **Concrete Example Calculation**
 #### **Given Parameters**:
-- \( S_0 = 100 \), \( K = 100 \), \( r = 5\% \), \( \sigma = 20\% \), \( T = 2 \)
-- \( \Delta t = 1 \), \( u = e^{0.2 \times \sqrt{1}} \approx 1.2214 \), \( d = \frac{1}{u} \approx 0.8187 \)
-- \( p = \frac{e^{0.05} - 0.8187}{1.2214 - 0.8187} \approx 0.577 \)
+- $\( S_0 = 100 \), \( K = 100 \), \( r = 5\% \), \( \sigma = 20\% \), \( T = 2 \)$
+- $\( \Delta t = 1 \), \( u = e^{0.2 \times \sqrt{1}} \approx 1.2214 \), \( d = \frac{1}{u} \approx 0.8187 \)$
+- $\( p = \frac{e^{0.05} - 0.8187}{1.2214 - 0.8187} \approx 0.577 \)$
 
 #### **Binomial Tree Construction**
 | Time | Stock Price | Call Payoff |
 |------|------------|-------------|
-| \( t = 2 \) | \( 100 \cdot u^2 \) = **149.17** | \( \max(149.17 - 100, 0) \) = **49.17** |
-| \( t = 2 \) | \( 100 \cdot u \cdot d \) = **100.00** | \( \max(100 - 100, 0) \) = **0** |
-| \( t = 2 \) | \( 100 \cdot d^2 \) = **67.03** | \( \max(67.03 - 100, 0) \) = **0** |
+| $\( t = 2 \) | \( 100 \cdot u^2 \)$ = **149.17** | $\( \max(149.17 - 100, 0) \) =$ **49.17** |
+| $\( t = 2 \) | \( 100 \cdot u \cdot d \) =$ **100.00** | $\( \max(100 - 100, 0) \) =$ **0** |
+| $\( t = 2 \) | \( 100 \cdot d^2 \) =$ **67.03** | $\( \max(67.03 - 100, 0) \) =$ **0** |
 
 #### **Backward Induction at \( t = 1 \)**
 $$
