@@ -419,37 +419,47 @@ Let’s explore **stochastic discount factors (SDFs)** and **practical applicati
 ---
 
 ## **📌 Part 1: Stochastic Discount Factors (SDFs)**
-A **stochastic discount factor** (\( M_t \)) is used to price assets in arbitrage-free markets. It connects the **risk-neutral measure** and real-world probability measure.
+A **stochastic discount factor** ($\( M_t \)$) is used to price assets in arbitrage-free markets. It connects the **risk-neutral measure** and real-world probability measure.
 
 ### **Step 1: Define the Discount Factor**
-For a **risk-free bond**:
+For a **risk-free bond**:  
+
 $$
 B_t = e^{rt}
-$$
-For a **risky asset**:
+$$  
+
+For a **risky asset**:  
+
 $$
 S_t = S_0 e^{(\mu - \frac{1}{2} \sigma^2) t + \sigma W_t^P}
-$$
-The **stochastic discount factor (SDF)** relates prices through:
+$$  
+
+The **stochastic discount factor (SDF)** relates prices through:  
+
 $$
 M_t = e^{-rt} \cdot \frac{dQ}{dP}
 $$
 
 ### **Step 2: Compute the SDF Using Radon-Nikodym Derivative**
-Since we define the risk-neutral probability via:
+Since we define the risk-neutral probability via:  
+
 $$
 \frac{dQ}{dP} = e^{-\theta W_T - \frac{1}{2} \theta^2 T}, \quad \text{where} \quad \theta = \frac{\mu - r}{\sigma}
-$$
-The **stochastic discount factor** becomes:
+$$  
+
+The **stochastic discount factor** becomes:  
+
 $$
 M_T = e^{-rT} \cdot e^{-\theta W_T - \frac{1}{2} \theta^2 T}
 $$
 
 ### **Step 3: Asset Pricing Using SDF**
-Under the equivalent martingale measure:
+Under the equivalent martingale measure:  
+
 $$
 E^Q[M_T S_T] = S_0
-$$
+$$  
+
 This ensures **no arbitrage**, pricing derivatives correctly.
 
 ---
