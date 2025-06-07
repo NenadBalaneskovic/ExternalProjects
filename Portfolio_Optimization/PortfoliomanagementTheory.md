@@ -88,9 +88,9 @@ Perform this recursively **backward** until reaching $\( C_0 \)$, the fair optio
 #### **Binomial Tree Construction**
 | Time | Stock Price | Call Payoff |
 |------|------------|-------------|
-| $\( t = 2 \) | \( 100 \cdot u^2 \)$ = **149.17** | $\( \max(149.17 - 100, 0) \) =$ **49.17** |
-| $\( t = 2 \) | \( 100 \cdot u \cdot d \) =$ **100.00** | $\( \max(100 - 100, 0) \) =$ **0** |
-| $\( t = 2 \) | \( 100 \cdot d^2 \) =$ **67.03** | $\( \max(67.03 - 100, 0) \) =$ **0** |
+| $\( t = 2 \)$ | $\( 100 \cdot u^2 \)$ = **149.17** | $\( \max(149.17 - 100, 0) \) =$ **49.17** |
+| $\( t = 2 \)$ | $\( 100 \cdot u \cdot d \) =$ **100.00** | $\( \max(100 - 100, 0) \) =$ **0** |
+| $\( t = 2 \)$ | $\( 100 \cdot d^2 \) =$ **67.03** | $\( \max(67.03 - 100, 0) \) =$ **0** |
 
 #### **Backward Induction at \( t = 1 \)**
 $$
@@ -129,7 +129,7 @@ $$
 ### 🚀 **Pricing American and Put Options in the Cox-Ross-Rubinstein Model**
 Now let’s extend the binomial pricing approach for:
 1️⃣ **American options**, which can be exercised at any time before expiration  
-2️⃣ **Put options**, where the payoff is \( P_T = \max(K - S_T, 0) \)  
+2️⃣ **Put options**, where the payoff is $\( P_T = \max(K - S_T, 0) \)$  
 
 ---
 
@@ -161,15 +161,15 @@ at each node.
 
 ### 📊 **Example: American & European Put Option**
 #### **Given Parameters**:
-- \( S_0 = 100 \), \( K = 100 \), \( r = 5\% \), \( \sigma = 20\% \), \( T = 2 \)
-- \( u = 1.2214 \), \( d = 0.8187 \), \( p = 0.577 \)
+- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 5\% \)$, $\( \sigma = 20\% \)$, $\( T = 2 \)$
+- $\( u = 1.2214 \)$, $\( d = 0.8187 \)$, $\( p = 0.577 \)$
 
 #### **Step 1: Compute Terminal Payoffs**
 | Time | Stock Price | Put Payoff |
 |------|------------|-----------|
-| \( t = 2 \) | \( 100 \times u^2 \) = **149.17** | \( \max(100 - 149.17, 0) \) = **0** |
-| \( t = 2 \) | \( 100 \times u \times d \) = **100** | \( \max(100 - 100, 0) \) = **0** |
-| \( t = 2 \) | \( 100 \times d^2 \) = **67.03** | \( \max(100 - 67.03, 0) \) = **32.97** |
+| $\( t = 2 \)$ | $\( 100 \times u^2 \)$ = **149.17** | $\( \max(100 - 149.17, 0) \)$ = **0** |
+| $\( t = 2 \)$ | $\( 100 \times u \times d \)$ = **100** | $\( \max(100 - 100, 0) \)$ = **0** |
+| $\( t = 2 \)$ | $\( 100 \times d^2 \)$ = **67.03** | $\( \max(100 - 67.03, 0) \)$ = **32.97** |
 
 #### **Step 2: Backward Induction**
 $$
