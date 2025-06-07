@@ -30,7 +30,7 @@ $$
 d = \frac{1}{u}
 $$
 
-where $ \sigma $ is the volatility and $ \Delta t = \frac{T}{N} $ is the length of each step.
+where $\sigma$ is the volatility and $\Delta t = \frac{T}{N}$ is the length of each step.
 
 The **risk-neutral probability** is:
 
@@ -41,33 +41,41 @@ $$
 ---
 
 ### 🚀 **Step 2: Construct the Binomial Price Tree**
-For each time step \( t \), the stock price evolves as:
+For each time step $\( t \)$, the stock price evolves as:
+
 $$
 S_t = S_0 \cdot u^i \cdot d^{t-i}
 $$
+
 where $\( i \)$ represents the number of upward movements.
 
 ---
 
 ### 🚀 **Step 3: Calculate Payoffs at Maturity**
 For a **call option**, the payoff at expiration is:
+
 $$
 C_T = \max(S_T - K, 0)
 $$
+
 For a **put option**, the payoff is:
+
 $$
 P_T = \max(K - S_T, 0)
 $$
+
 Compute these payoffs at all final nodes in the tree.
 
 ---
 
 ### 🚀 **Step 4: Backward Induction to Find Present Value**
-Starting from the final time step \( T \), compute the expected present value at each node:
+Starting from the final time step $\( T \)$, compute the expected present value at each node:
+
 $$
 C_t = e^{-r \Delta t} \cdot (p C_{t+1}^{up} + (1-p) C_{t+1}^{down})
 $$
-Perform this recursively **backward** until reaching \( C_0 \), the fair option price.
+
+Perform this recursively **backward** until reaching $\( C_0 \)$, the fair option price.
 
 ---
 
