@@ -81,7 +81,7 @@ Perform this recursively **backward** until reaching $\( C_0 \)$, the fair optio
 
 ### 🔢 **Concrete Example Calculation**
 #### **Given Parameters**:
-- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 5\% \)$, $\( \sigma = 20\% \)$, $\( T = 2 \)$
+- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 0.05 \)$, $\( \sigma = 0.2 \)$, $\( T = 2 \)$
 - $\( \Delta t = 1 \)$, $\( u = e^{0.2 \times \sqrt{1}} \approx 1.2214 \)$, $\( d = \frac{1}{u} \approx 0.8187 \)$
 - $\( p = \frac{e^{0.05} - 0.8187}{1.2214 - 0.8187} \approx 0.577 \)$
 
@@ -169,8 +169,9 @@ at each node.
 ---
 
 ### 📊 **Example: American & European Put Option**
-#### **Given Parameters**:
-- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 5\% \)$, $\( \sigma = 20\% \)$, $\( T = 2 \)$
+#### **Given Parameters**:  
+
+- $\( S_0 = 100 \)$, $\( K = 100 \)$, $\( r = 0.05\)$, $\( \sigma = 0.2 \)$, $\( T = 2 \)$
 - $\( u = 1.2214 \)$, $\( d = 0.8187 \)$, $\( p = 0.577 \)$
 
 #### **Step 1: Compute Terminal Payoffs**
@@ -183,21 +184,26 @@ at each node.
 #### **Step 2: Backward Induction**
 $$
 P_1 = e^{-0.05} \cdot (p P_2^{up} + (1-p) P_2^{down})
-$$
+$$  
+
 $$
 P_1 = e^{-0.05} \cdot (0.577 \times 0 + 0.423 \times 32.97)
-$$
+$$  
+
 $$
 P_1 = e^{-0.05} \times 13.94 \approx 13.26
 $$
 
-Final computation:
+Final computation:  
+
 $$
 P_0 = e^{-0.05} \cdot (p P_1^{up} + (1-p) P_1^{down})
-$$
+$$  
+
 $$
 P_0 = e^{-0.05} \cdot (0.577 \times 13.26 + 0.423 \times 0)
-$$
+$$  
+
 $$
 P_0 = e^{-0.05} \times 7.65 \approx 7.28
 $$
@@ -207,7 +213,8 @@ $$
 
 ---
 
-🎯 **Key Takeaways**
+🎯 **Key Takeaways**  
+
 ✔ **Use binomial trees to price put & American options**  
 ✔ **Apply early exercise condition** for American-style options  
 ✔ **Backward induction computes expected fair price**  
@@ -261,7 +268,8 @@ For example, a **knock-in barrier option**:
 
 ---
 
-### 🎯 **Key Takeaways**
+### 🎯 **Key Takeaways**  
+
 ✔ **Risk management:** Used in hedging strategies  
 ✔ **Corporate valuation:** Applied in employee compensation packages  
 ✔ **Advanced derivatives:** Essential in pricing exotic financial instruments  
@@ -352,8 +360,7 @@ $$
 Let’s compute $\( Q \)$ in a **Binomial tree model** with:
 - $\( S_0 = 100 \)$
 - $\( K = 100 \)$
-- $\( r = 5\% \)$, $\( \sigma = 20\% \)$
-- $\( T = 1 \)$, $\( \Delta t = 1 \)$
+- $\( r = 5\% \),\( \sigma = 20\% \), \( T = 1 \), \( \Delta t = 1 \)$
 - $\( u = e^{0.2} \approx 1.2214 \)$, $\( d = 1/u \approx 0.8187 \)$
 
 #### **Step 1: Compute Risk-Neutral Probability**
@@ -396,7 +403,8 @@ $$
 
 ---
 
-### 🎯 **Key Takeaways**
+### 🎯 **Key Takeaways**  
+
 ✔ **Risk-neutral measure removes drift $\( \mu \)$ and replaces it with $\( r \)$**  
 ✔ **Martingale property ensures no arbitrage**  
 ✔ **Used in Black-Scholes, binomial trees, and stochastic models**  
