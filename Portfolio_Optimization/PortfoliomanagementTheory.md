@@ -1,9 +1,15 @@
-The **Cox-Ross-Rubinstein (CRR) model** is a discrete-time model used to price options using a binomial tree framework. 
-Here’s a step-by-step guide to determining a **fair option price** in a **T-period binomial tree** model.
+# Foundations of Portfolio Optimization
+
+The following chapters contain a mathematical and algorithmic overview of the most important aspects of
+portfolio optimization.
 
 ---
 
-## Chapter 1 
+## Chapter 1:  The **Cox-Ross-Rubinstein (CRR) model**  
+
+The **Cox-Ross-Rubinstein (CRR) model** is a discrete-time model used to price options using a binomial tree framework. 
+Here’s a step-by-step guide to determining a **fair option price** in a **T-period binomial tree** model. 
+
 ### 🚀 **Step 1: Define Parameters**
 Let:
 - $S_0$ = Initial stock price  
@@ -110,7 +116,8 @@ $$
 ✔ **Apply backward induction** to discount future payoffs  
 
 ---
-## Chapter 2 
+## Chapter 2: American and Put Options in CRR
+
 ### 🚀 **Pricing American and Put Options in the Cox-Ross-Rubinstein Model**
 Now let’s extend the binomial pricing approach for:
 1️⃣ **American options**, which can be exercised at any time before expiration  
@@ -192,8 +199,6 @@ $$
 
 Let's explore **real-world applications** of option pricing using the **Cox-Ross-Rubinstein (CRR) binomial model**.
 
----
-
 ### 🌍 **Application 1: Hedging Strategies for Traders**
 🔹 **Scenario:** A portfolio manager holds **100 shares of Tesla (TSLA)** but is worried about short-term price fluctuations.  
 🔹 **Solution:** The manager buys **put options** using the binomial pricing model to determine the fair cost of protection.  
@@ -245,7 +250,7 @@ For example, a **knock-in barrier option**:
 ✔ **Advanced derivatives:** Essential in pricing exotic financial instruments  
 
 ---
-## Chapter 3
+## Chapter 3: Equivalent Martingale Measures
 
 The **equivalent martingale measure (EMM)** is a fundamental concept in financial mathematics used to price derivatives in a risk-neutral world. It ensures that discounted asset prices follow a **martingale process**, meaning there is no arbitrage opportunity.
 
@@ -360,7 +365,7 @@ $$
 ✔ **Used in Black-Scholes, binomial trees, and stochastic models**  
 
 ---
-## Chapter 4
+## Chapter 4: EMMs and real world applications
 
 ### 🚀 **Extending Equivalent Martingale Measures to Stochastic Discount Factors & Real-World Applications**
 
@@ -433,9 +438,10 @@ This ensures **no arbitrage**, pricing derivatives correctly.
 ✔ **Real-world applications in macroeconomics, trading, and risk management**  
 
 ---
-## Chapter 5
+## Chapter 5: Calculation of EMMs
 
-In a discrete **Cox-Ross-Rubinstein (CRR) model**, we determine the **equivalent martingale measure \( Q \)** by ensuring the discounted asset prices follow a **martingale process**, meaning their expected future value under \( Q \) equals their current price.  
+In a discrete **Cox-Ross-Rubinstein (CRR) model**, we determine the **equivalent martingale measure \( Q \)** by ensuring the discounted asset prices follow 
+a **martingale process**, meaning their expected future value under \( Q \) equals their current price.  
 
 ---
 
@@ -496,7 +502,7 @@ $$
 ✅ **Used to compute option prices via backward induction**  
 
 ---
-## Chapter 6
+## Chapter 6: EMMs and American Options in Mult-Period CRR-trees
 
 ### 🚀 **Extending Equivalent Martingale Measures to American Options & Multi-Period Trees**
 
@@ -611,7 +617,7 @@ Apply **backward induction** for three steps, ensuring risk-neutral pricing hold
 ✔ **Equivalent martingale measures ensure arbitrage-free valuation**  
 
 ---
-## Chapter 7
+## Chapter 7: The Snell envelope
 The **Snell envelope** is used in **optimal stopping problems**, ensuring the value process remains a **supermartingale** while preserving the option to stop optimally. It plays a key role in pricing **American options** and **stochastic control problems**.
 
 ---
@@ -697,7 +703,7 @@ $$
 ✔ **Backward induction ensures risk-neutral valuation**  
 
 ---
-## Chapter 8
+## Chapter 8: Snell Envelopes and practical applications
 
 ### 🚀 **Extending Snell Envelopes to Markov Decision Processes (MDPs) & Continuous-Time Models**
 
@@ -779,7 +785,7 @@ for **optimal stopping time \( \tau \)**.
 ✔ **Optimal stopping ensures arbitrage-free option pricing**  
 
 ---
-## Chapter 9
+## Chapter 9: Portfolio Optimization
 
 **Portfolio optimization** is a fundamental concept in finance, aiming to construct an asset allocation that **maximizes return for a given risk level** (or minimizes risk for a given expected return). The **Markowitz Mean-Variance Optimization Model** is one of the most widely used approaches.
 
@@ -879,7 +885,7 @@ $$
 ✔ **Real-world applications include fund management & robo-advisors**  
 
 ---
-## Chapter 10
+## Chapter 10: Portfolio Optimization with Sharpe Ratio Maximization
 
 ### 🚀 **Extending Portfolio Optimization to Sharpe Ratio Maximization**  
 The **Sharpe Ratio** is a key metric in portfolio optimization, measuring **risk-adjusted return**:  
@@ -969,7 +975,7 @@ $$
 ✔ **Used in hedge funds, portfolio management, and asset allocation**  
 
 ---
-## Chapter 11
+## Chapter 11: Portfolio Optimization for Multi-Period Dynamic Optimization
 ### 🚀 **Extending Portfolio Optimization to Multi-Period Dynamic Optimization**  
 Multi-period portfolio optimization incorporates **time-dependent decisions**, allowing investors to dynamically adjust allocations based on market conditions and future forecasts.
 
@@ -1058,7 +1064,7 @@ $$
 ✔ **Used in pension funds, robo-advisors, and algorithmic trading**  
 
 ---
-## Chapter 12
+## Chapter 12: Utility Functions
 **Utility functions** allow investors to incorporate their **risk preferences** directly into portfolio optimization. 
 Instead of simply maximizing **return** or minimizing **risk**, utility functions help **quantify investor satisfaction** based on portfolio outcomes.
 
@@ -1132,7 +1138,7 @@ $$
 ✔ **Used in robo-advisors, retirement planning, and hedge fund strategies**  
 
 ---
-## Chapter 13
+## Chapter 13: Portfolio Optimization for Stochastic Utility Models
 ### 🚀 **Extending Portfolio Optimization to Stochastic Utility Models**  
 Stochastic utility models introduce **randomness into investor preferences**, meaning utility depends on **market uncertainty** and **personal wealth evolution** over time.
 
@@ -1218,7 +1224,7 @@ Solving **numerically**, optimal investment allocations evolve dynamically.
 ✔ **Used in pension funds, algorithmic trading, and real-world risk modeling**  
 
 ---  
-## Chapter 14
+## Chapter 14: Risk Measures
 Risk measures are essential in portfolio optimization because they help quantify uncertainty, enabling investors to 
 balance returns against potential losses. Here’s an overview of key **risk measures** and how they can be applied:
 
@@ -1413,7 +1419,8 @@ Based on evolving risk:
 ✔ **Monte Carlo simulations improve future risk forecasts**  
 
 ---
-## Chapter 15
+## Chapter 15: Portfolio Risk Analysis and Stress Testing
+
 Let's take portfolio risk analysis even further by incorporating **stress testing** and **factor-based risk models**, which financial institutions and hedge funds use to ensure robustness.
 
 ---
@@ -1503,7 +1510,8 @@ $$
 ✔ **Smart investors dynamically adjust allocations based on real-time conditions**  
 
 ---
-## Chapter 16
+## Chapter 16: Portfolio Optimization and Headging Techniques
+
 ### 🚀 **Extending Portfolio Optimization to Hedging Techniques**  
 Hedging is a risk management strategy that **reduces exposure to unfavorable price movements**, using assets like **derivatives, diversifiers, and volatility instruments**.
 
@@ -1580,7 +1588,8 @@ If an **options portfolio has \( V = 1000 \)** (high volatility exposure), hedge
 ✔ **Volatility hedging protects against extreme fluctuations**  
 
 ---
-## Chapter 17
+## Chapter 17: Lagrangian Portfolio Optimization
+
 **Lagrangian portfolio optimization** is a powerful technique used in **Markowitz Mean-Variance Optimization** and **de Finetti’s Expected Utility Approach** to determine **optimal portfolio weights**. It ensures that **risk is minimized for a given return**, subject to constraints.
 
 ---
@@ -1678,7 +1687,7 @@ $$
 ✔ **Lagrangian optimization ensures efficient capital allocation**  
 
 ---
-## Chapter 18
+## Chapter 18: Lagrangian Portfolio Optimization for Multi-Period Models
 ### 🚀 **Extending Lagrangian Portfolio Optimization to Multi-Period Models & Factor-Based Strategies**
 
 Now, let's extend our **Lagrangian portfolio optimization** approach to:
