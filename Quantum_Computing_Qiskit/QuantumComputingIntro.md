@@ -61,7 +61,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ### 6. Grover Algorithm     
 ![Grover-Algorithm](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b31b3cbdf523c969b7ece1f97149ca6450188c6/Quantum_Computing_Qiskit/Fig6_Grover.PNG)  
 ### 7. Shor Algorithm 
-![A csv file with the Latest Sentiment Result](roc_curve.png)  
+![Shor-Algorithm](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c606d52e3199e3ead4840421857624c55f4d5283/Quantum_Computing_Qiskit/Fig7_Shor.PNG)  
 
 # 📚 References
 1. **IBM's Qiskit-Documentation** –  https://www.ibm.com/quantum/qiskit, https://github.com/qiskit
