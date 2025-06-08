@@ -57,7 +57,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ### 4. The Bell-State Circuit
 ![Bell-State Circuit](https://github.com/NenadBalaneskovic/ExternalProjects/blob/be40f556a9d37a241d1f8092fa7c2bb3b1b93d62/Quantum_Computing_Qiskit/Fig4_BellState.PNG)
 ### 5. Deutsch-jozsa Algorithm
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
+![Deutsch-Jozsa-Algorithm](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d589c614084bf5a08a3da33bd5cec97a55cb280d/Quantum_Computing_Qiskit/Fig5_Deutsch_Jozsa.PNG)
 ### 6. Grover Algorithm     
 ![Implemented Sentiment Analysis GUI](feature_importance.png)  
 ### 7. Shor Algorithm 
