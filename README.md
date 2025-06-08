@@ -25,5 +25,5 @@ This is a public folder containing some of my external Pythonic ML projects and 
 - ### 7. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy)**  
   [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md)
 
-- ### 8. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy)**  
-  [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)]( https://github.com/NenadBalaneskovic/ExternalProjects/blob/cbae0235b2f4a56a8a4c4afcd116ce3940c1b189/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
+- ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA)**  
+  [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Qiskit_VQE_QAOA)-English-yellowblue?logoColor=blue&labelColor=yellow)]( https://github.com/NenadBalaneskovic/ExternalProjects/blob/cbae0235b2f4a56a8a4c4afcd116ce3940c1b189/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
