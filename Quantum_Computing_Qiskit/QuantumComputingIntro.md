@@ -65,7 +65,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 
 # 📚 References
 1. **IBM's Qiskit-Documentation** –  https://www.ibm.com/quantum/qiskit, https://github.com/qiskit
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/CargoDataSet_Analysis.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5f9c92e901f47de88cc48e62f1039a415e55fa5c/Quantum_Computing_Qiskit/Qskit_Intro_Course.ipynb)
 3. [![Forecasting Report | English](https://img.shields.io/badge/SARIMAX%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/SARIMAX_BoarderCrossingReport.pdf) 
 4. **Python's qiskit package documentation** – https://pypi.org/project/qiskit/
 5. **Qiskit for Pythonic Machine Learning** – https://pypi.org/project/qiskit-machine-learning/
