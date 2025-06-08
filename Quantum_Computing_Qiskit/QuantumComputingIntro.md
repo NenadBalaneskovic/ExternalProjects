@@ -1,7 +1,7 @@
 # 📖 Summary of Qiskit Intro Course (Kaggle Notebook)
 
 This Kaggle course notebook provides an **introductory guide to Qiskit**, focusing on **quantum computing fundamentals, hands-on coding, and interactive exercises**. 
-The aim is to combine the analysis of quantum circuits with their practical applications (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+The aim is to combine the analysis of quantum circuits with their practical applications (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Quantum_Computing_Qiskit/QuantumComputingIntro.md#-references) 1 - 3 below).
 
 ## 📌 **Course Structure**
 ### 1️⃣ **Introduction to Quantum Computing**
