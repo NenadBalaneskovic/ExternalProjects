@@ -55,7 +55,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ### 3. Simple Qubit Measurements
 ![Result of a Simple Quantum Measurement](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4af343218515ce8f0c51712d88e129062281af41/Quantum_Computing_Qiskit/Fig3.PNG)
 ### 4. The Bell-State Circuit
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
+![Bell-State Circuit](https://github.com/NenadBalaneskovic/ExternalProjects/blob/be40f556a9d37a241d1f8092fa7c2bb3b1b93d62/Quantum_Computing_Qiskit/Fig4_BellState.PNG)
 ### 5. Deutsch-jozsa Algorithm
 ![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
 ### 6. Grover Algorithm     
