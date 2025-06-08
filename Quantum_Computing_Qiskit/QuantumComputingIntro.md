@@ -49,7 +49,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ## ⚛️ Visualizations  
 
 ### 1. Qubit Gates
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png) 
+![Types of Qubit Gates](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7e9a8db7e11d95324934de7e1dd3bebd16e60b/Quantum_Computing_Qiskit/Fig1.PNG) 
 ### 2. Bloch Sphere
 ![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
 ### 3. Simple Qubit Measurements
