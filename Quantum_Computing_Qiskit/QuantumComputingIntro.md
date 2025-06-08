@@ -53,7 +53,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ### 2. Bloch Sphere
 ![Bloch Sphere](https://github.com/NenadBalaneskovic/ExternalProjects/blob/747e3c9dc9977adb70fbbe3c2ee8ff98277e297f/Quantum_Computing_Qiskit/Fig2.PNG)
 ### 3. Simple Qubit Measurements
-![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
+![Result of a Simple Quantum Measurement](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4af343218515ce8f0c51712d88e129062281af41/Quantum_Computing_Qiskit/Fig3.PNG)
 ### 4. The Bell-State Circuit
 ![Sketch of the Sentiment Analysis GUI](confusion_matrix.png)
 ### 5. Deutsch-jozsa Algorithm
