@@ -59,7 +59,7 @@ The aim is to combine the analysis of quantum circuits with their practical appl
 ### 5. Deutsch-jozsa Algorithm
 ![Deutsch-Jozsa-Algorithm](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d589c614084bf5a08a3da33bd5cec97a55cb280d/Quantum_Computing_Qiskit/Fig5_Deutsch_Jozsa.PNG)
 ### 6. Grover Algorithm     
-![Implemented Sentiment Analysis GUI](feature_importance.png)  
+![Grover-Algorithm](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b31b3cbdf523c969b7ece1f97149ca6450188c6/Quantum_Computing_Qiskit/Fig6_Grover.PNG)  
 ### 7. Shor Algorithm 
 ![A csv file with the Latest Sentiment Result](roc_curve.png)  
 
