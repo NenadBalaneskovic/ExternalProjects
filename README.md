@@ -27,3 +27,6 @@ This is a public folder containing some of my external Pythonic ML projects and 
 
 - ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA)**  
   [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Qiskit_VQE_QAOA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a8f3db4a3eddc6dd88ea0840c118666e24bdf5bd/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
+
+ - ### 9. **Balanced Gauge Study Implementations (ANOVA)**
+   [![Balanced_Gauge_Study_Implementations](https://img.shields.io/badge/Gauge_Study_Implementations%20(ANOVA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1546984c0f22a23324fe921cfe87dc23dc30983d/GaugeStudeBalanced/GaugeStudy.md)
