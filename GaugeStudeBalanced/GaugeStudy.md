@@ -364,25 +364,106 @@ This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:
 
 ## 7.1 Case 1: One-factor Gauge Study
 
-Below is a **plot illustrating the comparative results** of the different denoising techniques applied to the noisy signal:
+![Placeholder for Plot](path/to/your/plot.png) 
 
-![Placeholder for Plot](path/to/your/plot.png)  
 
-Looking at the results, the graph presents a detailed comparison of different noise mitigation techniques applied to the noisy signal.  
-The evaluation statistics indicate how well each method reduces noise based on their Root Mean Square Error (RMSE) values. 
+### 📊 **Interpretation of the One-Factor Gauge Study Result**
 
-The graph visually illustrates how each method affects the signal shape, with smoother curves representing stronger denoising performance. 
-Overall, the results suggest that **Adaptive Beta-Sigma Resampling** might be the best candidate for high-fidelity noise removal while maintaining essential signal details.  
+Our **one-factor Gauge R&R study** assesses **repeatability** in a measurement system by analyzing how consistently measurements are recorded across trials, without considering part variability.
+
+### 🔍 **Key Statistical Findings**
+**Overall Results:**  
+- **Mean Value:** **100.143** → Represents the average measurement across all trials.  
+- **Total Variance:** **8.003** → The combined variability within the system.  
+- **SNR (Signal-to-Noise Ratio):** **0.989** (95% CI: 0.866 - 1.112)  
+  - Indicates **how well measurement precision is maintained** compared to noise.  
+  - **SNR ≈ 1 suggests that noise and measurement variation are balanced.**  
+- **Capability Index (Cp):** **0.938** (95% CI: 0.815 - 1.061)  
+  - Determines if the system can **reliably measure within tolerance limits**.  
+  - **Cp near 1 is generally acceptable, but improvements may be needed.**  
+- **Tolerance Ratio:** **0.497** (95% CI: 0.374 - 0.620)  
+  - Measures how much **measurement variance contributes to total variability**.  
+  - **A value near 0.5 suggests measurement variability is substantial but not dominant.**  
+
+**Variance Components:**  
+- **Measurement Variance (`γM`):** **3.979** → **Moderate variability** in readings across trials.  
+- **Repeatability (`γR`):** **4.023** → **Similar to measurement variance**, showing a **balanced system**.  
+- **PTR (Precision-to-Tolerance Ratio):** **0.497** → Suggests **measurement precision accounts for ~50% of system variability**.  
+- **Part Variance (`γP`):** **0.000** → **Expected in a one-factor study**, since part variability is **not analyzed**.  
+
+### 📉 **Graphical Interpretation**
+- **Box Plot (Repeatability Across Parts):**  
+  - If whiskers are **short**, repeatability is **good**.  
+  - If whiskers are **long**, variability **between trials is high**.  
+- **Histogram (Distribution of Measured Values):**  
+  - A **symmetrical shape** indicates **stable measurement distributions**.  
+  - A **skewed shape** suggests possible **bias or systematic errors**.  
+- **Variance Contribution Chart:**  
+  - Since **γP = 0**, **measurement & repeatability variance dominate**.  
+  - If **γM > γR**, measurements suffer from **system noise** rather than operator inconsistencies.  
+
+### 🚦 **PTR-SNR Classification & Reliability**
+Your **PTR-SNR values fall in the Green Zone**, which means:  
+✅ **The measurement system is stable and performs well** under repeatability tests.  
+⚠ If **higher precision is required**, further reduction in **repeatability variance (`γR`)** may be beneficial.  
+
+Overall, this Gauge R&R result suggests that **the measurement system is reliable**, with **some room for improvement in repeatability consistency**.
 
 ## 7.2 Case 2: One factor Gauge Study with corrupt and/or missing measurement entries 
 
 ![Placeholder for Plot](path/to/your/plot.png)  
 
-Looking at the results, the graph presents a detailed comparison of different noise mitigation techniques applied to the noisy signal.  
-The evaluation statistics indicate how well each method reduces noise based on their Root Mean Square Error (RMSE) values. 
+### 📊 **Interpretation of the Two-Factor Gauge Study Result & Handling of Missing Data**  
 
-The graph visually illustrates how each method affects the signal shape, with smoother curves representing stronger denoising performance. 
-Overall, the results suggest that **Adaptive Beta-Sigma Resampling** might be the best candidate for high-fidelity noise removal while maintaining essential signal details. 
+This **two-factor Gauge R&R study** analyzes **repeatability and reproducibility**, incorporating **part variability** into the measurement system assessment. Unlike a one-factor study, this analysis includes **variability introduced by different parts** alongside operator-dependent errors.
+
+### 🔍 **Key Statistical Findings**  
+
+#### **General Measurement Results**  
+- **Mean Value (μγ):** **127.644** → Represents the average recorded measurement across trials.  
+- **Total Variance (σ²):** **72689.115** → Overall system variability, incorporating **measurement, part, and repeatability sources**.  
+
+#### **PTR-SNR Metrics**  
+- **PTR (Precision-to-Tolerance Ratio):** **0.332** (95% CI: -9.527 to 10.191)  
+  - Since **PTR < 0.5**, **measurement precision accounts for less than half of total variability**, suggesting significant **part or repeatability influence**.  
+- **SNR (Signal-to-Noise Ratio):** **1.000** (95% CI: -0.859 to 1.089)  
+  - **SNR ≈ 1 implies balanced noise-to-signal ratio**, meaning part influence and measurement variability are nearly equal.  
+  - However, the wide **confidence interval suggests some instability** in reliability across trials.  
+
+#### **Process Capability & Variability**  
+- **Cp (Process Capability Index):** **0.796** (95% CI: -9.093 to 10.625)  
+  - Suggests **moderate process control**, but **variation may impact repeatability precision**.  
+- **Tolerance Ratio:** **0.332** (95% CI: -9.527 to 10.191)  
+  - A lower tolerance ratio indicates that **measurement variance contributes to variability without completely dominating the system**.  
+
+#### **Variance Components**  
+- **Part Variance (γP):** **24106.947** → Shows how **different parts affect measurement consistency**.  
+- **Measurement Variance (γM):** **24117.833** → Indicates **how much measurement variation occurs independently of parts**.  
+- **Repeatability Variance (γR):** **24464.334** → Suggests **operator inconsistencies or system noise contributing to total error**.  
+
+### 📉 **Graphical Interpretation**  
+
+- **Box Plot (Repeatability Across Parts)** → Identifies **whether part variability dominates operator errors**.  
+- **Histogram (Measured Value Distribution)** → If skewed, **suggests possible measurement bias or systematic errors**.  
+- **Variance Contribution Chart** → Confirms **relative dominance of part, measurement, and repeatability variance**.  
+- **PTR-SNR Plot** → Indicates **measurement reliability vs noise**.  
+- **Beta & Delta Index Convergence** → Highlights **bias/inconsistency trends over GPQ iterations**.  
+
+### 🚦 **Handling of Missing/Corrupt Measurement Entries**  
+
+🔍 **Observations:**  
+- The **"Exclude Missing Data"** option is enabled.  
+- The **Data Preview table contains `"nan"` values in the `"Part"` column**, suggesting incomplete records.  
+- Despite this, the log indicates **"Validation successful: No issues detected."**, meaning missing values were **properly excluded** from statistical calculations.  
+
+✅ **How the GUI Handles Missing Data:**  
+- **Rows with `"nan"` in critical columns (Measured Value, Part, Operator) are excluded** before calculations.  
+- **Repeatability variance (`γR`) is computed only across valid data points**, ensuring reliability.  
+- **Confidence intervals reflect statistical uncertainty from cleaned data**, preventing errors from missing values.
+
+✅ **All stored results can be accessed via the following links:**  
+1. A csv file of extracted Gauge Study parameters.
+2. A pdf report of obtained Gauge Study results.
 
 # 8. 📚 References
 1. R. K. Burdick, C. M. Borror, D. C. Montgomery: "__Design and Analysis of Gauge R&R Studies__", 1st Ed. SIAM (2005); 
