@@ -464,7 +464,7 @@ This **two-factor Gauge R&R study** analyzes **repeatability and reproducibility
 
 ✅ **All stored results can be accessed via the following links:**  
 1. A ![csv file](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of extracted Gauge Study parameters.
-2. A pdf report of obtained Gauge Study results.
+2. A ![pdf report](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6d3669798335f1ee4f07293aad3b1bfdd020a035/GaugeStudeBalanced/report_2_factor_GaugeStudy.pdf) of obtained Gauge Study results.
 
 # 8. 📚 References
 1. R. K. Burdick, C. M. Borror, D. C. Montgomery: "__Design and Analysis of Gauge R&R Studies__", 1st Ed. SIAM (2005); 
