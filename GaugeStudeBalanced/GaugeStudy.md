@@ -352,7 +352,7 @@ delta_index = round(np.mean(sampled_gamma_m / gamma_r), 3)
 
 ---  
 
-# 7. 🎯 **Final Thoughts**
+# 6. 🎯 **Final Thoughts**
 This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:
 ✅ **Accurate Measurement System Evaluation**  
 ✅ **Precision Metrics & Variability Analysis**  
@@ -360,9 +360,9 @@ This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:
 
 ---
 
-# 8. Use-Cases
+# 7. Use-Cases
 
-## 8.1 Case 1: One-factor Gauge Study
+## 7.1 Case 1: One-factor Gauge Study
 
 Below is a **plot illustrating the comparative results** of the different denoising techniques applied to the noisy signal:
 
@@ -374,7 +374,7 @@ The evaluation statistics indicate how well each method reduces noise based on t
 The graph visually illustrates how each method affects the signal shape, with smoother curves representing stronger denoising performance. 
 Overall, the results suggest that **Adaptive Beta-Sigma Resampling** might be the best candidate for high-fidelity noise removal while maintaining essential signal details.  
 
-## 8.2 Case 2: One factor Gauge Study with corrupt and/or missing measurement entries 
+## 7.2 Case 2: One factor Gauge Study with corrupt and/or missing measurement entries 
 
 ![Placeholder for Plot](path/to/your/plot.png)  
 
@@ -384,7 +384,7 @@ The evaluation statistics indicate how well each method reduces noise based on t
 The graph visually illustrates how each method affects the signal shape, with smoother curves representing stronger denoising performance. 
 Overall, the results suggest that **Adaptive Beta-Sigma Resampling** might be the best candidate for high-fidelity noise removal while maintaining essential signal details. 
 
-# 9. 📚 References
+# 8. 📚 References
 1. R. K. Burdick, C. M. Borror, D. C. Montgomery: "__Design and Analysis of Gauge R&R Studies__", 1st Ed. SIAM (2005); 
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3a07dee498fa12cef3d92f4dcaf146032365b442/SARIMAX_Forecasting/CargoDataSet_Analysis.ipynb)
