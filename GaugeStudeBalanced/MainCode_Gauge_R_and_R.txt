@@ -1,0 +1,781 @@
+import sys
+import pandas as pd
+import numpy as np
+from matplotlib.lines import Line2D
+import scipy.stats as st  # Import statistical library for confidence intervals
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget,
+    QLabel, QTableWidget, QTableWidgetItem, QFileDialog, QGridLayout, 
+    QTextEdit, QProgressBar, QCheckBox, QRadioButton, QGroupBox, QListWidget
+)
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTextEdit
+import matplotlib.pyplot as plt
+import io
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtCore import QByteArray, QBuffer
+from PyQt6.QtGui import QFont, QPalette, QColor
+from PyQt6.QtCore import Qt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
+import tempfile
+import os
+
+class GaugeRRGUI(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        # Window Configuration
+        self.setWindowTitle("Gauge R&R Study Tool")
+        self.setGeometry(100, 100, 1400, 900)
+
+        # Apply Styling
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #F0F0F0;
+            }
+            QLabel {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+            QPushButton {
+                background-color: #0078D7;
+                color: white;
+                font-size: 13px;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            QPushButton:hover {
+                background-color: #005a9e;
+            }
+            QTableWidget {
+                gridline-color: #CCCCCC;
+                border: 1px solid #CCCCCC;
+            }
+            QTextEdit {
+                background-color: #FFFFFF;
+                border: 1px solid #CCCCCC;
+            }
+            QProgressBar {
+                height: 20px;
+            }
+        """)
+
+        # Main Layout using Grid for Your New GUI Design
+        self.central_widget = QWidget()
+        self.setCentralWidget(self.central_widget)
+        self.layout = QGridLayout()
+        self.layout.setSpacing(16)
+
+        ## COLUMN 1: Data Input & Export ##
+        self.load_csv_btn = QPushButton("Load CSV")
+        self.validate_csv_btn = QPushButton("Validate CSV")
+        self.clean_csv_btn = QPushButton("Clean Data")
+
+        self.data_preview_table = QTableWidget()
+        self.data_preview_table.setColumnCount(4)
+        self.data_preview_table.setHorizontalHeaderLabels(["Operator", "Part", "Trial", "Measured Value"])
+
+        self.export_results_btn = QPushButton("Export Results")
+        self.generate_report_btn = QPushButton("Generate Report")
+        self.explain_results_btn = QPushButton("Explain Results")
+
+        self.layout.addWidget(QLabel("Data Handling"), 0, 0)
+        self.layout.addWidget(self.load_csv_btn, 1, 0)
+        self.layout.addWidget(self.validate_csv_btn, 2, 0)
+        self.layout.addWidget(self.clean_csv_btn, 3, 0)
+        self.layout.addWidget(QLabel("Data Preview"), 4, 0)
+        self.layout.addWidget(self.data_preview_table, 5, 0, 2, 1)
+        self.layout.addWidget(self.export_results_btn, 8, 0)
+        self.layout.addWidget(self.generate_report_btn, 9, 0)
+        self.layout.addWidget(self.explain_results_btn, 10, 0)
+
+        ## COLUMN 2: Study Configuration & Results ##
+        self.study_config_group = QGroupBox("Study Configuration")
+        config_layout = QVBoxLayout()
+        config_layout.setSpacing(12)
+
+        self.remove_duplicates_cb = QCheckBox("Remove Duplicates")
+        self.filter_range_cb = QCheckBox("Filter Range")
+        self.exclude_missing_cb = QCheckBox("Exclude Missing Data")
+        self.one_factor_rb = QRadioButton("One-Factor Study")  
+        self.two_factor_rb = QRadioButton("Two-Factor Study")  
+
+        for widget in [self.remove_duplicates_cb, self.filter_range_cb, self.exclude_missing_cb, self.one_factor_rb, self.two_factor_rb]:
+            config_layout.addWidget(widget)
+
+        self.study_config_group.setLayout(config_layout)
+
+        self.abort_analysis_btn = QPushButton("Abort Analysis")
+        self.run_analysis_btn = QPushButton("Run Analysis")
+        self.progress_bar = QProgressBar()
+        # self.progress_bar.setContentsMargins(0, 2, 0, 2)  # Shrinks top/bottom margins
+        # self.progress_bar.move(self.progress_bar.x(), self.progress_bar.y() + 10)  # Shift it upwards
+        self.progress_bar.setFormat("0%")
+
+        self.overall_results_list = QListWidget()
+        self.results_table = QTableWidget()
+        self.results_table.setColumnCount(4)
+        self.results_table.setHorizontalHeaderLabels(["Parameter", "Value", "L", "U"])
+
+        self.layout.addWidget(self.study_config_group, 1, 1, 2, 1)
+        self.layout.addWidget(self.abort_analysis_btn, 3, 1)
+        self.layout.addWidget(self.run_analysis_btn, 4, 1)
+        self.layout.addWidget(self.progress_bar, 5, 1)
+        self.layout.addWidget(QLabel("Overall Results"), 6, 1)
+        self.layout.addWidget(self.overall_results_list, 7, 1, 2, 1)
+        self.layout.addWidget(QLabel("Parameter Results"), 9, 1)
+        self.layout.addWidget(self.results_table, 10, 1, 2, 1)
+
+        ## COLUMN 3: Logging & Graphical Results ##
+        self.log_window = QTextEdit()
+        self.log_window.setPlaceholderText("Process Log (Execution Details)")
+
+        self.error_log_window = QTextEdit()
+        self.error_log_window.setPlaceholderText("Error Log (Warnings & Issues)")
+
+        self.figure = Figure()
+        self.canvas = FigureCanvas(self.figure)
+
+        self.layout.addWidget(QLabel("Logging & Visualization"), 0, 2)
+        self.layout.addWidget(self.log_window, 1, 2, 2, 1)
+        self.layout.addWidget(self.error_log_window, 3, 2, 2, 1)
+        self.layout.addWidget(QLabel("Statistical Visualizations"), 5, 2)
+        self.layout.addWidget(self.canvas, 6, 2, 4, 1)
+
+        # Set Final Layout
+        self.central_widget.setLayout(self.layout)
+
+        # Connect Buttons to Functions
+        self.load_csv_btn.clicked.connect(self.load_csv)
+        self.validate_csv_btn.clicked.connect(self.validate_csv)
+        self.clean_csv_btn.clicked.connect(self.clean_data)
+        self.run_analysis_btn.clicked.connect(self.run_analysis)
+        self.abort_analysis_btn.clicked.connect(self.abort_analysis)
+        self.export_results_btn.clicked.connect(self.export_results)
+        self.generate_report_btn.clicked.connect(self.generate_pdf_report)
+        self.explain_results_btn.clicked.connect(self.explain_results)
+
+    def load_csv(self):
+        """Loads CSV file into the data preview table."""
+        file_path, _ = QFileDialog.getOpenFileName(self, "Open CSV File", "", "CSV Files (*.csv)")
+        if file_path:
+            try:
+                df = pd.read_csv(file_path)
+                df["Measured Value"] = pd.to_numeric(df["Measured Value"], errors="coerce")  # Fix numeric conversion
+                self.populate_table(self.data_preview_table, df)
+                self.log_window.append(f"Loaded CSV: {file_path}")
+            except Exception as e:
+                self.error_log_window.append(f"Error loading CSV: {str(e)}")
+
+    def validate_csv(self):
+        """Validates CSV data for missing values, errors, and duplicates."""
+        try:
+            df = self.get_table_data(self.data_preview_table)
+    
+            # Ensure correct study type is selected based on the data structure
+            if self.one_factor_rb.isChecked() and df["Part"].nunique() > 1:
+                self.error_log_window.append("Error: One-factor study selected, but CSV contains multiple part values!")
+                self.log_window.append("Validation failed: Incorrect study type selection.")
+                return
+            
+            self.log_window.append("CSV format validation successful.")
+            
+            # Convert Measured Value column to numeric and check for missing values
+            df["Measured Value"] = pd.to_numeric(df["Measured Value"], errors="coerce")  
+            issues = []
+            if df["Measured Value"].isnull().sum() > 0:
+                issues.append("Non-numeric data detected in Measured Value column.")
+            if df.isnull().values.any():
+                issues.append("Missing values detected.")
+            if df.duplicated().sum() > 0:
+                issues.append("Duplicate entries found.")
+    
+            if issues:
+                for issue in issues:
+                    self.error_log_window.append(issue)
+                self.log_window.append("Validation failed: Issues found.")
+            else:
+                self.log_window.append("Validation successful: No issues detected.")
+    
+        except Exception as e:
+            self.error_log_window.append(f"Validation error: {str(e)}")
+
+
+    def clean_data(self):
+        """Removes invalid data and updates table."""
+        try:
+            df = self.get_table_data(self.data_preview_table)
+            df = df.dropna()
+            df["Measured Value"] = pd.to_numeric(df["Measured Value"], errors="coerce")  
+            df = df.drop_duplicates()
+            self.populate_table(self.data_preview_table, df)
+            self.log_window.append("Data cleaned successfully.")
+        except Exception as e:
+            self.error_log_window.append(f"Cleaning error: {str(e)}")
+
+    def populate_table(self, table, df):
+        """Populates a QTableWidget from a DataFrame."""
+        table.setRowCount(len(df))
+        table.setColumnCount(len(df.columns))
+        table.setHorizontalHeaderLabels(df.columns)
+    
+        for row in range(len(df)):
+            for col in range(len(df.columns)):
+                table.setItem(row, col, QTableWidgetItem(str(df.iloc[row, col])))
+
+    
+    def get_table_data(self, table):
+        """Extracts table data into a DataFrame."""
+        rows = table.rowCount()
+        cols = table.columnCount()
+        data = []
+        
+        for row in range(rows):
+            row_data = []
+            for col in range(cols):
+                item = table.item(row, col)
+                row_data.append(item.text() if item else None)  # Handle empty cells
+            data.append(row_data)
+    
+        df = pd.DataFrame(data, columns=["Operator", "Part", "Trial", "Measured Value"])
+        df["Measured Value"] = pd.to_numeric(df["Measured Value"], errors="coerce")  # Ensure numeric format
+        return df
+
+    
+    def abort_analysis(self):
+        """Stops ongoing analysis and resets relevant UI elements."""
+        self.log_window.append("Analysis aborted.")
+        self.progress_bar.setValue(0)
+        self.progress_bar.setFormat("0%")
+
+    def export_results(self):
+        """Exports Gauge R&R results as a CSV file."""
+        file_path, _ = QFileDialog.getSaveFileName(self, "Save Results", "", "CSV Files (*.csv)")
+        if file_path:
+            rows = self.results_table.rowCount()
+            cols = self.results_table.columnCount()
+            data = []
+    
+            # Extract table data properly
+            for row in range(rows):
+                row_data = []
+                for col in range(cols):
+                    item = self.results_table.item(row, col)
+                    row_data.append(item.text() if item else "")  # Ensure empty values are handled properly
+                data.append(row_data)
+    
+            # Convert to DataFrame and set correct headers
+            df = pd.DataFrame(data, columns=["Parameter", "Value", "Lower Bound", "Upper Bound"])
+            df.to_csv(file_path, index=False)
+    
+            self.log_window.append(f"Results exported successfully to: {file_path}")
+
+
+    def get_report_summary(self):
+        """Generates a structured text summary of Gauge R&R results for the PDF."""
+        
+        summary = "**Gauge R&R Study Summary**\n\n"
+        
+        # Extract results from the table
+        if self.results_table.rowCount() > 0:
+            for row in range(self.results_table.rowCount()):
+                param = self.results_table.item(row, 0).text()
+                value = self.results_table.item(row, 1).text()
+                lower = self.results_table.item(row, 2).text()
+                upper = self.results_table.item(row, 3).text()
+                
+                summary += f"{param}: {value} (95% CI: {lower} - {upper})\n"
+    
+            summary += "\n**Key Takeaways:**\n"
+            summary += "✅ A high PTR and SNR suggest a stable measurement system.\n"
+            summary += "⚠ A high Tolerance Ratio means adjustments may be necessary.\n"
+            summary += "🔎 Review Beta & Delta Index to assess bias and inconsistency.\n"
+    
+        else:
+            summary += "⚠ No computed results found. Please run an analysis first.\n"
+        
+        return summary
+
+    def get_xai_summary(self):
+        """Generates interpretive insights for Gauge R&R results."""
+        
+        xai_summary = "**Gauge R&R XAI Interpretation**\n\n"
+        
+        if self.results_table.rowCount() > 0:
+            for row in range(self.results_table.rowCount()):
+                param = self.results_table.item(row, 0).text()
+                value = self.results_table.item(row, 1).text()
+                
+                # Provide explanations for each parameter
+                if param == "PTR":
+                    xai_summary += f"🟢 PTR: {value} → **Higher values (>0.000108) indicate better process capability**.\n"
+                elif param == "SNR":
+                    xai_summary += f"🔵 SNR: {value} → **High SNR (>0.000220) means good measurement reliability**.\n"
+                elif param == "Cp":
+                    xai_summary += f"🟢 Cp: {value} → **Higher Cp suggests better process control**.\n"
+                elif param == "Tolerance Ratio":
+                    xai_summary += f"🔴 Tolerance Ratio: {value} → **High values (>0.5) suggest excessive measurement variation**.\n"
+                elif param == "β Index":
+                    xai_summary += f"🟡 Beta Index: {value} → **Low beta index indicates possible bias or instability**.\n"
+                elif param == "δ Index":
+                    xai_summary += f"🟠 Delta Index: {value} → **Higher values (>1.0) mean greater inconsistency across trials**.\n"
+            
+            xai_summary += "\n**Key Takeaways:**\n"
+            xai_summary += "✅ A high PTR and SNR suggest a stable measurement system.\n"
+            xai_summary += "⚠ A high Tolerance Ratio means adjustments may be necessary.\n"
+            xai_summary += "🔎 Review Beta & Delta Index to assess bias and inconsistency.\n"
+    
+        else:
+            xai_summary += "⚠ No computed results found. Please run an analysis first.\n"
+        
+        return xai_summary
+
+    
+    def generate_pdf_report(self):
+        """Creates a structured multi-page PDF report of Gauge R&R study results, including parameters, XAI insights, and plots."""
+        
+        file_path, _ = QFileDialog.getSaveFileName(self, "Save PDF Report", "", "PDF Files (*.pdf)")
+        if not file_path:
+            return
+        
+        pdf = canvas.Canvas(file_path, pagesize=letter)
+        pdf.setTitle("Gauge R&R Study Report")
+        
+        # Function to handle page breaks dynamically
+        def check_page_space():
+            """Creates a new page when space runs out."""
+            nonlocal y_position
+            if y_position < 100:
+                pdf.showPage()
+                pdf.setFont("Helvetica", 12)
+                y_position = 750  # Reset position for the new page
+        
+        # Header
+        pdf.setFont("Helvetica-Bold", 16)
+        pdf.drawString(100, 750, "Gauge R&R Study Report")
+        pdf.setFont("Helvetica", 12)
+        pdf.drawString(100, 730, "------------------------------------")
+    
+        # Section: Summary of Results
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(100, 710, "Summary of Results")
+        pdf.setFont("Helvetica", 12)
+        
+        summary_text = self.get_report_summary()  # Ensure the full summary is used
+        y_position = 690
+        
+        for line in summary_text.split("\n"):
+            pdf.drawString(100, y_position, line)
+            y_position -= 20  # Spacing for readability
+            check_page_space()  # Ensure multi-page handling
+        
+        # Section: Statistical Results
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(100, y_position - 20, "Statistical Results")
+        pdf.setFont("Helvetica", 12)
+        
+        y_position -= 40
+        
+        for row in range(self.results_table.rowCount()):
+            param = self.results_table.item(row, 0).text()
+            value = self.results_table.item(row, 1).text()
+            lower = self.results_table.item(row, 2).text()
+            upper = self.results_table.item(row, 3).text()
+            
+            pdf.drawString(100, y_position, f"{param}: {value} (95% CI: {lower} - {upper})")
+            y_position -= 20
+            check_page_space()  # Ensure multi-page handling
+        
+        # Section: XAI Interpretations
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(100, y_position - 20, "XAI Interpretation")
+        pdf.setFont("Helvetica", 12)
+    
+        xai_summary = self.get_xai_summary() if hasattr(self, 'get_xai_summary') else "No XAI interpretation available."
+        y_position -= 40
+        
+        for explanation in xai_summary.split("\n"):
+            pdf.drawString(100, y_position, explanation)
+            y_position -= 20
+            check_page_space()  # Ensure multi-page handling
+        
+        # Ensure enough spacing before inserting plots
+        y_position -= 100
+        check_page_space()  # Prevent overlap before visualization section
+    
+        # Generate a SINGLE temporary file for the full figure
+        temp_img = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
+        self.figure.savefig(temp_img.name, format="png")  # Save the full figure once
+        
+        # Section: Visualizations
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(100, y_position - 40, "Visualizations")
+        
+        y_position -= 60
+        check_page_space()  # Ensure proper spacing before adding image
+    
+        # Insert the single saved plot into the PDF
+        pdf.drawImage(ImageReader(temp_img.name), 100, y_position, width=400, height=250)
+        y_position -= 280  # Increase gap after plot to prevent text overlap
+        check_page_space()  # Ensure multi-page handling
+    
+        # Save and cleanup
+        pdf.save()
+        os.remove(temp_img.name)  # Delete the single temporary plot file
+    
+        self.log_window.append(f"PDF report successfully saved to: {file_path}")
+
+    def explain_results(self):
+        """Opens an XAI-window explaining Gauge R&R results with parameter and plot analysis."""
+    
+        # Create an interactive explanation window
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Gauge R&R Explanation")
+        dialog.setGeometry(300, 300, 850, 600)
+    
+        layout = QVBoxLayout()
+    
+        # Generate meaningful insights based on parameter values
+        insights = "**Gauge R&R Measurement System Analysis**\n\n"
+    
+        if self.results_table.rowCount() > 0:
+            for row in range(self.results_table.rowCount()):
+                param = self.results_table.item(row, 0).text()
+                value = float(self.results_table.item(row, 1).text()) if self.results_table.item(row, 1).text().replace('.', '', 1).isdigit() else None
+                
+                # Interpret Parameter Values
+                if param == "PTR":
+                    insights += f"🟢 PTR: {value} → **Higher values (>0.000108) indicate better process capability**.\n"
+                elif param == "SNR":
+                    insights += f"🔵 SNR: {value} → **High SNR (>0.000220) means good measurement reliability**.\n"
+                elif param == "Cp":
+                    insights += f"🟢 Cp: {value} → **Higher Cp suggests better process control.**\n"
+                elif param == "Tolerance Ratio":
+                    insights += f"🔴 Tolerance Ratio: {value} → **High values (>0.5) suggest excessive measurement variation.**\n"
+                elif param == "β Index":
+                    insights += f"🟡 Beta Index: {value} → **Low beta index indicates possible bias or instability.**\n"
+                elif param == "δ Index":
+                    insights += f"🟠 Delta Index: {value} → **Higher values (>1.0) mean greater inconsistency across trials.**\n"
+    
+            insights += "\n**Key Takeaways:**\n"
+            insights += "✅ A high PTR and SNR suggests a stable measurement system.\n"
+            insights += "⚠ A high Tolerance Ratio means adjustments may be necessary to improve repeatability.\n"
+            insights += "🔎 Review Beta & Delta Index to assess bias and inconsistency across trials.\n"
+    
+        else:
+            insights += "⚠ No computed results found. Please run an analysis first.\n"
+    
+        # Analyze Plots & Provide Explanations
+        insights += "\n**Plot Analysis:**\n"
+    
+        # Box Plot Interpretation
+        insights += "📊 **Box Plot**: Shows measurement consistency across parts. Large variations indicate inconsistency in repeatability.\n"
+        
+        # Histogram Interpretation
+        insights += "📈 **Histogram**: Displays measurement distribution. A heavily skewed histogram suggests bias in measurements.\n"
+    
+        # Variance Contribution Interpretation
+        insights += "🔍 **Variance Contribution Chart**: Highlights whether part variation, measurement variation, or repeatability contributes most to total variability.\n"
+    
+        # PTR-SNR Sector Classification Interpretation
+        insights += "🚦 **PTR-SNR Classification**: Classifies measurement reliability into Green (Good), Yellow (Moderate), or Red (Poor).\n"
+        
+        explanation_box = QTextEdit()
+        explanation_box.setPlainText(insights)
+        explanation_box.setReadOnly(True)
+        layout.addWidget(explanation_box)
+    
+        dialog.setLayout(layout)
+        dialog.exec()
+
+    def run_analysis(self):
+        """Performs Gauge R&R calculations, updates UI, and generates visualizations."""
+
+        # Clear log windows before starting analysis
+        self.log_window.clear()
+        self.error_log_window.clear()
+        
+        # Trigger CSV validation first
+        self.validate_csv()
+        
+        # If validation fails, return immediately to prevent incorrect analysis
+        if "Error" in self.error_log_window.toPlainText():
+            self.log_window.append("Analysis aborted due to validation errors.")
+            return
+        
+        # Proceed with analysis only if validation passes
+        self.log_window.append("Validation passed. Starting analysis...")
+        
+        # Initial Progress
+        self.progress_bar.setValue(10)
+        self.progress_bar.setFormat("Loading Data: 10%")
+        self.log_window.append("Starting analysis...")
+    
+        df = self.get_table_data(self.data_preview_table)
+        if df.empty:
+            self.error_log_window.append("No data available for analysis.")
+            self.progress_bar.setValue(0)
+            self.progress_bar.setFormat("Error: No Data")
+            return
+    
+        # Compute statistical parameters
+        self.progress_bar.setValue(30)
+        self.progress_bar.setFormat("Computing Statistics: 30%")
+        mu_y = round(df["Measured Value"].mean(), 3)
+        # Determine study type from GUI
+        is_one_factor = self.one_factor_rb.isChecked()
+        # Adjust thresholds dynamically based on study type
+        if is_one_factor:
+            green_threshold_ptr = 0.000080  # Lower threshold for one-factor studies
+            green_threshold_snr = 0.000180
+            yellow_threshold_ptr = 0.000078
+            yellow_threshold_snr = 0.000160
+            red_threshold_ptr = 0.000076
+            red_threshold_snr = 0.000140
+        else:
+            green_threshold_ptr = 0.000108  # Default for two-factor
+            green_threshold_snr = 0.000220
+            yellow_threshold_ptr = 0.000106
+            yellow_threshold_snr = 0.000200
+            red_threshold_ptr = 0.000105
+            red_threshold_snr = 0.000195
+        
+        # Compute statistical parameters based on study type
+        if is_one_factor:
+            gamma_p = 0  # No part variance in one-factor study
+            gamma_m = max(df["Measured Value"].var(), 1e-6)  # Measurement variance across all trials
+        else:
+            gamma_p = max(df.groupby("Part")["Measured Value"].var().mean(), 1e-6)
+            gamma_m = max(df.groupby("Operator")["Measured Value"].var().mean(), 1e-6)
+        
+        gamma_r = max(df.groupby("Trial")["Measured Value"].var().mean(), 1e-6)
+        # Debugging print statements to verify values before computing SNR-PTR
+        print(f"Gamma P (Part Variance): {gamma_p}")
+        print(f"Gamma M (Measurement Variance): {gamma_m}")
+        print(f"Gamma R (Repeatability Variance): {gamma_r}")
+
+        # Normalize variance components to prevent Beta collapse
+        normalized_gamma_p = gamma_p / (gamma_p + gamma_m)
+        normalized_gamma_m = gamma_m / (gamma_p + gamma_m)
+        ptr = round(gamma_m / (gamma_m + gamma_r), 8) if is_one_factor else round(gamma_p / (gamma_p + gamma_m + gamma_r), 8)
+        snr = round(gamma_m / gamma_r, 8) if is_one_factor else round(gamma_p / gamma_m, 8)
+        cp = round(1.33 * (ptr ** 0.5), 3)
+        tolerance_ratio = round(gamma_m / (gamma_p + gamma_m + gamma_r), 3)
+        # Set GPQ parameters
+        max_iterations = 100
+        tolerance = 0.0001  # Convergence threshold
+        beta_prev, delta_prev = 0, 0
+        
+        for iteration in range(max_iterations):
+            # Sample from Bivariate Normal Distribution
+            gpq_samples = np.random.multivariate_normal([max(gamma_p, 1e-6), max(gamma_m, 1e-6)], 
+                                                        [[max(gamma_p, 1e-6), 0], [0, max(gamma_m, 1e-6)]], size=500)
+            sampled_gamma_p, sampled_gamma_m = np.abs(gpq_samples[:, 0]), np.abs(gpq_samples[:, 1])  # Ensure positive values
+            print(f"Sampled Gamma P (Part Variance Samples): {sampled_gamma_p[:10]}")
+            print(f"Sampled Gamma M (Measurement Variance Samples): {sampled_gamma_m[:10]}")
+
+        
+            # Compute Beta & Delta Indices iteratively
+            beta_index = round(np.mean(np.abs(sampled_gamma_p) / np.maximum(sampled_gamma_m, 1e-6)) * normalized_gamma_p, 3)
+            delta_index = round(np.mean(np.abs(sampled_gamma_m) / np.maximum(gamma_r, 1e-6)), 3)
+        
+            # Check convergence
+            if abs(beta_index - beta_prev) < tolerance and abs(delta_index - delta_prev) < tolerance:
+                break  # Stop iterations if values stabilize
+        
+            # Update previous values
+            beta_prev, delta_prev = beta_index, delta_index
+        
+        # Update Results Table with GPQ-Computed Indices
+        self.results_table.setItem(7, 1, QTableWidgetItem(f"{delta_index:.3f}"))
+        self.results_table.setItem(8, 1, QTableWidgetItem(f"{beta_index:.3f}"))
+        
+        self.log_window.append(f"GPQ Completed: Beta Index = {beta_index}, Delta Index = {delta_index}")
+    
+        # Calculate 95% confidence intervals (upper & lower bounds)
+        ci_95 = lambda x: st.norm.interval(0.95, loc=x, scale=round(np.std(df["Measured Value"]) / np.sqrt(len(df)), 3))
+        mu_y_l, mu_y_u = ci_95(mu_y)
+        gamma_p_l, gamma_p_u = ci_95(gamma_p)
+        gamma_m_l, gamma_m_u = ci_95(gamma_m)
+        gamma_r_l, gamma_r_u = ci_95(gamma_r)
+        ptr_l, ptr_u = ci_95(ptr)
+        snr_l, snr_u = ci_95(snr)
+        cp_l, cp_u = ci_95(cp)
+        tolerance_ratio_l, tolerance_ratio_u = ci_95(tolerance_ratio)
+    
+        self.log_window.append("Computed statistical parameters and confidence intervals.")
+    
+        # Populate results table with bounds
+        self.progress_bar.setValue(60)
+        self.progress_bar.setFormat("Updating Results: 60%")
+        results = [
+            ("Mean (μY)", mu_y, mu_y_l, mu_y_u),
+            ("Part Variance (γP)", gamma_p, gamma_p_l, gamma_p_u),
+            ("Measurement Variance (γM)", gamma_m, gamma_m_l, gamma_m_u),
+            ("Repeatability Variance (γR)", gamma_r, gamma_r_l, gamma_r_u),
+            ("PTR", ptr, ptr_l, ptr_u),
+            ("SNR", snr, snr_l, snr_u),
+            ("Cp", cp, cp_l, cp_u),
+            ("δ Index", delta_index, "-", "-"),
+            ("β Index", beta_index, "-", "-"),
+            ("Tolerance Ratio", tolerance_ratio, tolerance_ratio_l, tolerance_ratio_u),
+        ]
+        
+        self.results_table.setRowCount(len(results))
+        for i, (param, value, l_bound, u_bound) in enumerate(results):
+            self.results_table.setItem(i, 0, QTableWidgetItem(param))
+            self.results_table.setItem(i, 1, QTableWidgetItem(f"{value:.3f}"))
+            self.results_table.setItem(i, 2, QTableWidgetItem(f"{l_bound:.3f}" if l_bound != "-" else "-"))
+            self.results_table.setItem(i, 3, QTableWidgetItem(f"{u_bound:.3f}" if u_bound != "-" else "-"))
+    
+        self.log_window.append("Updated parameter results table with bounds.")
+    
+        # Populate Overall Results
+        self.overall_results_list.clear()
+        overall_summary = [
+            f"Mean Value: {mu_y:.3f}",
+            f"Total Variance: {(gamma_p + gamma_m + gamma_r):.3f}",
+            f"SNR: {snr:.3f} (95% CI: {snr_l:.3f} - {snr_u:.3f})",
+            f"Capability Index Cp: {cp:.3f} (95% CI: {cp_l:.3f} - {cp_u:.3f})",
+            f"Tolerance Ratio: {tolerance_ratio:.3f} (95% CI: {tolerance_ratio_l:.3f} - {tolerance_ratio_u:.3f})"
+        ]
+        for item in overall_summary:
+            self.overall_results_list.addItem(item)
+    
+        self.log_window.append("Updated overall results.")
+    
+        # Generate visualizations
+        self.progress_bar.setValue(80)
+        self.progress_bar.setFormat("Generating Plots: 80%")
+        self.figure.clear()
+        self.figure.subplots_adjust(hspace=2.0, wspace=1.2)
+        
+        # Box Plots
+        ax1 = self.figure.add_subplot(321)
+        ax1.boxplot(df["Measured Value"])
+        ax1.set_title("Repeatability Across Parts")
+        
+        # Histogram
+        ax2 = self.figure.add_subplot(322)
+        ax2.hist(df["Measured Value"], bins=10, color="skyblue", edgecolor="black")
+        ax2.set_title("Distribution of Measured Values")
+        
+        # Improved Variance Contribution Chart
+        ax3 = self.figure.add_subplot(323)
+        categories = ["Part", "Measurement", "Repeatability"]
+        values = [gamma_p, gamma_m, gamma_r]
+        ax3.bar(categories, values, color=["blue", "orange", "green"])
+        ax3.set_title("Variance Contribution", fontsize=12)
+        ax3.set_ylabel("Variance Value")
+        ax3.set_xticks(range(len(categories)))
+        ax3.set_xticklabels(categories, fontsize=10, rotation=25)
+        
+        # Improved PTR vs SNR Plot with Explicit Region Ranges
+        ax4 = self.figure.add_subplot(324)
+        ptr_values = np.linspace(0, ptr * 1.1, 100)
+        snr_values = np.linspace(0, snr * 1.1, 100)
+        
+        # Define sector thresholds dynamically based on study type
+        if is_one_factor:
+            green_threshold_ptr = 0.000080
+            green_threshold_snr = 0.000180
+            yellow_threshold_ptr = 0.000078
+            yellow_threshold_snr = 0.000160
+            red_threshold_ptr = 0.000076
+            red_threshold_snr = 0.000140
+        else:
+            green_threshold_ptr = 0.000108
+            green_threshold_snr = 0.000220
+            yellow_threshold_ptr = 0.000106
+            yellow_threshold_snr = 0.000200
+            red_threshold_ptr = 0.000105
+            red_threshold_snr = 0.000195
+        
+        # Apply adjusted thresholds to sector classification
+        green_mask = (ptr_values > green_threshold_ptr) & (snr_values > green_threshold_snr)
+        yellow_mask = (ptr_values >= yellow_threshold_ptr) & (ptr_values <= green_threshold_ptr) & (snr_values >= yellow_threshold_snr) & (snr_values <= green_threshold_snr)
+        red_mask = (ptr_values < red_threshold_ptr) & (snr_values < red_threshold_snr)
+        
+        ax4.scatter(ptr_values[green_mask], snr_values[green_mask], color="green", alpha=0.3, label="Green Zone")
+        ax4.scatter(ptr_values[yellow_mask], snr_values[yellow_mask], color="yellow", alpha=0.3, label="Yellow Zone")
+        ax4.scatter(ptr_values[red_mask], snr_values[red_mask], color="red", alpha=0.3, label="Red Zone")
+        
+        # Highlight actual PTR/SNR position dynamically
+        region = "Green" if ptr > green_threshold_ptr and snr > green_threshold_snr else \
+                 "Yellow" if yellow_threshold_ptr <= ptr <= green_threshold_ptr and yellow_threshold_snr <= snr <= green_threshold_snr else \
+                 "Red"
+        
+        ax4.scatter(ptr, snr, color="black", edgecolor="white", s=30, label=f"Actual PTR/SNR ({region} Zone)")
+        ax4.set_xlabel("PTR")
+        ax4.set_ylabel("SNR")
+        ax4.set_title("PTR vs SNR Sectors")
+        #ax4.legend(loc="upper center", bbox_to_anchor=(0.5, -0.7), frameon=False, fontsize=10)
+        
+        # Store Beta & Delta Index changes during GPQ iterations
+        beta_iterations = []
+        delta_iterations = []
+        
+        max_iterations = 100
+        tolerance = 0.0001
+        beta_prev, delta_prev = 0, 0
+        
+        for iteration in range(max_iterations):
+            # Sample from Bivariate Normal Distribution
+            gpq_samples = np.random.multivariate_normal([gamma_p, gamma_m], [[gamma_p, 0], [0, gamma_m]], size=500)
+            sampled_gamma_p, sampled_gamma_m = gpq_samples[:, 0], gpq_samples[:, 1]
+        
+            # Compute Beta & Delta Indices iteratively
+            beta_index = round(np.mean(sampled_gamma_p / sampled_gamma_m), 3)
+            delta_index = round(np.mean(sampled_gamma_m / gamma_r), 3)
+        
+            beta_iterations.append(beta_index)
+            delta_iterations.append(delta_index)
+        
+            # Check convergence
+            if abs(beta_index - beta_prev) < tolerance and abs(delta_index - delta_prev) < tolerance:
+                break  # Stop iterations if values stabilize
+        
+            beta_prev, delta_prev = beta_index, delta_index
+        
+        # Update Beta & Delta Index Plots with Iterative Data
+        ax5 = self.figure.add_subplot(325)
+        ax5.plot(range(len(beta_iterations)), beta_iterations, label="Beta Index", color="blue")
+        ax5.set_title("Beta Index vs GPQ-Iteration")
+        # ax5.legend()
+        
+        ax6 = self.figure.add_subplot(326)
+        ax6.plot(range(len(delta_iterations)), delta_iterations, label="Delta Index", color="green")
+        ax6.set_title("Delta Index vs GPQ-Iteration")
+        # ax6.legend()
+
+
+        # Insert the overall legend
+        ax_legend = self.figure.add_subplot(111, frameon=False)  # Create a dedicated subplot for the legend
+        ax_legend.axis('off')  # Hide axes to avoid clutter
+
+        # Create a global legend for all subplot sections
+        handles = [
+            Line2D([0], [0], marker='o', color='white', markerfacecolor='green', markersize=8, label="PTR > 0.000108, SNR > 0.000220"),
+            Line2D([0], [0], marker='o', color='white', markerfacecolor='yellow', markersize=8, label="0.000106 ≤ PTR ≤ 0.000108, 0.000200 ≤ SNR ≤ 0.000220"),
+            Line2D([0], [0], marker='o', color='white', markerfacecolor='red', markersize=8, label="PTR < 0.000106, SNR < 0.000200"),
+        ]
+        
+        ax_legend.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.84), ncol=1, fontsize=10, frameon=True)
+
+        # Refresh the main visualization
+        self.figure.tight_layout()
+        self.canvas.draw()
+        self.log_window.append("Generated visualizations successfully.")
+        self.progress_bar.setValue(100)
+        self.progress_bar.setFormat("Analysis Complete: 100%")
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = GaugeRRGUI()
+    window.show()
+    sys.exit(app.exec())

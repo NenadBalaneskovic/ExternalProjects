@@ -1,0 +1,11 @@
+Parameter,Value,Lower Bound,Upper Bound
+Mean (μY),128.239,118.729,137.749
+Part Variance (γP),24052.355,24042.845,24061.865
+Measurement Variance (γM),23965.946,23956.437,23975.456
+Repeatability Variance (γR),24141.108,24131.598,24150.618
+PTR,0.333,-9.176,9.843
+SNR,1.004,-8.506,10.513
+Cp,0.768,-8.742,10.278
+δ Index,0.993,-,-
+β Index,0.503,-,-
+Tolerance Ratio,0.332,-9.178,9.842
