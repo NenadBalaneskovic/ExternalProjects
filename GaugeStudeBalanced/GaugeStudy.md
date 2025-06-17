@@ -463,7 +463,7 @@ This **two-factor Gauge R&R study** analyzes **repeatability and reproducibility
 - **Confidence intervals reflect statistical uncertainty from cleaned data**, preventing errors from missing values.
 
 ✅ **All stored results can be accessed via the following links:**  
-1. A csv file of extracted Gauge Study parameters.
+1. A ![csv file](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of extracted Gauge Study parameters.
 2. A pdf report of obtained Gauge Study results.
 
 # 8. 📚 References
