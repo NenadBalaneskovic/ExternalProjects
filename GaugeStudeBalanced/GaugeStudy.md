@@ -364,7 +364,7 @@ This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:
 
 ## 7.1 Case 1: One-factor Gauge Study
 
-![One-factor balanced Gauge Study results]([path/to/your/plot.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c76ac6c42d997b43a76f073fb4bf4bfc122d9adc/GaugeStudeBalanced/one_factor_gauge_green.PNG)) 
+![One-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c76ac6c42d997b43a76f073fb4bf4bfc122d9adc/GaugeStudeBalanced/one_factor_gauge_green.PNG)
 
 
 ### 📊 **Interpretation of the One-Factor Gauge Study Result**
