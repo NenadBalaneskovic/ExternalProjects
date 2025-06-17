@@ -1,4 +1,4 @@
-# 1. 🚀 Project Introduction: Adaptive Denoising Framework
+# 1. 🚀 Project Introduction: Balanced Gauge Study Analysis
 
 ## Objective  
 The purpose of a Gauge Study is to conduct a measurement system capability study that should,
