@@ -13,7 +13,7 @@ arising from different operators (i.e. experimentalists) or devices.
 This project aims at designing a PyQt-GUI that would support users in 
 **generating balanced one-factor and two-factor Gauge Studies** from well-defined csv input 
 data sets containing measurements recorded via the measurement system under consideration 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).
 
 
 # 2. 📏 **Balanced Gauge Studies (One-Factor & Two-Factor)**  
