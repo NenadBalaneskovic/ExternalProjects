@@ -411,7 +411,7 @@ Overall, this Gauge R&R result suggests that **the measurement system is reliabl
 
 ## 7.2 Case 2: One factor Gauge Study with corrupt and/or missing measurement entries 
 
-![Placeholder for Plot](path/to/your/plot.png)  
+![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)  
 
 ### 📊 **Interpretation of the Two-Factor Gauge Study Result & Handling of Missing Data**  
 
