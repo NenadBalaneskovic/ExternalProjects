@@ -353,7 +353,8 @@ delta_index = round(np.mean(sampled_gamma_m / gamma_r), 3)
 ---  
 
 # 6. 🎯 **Final Thoughts**
-This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:
+This Gauge R&R GUI **integrates advanced statistical concepts**, ensuring:  
+
 ✅ **Accurate Measurement System Evaluation**  
 ✅ **Precision Metrics & Variability Analysis**  
 ✅ **Clear Graphical Representations & Automated Reports**  
