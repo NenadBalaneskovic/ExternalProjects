@@ -557,7 +557,7 @@ $$
 ✅ **Used to compute option prices via backward induction**  
 
 ---
-## Chapter 6: EMMs and American Options in Mult-Period CRR-trees
+## Chapter 6: EMMs and American Options in Multi-Period CRR-trees
 
 ### 🚀 **Extending Equivalent Martingale Measures to American Options & Multi-Period Trees**
 
