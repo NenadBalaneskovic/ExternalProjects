@@ -42,20 +42,20 @@ Gauge R&R (Repeatability & Reproducibility) studies provide:
 
 #### **Mathematical Model**  
 Let:  
-- \( \gamma_m \) = Measurement variance  
-- \( \gamma_r \) = Repeatability variance (operator-based)  
+- $$\( \gamma_m \)$$ = Measurement variance  
+- $$\( \gamma_r \)$$ = Repeatability variance (operator-based)  
 
 **Computed Parameters:**  
 - **PTR (Precision-to-Tolerance Ratio)**:  
-  \[
+  $$\[
   PTR = \frac{\gamma_m}{\gamma_m + \gamma_r}
-  \]
+  \]$$
   - Higher values indicate better **measurement precision**.  
 
 - **SNR (Signal-to-Noise Ratio):**  
-  \[
+  $$\[
   SNR = \frac{\gamma_m}{\gamma_r}
-  \]
+  \]$$
   - High SNR suggests that **measurement signal is stable**, while low SNR implies **poor repeatability**.  
 
 
@@ -67,21 +67,21 @@ Let:
 
 #### **Mathematical Model**  
 Let:  
-- \( \gamma_p \) = Part variance  
-- \( \gamma_m \) = Measurement variance  
-- \( \gamma_r \) = Repeatability variance  
+- $$\( \gamma_p \)$$ = Part variance  
+- $$\( \gamma_m \)$$ = Measurement variance  
+- $$\( \gamma_r \)$$ = Repeatability variance  
 
 **Computed Parameters:**  
 - **PTR for Two-Factor Studies**:  
-  \[
+  $$\[
   PTR = \frac{\gamma_p}{\gamma_p + \gamma_m + \gamma_r}
-  \]
+  \]$$
   - A high value indicates that **part variability dominates measurement variance**, suggesting part-specific influences.  
 
 - **SNR for Two-Factor Studies:**  
-  \[
+  $$\[
   SNR = \frac{\gamma_p}{\gamma_m}
-  \]
+  \]$$
   - Determines **whether part variations significantly affect measurement stability**.  
 
 
@@ -198,75 +198,74 @@ This **Gauge R&R GUI** performs **repeatability & reproducibility analysis**, st
 
 ### **Mean Measurement Value (`mu_Y`)**  
 Computed as:  
-\[
+$$\[
 \mu_Y = \frac{1}{N} \sum_{i=1}^{N} X_i
-\]  
-where \( X_i \) are **measurement values**, and \( N \) is the total number of trials.
+\]$$  
+where $$\( X_i \)$$ are **measurement values**, and $$\( N \)$$ is the total number of trials.
 
 ### **Variance Components (`gamma_p`, `gamma_m`, `gamma_r`)**  
 Defines the **three major sources of measurement variability**:  
-- **Part Variance** \( \gamma_p \) → If study is two-factor:  
-  \[
-  \gamma_p = \max \left( \text{Var}(\text{Part}) \right), \epsilon \right)
-  \]
-- **Measurement Variance** \( \gamma_m \) → Estimated from all measurement trials:  
-  \[
+- **Part Variance** \( $$\gamma_p$$ \) → If study is two-factor:
+ 
+  $$\[\gamma_p = \max \left( \text{Var}(\text{Part}), \epsilon \right)\]$$
+- **Measurement Variance** $$\( \gamma_m \)$$ → Estimated from all measurement trials:  
+  $$\[
   \gamma_m = \max \left( \text{Var}(\text{Measured Value}), \epsilon \right)
-  \]
-- **Repeatability Variance** \( \gamma_r \) → Determined by trial differences:  
-  \[
+  \]$$
+- **Repeatability Variance** $$\( \gamma_r \)$$ → Determined by trial differences:  
+  $$\[
   \gamma_r = \max \left( \text{Var}(\text{Trial}), \epsilon \right)
-  \]
+  \]$$
 
 **Note:**  
-- If **one-factor study**, **part variance is ignored** \( (\gamma_p = 0) \).  
-- \( \epsilon = 1e^{-6} \) ensures no zero variance (avoiding divide-by-zero errors).  
+- If **one-factor study**, **part variance is ignored** $$\( (\gamma_p = 0) \)$$.  
+- $$\( \epsilon = 1e^{-6} \)$$ ensures no zero variance (avoiding divide-by-zero errors).  
 
 
 ## 📈 **Gauge Precision Metrics**  
 
 ### **PTR (Precision-to-Tolerance Ratio)**  
 Evaluates **measurement precision compared to overall variance**:  
-\[
+$$\[
 PTR = \frac{\gamma_m}{\gamma_m + \gamma_r}
-\]  
+\]$$  
 - **Higher PTR** → Measurement system is **highly precise**.  
 - **Lower PTR** → Measurement noise affects results significantly.  
 
 **Two-Factor Variation:**  
-\[
+$$\[
 PTR = \frac{\gamma_p}{\gamma_p + \gamma_m + \gamma_r}
-\]  
+\]$$  
 where **part variability** influences measurement reliability.
 
 
 ### **SNR (Signal-to-Noise Ratio)**  
 Measures the **stability of measurement precision** vs repeatability noise:  
-\[
+$$\[
 SNR = \frac{\gamma_m}{\gamma_r}
-\]
+\]$$
 - **High SNR** → Repeatability variance is small, and measurement precision is stable.  
 - **Low SNR** → System suffers from unreliable repeatability.  
 
 **Two-Factor Variation:**  
-\[
+$$\[
 SNR = \frac{\gamma_p}{\gamma_m}
-\]
+\]$$
 showing **how much part variation contributes to system precision**.
 
 
 ### **Cp (Process Capability Index)**  
-\[
+$$\[
 Cp = 1.33 \times \sqrt{PTR}
-\]
+\]$$
 - **Used in Six Sigma methodologies** to evaluate **system efficiency**.  
 - **Higher Cp** → Measurement system operates within acceptable error margins.  
 
 
 ### **Tolerance Ratio**  
-\[
+$$\[
 Tolerance Ratio = \frac{\gamma_m}{\gamma_p + \gamma_m + \gamma_r}
-\]
+\]$$
 - **If too high** → Suggests measurement system has **excessive variation** impacting reliability.  
 - Helps determine if a **more robust measurement method is needed**.  
 
