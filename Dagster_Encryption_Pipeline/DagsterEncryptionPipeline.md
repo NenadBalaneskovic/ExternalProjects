@@ -571,8 +571,6 @@ if __name__ == "__main__":
 
 Here’s an example of how one could use the encryption pipeline from a terminal, along with a demonstration of what happens at each step using mock data:
 
----
-
 #### ✅ Step 1: Save the Script
 
 Save your pipeline code into a Python file, for example:
@@ -580,8 +578,6 @@ Save your pipeline code into a Python file, for example:
 ```
 secure_pipeline.py
 ```
-
----
 
 #### ✅ Step 2: Run It From CLI
 
@@ -601,15 +597,11 @@ This triggers:
 
 4. **Digital Signing** of the message (optional — defined but not yet called)
 
----
-
 #### 🔐 Example Output (simplified)
 
 ```plaintext
 Encrypted Text: afcb0192b8eaeffa1e3435a4da02c976f65411a7f71af5a56ce10833e6785021
 ```
-
----
 
 #### 💡 Notes for Extension
 
