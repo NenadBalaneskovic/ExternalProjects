@@ -903,7 +903,7 @@ And our UI will be live at [http://localhost:3000](http://localhost:3000) ðŸŽ›ï¸
 ### Py and yaml pipeline files
 
 1.  ![py_files](https://github.com/NenadBalaneskovic/ExternalProjects/tree/d0e977d295dcc8cf9caa9ed039205c8bd0662f78/Dagster_Encryption_Pipeline/root/pipelines) of pythonic scripts.
-2.  ![py_files](https://github.com/NenadBalaneskovic/ExternalProjects/tree/d0e977d295dcc8cf9caa9ed039205c8bd0662f78/Dagster_Encryption_Pipeline/root/pipelines) of job configuration scripts.
+2.  ![py_files](https://github.com/NenadBalaneskovic/ExternalProjects/tree/3ef377e5eb7e797c42979b67f71ab24b99d5595d/Dagster_Encryption_Pipeline/root/dagster_pipelines) of job configuration scripts.
 3.  ![yaml_files](https://github.com/NenadBalaneskovic/ExternalProjects/tree/f59ec177c4fc242e0987c6cee13339299859635d/Dagster_Encryption_Pipeline/root) of dagster job configurations.
 
 ## 5.3 Step 3: Generate public and private keys
