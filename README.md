@@ -94,7 +94,7 @@ data sets containing measurements recorded via the measurement system under cons
 - ### 10. **Dagster-driven Encryption-Decryption Pipeline (Pycryptodome) - Jun 2025**
   #### Abstract:
   The purpose of a Dagster Encryption Pipeline is to test and showcase dagsters DAG-chaining capabilities,
-resulting in a self-contained encryption-decryption pipeline which, 1) connects different encryption methods
+resulting in a self-contained encryption-decryption pipeline which 1) connects different encryption methods
 of  a plain text prior to 2) decrypting (and thus reversing the performed chain of encryption operations 
 performed on an) encrypted message.
 This project aims at designing a encryption-decryption pipeline via Dagsterr's website that would support users in 
