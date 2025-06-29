@@ -18,7 +18,14 @@ Transportation Statistics (BTS) containing entries from 1996 to 2024, employing 
   
   [![Boarder Crossings_DataSet](https://img.shields.io/badge/Boarder_Crossings_DataSet%20(SARIMAX_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Forecasting/README.md)
 
-- ### 3. **Stock Price DataSet (SARIMAX Stock Forecasting) - Mar 2025**  
+- ### 3. **Stock Price DataSet (SARIMAX Stock Forecasting) - Mar 2025**
+  ### Abstract:
+  This project attempts at **forecasting the temporal stock prices evolution** based on a ficticious csv file containing daily stock prices by means of Akima interpolated stock price data subject to SARIMAX and
+critical point modeling implemented via the physical theory of critical phenomena (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Akima_Forecasting/README.md#-references)
+ 1 - 3 below). It introduces pythonic functions for Akima interpolation and critical point extraction from stock price time series, which allow the user to characterise critical inflection points of
+ stock price evolution and aid the customized SARIMAX forecasting functions in reliably estimating volatility ranges of unknown stock price changes. The project also compares the regular customized Pythonic SARIMAX 
+ functionality with its batched version and delves into its conceptual intricacies.
+  
   [![Stock_Price_DataSet](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1d5b93d956f277d937ef2aa66841608f5b60ba7b/SARIMAX_Akima_Forecasting/README.md)
 
 - ### 4. **Sentiment Analysis DataSet (NLTK, SpaCy, BeautifulSoup) - Mar 2025**  
