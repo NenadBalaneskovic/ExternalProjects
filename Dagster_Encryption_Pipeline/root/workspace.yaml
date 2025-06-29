@@ -1,0 +1,5 @@
+load_from:
+  - python_file:
+      relative_path: dagster_pipelines/jobs.py
+      working_directory: .
+
