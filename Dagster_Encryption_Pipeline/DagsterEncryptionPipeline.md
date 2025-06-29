@@ -35,18 +35,21 @@ Let us proceed layer by layer — from old-school ciphers to modern cryptographi
 
 **Mathematical Concept**:
 The Vigenère cipher is a polyalphabetic substitution cipher that shifts each character by an amount determined by a repeating keyword. Given:
-- plaintext letter \( P_i \)
-- keyword letter \( K_i \)
-- alphabet size \( 26 \)
+- plaintext letter $$\( P_i \)$$
+- keyword letter $$\( K_i \)$$
+- alphabet size $$\( 26 \)$$
 
-The encryption function is:
-\[
+The encryption function is:  
+
+$$\[
 C_i = (P_i + K_i) \mod 26
-\]
-Decryption is simply:
-\[
+\]$$
+
+Decryption is simply:  
+
+$$\[
 P_i = (C_i - K_i + 26) \mod 26
-\]
+\]$$
 
 **Pythonic Implementation**:
 In your pipeline, this is done using `ord()` for character-to-index mapping and `cycle()` from `itertools` to repeat the key:
@@ -68,10 +71,11 @@ AES (Advanced Encryption Standard) is a symmetric-key block cipher based on the 
 - Uses 14 rounds for AES-256 (with 256-bit keys)
 - Each round involves byte substitution (S-box), row shifting, column mixing, and key addition
 
-CBC (Cipher Block Chaining) mode adds security by XOR’ing each block with the previous ciphertext block (with a unique IV for the first one):
-\[
+CBC (Cipher Block Chaining) mode adds security by XOR’ing each block with the previous ciphertext block (with a unique IV for the first one):  
+
+$$\[
 C_i = E_K(P_i \oplus C_{i-1})
-\]
+\]$$
 
 **Pythonic Application**:
 You're using `cryptography`'s `Cipher` object and PKCS7 padding to align with 128-bit blocks:
@@ -86,12 +90,13 @@ The AES logic is clean and leverages Python’s object-oriented cryptographic pr
 ### 🔑 RSA-OAEP
 
 **Mathematical Structure**:
-RSA encryption is built on the difficulty of factoring large numbers:
-\[
+RSA encryption is built on the difficulty of factoring large numbers:  
+
+$$\[
 C = M^e \mod n
 \quad \text{and} \quad
 M = C^d \mod n
-\]
+\]$$
 
 OAEP (Optimal Asymmetric Encryption Padding) adds a randomized mask to the message to prevent deterministic output:
 - Uses MGF1 (Mask Generation Function)
