@@ -31,6 +31,6 @@ This is a public folder containing some of my external Pythonic ML projects and 
  - ### 9. **Balanced Gauge Study Implementations (ANOVA) - Jun 2025**
    [![Balanced_Gauge_Study_Implementations](https://img.shields.io/badge/Gauge_Study_Implementations%20(ANOVA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/effb0dc46f8337d1581acc7b31683be826d72ec6/GaugeStudeBalanced/GaugeStudy.md)
 
-- ### 10. **Dagster-driven Encryption-Decryption Pipeline - Jun 2025**
+- ### 10. **Dagster-driven Encryption-Decryption Pipeline (Pycryptodome) - Jun 2025**
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
   
