@@ -973,8 +973,6 @@ Our UI will be live at [http://localhost:3000](http://localhost:3000) 🎛️
 
 Let us visualize how our encryption-decryption pipeline fits into Dagster’s elegant DAG (Directed Acyclic Graph) philosophy.
 
----
-
 ## 6.1 🔄 The DAG View of Our Crypto Pipeline
 
 Our Dagster job can be visualized as a simple, two-op DAG:
@@ -1011,8 +1009,6 @@ Our Dagster job can be visualized as a simple, two-op DAG:
     2. Uses the AES key + IV to decrypt the ciphertext into Vigenère text
     3. Applies Vigenère decryption to recover original plaintext
   - Output: restored message (string)
-
----
 
 ## 6.3 🌐 How Dagster Makes This Better
 
@@ -1063,8 +1059,6 @@ This project implements a modular, multi-layered encryption and decryption pipel
 - Educational tool for layered cryptography
 - Modular base for secure communication pipelines
 - Blueprint for adding encryption to ETL workflows or asset versioning
-
----
 
 ✅ **All stored results can be accessed via the following links:**  
 1. A ![csv file](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of extracted Gauge Study parameters.
