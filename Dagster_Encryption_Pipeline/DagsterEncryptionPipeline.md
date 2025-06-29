@@ -973,8 +973,8 @@ Our UI will be live at [http://localhost:3000](http://localhost:3000) 🎛️
 ### Screenshot 3 - Jobs page
 ![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9cbf952f17f23554b15ec3ae4120619c1af3585d/Dagster_Encryption_Pipeline/Dag3.PNG)
 
-### Screenshot 4
-![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+### Screenshot 4 - Deployment page
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5efb8c394e65a83b7c20d4a173456506196b2da8/Dagster_Encryption_Pipeline/Dag4.PNG)
 
 ### Screenshot 5
 ![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
