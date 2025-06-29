@@ -429,7 +429,7 @@ python decrypt_pipeline.py \
   --vkey lemon
 ``` 
 
-# 3. Elaborate Pythonic implementation of the encryption-decryption pipeline
+# 3. Elaborate Pythonic implementation of the encryption-decryption pipeline with dagster
 
 ## 3.1 Packages to be installed
 
