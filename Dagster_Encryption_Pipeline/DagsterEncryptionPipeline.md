@@ -1090,7 +1090,7 @@ This project implements a modular, multi-layered encryption and decryption pipel
 1. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/779ca00129a6071ac3c805f24fd5eac8ae045197/Dagster_Encryption_Pipeline/EncryptionPipeline.ipynb)
-3. [![Forecasting Report | English](https://img.shields.io/badge/GaugeStudy%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4e3ee63c691c9482f70fe836c43d6173f98cb53b/GaugeStudeBalanced/GaugeStudyReport.pdf) 
+3. [![Cryptographic_Pipeline Report | English](https://img.shields.io/badge/Cryptographic_Pipeline%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e4261e7930e59065cba1bcb0451e3c6fd1f861bc/Dagster_Encryption_Pipeline/DagsterEncryptionReport.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 6. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
