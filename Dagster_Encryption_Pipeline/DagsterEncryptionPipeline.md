@@ -1,4 +1,4 @@
-# 1. 🚀 Project Introduction: Balanced Gauge Study Analysis
+# 1. 🚀 Project Introduction: Dagster's Crypto-Pipeline
 
 ## Objective  
 The purpose of a Dagster Encryption Pipeline is to test and showcase dagsters DAG-chaining capabilities,
