@@ -898,7 +898,7 @@ And our UI will be live at [http://localhost:3000](http://localhost:3000) ðŸŽ›ï¸
 ## 5.2 Step 2: Generate appropriate folder structure
 
 ### Folder Structure for the entire Dagster pipeline
-![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e1edac977f90351853676cda5245466cf04cce6/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
 
 ### Py and yaml pipeline files
 
