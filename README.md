@@ -49,7 +49,13 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
   
   [![LLM_GAN_Chessboard_Image_DataSet](https://img.shields.io/badge/GAN_LLM_Chessboard_Image_DataSet%20(GAN_LLM)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md)
 
-- ### 6. **Real Estate DataSet (SOM, SARIMAX, RandomForest) - Apr 2025**  
+- ### 6. **Real Estate DataSet (SOM, SARIMAX, RandomForest) - Apr 2025**
+  #### Abstract:
+  This project involves a large data set related to real estate sales for a fictional town of Flower Hill. The aim is to combine the analysis of this data set with PyMongo,
+MLflow, Python (SARIMAX times series forecasting, classification, Neural Networks, Kohonen Maps) and DAG-like process organization of ML-tasks.
+Thus, we are blending data engineering, machine learning, forecasting, and process automation into a well-structured framework
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/RealEstateAnalysis#-references) 1 - 3 below).
+  
   [![Real_Estate_DataSet](https://img.shields.io/badge/Real_Estate_DataSet%20(SOM_SARIMAX_RandomForest)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/561392eb414897e5ef3e3a6b36b148ac2fc42153/RealEstateAnalysis/README.md)
 
 - ### 7. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy) - May 2025**  
