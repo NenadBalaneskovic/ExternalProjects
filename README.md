@@ -75,6 +75,20 @@ The aim is to combine the analysis of quantum circuits with their practical appl
   [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Qiskit_VQE_QAOA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a8f3db4a3eddc6dd88ea0840c118666e24bdf5bd/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
 
  - ### 9. **Balanced Gauge Study Implementations (ANOVA) - Jun 2025**
+   #### Abstract:
+   The purpose of a Gauge Study is to conduct a measurement system capability study that should,
+utilizing the ANOVA (analysis of variance) techniques, 1) determine the amount of variability
+in the collected data that may be caused by the measurement system, 2) isolate the sources of
+variability in the measurement system and 3) assess whether the measurement system is suitable
+for use in the broader application. A measurement system is regarded as suitable if it
+is repeatable and reproducible (R&R). Repeatability is variability of measurement data arising
+from the same unit (i.e. measurement device). Reproducibility is variability of measurement data
+arising from different operators (i.e. experimentalists) or devices.
+This project aims at designing a PyQt-GUI that would support users in 
+**generating balanced one-factor and two-factor Gauge Studies** from well-defined csv input 
+data sets containing measurements recorded via the measurement system under consideration 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).  
+
    [![Balanced_Gauge_Study_Implementations](https://img.shields.io/badge/Gauge_Study_Implementations%20(ANOVA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/effb0dc46f8337d1581acc7b31683be826d72ec6/GaugeStudeBalanced/GaugeStudy.md)
 
 - ### 10. **Dagster-driven Encryption-Decryption Pipeline (Pycryptodome) - Jun 2025**
