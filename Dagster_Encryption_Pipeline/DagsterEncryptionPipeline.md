@@ -989,7 +989,7 @@ Our UI will be live at [http://localhost:3000](http://localhost:3000) 🎛️
 ![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/37ec15e63294e59a45483a8999ce9e3325fe3f10/Dagster_Encryption_Pipeline/Dag8.PNG)
 
 ### Screenshot 9 - Final report of a successfully terminated dagster run
-![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/49b8f002fe5a08306a9ff94baa5262eadbfa047c/Dagster_Encryption_Pipeline/Dag9.PNG)
 
 
 # 6. Resume - dagster's visual tour
