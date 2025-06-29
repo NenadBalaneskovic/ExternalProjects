@@ -487,6 +487,8 @@ pipeline to operate flawlessly.
 
 ## 3.3 Encryption pipeline
 
+The encryption pipeline code may look as follows:
+
 ````python
 def vigenere_encrypt(plaintext: str, key: str) -> str:
     from itertools import cycle
@@ -620,7 +622,9 @@ Encrypted Text: afcb0192b8eaeffa1e3435a4da02c976f65411a7f71af5a56ce10833e6785021
 
 ## 3.4 Decryption pipeline
 
-`````python
+The decryption pipeline code may look as follows: 
+
+````python
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding, serialization, hashes
 from cryptography.hazmat.primitives.asymmetric import padding as asympadding
@@ -915,7 +919,7 @@ And our UI will be live at [http://localhost:3000](http://localhost:3000) ðŸŽ›ï¸
 
 ## 5.3 Step 3: Generate public and private keys
 
-`````python
+````python
 `from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 import os
