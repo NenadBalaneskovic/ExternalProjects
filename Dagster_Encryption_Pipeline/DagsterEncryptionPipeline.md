@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
     decrypted = cipher.decrypt(encrypted)
     print(f"Decrypted back: {decrypted}")
-    ```
+```
 
 
 ### 🔁 Step 2: Symmetric Encryption (AES or ChaCha20)
@@ -195,8 +195,6 @@ Wrap the **AES/ChaCha key using RSA** (public-key crypto). That way:
 A **polymorphic cipher** randomly alters its encoding strategy per encryption session — changing keys, routes, or even algorithm subsets. It’s excellent for:
 - Detecting tampering or replay
 - Obfuscation-based defense (especially in malware counter-analysis)
-
----
 
 ### 📦 Example Pipeline Flow
 
@@ -409,8 +407,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
----
 
 ### 🛠️ Sample Usage (Terminal):  
 
