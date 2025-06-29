@@ -962,6 +962,17 @@ os.chdir("C:\\Users\\balan\\OneDrive\\Desktop\\EncryptionPipeline\\root")
 
 Our UI will be live at [http://localhost:3000](http://localhost:3000) 🎛️  
 
+### Screenshots of dagster's UI and its performance
+
+### Screenshot 1
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+
+### Screenshot 2
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+
+### Screenshot 3
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/beafe787d84779a997a92f51fdbb89cf4b3f007e/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
+
 
 # 6. Resume - dagster's visual tour
 
