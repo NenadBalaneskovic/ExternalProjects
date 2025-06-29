@@ -902,8 +902,8 @@ And our UI will be live at [http://localhost:3000](http://localhost:3000) ðŸŽ›ï¸
 
 ### Py and yaml pipeline files
 
-1. A ![csv file](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of extracted Gauge Study parameters.
-2. A ![pdf report](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6d3669798335f1ee4f07293aad3b1bfdd020a035/GaugeStudeBalanced/report_2_factor_GaugeStudy.pdf) of obtained Gauge Study results.
+1. A ![py_files](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of pythonic and job configuration scripts.
+2. A ![yaml_files](https://github.com/NenadBalaneskovic/ExternalProjects/tree/f59ec177c4fc242e0987c6cee13339299859635d/Dagster_Encryption_Pipeline/root) of dagster job configurations.
 
 ## 5.3 Step 3: Generate public and private keys
 
