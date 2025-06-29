@@ -98,7 +98,7 @@ resulting in a self-contained encryption-decryption pipeline which 1) connects d
 of  a plain text prior to 2) decrypting (and thus reversing the performed chain of encryption operations 
 performed on an) encrypted message.
 This project aims at designing a encryption-decryption pipeline via Dagsterr's website that would support users in 
-**generating robustly encrpted messages** from a well-defined plain text input 
+**generating robustly encrypted messages** from a well-defined plain text input 
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below).  
 
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
