@@ -2,10 +2,12 @@
 
 This is a public folder containing some of my external Pythonic ML projects and analyses.  
 
-### 🌟 [Dataset Analysis Links](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
+## 🌟 [Dataset Analysis Links](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
 
 - ### 1. **Bank Marketing DataSet (Classification) - Feb 2025**  
   [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b628164a6e5e62fbfef9919acf1fb9cc307d7a8/Bank_MarketingDataSet_classification/README.md)
+  #### Abstract:
+  This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/Bank_MarketingDataSet_classification#-references) 1 - 4 below)
 
 - ### 2. **Boarder Crossings DataSet (SARIMAX Forecasting) - Feb 2025**  
   [![Boarder Crossings_DataSet](https://img.shields.io/badge/Boarder_Crossings_DataSet%20(SARIMAX_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Forecasting/README.md)
