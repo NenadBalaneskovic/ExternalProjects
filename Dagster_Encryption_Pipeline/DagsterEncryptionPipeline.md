@@ -1049,9 +1049,8 @@ This project implements a modular, multi-layered encryption and decryption pipel
 - Modular base for secure communication pipelines
 - Blueprint for adding encryption to ETL workflows or asset versioning
 
-✅ **All stored results can be accessed via the following links:**  
-1. A ![csv file](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1cdd76715308f6a7970d5a0852e0adc286666f31/GaugeStudeBalanced/results.csv) of extracted Gauge Study parameters.
-2. A ![pdf report](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6d3669798335f1ee4f07293aad3b1bfdd020a035/GaugeStudeBalanced/report_2_factor_GaugeStudy.pdf) of obtained Gauge Study results.
+✅ **All stored results can be accessed via the following link:**  
+1.  ![Folders](https://github.com/NenadBalaneskovic/ExternalProjects/tree/7ee7f95bb4f19d4f9e06ac08b69cf068dba7baec/Dagster_Encryption_Pipeline/root/results) of extracted encryption-decryption and pipeline execution results.
 
 # 7. 📚 References
 1. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
