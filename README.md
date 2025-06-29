@@ -67,7 +67,11 @@ particularly **non-deep-learning approaches**, and optimize them to identify the
   
   [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md)
 
-- ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA) - May 2025**  
+- ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA) - May 2025**
+  #### Abstract:
+  This Kaggle course notebook provides an **introductory guide to Qiskit**, focusing on **quantum computing fundamentals, hands-on coding, and interactive exercises**. 
+The aim is to combine the analysis of quantum circuits with their practical applications (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Quantum_Computing_Qiskit/QuantumComputingIntro.md#-references) 1 - 3 below).
+  
   [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Qiskit_VQE_QAOA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a8f3db4a3eddc6dd88ea0840c118666e24bdf5bd/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
 
  - ### 9. **Balanced Gauge Study Implementations (ANOVA) - Jun 2025**
