@@ -10,7 +10,12 @@ This is a public folder containing some of my external Pythonic ML projects and 
     
   [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b628164a6e5e62fbfef9919acf1fb9cc307d7a8/Bank_MarketingDataSet_classification/README.md)
 
-- ### 2. **Boarder Crossings DataSet (SARIMAX Forecasting) - Feb 2025**  
+- ### 2. **Boarder Crossings DataSet (SARIMAX Forecasting) - Feb 2025**
+  #### Abstract:
+  This project attempts at **forecasting the number of boarder crossings** between USA and Canada based on the corresponding kaggle data set of The Bureau of 
+Transportation Statistics (BTS) containing entries from 1996 to 2024, employing Python's SARIMAX forecasing scheme to optimize predictive accuracy and improve future security strategies 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+  
   [![Boarder Crossings_DataSet](https://img.shields.io/badge/Boarder_Crossings_DataSet%20(SARIMAX_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Forecasting/README.md)
 
 - ### 3. **Stock Price DataSet (SARIMAX Stock Forecasting) - Mar 2025**  
