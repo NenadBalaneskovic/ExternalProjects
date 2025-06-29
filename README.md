@@ -40,7 +40,13 @@ provide **valuable insights into Python’s NLP capabilities and real-world text
  
   [![Sentiment_Analysis_DataSet](https://img.shields.io/badge/Sentiment_Analysis_DataSet%20(NLTK_SpaCy_BeautifulSoup)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5092e58e2599919c1bd9d909be27321b06f80375/SentimentAnalysis_NewsHeadlines/README.md)
 
-- ### 5. **GAN & LLM Chessboard Image DataSet (GAN & LLM) - Apr 2025**  
+- ### 5. **GAN & LLM Chessboard Image DataSet (GAN & LLM) - Apr 2025**
+  #### Abstract:
+  This project aims to compare traditional **OpenCV-based** methods for chessboard image reconstruction with
+**Generative Adversarial Network (GAN)-driven** approaches. The goal is to evaluate the effectiveness of deep learning 
+in reconstructing **secluded or obscured chessboard sections** more accurately than conventional techniques 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md#-references) 1 - 3 below).
+  
   [![LLM_GAN_Chessboard_Image_DataSet](https://img.shields.io/badge/GAN_LLM_Chessboard_Image_DataSet%20(GAN_LLM)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md)
 
 - ### 6. **Real Estate DataSet (SOM, SARIMAX, RandomForest) - Apr 2025**  
