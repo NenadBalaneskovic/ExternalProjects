@@ -28,7 +28,16 @@ critical point modeling implemented via the physical theory of critical phenomen
   
   [![Stock_Price_DataSet](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1d5b93d956f277d937ef2aa66841608f5b60ba7b/SARIMAX_Akima_Forecasting/README.md)
 
-- ### 4. **Sentiment Analysis DataSet (NLTK, SpaCy, BeautifulSoup) - Mar 2025**  
+- ### 4. **Sentiment Analysis DataSet (NLTK, SpaCy, BeautifulSoup) - Mar 2025**
+  #### Abstract:
+  This project analyzes sentiments of news headlines contained within the Groundnews website by means of a customized Pythonic GUI 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SentimentAnalysis_NewsHeadlines#-references) 1 - 3 below).
+The **News Sentiment Analysis GUI** is a **PyQt5-based application** designed to analyze sentiment trends of **news headlines fetched from Ground News**. 
+By leveraging **natural language processing (NLP)** tools like **NLTK and SpaCy**, alongside **web scraping via BeautifulSoup**, the project aims to 
+provide **valuable insights into Python’s NLP capabilities and real-world text analysis**. The goal of this project is to **experiment with and understand the inner workings** of Python's **NLTK** and **SpaCy** libraries in conjunction with
+ **web scraping using BeautifulSoup**. Through sentiment analysis of **real-time headlines**, the tool demonstrates how different NLP techniques can be
+ used to quantify **public sentiment, keyword extraction, and trend visualization** in an interactive interface.  
+ 
   [![Sentiment_Analysis_DataSet](https://img.shields.io/badge/Sentiment_Analysis_DataSet%20(NLTK_SpaCy_BeautifulSoup)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5092e58e2599919c1bd9d909be27321b06f80375/SentimentAnalysis_NewsHeadlines/README.md)
 
 - ### 5. **GAN & LLM Chessboard Image DataSet (GAN & LLM) - Apr 2025**  
