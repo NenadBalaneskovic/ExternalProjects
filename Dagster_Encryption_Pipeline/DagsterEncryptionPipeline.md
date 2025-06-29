@@ -897,8 +897,8 @@ And our UI will be live at [http://localhost:3000](http://localhost:3000) ðŸŽ›ï¸
 
 ## 5.2 Step 2: Generate appropriate folder structure
 
-### Folder Structure, part 1
-![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+### Folder Structure for the entire Dagster pipeline
+![FolderStructureDagster](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e1edac977f90351853676cda5245466cf04cce6/Dagster_Encryption_Pipeline/FolderStructure_Complete.png)
 
 ### Py and yaml pipeline files
 
