@@ -8,7 +8,7 @@ performed on an) encrypted message.
  
 This project aims at designing a encryption-decryption pipeline via Dagsterr's website that would support users in 
 **generating robustly encrpted messages** from a well-defined plain text input 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below).
 
 # 2. 🔐 Encryption-Decryption Dagster Pipeline
 
