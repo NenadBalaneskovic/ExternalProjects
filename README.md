@@ -58,7 +58,13 @@ Thus, we are blending data engineering, machine learning, forecasting, and proce
   
   [![Real_Estate_DataSet](https://img.shields.io/badge/Real_Estate_DataSet%20(SOM_SARIMAX_RandomForest)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/561392eb414897e5ef3e3a6b36b148ac2fc42153/RealEstateAnalysis/README.md)
 
-- ### 7. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy) - May 2025**  
+- ### 7. **Signal Analysis DataSet (Scipy, Statsmodel, Numpy) - May 2025**
+  #### Abstract:
+  Noise contamination is a fundamental challenge in **signal processing**, affecting the accuracy and reliability of measurements across various domains, 
+from biomedical signals to communications and industrial data analysis. This project aims to **experiment with different noise mitigation techniques**, 
+particularly **non-deep-learning approaches**, and optimize them to identify the **most flexible noise suppression strategy** 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md#-references) 1 - 3 below).
+  
   [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md)
 
 - ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA) - May 2025**  
