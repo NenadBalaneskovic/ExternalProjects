@@ -92,5 +92,14 @@ data sets containing measurements recorded via the measurement system under cons
    [![Balanced_Gauge_Study_Implementations](https://img.shields.io/badge/Gauge_Study_Implementations%20(ANOVA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/effb0dc46f8337d1581acc7b31683be826d72ec6/GaugeStudeBalanced/GaugeStudy.md)
 
 - ### 10. **Dagster-driven Encryption-Decryption Pipeline (Pycryptodome) - Jun 2025**
+  #### Abstract:
+  The purpose of a Dagster Encryption Pipeline is to test and showcase dagsters DAG-chaining capabilities,
+resulting in a self-contained encryption-decryption pipeline which, 1) connects different encryption methods
+of  a plain text prior to, 2) decrypting (and thus reversing the performed chain of encryption operations 
+performed on an) encrypted message.
+This project aims at designing a encryption-decryption pipeline via Dagsterr's website that would support users in 
+**generating robustly encrpted messages** from a well-defined plain text input 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below).  
+
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
   
