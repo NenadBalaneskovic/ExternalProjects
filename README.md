@@ -102,4 +102,37 @@ This project aims at designing a encryption-decryption pipeline via Dagsterr's w
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below).  
 
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
+
+- ### 11. **s**
+  #### Abstract:
+  The purpose of a FOREX Arbitrage Seeker GUI is to act as a modular, real-time analytical tool that enables users—especially those 
+with quantitative or technical backgrounds—to identify, visualize, and simulate arbitrage opportunities across cryptocurrency markets.  
+
+  ##### 🎯 **Primary Aim**
+
+  To provide a **hands-on decision-support system** that helps users:
+  - Detect profitable arbitrage windows (spatial or triangular)
+  - Analyze real-time spreads between market pairs
+  - Simulate trade outcomes based on live pricing
+  - Visualize trade paths interactively
+  - Log and export arbitrage events for analysis or backtesting 
+  
+  ##### ⚙️ **Functional Goals**
+  
+  - **Market Monitoring:** Continuously track live prices (bid/ask) from Binance and compute spreads on user-selected pairs.
+  - **Simulation:** Allow users to test hypothetical trades and view potential returns before acting.
+  - **Triangular Arbitrage:** Identify and evaluate profitable circular conversion paths such as USDT → BTC → ETH → USDT.
+  - **Interactive Visualization:** Present triangle loops visually using `QGraphicsScene`, making abstract relationships tangible.
+  - **Analytics & Logging:** Log each opportunity, generate spread charts, and support export for offline analysis.
+  - **User Control:** Offer manual refresh, auto-refresh toggling, and selective export of arbitrage findings.
+   
+  ##### 🧠 **Why It Matters**
+  
+  In fast-moving crypto markets, arbitrage opportunities are fleeting. This tool arms users with:
+  - Clarity: Real-time insight into pricing anomalies
+  - Speed: Auto-refreshing mechanics and instant simulation
+  - Intuition: Graphical triangle mapping for quick interpretation
+  - Reproducibility: Logged data that can feed back into research or trading models  
+   
+  (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
   
