@@ -234,8 +234,6 @@ Building a strategy is thrilling—but stress-testing it against history is what
 
 Real-time arbitrage opportunities are both a data engineering challenge *and* a UI design challenge. We are blending finance, systems programming, and UX. Here’s how one could approach it, step-by-step:
 
-## 2.1 Main ideas
-
 ### 🧱 1. **Core Architecture Overview**
 
 Think modular:
@@ -292,7 +290,7 @@ if price_binance < price_coinbase * (1 - fee_buffer):
 - Live arbitrage heat map
 - Auto-trading simulation (Paper bot mode)
 
-## 2.2 GUI design
+## 2.1 GUI design
 
 We’ll start with a sleek and functional layout for your **Crypto/Forex Arbitrage Scanner GUI**, then build the Python logic underneath.
 
@@ -781,8 +779,8 @@ If we later want to find triangular arbitrage (e.g. BTC → ETH → USDT → BTC
   A → B → C → A
   product of exchange rates > 1 (after fees)
   ```
-  
-  ## 2.6 Triangle Arbitrage Support
+
+## 2.6 Triangle Arbitrage Support
   
   Triangle arbitrage is like the 3D chess of trading. Here’s how we’ll expand your scanner into a **Triangular Arbitrage Hunter**.
 
@@ -976,8 +974,6 @@ layout.addWidget(QLabel("Visual Arbitrage Loop"))
 layout.addWidget(self.scene_view)
 ```
 
----
-
 #### 3. **Render a Triangle Diagram**
 
 Let’s say the triangle route is `USDT → BTC → ETH → USDT`. Add this method:
@@ -1022,8 +1018,6 @@ Example call (e.g. in `check_triangular_arbitrage()`):
 ```python
 self.draw_triangle(["USDT", "BTC", "ETH"], ["1/29500", "0.068", "1860"])
 ```
-
----
 
 #### 🛠️ What's Next?
 
@@ -1300,7 +1294,7 @@ if __name__ == "__main__":
 
 # 4. Description of GUI's functionalities  
 
-![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
 
 ## 🧠 Arbitrage Seeker GUI: Technical & Functional Analysis
 
@@ -1455,8 +1449,6 @@ Uses `QGraphicsScene` and `QGraphicsTextItem` for rendering. Layout is hardcoded
 Our Arbitrage Seeker GUI is already incredibly capable, but there’s plenty of room to sharpen its edge and expand its scope. 
 Here’s a curated list of **future enhancements**, grouped by **category** to help prioritize development:
 
----
-
 ## 🔍 Data & Market Intelligence
 
 - **Multi-Exchange Comparison**  
@@ -1471,8 +1463,6 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
 - **Custom Fee Models & Spread Filters**  
   Let users input exchange-specific fees and display only opportunities above net profitability thresholds.
 
----
-
 ## 📊 Analytics & Visualization
 
 - **Historical Spread Charting**  
@@ -1483,8 +1473,6 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
 
 - **Dynamic Triangle Mapping**  
   Extend triangle visualizer into an **exploration mode** showing multiple arbitrage loops, rotatable like a crypto constellation.
-
----
 
 ## ⚙️ UX & Interaction
 
@@ -1500,8 +1488,6 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
 - **Trade Executor Sandbox** 🧪  
   Add mock trade execution buttons to simulate realistic end-to-end orders without placing real trades.
 
----
-
 ## 🛠 Developer Tools & Expandability
 
 - **Pluggable Exchange Framework**  
@@ -1512,8 +1498,6 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
 
 - **Custom Plugin Interface**  
   Allow users to write their own Python classes to define new arbitrage strategies or visualizations.
-
----
 
 ## 🧪 Advanced Features (Stretch Goals)
 
