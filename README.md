@@ -135,4 +135,7 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
   - Reproducibility: Logged data that can feed back into research or trading models  
    
   (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
+
+  [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_cctx)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5b47bb24f047c287cc834bcfed25a1a1a807709e/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
+
   
