@@ -103,7 +103,7 @@ This project aims at designing a encryption-decryption pipeline via Dagsterr's w
 
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
 
-- ### 11. **FOREX Arbitrage Seeker GUI (cctx) - Jul 2025**
+- ### 11. **FOREX Arbitrage Seeker GUI (ccxt) - Jul 2025**
   #### Abstract:
   The purpose of a FOREX Arbitrage Seeker GUI is to act as a modular, real-time analytical tool that enables users—especially those 
 with quantitative or technical backgrounds—to identify, visualize, and simulate arbitrage opportunities across cryptocurrency markets.  
@@ -136,6 +136,6 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
    
   (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
 
-  [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_cctx)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5b47bb24f047c287cc834bcfed25a1a1a807709e/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
+  [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_ccxt)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5b47bb24f047c287cc834bcfed25a1a1a807709e/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
 
   
