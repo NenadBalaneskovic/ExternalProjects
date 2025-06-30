@@ -103,7 +103,7 @@ This project aims at designing a encryption-decryption pipeline via Dagsterr's w
 
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
 
-- ### 11. **FOREX Arbitrage Seeker GUI**
+- ### 11. **FOREX Arbitrage Seeker GUI (cctx) - Jul 2025**
   #### Abstract:
   The purpose of a FOREX Arbitrage Seeker GUI is to act as a modular, real-time analytical tool that enables users—especially those 
 with quantitative or technical backgrounds—to identify, visualize, and simulate arbitrage opportunities across cryptocurrency markets.  
