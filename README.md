@@ -136,6 +136,6 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
    
   (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
 
-  [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_ccxt)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5b47bb24f047c287cc834bcfed25a1a1a807709e/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
+  [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_ccxt)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e2957fd3b70a8e1da30a3909e106253d4efc429c/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
 
   
