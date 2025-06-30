@@ -30,7 +30,7 @@ In fast-moving crypto markets, arbitrage opportunities are fleeting. This tool a
 - Intuition: Graphical triangle mapping for quick interpretation
 - Reproducibility: Logged data that can feed back into research or trading models  
  
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
 
 ## 1.2 Theory behind the FOREX Arbitrage Seeking
 
