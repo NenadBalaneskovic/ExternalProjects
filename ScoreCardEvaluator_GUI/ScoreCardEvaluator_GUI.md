@@ -31,7 +31,7 @@ Detects large shifts in the process **mean** or **dispersion** by tracking subgr
 
 #### 📏 Control Limits:
 - X̄ chart:  
-  $$\text{UCL}_{\bar{X}} = \mu + 3 \cdot \frac{\sigma}{\sqrt{n}}, \quad \text{LCL}_{\bar{X}} = \mu - 3 \cdot \frac{\sigma}{\sqrt{n}}$$
+  ![Control Limits Formula](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ba7663292801f94ec9af95fd32348608a684b1e3/ScoreCardEvaluator_GUI/formula_image.png.PNG)
 - S chart:  
   $$\text{UCL}_S = \sigma + 3 \cdot \frac{\sigma}{\sqrt{2n}}, \quad \text{LCL}_S = \sigma - 3 \cdot \frac{\sigma}{\sqrt{2n}}$$
 
