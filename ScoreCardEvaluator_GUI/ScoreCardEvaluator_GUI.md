@@ -1135,7 +1135,7 @@ Here's a snapshot preview of the **first 10 rows** (with headers) from each of t
 ![Tab2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0614b4c4f1f398348dcf9fb5de27a6d6921973ce/ScoreCardEvaluator_GUI/Fig2.PNG)
 
 #### Screenshot 3 - Tab 3:
-![Tab3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+![Tab3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f56d46cbf7b190548e30e6f77a02f527b32c3eff/ScoreCardEvaluator_GUI/Fig3.PNG)
 
 #### Screenshot 4 - Tab 4:
 ![Tab4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
