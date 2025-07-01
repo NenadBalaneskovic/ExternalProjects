@@ -50,7 +50,7 @@ Robustly detect and remove **multiple extreme outliers** or suspicious subgroups
 Instead of fixed control limits, this method **recalculates process mean and std** after excluding outliers.
 
 #### 📏 Adaptive Limits:
-Same formulas as Tab 1, but based on recalculated \( \bar{\bar{X}} \) and \( \bar{S} \) after each iteration.
+Same formulas as Tab 1, but based on recalculated $\(\bar{X} \)$ and $\( \bar{S} \)$ after each iteration.
 
 #### 🔄 Algorithm:
 1. Compute subgroup means and stds
@@ -69,14 +69,14 @@ Used for **count data** — defects per unit or subgroup — modeled using a **P
 #### 📏 Control Limits:
 Let \( D̄ \) be the average defect count:
 
-\[
+$$\[
 \text{UCL} = \bar{D} + 3\sqrt{\bar{D}}, \quad
 \text{LCL} = \max(0, \bar{D} - 3\sqrt{\bar{D}})
-\]
+\]$$
 
 #### 📉 Algorithm:
 1. Read defect count per group
-2. Compute \( \bar{D} \)
+2. Compute \( D̄ \)
 3. Compare each group’s defect count with control limits
 4. Iteratively remove out-of-control values (optional)
 5. Plot final chart with updated bounds
