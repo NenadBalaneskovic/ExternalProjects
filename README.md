@@ -6,7 +6,7 @@ This is a public folder containing some of my external Pythonic ML projects and 
 
 - ### 1. **Bank Marketing DataSet (Classification) - Feb 2025**
   #### Abstract:
-  This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/Bank_MarketingDataSet_classification#-references) 1 - 4 below).
+  This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/Bank_MarketingDataSet_classification#-references) 1 - 4 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
     
   [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b628164a6e5e62fbfef9919acf1fb9cc307d7a8/Bank_MarketingDataSet_classification/README.md)
 
@@ -14,7 +14,7 @@ This is a public folder containing some of my external Pythonic ML projects and 
   #### Abstract:
   This project attempts at **forecasting the number of boarder crossings** between USA and Canada based on the corresponding kaggle data set of The Bureau of 
 Transportation Statistics (BTS) containing entries from 1996 to 2024, employing Python's SARIMAX forecasing scheme to optimize predictive accuracy and improve future security strategies 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/SARIMAX_Forecasting#-references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![Boarder Crossings_DataSet](https://img.shields.io/badge/Boarder_Crossings_DataSet%20(SARIMAX_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Forecasting/README.md)
 
@@ -24,7 +24,7 @@ Transportation Statistics (BTS) containing entries from 1996 to 2024, employing 
 critical point modeling implemented via the physical theory of critical phenomena (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Akima_Forecasting/README.md#-references)
  1 - 3 below). It introduces pythonic functions for Akima interpolation and critical point extraction from stock price time series, which allow the user to characterise critical inflection points of
  stock price evolution and aid the customized SARIMAX forecasting functions in reliably estimating volatility ranges of unknown stock price changes. The project also compares the regular customized Pythonic SARIMAX 
- functionality with its batched version and delves into its conceptual intricacies.
+ functionality with its batched version and delves into its conceptual intricacies. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![Stock_Price_DataSet](https://img.shields.io/badge/Stock_Price_DataSet%20(SARIMAX_Stock_Forecasting)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1d5b93d956f277d937ef2aa66841608f5b60ba7b/SARIMAX_Akima_Forecasting/README.md)
 
@@ -36,7 +36,7 @@ The **News Sentiment Analysis GUI** is a **PyQt5-based application** designed to
 By leveraging **natural language processing (NLP)** tools like **NLTK and SpaCy**, alongside **web scraping via BeautifulSoup**, the project aims to 
 provide **valuable insights into Python’s NLP capabilities and real-world text analysis**. The goal of this project is to **experiment with and understand the inner workings** of Python's **NLTK** and **SpaCy** libraries in conjunction with
  **web scraping using BeautifulSoup**. Through sentiment analysis of **real-time headlines**, the tool demonstrates how different NLP techniques can be
- used to quantify **public sentiment, keyword extraction, and trend visualization** in an interactive interface.  
+ used to quantify **public sentiment, keyword extraction, and trend visualization** in an interactive interface. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
  
   [![Sentiment_Analysis_DataSet](https://img.shields.io/badge/Sentiment_Analysis_DataSet%20(NLTK_SpaCy_BeautifulSoup)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5092e58e2599919c1bd9d909be27321b06f80375/SentimentAnalysis_NewsHeadlines/README.md)
 
@@ -45,7 +45,7 @@ provide **valuable insights into Python’s NLP capabilities and real-world text
   This project aims to compare traditional **OpenCV-based** methods for chessboard image reconstruction with
 **Generative Adversarial Network (GAN)-driven** approaches. The goal is to evaluate the effectiveness of deep learning 
 in reconstructing **secluded or obscured chessboard sections** more accurately than conventional techniques 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md#-references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![LLM_GAN_Chessboard_Image_DataSet](https://img.shields.io/badge/GAN_LLM_Chessboard_Image_DataSet%20(GAN_LLM)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LLM_GAN_ImageReconstruction/README.md)
 
@@ -54,7 +54,7 @@ in reconstructing **secluded or obscured chessboard sections** more accurately t
   This project involves a large data set related to real estate sales for a fictional town of Flower Hill. The aim is to combine the analysis of this data set with PyMongo,
 MLflow, Python (SARIMAX times series forecasting, classification, Neural Networks, Kohonen Maps) and DAG-like process organization of ML-tasks.
 Thus, we are blending data engineering, machine learning, forecasting, and process automation into a well-structured framework
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/RealEstateAnalysis#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/RealEstateAnalysis#-references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![Real_Estate_DataSet](https://img.shields.io/badge/Real_Estate_DataSet%20(SOM_SARIMAX_RandomForest)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/561392eb414897e5ef3e3a6b36b148ac2fc42153/RealEstateAnalysis/README.md)
 
@@ -63,14 +63,14 @@ Thus, we are blending data engineering, machine learning, forecasting, and proce
   Noise contamination is a fundamental challenge in **signal processing**, affecting the accuracy and reliability of measurements across various domains, 
 from biomedical signals to communications and industrial data analysis. This project aims to **experiment with different noise mitigation techniques**, 
 particularly **non-deep-learning approaches**, and optimize them to identify the **most flexible noise suppression strategy** 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md#-references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md#-references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![Signal Analysis_DataSets](https://img.shields.io/badge/Signal_Analysis_DataSet%20(Scipy_Statsmodel_Numpy)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SignalNoiseMitigation/Signal_Denoising.md)
 
 - ### 8. **Qiskit Algorithmic Implementations (Qiskit, VQE, QAOA) - May 2025**
   #### Abstract:
   This Kaggle course notebook provides an **introductory guide to Qiskit**, focusing on **quantum computing fundamentals, hands-on coding, and interactive exercises**. 
-The aim is to combine the analysis of quantum circuits with their practical applications (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Quantum_Computing_Qiskit/QuantumComputingIntro.md#-references) 1 - 3 below).
+The aim is to combine the analysis of quantum circuits with their practical applications (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Quantum_Computing_Qiskit/QuantumComputingIntro.md#-references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![Qiskit_Algorithmic_Implementations](https://img.shields.io/badge/Qiskit_Algorithmic_Implementations%20(Qiskit_VQE_QAOA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a8f3db4a3eddc6dd88ea0840c118666e24bdf5bd/Quantum_Computing_Qiskit/QuantumComputingIntro.md)
 
@@ -87,7 +87,7 @@ arising from different operators (i.e. experimentalists) or devices.
 This project aims at designing a PyQt-GUI that would support users in 
 **generating balanced one-factor and two-factor Gauge Studies** from well-defined csv input 
 data sets containing measurements recorded via the measurement system under consideration 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).  
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
 
    [![Balanced_Gauge_Study_Implementations](https://img.shields.io/badge/Gauge_Study_Implementations%20(ANOVA)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/effb0dc46f8337d1581acc7b31683be826d72ec6/GaugeStudeBalanced/GaugeStudy.md)
 
@@ -99,7 +99,7 @@ of  a plain text prior to 2) decrypting (and thus reversing the performed chain 
 performed on an) encrypted message.
 This project aims at designing a encryption-decryption pipeline via Dagsterr's website that would support users in 
 **generating robustly encrypted messages** from a well-defined plain text input 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below).  
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md#7--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
 
   [![Dagster_Cryptographic_Pipeline_Implementations](https://img.shields.io/badge/Dagster_Cryptographic_Pipeline_Implementations%20(Dagster_Cryptography)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f1273a20b5e5fdd495bd8ac23743687f0d92d9/Dagster_Encryption_Pipeline/DagsterEncryptionPipeline.md)
 
@@ -134,7 +134,7 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
   - Intuition: Graphical triangle mapping for quick interpretation
   - Reproducibility: Logged data that can feed back into research or trading models  
    
-  (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
+  (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
   [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_ccxt)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e2957fd3b70a8e1da30a3909e106253d4efc429c/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
 
@@ -146,7 +146,7 @@ Its primary goal is to make statistical process control (SPC) accessible and int
 quality metrics using industry-standard techniques like X̄–S charts, defect count monitoring, moving averages, and EWMA.
 By offering a streamlined interface, built-in logging, and flexible input handling, the Score Card Evaluator simplifies the complexity of SPC 
 and delivers reliable insights that help maintain product consistency, detect shifts early, and support data-driven decision making on the shop floor or in laboratory settings 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
   [![ScorecardEvaluator_GUI](https://img.shields.io/badge/Scorecard_Evaluator_GUI%20(Quality_Management)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
 
