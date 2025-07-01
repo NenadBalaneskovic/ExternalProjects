@@ -1305,7 +1305,7 @@ full-featured professional toolkit used in QC labs, engineering teams, or teachi
 Stephen B. Vardeman, J. Marcus Jobe: "__Statistical Methods for Quality Assurance: Basics, Measurement, Control, Capability, and Improvement__", 2nd Ed. Springer (2016); 
 Irving W. Burr: "__Statistical Quality Control Methods__", 1st Ed. Marcel Dekker (1976); Acheson J. Duncan: "__Quality Control and Industrial Statistics__", 5th Ed. Richard D. Irwin (1986);
 Douglas C. Montgomery: "__Design and Analysis of Experiments__", 10th Ed. Wiley (2020).
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/103e40d82c83aec2ef483998e961f03cc7e22826/GaugeStudeBalanced/GaugeStudyGUI.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f26bede817f0036e2ce3b8907d8e8473d6fb9de4/ScoreCardEvaluator_GUI/ScoreCardEvaluator.ipynb)
 3. [![Forecasting Report | English](https://img.shields.io/badge/GaugeStudy%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4e3ee63c691c9482f70fe836c43d6173f98cb53b/GaugeStudeBalanced/GaugeStudyReport.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
