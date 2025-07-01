@@ -1129,8 +1129,7 @@ Here's a snapshot preview of the **first 10 rows** (with headers) from each of t
 # 5. Description of GUI's functionalities  
 
 #### Screenshot 1 - Tab 1:
-![Tab1](#### Screenshot 1 - Tab 1:
-![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG))
+![Tab1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e901c0539e9fc190be08409dc2f91de5537bc6f2/ScoreCardEvaluator_GUI/Fig1.PNG)
 
 #### Screenshot 2 - Tab 2:
 ![Tab2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
