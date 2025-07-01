@@ -1204,7 +1204,7 @@ Set group size (commonly 5 or 10), optionally define μ and σ (or leave blank t
 > ▶️ Step 3: Click Evaluate  
 The log panel will show the results, and charts will be rendered instantly.
 
-## 🌟 Bonus Features You Could Add
+## 🌟 Bonus Features One Could Add
 
 - Export chart as PNG/PDF
 - Theme switcher (light/dark)
