@@ -22,20 +22,21 @@ Each one addresses a different type of process control or quality assurance scen
 Detects large shifts in the process **mean** or **dispersion** by tracking subgroup statistics.
 
 #### 🔢 Mathematics:
-- Mean per group:  
-  $$ \bar{X}_i = \frac{1}{n} \sum_{j=1}^{n} x_{ij} $$
+- Mean per group:
+  X̄_i = (1/n) * sum_{j=1}^{n} x_{ij}
+
 - Standard deviation per group:
-  $$ S_i = \sqrt{\frac{1}{n-1} \sum_{j=1}^{n}(x_{ij} - \bar{X}_i)^2} $$
+  $$S_i = \sqrt{\frac{1}{n-1} \sum_{j=1}^{n}(x_{ij} - \bar{X}_i)^2}$$
 
 #### 📏 Control Limits:
 - X̄ chart:  
-  $$ \text{UCL}_{\bar{X}} = \mu + 3 \cdot \frac{\sigma}{\sqrt{n}}, \quad \text{LCL}_{\bar{X}} = \mu - 3 \cdot \frac{\sigma}{\sqrt{n}} $$
+  $$\text{UCL}_{\bar{X}} = \mu + 3 \cdot \frac{\sigma}{\sqrt{n}}, \quad \text{LCL}_{\bar{X}} = \mu - 3 \cdot \frac{\sigma}{\sqrt{n}}$$
 - S chart:  
-  $$ \text{UCL}_S = \sigma + 3 \cdot \frac{\sigma}{\sqrt{2n}}, \quad \text{LCL}_S = \sigma - 3 \cdot \frac{\sigma}{\sqrt{2n}} $$
+  $$\text{UCL}_S = \sigma + 3 \cdot \frac{\sigma}{\sqrt{2n}}, \quad \text{LCL}_S = \sigma - 3 \cdot \frac{\sigma}{\sqrt{2n}}$$
 
 #### ⚙️ Algorithm:
-1. Segment data into groups of size \( n \)
-2. Compute \( \bar{X}_i \) and \( S_i \)
+1. Segment data into groups of size $$\( n \)$$
+2. Compute $$\( \bar{X}_i \)$$ and $$\( S_i \)$$
 3. Compare each against their respective control bounds
 4. Flag out-of-control groups for either mean or dispersion
 
