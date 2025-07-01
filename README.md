@@ -138,4 +138,9 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
 
   [![FOREX_Arbitrage_Seeker_Implementations](https://img.shields.io/badge/FOREX_Arbitrage_Seeker_Implementations%20(Forex_ccxt)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e2957fd3b70a8e1da30a3909e106253d4efc429c/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md)
 
+- ### 12. **Score Card Evaluator GUI (Quality Management) - Jul 2025**
+  #### Abstract:
+  
+  [![Scorecard_Evaluator_GUII](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
+
   
