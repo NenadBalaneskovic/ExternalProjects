@@ -23,7 +23,8 @@ Detects large shifts in the process **mean** or **dispersion** by tracking subgr
 
 #### 🔢 Mathematics:
 - Mean per group:
-  X̄_i = (1/n) * sum_{j=1}^{n} x_{ij}
+  $$E[X_{i}] = \frac{1}{n} \sum_{j=1}^{n} x_{ij}$$
+
 
 - Standard deviation per group:
   $$S_i = \sqrt{\frac{1}{n-1} \sum_{j=1}^{n}(x_{ij} - \bar{X}_i)^2}$$
@@ -88,18 +89,18 @@ Ideal for manufacturing defects, service failures, or any discrete event rate tr
 Smooth out short-term fluctuations to expose **gradual drifts** in the process mean.
 
 #### 🧮 Moving Average:
-For window size \( k \), at group \( t \):
+For window size $\( k \)$, at group $\( t \)$:
 
-\[
+$$\[
 MA_t = \frac{1}{k} \sum_{i=t-k+1}^{t} \bar{X}_i
-\]
+\]$$
 
-For the first few points, use smaller \( w = \min(k, t+1) \)
+For the first few points, use smaller $\( w = \min(k, t+1) \)$
 
 #### 📏 Limits:
-\[
+$$\[
 UCL = \mu + 3\cdot\frac{\sigma}{\sqrt{w}}, \quad LCL = \mu - 3\cdot\frac{\sigma}{\sqrt{w}}
-\]
+\]$$
 
 #### ⚙️ Algorithm:
 1. Compute subgroup means
@@ -115,19 +116,18 @@ This is conceptually similar to technical analysis in finance — smoothing tren
 Detect **subtle but persistent shifts** by emphasizing recent observations in a smoothed sequence.
 
 #### 🧮 EWMA Series:
-\[
-W_1 = \bar{X}_1, \quad W_t = \alpha \bar{X}_t + (1 - \alpha) W_{t-1}
-\]
+$W_{1} =E[X_{1}], \quad W_{t} = \alpha E[X_{t}] + (1 - \alpha) W_{t-1}$
 
-- \( \alpha \in (0, 1] \): smoothing constant (higher = more responsive)
+- $$\( \alpha \in (0, 1] \)$$: smoothing constant (higher = more responsive)
 
 #### 📏 Control Limits (time-varying):
-\[
+$$\[
 \text{UCL}_t = \mu + 3\sigma \sqrt{\frac{\alpha}{2 - \alpha} \cdot (1 - (1 - \alpha)^{2t})}
-\]
-\[
+\]$$
+
+$$\[
 \text{LCL}_t = \mu - 3\sigma \sqrt{\frac{\alpha}{2 - \alpha} \cdot (1 - (1 - \alpha)^{2t})}
-\]
+\]$$
 
 #### ⚙️ Algorithm:
 1. Form subgroups and calculate their means
