@@ -1128,7 +1128,21 @@ Here's a snapshot preview of the **first 10 rows** (with headers) from each of t
 
 # 5. Description of GUI's functionalities  
 
-![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+#### Screenshot 1 - Tab 1:
+![Tab1](#### Screenshot 1 - Tab 1:
+![Two-factor balanced Gauge Study results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG))
+
+#### Screenshot 2 - Tab 2:
+![Tab2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+
+#### Screenshot 3 - Tab 3:
+![Tab3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+
+#### Screenshot 4 - Tab 4:
+![Tab4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+
+#### Screenshot 5 - Tab 5:
+![Tab5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
 
 We have built a rich, highly capable PyQt5 GUI application — one that functions as a comprehensive **Score Card Evaluator** for statistical process control. 
 Let's unpack the architecture, core functionalities, and how a user can interact with it like a pro.
