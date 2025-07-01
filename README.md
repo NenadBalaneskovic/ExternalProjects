@@ -140,7 +140,14 @@ with quantitative or technical backgrounds—to identify, visualize, and simulat
 
 - ### 12. **Score Card Evaluator GUI (Quality Management) - Jul 2025**
   #### Abstract:
+  The Score Card Evaluator is a practical, user-friendly GUI application designed to empower professionals in quality management and process control. 
+Built with PyQt5 and powered by robust statistical logic, it serves as a powerful tool for engineers, inspectors, and analysts working in daily production environments.
+Its primary goal is to make statistical process control (SPC) accessible and intuitive — enabling users to visualize, evaluate, and troubleshoot
+quality metrics using industry-standard techniques like X̄–S charts, defect count monitoring, moving averages, and EWMA.
+By offering a streamlined interface, built-in logging, and flexible input handling, the Score Card Evaluator simplifies the complexity of SPC 
+and delivers reliable insights that help maintain product consistency, detect shifts early, and support data-driven decision making on the shop floor or in laboratory settings 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below).
   
-  [![Scorecard_Evaluator_GUII](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
+  [![ScorecardEvaluator_GUI](https://img.shields.io/badge/Scorecard_Evaluator_GUI%20(Quality_Management)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
 
   
