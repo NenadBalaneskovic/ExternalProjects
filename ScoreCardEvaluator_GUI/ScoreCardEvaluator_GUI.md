@@ -1141,7 +1141,7 @@ Here's a snapshot preview of the **first 10 rows** (with headers) from each of t
 ![Tab4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/686c00e613219181a16ebefa3469bbeefaad11b2/ScoreCardEvaluator_GUI/Fig4.PNG)
 
 #### Screenshot 5 - Tab 5:
-![Tab5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/100f6c03a6d8c9b7298ec33a88608186b949083d/GaugeStudeBalanced/two_factor_gauge_green_corrupt.PNG)
+![Tab5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5c4a04d2cd9ef3d1adf958a751e113bad6ac4513/ScoreCardEvaluator_GUI/Fig5.PNG)
 
 We have built a rich, highly capable PyQt5 GUI application — one that functions as a comprehensive **Score Card Evaluator** for statistical process control. 
 Let's unpack the architecture, core functionalities, and how a user can interact with it like a pro.
