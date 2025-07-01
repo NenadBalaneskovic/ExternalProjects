@@ -9,7 +9,7 @@ quality metrics using industry-standard techniques like X̄–S charts, defect c
 
 By offering a streamlined interface, built-in logging, and flexible input handling, the Score Card Evaluator simplifies the complexity of SPC 
 and delivers reliable insights that help maintain product consistency, detect shifts early, and support data-driven decision making on the shop floor or in laboratory settings 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GaugeStudeBalanced/GaugeStudy.md#8--references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below).
 
 ## 1.2 Theory behind the Score Card Evaluation
 
