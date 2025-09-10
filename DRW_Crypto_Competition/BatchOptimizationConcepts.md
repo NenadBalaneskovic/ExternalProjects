@@ -155,8 +155,6 @@ Below is a **generalized Python wrapper function** that satisfies all our criter
 **ML and DL models** while handling large datasets efficiently. The function dynamically selects 
 **batching strategies, training methods, and aggregation techniques** based on model type and dataset properties.
 
----
-
 ### **6. Key Features of This Implementation:**
 1. **Batching Approaches**:
    - Uses `pandas` `chunksize` or `dask` for efficient memory handling.
@@ -248,8 +246,6 @@ def batch_train_evaluate(train_data, test_data, model, batch_size, model_type="M
 2. **Supports ML and DL models dynamically** (`partial_fit` for ML, `train_on_batch` for DL).
 3. **Applies the optimal aggregation method** (`incremental`, `moving_average`, `ensemble`).
 4. **Ensures large dataset compatibility** by iterating over mini-batches.
-
----
 
 ### **9. Next Steps:**
 - Do you want additional optimizations such as **parallel processing** (`joblib`, `multiprocessing`)?  
@@ -375,8 +371,6 @@ This will help models capture **seasonality, trends, and temporal dependencies**
 ✔ **Datetime Features:** Extracting day, month, week, holiday flags, etc.  
 ✔ **Trend Detrending:** Removing overall trend (if needed).  
 ✔ **Exponential Smoothing:** To smooth fluctuations while maintaining trends.
-
----
 
 ### **2. Updated Wrapper with Feature Engineering**
 ```python
@@ -1507,7 +1501,8 @@ def batch_train_evaluate_auto(train_data, test_data, batch_size, model_type="aut
 🚀 **Automated Anomaly Filtering** – Removes **outliers, seasonal anomalies, trend shifts**  
 
 This is now a **self-optimizing, scalable, and efficient pipeline for ML, DL, and Time-Series forecasting**. We could also use
-additional **hyperparameter tuning strategies like Bayesian Optimization or Genetic Algorithms** for even finer parameter selection. 🚀  
+additional **hyperparameter tuning strategies like Bayesian Optimization or Genetic Algorithms** for even finer parameter selection. 🚀
+  
 ---
 
 ## XII. Refinement phase 10
