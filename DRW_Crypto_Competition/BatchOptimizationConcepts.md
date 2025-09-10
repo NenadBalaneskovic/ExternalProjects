@@ -616,8 +616,6 @@ def batch_train_evaluate_forecast(train_data, test_data, model, batch_size, mode
     return aggregated_params
 ```
 
----
-
 ### **2. What’s New in This Version?**
 ✔ **Fully Integrated Hyperparameter Optimization:** Supports **Optuna, Grid Search, and Random Search.**  
 ✔ **Parallelized Time-Series Training:** Uses `ThreadPoolExecutor` for concurrent execution.  
@@ -1317,8 +1315,6 @@ def batch_train_evaluate_auto(train_data, test_data, batch_size, model_type="aut
 
     return aggregated_params
 ```
-
----
 
 ### **6. Final Pipeline Capabilities**
 🚀 **Batch Processing for Large Data** – Handles **GBs/TBs/PBs** efficiently  
@@ -2081,7 +2077,7 @@ Now, our system is **state-of-the-art, fully optimized for large-scale forecasti
 
 Yes, **version 2** of our **batching-wrapper pipeline** includes all aspects of **version 1**.  
 
-### **Key Features Confirmed in Version 7**  
+### **Key Features Confirmed in Version 2**  
 ✔ **Batch Processing for Large Datasets** – Uses chunked loading (`pandas.read_parquet(chunksize=batch_size)`) for efficient memory handling.  
 ✔ **Parallel Execution** – Utilizes `ThreadPoolExecutor` for concurrent processing of dataset chunks.  
 ✔ **AutoML for Model Selection** – Implements **AutoSklearn, TPOT, FLAML** for automatic model tuning and selection.  
