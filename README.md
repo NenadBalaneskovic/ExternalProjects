@@ -171,6 +171,6 @@ and delivers reliable insights that help maintain product consistency, detect sh
   and how different modeling techniques can enhance our understanding of market dynamics. If you're excited by complex, high-impact challenges beyond predictive modeling, DRW offers a diverse range of opportunities at the intersection of quantitative
   research, technology, and trading strategy development. In the following the author will present his own prediction model and delve into its algorithmic aspects (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
   
-  [![DRW_Crypto_Analysis_Pipeline](https://img.shields.io/badge/Scorecard_Evaluator_GUI%20(Quality_Management)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
+  [![DRW_Crypto_Analysis_Pipeline](https://img.shields.io/badge/DRW_Crypto_Forecasting_Pipeline%20(Kaggle Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f700eecca4a0cdc9813bd59e2880deccdd7029e0/DRW_Crypto_Competition/Crypto_TimeseriesForecast.md)
 
   
