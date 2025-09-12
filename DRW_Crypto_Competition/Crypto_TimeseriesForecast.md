@@ -1660,7 +1660,8 @@ The deliberate model comparison proceeds as follows:
 Our pipeline is now **fully optimized for the Kaggle competition**, ensuring compliance with the **evaluation criteria (Pearson correlation)** while 
 employing **state-of-the-art ML techniques** for feature engineering, model experimentation, and submission generation. ✅  
 
-![The full pythonic code implementation](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_Pipeline_Module_Code.md)
+Please refer to the md-file ["The full pythonic code implementation"](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_Pipeline_Module_Code.md) 
+when accessing the full pythonic code implementation of the crypto analysis pipeline.
 
 
 # 5. Future improvements
@@ -1674,7 +1675,7 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
   The Crypto analysis pipeline discussed above could be enhanced by means of a batching-wrapper functionality that would allow users
   to process arbitrary large parquet data files without having to revert to costly alternatives provided by GCP, AWS or Azure. 
   This batching wrapper functionality could be represented as a data analytic pipeline comprised of the following algorithms and models 
-  (please refer to the md-file [BatchOptimizationConcepts](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/BatchOptimizationConcepts.md) for more details):
+  (please refer to the md-file ["BatchOptimizationConcepts"](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/BatchOptimizationConcepts.md) for more details):
 
 -- ✔ **Bayesian Optimization & Genetic Algorithms** – Ensuring models are optimally tuned dynamically.  
 -- ✔ **SHAP & LIME for Interpretability** – Providing deep insights into ML/DL model predictions.  
@@ -1724,5 +1725,6 @@ Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 34. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
+
 
 
