@@ -32,7 +32,7 @@ high-dimensional market data. The most successful solutions will provide a learn
 all data features to refine price movement predictions. We look forward to seeing how the Kaggle community approaches this problem and how different modeling techniques can 
 enhance our understanding of market dynamics. If you're excited by complex, high-impact challenges beyond predictive modeling, DRW offers a diverse range of opportunities at 
 the intersection of quantitative research, technology, and trading strategy development. In the following the author will present his own prediction model and delve into its
-algorithmic aspects (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
+algorithmic aspects (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DRW_Crypto_Competition/Crypto_TimeseriesForecast.md#6--references) 1 - 3 below).
 
 ## 1.2 **Crypto Data Processing System Overview** (UML)
 
@@ -1725,6 +1725,7 @@ Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 34. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
+
 
 
 
