@@ -1530,8 +1530,8 @@ This leads to the following result:
 ````python
 preview_dataset("train.parquet", num_rows=10)
 ````
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![Train_Parquet_File1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/train_parquet_file.PNG)
+![Train_Parquet_File2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/train_parquet_file2.PNG)
 
 Finally, we also create synthetic sample parquet data for the sake of debugging:
 
@@ -1587,7 +1587,7 @@ Based on the portion of parquet data we’ve provided, here are some observation
 ✔ **Feature Columns (X1 to X890):** A large set of **proprietary features**, likely engineered for **predictive modeling**.  
 ✔ **Label Column:** Represents the **target variable**—important for the **Kaggle competition**. 
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG) 
+![Feature_Selection](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/FeatureSelection.PNG) 
 
 Our **Kaggle pipeline** aligns well with the **train.parquet dataset structure**! 🚀  
 
@@ -1620,11 +1620,11 @@ Our pipeline is **ready to tackle the Kaggle dataset competitively**! 🔧🔥
 
 The sample of generated results is structured as a dictionary and displayed below:
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![Results_Dictionary](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/ResultsDictionary.png)
 
 The deliberate model comparison proceeds as follows:
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![Model_Comparison](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/ModelComparison.png)
 
 ---
 
@@ -1640,9 +1640,9 @@ The deliberate model comparison proceeds as follows:
    - `prediction` (floating-point predictions).  
    - Exports as **CSV** using `pandas.to_csv()` with `index=False`.
    
- We recognize the clear tabular structure (columns ID and prediction) of our kaggle-output file in accord with competition requirements;
+ We recognize the clear tabular structure (columns ID and prediction) of our kaggle-output file in accord with competition requirements:
  
- ![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+ ![CSV_File_Results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Results_CSV_File.png)
 
 ---
 
@@ -1660,7 +1660,7 @@ The deliberate model comparison proceeds as follows:
 Our pipeline is now **fully optimized for the Kaggle competition**, ensuring compliance with the **evaluation criteria (Pearson correlation)** while 
 employing **state-of-the-art ML techniques** for feature engineering, model experimentation, and submission generation. ✅  
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![The full pythonic code implementation](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_Pipeline_Module_Code.md)
 
 
 # 5. Future improvements
@@ -1674,7 +1674,7 @@ Here’s a curated list of **future enhancements**, grouped by **category** to h
   The Crypto analysis pipeline discussed above could be enhanced by means of a batching-wrapper functionality that would allow users
   to process arbitrary large parquet data files without having to revert to costly alternatives provided by GCP, AWS or Azure. 
   This batching wrapper functionality could be represented as a data analytic pipeline comprised of the following algorithms and models 
-  (please refer to the md-file [BatchOptimizationConcepts](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) for more details):
+  (please refer to the md-file [BatchOptimizationConcepts](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/BatchOptimizationConcepts.md) for more details):
 
 -- ✔ **Bayesian Optimization & Genetic Algorithms** – Ensuring models are optimally tuned dynamically.  
 -- ✔ **SHAP & LIME for Interpretability** – Providing deep insights into ML/DL model predictions.  
@@ -1689,8 +1689,8 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f652e5f66ff0c322505da5a61dc0e79d053a3aa8/ForexArbitrageSeeker/ForexArbitrageSeeker.ipynb)
-3. [![FOREX_Arbitrage_Seeking Report | English](https://img.shields.io/badge/FOREX_Arbitrage_Seeker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/558d66eb6f1d13f19e41723431280766ed48df58/ForexArbitrageSeeker/ArbitrageSeekerReport.pdf) 
+2. [![Jupyter Notebook | English](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/DRW_CryptoMarketPrediction.ipynb)
+3. [![DRW_Crypto_Forecasting Report | English](https://img.shields.io/badge/FOREX_Arbitrage_Seeker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_TimeseriesForecast_Report.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 6. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
@@ -1724,3 +1724,4 @@ Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 34. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
+
