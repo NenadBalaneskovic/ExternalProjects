@@ -928,8 +928,8 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f652e5f66ff0c322505da5a61dc0e79d053a3aa8/ForexArbitrageSeeker/ForexArbitrageSeeker.ipynb)
-3. [![FOREX_Arbitrage_Seeking Report | English](https://img.shields.io/badge/FOREX_Arbitrage_Seeker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/558d66eb6f1d13f19e41723431280766ed48df58/ForexArbitrageSeeker/ArbitrageSeekerReport.pdf) 
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/DRW_CryptoMarketPrediction.ipynb)
+3. [![DRW_Crypto_Forecasting Report | English](https://img.shields.io/badge/DRW_Crypto_Forecasting%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_TimeseriesForecast_Report.pdf)  
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 6. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
@@ -963,3 +963,4 @@ Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 34. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
+
