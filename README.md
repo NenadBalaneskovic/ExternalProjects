@@ -150,4 +150,27 @@ and delivers reliable insights that help maintain product consistency, detect sh
   
   [![ScorecardEvaluator_GUI](https://img.shields.io/badge/Scorecard_Evaluator_GUI%20(Quality_Management)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
 
+- ### 13. **DRW Crypto Market Prediction (Kaggle competition) - Aug 2025**
+  #### Abstract:
+  The purpose of a DRW Crypto Market Prediction project is to develop a model capable of predicting crypto market price movements using synthetized realistic production data. Accurate directional signals derived through quantitative methods
+  can significantly enhance trading strategies and enable more precise market opportunity identification. The cryptocurrency market represents one of the most dynamic and rapidly evolving financial landscapes, offering a wealth of
+  opportunities for those who can extract meaningful insights from its vast streams of data. However, market information in crypto has an inherently low signal-to-noise ratio making it exceptionally difficult to identify predictive patterns.
+  Price movements are shaped by a complex interplay of liquidity, order flow dynamics, sentiment shifts, and structural inefficiencies, requiring sophisticated quantitative techniques to decode.
+
+  At DRW, we have been at the forefront of financial innovation for over three decades, embracing cutting-edge technology and rigorous quantitative research to optimize trading strategies. Through Cumberland, our dedicated crypto trading arm,
+  we were among the earliest institutional participants in the digital asset space, helping to shape market structure and improve efficiency. As one of the largest liquidity providers in crypto, we thrive on developing proprietary trading
+  strategies that adapt to the ever-changing market environment.
+
+  In this competition, we invite you to build a model capable of predicting short-term crypto future price movements using our production feature data alongside publicly available market volume statistics. The proprietary production features
+  we provide are integral to our trading strategies, capturing subtle market signals that help us navigate and seize opportunities in real time. Moreover, these production features, combined with public data describing the broader market state,
+  create a rich and challenging dataset for data mining and modeling. Your task is to integrate these diverse sources of information into a single directional signal that effectively predicts crypto future price movements. Within this project
+  however we will use instead of the original data set it synthesized realistic equivalent.
+
+  Through this challenge, we aim to replicate the real-world problems we tackle at DRW every day—leveraging advanced machine learning techniques to extract structure from noisy, high-dimensional market data. The most successful solutions will
+  provide a learning model that efficiently incorporates both explicit patterns and implicit interactions between all data features to refine price movement predictions. We look forward to seeing how the Kaggle community approaches this problem
+  and how different modeling techniques can enhance our understanding of market dynamics. If you're excited by complex, high-impact challenges beyond predictive modeling, DRW offers a diverse range of opportunities at the intersection of quantitative
+  research, technology, and trading strategy development. In the following the author will present his own prediction model and delve into its algorithmic aspects (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md#7--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+  
+  [![DRW_Crypto_Analysis_Pipeline](https://img.shields.io/badge/Scorecard_Evaluator_GUI%20(Quality_Management)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/093fcf8ebe65a32e0fae9d6ee01382fc14857e4f/ScoreCardEvaluator_GUI/ScoreCardEvaluator_GUI.md)
+
   
