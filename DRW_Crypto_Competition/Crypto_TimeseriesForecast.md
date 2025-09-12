@@ -1660,7 +1660,7 @@ The deliberate model comparison proceeds as follows:
 Our pipeline is now **fully optimized for the Kaggle competition**, ensuring compliance with the **evaluation criteria (Pearson correlation)** while 
 employing **state-of-the-art ML techniques** for feature engineering, model experimentation, and submission generation. ✅  
 
-Please refer to the md-file ["The full pythonic code implementation"](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffd7a9b47012f058a703368e059d82bf1333aacf/DRW_Crypto_Competition/Crypto_Pipeline_Module_Code.md) 
+Please refer to the md-file ["The full pythonic code implementation"](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c93f0aab1d473f8a36266be7ad6cc089b11ecdbf/DRW_Crypto_Competition/Crypto_Pipeline_Module_Code.md) 
 when accessing the full pythonic code implementation of the crypto analysis pipeline.
 
 
@@ -1725,6 +1725,7 @@ Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-
 S. H. Derakhshan , C. V. Deutsch: "__Numerical Integration of Bivariate Gaussian Distribution__", Paper 405, CCG Anual Report 13 (2011).
 34. C. Paar, J. Pelzl: "__Understanding Cryptography__", Springer (2010); H. Delfs, H. Knebl: "__Introduction to Cryptography__", 3rd Ed. Springer (2015); J. Katz, Y. lindell: "__Introduction to Modern Cryptography__", 2nd Ed, CRC Press (2015); 
 O. Goldreich: "__Foundations of Cryptography__", Cambridge University Press (2008); J. P. Aumasson: "__Serious Cryptography__", no starch press (2018).
+
 
 
 
