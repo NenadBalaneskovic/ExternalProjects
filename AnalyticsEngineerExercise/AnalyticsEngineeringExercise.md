@@ -341,7 +341,24 @@ with PdfPages("analytics_dashboard.pdf") as pdf:
 
 ---
 
-# 4. Results
+# 4. Results  
+
+### Run instructions
+
+1. Download the folder "AnalyticsEngineerExercise" which has the following structure:
+   <img src="attachment:54c2c572-52b2-4e72-8c0b-3218bf76b43d.png" width="400" height="200"/>
+2. Run all cells below marked with a comment "# --- EXECUTE CELL ---" in succession, all other cells are morkdown-cells containing interpretations (discussions) of code implementations and their results.
+3. Results to posed exercise questions are displayed in subsection 5.4 below and are also repeated here for the sake of convenience:
+
+### Questions and Answers
+
+1. What’s the total number of users present in the dataset?  **1586**
+2. List the number of installs per country. Austria	**185**, Germany **1199**, Switzerland **119**. 
+3. How many users installed the app on August 2, 2022 in Germany on Android? **117** 
+4. How many of these users are active on the first, third, and fourteenth day after the install respectively? (I.e., count users for all three days separately) Number of users active on **day 1**: **63**, Number of users active on **day 3**: **19**, Number of users active on **day 14**: **0**
+5. How much are those in percent? These are called day 1, day 3, and day 14 retention.
+   {'Day 1': **53.85 %**, 'Day 3': **16.24 %**, 'Day 14': **0.0 %**}
+6. Query the view marketing and report the Costs per Install (CPI) on August 6, 2022, for campaign “google_campaign1”? **costs** (113.199537); **number_of_installs** (58); **CPI** (1.95).
 
 ## 📊 4.1. Retention Curve Visualization
 
@@ -530,6 +547,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
