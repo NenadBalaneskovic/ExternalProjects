@@ -345,7 +345,8 @@ with PdfPages("analytics_dashboard.pdf") as pdf:
 
 ### Run instructions
 
-1. Download the folder !["AnalyticsEngineerExercise"](https://github.com/NenadBalaneskovic/ExternalProjects/tree/dd28dbf8cddf9f1aa26eae6479bca049c936c180/AnalyticsEngineerExercise) which has the following structure:
+1. Download the folder 📁 [AnalyticsEngineerExercise](https://github.com/NenadBalaneskovic/ExternalProjects/tree/dd28dbf8cddf9f1aa26eae6479bca049c936c180/AnalyticsEngineerExercise)
+ which has the following structure:
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d44e2bfac2bc3832651d539b633f9b3c258485a/AnalyticsEngineerExercise/FolderStructure.png" width="400" height="200"/>
 2. Run all cells below marked with a comment "# --- EXECUTE CELL ---" in succession, all other cells are morkdown-cells containing interpretations (discussions) of code implementations and their results.
 3. Results to posed exercise questions are displayed in subsection 5.4 below and are also repeated here for the sake of convenience:
@@ -547,6 +548,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
