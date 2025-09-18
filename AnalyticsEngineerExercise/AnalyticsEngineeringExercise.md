@@ -381,7 +381,7 @@ We might consider:
 
 ## 📈 4.2. CPI Trend Visualization
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![CPI_Trend_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d2d500963c8ef30a776adf91e5f5761d2d61e371/AnalyticsEngineerExercise/bild2.PNG)
 
 The plot above titled **"CPI Trend – google_campaign1"** offers a valuable look into the **cost efficiency** of a specific marketing campaign over time.
 
@@ -530,6 +530,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
