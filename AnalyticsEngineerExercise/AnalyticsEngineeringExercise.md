@@ -345,7 +345,7 @@ with PdfPages("analytics_dashboard.pdf") as pdf:
 
 ## 📊 4.1. Retention Curve Visualization
 
-![Forex_Arbitrage_Seeker_GUI results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fe691bd1b9c93b1c85e5ff92c3196234f519209f/ForexArbitrageSeeker/ArbitrageSeeker_GUI.PNG)
+![Retention_Curve_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3486e0e261412886f5ea9ebfc35185dde311067e/AnalyticsEngineerExercise/bild1.PNG)
 
 Above is a line chart showing how retention drops over time for the selected cohort — a key visual for understanding user engagement and campaign effectiveness. 
 
@@ -530,6 +530,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
