@@ -80,7 +80,7 @@ challenging to complete all tasks but please respect the time limit.
 Attachment
 - exercise.db
 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/ForexArbitrageSeeker/ArbitrageSeeker_GUI.md#6--references) 1 - 3 below).
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
 
 # 2. 🔐 Ideas
 
@@ -530,6 +530,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
