@@ -246,9 +246,8 @@ run the code and the answers to the questions above.
 challenging to complete all tasks but please respect the time limit.
 
 Attachment
-- exercise.db
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
+- exercise.db (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
 
-   [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/DRW_Crypto_Forecasting%20(Kaggle_Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c7acc73cbc371947aeeaf79ebfac5f193829075b/DRW_Crypto_Competition/Crypto_TimeseriesForecast.md)
+   [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/DRW_Crypto_Forecasting%20(Kaggle_Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/84aa0400bdc33ec839543ace079a90b1db9da845/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md)
 
   
