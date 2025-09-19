@@ -248,6 +248,6 @@ and delivers reliable insights that help maintain product consistency, detect sh
   Attachment
   - exercise.db (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
 
-   [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/Analytics_Engineer_Exercise%20(Gaming)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0d527a1339de7be596cb926b9c4075759872fe87/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md)
+   [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/Analytics_Engineer_Exercise%20(Gaming)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/83c43c94404725664b107e999a434d350a9d538b/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md)
 
   
