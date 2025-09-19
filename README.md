@@ -174,79 +174,79 @@ and delivers reliable insights that help maintain product consistency, detect sh
    [![DRW_Crypto_Analysis_Pipeline](https://img.shields.io/badge/DRW_Crypto_Forecasting%20(Kaggle_Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c7acc73cbc371947aeeaf79ebfac5f193829075b/DRW_Crypto_Competition/Crypto_TimeseriesForecast.md)
 
 - ### 14. **Analytics Engineer Exercise (Gaming) - Sep 2025**
-#### Abstract: 
-Imagine you are working as an Analytics Engineer for a company offering a mobile app. This app collects millions of data points from users every day. 
-Your goal is to transform and organize this data so that not only you can derive valuable insights from it, but also product managers and marketers 
-can easily query it.  
-
-Attached to this exercise you can find an SQLite database containing two tables. In the following, we give a brief description of the data.
-This first table (events) contains 43,479 telemetric events for one week from a hypothetical mobile app. All users contained in the database 
-are new users. Each row in this table describes a single event by a user and contains the following columns:  
-
-● user_id  
-
-● event_name  
-
-● event_timestamp (unix timestamp measured in microseconds)  
-
-● platform  
-
-● os (= operating system)  
-
-● country  
-
-● ad_revenue (only set for particular events related to monetization)  
-
-● tracker_name (the name of the campaign if a user was acquired via paid
-marketing or “Unattributed“ if this is an organic user).  
-
-The second table (user_acquisition) contains information about user
-acquisition campaigns. These campaigns were run to acquire new users via
-different ad networks. The data contains for each day and campaign a tracker
-name (i.e., the name of the campaign) and the amount spent on this day for this
-campaign. To be more precise, the table contains the following columns:  
-
-● date  
-
-● tracker_name  
-
-● costs  
-
-Please answer the following questions and implement the necessary tasks in a
-programming language of your choice (hint: the Python standard library offers a
-module sqlite3 which can be easily used for the task to read a file based database. 
-Of course, you are also free to choose other packages or programming
-languages).
-
-1. What’s the total number of users present in the dataset?
-2. List the number of installs per country.
-3. In this exercise, you will calculate the retention for a specific cohort.
-○ How many users installed the app on August 2, 2022 in Germany on
-Android?
-○ How many of these users are active on the first, third, and fourteenth
-day after the install respectively? (I.e., count users for all three days
-separately)
-○ How much are those in percent? These are called day 1, day 3, and
-day 14 retention.
-4. Create a view named marketing that provides the following columns per
-day and per campaign:
-○ day
-○ tracker_name
-○ number_of_installs
-○ costs (costs spent on this day for the specific campaign)
-○ total_revenue (revenue from the users acquired on this day from
-this campaign. Make use of the column ad_revenue from events)
-5. Query the view marketing and report the Costs per Install (CPI) on August
-6, 2022, for campaign “google_campaign1”?
-
-● Please submit your documented code along with instructions on how to
-run the code and the answers to the questions above.  
-
-● Please only spend 120 minutes on the exercise. We know that it is
-challenging to complete all tasks but please respect the time limit.
-
-Attachment
-- exercise.db (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
+  #### Abstract: 
+  Imagine you are working as an Analytics Engineer for a company offering a mobile app. This app collects millions of data points from users every day. 
+  Your goal is to transform and organize this data so that not only you can derive valuable insights from it, but also product managers and marketers 
+  can easily query it.  
+  
+  Attached to this exercise you can find an SQLite database containing two tables. In the following, we give a brief description of the data.
+  This first table (events) contains 43,479 telemetric events for one week from a hypothetical mobile app. All users contained in the database 
+  are new users. Each row in this table describes a single event by a user and contains the following columns:  
+  
+  ● user_id  
+  
+  ● event_name  
+  
+  ● event_timestamp (unix timestamp measured in microseconds)  
+  
+  ● platform  
+  
+  ● os (= operating system)  
+  
+  ● country  
+  
+  ● ad_revenue (only set for particular events related to monetization)  
+  
+  ● tracker_name (the name of the campaign if a user was acquired via paid
+  marketing or “Unattributed“ if this is an organic user).  
+  
+  The second table (user_acquisition) contains information about user
+  acquisition campaigns. These campaigns were run to acquire new users via
+  different ad networks. The data contains for each day and campaign a tracker
+  name (i.e., the name of the campaign) and the amount spent on this day for this
+  campaign. To be more precise, the table contains the following columns:  
+  
+  ● date  
+  
+  ● tracker_name  
+  
+  ● costs  
+  
+  Please answer the following questions and implement the necessary tasks in a
+  programming language of your choice (hint: the Python standard library offers a
+  module sqlite3 which can be easily used for the task to read a file based database. 
+  Of course, you are also free to choose other packages or programming
+  languages).
+  
+  1. What’s the total number of users present in the dataset?
+  2. List the number of installs per country.
+  3. In this exercise, you will calculate the retention for a specific cohort.
+  ○ How many users installed the app on August 2, 2022 in Germany on
+  Android?
+  ○ How many of these users are active on the first, third, and fourteenth
+  day after the install respectively? (I.e., count users for all three days
+  separately)
+  ○ How much are those in percent? These are called day 1, day 3, and
+  day 14 retention.
+  4. Create a view named marketing that provides the following columns per
+  day and per campaign:
+  ○ day
+  ○ tracker_name
+  ○ number_of_installs
+  ○ costs (costs spent on this day for the specific campaign)
+  ○ total_revenue (revenue from the users acquired on this day from
+  this campaign. Make use of the column ad_revenue from events)
+  5. Query the view marketing and report the Costs per Install (CPI) on August
+  6, 2022, for campaign “google_campaign1”?
+  
+  ● Please submit your documented code along with instructions on how to
+  run the code and the answers to the questions above.  
+  
+  ● Please only spend 120 minutes on the exercise. We know that it is
+  challenging to complete all tasks but please respect the time limit.
+  
+  Attachment
+  - exercise.db (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
 
    [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/DRW_Crypto_Forecasting%20(Kaggle_Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/84aa0400bdc33ec839543ace079a90b1db9da845/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md)
 
