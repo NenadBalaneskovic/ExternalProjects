@@ -173,9 +173,8 @@ and delivers reliable insights that help maintain product consistency, detect sh
 
    [![DRW_Crypto_Analysis_Pipeline](https://img.shields.io/badge/DRW_Crypto_Forecasting%20(Kaggle_Competition)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c7acc73cbc371947aeeaf79ebfac5f193829075b/DRW_Crypto_Competition/Crypto_TimeseriesForecast.md)
 
-  - ### 14. **Analytics Engineer Exercise (Gaming) - Sep 2025**
-  #### Abstract:
-  ## Objective  
+- ### 14. **Analytics Engineer Exercise (Gaming) - Sep 2025**
+#### Abstract: 
 Imagine you are working as an Analytics Engineer for a company offering a mobile app. This app collects millions of data points from users every day. 
 Your goal is to transform and organize this data so that not only you can derive valuable insights from it, but also product managers and marketers 
 can easily query it.  
@@ -239,8 +238,6 @@ day and per campaign:
 this campaign. Make use of the column ad_revenue from events)
 5. Query the view marketing and report the Costs per Install (CPI) on August
 6, 2022, for campaign “google_campaign1”?
-
-### Final Remarks  
 
 ● Please submit your documented code along with instructions on how to
 run the code and the answers to the questions above.  
