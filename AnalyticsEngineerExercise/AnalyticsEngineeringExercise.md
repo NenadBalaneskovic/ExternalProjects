@@ -96,7 +96,7 @@ This is a clean list of `!pip install` commands we can run in our Jupyter Notebo
 # For file watching or hot reloads (optional)
 !pip install watchdog
 
-# If you plan to use SQL magic in Jupyter
+# In case we plan to use SQL magic in Jupyter
 !pip install ipython-sql
 ```
 
@@ -548,6 +548,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
