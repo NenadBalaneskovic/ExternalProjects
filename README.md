@@ -230,13 +230,19 @@ and delivers reliable insights that help maintain product consistency, detect sh
   day 14 retention.
   4. Create a view named marketing that provides the following columns per
   day and per campaign:
+
   ○ day
+  
   ○ tracker_name
+  
   ○ number_of_installs
+  
   ○ costs (costs spent on this day for the specific campaign)
+  
   ○ total_revenue (revenue from the users acquired on this day from
   this campaign. Make use of the column ad_revenue from events)
-  5. Query the view marketing and report the Costs per Install (CPI) on August
+  
+  6. Query the view marketing and report the Costs per Install (CPI) on August
   6, 2022, for campaign “google_campaign1”?
   
   ● Please submit your documented code along with instructions on how to
