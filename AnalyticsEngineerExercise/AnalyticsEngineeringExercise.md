@@ -506,7 +506,6 @@ Beyond the core metrics like installs, retention, and CPI, we could flesh out a 
 # 6. 📚 References
 1. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
 K. Webel, D. Wied: "__Stochastische Prozesse__", 2. Auflage Springer (2016); L. Held: "__Methoden der statistischen Inferenz__", 1. Auflage Spektrum (2008);
-[Link to the Exercise:](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5821cffe9960af6739066d3c5a1e2a7da1946bf5/AnalyticsEngineerExercise/Analytics%20Engineer%20Coding%20Exercise.pdf).
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8cd6b8f5c7010063936e679806d0ac37cda903c5/AnalyticsEngineerExercise/AnalyticsEngineerTask.ipynb)
 3. [![Analytics_Engineering_Gaming_Analysis Report | English](https://img.shields.io/badge/Analytics_Engineering_Gaming_Analysis%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7b91e2a516ed3974a15aae5d083e0332947e65e6/AnalyticsEngineerExercise/analytics_dashboard.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
@@ -548,6 +547,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Antti Ilmanen: "__Expected Returns: An Investor’s Guide to Harvesting Market Rewards__", 1st Ed., WILEY (2011); Steven E. Shreve: "__Stochastic Calculus for Finance I & II__", 1st Ed., Springer (2004); 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
+
 
 
 
