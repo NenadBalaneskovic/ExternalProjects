@@ -502,7 +502,7 @@ This ensures reproducibility and shareability across teams.
 7. **Export dataset or schema** → for documentation or sharing
 
 
-![Retention_Curve_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3486e0e261412886f5ea9ebfc35185dde311067e/AnalyticsEngineerExercise/bild1.PNG)
+![PipelineWorkflowVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0e6d95292313f2a9aeefc6c7d37b7a04c50532d8/PortfolioRiskAnalysisProject/Fig2.png)
 
 The gui also stores two data csv files: here’s exactly what those two auto-saved CSVs contain and how they relate to our GUI:
 
@@ -1645,6 +1645,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
