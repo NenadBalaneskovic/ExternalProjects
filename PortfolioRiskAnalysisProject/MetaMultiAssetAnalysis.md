@@ -1252,7 +1252,7 @@ analysis:
 ## 5.2 🧠 Interpretation of results
 
 - The GUI adapts its widget structure to criteria specified in uploaded yaml files.
-- The user can mult-select different assets and inspect their temporal price evolution.
+- The user can multi-select different assets and inspect their temporal price evolution.
 - The GUI also displays mean, std, min and max values for each dataset associated with a specific asset.
 
 ![UsageVisualizationFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_6.png)
@@ -1650,6 +1650,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
