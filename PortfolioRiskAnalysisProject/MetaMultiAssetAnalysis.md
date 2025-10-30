@@ -1308,7 +1308,7 @@ Our project is a tightly integrated stack of:
 - **pyqtgraph** for visualization
 - **pandas/numpy** for data
 - **yaml/csv/os/datetime** for I/O and persistence
-- **Custom simulation and analysis modules** for domain logic
+- **Custom functional simulation and analysis modules** for domain logic utilizing meta-programming patterns
 
 It is modular, extensible, and built for performance and reproducibility, a perfect foundation for advanced financial analytics.
 
@@ -1609,7 +1609,7 @@ S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", 
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013).
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b0984b882689b19522e8af71b33242ba054568c1/PortfolioRiskAnalysisProject/PortfolioRiskAnalysis.ipynb)
-3. [![Meta_Multi_Asset_Analysis Report | English](https://img.shields.io/badge/Analytics_Engineering_Gaming_Analysis%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7b91e2a516ed3974a15aae5d083e0332947e65e6/AnalyticsEngineerExercise/analytics_dashboard.pdf) 
+3. [![Meta_Multi_Asset_Analysis Report | English](https://img.shields.io/badge/Multi_Asset_Analysis%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3ae96d0848f8f2468cdedf2c5428167bacae0ec3/PortfolioRiskAnalysisProject/Meta_MultAssetAnalysis_Report.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 6. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
@@ -1650,6 +1650,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
