@@ -4,7 +4,8 @@
 Meta and functional programming paradigms offer significant flexibility in designing robust and flexible GUIs via PyQt5 capable of automatically
 adapting their widget structure to continuously changing data set schemas. Especially in the course of multi asset management tasks such
 flexibilities promise higher efficiencies in simultaneously evaluating numerous portfolio structures comprised of diverse asset classes. 
-Therefore, multi asset management may be regarded as an adequate playground for testing highly adaptable GUI designs and their UX performance. 
+Therefore, multi asset management may be regarded as an adequate playground for testing highly adaptable GUI designs and their UX performance 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md#7--references) 1 - 3 below). 
 
 ### 🎯 **Primary Aim**
 
@@ -83,7 +84,6 @@ and real-world modeling techniques. The GUI adapts to data structure changes and
 2. **Sketch the GUI layout**: What are the core panels (e.g., asset selector, risk metrics, plots)?
 3. **Choose the functional/metaprogramming patterns**: Registry decorators? Dynamic class factories?
 4. **Decide on the physics/statistics crossover**: Which models are most relevant to the portfolio analysis framework?
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md#6--references) 1 - 3 below).
 
 # 2. 🔐 GUI and algorithmic concepts
 
@@ -1647,6 +1647,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
