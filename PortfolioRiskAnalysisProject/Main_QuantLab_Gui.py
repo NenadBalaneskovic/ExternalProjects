@@ -290,7 +290,7 @@ class QuantCanvas(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("FERI QuantLab — QuantCanvas")
+        self.setWindowTitle("FIN QuantLab — QuantCanvas")
         self.resize(1400, 900)
         self.df = None
         self.schema = {}
@@ -483,3 +483,4 @@ if __name__ == "__main__":
     window = QuantCanvas()
     window.show()
     sys.exit(app.exec_())
+
