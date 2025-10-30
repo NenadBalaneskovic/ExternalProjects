@@ -1605,7 +1605,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013).
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8cd6b8f5c7010063936e679806d0ac37cda903c5/AnalyticsEngineerExercise/AnalyticsEngineerTask.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b0984b882689b19522e8af71b33242ba054568c1/PortfolioRiskAnalysisProject/PortfolioRiskAnalysis.ipynb)
 3. [![Meta_Multi_Asset_Analysis Report | English](https://img.shields.io/badge/Analytics_Engineering_Gaming_Analysis%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7b91e2a516ed3974a15aae5d083e0332947e65e6/AnalyticsEngineerExercise/analytics_dashboard.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
@@ -1647,6 +1647,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
