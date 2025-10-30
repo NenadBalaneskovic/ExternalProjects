@@ -554,7 +554,7 @@ Just make sure:
 
 ### Run instructions
 
-1. Download the folder 📁 [PortfolioRiskAnalysisProject](https://github.com/NenadBalaneskovic/ExternalProjects/tree/dd28dbf8cddf9f1aa26eae6479bca049c936c180/AnalyticsEngineerExercise)
+1. Download the folder 📁 [PortfolioRiskAnalysisProject](https://github.com/NenadBalaneskovic/ExternalProjects/tree/74f9b9ee01972a3c9ca1106aedb61629184c5cab/PortfolioRiskAnalysisProject)
  which has the following structure:
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/a7e1ae86a65ad34bcefc541b707de58bd5bb8a07/PortfolioRiskAnalysisProject/Fig3.PNG" width="400" height="200"/>
 2. Run the py file "__quantlab_launcher.py__" in VS Code.
@@ -1645,6 +1645,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
