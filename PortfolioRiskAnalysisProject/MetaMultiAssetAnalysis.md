@@ -1251,13 +1251,16 @@ analysis:
 
 ## 5.2 🧠 Interpretation of results
 
-- Does early engagement (e.g. first 24h activity) predict long-term retention?
-- Can we identify churn predictors based on event sequences?
-- What is the causal impact of tracker cost on downstream revenue?
+- The GUI adapts its widget structure to criteria specified in uploaded yaml files.
+- The user can mult-select different assets and inspect their temporal price evolution.
+- The GUI also displays mean, std, min and max values for each dataset associated with a specific asset.
+
 ![UsageVisualizationFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_6.png)
-- **Propensity score matching**: Compare similar users across campaigns.
-- **Survival analysis**: Model time-to-churn.
-- **Granger causality**: Test if one time series (e.g. installs) predicts another (e.g. revenue).
+
+- Generated synthetic and simulation data sets are stored automatically as csv files.
+- Each of the saved, time-stamped csv files can be uploaded into the GUI and inspected.
+- The user can also convert his own csv files into respective yaml file instructions.
+
 ![GeneratedCsvFiles](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_5.PNG )
 
 ## 5.3 Technologies
@@ -1647,6 +1650,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
