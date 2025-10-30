@@ -1261,7 +1261,7 @@ analysis:
 - Each of the saved, time-stamped csv files can be uploaded into the GUI and inspected.
 - The user can also convert his own csv files into respective yaml file instructions.
 
-![GeneratedCsvFiles](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_5.PNG )
+![GeneratedCsvFiles](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4852902216d05f6c9e5e895fe78c4ba35f1bbb95/PortfolioRiskAnalysisProject/Fig4_5.PNG)
 
 ## 5.3 Technologies
 
@@ -1650,6 +1650,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
