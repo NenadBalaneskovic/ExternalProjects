@@ -1254,11 +1254,11 @@ analysis:
 - Does early engagement (e.g. first 24h activity) predict long-term retention?
 - Can we identify churn predictors based on event sequences?
 - What is the causal impact of tracker cost on downstream revenue?
-![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
+![UsageVisualizationFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_6.png)
 - **Propensity score matching**: Compare similar users across campaigns.
 - **Survival analysis**: Model time-to-churn.
 - **Granger causality**: Test if one time series (e.g. installs) predicts another (e.g. revenue).
-![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
+![GeneratedCsvFiles](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_5.PNG )
 
 ## 5.3 Technologies
 
@@ -1647,6 +1647,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
