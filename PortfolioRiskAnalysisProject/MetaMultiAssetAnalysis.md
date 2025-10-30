@@ -1247,7 +1247,7 @@ analysis:
 1. Run the py file "__quantlab_launcher.py__" in VS Code.
 2. Load one of the yaml schemas into the GUI.
 
-![Retention_Curve_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3486e0e261412886f5ea9ebfc35185dde311067e/AnalyticsEngineerExercise/bild1.PNG)
+![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
 
 ## 5.2 🧠 Interpretation of results
 
@@ -1645,6 +1645,7 @@ Anatoly B. Schmidt: "__Quantitative Finance for Physicists: An Introduction__", 
  Andrew Pole: "__Statistical Arbitrage: Algorithmic Trading Insights and Techniques__", 1st Ed., WILEY (2007); Mark S. Joshi: "__The Concepts and Practice of Mathematical Finance__", 2nd Ed., Cambridge University Press (2008);
 Kaggle-link: competition-documentation: https://www.kaggle.com/competitions/drw-crypto-market-prediction.
 36. R. Nystrom: "__Game Programming Patterns__", 1st Ed. genever benning (2014); A. A. Stepanov, D. E. Rose: "__From Mathematics to Generic Programming__", 1st Ed. Addison-Wesley (2015); 
+
 
 
 
