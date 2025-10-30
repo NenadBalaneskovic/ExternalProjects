@@ -256,4 +256,14 @@ and delivers reliable insights that help maintain product consistency, detect sh
 
    [![Analytics Engineer Exercise (Gaming)](https://img.shields.io/badge/Analytics_Engineer_Exercise%20(Gaming)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/aa8bf069002f6022cfbd49332b042ab3f17064c4/AnalyticsEngineerExercise/AnalyticsEngineeringExercise.md)
 
+- ### 15. **Meta Multi-Asset Analysis Project - Oct 2025**
+  #### Abstract: 
+  Meta and functional programming paradigms offer significant flexibility in designing robust and flexible GUIs via PyQt5 capable of automatically adapting their widget structure to continuously changing data set schemas. Especially in the course of multi asset management tasks such flexibilities promise higher efficiencies in simultaneously evaluating numerous portfolio structures comprised of diverse asset classes. Therefore, multi asset management may be regarded as an adequate playground for testing highly adaptable GUI designs and their UX performance (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md#7--references) 1 - 3 below).
+
+  ##### 🎯 Primary Aim  
+
+  Design a data analysis (pythonic) project regarding portfolio, risk and volatility analysis used within the framework of a multi-asset management company. Generate a large synthetic data set and design a pyqt gui which uses modern physical and statistical methods and accomodates its widget structure to feature changes within a csv data set by means of functional and meta programming paradigms.
+
+  [![Meta_Multi_Asset_Analysis](https://img.shields.io/badge/Meta_Multi_Asset%20(Portfolio_Analysis)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/609e08a2523fe1024856136bbefa88b38624b112/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md#7--references)
+
   
