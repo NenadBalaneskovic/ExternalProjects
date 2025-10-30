@@ -264,6 +264,6 @@ and delivers reliable insights that help maintain product consistency, detect sh
 
   Design a data analysis (pythonic) project regarding portfolio, risk and volatility analysis used within the framework of a multi-asset management company. Generate a large synthetic data set and design a pyqt gui which uses modern physical and statistical methods and accomodates its widget structure to feature changes within a csv data set by means of functional and meta programming paradigms.
 
-  [![Meta_Multi_Asset_Analysis](https://img.shields.io/badge/Meta_Multi_Asset%20(Portfolio_Analysis)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/609e08a2523fe1024856136bbefa88b38624b112/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md#7--references)
+  [![Meta_Multi_Asset_Analysis](https://img.shields.io/badge/Meta_Multi_Asset%20(Portfolio_Analysis)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/609e08a2523fe1024856136bbefa88b38624b112/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md)
 
   
