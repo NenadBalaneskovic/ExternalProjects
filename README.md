@@ -274,7 +274,7 @@ and delivers reliable insights that help maintain product consistency, detect sh
 
   Design a data analysis (pythonic) project regarding portfolio, risk and volatility analysis used within the framework of a multi-asset management company. Generate a large synthetic data set and design a pyqt gui which uses modern physical and statistical methods and accomodates its widget structure to feature changes within a csv data set by means of functional and meta programming paradigms.
 
-  [![Quantum_Kalman_Forecasting](https://img.shields.io/badge/Quantum_Kalman_Forecasting20(TimeSeries_Analysis)-English-yellowblue?logoColor=blue&labelColor=yellow)]( https://github.com/NenadBalaneskovic/ExternalProjects/blob/2595ff1848b382dec0be605c3c2f6c87f97713ab/KalmanSignalForecasting/QuantumKalmanSignalForecasting.md)
+  [![Quantum_Kalman_Forecasting](https://img.shields.io/badge/Quantum_Kalman_Forecasting%20(TimeSeries_Analysis)-English-yellowblue?logoColor=blue&labelColor=yellow)]( https://github.com/NenadBalaneskovic/ExternalProjects/blob/2595ff1848b382dec0be605c3c2f6c87f97713ab/KalmanSignalForecasting/QuantumKalmanSignalForecasting.md)
  
 
   
