@@ -777,7 +777,7 @@ This will create a file named `synthetic_stock_prices.csv` with 10 assets and 10
 **✅ This is the complete, fully commented Python implementation of the hybrid forecasting pipeline for all 10 assets.**  
 It loads our synthetic CSV, applies Kalman filtering, Richardson extrapolation, anti-limit stabilization, quantum-inspired denoising, and hybrid switching — then exports all results to a folder named `forecast_results`.
 
-## 4,1 🧮 Full Python Code: `hybrid_forecasting_pipeline.py`
+## 4.1 🧮 Full Python Code: `hybrid_forecasting_pipeline.py`
 
 ```python
 import os
@@ -1055,7 +1055,7 @@ Switch between classical Kalman filtering and quantum-inspired denoising based o
 ### 📐 Interpretation  
 Volatility-aware switching improves robustness. Assets with regime shifts or chaotic behavior benefit from quantum-inspired denoising, while stable assets remain well-served by classical filtering.
 
-## 4,10 📊 Summary Table
+## 4.10 📊 Summary Table
 
 | Asset    | Kalman Smoothing | Richardson Forecast | Anti-Limit Stability | Quantum Denoising | Hybrid Switching |
 |----------|------------------|---------------------|-----------------------|-------------------|------------------|
@@ -1073,7 +1073,7 @@ Volatility-aware switching improves robustness. Assets with regime shifts or cha
 
 This pipeline demonstrates that combining classical and quantum-inspired techniques yields robust, volatility-aware forecasts — ideal for financial systems, sensor networks, and chaotic time series.
 
-## 4.11 Application of the pipeline to all 10 assets
+## 4.12 Application of the pipeline to all 10 assets
 
 ![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
 
@@ -1266,9 +1266,9 @@ Below is a full scaffold for a **LangChain-powered agent** that wraps our hybrid
 
 ### Run instructions
 
-1. Download the folder 📁 [PortfolioRiskAnalysisProject](https://github.com/NenadBalaneskovic/ExternalProjects/tree/74f9b9ee01972a3c9ca1106aedb61629184c5cab/PortfolioRiskAnalysisProject)
+1. Download the folder 📁 [KalmanSignalForecasting](https://github.com/NenadBalaneskovic/ExternalProjects/blob/725bc4b5f813abfa379171d428957837877480d4/KalmanSignalForecasting/Folder_Contents.PNG)
  which has the following structure:
-   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/a7e1ae86a65ad34bcefc541b707de58bd5bb8a07/PortfolioRiskAnalysisProject/Fig3.PNG" width="400" height="200"/>
+   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/725bc4b5f813abfa379171d428957837877480d4/KalmanSignalForecasting/Folder_Contents.PNG" width="400" height="200"/>
 2. Run the py file "__quantlab_launcher.py__" in VS Code.
 3. Load one of the yaml schemas into the GUI.
 
@@ -1691,6 +1691,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
