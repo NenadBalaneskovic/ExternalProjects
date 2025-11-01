@@ -8,7 +8,7 @@ techniques to extend trends, and incorporating quantum error correction strategi
 of resilient and precise forecasting. This interdisciplinary synthesis promises new insights into volatility modeling, especially in chaotic or 
 regime-switching systems, and opens the door to quantum-enhanced predictive analytics. The Pythonic noise-mitigation forecasting pipeline emerging from inquiries 
 of this project will be packaged into a user-friendly streamlit app capable of interacting with user's prompts 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PortfolioRiskAnalysisProject/MetaMultiAssetAnalysis.md#7--references) 1 - 3 below). 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/KalmanSignalForecasting/QuantumKalmanSignalForecasting.md#7--references) 1 - 3 below). 
 
 ### 🎯 **Primary Aim**
 
@@ -1691,6 +1691,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
