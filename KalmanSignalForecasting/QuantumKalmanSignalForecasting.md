@@ -770,6 +770,7 @@ generate_correlated_gbm_csv()
 ```
 
 This will create a file named `synthetic_stock_prices.csv` with 10 assets and 10,000 time steps.
+
 ---
 
 ## 🧠 4. Complete Pythonic hybrid pipeline
@@ -1691,6 +1692,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
