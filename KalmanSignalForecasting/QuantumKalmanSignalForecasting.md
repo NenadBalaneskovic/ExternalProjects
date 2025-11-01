@@ -1266,11 +1266,11 @@ Below is a full scaffold for a **LangChain-powered agent** that wraps our hybrid
 
 ### Run instructions
 
-1. Download the folder 📁 [KalmanSignalForecasting](https://github.com/NenadBalaneskovic/ExternalProjects/blob/725bc4b5f813abfa379171d428957837877480d4/KalmanSignalForecasting/Folder_Contents.PNG)
+1. Download the folder 📁 [KalmanSignalForecasting](https://github.com/NenadBalaneskovic/ExternalProjects/tree/64d777fcdd23036634436d88869817ea96b28546/KalmanSignalForecasting)
  which has the following structure:
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/725bc4b5f813abfa379171d428957837877480d4/KalmanSignalForecasting/Folder_Contents.PNG" width="400" height="200"/>
-2. Run the py file "__quantlab_launcher.py__" in VS Code.
-3. Load one of the yaml schemas into the GUI.
+2. Run the py file "__app.py__" (subfolder "__forecasting_agent__") in VS Code.
+3. Interact with a streamlit app inside your browser by providing a reasonable prompt.
 
 ## 5.1. main.py
 
@@ -1691,6 +1691,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
