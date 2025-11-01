@@ -1605,7 +1605,7 @@ streamlit run streamlit_app/app.py
 - Passes them to our LangChain agent
 - Displays the agent’s response
 - Automatically shows the forecast plot if available
-![UsageVisualizationFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bc087bd52feb497ad21c0354b7a76427b4672139/PortfolioRiskAnalysisProject/Fig4_6.png)
+![StreamlitAppFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/81684083a278a89e3968c1c5f65bc37a9dde26f2/KalmanSignalForecasting/StreamlitApp.PNG)
 
 ## 6.3 🏁 Final Thoughts
 
@@ -1692,6 +1692,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
