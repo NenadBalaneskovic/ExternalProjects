@@ -773,7 +773,7 @@ This will create a file named `synthetic_stock_prices.csv` with 10 assets and 10
 
 ---
 
-## 🧠 4. Complete Pythonic hybrid pipeline
+# 🧠 4. Complete Pythonic hybrid pipeline
 
 **✅ This is the complete, fully commented Python implementation of the hybrid forecasting pipeline for all 10 assets.**  
 It loads our synthetic CSV, applies Kalman filtering, Richardson extrapolation, anti-limit stabilization, quantum-inspired denoising, and hybrid switching — then exports all results to a folder named `forecast_results`.
@@ -1076,7 +1076,7 @@ This pipeline demonstrates that combining classical and quantum-inspired techniq
 
 ## 4.12 Application of the pipeline to all 10 assets
 
-![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
+![Asset6_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6942890700de995847b88c6a023d8a27dd5460ef/KalmanSignalForecasting/Asset6_details.png)
 
 The above figures (focussed on asst 6 and the time evolution of its prices) provide a rich visual audit of how each stage of our hybrid forecasting pipeline performs 
 across all 10 synthetic assets. Here's a structured interpretation and comparison:
@@ -1694,6 +1694,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
