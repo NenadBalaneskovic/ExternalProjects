@@ -981,12 +981,12 @@ Each asset has a 4-panel diagnostic plot:
 
 These plots (with respect to asset 1 below) demonstrate how each method contributes to narrowing uncertainty and improving forecast stability. 
 
-![UsageVisualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b81460d27d9b78a23b99bb1e18447ac6df13532/PortfolioRiskAnalysisProject/Fig4.png)
+![Asset1_Visualization](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b1a41bda881f2f5f4adb5d4aa96b2ef5b14bb647/KalmanSignalForecasting/Asset1_details.PNG)
 
 Now we also offer a comprehensive analytical report summarizing the findings from our hybrid forecasting pipeline applied to Assets 0–2. 
-Each stage is interpreted from mathematical, numerical, and physical standpoints, with emphasis on volatility behavior, extrapolation quality, and denoising effectiveness.
+Each stage is interpreted from mathematical, numerical, and physical standpoints, with emphasis on volatility behavior, extrapolation quality and denoising effectiveness.
 
-# 📊 Hybrid Forecasting Report: Assets 0–2  
+### 📊 Hybrid Forecasting Report: Assets 0–2  
 **Project: Kalman + Sidis + Quantum-Inspired Pipeline**  
 **Dataset: Synthetic Correlated GBM (10,000 time steps)**  
 **Assets Analyzed: Asset_0, Asset_1, Asset_2**
@@ -1694,6 +1694,7 @@ D. Lamberton, B. Lapeyre: "__Introduction to Stochastic Calculus Applied to Fina
 S. R. Pliska: "__Introduction to Mathematical Finance: Discrete Time Models__", Blackwell (2000); A. N. Shiryaev: "__Essentials of Stochastic Finance__", World Scientific (2001);
 S. E. Shreve: "__Stochastic Calculus for Finance I: The Binomial Asset Pricing Model__", Springer (2004); J. Kremer: "__Portfoliotheorie, Risikomanagement und die Bewertung von Derivaten__", Springer (2011);
 L. Rüschendorf: "__Mathematical Risk Analysis__", Springer (2013). 
+
 
 
 
