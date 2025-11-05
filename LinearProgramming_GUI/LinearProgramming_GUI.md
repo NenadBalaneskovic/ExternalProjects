@@ -1821,16 +1821,12 @@ window.show()
 app.exec_()
 ```
 
----
-
 ### 🧠 Notes
 
 - ✅ `app.exec_()` is essential to start the Qt event loop.
 - ✅ We can run this in a Jupyter cell, but it will block further cells until the GUI is closed.
 - ✅ If we are using JupyterLab or VS Code notebooks, we should make sure the kernel supports GUI event loops 
 (some environments may require `%gui qt` magic).
-
----
 
 ### 🧪 Optional: Add a Launcher Function
 
@@ -2103,6 +2099,7 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
 
