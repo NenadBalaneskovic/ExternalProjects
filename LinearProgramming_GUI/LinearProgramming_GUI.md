@@ -394,7 +394,7 @@ Try $$\( x = 3, y = 1 \Rightarrow z = 18 \)$$, check feasibility, and explore ot
 
 ---
 
-# 3. GUI design and its user interaction floe
+# 3. GUI design and its user interaction flow
 
 Let us walk through the user interaction flow for our PyQt5 GUI for solving linear problems, especially when the user provides ≥2 variables and coefficients.
 I will break it down into intuitive stages:
@@ -2103,6 +2103,7 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
 
