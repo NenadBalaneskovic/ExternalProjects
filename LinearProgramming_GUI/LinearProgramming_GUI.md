@@ -123,7 +123,7 @@ def select_method(objective, constraints):
 In the following we address our full GUI sketch, a clean, structured layout for your PyQt5-based linear optimization tool. It includes all the key modules we discussed: 
 objective and constraint input, method selection (including simplex, dual simplex, Dikin, parametric LP, ILP), solution display, visualization, and diagnostics.
 
-![LP_GUI_sketch.png](attachment:5abf205d-d4a4-4a9a-b92a-4afaa974becf.png)
+![LP_GUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fa70ea9b7664fde4b34f095fe211d51330716cbb/LinearProgramming_GUI/LP_GUI_sketch.png)
 
 We are ready to scaffold this into actual PyQt5 code and wire up the backend logic for method selection and solver routing.
 
@@ -2103,5 +2103,6 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
