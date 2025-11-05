@@ -1885,7 +1885,7 @@ and renders them as 2D-plots within the GUI-plane
 
 - Stores calculated Dikin paths as csv and json files (see figure below)
 
-![StreamlitAppFunctionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/81684083a278a89e3968c1c5f65bc37a9dde26f2/KalmanSignalForecasting/StreamlitApp.PNG)
+![DikinPath_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/50552f212236ffb56dd8eae1130d97f92b8dbd19/LinearProgramming_GUI/paths_file.PNG)
 
 - Automatically shows the optimization plots associated with each of the 6 methods (see figure below).
 
@@ -2103,6 +2103,7 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
 
