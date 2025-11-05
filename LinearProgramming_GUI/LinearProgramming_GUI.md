@@ -1860,7 +1860,7 @@ launch_gui()
 ### ✅ Step 1: Download the folder
 
 Download the main folder
-📁 [LinearProgramming_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/tree/64d777fcdd23036634436d88869817ea96b28546/KalmanSignalForecasting)
+📁 [LinearProgramming_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/tree/c9b7e29ccf8e1e7835cb9cc9b24c6c3ca5b94128/LinearProgramming_GUI)
  which has the following structure:
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/6886c4507017f2c30b1d3d390f22493354db0254/LinearProgramming_GUI/FolderStructure.PNG" width="400" height="200"/>
 
@@ -2103,6 +2103,7 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
 
