@@ -13,7 +13,7 @@ The interface supports interactive input parsing, automatic method detection, an
 Designed for both educational and applied contexts, the system fosters intuitive understanding of linear optimization mechanics while maintaining algorithmic rigor.
 The resulting application serves as a modular launchpad for future extensions into nonlinear programming, multi-objective optimization, and hybrid solver orchestration. 
 By bridging algorithmic depth with visual clarity, this project opens new avenues for accessible, interpretable, and customizable optimization workflows 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/KalmanSignalForecasting/QuantumKalmanSignalForecasting.md#7--references) 1 - 3 below). 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LinearProgramming_GUI/LinearProgramming_GUI.md#8--references) 1 - 3 below). 
 
 ## 🎯 **Primary Aim**
 
@@ -2103,6 +2103,7 @@ C. Gardiner, P. Zoller: "__Quantum Noise: A Handbook of Markovian and Non-Markov
 K. Kendre: "__Machine Learning for Quantum Noise Reduction__", https://arxiv.org/abs/2509.16242 (2025); D. C. Marinescu, G. M. Marinescu: "__Classical and Quantum Information__", 1sr Ed. Academic Press (2012); 
 Liao, H et al.: "__Machine Learning for Practical Quantum Error Mitigation__", arXiv:2309.17368v2 (2024), https://arxiv.org/pdf/2309.17368; Streamlit: https://streamlit.io/; 
 Mitiq-package: https://quantum-journal.org/papers/q-2022-08-11-774/, https://arxiv.org/abs/2009.04417; Extrapolation packages: https://pypi.org/project/extrapolation/
+
 
 
 
