@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/NenadBalaneskovic/NenadBalaneskovic/blob/cfb7b78d391e1ffe6219a0e920586cfc43d9954a/ExternalProjects.png" width="100" height="50">
+    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/409b16096842f543f5683752248f8227b1db3891/Rastergrafik.png" width="1000" height="800">
 </p>    
 
 # External Projects  [![GitHub Wiki](https://img.shields.io/badge/GitHub-External_Wiki-blue?style=flat&logo=github)](https://github.com/NenadBalaneskovic/ExternalProjects/wiki)  [![Static Badge](https://img.shields.io/badge/Main%20Profile%20-%20yellow?logo=github&labelColor=green&color=violet)](https://github.com/NenadBalaneskovic) [![GitHub Main Wiki](https://img.shields.io/badge/GitHub-Main_Wiki-green?style=flat&logo=github)](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
