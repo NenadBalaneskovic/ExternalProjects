@@ -90,7 +90,7 @@ To make consulting relevance tangible, each project is anchored in **real‑worl
 
 ### 4. Portfolio Positioning  
 
-Explicit benchmarks and case studies render this portfolio **client‑ready**. The portfolio also demonstrates how AI/ML projects can be deployed responsibly, with measurable ROI and compliance alignment.
+Explicit benchmarks and case studies render this portfolio **client‑ready**. The portfolio also demonstrates how AI/ML projects can be deployed responsibly, with measurable ROI and compliance alignment. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 ---
 
