@@ -80,7 +80,7 @@ Transportation Statistics (BTS) containing entries from 1996 to 2024, employing 
 > Forecasting models that incorporate volatility detection strengthen compliance with financial risk disclosure requirements. They also support ESG principles by promoting transparent and responsible investment practices. From a risk management perspective, the approach helps institutions anticipate market shocks and align trading strategies with regulatory standards.
 
 
-  ### Abstract:
+  #### Abstract:
   This project attempts at **forecasting the temporal stock prices evolution** based on a ficticious csv file containing daily stock prices by means of Akima interpolated stock price data subject to SARIMAX and
 critical point modeling implemented via the physical theory of critical phenomena (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SARIMAX_Akima_Forecasting/README.md#-references)
  1 - 3 below). It introduces pythonic functions for Akima interpolation and critical point extraction from stock price time series, which allow the user to characterise critical inflection points of
