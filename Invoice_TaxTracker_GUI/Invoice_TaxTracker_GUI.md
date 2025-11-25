@@ -1737,7 +1737,7 @@ When we upload:
 
 # 6. 🔗 Results and conclusions
 
-## 6.1 📊 Start the LP-GUI
+## 6.1 📊 Start the Tax-Invoice-GUI
 
 ### ✅ Step 1: Download the folder
 
@@ -1751,7 +1751,7 @@ Download the main folder
 
 Run the jupyter file "__run_gui.ipynb__" (subfolder "__invoice_tracker_gui__") in VS Code or Jupyter notebook.
 
-### ✅ Step 3: Interact with the LP-GUI
+### ✅ Step 3: Interact with the Tax-Invoice-GUI
 
 Interact with the Tax-Invoice-GUI by providing reasonable inputs in the left half-plane and pressing the "__Submit__"-button.
 
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
