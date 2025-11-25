@@ -29,7 +29,7 @@ The overarching aim of the project is to demonstrate how advanced analytics and 
 business clarity. By foregrounding transparency, explainability, and reproducibility, the system provides a defensible framework for fraud detection and tax tracking. It is designed 
 not only to catch anomalies but also to communicate them clearly, bridging the gap between technical analysis and executive decision-making. In doing so, the project showcases how 
 modular AI/ML components can be integrated into client-facing environments to deliver measurable business impact while maintaining compliance and trust 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LinearProgramming_GUI/LinearProgramming_GUI.md#8--references) 1 - 3 below). 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below). 
 
 ## 1.1 🎯 **Primary Aim**
 
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
