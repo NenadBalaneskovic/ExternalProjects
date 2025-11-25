@@ -1749,24 +1749,24 @@ Download the main folder
 
 ### ✅ Step 2: Run the jupyter runner
 
-Run the jupyter file "__notebook_runner.ipynb__" (subfolder "__lp_gui_project__") in VS Code or Jupyter notebook.
+Run the jupyter file "__run_gui.ipynb__" (subfolder "__invoice_tracker_gui__") in VS Code or Jupyter notebook.
 
 ### ✅ Step 3: Interact with the LP-GUI
 
-Interact with the LP-GUI by providing reasonable inputs in the left half-plane and pressing the "__Run Optimization__"-button.
+Interact with the Tax-Invoice-GUI by providing reasonable inputs in the left half-plane and pressing the "__Submit__"-button.
 
 ## 6.2 🧠 Interpretation of results
 
-### 🧠 This LP-GUI...
+### 🧠 This Tax-Invoice-GUI...
 
 - Accepts user inputs:
-  - extremum condition
-  - number of variables and an adequate number of constraints
+  - invoices and tax forms as PDFs
+  - extraction field specifications
   
-- Displays LP-optimization results resulting from the successive application of 6 different methods (simplex, dual simplex, Dikin, parametric and integer parametrized) 
-and renders them as 2D-plots within the GUI-plane
+- Displays fraud detection results emerging from the successive application of different parsing and OCR methods 
+and renders them as 2D-plots (heatmaps) within the GUI-plane
 
-- Stores calculated Dikin paths as csv and json files (see figure below)
+- Stores obtained results and characterizations as csv files (see figure below)
 
 ![DikinPath_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/50552f212236ffb56dd8eae1130d97f92b8dbd19/LinearProgramming_GUI/paths_file.PNG)
 
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
