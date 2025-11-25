@@ -1770,9 +1770,9 @@ and renders them as 2D-plots (heatmaps) within the GUI-plane
 
 ![Fraud_Detection_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4a436eaba0a9111c87bf98caff3cf5c21ac61d69/Invoice_TaxTracker_GUI/tax_report_stored.PNG)
 
-- Automatically shows the optimization plots associated with each of the 6 methods (see figure below).
+- Automatically displays the fraud detection heatmap associated with selected (extracted) invoice fields (see figure below).
 
-![LP_Optimization_GUI_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/939b1e52aaadb978937729e75eecfbfd20241205/LinearProgramming_GUI/Gui_fig_complete.png)
+![Tax_Invoice_GUI_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e6263c8a1be70e3d0f294ab777a8d7c449a2a87e/Invoice_TaxTracker_GUI/GUI_complete_results.png)
 
 ## 6.3 🏁 Final Thoughts
 
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
