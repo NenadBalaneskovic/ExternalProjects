@@ -1,4 +1,4 @@
-# 1. 🚀 Project Introduction: Tax/Invoice Tracker & Fraud Detector GUI (Operations Research)
+# 1. 🚀 Project Introduction: Tax/Invoice Tracker & Fraud Detector GUI (Parsing & OCR)
 
 ## Objective  
 The Invoice and Tax Tracker + Fraud Detector project was conceived as a modular, auditable framework for managing financial documents in environments where compliance, 
@@ -2125,6 +2125,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
