@@ -1742,9 +1742,10 @@ When we upload:
 ### ✅ Step 1: Download the folder
 
 Download the main folder
-📁 [LinearProgramming_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/tree/c9b7e29ccf8e1e7835cb9cc9b24c6c3ca5b94128/LinearProgramming_GUI)
- which has the following structure:
-   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/6886c4507017f2c30b1d3d390f22493354db0254/LinearProgramming_GUI/FolderStructure.PNG" width="400" height="200"/>
+📁 [Invoice_TaxTracker_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/tree/c9b7e29ccf8e1e7835cb9cc9b24c6c3ca5b94128/LinearProgramming_GUI)
+ which has the following structure:  
+ 
+   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/9581a59cec81e7484abe874f71a83a900929749c/Invoice_TaxTracker_GUI/Invoice_GUI_folder.PNG" width="400" height="200"/>
 
 ### ✅ Step 2: Run the jupyter runner
 
@@ -2125,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
