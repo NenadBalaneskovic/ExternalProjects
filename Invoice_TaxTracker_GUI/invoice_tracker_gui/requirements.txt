@@ -1,0 +1,7 @@
+PyQt5
+fpdf
+PyMuPDF
+matplotlib
+numpy
+pytesseract
+Pillow
