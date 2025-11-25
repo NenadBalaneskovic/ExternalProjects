@@ -178,7 +178,7 @@ Furthermore:
 In the following we address our full GUI sketch, a clean, structured layout for our PyQt5-based Tax/Invoice Tracker and Fraud detection GUI. It includes all the key modules we discussed: 
 objective and constraint input, method selection (OCR parsing, fraud detection mode), result display, visualization, and diagnostics.
 
-![LP_GUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fa70ea9b7664fde4b34f095fe211d51330716cbb/LinearProgramming_GUI/LP_GUI_sketch.png)
+![TaxInvoice_GUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/64bf360e6cf7aba5fbf0c7e89a06dbcd8e71e2b1/Invoice_TaxTracker_GUI/Invoice_GUI_sketch_.png)
 
 We are ready to scaffold this into actual PyQt5 code and wire up the backend logic for method selection and parser/detector routing.
 
@@ -2125,6 +2125,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
