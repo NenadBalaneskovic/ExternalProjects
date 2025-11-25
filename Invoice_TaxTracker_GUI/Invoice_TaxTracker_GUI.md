@@ -2059,7 +2059,7 @@ Finally, we offer a crisp **demo flow** of our GUI. It highlights the value chai
 # 8. 📚 References
 1. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6886c4507017f2c30b1d3d390f22493354db0254/LinearProgramming_GUI/LP_GUI.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/555418f5374782028cd14a3650caec82b4134ee5/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.ipynb)
 3. [![LinearProgrammingOptimization Report | English](https://img.shields.io/badge/LinearProgrammingOptimization%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a17e5fc8e0f19b55f16b61cb2e2070c67e49c01c/LinearProgramming_GUI/LinearProgramming_Methodology_Report.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
