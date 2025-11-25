@@ -1768,7 +1768,7 @@ and renders them as 2D-plots (heatmaps) within the GUI-plane
 
 - Stores obtained results and characterizations as csv files (see figure below)
 
-![DikinPath_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/50552f212236ffb56dd8eae1130d97f92b8dbd19/LinearProgramming_GUI/paths_file.PNG)
+![Fraud_Detection_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4a436eaba0a9111c87bf98caff3cf5c21ac61d69/Invoice_TaxTracker_GUI/tax_report_stored.PNG)
 
 - Automatically shows the optimization plots associated with each of the 6 methods (see figure below).
 
@@ -2126,6 +2126,7 @@ R. J. Boucherie, A. Braaksma, H. Tijms: "__Operations Research - Introduction to
 A. J. King, S. W. Wallace: "__Modeling with Stochastic Programming__", 2nd Ed. Springer (2024); 
 J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (2021); cvxpy package: https://www.cvxpy.org/, https://pypi.org/project/cvxpy/;
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch
+
 
 
 
