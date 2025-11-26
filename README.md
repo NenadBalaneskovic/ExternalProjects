@@ -699,6 +699,29 @@ of this project will be packaged into a user-friendly streamlit app capable of i
   #### Abstract:
   This project presents a unified computational framework for solving linear optimization problems through a multi-method graphical interface. By integrating classical simplex algorithms, dual formulations, parametric linear programming, integer-constrained solvers, and interior-point techniques such as the Dikin method, the system enables robust exploration of feasible regions and optimality paths across diverse problem structures. The central aim is to democratize access to advanced linear programming strategies while offering real-time visualization and interpretability. Leveraging simplex-based pivoting for vertex traversal, parametric solvers for dynamic constraint sensitivity, and integer programming for discrete decision modeling, the framework accommodates both continuous and combinatorial optimization scenarios. The inclusion of the Dikin method introduces a smooth, interior-point trajectory that complements boundary-based approaches, offering insights into curvature and convergence behavior within feasible polyhedra. This methodological synthesis is encapsulated in a Python-powered GUI that dynamically adapts to user-defined variable types, constraint structures, and solver preferences. The interface supports interactive input parsing, automatic method detection, and 2D geometric rendering of feasible regions, constraint boundaries, and optimization paths. Designed for both educational and applied contexts, the system fosters intuitive understanding of linear optimization mechanics while maintaining algorithmic rigor. The resulting application serves as a modular launchpad for future extensions into nonlinear programming, multi-objective optimization, and hybrid solver orchestration. By bridging algorithmic depth with visual clarity, this project opens new avenues for accessible, interpretable, and customizable optimization workflows (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/LinearProgramming_GUI/LinearProgramming_GUI.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
-  [![Linear_Optimization_Solver_GUI](https://img.shields.io/badge/Linear_Optimization_GUI%20(Operations_Research)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/59d32634dafa9c9219cd162b1b7b8ffadd143238/LinearProgramming_GUI/LinearProgramming_GUI.md)
+  [![Linear_Optimization_Solver_GUI](https://img.shields.io/badge/Linear_Optimization_GUI%20(Operations_Research)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/59d32634dafa9c9219cd162b1b7b8ffadd143238/LinearProgramming_GUI/LinearProgramming_GUI.md)  
+
+
+- ### 18. **Tax Invoice Tracker GUI - Nov 2025**
+
+> ## Executive Summary: Tax Invoice Tracker GUI  
+>  
+> **Business Problem**  
+> Organizations across industries face mounting challenges in ensuring invoice accuracy, detecting fraud, and maintaining compliance with tax regulations. Traditional invoice management systems often lack transparency, fail to detect subtle tampering, and provide limited audit trails. This creates risk exposure in financial reporting, tax filings, and vendor management.  
+>  
+> **AI/ML Solution**  
+> The project implements a hybrid parsing engine that leverages PyMuPDF for text extraction, regex rules for field identification, and Tesseract OCR for fallback detection of tampered or hidden values. Parsed data is routed into a fraud detection module that applies plausibility checks, mismatch detection, VAT validation, and OCR/text discrepancy analysis. A PyQt5 GUI orchestrates the workflow, presenting anomalies in both textual reports and visual heatmaps. Export modules generate CSVs and tax summaries, while a synthetic test generator produces clean and tampered invoices for demos and validation.  
+>  
+> **Business Impact**  
+> The GUI empowers finance teams, auditors, and consultants to interact with complex fraud detection logic through an intuitive interface. It accelerates invoice validation, reduces fraud risk, and strengthens compliance workflows. By combining structured parsing with anomaly visualization, the tool enhances trust in financial reporting and supports defensible tax submissions. Debug Mode and anomaly reports provide transparency, making the system explainable to executives and regulators.  
+>  
+> **Consulting Relevance**  
+> This project demonstrates how advanced analytics and explainable AI can be operationalized into client‑facing tools. It provides a replicable framework for consulting engagements in finance, compliance, and risk management. The modular design allows consultants to tailor fraud rules, reporting formats, and visualization features to client needs, ensuring scalability and defensibility in regulated environments.  
+>  
+> **Compliance / ESG / Risk Management**  
+> Transparent parsing logic, reproducible anomaly detection, and structured exports support compliance with audit and tax reporting standards. ESG relevance is reflected in improved governance and reduced risk of fraudulent practices. From a risk management perspective, the GUI strengthens resilience by enabling anomaly detection, VAT consistency checks, and early identification of tampered invoices.
+
+
+  #### Abstract: 
 
   
