@@ -722,6 +722,37 @@ of this project will be packaged into a user-friendly streamlit app capable of i
 > Transparent parsing logic, reproducible anomaly detection, and structured exports support compliance with audit and tax reporting standards. ESG relevance is reflected in improved governance and reduced risk of fraudulent practices. From a risk management perspective, the GUI strengthens resilience by enabling anomaly detection, VAT consistency checks, and early identification of tampered invoices.
 
 
-  #### Abstract: 
+  #### Abstract:  
+  The Invoice and Tax Tracker + Fraud Detector project was conceived as a modular, auditable framework for managing financial documents in environments where compliance, 
+transparency, and fraud prevention are paramount. In today’s business landscape, organizations face increasing pressure to ensure that their financial reporting is not 
+only accurate but also defensible under regulatory scrutiny. This project addresses that need by combining robust document parsing, anomaly detection, visualization, 
+and reporting into a single, user-friendly application.
+
+At its core, the system ingests invoices in PDF format and transforms them into structured, machine-readable data. The parsing engine leverages PyMuPDF for text extraction, 
+regex rules for field identification, and OCR fallbacks to capture tampered or hidden values. This hybrid approach ensures resilience against common manipulation techniques, 
+such as altering only the graphical layer of a PDF while leaving the text layer intact. By normalizing amounts and preserving raw text, the parser provides both clean data for 
+downstream analysis and a transparent audit trail for validation.
+
+Once parsed, invoices are passed through the fraud detection module. This component applies a series of plausibility and consistency checks designed to surface anomalies that may 
+indicate fraud or error. Rules include verifying the presence of mandatory fields, checking whether totals are realistic, comparing paid amounts against total prices, detecting 
+suspicious formatting, and validating VAT calculations. The module also compares text-layer values against OCR results to catch discrepancies introduced by tampering. Each anomaly 
+is reported in plain language, making the system’s findings explainable and defensible to auditors, executives, and regulators alike.
+
+The graphical user interface, built with PyQt5, orchestrates the workflow and presents results in an accessible manner. Users can import invoices, toggle fraud detection, run batch 
+or single-document analyses, and view anomalies in both textual and visual formats. A fraud heatmap translates anomaly reports into intuitive color-coded grids, allowing users to 
+quickly identify which fields are problematic and how severe the issues are. Debug Mode provides transparency by exposing raw parsed data and anomaly lists, reinforcing the system’s 
+commitment to auditability.
+
+Beyond detection, the project emphasizes reporting and compliance. The exporter module enables users to save parsed results to CSV and generate tax summaries that distinguish between 
+valid and flagged invoices. This functionality supports both operational workflows and regulatory reporting requirements. To facilitate demos and training, a test generator creates 
+synthetic invoices with configurable ratios of clean and tampered cases, ensuring that the system can be validated under controlled conditions.
+
+The overarching aim of the project is to demonstrate how advanced analytics and physics-inspired rigor can be embedded into consulting-ready tools that balance technical depth with 
+business clarity. By foregrounding transparency, explainability, and reproducibility, the system provides a defensible framework for fraud detection and tax tracking. It is designed 
+not only to catch anomalies but also to communicate them clearly, bridging the gap between technical analysis and executive decision-making. In doing so, the project showcases how 
+modular AI/ML components can be integrated into client-facing environments to deliver measurable business impact while maintaining compliance and trust 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below).  
+
+   [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(Operations_Research)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/59d32634dafa9c9219cd162b1b7b8ffadd143238/LinearProgramming_GUI/LinearProgramming_GUI.md)  
 
   
