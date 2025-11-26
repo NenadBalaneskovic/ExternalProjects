@@ -753,6 +753,6 @@ not only to catch anomalies but also to communicate them clearly, bridging the g
 modular AI/ML components can be integrated into client-facing environments to deliver measurable business impact while maintaining compliance and trust 
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
 
-   [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(OCR_Parsing)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/59d32634dafa9c9219cd162b1b7b8ffadd143238/LinearProgramming_GUI/LinearProgramming_GUI.md)  
+   [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(OCR_Parsing)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e00006784c9812214a3280a3ff270740540aba8b/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md)  
 
   
