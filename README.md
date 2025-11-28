@@ -97,7 +97,7 @@ Explicit benchmarks and case studies render this portfolio **client‑ready**. T
 
 ## 🌟 [Dataset Analysis Links](https://github.com/NenadBalaneskovic/NenadBalaneskovic/wiki/External-ML-AI-Projects)
 
-- ### 1. **Bank Marketing DataSet (Classification) - Feb 2025**
+- ### 1. **Bank Marketing DataSet (Classification) - Feb 2025, Dec 2025**
 
 > ## Executive Summary: Bank Marketing Campaign Predictive Modeling
 > 
