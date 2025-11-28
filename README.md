@@ -120,7 +120,7 @@ Explicit benchmarks and case studies render this portfolio **client‑ready**. T
   #### Abstract:
   This project analyzes customer responses to a bank's **term deposit marketing campaign**, employing machine learning to optimize predictive accuracy and improve future campaign strategies (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/Bank_MarketingDataSet_classification#-references) 1 - 4 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
     
-  [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0b628164a6e5e62fbfef9919acf1fb9cc307d7a8/Bank_MarketingDataSet_classification/README.md)
+  [![Bank Marketing_DataSet](https://img.shields.io/badge/Bank%20Marketing_DataSet%20(Classification)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/290bd95d3932ccb311da5a89c9a1b402f5f68355/Bank_MarketingDataSet_classification/README.md)
 
 - ### 2. **Boarder Crossings DataSet (SARIMAX Forecasting) - Feb 2025**
 
