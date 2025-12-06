@@ -128,5 +128,3 @@ if __name__ == "__main__":
 - **`run.py`** → Minimal entry point that creates the Flask app, registers routes, and runs the server.
 
 ---
-
-With these two files, your project is now **executive-ready and developer-friendly**.  
