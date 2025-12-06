@@ -1,0 +1,73 @@
+2025-11-30 18:02:18,313 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-11-30 18:02:18,363 - data.weather_api - ERROR - Error fetching weather data: {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+2025-12-01 17:35:51,796 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 17:35:51,860 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 17:39:26,669 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 17:39:26,715 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 18:02:54,816 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 18:02:54,876 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 18:02:54,877 - app.routes - ERROR - Base model forecasting failed: unrecognized data structures: <class 'dict'> / <class 'NoneType'>
+Traceback (most recent call last):
+  File "C:\Users\balan\OneDrive\Desktop\Weather_Aggregator_FlaskApp\weather_aggregator\app\routes.py", line 50, in forecast
+    sarimax_pred = base_models.sarimax_forecast(weather_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\OneDrive\Desktop\Weather_Aggregator_FlaskApp\weather_aggregator\models\base_models.py", line 17, in sarimax_forecast
+    model = sm.tsa.SARIMAX(series, order=(1,1,1))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\tsa\statespace\sarimax.py", line 328, in __init__
+    self._spec = SARIMAXSpecification(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\tsa\arima\specification.py", line 446, in __init__
+    self._model = TimeSeriesModel(endog, exog=exog, dates=dates, freq=freq,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 470, in __init__
+    super().__init__(endog, exog, missing=missing, **kwargs)
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\base\model.py", line 270, in __init__
+    super().__init__(endog, exog, **kwargs)
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\base\model.py", line 95, in __init__
+    self.data = self._handle_data(endog, exog, missing, hasconst,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\base\model.py", line 135, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\base\data.py", line 674, in handle_data
+    klass = handle_data_class_factory(endog, exog)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\balan\anaconda3\Lib\site-packages\statsmodels\base\data.py", line 662, in handle_data_class_factory
+    raise ValueError('unrecognized data structures: %s / %s' %
+ValueError: unrecognized data structures: <class 'dict'> / <class 'NoneType'>
+2025-12-01 21:55:05,650 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 21:55:05,705 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 21:55:15,594 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 21:55:26,660 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 21:55:38,390 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 21:59:11,836 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 21:59:11,901 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:03:42,755 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:03:42,804 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:03:46,922 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -1.9557594275706904 (bands: -1.8579714561921559--2.0535473989492252)
+2025-12-01 22:05:42,260 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:05:42,290 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:05:46,301 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -1.5588112986320155 (bands: -1.4808707337004146--1.6367518635636165)
+2025-12-01 22:08:11,429 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:08:11,480 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:08:15,624 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -2.3621696831731183 (bands: -2.244061199014462--2.4802781673317744)
+2025-12-01 22:19:53,655 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:19:53,687 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:20:05,514 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:20:09,663 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -2.0369918516518917 (bands: -1.935142259069297--2.1388414442344863)
+2025-12-01 22:20:14,161 - app.routes - INFO - Report generated for Frankfurt am Main, Germany: avg=-1.97843306525693, min=-2.36216968317312, max=-1.55881129863202
+2025-12-01 22:27:42,773 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:27:42,803 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:27:47,127 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -2.049598549075009 (bands: -1.9471186216212586--2.1520784765287595)
+2025-12-01 22:27:49,223 - app.routes - INFO - Report generated for Frankfurt am Main, Germany: avg=-1.9926661620205457, min=-2.36216968317312, max=-1.55881129863202
+2025-12-01 22:28:03,367 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:28:07,294 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -1.5580587259175622 (bands: -1.4801557896216841--1.6359616622134403)
+2025-12-01 22:34:38,909 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:34:38,939 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:34:43,116 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -1.9867473867875465 (bands: -1.8874100174481692--2.086084756126924)
+2025-12-01 22:35:08,296 - app.routes - INFO - Report generated for Frankfurt am Main, Germany: avg=-1.9297338461154057, min=-2.36216968317312, max=-1.55805872591756
+2025-12-01 22:41:27,650 - app.routes - INFO - User input saved: 60528, Frankfurt am Main, Germany
+2025-12-01 22:41:27,723 - data.weather_api - INFO - Weather data fetched for Frankfurt am Main, Germany
+2025-12-01 22:41:31,922 - app.routes - INFO - Forecast saved for Frankfurt am Main, Germany: -1.5654525052244448 (bands: -1.4871798799632225--1.643725130485667)
+2025-12-01 22:41:34,910 - app.routes - INFO - Report generated for Frankfurt am Main, Germany: avg=-1.884198678504035, min=-2.36216968317312, max=-1.55805872591756

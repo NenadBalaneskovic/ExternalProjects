@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Enter Location</h2>
+<form method="POST" action="{{ url_for('routes.index') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.po_box.label }}<br>
+        {{ form.po_box(size=20) }}
+    </div>
+    <div>
+        {{ form.city.label }}<br>
+        {{ form.city(size=20) }}
+    </div>
+    <div>
+        {{ form.country.label }}<br>
+        {{ form.country(size=20) }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+
+{% if weather %}
+<div class="weather-card">
+    <h3>Current Weather</h3>
+    <p>Temperature: {{ weather.temperature }} °C</p>
+    <p>Condition: {{ weather.condition }}</p>
+</div>
+{% endif %}
+{% endblock %}

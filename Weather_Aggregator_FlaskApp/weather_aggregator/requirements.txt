@@ -1,0 +1,28 @@
+# Core Web Framework
+Flask==3.0.0
+Flask-WTF==1.2.1
+WTForms==3.1.2
+
+# Data & Forecasting
+numpy==1.26.4
+pandas==2.2.2
+statsmodels==0.14.2
+scikit-learn==1.5.1
+
+# Deep Learning (for CNN/LSTM/Autoencoder stubs)
+tensorflow==2.17.0
+keras==3.4.1
+
+# Explainability
+shap==0.44.0
+lime==0.2.0.1
+
+# Reporting
+reportlab==4.2.2
+
+# Governance & Utilities
+requests==2.32.3
+
+# Testing
+pytest==8.3.3
+
