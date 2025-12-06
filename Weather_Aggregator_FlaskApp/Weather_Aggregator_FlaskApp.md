@@ -4012,11 +4012,11 @@ Interact with the Weather Aggregator App by providing reasonable inputs in the l
 
 - Stores obtained results and characterizations as pdf file (see figure below)
 
-![Fraud_Detection_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4a436eaba0a9111c87bf98caff3cf5c21ac61d69/Invoice_TaxTracker_GUI/tax_report_stored.PNG)
+![Weather_Forecast_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e13811b55cd23fe8a7e1092107746b31d28bf0d/Weather_Aggregator_FlaskApp/WeatherForecast_pdfReport.PNG)
 
 - Automatically displays the forecast history (see figure below).
 
-![Tax_Invoice_GUI_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e6263c8a1be70e3d0f294ab777a8d7c449a2a87e/Invoice_TaxTracker_GUI/GUI_complete_results.png)
+![Weather_Forecast_Flask_App_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e6263c8a1be70e3d0f294ab777a8d7c449a2a87e/Invoice_TaxTracker_GUI/GUI_complete_results.png)
 
 ## 6.3 🏁 Final Thoughts
 
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
