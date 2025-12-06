@@ -26,7 +26,7 @@ Beyond its immediate technical objectives, the *Weather Aggregator Flask App* al
 and governance‑compliant reporting can be combined to deliver value in enterprise settings. The project highlights the importance of transparency in ensemble learning, the role of 
 surrogate models in characterizing complex outputs, and the potential of lightweight web applications to democratize access to advanced analytics. In doing so, it positions itself 
 not merely as a forecasting tool, but as a demonstrator of best practices in explainable AI, ensemble modeling, and consulting‑oriented system design.
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below). 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md#8--references) 1 - 3 below). 
 
 ## 1.1 🎯 **Primary Aim**
 
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
