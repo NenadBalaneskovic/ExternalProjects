@@ -4016,7 +4016,7 @@ Interact with the Weather Aggregator App by providing reasonable inputs in the l
 
 - Automatically displays the forecast history (see figure below).
 
-![Weather_Forecast_Flask_App_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e6263c8a1be70e3d0f294ab777a8d7c449a2a87e/Invoice_TaxTracker_GUI/GUI_complete_results.png)
+![Weather_Forecast_Flask_App_Functionality](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65cf30894f4a84653ecda79f42cbef62f068c8c8/Weather_Aggregator_FlaskApp/GUI_active_complete.PNG)
 
 ## 6.3 🏁 Final Thoughts
 
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
