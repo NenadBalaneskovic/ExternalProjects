@@ -3797,26 +3797,77 @@ This complements our README and makes the system narratable for executives and t
 
 ```mermaid
 flowchart TD
-    A[User Input\n(PO Box, City, Country)] --> B[Flask Frontend\n(routes.py)]
-    B --> C[LiteSQL Storage\n(data_store.py)]
-    B --> D[Weather API\n(OpenWeatherMap)]
-    D --> E[Normalized Time Series Data]
 
-    E --> F[Base Models\n(SARIMAX, RF, Kalman, LSTM, Autoencoder)]
-    E --> G[Hosted Models\n(Hugging Face ~30 models)]
+    subgraph A["User Input"]
+        A1["PO Box"]
+        A2["City"]
+        A3["Country"]
+    end
 
-    F --> H[Meta Learner\n(Ridge, Logistic, Boosting)]
+    subgraph B["Frontend"]
+        B1["Flask (routes.py)"]
+    end
+
+    subgraph C["Weather API"]
+        C1["OpenWeatherMap"]
+    end
+
+    subgraph D["Normalized Data"]
+        D1["Time Series"]
+    end
+
+    subgraph E["Base Models"]
+        E1["SARIMAX"]
+        E2["Random Forest"]
+        E3["Kalman"]
+        E4["LSTM"]
+        E5["Autoencoder"]
+    end
+
+    subgraph F["Hosted Models"]
+        F1["Hugging Face"]
+    end
+
+    subgraph G["Meta Learner"]
+        G1["Ridge"]
+        G2["Logistic"]
+        G3["Boosting"]
+    end
+
+    subgraph H["Explainability"]
+        H1["SHAP"]
+        H2["LIME"]
+    end
+
+    subgraph I["Forecast Output"]
+        I1["Forecasts"]
+        I2["Confidence Bands"]
+    end
+
+    subgraph J["Reporting"]
+        J1["PDF Report"]
+        J2["Dashboard"]
+    end
+
+    subgraph K["Governance"]
+        K1["Logger"]
+        K2["Audit Logs"]
+    end
+
+    A3 --> B
+    B --> C
+    C --> D
+    D --> E
+    D --> F
+    E --> G
+    F --> G
     G --> H
-
-    H --> I[Explainability\n(SHAP, LIME)]
-    H --> J[Forecasts + Confidence Bands]
-
-    J --> K[PDF Report\n(pdf_report.py)]
-    J --> L[Dashboard\n(Flask templates)]
-
-    K --> M[Governance Layer\n(logger.py, audit logs)]
-    C --> M
+    G --> I
+    I --> J
+    J1 --> K
+    C --> K
 ```
+
 
 ### 🧩 How to Read This Diagram
 - **User Input → Flask Frontend**: Entry point for PO Box, City, Country.
@@ -4444,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
