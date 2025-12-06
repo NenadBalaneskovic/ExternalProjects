@@ -3944,7 +3944,7 @@ This sequence diagram makes the **runtime workflow narratable** for executives a
 ### ✅ Step 1: Download the folder
 
 Download the main folder
-📁 [Weather_Aggregator_Flask_App](https://github.com/NenadBalaneskovic/ExternalProjects/tree/9581a59cec81e7484abe874f71a83a900929749c/Invoice_TaxTracker_GUI)
+📁 [Weather_Aggregator_Flask_App](https://github.com/NenadBalaneskovic/ExternalProjects/tree/ae6755f2c2611f3ceb88d452f12f3d3489a623fe/Weather_Aggregator_FlaskApp)
  which has the following structure:  
  
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/4f25734f8a76f4f2125772e9e627d96a8e8c6c49/Weather_Aggregator_FlaskApp/MainFolder_structure.PNG" width="400" height="200"/>
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
