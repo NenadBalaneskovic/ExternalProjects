@@ -4048,7 +4048,7 @@ As such, it provides a foundation for future work in applying explainability-fir
 # 7. 🧾 Weather Aggregator Flask App  
 ### 🛠️ User Manual
 
-Here’s a **comprehensive, example-driven user manual** for our Weather Aggregator app.
+Here’s a **comprehensive, example-driven user manual** for our [Weather Aggregator app](https://github.com/NenadBalaneskovic/ExternalProjects/blob/55d3a20e095ec7c17419f3b614faf9b8d3dab837/Weather_Aggregator_FlaskApp/weather_aggregator/README.md).
 
 ## 🌦 Weather Aggregator User Manual
 
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
