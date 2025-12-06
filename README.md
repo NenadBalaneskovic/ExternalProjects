@@ -776,14 +776,34 @@ modular AI/ML components can be integrated into client-facing environments to de
 > Transparent model registration, reproducible confidence bands, and structured reporting support compliance with audit and governance standards. ESG relevance is reflected in improved operational transparency and reduced risk of weather‑related disruptions. From a risk management perspective, the app strengthens resilience by enabling ensemble forecasts, confidence interval tracking, and explainability‑first diagnostics, ensuring that forecasts are both actionable and auditable.
 
   #### Abstract:  
-  The Invoice and Tax Tracker + Fraud Detector project was conceived as a modular, auditable framework for managing financial documents in environments where compliance, 
-transparency, and fraud prevention are paramount. In today’s business landscape, organizations face increasing pressure to ensure that their financial reporting is not 
-only accurate but also defensible under regulatory scrutiny. This project addresses that need by combining robust document parsing, anomaly detection, visualization, 
-and reporting into a single, user-friendly application.
+  The *Weather Aggregator Flask App* is conceived as a modular demonstration platform that integrates modern machine learning methodologies with practical 
+data aggregation in the domain of weather forecasting. At its core, the project seeks to provide a transparent, auditable environment in which different 
+predictive models can be compared, combined, and evaluated. By leveraging Flask as the lightweight web framework, the application offers an accessible 
+interface for both technical and non‑technical stakeholders, enabling forecasts to be generated, visualized, and stored with ease. This design choice reflects 
+a broader ambition: to bridge the gap between advanced ensemble learning research and executive‑ready reporting tools.
 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
+The central aim of the project is to test and characterize *stacked surrogate models*—meta‑learners that combine the outputs of diverse base predictors. 
+In practice, this involves running multiple forecasting algorithms, such as SARIMAX, Kalman filters, Random Forests, Gradient Boosting, CNNs, LSTMs, and Autoencoders, 
+on the same weather dataset. Each of these models captures different statistical or structural aspects of the data. The surrogate model, typically implemented as a 
+ridge regression or similar linear meta‑learner, then integrates these heterogeneous predictions into a single ensemble forecast. This stacked approach allows the system 
+to exploit complementary strengths while mitigating individual weaknesses, producing results that are more robust and generalizable.
 
-   [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(OCR_Parsing)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e00006784c9812214a3280a3ff270740540aba8b/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md)  
+A distinctive feature of the project is its emphasis on *explainability and governance*. Rather than treating ensemble learning as a black box, the app is designed to 
+characterize the results of different learning strategies—both linear regression models (LRM) and more complex large language models (LLM) adapted for surrogate tasks. 
+By storing forecasts alongside confidence bands, user inputs, and metadata, the system creates a traceable record that can be audited and analyzed. This ensures that the 
+outputs are not only accurate but also narratable: stakeholders can understand how predictions were formed, which base models contributed most, and how uncertainty was quantified.
+
+The use of stacked surrogate models in this context serves two purposes. First, it provides a rigorous testbed for evaluating ensemble learning techniques under real-world conditions, 
+where data may be noisy, incomplete, or non-stationary. Second, it demonstrates how surrogate modeling can be operationalized within a consulting-ready application. By embedding these 
+techniques in a Flask app with a clear user interface, the project shows how advanced machine learning can be packaged into tools that are both technically sound and organizationally impactful.
+
+Beyond its immediate technical objectives, the *Weather Aggregator Flask App* also functions as a narrative asset. It illustrates how modular architectures, reproducible workflows, 
+and governance‑compliant reporting can be combined to deliver value in enterprise settings. The project highlights the importance of transparency in ensemble learning, the role of 
+surrogate models in characterizing complex outputs, and the potential of lightweight web applications to democratize access to advanced analytics. In doing so, it positions itself 
+not merely as a forecasting tool, but as a demonstrator of best practices in explainable AI, ensemble modeling, and consulting‑oriented system design
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
+
+   [![WeatherAggregatorFlask_App](https://img.shields.io/badge/Weather_Aggregator_Flask_App%20(LLM stacking)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md)  
   
 
 
