@@ -1,4 +1,4 @@
-# 1. 🚀 Project Introduction: Weather Aggregator Flask App (Surrogate Stacking of LLM/LRM models & OCR)
+# 1. 🚀 Project Introduction: Weather Aggregator Flask App (Surrogate Stacking of LLM/LRM models)
 
 ## Objective  
 The *Weather Aggregator Flask App* is conceived as a modular demonstration platform that integrates modern machine learning methodologies with practical 
@@ -204,7 +204,7 @@ The system embodies three core governance principles:
 In the following we address our full GUI sketch, a clean, structured layout for our Flask-based Weather Aggregator App. It includes all the key modules we discussed: 
 objective and constraint input, method selection forecasting models), result display, visualization, and diagnostics.
 
-![TaxInvoice_GUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/64bf360e6cf7aba5fbf0c7e89a06dbcd8e71e2b1/Invoice_TaxTracker_GUI/Invoice_GUI_sketch_.png)
+![TWeatherAggregator_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/74e99d22089f0f2e2600a39aa126b64e62a6641e/Weather_Aggregator_FlaskApp/GUI_sketch_complete.png)
 
 Here’s a walkthrough of the **Weather Aggregator architecture sketch** — designed to be modular, narratable, and consulting-ready:
 
@@ -4444,6 +4444,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
