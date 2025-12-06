@@ -803,7 +803,7 @@ surrogate models in characterizing complex outputs, and the potential of lightwe
 not merely as a forecasting tool, but as a demonstrator of best practices in explainable AI, ensemble modeling, and consulting‑oriented system design
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
 
-   [![WeatherAggregatorFlask_App](https://img.shields.io/badge/Weather_Aggregator_Flask_App%20(LLM stacking)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md)  
+   [![Weather Aggregator Flask_App](https://img.shields.io/badge/Weather_Aggregator_Flask_App%20(LLM_stacking)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md)  
   
 
 
