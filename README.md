@@ -755,4 +755,38 @@ modular AI/ML components can be integrated into client-facing environments to de
 
    [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(OCR_Parsing)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e00006784c9812214a3280a3ff270740540aba8b/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md)  
 
+
+- ### 19. **Weather Aggregator Flask App – Dec 2025**
+
+> ## Executive Summary: Weather Aggregator Flask App  
+>  
+> **Business Problem**  
+> Organizations, municipalities, and research teams increasingly rely on weather forecasts for operational planning, risk management, and sustainability reporting. Traditional forecasting systems often operate as black boxes, offering limited transparency into model selection, confidence intervals, and data provenance. This lack of explainability hinders trust, complicates governance, and reduces the ability to audit forecasts for compliance or consulting engagements.  
+>  
+> **AI/ML Solution**  
+> The Weather Aggregator Flask App integrates classical statistical models (SARIMAX, Kalman filters), tree‑based regressors (Random Forest, Gradient Boosting), and neural network stubs (LSTM, CNN, Autoencoder) into a unified forecasting pipeline. A meta‑learner (ridge, logistic, boosting) aggregates base model predictions, while explainability modules (SHAP, LIME) provide feature attribution and local interpretability. The app leverages OpenWeatherMap for raw data ingestion, Hugging Face for hosted model inference, and SQLite for persistent storage of forecasts and user inputs. Governance layers include logging, traceability, and PDF/HTML reporting, ensuring reproducibility and auditability.  
+>  
+> **Business Impact**  
+> The application empowers stakeholders to generate ensemble forecasts with confidence bands, visualize model contributions, and download governance‑ready reports. By combining multiple forecasting paradigms with explainability, the tool enhances trust in predictions, supports operational transparency, and enables defensible decision‑making in weather‑sensitive industries such as logistics, energy, and agriculture. The modular design accelerates prototyping, reduces reliance on opaque vendor APIs, and strengthens resilience against forecast uncertainty.  
+>  
+> **Consulting Relevance**  
+> This project demonstrates how ensemble learning and explainable AI can be operationalized into client‑facing forecasting tools. It provides a replicable framework for consulting engagements in risk management, sustainability, and operational planning. The modular architecture allows consultants to tailor model registries, reporting formats, and governance features to client needs, ensuring scalability and defensibility in regulated environments.  
+>  
+> **Compliance / ESG / Risk Management**  
+> Transparent model registration, reproducible confidence bands, and structured reporting support compliance with audit and governance standards. ESG relevance is reflected in improved operational transparency and reduced risk of weather‑related disruptions. From a risk management perspective, the app strengthens resilience by enabling ensemble forecasts, confidence interval tracking, and explainability‑first diagnostics, ensuring that forecasts are both actionable and auditable.
+
+  #### Abstract:  
+  The Invoice and Tax Tracker + Fraud Detector project was conceived as a modular, auditable framework for managing financial documents in environments where compliance, 
+transparency, and fraud prevention are paramount. In today’s business landscape, organizations face increasing pressure to ensure that their financial reporting is not 
+only accurate but also defensible under regulatory scrutiny. This project addresses that need by combining robust document parsing, anomaly detection, visualization, 
+and reporting into a single, user-friendly application.
+
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
+
+   [![Tax Invoice Tracker_GUI](https://img.shields.io/badge/Tax_Invoice_Tracker_GUI%20(OCR_Parsing)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e00006784c9812214a3280a3ff270740540aba8b/Invoice_TaxTracker_GUI/Invoice_TaxTracker_GUI.md)  
+  
+
+
+
+
   
