@@ -4228,7 +4228,7 @@ This combination ensures **robustness (LRM)**, **expressiveness (LLM)**, and **t
 
 ### App Flow Chart
 
-![AppFlowChart.png](attachment:a4c7e721-87cc-4744-9719-674b7aa87982.png)  
+![AppFlowChart.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/eeb866299c31931f4f6dc154858ef2ba56bcf17c/Weather_Aggregator_FlaskApp/AppFlowChart.png)  
 
 Here’s a detailed walkthrough of the above architecture diagram for our Weather Aggregator Flask Application:
 
@@ -4495,6 +4495,7 @@ J. O. Royset, R. J.-B. Wets: "__An Optimization Primer__", 1st Ed. Springer (202
 py-packages for operations research: https://wiki.python.org/moin/PythonForOperationsResearch 
 40. (Py-)tesseract package: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract), https://pypi.org/project/pytesseract/,
 https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blog/2024/04/ocr-libraries-in-python/ and [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).
+
 
 
 
