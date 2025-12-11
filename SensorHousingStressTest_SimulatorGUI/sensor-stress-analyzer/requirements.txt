@@ -1,0 +1,16 @@
+# Core GUI
+PyQt5==5.15.11
+
+# Visualization
+matplotlib==3.9.2
+
+# Reporting
+fpdf==1.7.2
+
+# Testing
+pytest==8.3.3
+pytest-qt==4.4.0
+
+# Optional scientific stack (for future FEM extensions)
+numpy==2.1.2
+scipy==1.14.1
