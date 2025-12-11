@@ -105,7 +105,7 @@ This architecture is designed to showcase **transparency, modularity, and operat
 In the following we address our full GUI sketch, a clean, structured layout for our Flask-based Weather Aggregator App. It includes all the key modules we discussed: 
 objective and constraint input, method selection forecasting models), result display, visualization, and diagnostics.
 
-![TWeatherAggregator_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/74e99d22089f0f2e2600a39aa126b64e62a6641e/Weather_Aggregator_FlaskApp/GUI_sketch_complete.png)
+![SensorHousingStressSimulatorGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/cea9e38820b7a7d2b074ce18fd2ac82cc33f8bcb/SensorHousingStressTest_SimulatorGUI/GUI_sketch.png)
 
 We are ready to scaffold this into actual Pythonic code and wire up the backend logic for method selection and routing.
 
@@ -1280,6 +1280,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
