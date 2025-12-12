@@ -840,7 +840,8 @@ structured exports, and PDF reporting.
 - **Governance and reproducibility:** Engineering decisions require traceable artifacts. The simulator produces consistent plots and structured datasets (JSON/TXT/CSV) alongside a 
 PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#17--references) 1 - 3 below).
 
-      [![SensorHousing StressTest GUI](https://img.shields.io/badge/SensorHousing_StressTest_GUI_(rod--statics_and_FEM)-English-blue?logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d28cdaed62a238c0f4bf8413eb990f6c4087aa/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md)
+     [![SensorHousing StressTest GUI](https://img.shields.io/badge/SensorHousing_StressTest_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d28cdaed62a238c0f4bf8413eb990f6c4087aa/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md)
+
 
   
 
