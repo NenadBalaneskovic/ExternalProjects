@@ -838,7 +838,7 @@ structured exports, and PDF reporting.
 - **Design validation:** Sensor housings must balance structural integrity and thermal resilience; corner placement and polygonal symmetry impact peak stress and hot spots.
 - **Dual-method insight:** Rod statics provide fast, interpretable estimates; FEM introduces higher fidelity with mesh-driven distributions and interpolated fields.
 - **Governance and reproducibility:** Engineering decisions require traceable artifacts. The simulator produces consistent plots and structured datasets (JSON/TXT/CSV) alongside a 
-PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#17--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#16--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
      [![SensorHousing StressTest GUI](https://img.shields.io/badge/SensorHousing_StressTest_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8039ec10916fa448607c5fca0c9a1eee67435250/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md)
 
