@@ -1795,6 +1795,8 @@ def get_colormap(label: str):
 - **Dynamic updates:** Adjusting sliders immediately changes labels and updates plots when analysis is run.  
 - **Log window:** Confirms saved files (e.g., “Saved: fem_heat_heatmap.png”, “PDF report saved: sensor_stress_report.pdf”).
 
+![Weather_Forecast_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e13811b55cd23fe8a7e1092107746b31d28bf0d/Weather_Aggregator_FlaskApp/WeatherForecast_pdfReport.PNG)
+
 ## Example PDF report (with embedded plots)
 - **Header:** Application name and version.  
 - **Simulation results:** Mode, n, force, heat, maxima, and arrays.  
@@ -2297,10 +2299,6 @@ by side. Together, they narrate how the simulator supports dual‑mode workflows
 
 ---
 
-
-![Weather_Forecast_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e13811b55cd23fe8a7e1092107746b31d28bf0d/Weather_Aggregator_FlaskApp/WeatherForecast_pdfReport.PNG)
-
-
 # 16. 🔗 Results and Conclusions
 
 ## 16.1 📊 Start the Sensor Housing Stress Test Simulator
@@ -2474,6 +2472,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
