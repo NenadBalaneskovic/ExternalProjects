@@ -548,7 +548,6 @@ class MainWindow(QMainWindow):
         # Event handlers wiring
         self.handlers = EventHandlers(self.sidebar, self.visualization)
 
-
 ````
 
 ### sidebar_controls.py
@@ -558,7 +557,7 @@ class MainWindow(QMainWindow):
   - **Toggle:** **Enable FEM Analysis** checkbox.  
   - **Buttons:** **Run Analysis** (mandatory), used by `EventHandlers`.
 
-  ````python
+````python
   # gui/sidebar_controls.py
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QSlider, QCheckBox, QPushButton, QSpacerItem, QSizePolicy
@@ -636,7 +635,6 @@ class Sidebar(QWidget):
 
     def _update_heat_label(self, value):
         self.heat_label.setText(f"Heat [°C]: {value}")
-
 
   ````
 
@@ -884,7 +882,7 @@ class VisualizationPanel(QWidget):
   - **Save PDF:** Builds PDF via `reporting.report_generator`.  
   - **Save Data Sets:** Persists JSON/TXT/CSV via `reporting.export_utils`.
 
-  ````python
+````python
   # gui/event_handlers.py
 
 import os
@@ -966,7 +964,6 @@ class EventHandlers(QObject):
             self.log(f"Data files saved: {json_file}, {txt_file}, {csv_file}")
         except Exception as e:
             self.log(f"Error saving data files: {e}")
-
 
   ````
 
@@ -1741,6 +1738,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
