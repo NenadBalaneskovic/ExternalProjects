@@ -2121,9 +2121,9 @@ This chapter makes the **data export pipeline transparent and narratable**, show
 
 ---
 
-# 🔥 14. FEM Analysis Pipeline Diagrams (Mermaid)
+# 🔥 13. FEM Analysis Pipeline Diagrams (Mermaid)
 
-## 14.1 📊 FEM Analysis Architecture Diagram (Mermaid)
+## 13.1 📊 FEM Analysis Architecture Diagram (Mermaid)
 
 Here’s a **modular architecture diagram** in **Mermaid syntax** that visually shows the **Finite Element Method (FEM) pipeline** inside the Sensor Housing Stress Test Simulator.  
 This complements the [README](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c3d23a77f0480b4abe91d061c63ccc0714812286/SensorHousingStressTest_SimulatorGUI/README.md) and makes the FEM workflow narratable for technical and stakeholder audiences.
@@ -2178,7 +2178,7 @@ flowchart TD
 - **Interpolation → Rendering:** Heatmaps generated with robust scaling and consistent colormaps.  
 - **Outputs:** Arrays, maxima, and PNG plots saved for visualization and reporting.
 
-## 14.2 📊 FEM Analysis Sequence Diagram (Mermaid)
+## 13.2 📊 FEM Analysis Sequence Diagram (Mermaid)
 
 Below is the **sequence diagram** that narrates the runtime process of FEM analysis from user input to final plots.
 
@@ -2224,9 +2224,9 @@ This chapter makes the **FEM pipeline transparent and narratable**, showing exac
 
 ---
 
-# 🔥 15. Rod Analysis Pipeline Diagrams (Mermaid)
+# 🔥 14. Rod Analysis Pipeline Diagrams (Mermaid)
 
-## 15.1 📊 Rod Analysis Architecture Diagram (Mermaid)
+## 14.1 📊 Rod Analysis Architecture Diagram (Mermaid)
 
 Here’s a **modular architecture diagram** in **Mermaid syntax** that visually shows the **Rod Analysis pipeline** inside the Sensor Housing Stress Test Simulator.  
 This complements the FEM pipeline and makes the rod‑based statics workflow narratable for technical and stakeholder audiences.
@@ -2270,7 +2270,7 @@ flowchart TD
 
 ---
 
-## 15.2 📊 Rod Analysis Sequence Diagram (Mermaid)
+## 14.2 📊 Rod Analysis Sequence Diagram (Mermaid)
 
 Below is the **sequence diagram** that narrates the runtime process of rod analysis from user input to final plot.
 
@@ -2307,9 +2307,9 @@ by side. Together, they narrate how the simulator supports dual‑mode workflows
 
 ---
 
-# 16. 🔗 Results and Conclusions
+# 15. 🔗 Results and Conclusions
 
-## 16.1 📊 Start the Sensor Housing Stress Test Simulator
+## 15.1 📊 Start the Sensor Housing Stress Test Simulator
 
 ### ✅ Step 1: Download the folder
 
@@ -2351,7 +2351,7 @@ If we want to keep Jupyter interactive while the app runs:
 Interact with the Sensor Housing Stress Test Simulator by adjusting sliders for **n‑gon corners, force, and heat**, toggling **FEM Analysis**, and pressing the **Run Analysis** button.  
 Visual outputs update in real time, and results can be saved as **PDF reports** or **data sets (JSON/TXT/CSV)**.
 
-## 16.2 🧠 Interpretation of Results
+## 15.2 🧠 Interpretation of Results
 
 ### 🧠 This Sensor Housing Stress Test Simulator...
 
@@ -2381,7 +2381,7 @@ Visual outputs update in real time, and results can be saved as **PDF reports** 
   - Log window confirms saved artifacts
   - XAI summary interprets maxima and resilience context for stakeholders
 
-## 16.3 🏁 Final Thoughts
+## 15.3 🏁 Final Thoughts
 
 The *Sensor Housing Stress Test Simulator* demonstrates how classical mechanics and FEM can be operationalized in a transparent, modular, and consulting-ready environment. 
 By integrating rod statics with FEM interpolation, the project provides a rigorous testbed for evaluating structural resilience while foregrounding explainability and governance. 
@@ -2407,7 +2407,7 @@ other domains, reinforcing the principle that innovation must be accompanied by 
 
 ---
 
-# 17. 📚 References
+# 16. 📚 References
 1. J. Frochte: "Finite-Elemente-Methode", Hanser 1st Ed.(2016);  D. Gross, W. Hauger, J. Schröder: "Technische Mechanik 1-3", 15th Ed. Springer (2024); 
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
@@ -2484,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
