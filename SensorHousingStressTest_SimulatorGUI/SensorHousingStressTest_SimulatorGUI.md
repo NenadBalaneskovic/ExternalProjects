@@ -1795,7 +1795,9 @@ def get_colormap(label: str):
 - **Dynamic updates:** Adjusting sliders immediately changes labels and updates plots when analysis is run.  
 - **Log window:** Confirms saved files (e.g., “Saved: fem_heat_heatmap.png”, “PDF report saved: sensor_stress_report.pdf”).
 
-![Weather_Forecast_Results_csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1e13811b55cd23fe8a7e1092107746b31d28bf0d/Weather_Aggregator_FlaskApp/WeatherForecast_pdfReport.PNG)
+![Sensor_Housing_Stress_Test_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/GUI_active1.PNG)
+
+![Sensor_Housing_Stress_Test_GUI2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/GUI_active2.PNG)
 
 ## Example PDF report (with embedded plots)
 - **Header:** Application name and version.  
@@ -1806,6 +1808,12 @@ def get_colormap(label: str):
   - Stress heatmap (fem_stress_heatmap.png)  
   - Heat heatmap (fem_heat_heatmap.png)  
 - **XAI summary:** Concise narrative highlighting maxima and resilience context.
+
+![Sensor_Housing_Stress_Test_PDF](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/pdf_report_page1.PNG)
+
+![Sensor_Housing_Stress_Test_PDF2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/pdf_report_page2.PNG)
+
+![Sensor_Housing_Stress_Test_PDF3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/pdf_report_page3.PNG)
 
 ## Snippets from exported CSV/TXT/JSON files
 - **CSV (sensor_stress_results.csv):**
@@ -2472,6 +2480,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
