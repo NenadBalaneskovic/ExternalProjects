@@ -2412,8 +2412,8 @@ other domains, reinforcing the principle that innovation must be accompanied by 
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9b64196b88f00af6bd0ad1e1971374884d45bdcd/Weather_Aggregator_FlaskApp/Flask_Weather_App.ipynb)
-3. [![WeatherAggregatorApp Report | English](https://img.shields.io/badge/TaxInvoiceTracker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4c42a1e94277c2fa196685cfb2a0169d0ce5a78f/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp_Report.pdf) 
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d28cdaed62a238c0f4bf8413eb990f6c4087aa/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_GUI.ipynb)
+3. [![SensorHousingStressTest Report | English](https://img.shields.io/badge/TaxInvoiceTracker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4c42a1e94277c2fa196685cfb2a0169d0ce5a78f/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp_Report.pdf) 
 4. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 5. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 6. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
@@ -2484,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
