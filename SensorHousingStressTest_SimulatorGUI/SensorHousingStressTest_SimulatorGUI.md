@@ -42,7 +42,7 @@ structured exports, and PDF reporting.
 - **Design validation:** Sensor housings must balance structural integrity and thermal resilience; corner placement and polygonal symmetry impact peak stress and hot spots.
 - **Dual-method insight:** Rod statics provide fast, interpretable estimates; FEM introduces higher fidelity with mesh-driven distributions and interpolated fields.
 - **Governance and reproducibility:** Engineering decisions require traceable artifacts. The simulator produces consistent plots and structured datasets (JSON/TXT/CSV) alongside a 
-PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#17--references) 1 - 3 below). 
+PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#16--references) 1 - 3 below). 
 
 
 ## Methodological approach
@@ -2484,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
