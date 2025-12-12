@@ -804,6 +804,44 @@ not merely as a forecasting tool, but as a demonstrator of best practices in exp
 (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md#8--references) 1 - 3 below). [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)  
 
    [![Weather Aggregator Flask_App](https://img.shields.io/badge/Weather_Aggregator_Flask_App%20(LLM_stacking)-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Weather_Aggregator_FlaskApp/Weather_Aggregator_FlaskApp.md)  
+
+
+- ### 20. **Sensor Housing Stress Test GUI – Dec 2025**
+
+> ## Executive Summary: Sensor Housing Stress Test GUI  
+>  
+> **Business Problem**  
+> Engineering teams, product designers, and consulting organizations increasingly face the challenge of validating sensor housings against mechanical stress and thermal loads. Traditional simulation workflows are often fragmented, opaque, or require specialized expertise, making it difficult to communicate results to non‑technical stakeholders. The lack of explainability and reproducibility hinders trust, complicates governance, and slows down onboarding or compliance reviews. Organizations need a transparent, narratable tool that bridges technical rigor with stakeholder‑friendly reporting.  
+>  
+> **Simulation Solution**  
+> The Sensor Housing Stress Test GUI integrates **rod‑construction statics** (classical mechanics) with **simplified finite element methods (FEM)** into a unified analysis environment. A PyQt5‑based interface allows users to adjust parameters interactively (polygon corners, applied force, heat) and toggle between rod and FEM modes. Real‑time visualizations include rod structure plots, stress/heat line charts, and interpolated heatmaps. Governance layers include structured exports (JSON, TXT, CSV) and a PDF report enriched with an **Explainable AI (XAI) summary**, ensuring reproducibility, traceability, and auditability.  
+>  
+> **Business Impact**  
+> The application empowers engineers and consultants to rapidly explore geometry–load interactions, quantify stress and heat distributions, and generate governance‑ready artifacts. By combining fast, interpretable rod statics with higher‑fidelity FEM analysis, the tool enhances confidence in design decisions, supports operational transparency, and enables defensible reporting in industries such as automotive, aerospace, and embedded systems. The modular design accelerates prototyping, reduces reliance on opaque vendor tools, and strengthens resilience against design uncertainty.  
+>  
+> **Consulting Relevance**  
+> This project demonstrates how dual‑mode simulation and explainability can be operationalized into client‑facing engineering tools. It provides a replicable framework for consulting engagements in design validation, onboarding, and compliance reporting. The modular architecture allows consultants to tailor visualization, reporting formats, and governance features to client needs, ensuring scalability and defensibility in regulated environments.  
+>  
+> **Compliance / ESG / Risk Management**  
+> Transparent solver logic, reproducible stress/heat maps, and structured reporting support compliance with engineering audit standards. ESG relevance is reflected in improved operational transparency and reduced risk of housing failures in critical sensor deployments. From a risk management perspective, the GUI strengthens resilience by enabling dual‑mode simulations, explainability‑first diagnostics, and governance‑ready exports, ensuring that engineering analyses are both actionable and auditable.  
+
+
+  #### Abstract:  
+  The Sensor Housing Stress Test Simulator is a modular, GUI-based engineering tool for analyzing the robustness of regular n‑gonal sensor housings under external force 
+and thermal loads. It unifies two complementary approaches—rod-construction framework statics (technical mechanics) and simplified finite element methods (FEM)—to deliver 
+fast intuition and governance-ready evidence. The simulator emphasizes explainability, reproducibility, and stakeholder communication through real-time visualization, 
+structured exports, and PDF reporting.
+
+- **Core goals:** Rapidly explore geometry–load interactions, quantify stress/heat distributions, and produce auditable, shareable results for design validation and onboarding.
+- **Audience:** Mechanical/embedded engineers, simulation practitioners, researchers, consultants, and onboarding teams who need a transparent, repeatable workflow.
+- **Why regular n‑gons:** They offer a controlled geometric space to study symmetry, corner effects, and load propagation; the complexity scales with n while remaining analytically tractable.
+- **Design validation:** Sensor housings must balance structural integrity and thermal resilience; corner placement and polygonal symmetry impact peak stress and hot spots.
+- **Dual-method insight:** Rod statics provide fast, interpretable estimates; FEM introduces higher fidelity with mesh-driven distributions and interpolated fields.
+- **Governance and reproducibility:** Engineering decisions require traceable artifacts. The simulator produces consistent plots and structured datasets (JSON/TXT/CSV) alongside a 
+PDF report with an explainable summary (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md#17--references) 1 - 3 below).
+
+      [![SensorHousing StressTest GUI](https://img.shields.io/badge/SensorHousing_StressTest_GUI_(rod--statics_and_FEM)-English-blue?logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d28cdaed62a238c0f4bf8413eb990f6c4087aa/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md)
+
   
 
 
