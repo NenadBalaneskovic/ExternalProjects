@@ -476,6 +476,33 @@ sensor_stress_analyzer/
   - **Window config:** Sets title “Sensor Stress Analyzer v1.0.0” and size.  
   - **Lifecycle:** Cleanly exits on Qt application close.
 
+````python
+# main.py
+
+import sys
+from PyQt5.QtWidgets import QApplication
+from gui.main_window import MainWindow
+
+
+def main():
+    """
+    Entry point for Sensor Stress Analyzer application.
+    Initializes the Qt application and launches the main window.
+    """
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.setWindowTitle("Sensor Stress Analyzer v1.0.0")
+    window.resize(1200, 800)
+    window.show()
+    sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()
+
+````
+
+
 ## gui/: GUI components
 
 ### main_window.py
@@ -484,12 +511,134 @@ sensor_stress_analyzer/
   - **Composition:** Instantiates `Sidebar` and `VisualizationPanel`.  
   - **Event wiring:** Creates `EventHandlers` with references to both UI components.
 
+````python
+# gui/main_window.py
+
+from PyQt5.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QScrollArea
+from gui.sidebar_controls import Sidebar
+from gui.visualization_panel import VisualizationPanel
+from gui.event_handlers import EventHandlers
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Sensor Stress Analyzer v1.0.0")
+        self.resize(1200, 800)
+
+        # Central widget
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QHBoxLayout()
+        central_widget.setLayout(layout)
+
+        # Sidebar controls (left)
+        self.sidebar = Sidebar()
+        layout.addWidget(self.sidebar)
+
+        # Visualization panel wrapped in scroll area (right)
+        scroll_area = QScrollArea()
+        scroll_area.setWidgetResizable(True)
+
+        self.visualization = VisualizationPanel()
+        scroll_area.setWidget(self.visualization)
+
+        layout.addWidget(scroll_area)
+
+        # Event handlers wiring
+        self.handlers = EventHandlers(self.sidebar, self.visualization)
+
+
+````
+
 ### sidebar_controls.py
 - **Purpose:** Provides user inputs and actions.
 - **Controls:**  
   - **Sliders:** **n-gon**, **Force [N]**, **Heat [°C]** with live label updates.  
   - **Toggle:** **Enable FEM Analysis** checkbox.  
   - **Buttons:** **Run Analysis** (mandatory), used by `EventHandlers`.
+
+  ````python
+  # gui/sidebar_controls.py
+
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QSlider, QCheckBox, QPushButton, QSpacerItem, QSizePolicy
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
+
+
+class Sidebar(QWidget):
+    def __init__(self):
+        super().__init__()
+        layout = QVBoxLayout()
+        layout.setSpacing(12)
+        self.setLayout(layout)
+
+        font_label = QFont("Arial", 11)
+
+        # n-gon slider
+        self.n_label = QLabel("n-gon: 12 corners")
+        self.n_label.setFont(font_label)
+        self.n_slider = QSlider(Qt.Horizontal)
+        self.n_slider.setMinimum(3)
+        self.n_slider.setMaximum(20)
+        self.n_slider.setValue(12)
+        self.n_slider.setTickInterval(1)
+        self.n_slider.setTickPosition(QSlider.TicksBelow)
+        self.n_slider.valueChanged.connect(self._update_n_label)
+        layout.addWidget(self.n_label)
+        layout.addWidget(self.n_slider)
+
+        # Force slider
+        self.force_label = QLabel("Force [N]: 50")
+        self.force_label.setFont(font_label)
+        self.force_slider = QSlider(Qt.Horizontal)
+        self.force_slider.setMinimum(0)
+        self.force_slider.setMaximum(100)
+        self.force_slider.setValue(50)
+        self.force_slider.setTickInterval(10)
+        self.force_slider.setTickPosition(QSlider.TicksBelow)
+        self.force_slider.valueChanged.connect(self._update_force_label)
+        layout.addWidget(self.force_label)
+        layout.addWidget(self.force_slider)
+
+        # Heat slider
+        self.heat_label = QLabel("Heat [°C]: 50")
+        self.heat_label.setFont(font_label)
+        self.heat_slider = QSlider(Qt.Horizontal)
+        self.heat_slider.setMinimum(0)
+        self.heat_slider.setMaximum(100)
+        self.heat_slider.setValue(50)
+        self.heat_slider.setTickInterval(10)
+        self.heat_slider.setTickPosition(QSlider.TicksBelow)
+        self.heat_slider.valueChanged.connect(self._update_heat_label)
+        layout.addWidget(self.heat_label)
+        layout.addWidget(self.heat_slider)
+
+        # FEM checkbox
+        self.fem_checkbox = QCheckBox("Enable FEM Analysis")
+        self.fem_checkbox.setFont(font_label)
+        layout.addWidget(self.fem_checkbox)
+
+        # Spacer before button
+        layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+
+        # Run button
+        self.run_button = QPushButton("Run Analysis")
+        self.run_button.setFont(QFont("Arial", 11, QFont.Bold))
+        layout.addWidget(self.run_button)
+
+    # --- Internal label updates ---
+    def _update_n_label(self, value):
+        self.n_label.setText(f"n-gon: {value} corners")
+
+    def _update_force_label(self, value):
+        self.force_label.setText(f"Force [N]: {value}")
+
+    def _update_heat_label(self, value):
+        self.heat_label.setText(f"Heat [°C]: {value}")
+
+
+  ````
 
 ### visualization_panel.py
 - **Purpose:** Displays results, plots, and logs; provides save actions.
@@ -502,12 +651,324 @@ sensor_stress_analyzer/
   - **Actions:** **Save PDF**, **Save Data Sets** buttons
 - **Plot saving:** Saves PNGs (rod, FEM line, stress/heat heatmaps) to stable filenames for reporting.
 
+````python
+# gui/visualization_panel.py
+
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QTextEdit, QPushButton, QHBoxLayout
+from PyQt5.QtGui import QFont
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.path import Path as MplPath
+
+from visualization.rod_plotter import plot_rod_structure
+from reporting.xai_explainer import explain_results
+
+
+class VisualizationPanel(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+
+        # Rod structure section
+        self.rod_label = QLabel("Rod Structure")
+        self.rod_label.setFont(QFont("Arial", 12))
+        self.layout.addWidget(self.rod_label)
+
+        self.rod_canvas = FigureCanvas(plt.figure())
+        self.rod_canvas.setMinimumHeight(300)
+        self.layout.addWidget(self.rod_canvas, stretch=3)
+
+        # FEM Analysis Results section
+        self.fem_label = QLabel("FEM Analysis Results")
+        self.fem_label.setFont(QFont("Arial", 12))
+        self.layout.addWidget(self.fem_label)
+
+        self.fem_line_canvas = FigureCanvas(plt.figure())
+        self.fem_line_canvas.setMinimumHeight(250)
+        self.layout.addWidget(self.fem_line_canvas)
+
+        self.heatmaps_row = QWidget()
+        self.heatmaps_layout = QHBoxLayout()
+        self.heatmaps_row.setLayout(self.heatmaps_layout)
+        self.layout.addWidget(self.heatmaps_row)
+
+        self.stress_heatmap_canvas = FigureCanvas(plt.figure())
+        self.stress_heatmap_canvas.setMinimumHeight(250)
+        self.heat_heatmap_canvas = FigureCanvas(plt.figure())
+        self.heat_heatmap_canvas.setMinimumHeight(250)
+        self.heatmaps_layout.addWidget(self.stress_heatmap_canvas)
+        self.heatmaps_layout.addWidget(self.heat_heatmap_canvas)
+
+        # XAI summary + Log
+        self.xai_label = QLabel("Quantitative Summary (XAI)")
+        self.xai_label.setFont(QFont("Arial", 12))
+        self.layout.addWidget(self.xai_label)
+        self.xai_text = QTextEdit()
+        self.xai_text.setReadOnly(True)
+        self.layout.addWidget(self.xai_text)
+
+        self.log_label = QLabel("Log window")
+        self.log_label.setFont(QFont("Arial", 12))
+        self.layout.addWidget(self.log_label)
+        self.log_text = QTextEdit()
+        self.log_text.setReadOnly(True)
+        self.layout.addWidget(self.log_text)
+
+        self.save_pdf_button = QPushButton("Save PDF")
+        self.save_data_button = QPushButton("Save Data Sets")
+        self.layout.addWidget(self.save_pdf_button)
+        self.layout.addWidget(self.save_data_button)
+
+    def update_rod_plot(self, n, force, heat):
+        self.rod_label.setText(f"Rod Structure: {n} corners, {force} N, {heat} °C")
+        data = plot_rod_structure(n, force, heat)
+
+        fig, ax = plt.subplots()
+        xs, ys = zip(*data["vertices"])
+        xs_poly = list(xs) + [xs[0]]
+        ys_poly = list(ys) + [ys[0]]
+        ax.plot(xs_poly, ys_poly, 'k-', linewidth=1.5)
+
+        fx, fy = zip(*data["forces"])
+        ax.quiver(xs, ys, fx, fy, color='r', angles='xy', scale_units='xy', scale=1)
+
+        ax.set_aspect('equal')
+        ax.set_title("Rod Structure")
+        ax.set_xticks([])
+        ax.set_yticks([])
+        fig.tight_layout()
+        fig.savefig("rod_plot.png", dpi=300, bbox_inches="tight")
+
+        self.rod_canvas.figure = fig
+        self.rod_canvas.draw()
+        self._log_saved("rod_plot.png")
+
+    def update_fem_plot(self, stress_map, heat_map):
+        fig, ax = plt.subplots()
+        ax.plot(stress_map, label="Stress", color='tab:blue', linewidth=2)
+        ax.plot(heat_map, label="Heat", color='tab:orange', linewidth=2)
+        ax.set_title("FEM Stress & Heat")
+        ax.set_xlabel("Corner index", labelpad=10)
+        ax.set_ylabel("Intensity")
+        ax.legend()
+        ax.grid(alpha=0.3, linestyle="--")
+        fig.subplots_adjust(bottom=0.2)
+        fig.savefig("fem_plot.png", dpi=300, bbox_inches="tight")
+
+        self.fem_line_canvas.figure = fig
+        self.fem_line_canvas.draw()
+        self._log_saved("fem_plot.png")
+        
+    def update_fem_heatmaps(self, n, stress_map, heat_map):
+        rod_data = plot_rod_structure(n, force=1, heat=1)
+        vertices = np.array(rod_data["vertices"])
+        polygon_path = MplPath(vertices)
+
+        pad = 0.15
+        xmin, ymin = vertices.min(axis=0) - pad
+        xmax, ymax = vertices.max(axis=0) + pad
+        res = 400
+        gx = np.linspace(xmin, xmax, res)
+        gy = np.linspace(ymin, ymax, res)
+        XX, YY = np.meshgrid(gx, gy)
+        grid_points = np.vstack([XX.ravel(), YY.ravel()]).T
+
+        inside = polygon_path.contains_points(grid_points)
+        inside_mask = inside.reshape(XX.shape)
+
+        eps = 1e-9
+        dists = np.sqrt(((grid_points[:, None, :] - vertices[None, :, :]) ** 2).sum(axis=2)) + eps
+
+        stress_vals = np.array(stress_map)
+        w_stress = 1.0 / dists
+        w_stress_norm = w_stress / (w_stress.sum(axis=1, keepdims=True) + eps)
+        stress_interp = (w_stress_norm @ stress_vals).reshape(XX.shape)
+
+        heat_vals = np.array(heat_map)
+        w_heat = 1.0 / dists
+        w_heat_norm = w_heat / (w_heat.sum(axis=1, keepdims=True) + eps)
+        heat_interp = (w_heat_norm @ heat_vals).reshape(XX.shape)
+
+        stress_interp[~inside_mask] = np.nan
+        heat_interp[~inside_mask] = np.nan
+
+        def robust_min_max(arr, mask):
+            valid = arr[mask]
+            if valid.size == 0:
+                return 0.0, 1.0
+            vmin = np.nanpercentile(valid, 2)
+            vmax = np.nanpercentile(valid, 98)
+            if vmin == vmax:
+                vmax = vmin + 1e-6
+            return vmin, vmax
+
+        s_min, s_max = robust_min_max(stress_interp, inside_mask)
+        h_min, h_max = robust_min_max(heat_interp, inside_mask)
+
+        # Stress heatmap
+        fig_s, ax_s = plt.subplots()
+        im_s = ax_s.imshow(
+            stress_interp,
+            origin="lower",
+            extent=(xmin, xmax, ymin, ymax),
+            cmap="coolwarm",
+            vmin=s_min,
+            vmax=s_max,
+            interpolation="bilinear",
+        )
+        xs, ys = vertices[:, 0], vertices[:, 1]
+        ax_s.plot(list(xs) + [xs[0]], list(ys) + [ys[0]], color="black", linewidth=1.2)
+        ax_s.set_aspect("equal")
+        ax_s.set_title("Stress heatmap on n-gon")
+        ax_s.set_xticks([])
+        ax_s.set_yticks([])
+        fig_s.colorbar(im_s, ax=ax_s, fraction=0.046, pad=0.04, label="Stress")
+        fig_s.tight_layout()
+        fig_s.savefig("fem_stress_heatmap.png", dpi=300, bbox_inches="tight")
+
+        self.stress_heatmap_canvas.figure = fig_s
+        self.stress_heatmap_canvas.draw()
+        self._log_saved("fem_stress_heatmap.png")
+
+        # Heat heatmap
+        fig_h, ax_h = plt.subplots()
+        im_h = ax_h.imshow(
+            heat_interp,
+            origin="lower",
+            extent=(xmin, xmax, ymin, ymax),
+            cmap="hot",
+            vmin=h_min,
+            vmax=h_max,
+            interpolation="bilinear",
+        )
+        ax_h.plot(list(xs) + [xs[0]], list(ys) + [ys[0]], color="black", linewidth=1.2)
+        ax_h.set_aspect("equal")
+        ax_h.set_title("Heat heatmap on n-gon")
+        ax_h.set_xticks([])
+        ax_h.set_yticks([])
+        fig_h.colorbar(im_h, ax=ax_h, fraction=0.046, pad=0.04, label="Heat")
+        fig_h.tight_layout()
+        fig_h.savefig("fem_heat_heatmap.png", dpi=300, bbox_inches="tight")
+
+        self.heat_heatmap_canvas.figure = fig_h
+        self.heat_heatmap_canvas.draw()
+        self._log_saved("fem_heat_heatmap.png")
+
+        # Save stress heatmap also as fem_heatmap.png for backward compatibility
+        fig_s.savefig("fem_heatmap.png", dpi=300, bbox_inches="tight")
+        self._log_saved("fem_heatmap.png")
+
+    def update_xai_summary(self, results):
+        explanation = explain_results(results)
+        self.xai_text.setText(explanation)
+
+    def log_message(self, message):
+        self.log_text.append(message)
+
+    def _log_saved(self, filename):
+        if os.path.exists(filename):
+            self.log_text.append(f"Saved: {filename}")
+
+
+````
+
 ### event_handlers.py
 - **Purpose:** Connects UI events to simulation, visualization, and export actions.
 - **Flow:**  
   - **Run Analysis:** Reads inputs → runs `simulation.rod_analysis` and optionally `simulation.fem_solver` → updates all plots and XAI → logs status → caches `last_results`.  
   - **Save PDF:** Builds PDF via `reporting.report_generator`.  
   - **Save Data Sets:** Persists JSON/TXT/CSV via `reporting.export_utils`.
+
+  ````python
+  # gui/event_handlers.py
+
+import os
+from PyQt5.QtCore import QObject
+from simulation.rod_analysis import run_rod_analysis
+from simulation.fem_solver import run_fem_analysis
+from reporting.report_generator import ReportGenerator
+from reporting.export_utils import save_results, save_text_report, save_csv
+from config import REPORT_FILENAME, RESULTS_FILENAME, TEXT_REPORT_FILENAME
+
+
+class EventHandlers(QObject):
+    def __init__(self, sidebar, visualization):
+        super().__init__()
+        self.sidebar = sidebar
+        self.visualization = visualization
+        self.last_results = None
+
+        # Connect sidebar controls to actions
+        self.sidebar.run_button.clicked.connect(self.run_analysis)
+        self.visualization.save_pdf_button.clicked.connect(self.save_pdf)
+        self.visualization.save_data_button.clicked.connect(self.save_data)
+
+    def log(self, message: str):
+        """Forward log messages to the visualization panel."""
+        if hasattr(self.visualization, "log_message"):
+            self.visualization.log_message(message)
+        else:
+            print(message)  # fallback to console
+
+    def run_analysis(self):
+        n = self.sidebar.n_slider.value()
+        force = self.sidebar.force_slider.value()
+        heat = self.sidebar.heat_slider.value()
+        use_fem = self.sidebar.fem_checkbox.isChecked()
+
+        self.log(f"Running analysis: n={n}, force={force}, heat={heat}, FEM={use_fem}")
+
+        # Always update rod plot
+        self.visualization.update_rod_plot(n, force, heat)
+
+        if use_fem:
+            results = run_fem_analysis(n, force, heat)
+            self.visualization.update_fem_plot(results["stress_map"], results["heat_map"])
+            self.visualization.update_fem_heatmaps(
+                results["n"], results["stress_map"], results["heat_map"]
+            )
+        else:
+            results = run_rod_analysis(n, force, heat)
+
+        # Update summary and log
+        self.visualization.update_xai_summary(results)
+        self.log("Simulation complete.")
+        self.last_results = results
+
+    def save_pdf(self):
+        """Save the current simulation results to a PDF report."""
+        if not self.last_results:
+            self.log("No results available to save.")
+            return
+
+        try:
+            report = ReportGenerator(self.last_results)
+            filename = report.generate(REPORT_FILENAME)
+            self.log(f"PDF report saved: {filename}")
+        except Exception as e:
+            self.log(f"Error saving PDF report: {e}")
+
+    def save_data(self):
+        """Save the current simulation results to JSON, TXT, and CSV files."""
+        if not self.last_results:
+            self.log("No results available to save.")
+            return
+
+        try:
+            json_file = save_results(self.last_results)
+            txt_file = save_text_report(self.last_results)
+            csv_file = save_csv(self.last_results)
+            self.log(f"Data files saved: {json_file}, {txt_file}, {csv_file}")
+        except Exception as e:
+            self.log(f"Error saving data files: {e}")
+
+
+  ````
 
 ## simulation/: Core analysis modules
 
@@ -1280,6 +1741,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
