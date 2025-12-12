@@ -1,4 +1,3 @@
-```markdown
 # Sensor Stress Analyzer
 
 A modular, narratable simulation and reporting platform for analyzing stress and heat propagation in n‑gonal sensor housings.  
@@ -124,4 +123,5 @@ sensor-stress-analyzer/
 
 Developed by **Nenad Balaneskovic**  
 Focused on modular workflow design, explainable AI, and governance‑ready reporting.
+
 ```
