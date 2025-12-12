@@ -1909,7 +1909,7 @@ def get_colormap(label: str):
 ## 11.1 📊 Architecture Diagram (Mermaid)
 
 Here’s a **modular architecture diagram** in **Mermaid syntax** that visually shows the flow between components in our **Sensor Housing Stress Test Simulator GUI**.  
-This complements the README and makes the system narratable for executives and technical teams alike.
+This complements the [README](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c3d23a77f0480b4abe91d061c63ccc0714812286/SensorHousingStressTest_SimulatorGUI/README.md) and makes the system narratable for executives and technical teams alike.
 
 ```mermaid
 flowchart TD
@@ -2041,7 +2041,7 @@ This chapter makes the **system modular, transparent, and narratable** — ideal
 ## 12.1 📊 Data Export Architecture Diagram (Mermaid)
 
 Here’s a **modular architecture diagram** in **Mermaid syntax** that visually shows how the **Sensor Housing Stress Test Simulator** produces 
-governance‑ready artifacts (JSON, TXT, CSV, PDF). This complements the README and makes the export pipeline narratable for stakeholders.
+governance‑ready artifacts (JSON, TXT, CSV, PDF). This complements the [README](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c3d23a77f0480b4abe91d061c63ccc0714812286/SensorHousingStressTest_SimulatorGUI/README.md) and makes the export pipeline narratable for stakeholders.
 
 ```mermaid
 flowchart TD
@@ -2126,7 +2126,7 @@ This chapter makes the **data export pipeline transparent and narratable**, show
 ## 14.1 📊 FEM Analysis Architecture Diagram (Mermaid)
 
 Here’s a **modular architecture diagram** in **Mermaid syntax** that visually shows the **Finite Element Method (FEM) pipeline** inside the Sensor Housing Stress Test Simulator.  
-This complements the README and makes the FEM workflow narratable for technical and stakeholder audiences.
+This complements the [README](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c3d23a77f0480b4abe91d061c63ccc0714812286/SensorHousingStressTest_SimulatorGUI/README.md) and makes the FEM workflow narratable for technical and stakeholder audiences.
 
 ```mermaid
 flowchart TD
@@ -2303,7 +2303,7 @@ sequenceDiagram
 
 This chapter completes the **simulation pipeline documentation**, showing both **Rod Analysis** and **FEM Analysis** side 
 by side. Together, they narrate how the simulator supports dual‑mode workflows for fast intuition and higher‑fidelity FEM insights
-(see also the README.md file for additional workflow summary).
+(see also the [README](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c3d23a77f0480b4abe91d061c63ccc0714812286/SensorHousingStressTest_SimulatorGUI/README.md) file for additional workflow summary).
 
 ---
 
@@ -2484,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
