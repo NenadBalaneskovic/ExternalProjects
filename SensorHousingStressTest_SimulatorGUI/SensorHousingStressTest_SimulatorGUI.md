@@ -976,6 +976,53 @@ class EventHandlers(QObject):
   - **Fields:** Angle-modulated stress and heat arrays.  
   - **Outputs:** Results dict with arrays, maxima, and vertices for plotting/export.
 
+````python
+# simulation/rod_analysis.py
+"""
+Rod analysis module for Sensor Stress Analyzer.
+Performs simplified stress and heat calculations for polygonal rod structures.
+"""
+
+import numpy as np
+
+
+def run_rod_analysis(n: int, force: float, heat: float) -> dict:
+    """
+    Perform a simplified rod analysis on an n-gon structure.
+    Returns stress and heat distributions along with maxima for reporting.
+    """
+
+    # --- Geometry setup ---
+    angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    vertices = np.column_stack((np.cos(angles), np.sin(angles)))
+
+    # --- Simplified stress model ---
+    # Stress proportional to applied force and vertex angle
+    stress_map = force * (1 + 0.1 * np.sin(angles))
+    stress_max = float(np.max(stress_map))
+
+    # --- Simplified heat model ---
+    # Heat proportional to applied temperature and vertex angle
+    heat_map = heat * (1 + 0.05 * np.cos(angles))
+    heat_max = float(np.max(heat_map))
+
+    # --- Results dictionary ---
+    results = {
+        "mode": "Rod Analysis",
+        "n": n,
+        "force": force,
+        "heat": heat,
+        "vertices": vertices.tolist(),
+        "stress_map": stress_map.tolist(),
+        "heat_map": heat_map.tolist(),
+        "stress_max": stress_max,
+        "heat_max": heat_max,
+    }
+
+    return results
+
+````
+
 ### fem_solver.py
 - **Function:** `run_fem_analysis(n, force, heat)`
 - **Logic:**  
@@ -983,11 +1030,123 @@ class EventHandlers(QObject):
   - **Solvers:** Per-vertex stress/heat fields with maxima.  
   - **Outputs:** Results dict with mode, inputs, mesh, arrays, and maxima.
 
+````python
+# simulation/fem_solver.py
+"""
+Finite Element Method (FEM) solver for Sensor Stress Analyzer.
+Performs stress and heat distribution analysis on polygonal rod structures.
+"""
+
+import numpy as np
+from simulation.mesh_generator import generate_mesh
+from simulation.solver_utils import solve_stress, solve_heat
+
+
+def run_fem_analysis(n: int, force: float, heat: float) -> dict:
+    """
+    Perform FEM analysis on an n-gon rod structure.
+    Returns stress and heat distributions along with maxima for reporting.
+    """
+
+    # --- Mesh generation ---
+    mesh = generate_mesh(n)
+
+    # --- FEM stress solver ---
+    stress_map = solve_stress(mesh, force)
+    stress_max = float(np.max(stress_map))
+
+    # --- FEM heat solver ---
+    heat_map = solve_heat(mesh, heat)
+    heat_max = float(np.max(heat_map))
+
+    # --- Results dictionary ---
+    results = {
+        "mode": "FEM Analysis",
+        "n": n,
+        "force": force,
+        "heat": heat,
+        "mesh": mesh.tolist() if hasattr(mesh, "tolist") else mesh,
+        "stress_map": stress_map.tolist() if hasattr(stress_map, "tolist") else stress_map,
+        "heat_map": heat_map.tolist() if hasattr(heat_map, "tolist") else heat_map,
+        "stress_max": stress_max,
+        "heat_max": heat_max,
+    }
+
+    return results
+
+````
+
 ### mesh_generator.py
 - **Functions:**  
   - **generate_polygon_vertices(n, radius):** Evenly spaced angles → `(x, y)` coordinates.  
   - **generate_polygon_edges(vertices):** Consecutive index pairs, wrap-around closure.  
   - **generate_polygon_mesh(n, radius):** Returns dict `{n, vertices, edges}`; aliased as `generate_mesh`.
+
+````python
+# simulation/mesh_generator.py
+"""
+Mesh generator for Sensor Stress Analyzer.
+Creates polygonal meshes for FEM analysis of rod structures.
+"""
+
+import math
+import numpy as np
+
+
+def generate_polygon_vertices(n: int, radius: float = 1.0) -> np.ndarray:
+    """
+    Generate vertices of a regular n-gon polygon.
+    Args:
+        n (int): Number of polygon corners (3–21).
+        radius (float): Radius of circumscribed circle.
+    Returns:
+        np.ndarray: Array of shape (n, 2) with (x, y) coordinates of vertices.
+    """
+    angles = np.linspace(0, 2 * math.pi, n, endpoint=False)
+    x = radius * np.cos(angles)
+    y = radius * np.sin(angles)
+    vertices = np.column_stack((x, y))
+    return vertices.astype(float)
+
+
+def generate_polygon_edges(vertices: np.ndarray) -> np.ndarray:
+    """
+    Generate edges connecting consecutive vertices of the polygon.
+    Args:
+        vertices (np.ndarray): Array of (x, y) coordinates.
+    Returns:
+        np.ndarray: Array of shape (n, 2) with vertex index pairs.
+    """
+    n = len(vertices)
+    edges = [(i, (i + 1) % n) for i in range(n)]  # wrap around to close polygon
+    return np.array(edges, dtype=int)
+
+
+def generate_polygon_mesh(n: int, radius: float = 1.0) -> dict:
+    """
+    Generate a polygon mesh structure for FEM analysis.
+    Args:
+        n (int): Number of polygon corners.
+        radius (float): Radius of circumscribed circle.
+    Returns:
+        dict: Mesh data including vertices and edges (NumPy arrays).
+    """
+    vertices = generate_polygon_vertices(n, radius)
+    edges = generate_polygon_edges(vertices)
+
+    mesh = {
+        "n": n,
+        "vertices": vertices,
+        "edges": edges,
+    }
+    return mesh
+
+
+# --- Alias for backward compatibility ---
+# Allows fem_solver.py to import generate_mesh without error
+generate_mesh = generate_polygon_mesh
+
+````
 
 ### solver_utils.py
 - **Utilities:**  
@@ -996,6 +1155,106 @@ class EventHandlers(QObject):
   - **accelerate_solver:** Placeholder for future performance enhancements.  
   - **benchmark_solver:** Timing helper for profiling.  
   - **validate_results:** Basic completeness checks for solver outputs.
+
+````python
+# simulation/solver_utils.py
+"""
+Solver utilities for Sensor Stress Analyzer.
+Provides simplified FEM stress and heat solvers, plus acceleration, benchmarking, and validation helpers.
+"""
+
+import time
+import numpy as np
+
+
+def solve_stress(mesh: dict, force: float) -> np.ndarray:
+    """
+    Simplified FEM stress solver.
+    Args:
+        mesh (dict): Mesh data including vertices and edges.
+        force (float): Applied force [N].
+    Returns:
+        np.ndarray: Stress values per vertex.
+    """
+    vertices = np.array(mesh["vertices"], dtype=float)
+    n = len(vertices)
+
+    # Stress proportional to force and vertex angle
+    angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    stress_map = force * (1 + 0.1 * np.sin(angles))
+
+    return stress_map.astype(float)
+
+
+def solve_heat(mesh: dict, heat: float) -> np.ndarray:
+    """
+    Simplified FEM heat solver.
+    Args:
+        mesh (dict): Mesh data including vertices and edges.
+        heat (float): Applied heat [°C].
+    Returns:
+        np.ndarray: Heat values per vertex.
+    """
+    vertices = np.array(mesh["vertices"], dtype=float)
+    n = len(vertices)
+
+    # Heat proportional to applied temperature and vertex angle
+    angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    heat_map = heat * (1 + 0.05 * np.cos(angles))
+
+    return heat_map.astype(float)
+
+
+def accelerate_solver(data):
+    """
+    Placeholder for solver acceleration using Cython/CPython.
+    In a real implementation, this would call optimized routines
+    compiled from Cython or C extensions to speed up FEM calculations.
+
+    Args:
+        data (dict or list): Input data for solver.
+
+    Returns:
+        dict or list: Processed data (currently unchanged).
+    """
+    # Simulate acceleration by returning data directly
+    return data
+
+
+def benchmark_solver(func, *args, **kwargs):
+    """
+    Benchmark the execution time of a solver function.
+
+    Args:
+        func (callable): Solver function to benchmark.
+        *args: Positional arguments for the solver.
+        **kwargs: Keyword arguments for the solver.
+
+    Returns:
+        tuple: (results, elapsed_time)
+    """
+    start = time.time()
+    results = func(*args, **kwargs)
+    elapsed = time.time() - start
+    return results, elapsed
+
+
+def validate_results(results):
+    """
+    Validate solver results for consistency and completeness.
+
+    Args:
+        results (dict): Results dictionary from solver.
+
+    Returns:
+        bool: True if results are valid, False otherwise.
+    """
+    if not isinstance(results, dict):
+        return False
+    required_keys = ["mode", "stress_map", "heat_map", "stress_max", "heat_max"]
+    return all(key in results for key in required_keys)
+
+````
 
 ## reporting/: Export and reporting
 
@@ -1008,6 +1267,93 @@ class EventHandlers(QObject):
   - **XAI summary:** Governance-ready narrative appended at the end.
 - **Sanitization:** Replaces em/en dashes and bullets with ASCII equivalents for PDF safety.
 
+````python
+# reporting/report_generator.py
+"""
+Report generator for Sensor Stress Analyzer.
+Creates governance-ready PDF reports including metadata, results, plots, and XAI summaries.
+"""
+
+import os
+from fpdf import FPDF
+import numpy as np
+from config import REPORT_FILENAME, APP_NAME, APP_VERSION
+from .xai_explainer import explain_results
+
+
+def _sanitize_for_pdf(obj):
+    """Convert NumPy arrays and other complex objects to PDF-safe strings."""
+    if isinstance(obj, np.ndarray):
+        return str(obj.tolist())
+    if isinstance(obj, (list, tuple)):
+        return str(obj)
+    if isinstance(obj, dict):
+        return {k: _sanitize_for_pdf(v) for k, v in obj.items()}
+    if isinstance(obj, str):
+        # Replace unsupported Unicode characters with safe ASCII equivalents
+        return (
+            obj.replace("\u2014", "-")  # em-dash → hyphen
+               .replace("\u2013", "-")  # en-dash → hyphen
+               .replace("\u2022", "*")  # bullet → asterisk
+        )
+    return str(obj)
+
+
+class ReportGenerator:
+    """Generates PDF reports for Sensor Stress Analyzer."""
+
+    def __init__(self, results: dict):
+        self.results = results
+        self.pdf = FPDF()
+        self.pdf.set_auto_page_break(auto=True, margin=15)
+
+    def _add_header(self):
+        self.pdf.set_font("Arial", "B", 16)
+        self.pdf.cell(0, 10, f"{APP_NAME} v{APP_VERSION}", ln=True, align="C")
+        self.pdf.ln(10)
+
+    def _add_section_title(self, title: str):
+        self.pdf.set_font("Arial", "B", 12)
+        safe_title = _sanitize_for_pdf(title)
+        self.pdf.cell(0, 10, safe_title, ln=True)
+        self.pdf.ln(5)
+
+    def _add_text(self, text: str):
+        self.pdf.set_font("Arial", "", 10)
+        safe_text = _sanitize_for_pdf(text)
+        self.pdf.multi_cell(0, 8, safe_text)
+        self.pdf.ln(5)
+
+    def generate(self, filename: str = REPORT_FILENAME):
+        """Generate the PDF report with results, plots, and XAI summary."""
+        self.pdf.add_page()
+        self._add_header()
+
+        # --- Results Section ---
+        self._add_section_title("Simulation Results")
+        safe_results = _sanitize_for_pdf(self.results)
+        for key, value in safe_results.items():
+            self._add_text(f"{key}: {value}")
+
+        # --- Plots Section ---
+        self._add_section_title("Simulation Plots")
+        # Expect plots saved earlier as files
+        for plot_file in ["rod_plot.png", "fem_plot.png", "fem_stress_heatmap.png", "fem_heat_heatmap.png"]:
+            if os.path.exists(plot_file):
+                self.pdf.image(plot_file, w=100)
+                self.pdf.ln(5)
+
+        # --- XAI Summary Section ---
+        self._add_section_title("Explainable AI Summary")
+        summary = explain_results(self.results)
+        self._add_text(summary)
+
+        # --- Save PDF ---
+        self.pdf.output(filename)
+        return filename
+
+````
+
 ### export_utils.py
 - **Functions:**  
   - **save_results(results):** JSON (arrays → lists).  
@@ -1015,11 +1361,180 @@ class EventHandlers(QObject):
   - **save_csv(results):** Robust CSV writer handling scalars, 1D/2D lists, dicts; includes sections for vertices, forces, stress_map, heat_map.
 - **Reliability:** Defensive type handling prevents “iterable expected, not float” errors.
 
+````python
+# reporting/export_utils.py
+"""
+Export utilities for Sensor Stress Analyzer.
+Handles saving results in JSON, TXT, and CSV formats.
+"""
+
+import json
+import csv
+import numpy as np
+from config import RESULTS_FILENAME, TEXT_REPORT_FILENAME, CSV_EXPORT_FILENAME
+
+
+def _sanitize_for_json(obj):
+    """Convert NumPy arrays and other non-serializable objects to JSON-safe types."""
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, dict):
+        return {k: _sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_sanitize_for_json(v) for v in obj]
+    # Convert NumPy scalar types to native Python scalars
+    if isinstance(obj, (np.generic,)):
+        return obj.item()
+    return obj
+
+
+def save_results(results: dict, filename: str = RESULTS_FILENAME):
+    """Save results dictionary to a JSON file, converting arrays to lists."""
+    safe_results = _sanitize_for_json(results)
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(safe_results, f, indent=4)
+    return filename
+
+
+def save_text_report(results: dict, filename: str = TEXT_REPORT_FILENAME):
+    """Save results dictionary to a plain text summary file."""
+    safe_results = _sanitize_for_json(results)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("Sensor Stress Analyzer Results\n")
+        f.write("=" * 40 + "\n\n")
+        for key, value in safe_results.items():
+            f.write(f"{key}: {value}\n")
+    return filename
+
+
+def _write_array_section(writer: csv.writer, title: str, data):
+    """
+    Write array-like or dict-like data to CSV safely.
+    Handles:
+    - 1D lists of scalars
+    - 2D lists (list of lists/tuples)
+    - dicts of scalars or lists
+    """
+    writer.writerow([])
+    writer.writerow([title])
+
+    # Dict: write key-value, expanding lists when present
+    if isinstance(data, dict):
+        for k, v in data.items():
+            if isinstance(v, (list, tuple)):
+                # If list of scalars, write as row with key prefix
+                if all(not isinstance(x, (list, tuple)) for x in v):
+                    writer.writerow([k] + list(v))
+                else:
+                    # Nested list: write each row with key prefix
+                    for row in v:
+                        if isinstance(row, (list, tuple)):
+                            writer.writerow([k] + list(row))
+                        else:
+                            writer.writerow([k, row])
+            else:
+                writer.writerow([k, v])
+        return
+
+    # List/tuple: detect 1D vs 2D
+    if isinstance(data, (list, tuple)):
+        # If list of scalars (1D), write each scalar as its own row
+        if all(not isinstance(x, (list, tuple)) for x in data):
+            for x in data:
+                writer.writerow([x])
+            return
+        # Otherwise, treat as 2D-like
+        for row in data:
+            if isinstance(row, (list, tuple)):
+                writer.writerow(list(row))
+            else:
+                writer.writerow([row])
+        return
+
+    # Fallback: single scalar value
+    writer.writerow([data])
+
+
+def save_csv(results: dict, filename: str = CSV_EXPORT_FILENAME):
+    """Save results dictionary to a CSV file, including arrays as tables."""
+    safe_results = _sanitize_for_json(results)
+    with open(filename, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+
+        # 1) Write scalar values
+        for key, value in safe_results.items():
+            if isinstance(value, (int, float, str)):
+                writer.writerow([key, value])
+
+        # 2) Write known array/dataset sections safely
+        if "vertices" in safe_results:
+            _write_array_section(writer, "Vertices (x,y)", safe_results["vertices"])
+
+        if "forces" in safe_results:
+            _write_array_section(writer, "Forces (fx,fy)", safe_results["forces"])
+
+        if "stress_map" in safe_results:
+            _write_array_section(writer, "Stress Map", safe_results["stress_map"])
+
+        if "heat_map" in safe_results:
+            _write_array_section(writer, "Heat Map", safe_results["heat_map"])
+
+        # 3) Generic catch-all for any remaining list/dict values
+        for key, value in safe_results.items():
+            if isinstance(value, (list, tuple, dict)) and key not in {
+                "vertices", "forces", "stress_map", "heat_map"
+            }:
+                _write_array_section(writer, key, value)
+
+    return filename
+
+````
+
 ### xai_explainer.py
 - **Function:** `explain_results(results)`
 - **Output:**  
   - **Header:** App name and version.  
   - **Narrative:** Mode, inputs, maxima, and concise interpretation of structural/thermal resilience.
+
+````python
+# reporting/xai_explainer.py
+"""
+XAI (Explainable AI) module for Sensor Stress Analyzer.
+Generates human-readable summaries of simulation results.
+"""
+
+from config import APP_NAME, APP_VERSION
+
+
+def explain_results(results: dict) -> str:
+    """
+    Generate a textual explanation of simulation results.
+    Includes application metadata for governance-ready reporting.
+    """
+
+    header = f"{APP_NAME} v{APP_VERSION} — Quantitative Summary\n\n"
+
+    mode = results.get("mode", "Rod Analysis")
+    n = results.get("n", "?")
+    force = results.get("force", "?")
+    heat = results.get("heat", "?")
+
+    stress_max = results.get("stress_max", None)
+    heat_max = results.get("heat_max", None)
+
+    explanation = f"In {mode} mode, the analysis highlights stress and thermal resilience across the sensor housing.\n"
+    explanation += f"The polygon had {n} corners, subjected to {force} N force and {heat} °C heat.\n"
+
+    if stress_max is not None:
+        explanation += f"The maximum stress reached {stress_max:.2f} units.\n"
+    if heat_max is not None:
+        explanation += f"The maximum heat intensity was {heat_max:.2f} units.\n"
+
+    explanation += "These values highlight the most critical regions for structural integrity and thermal resilience."
+
+    return header + explanation
+
+````
 
 ## visualization/: Plotting utilities
 
@@ -1030,17 +1545,238 @@ class EventHandlers(QObject):
   - **Saves:** High-resolution PNG with stable filename.  
   - **Returns:** Dict of vertices and forces for downstream use.
 
+````python
+# visualization/rod_plotter.py
+"""
+Rod plotter for Sensor Stress Analyzer.
+Generates rod structure plots with applied forces for polygonal rod analysis.
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def plot_rod_structure(n: int, force: float, heat: float, filename: str = "rod_plot.png") -> dict:
+    """
+    Plot the rod structure of an n-gon with applied forces.
+    Args:
+        n (int): Number of polygon corners.
+        force (float): Applied force [N].
+        heat (float): Applied heat [°C].
+        filename (str): Output filename for the plot.
+    Returns:
+        dict: Data including vertices and forces for downstream use.
+    """
+
+    # --- Geometry setup ---
+    angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    vertices = np.column_stack((np.cos(angles), np.sin(angles)))
+
+    # --- Simplified force vectors ---
+    fx = force * np.cos(angles)
+    fy = force * np.sin(angles)
+    forces = np.column_stack((fx, fy))
+
+    # --- Plot rod structure ---
+    fig, ax = plt.subplots()
+    xs, ys = vertices[:, 0], vertices[:, 1]
+    xs_poly = list(xs) + [xs[0]]
+    ys_poly = list(ys) + [ys[0]]
+    ax.plot(xs_poly, ys_poly, "k-", linewidth=1.5)
+
+    ax.quiver(xs, ys, fx, fy, color="r", angles="xy", scale_units="xy", scale=1)
+
+    ax.set_aspect("equal")
+    ax.set_title(f"Rod Structure: {n} corners, {force} N, {heat} °C")
+    ax.set_xticks([])
+    ax.set_yticks([])
+    fig.tight_layout()
+    fig.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+    # --- Return data for downstream use ---
+    return {
+        "n": n,
+        "force": force,
+        "heat": heat,
+        "vertices": vertices.tolist(),
+        "forces": forces.tolist(),
+    }
+
+````
+
 ### fem_plotter.py
 - **Functions:**  
   - **plot_fem_line(stress_map, heat_map, filename="fem_plot.png"):** Dual-line plot of stress/heat over vertices.  
   - **plot_fem_heatmap(vertices, values, cmap, label, filename):** Interpolated interior heatmap with robust scaling.  
   - **plot_fem_heatmaps(vertices, stress_map, heat_map):** Convenience wrapper saving `fem_stress_heatmap.png`, `fem_heat_heatmap.png` (and `fem_heatmap.png` for compatibility).
 
+````python
+# visualization/fem_plotter.py
+"""
+FEM plotter for Sensor Stress Analyzer.
+Generates line plots and heatmaps for FEM stress and heat distributions.
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.path import Path as MplPath
+
+
+def plot_fem_line(stress_map: np.ndarray, heat_map: np.ndarray, filename: str = "fem_plot.png"):
+    """
+    Plot FEM stress and heat distributions as line plots.
+    Args:
+        stress_map (np.ndarray): Stress values per vertex.
+        heat_map (np.ndarray): Heat values per vertex.
+        filename (str): Output filename for the plot.
+    """
+    fig, ax = plt.subplots()
+    ax.plot(stress_map, label="Stress", color="tab:blue", linewidth=2)
+    ax.plot(heat_map, label="Heat", color="tab:orange", linewidth=2)
+    ax.set_title("FEM Stress & Heat")
+    ax.set_xlabel("Corner index", labelpad=10)
+    ax.set_ylabel("Intensity")
+    ax.legend()
+    ax.grid(alpha=0.3, linestyle="--")
+    fig.subplots_adjust(bottom=0.2)
+    fig.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_fem_heatmap(vertices: np.ndarray, values: np.ndarray, cmap: str, label: str, filename: str):
+    """
+    Plot a heatmap over an n-gon polygon using interpolated vertex values.
+    Args:
+        vertices (np.ndarray): Array of polygon vertices (n, 2).
+        values (np.ndarray): Values per vertex (stress or heat).
+        cmap (str): Colormap for visualization.
+        label (str): Label for colorbar.
+        filename (str): Output filename for the heatmap.
+    """
+    polygon_path = MplPath(vertices)
+
+    pad = 0.15
+    xmin, ymin = vertices.min(axis=0) - pad
+    xmax, ymax = vertices.max(axis=0) + pad
+    res = 400
+    gx = np.linspace(xmin, xmax, res)
+    gy = np.linspace(ymin, ymax, res)
+    XX, YY = np.meshgrid(gx, gy)
+    grid_points = np.vstack([XX.ravel(), YY.ravel()]).T
+
+    inside = polygon_path.contains_points(grid_points)
+    inside_mask = inside.reshape(XX.shape)
+
+    eps = 1e-9
+    dists = np.sqrt(((grid_points[:, None, :] - vertices[None, :, :]) ** 2).sum(axis=2)) + eps
+
+    w = 1.0 / dists
+    w_norm = w / (w.sum(axis=1, keepdims=True) + eps)
+    interp_vals = (w_norm @ values).reshape(XX.shape)
+
+    interp_vals[~inside_mask] = np.nan
+
+    def robust_min_max(arr, mask):
+        valid = arr[mask]
+        if valid.size == 0:
+            return 0.0, 1.0
+        vmin = np.nanpercentile(valid, 2)
+        vmax = np.nanpercentile(valid, 98)
+        if vmin == vmax:
+            vmax = vmin + 1e-6
+        return vmin, vmax
+
+    vmin, vmax = robust_min_max(interp_vals, inside_mask)
+
+    fig, ax = plt.subplots()
+    im = ax.imshow(
+        interp_vals,
+        origin="lower",
+        extent=(xmin, xmax, ymin, ymax),
+        cmap=cmap,
+        vmin=vmin,
+        vmax=vmax,
+        interpolation="bilinear",
+    )
+    xs, ys = vertices[:, 0], vertices[:, 1]
+    ax.plot(list(xs) + [xs[0]], list(ys) + [ys[0]], color="black", linewidth=1.2)
+    ax.set_aspect("equal")
+    ax.set_title(f"{label} heatmap on n-gon")
+    ax.set_xticks([])
+    ax.set_yticks([])
+    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label=label)
+    fig.tight_layout()
+    fig.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_fem_heatmaps(vertices: np.ndarray, stress_map: np.ndarray, heat_map: np.ndarray):
+    """
+    Generate both stress and heat heatmaps for FEM analysis.
+    Args:
+        vertices (np.ndarray): Polygon vertices.
+        stress_map (np.ndarray): Stress values per vertex.
+        heat_map (np.ndarray): Heat values per vertex.
+    """
+    plot_fem_heatmap(vertices, stress_map, cmap="coolwarm", label="Stress", filename="fem_stress_heatmap.png")
+    plot_fem_heatmap(vertices, heat_map, cmap="hot", label="Heat", filename="fem_heat_heatmap.png")
+
+    # Save stress heatmap also as fem_heatmap.png for backward compatibility
+    plot_fem_heatmap(vertices, stress_map, cmap="coolwarm", label="Stress", filename="fem_heatmap.png")
+
+````
+
 ### color_maps.py
 - **Functions:**  
   - **get_stress_colormap():** Returns consistent stress colormap (coolwarm).  
   - **get_heat_colormap():** Returns consistent heat colormap (hot).  
   - **get_colormap(label):** Unified accessor with validation.
+
+````python
+# visualization/color_maps.py
+"""
+Centralized colormap definitions for Sensor Stress Analyzer.
+Ensures consistent visual styling across rod and FEM plots.
+"""
+
+import matplotlib.pyplot as plt
+
+
+# --- Stress colormap ---
+def get_stress_colormap():
+    """
+    Return the colormap used for stress visualization.
+    """
+    return plt.get_cmap("coolwarm")
+
+
+# --- Heat colormap ---
+def get_heat_colormap():
+    """
+    Return the colormap used for heat visualization.
+    """
+    return plt.get_cmap("hot")
+
+
+# --- Utility for governance-ready consistency ---
+def get_colormap(label: str):
+    """
+    Return the appropriate colormap based on label.
+    Args:
+        label (str): Either 'stress' or 'heat'.
+    Returns:
+        matplotlib.colors.Colormap
+    """
+    label = label.lower()
+    if label == "stress":
+        return get_stress_colormap()
+    elif label == "heat":
+        return get_heat_colormap()
+    else:
+        raise ValueError(f"Unsupported colormap label: {label}")
+
+````
 
 ## Inter-module interactions
 - **GUI → Simulation:** `EventHandlers.run_analysis` routes user inputs to `rod_analysis` and `fem_solver`.
@@ -1738,6 +2474,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
