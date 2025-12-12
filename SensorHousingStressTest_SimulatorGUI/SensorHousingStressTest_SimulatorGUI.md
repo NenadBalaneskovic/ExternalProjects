@@ -2314,10 +2314,10 @@ by side. Together, they narrate how the simulator supports dual‑mode workflows
 ### ✅ Step 1: Download the folder
 
 Download the main folder  
-📁 [Sensor_Housing_Stress_Test_Simulator](https://github.com/NenadBalaneskovic/ExternalProjects/tree/main/Sensor_Housing_Stress_Test_Simulator)  
+📁 [Sensor_Housing_Stress_Test_Simulator](https://github.com/NenadBalaneskovic/ExternalProjects/tree/8a17958ba64fbeee8ff016dcb06a3e955d3cb4c3/SensorHousingStressTest_SimulatorGUI)  
 which has the following structure:  
 
-   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Sensor_Housing_Stress_Test_Simulator/MainFolder_structure.PNG" width="400" height="200"/>
+   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/Folder_structure.PNG" width="400" height="200"/>
 
 ### ✅ Step 2: Run the application
 
@@ -2372,6 +2372,10 @@ Visual outputs update in real time, and results can be saved as **PDF reports** 
   - **JSON file** with full results dictionary
   - **TXT file** with readable summary
   - **CSV file** with tabular datasets (vertices, forces, stress/heat maps)
+
+![Sensor_Housing_Stress_Test_Csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/csv_results1.PNG)
+
+![Sensor_Housing_Stress_Test_Csv2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/csv_results2.PNG)
 
 - Provides governance‑ready outputs:
   - Log window confirms saved artifacts
@@ -2480,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
