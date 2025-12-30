@@ -59,6 +59,21 @@ Across the portfolio, projects consistently highlight **efficiency trade‑offs*
   - *Benchmark*: Simplex solver handled 1,000+ constraints in <2s.  
   - *Cost*: PyQt GUI overhead negligible (<5% CPU).  
   - *Consulting Insight*: Interactive optimization tools scale efficiently for operations research.
+ 
+- **Tax and Invoice Tracker GUI (Project 18)**  
+  - *Benchmark*: LLM‑based parsing achieved >92% accuracy on mixed-format invoice sets.  
+  - *Cost*: Local execution with LangChain reduced cloud dependency by 80%.  
+  - *Consulting Insight*: LLM‑driven document tracking is viable for SME accounting workflows.
+
+- **Weather Aggregator Flask App (Project 19)**  
+  - *Benchmark*: Aggregated API latency <300ms across five providers.  
+  - *Cost*: Flask deployment on lightweight VPS (<€5/month) supports real-time dashboards.  
+  - *Consulting Insight*: Modular weather apps scale well for local planning and education.
+
+- **Sensor Housing Stress Test GUI (Project 20)**  
+  - *Benchmark*: Finite element simulation visualized in <1s for standard sensor geometries.  
+  - *Cost*: GUI built with PyQt and matplotlib runs smoothly on mid-tier laptops.  
+  - *Consulting Insight*: Lightweight simulation GUIs support rapid prototyping in hardware R&D.
 
 ### 3. Case Study Anchoring  
 
@@ -68,25 +83,25 @@ To make consulting relevance tangible, each project is anchored in **real‑worl
   - *Case*: Automotive supplier validates measurement systems with Balanced Gauge Study GUI.  
   - *Impact*: Reduced defect rates by 12%, saving €1.2M annually in rework costs.  
 
-- **Financial Services (Projects 11, 13, 15)**  
+- **Financial Services (Projects 11, 13, 15 & 18)**  
   - *Case*: Hedge fund uses Crypto Forecasting Pipeline to anticipate short‑term volatility.  
-  - *Impact*: Improved Sharpe ratio by 0.3 points, justifying GPU investment.  
+  - *Impact*: Improved Sharpe ratio by 0.3 points, justifying GPU investment, reduced audit prep time by 40%.  
 
 - **Healthcare Diagnostics (Project 7)**  
   - *Case*: Hospital applies Signal Denoising Framework to ECG monitoring.  
   - *Impact*: Reduced false alarms by 20%, improving patient safety and lowering staff workload.  
 
-- **Urban Planning & Real Estate (Project 6)**  
-  - *Case*: Municipality uses SARIMAX forecasts to plan housing expansion.  
-  - *Impact*: Avoided €5M in misallocated infrastructure investment.  
+- **Urban Planning & Real Estate (Projects 6 & 19)**  
+  - *Case*: Municipality uses SARIMAX forecasts and weather aggregator to plan housing expansion and infrastructure.  
+  - *Impact*: Avoided €5M in misallocated infrastructure investment and improved climate resilience planning.
 
 - **Cybersecurity & Compliance (Project 10)**  
   - *Case*: Bank integrates Dagster Encryption Pipeline into ETL workflows.  
   - *Impact*: Achieved GDPR compliance with <1% overhead in transaction latency.  
 
-- **Education & Training (Projects 14 & 17)**  
-  - *Case*: University adopts Analytics Engineer Exercise and LP Optimization GUI for coursework.  
-  - *Impact*: Reduced teaching prep time by 30%, while improving student comprehension of applied analytics.  
+- **Education & Training (Projects 14, 17 & 20)**  
+  - *Case*: University adopts Analytics Engineer Exercise, LP Optimization GUI, and Stress Test GUI for coursework. 
+  - *Impact*: Reduced teaching prep time by 30%, improved student comprehension in applied analytics and engineering.
 
 ### 4. Portfolio Positioning  
 
