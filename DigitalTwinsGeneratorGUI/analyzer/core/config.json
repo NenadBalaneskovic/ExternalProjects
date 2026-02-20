@@ -1,0 +1,17 @@
+{
+  "file_path": "telemetry.parquet",
+  "columns": ["Temperature", "Motor RPM", "Error Code"],
+  "sampling_rate_hz": 10,
+  "timestamp_format": "ISO8601",
+
+  "output": {
+    "file_path": "telemetry.parquet",
+    "chunk_size": 10000
+  },
+
+  "alerts": {
+    "socket_host": "127.0.0.1",
+    "socket_port": 5050,
+    "socket_enabled": true
+  }
+}

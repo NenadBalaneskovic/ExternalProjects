@@ -1,0 +1,17 @@
+# --- Core scientific stack ---
+numpy
+pandas
+scikit-learn
+pyarrow
+
+# --- GUI (Analyzer) ---
+PySide6
+
+# --- Plotting / Visualization ---
+matplotlib
+
+# --- Optional but recommended for stability ---
+scipy
+
+# --- Real-time / utilities ---
+tqdm
