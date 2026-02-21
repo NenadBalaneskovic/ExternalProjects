@@ -102,7 +102,7 @@ This architecture is designed to showcase **transparency, modularity, and operat
  
 ## 🧠 **GUI sketch**  
 
-In the following we address our full GUI sketch, a clean, structured layout for our Flask-based Weather Aggregator App. It includes all the key modules we discussed: 
+In the following we address our full GUI sketch, a clean, structured layout for our Sensor Housing Stress Test GUI. It includes all the key modules we discussed: 
 objective and constraint input, method selection forecasting models), result display, visualization, and diagnostics.
 
 ![SensorHousingStressSimulatorGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/cea9e38820b7a7d2b074ce18fd2ac82cc33f8bcb/SensorHousingStressTest_SimulatorGUI/GUI_sketch.png)
@@ -2484,6 +2484,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 41. **Chip Huyen**, *AI Engineering: Building Applications with Foundation Models*, 1st Edition, O’Reilly Media, 2025; **Michael Lanham**, *AI Agents in Action*, 1st Edition, Manning Publications, 2025;
  **Melanie Mitchell**, *Artificial Intelligence: A Guide for Thinking Humans*, 1st Edition, Pelican Books, 2019; **Brian Christian & Tom Griffiths**, *Algorithms to Live By: The Computer Science of Human Decisions*, 1st Edition, Henry Holt and Company, 2016;
 **Ray Kurzweil**, *The Singularity Is Nearer: When We Merge with AI*, 1st Edition, Viking, 2024; OpenWeatherMap: https://openweathermap.org/, HuggingFace: https://huggingface.co/,
+
 
 
 
