@@ -155,7 +155,9 @@ The preview is intentionally lightweight and throttled to avoid GUI overload, mi
 ---
 
 # **4. Operating GUI Screenshot Interpretation**  
-*(Based on your uploaded screenshot of the running generator)*
+
+![DigitalTwinGeneratorGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ef215a9cd85b128c607e4cea07cb03728eac9b0e/DigitalTwinsGeneratorGUI/Generator_GUI_operational.png)
+
 
 The screenshot shows the generator in full operation, with:
 
@@ -3141,6 +3143,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
