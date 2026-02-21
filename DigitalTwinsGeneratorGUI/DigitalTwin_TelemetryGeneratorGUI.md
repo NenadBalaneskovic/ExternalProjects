@@ -3061,7 +3061,7 @@ Apache Arrow. *Parquet File Format Specification.*: https://arrow.apache.org/doc
 NumPy Developers. *NumPy Reference Guide.*: https://numpy.org/doc/stable/reference/;  
 Matplotlib Developers. *Matplotlib Plotting Library.*: https://matplotlib.org/;
 3. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d1c12b9ade1c8d44754166589934d2d542cf6d2c/DigitalTwinsGeneratorGUI/DigitalTwinGenerator.ipynb)
-4. [![DigitalTwinTelemetryGenerator_Report | English](https://img.shields.io/badge/TaxInvoiceTracker%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d1c12b9ade1c8d44754166589934d2d542cf6d2c/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.pdf) 
+4. [![DigitalTwinTelemetryGenerator_Report | English](https://img.shields.io/badge/DigitalTwinTelemetryGenerator%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d1c12b9ade1c8d44754166589934d2d542cf6d2c/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.pdf) 
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
 7. U. Kockelkorn: "__Statistik für Anwender__", 1st Ed. Springer (2012), s. chapters 7 - 8.
@@ -3136,6 +3136,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
