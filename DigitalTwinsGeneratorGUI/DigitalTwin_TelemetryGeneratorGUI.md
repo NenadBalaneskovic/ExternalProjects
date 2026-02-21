@@ -2678,10 +2678,6 @@ This allows the Analyzer to:
 
 This is a key component of the digital twin ecosystem.
 
----
-
-$$$$$$
-
 ## 11.5 Sample outputs
 
 Here is a polished, publication‑ready section that deals with the widget and file output structure of our Digital Twin Generator GUI.
@@ -3140,6 +3136,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
