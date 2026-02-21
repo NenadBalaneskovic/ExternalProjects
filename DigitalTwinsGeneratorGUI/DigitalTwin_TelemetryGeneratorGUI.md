@@ -100,11 +100,9 @@ This document now proceeds to interpret the GUI, explain the architecture, and a
 In the following we address our full GUI sketch, a clean, structured layout for our Digital Twin Telemetry Generator GUI. It includes all the key modules we discussed: 
 objective and constraint input, method selection of forecasting models), result display, visualization, and diagnostics.
 
-![SensorHousingStressSimulatorGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/cea9e38820b7a7d2b074ce18fd2ac82cc33f8bcb/SensorHousingStressTest_SimulatorGUI/GUI_sketch.png)
+![DigitalTwinGeneratorGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7eef7c6bba937d70043bf103d266a1a0fbde06c7/DigitalTwinsGeneratorGUI/3D%20isometric%20view%20of.png)
 
 The GUI sketch for the Digital Twin Telemetry Generator establishes a **clear, engineering‑oriented workflow** that mirrors how real industrial telemetry systems are configured and monitored. The layout is intentionally structured into three vertical panels, each representing a conceptual layer of the digital twin philosophy:
-
----
 
 ## **3.1 Left Panel — Schema Definition (What does the machine measure?)**
 
@@ -122,8 +120,6 @@ The design philosophy:
 - **Transparency:** The user sees exactly which sensors are included.  
 - **Modularity:** Each sensor is optional.  
 - **Digital Twin Alignment:** The schema defines the “virtual hardware” of the simulated machine.
-
----
 
 ## **3.2 Middle Panel — Generator Settings (How does the machine behave?)**
 
@@ -143,8 +139,6 @@ These settings correspond to real‑world telemetry acquisition parameters:
 - file size → bandwidth/storage constraints  
 
 This panel is the “control room” of the virtual drilling machine.
-
----
 
 ## **3.3 Right Panel — Live Preview (What is the machine doing right now?)**
 
@@ -248,8 +242,6 @@ This separation ensures:
 
 Below are the diagrams that visually describe the system.
 
----
-
 ## **6.1 Module Interaction Diagram**
 
 ```mermaid
@@ -296,8 +288,6 @@ flowchart LR
     G --> FT
 ```
 
----
-
 ## **6.2 Data Flow Diagram**
 
 ```mermaid
@@ -316,8 +306,6 @@ sequenceDiagram
     Gen->>Status: progress_callback(percent)
     Gen->>Status: alert("Generation complete")
 ```
-
----
 
 ## **6.3 Threading Diagram**
 
@@ -1357,8 +1345,6 @@ Core files:
 4. `generator/core/config_writer.py`  
 5. `generator/core/alert_socket.py`  
 
----
-
 ## **8.1 `generator/core/generator.py` — TelemetryGenerator**
 
 ### Purpose
@@ -1621,8 +1607,6 @@ class TelemetryGenerator:
         return pd.DataFrame(data)
 ```
 
----
-
 ## **8.2 `generator/core/column_models.py` — Simulation Models**
 
 ### Purpose
@@ -1852,8 +1836,6 @@ COLUMN_MODEL_MAP = {
 }
 ```
 
----
-
 ## **8.3 `generator/core/writer.py` — ChunkWriter**
 
 ### Purpose
@@ -1979,8 +1961,6 @@ class ChunkWriter:
             self._parquet_writer = None
 ```
 
----
-
 ## **8.4 `generator/core/config_writer.py` — Shared Config Export**
 
 ### Purpose
@@ -2053,8 +2033,6 @@ def write_config(config: Dict[str, Any], schema: Any, output_path: str):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(config_dict, f, indent=4)
 ```
-
----
 
 ## **8.5 `generator/core/alert_socket.py` — AlertSocketClient**
 
@@ -2803,8 +2781,6 @@ Cycle Counter: int64
 - Ideal for large datasets (10–50 GB).  
 - Efficient for downstream analytics and the Analyzer GUI.
 
----
-
 #### ** Config File (config.json)**
 
 This file is the **contract** between Generator and Analyzer:
@@ -3165,6 +3141,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
