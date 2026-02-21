@@ -2466,10 +2466,10 @@ pip install PySide6 matplotlib numpy pandas pyarrow
 ```
 
 Download the main folder  
-📁 [Sensor_Housing_Stress_Test_Simulator](https://github.com/NenadBalaneskovic/ExternalProjects/tree/8a17958ba64fbeee8ff016dcb06a3e955d3cb4c3/SensorHousingStressTest_SimulatorGUI)  
+📁 [DigitalTwinsGeneratorGUI](https://github.com/NenadBalaneskovic/ExternalProjects/tree/b6c0d1b62a5de7c9b0c16346dd70e6ed5e231555/DigitalTwinsGeneratorGUI)  
 which has the following structure:  
 
-   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/Folder_structure.PNG" width="400" height="200"/>
+   <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/b6c0d1b62a5de7c9b0c16346dd70e6ed5e231555/DigitalTwinsGeneratorGUI/DigitalTwinProjectFolder.png" width="400" height="200"/>
 
 ## ✅ **10.2 Step 2: Run the application**
 
@@ -3143,6 +3143,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
