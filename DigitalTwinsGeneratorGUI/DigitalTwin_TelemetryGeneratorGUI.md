@@ -2689,9 +2689,8 @@ Here is a polished, publication‑ready section that deals with the widget and f
 
 ### **11.5.1. Screenshots of GUI in Action**
 
-![Sensor_Housing_Stress_Test_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/GUI_active1.PNG)
+![Digital_Twin_Telemetry_Generator_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/43d1f8e62509ac40c20b21b49e445a5e22629260/DigitalTwinsGeneratorGUI/Generator_GUI_operational.png)
 
-![Sensor_Housing_Stress_Test_GUI2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fdb94421364eae091ff9eae63dbd52d584a56e7f/SensorHousingStressTest_SimulatorGUI/GUI_active2.PNG)
 
 #### **Main window**
 - **Left panel — Schema definition:**  
@@ -2938,9 +2937,7 @@ Here is a polished, parallel section for the **Digital Twin Telemetry Generator 
 
 ## **13.1 🧠 Interpretation of Results**
 
-![Sensor_Housing_Stress_Test_Csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/csv_results1.PNG)
-
-![Sensor_Housing_Stress_Test_Csv2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c457362479efe9e83ac142b33d7615a95a906860/SensorHousingStressTest_SimulatorGUI/csv_results2.PNG)
+![Telemetry_Output_Csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b4e4787b881fe4912376cb7208bb7d60cd497aea/DigitalTwinsGeneratorGUI/Telemetry_Output_Csv_File.png)
 
 ### **The Digital Twin Telemetry Generator GUI…**
 
@@ -2966,7 +2963,7 @@ Here is a polished, parallel section for the **Digital Twin Telemetry Generator 
   - **Console logs** for debugging (thread PID, preview callback events, chunk writes).  
 
 - **Generates structured, analyzer‑ready outputs:**
-  - **CSV or Parquet file** containing the full telemetry stream.  
+  - **CSV or Parquet file** containing the full telemetry stream (telemetry_output.csv or telemetry_output.parquet).  
   - **config.json** describing:
     - schema  
     - sampling frequency  
@@ -3143,6 +3140,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
