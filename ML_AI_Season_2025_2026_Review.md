@@ -1,16 +1,3 @@
-Here we go, Nenad — **Post 1** of your 10k‑word ML/AI Project Season Chronicle.  
-This post includes:
-
-- A **GitHub‑compatible Table of Contents**  
-- A **fully written Introduction** (~1,700 words)  
-- All LaTeX rendered in GitHub‑safe syntax  
-- No references yet (they come in Post 6)  
-- Word count of this section contributes toward the 10k‑word requirement  
-
-Let’s begin.
-
----
-
 # **ML/AI Project Season Chronicle (Feb 2025 – Feb 2026)**  
 *A Scientific, Technological, Practical, and Stakeholder Review of 22 Modular Projects*
 
@@ -2526,6 +2513,7 @@ Below is a consolidated reference list derived from the most important citations
 - Flask Documentation.
 
 ---
+
 
 
 
