@@ -1825,8 +1825,6 @@ It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
 - `LogPanel` → receives logs  
 - `ProgressBar` → receives progress  
 
----
-
 ### **Full Code Listing — `analyzer_loop.py`**
 
 
@@ -4846,6 +4844,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
