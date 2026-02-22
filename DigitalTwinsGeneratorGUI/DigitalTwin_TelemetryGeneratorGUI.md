@@ -11,7 +11,7 @@ This generator is the **first half of a two‑project ecosystem**:
 - **Project 1 — Telemetry Generator (this document):**  
   Creates a synthetic but realistic digital twin of a drilling machine and streams its telemetry.
 
-- **Project 2 — Telemetry Analyzer (future document):**  
+- **Project 2 — [Telemetry Analyzer](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5342c2f3dd879030fb9888ff1a8ef12f7ef73b02/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md):**  
   Interprets, visualizes, and analyzes the streamed data in near real time.
 
 Together, they form a complete **Digital Twin pipeline**:  
@@ -3136,6 +3136,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
