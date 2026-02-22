@@ -231,6 +231,7 @@ The above screenshots show the Analyzer in full operation, processing hundreds o
 
 
 ## **4.4 Time Series Tab**
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
 
 The Time Series tab displays:
 
@@ -242,6 +243,7 @@ The Time Series tab displays:
 This provides immediate insight into sensor stability, drift, and anomalies.
 
 ## **4.5 Clustering Tab**
+![DigitalTwinAnalyzerGUI_operational2.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational2.png)
 
 The Clustering tab shows:
 
@@ -258,6 +260,7 @@ This is useful for:
 The above screenshots show three distinct clusters — a typical pattern for RPM‑driven telemetry.
 
 ## **4.6 Forecasting Tab**
+![DigitalTwinAnalyzerGUI_operational5.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational5.png)
 
 The Forecasting tab overlays:
 
@@ -273,6 +276,7 @@ This provides:
 The above screenshots show a stable temperature trend with a short forecast horizon.
 
 ## **4.7 NLP Tab**
+![DigitalTwinAnalyzerGUI_operational6.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational6.png)
 
 The NLP tab displays:
 
@@ -285,6 +289,7 @@ This is especially useful when telemetry includes log messages or categorical st
 The above screenshots show high counts for terms like “low”, “detected”, “minor”, “idle”, “anomalies”.
 
 ## **4.8 Deep Learning Tab**
+![DigitalTwinAnalyzerGUI_operational3.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational3.png)
 
 The Deep Learning tab shows:
 
@@ -297,6 +302,7 @@ This is a lightweight approximation of autoencoder‑style anomaly detection.
 The above screenshots show a red anomaly curve with occasional spikes — typical for vibration or noise‑driven telemetry.
 
 ## **4.9 XAI Tab**
+![DigitalTwinAnalyzerGUI_operational4.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational4.png)
 
 The XAI tab displays:
 
@@ -312,6 +318,7 @@ Your screenshot shows:
 This is a realistic scenario: monotonic counters often correlate strongly with drift.
 
 ## **4.10 System Health Panel**
+![DigitalTwinAnalyzerGUI_operational7.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational7_status_warning.png)
 
 The health panel shows:
 
@@ -326,6 +333,7 @@ This demonstrates the Analyzer’s ability to integrate:
 - time‑based health  
 
 ## **4.11 System Log**
+![DigitalTwinAnalyzerGUI_operational7.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4d88a7d5add7525f33fbd6fa5260c19d5c574312/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational7_status_warning.png)
 
 Your logs show:
 
@@ -4839,6 +4847,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
