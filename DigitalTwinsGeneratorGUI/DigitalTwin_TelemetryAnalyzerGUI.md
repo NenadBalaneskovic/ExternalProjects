@@ -2815,17 +2815,28 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
 
 ## **9.3 `forecasting.py` — Lightweight Linear Forecasting**
 
+
+$$$$$$$$$$$$$$$$$$
+
 ### **Purpose**
-Provides short‑term forecasting using a simple linear regression model.  
-This is intentionally lightweight to remain real‑time capable.
+The `forecasting.py` module provides a **fast, linear‑regression–based forecast** for one primary numeric telemetry channel.
+It provides short‑term forecasting using a simple linear regression model.  
+This is intentionally lightweight to remain real‑time capable. 
+It is intentionally simple and deterministic so it can run on every refresh without blocking the GUI.
 
 ### **Responsibilities**
-- Select primary numeric column  
-- Fit linear regression on last N points  
-- Predict next 20 steps  
-- Detect unstable trends or unrealistic forecasts  
+- **Select a primary numeric column** (first numeric column in the DataFrame).  
+- **Fit a linear regression** on the full history of that column.  
+- **Predict a short‑term future horizon** (next 20 steps).  
+- **Evaluate trend stability** and detect unrealistic forecasts.  
+- **Return visualization‑ready data** for the *Forecasting* tab plus an optional health summary.
 
-### **Outputs**
+### **Inputs**  
+- `df: pd.DataFrame`  
+  - Must contain at least one numeric column.  
+  - Needs at least 5 rows for a meaningful trend.
+
+### **Outputs** (result dictionary, consumed by `VisualizationTabs.update_forecasting`):
 ```python
 {
     "history_x": [...],
@@ -2838,7 +2849,35 @@ This is intentionally lightweight to remain real‑time capable.
 
 ### **Health Logic**
 - Slope too large → Warning  
-- Forecast values explode → Error  
+- Forecast values explode → Error
+- Health dictionary:
+  ```python
+  {
+      "status": "OK" | "Warning" | "Error",
+      "message": "Short description"
+  }
+  ```
+
+  It is `None` if no issues are detected.
+
+### **Internal Logic**  
+
+- **Column selection:**  
+  Uses `df.select_dtypes(include=[np.number])` and picks the first numeric column.
+
+- **Model fitting:**  
+  - Builds a time index `x = np.arange(n)` as the regressor.  
+  - Fits `LinearRegression` on `(x, y)` where `y` is the selected column.  
+  - If fitting fails, returns empty result and `None` health.
+
+- **Forecasting:**  
+  - Defines a horizon of `20` steps.  
+  - Builds `forecast_x = np.arange(n, n + horizon)` and predicts `forecast_y`.
+
+- **Health evaluation:**  
+  - **Unstable trend:** if `|slope| > 5 * std(y)`, returns a `Warning` with a message like  
+    `"Unstable trend detected in Temperature (slope=...)"`.  
+  - **Forecast explosion:** if any `|forecast_y| > 1e6`, returns an `Error` indicating unrealistic values.
 
 ### **Full Code Listing**
 ```python
@@ -3467,174 +3506,6 @@ def run(df: pd.DataFrame) -> Tuple[str, Optional[Dict[str, str]]]:
 
     summary = "\n".join(lines)
     return summary, health
-```
-
-
-## **9.7 `forecasting.py` — Lightweight Forecasting**
-
-### **Purpose**  
-The `forecasting.py` module provides a **fast, linear‑regression–based forecast** for one primary numeric telemetry channel. 
-It is intentionally simple and deterministic so it can run on every refresh without blocking the GUI.
-
-### **Responsibilities**  
-- **Select a primary numeric column** (first numeric column in the DataFrame).  
-- **Fit a linear regression** on the full history of that column.  
-- **Predict a short‑term future horizon** (next 20 steps).  
-- **Evaluate trend stability** and detect unrealistic forecasts.  
-- **Return visualization‑ready data** for the *Forecasting* tab plus an optional health summary.
-
-### **Inputs**  
-- `df: pd.DataFrame`  
-  - Must contain at least one numeric column.  
-  - Needs at least 5 rows for a meaningful trend.
-
-### **Outputs**  
-
-- **Result dictionary** (consumed by `VisualizationTabs.update_forecasting`):
-
-  ```python
-  {
-      "history_x": [...],
-      "history_y": [...],
-      "forecast_x": [...],
-      "forecast_y": [...],
-      "label": col_name,
-  }
-  ```
-
-- **Health dictionary** (optional):
-
-  ```python
-  {
-      "status": "OK" | "Warning" | "Error",
-      "message": "Short description"
-  }
-  ```
-
-  It is `None` if no issues are detected.
-
-### **Internal Logic**  
-
-- **Column selection:**  
-  Uses `df.select_dtypes(include=[np.number])` and picks the first numeric column.
-
-- **Model fitting:**  
-  - Builds a time index `x = np.arange(n)` as the regressor.  
-  - Fits `LinearRegression` on `(x, y)` where `y` is the selected column.  
-  - If fitting fails, returns empty result and `None` health.
-
-- **Forecasting:**  
-  - Defines a horizon of `20` steps.  
-  - Builds `forecast_x = np.arange(n, n + horizon)` and predicts `forecast_y`.
-
-- **Health evaluation:**  
-  - **Unstable trend:** if `|slope| > 5 * std(y)`, returns a `Warning` with a message like  
-    `"Unstable trend detected in Temperature (slope=...)"`.  
-  - **Forecast explosion:** if any `|forecast_y| > 1e6`, returns an `Error` indicating unrealistic values.
-
-### **Full Code Listing**
-
-```python
-# analyzer/modules/forecasting.py
-
-import numpy as np
-import pandas as pd
-from typing import Tuple, Dict, Any, Optional
-from sklearn.linear_model import LinearRegression
-
-
-def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
-    """
-    Lightweight forecasting module for real-time telemetry.
-
-    Responsibilities:
-        - Select a primary numeric column
-        - Fit a simple linear regression on the last N points
-        - Predict short-term future values
-        - Detect unstable trends (health warnings)
-        - Return:
-            (1) Visualization-ready forecast data
-            (2) Optional health summary
-
-    Returns:
-        result: dict
-            {
-                "history_x": [...],
-                "history_y": [...],
-                "forecast_x": [...],
-                "forecast_y": [...]
-            }
-
-        health: dict | None
-    """
-
-    if df is None or df.empty:
-        return {}, None
-
-    # ---------------------------------------------------------
-    # 1. Select numeric column
-    # ---------------------------------------------------------
-    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
-    if not numeric_cols:
-        return {}, None
-
-    col = numeric_cols[0]
-    y = df[col].values
-    n = len(y)
-
-    # Need at least 5 points for a meaningful trend
-    if n < 5:
-        return {}, None
-
-    # ---------------------------------------------------------
-    # 2. Prepare regression data
-    # ---------------------------------------------------------
-    x = np.arange(n).reshape(-1, 1)
-    model = LinearRegression()
-
-    try:
-        model.fit(x, y)
-    except Exception:
-        return {}, None
-
-    # ---------------------------------------------------------
-    # 3. Forecast next 20 steps
-    # ---------------------------------------------------------
-    horizon = 20
-    forecast_x = np.arange(n, n + horizon).reshape(-1, 1)
-    forecast_y = model.predict(forecast_x)
-
-    # ---------------------------------------------------------
-    # 4. Health evaluation
-    # ---------------------------------------------------------
-    health = None
-
-    slope = float(model.coef_[0])
-    if abs(slope) > 5 * np.std(y):
-        health = {
-            "status": "Warning",
-            "message": f"Unstable trend detected in {col} (slope={slope:.2f})"
-        }
-
-    # Forecast explosion
-    if np.any(np.abs(forecast_y) > 1e6):
-        health = {
-            "status": "Error",
-            "message": f"Forecast values for {col} are unrealistic"
-        }
-
-    # ---------------------------------------------------------
-    # 5. Visualization output
-    # ---------------------------------------------------------
-    result = {
-        "history_x": x.flatten().tolist(),
-        "history_y": y.tolist(),
-        "forecast_x": forecast_x.flatten().tolist(),
-        "forecast_y": forecast_y.tolist(),
-        "label": col,
-    }
-
-    return result, health
 ```
 
 ---
@@ -4844,6 +4715,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
