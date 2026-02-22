@@ -463,25 +463,44 @@ flowchart LR
 ## **6.2 Data Flow Diagram**
 
 ```mermaid
-sequenceDiagram
-    participant User
-    participant GUI as MainWindow
-    participant Loop as AnalyzerLoop
-    participant Reader as TelemetryReader
-    participant Mods as AnalysisModules
-    participant Viz as VisualizationTabs
-    participant Health as HealthSummary
-    participant Log as LogPanel
+flowchart LR
+    GenGUI[Generator_GUI]
+    GenFile[Telemetry_File]
+    GenCfg[Config_JSON]
+    GenAlert[Alert_Client]
 
-    User->>GUI: Click "Start Analysis"
-    GUI->>Loop: start(analysis_config, modules)
-    Loop->>Reader: read_new_rows()
-    Reader-->>Loop: new_data
-    Loop->>Mods: run selected modules
-    Mods-->>Loop: results + health
-    Loop->>Viz: update_visualizations(results)
-    Loop->>Health: update_health(health)
-    Loop->>Log: append_log("Read X rows")
+    AnaGUI[Analyzer_GUI]
+    Loop[AnalyzerLoop]
+    Reader[TelemetryReader]
+    Mods[AnalysisModules]
+    Viz[VisualizationTabs]
+    Health[HealthSummary]
+    Log[LogPanel]
+    AlertL[AlertListener]
+
+    GenGUI --> GenFile
+    GenGUI --> GenCfg
+    GenGUI --> GenAlert
+
+    GenFile --> Reader
+    GenCfg --> AnaGUI
+
+    AnaGUI --> Loop
+    Loop --> Reader
+    Reader --> Loop
+
+    Loop --> Mods
+    Mods --> Loop
+
+    Loop --> Viz
+    Loop --> Health
+    Loop --> Log
+    Loop --> AnaGUI
+
+    GenAlert --> AlertL
+    AlertL --> AnaGUI
+    AlertL --> Health
+    AlertL --> Log
 ```
 
 ## **6.3 Threading Diagram**
@@ -4830,6 +4849,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
