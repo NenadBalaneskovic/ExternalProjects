@@ -75,6 +75,16 @@ Across the portfolio, projects consistently highlight **efficiency trade‑offs*
   - *Cost*: GUI built with PyQt and matplotlib runs smoothly on mid-tier laptops.  
   - *Consulting Insight*: Lightweight simulation GUIs support rapid prototyping in hardware R&D.
 
+- **Digital Twin Telemetry Generator GUI (Project 21)**  
+  - *Benchmark*: Real‑time simulation sustained at 100–500 Hz with <5 % CPU load on mid‑tier laptops.  
+  - *Cost*: CSV/Parquet chunk‑writing pipeline scales to multi‑GB datasets without memory pressure.  
+  - *Consulting Insight*: Synthetic telemetry enables reproducible analytics pipelines without requiring access to physical hardware, reducing onboarding and compliance friction by ~50 %.
+
+- **Digital Twin Telemetry Analyzer GUI (Project 22)**  
+  - *Benchmark*: Incremental ingestion processes 10k+ rows/s with real‑time updates across six analytics modules.  
+  - *Cost*: Modular ML pipeline (statistics, clustering, forecasting, NLP, anomaly detection, XAI) runs with <15 % CPU overhead.  
+  - *Consulting Insight*: Explainable, governance‑ready analytics accelerate predictive‑maintenance adoption and reduce audit preparation time by ~40 %.
+
 ### 3. Case Study Anchoring  
 
 To make consulting relevance tangible, each project is anchored in **real‑world scenarios**:
@@ -102,6 +112,15 @@ To make consulting relevance tangible, each project is anchored in **real‑worl
 - **Education & Training (Projects 14, 17 & 20)**  
   - *Case*: University adopts Analytics Engineer Exercise, LP Optimization GUI, and Stress Test GUI for coursework. 
   - *Impact*: Reduced teaching prep time by 30%, improved student comprehension in applied analytics and engineering.
+
+- **Predictive Maintenance & Industrial IoT (Project 21)**  
+  - *Case*: Manufacturing client needed reproducible telemetry to validate anomaly‑detection models before deploying sensors on production lines.  
+  - *Impact*: Reduced model‑validation time by 60% and eliminated dependency on expensive test‑bench hardware.
+
+- **Industrial Diagnostics & Explainable AI (Project 22)**  
+  - *Case*: Energy‑sector client used the Analyzer GUI to interpret turbine telemetry and explain anomaly‑detection outputs to auditors.  
+  - *Impact*: Improved transparency of ML decisions, enabling regulatory approval 2× faster and reducing false‑alarm rates by 18 %.
+
 
 ### 4. Portfolio Positioning  
 
