@@ -931,7 +931,7 @@ The Digital Twin Telemetry Generator is a modular, GUI‑based simulation tool f
 - **Behavioral fidelity:** Sensor models capture drift, oscillations, spikes, correlations, and rare events to mimic real machine dynamics.  
 - **Governance and reproducibility:** The system produces structured datasets (CSV/Parquet), a detailed `config.json`, and logs for traceability and auditability. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
-[![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
+[![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
 
 ### 22. **Digital Twin Telemetry Analyzer GUI – Feb 2026**
 
@@ -1004,7 +1004,7 @@ The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analyt
 - **Interpretation fidelity:** Analytics modules reveal trends, clusters, anomalies, and feature attributions, enabling a holistic understanding of machine behavior.  
 - **Governance and reproducibility:** Structured logs, deterministic modules, and config‑aware initialization ensure traceability and auditability across sessions. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
-[![DigitalTwinTelemetryAnalyzer GUI](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md)
+[![DigitalTwinTelemetryAnalyzer GUI](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md)
 
 
 
