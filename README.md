@@ -857,6 +857,157 @@ PDF report with an explainable summary (see [References](https://github.com/Nena
 
      [![SensorHousing StressTest GUI](https://img.shields.io/badge/SensorHousing_StressTest_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fb6abfd7321330c89960a1044caa7e8935458bd1/SensorHousingStressTest_SimulatorGUI/SensorHousingStressTest_SimulatorGUI.md)
 
+- ### 21. **Digital Twin Telemetry Generator GUI – Jan 2026**
+
+> ## Executive Summary: Digital Twin Telemetry Generator GUI
+>
+> **Business Problem**  
+> Engineering teams, data scientists, and consulting organizations increasingly rely on **digital twins** to validate system behavior, test analytics pipelines, and prototype predictive‑maintenance workflows. Yet real industrial telemetry is often:
+>
+> - opaque  
+> - proprietary  
+> - non‑reproducible  
+> - difficult to narrate to stakeholders  
+>
+> These limitations slow down onboarding, complicate compliance reviews, and hinder trust in analytics outputs. Organizations need a **transparent, controllable, narratable telemetry source** that behaves like a real machine — without requiring access to physical hardware.
+>
+> **Simulation Solution**  
+> The **Digital Twin Telemetry Generator GUI** provides a modular, PySide6‑based simulation environment that produces **realistic, correlated, and governance‑ready telemetry streams**. Users can configure:
+>
+> - numeric sensors (Temperature, RPM, Vibration, Power, Voltage, Current, Pressure/Load, Noise)  
+> - categorical states (Operating Mode, Error Code, Safety Interlock)  
+> - auxiliary channels (Timestamp, Cycle Counter, Log Message)  
+> - sampling frequency  
+> - file format (CSV/Parquet)  
+> - target file size or row count  
+>
+> The system simulates **behavior**, not just data. It models:
+>
+> - smooth thermal drift  
+> - sinusoidal RPM oscillations  
+> - vibration spikes  
+> - correlated electrical variables  
+> - rare events and categorical transitions  
+>
+> A live preview plot shows the last 500 samples in real time, enabling users to observe the virtual machine’s dynamics as they evolve.
+>
+> **Business Impact**  
+> The Generator empowers engineering and consulting teams to:
+>
+> - prototype analytics pipelines  
+> - validate anomaly‑detection models  
+> - test dashboards and monitoring tools  
+> - generate reproducible datasets for demos, training, and onboarding  
+> - support governance and compliance with transparent configuration artifacts  
+>
+> Its modular architecture accelerates experimentation and reduces reliance on opaque vendor systems.
+>
+> **Consulting Relevance**  
+> This project demonstrates how **simulation, explainability, and governance** can be operationalized into client‑facing tools. Consultants can:
+>
+> - tailor sensor suites  
+> - generate scenario‑specific datasets  
+> - demonstrate predictive‑maintenance workflows  
+> - provide reproducible evidence for audits and compliance  
+>
+> The architecture is extensible, making it suitable for diverse industries (manufacturing, energy, automotive, IoT).
+>
+> **Compliance / ESG / Risk Management**  
+> The Generator supports governance through:
+>
+> - deterministic simulation models  
+> - structured `config.json` outputs  
+> - explicit schema documentation  
+> - alert logs and progress tracking  
+>
+> This transparency strengthens ESG reporting, reduces operational risk, and ensures that synthetic telemetry used for ML validation is **auditable and reproducible**.
+
+#### **Abstract**  
+The Digital Twin Telemetry Generator is a modular, GUI‑based simulation tool for producing **real‑time, narratable telemetry** of a virtual electric drilling machine. It unifies deterministic sensor models, correlated behavior patterns, and auxiliary metadata into a transparent, reproducible simulation pipeline. The GUI emphasizes explainability and governance through live visualization, structured configuration files, and alert‑based synchronization with downstream analytics tools (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md#14--references) 1 - 3 below).
+
+- **Core goals:** Generate realistic telemetry, support analytics prototyping, and produce governance‑ready artifacts for onboarding, demos, and compliance.  
+- **Audience:** Data engineers, reliability engineers, ML practitioners, consultants, and onboarding teams requiring transparent, repeatable telemetry sources.  
+- **Why simulation:** Real industrial telemetry is often inaccessible or proprietary; synthetic telemetry enables safe experimentation and reproducible analytics.  
+- **Behavioral fidelity:** Sensor models capture drift, oscillations, spikes, correlations, and rare events to mimic real machine dynamics.  
+- **Governance and reproducibility:** The system produces structured datasets (CSV/Parquet), a detailed `config.json`, and logs for traceability and auditability. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
+
+[![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
+
+### 22. **Digital Twin Telemetry Analyzer GUI – Feb 2026**
+
+> ## Executive Summary: Digital Twin Telemetry Analyzer GUI
+>
+> **Business Problem**  
+> As industrial systems become increasingly instrumented, organizations face a growing challenge: **how to interpret high‑volume telemetry streams in real time**. While digital twins can simulate machine behavior, the downstream analytics layer is often:
+>
+> - fragmented  
+> - opaque  
+> - difficult to validate  
+> - inaccessible to non‑technical stakeholders  
+>
+> These limitations slow down predictive‑maintenance initiatives, complicate compliance reviews, and undermine trust in analytics outputs. Engineering teams, analysts, and consultants require a **transparent, explainable, and governance‑ready analytics environment** that can ingest telemetry continuously, detect anomalies, and narrate machine behavior in a stakeholder‑friendly manner.
+>
+> **Analytics Solution**  
+> The **Digital Twin Telemetry Analyzer GUI** provides a modular, PySide6‑based real‑time analytics platform designed to interpret telemetry generated by the companion Digital Twin Generator — or any compatible CSV/Parquet stream.  
+>
+> The system integrates:
+>
+> - incremental telemetry ingestion  
+> - statistical analysis  
+> - clustering (KMeans / DBSCAN)  
+> - short‑term forecasting  
+> - NLP keyword extraction  
+> - anomaly scoring (IsolationForest)  
+> - explainable AI (RandomForest feature attribution)  
+>
+> Each module produces visualization‑ready outputs and health summaries, enabling operators to understand not only *what* is happening, but *why*.  
+> A multi‑tab GUI presents time‑series plots, clustering regimes, forecasts, anomaly curves, NLP summaries, and XAI explanations — all updated in real time.
+>
+> **Business Impact**  
+> The Analyzer empowers engineering and consulting teams to:
+>
+> - validate predictive‑maintenance models  
+> - monitor machine behavior in real time  
+> - detect anomalies early  
+> - explain model outputs to stakeholders  
+> - support governance with transparent health summaries and logs  
+>
+> Its modular architecture accelerates analytics prototyping and reduces reliance on opaque vendor dashboards.
+>
+> **Consulting Relevance**  
+> This project demonstrates how **explainable analytics, modular ML pipelines, and governance‑ready reporting** can be operationalized into client‑facing tools. Consultants can:
+>
+> - run live analytics demos  
+> - interpret telemetry during workshops  
+> - provide explainable anomaly‑detection narratives  
+> - deliver reproducible evidence for audits and compliance  
+>
+> The architecture is extensible and adaptable to diverse industries (manufacturing, energy, automotive, IoT, robotics).
+>
+> **Compliance / ESG / Risk Management**  
+> The Analyzer supports governance through:
+>
+> - deterministic module behavior  
+> - structured health summaries  
+> - timestamped logs  
+> - config‑aware initialization  
+> - transparent feature attribution  
+>
+> This strengthens ESG reporting, reduces operational risk, and ensures that analytics pipelines remain **auditable, explainable, and reproducible**.
+
+#### **Abstract**  
+The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analytics cockpit for interpreting telemetry from virtual or physical industrial assets. It unifies incremental ingestion, statistical analysis, clustering, forecasting, NLP, anomaly detection, and explainable AI into a transparent, reproducible workflow. The GUI emphasizes interpretability and governance through multi‑tab visualizations, health summaries, and structured logs (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md#15--references) 1 - 3 below).
+
+- **Core goals:** Provide real‑time diagnostics, detect anomalies, and deliver explainable insights for predictive‑maintenance and digital‑twin workflows.  
+- **Audience:** Data scientists, reliability engineers, ML practitioners, consultants, and onboarding teams requiring transparent, repeatable analytics.  
+- **Why modular analytics:** Different sensors and behaviors require different analytical lenses; modularity ensures adaptability and extensibility.  
+- **Interpretation fidelity:** Analytics modules reveal trends, clusters, anomalies, and feature attributions, enabling a holistic understanding of machine behavior.  
+- **Governance and reproducibility:** Structured logs, deterministic modules, and config‑aware initialization ensure traceability and auditability across sessions. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
+
+[![DigitalTwinTelemetryAnalyzer GUI](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer_GUI%20rod--statics_and_FEM-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md)
+
+
+
 
   
 
