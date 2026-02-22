@@ -3471,25 +3471,25 @@ def run(df: pd.DataFrame) -> Tuple[str, Optional[Dict[str, str]]]:
 ```
 
 
-### **9.7 `forecasting.py` — Lightweight Forecasting**
+## **9.7 `forecasting.py` — Lightweight Forecasting**
 
-#### **Purpose**  
+### **Purpose**  
 The `forecasting.py` module provides a **fast, linear‑regression–based forecast** for one primary numeric telemetry channel. 
 It is intentionally simple and deterministic so it can run on every refresh without blocking the GUI.
 
-#### **Responsibilities**  
+### **Responsibilities**  
 - **Select a primary numeric column** (first numeric column in the DataFrame).  
 - **Fit a linear regression** on the full history of that column.  
 - **Predict a short‑term future horizon** (next 20 steps).  
 - **Evaluate trend stability** and detect unrealistic forecasts.  
 - **Return visualization‑ready data** for the *Forecasting* tab plus an optional health summary.
 
-#### **Inputs**  
+### **Inputs**  
 - `df: pd.DataFrame`  
   - Must contain at least one numeric column.  
   - Needs at least 5 rows for a meaningful trend.
 
-#### **Outputs**  
+### **Outputs**  
 
 - **Result dictionary** (consumed by `VisualizationTabs.update_forecasting`):
 
@@ -3514,7 +3514,7 @@ It is intentionally simple and deterministic so it can run on every refresh with
 
   It is `None` if no issues are detected.
 
-#### **Internal Logic**  
+### **Internal Logic**  
 
 - **Column selection:**  
   Uses `df.select_dtypes(include=[np.number])` and picks the first numeric column.
@@ -3533,7 +3533,7 @@ It is intentionally simple and deterministic so it can run on every refresh with
     `"Unstable trend detected in Temperature (slope=...)"`.  
   - **Forecast explosion:** if any `|forecast_y| > 1e6`, returns an `Error` indicating unrealistic values.
 
-#### **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/modules/forecasting.py
@@ -4849,6 +4849,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
