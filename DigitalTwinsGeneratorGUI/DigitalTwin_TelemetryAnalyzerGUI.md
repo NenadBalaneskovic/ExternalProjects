@@ -1428,9 +1428,8 @@ Provides a timestamped, append‑only log console.
 
 ### **Full Code Listing**
 
-# analyzer/gui/log_panel.py
-
 ```python
+# analyzer/gui/log_panel.py
 from PySide6.QtWidgets import QWidget, QGroupBox, QVBoxLayout, QTextEdit
 from PySide6.QtCore import Qt
 from datetime import datetime
@@ -4847,6 +4846,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
