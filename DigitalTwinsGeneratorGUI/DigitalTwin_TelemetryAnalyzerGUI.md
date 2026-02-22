@@ -30,7 +30,7 @@ The system provides a **real‑time dashboard** with:
 - a live log console  
 
 This document provides a complete technical walkthrough of the Analyzer, including motivation, architecture, GUI interpretation, file‑by‑file analysis, diagrams, and instructions for running the system from Jupyter 
-(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md#14--references) 1 - 3 below). 
+(see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md#15--references) 1 - 3 below). 
 
 
 # **1. Motivation**
@@ -4717,6 +4717,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
