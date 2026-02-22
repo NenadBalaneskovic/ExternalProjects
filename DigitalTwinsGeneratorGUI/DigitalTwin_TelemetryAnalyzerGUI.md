@@ -547,29 +547,29 @@ Each file is analyzed below with:
 - Interactions  
 - Full code listing  
 
-# **7.1 `analyzer/app.py`**
+## **7.1 `analyzer/app.py`**
 
-## **Purpose**
+### **Purpose**
 Entry point of the Analyzer application.  
 Initializes the Qt application, loads the config path, and launches the main window.
 
-## **Responsibilities**
+### **Responsibilities**
 - Create the Qt application  
 - Determine config path (CLI or default)  
 - Instantiate and show `MainWindow`  
 - Start the Qt event loop  
 
-## **Inputs**
+### **Inputs**
 - Optional CLI argument: path to `config.json`  
 
-## **Outputs**
+### **Outputs**
 - Launches the Analyzer GUI  
 
-## **Interactions**
+### **Interactions**
 - Imports and instantiates `MainWindow`  
 - Passes config path to it  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/app.py
@@ -612,13 +612,13 @@ if __name__ == "__main__":
     main()
 ```
 
-# **7.2 `analyzer/gui/main_window.py`**
+## **7.2 `analyzer/gui/main_window.py`**
 
-## **Purpose**
+### **Purpose**
 The **central orchestrator** of the Analyzer GUI.  
 It loads configuration, builds the layout, wires signals, initializes the backend, and handles alerts.
 
-## **Responsibilities**
+### **Responsibilities**
 - Load shared `config.json`  
 - Build the full GUI layout  
 - Connect Start/Stop and module selection signals  
@@ -626,24 +626,24 @@ It loads configuration, builds the layout, wires signals, initializes the backen
 - Route alerts to health and log panels  
 - Clean shutdown  
 
-## **Inputs**
+### **Inputs**
 - Config path  
 - User interactions (Start/Stop, module toggles)  
 
-## **Outputs**
+### **Outputs**
 - Starts/stops analysis  
 - Updates visualizations  
 - Updates health and logs  
 - Responds to alerts  
 
-## **Internal Logic**
+### **Internal Logic**
 - Uses a horizontal splitter for left/right layout  
 - Left: settings + module selection  
 - Right: visualizations + health + logs  
 - Bottom: progress bar  
 - Alert listener runs in background  
 
-## **Interactions**
+### **Interactions**
 - SettingsPanel → provides analysis config  
 - ModulePanel → provides selected modules  
 - AnalyzerLoop → backend engine  
@@ -652,7 +652,7 @@ It loads configuration, builds the layout, wires signals, initializes the backen
 - HealthSummary → receives health updates  
 - LogPanel → receives logs  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/main_window.py
@@ -854,9 +854,9 @@ class MainWindow(QMainWindow):
         super().closeEvent(event)
 ```
 
-# **7.3 `analyzer/gui/settings_panel.py`**
+## **7.3 `analyzer/gui/settings_panel.py`**
 
-## **Purpose**
+### **Purpose**
 Provides all **analysis configuration controls**:
 
 - telemetry file path  
@@ -864,30 +864,30 @@ Provides all **analysis configuration controls**:
 - row limit  
 - Start/Stop buttons  
 
-## **Responsibilities**
+### **Responsibilities**
 - Allow user to select telemetry file  
 - Configure polling frequency  
 - Configure batch size  
 - Emit Start/Stop signals  
 
-## **Inputs**
+### **Inputs**
 - User interactions  
 
-## **Outputs**
+### **Outputs**
 - `start_requested`  
 - `stop_requested`  
 - Analysis config dictionary  
 
-## **Internal Logic**
+### **Internal Logic**
 - Uses QSpinBox for numeric settings  
 - Uses QFileDialog for file selection  
 - Emits signals on button clicks  
 
-## **Interactions**
+### **Interactions**
 - MainWindow listens to Start/Stop  
 - AnalyzerLoop receives config  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/settings_panel.py
@@ -1037,29 +1037,29 @@ class SettingsPanel(QWidget):
         }
 ```
 
-# **7.4 `analyzer/gui/module_panel.py`**
+## **7.4 `analyzer/gui/module_panel.py`**
 
-## **Purpose**
+### **Purpose**
 Provides toggles for enabling/disabling analysis modules.
 
-## **Responsibilities**
+### **Responsibilities**
 - Display module checkboxes  
 - Emit signal when module selection changes  
 
-## **Inputs**
+### **Inputs**
 - User checkbox toggles  
 
-## **Outputs**
+### **Outputs**
 - `modules_changed` signal with list of selected modules  
 
-## **Internal Logic**
+### **Internal Logic**
 - Maintains a dict of module names → QCheckBox  
 - Emits signal on any state change  
 
-## **Interactions**
+### **Interactions**
 - MainWindow updates AnalyzerLoop modules  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/module_panel.py
@@ -1149,9 +1149,9 @@ class ModulePanel(QWidget):
         ]
 ```
 
-# **7.5 `analyzer/gui/visualization_tabs.py`**
+## **7.5 `analyzer/gui/visualization_tabs.py`**
 
-## **Purpose**
+### **Purpose**
 Provides a tabbed interface for all visualizations:
 
 - Time Series  
@@ -1161,25 +1161,25 @@ Provides a tabbed interface for all visualizations:
 - Deep Learning  
 - XAI  
 
-## **Responsibilities**
+### **Responsibilities**
 - Render plots using Matplotlib  
 - Display NLP and XAI summaries  
 - Provide update methods for AnalyzerLoop  
 
-## **Inputs**
+### **Inputs**
 - Results dict from AnalyzerLoop  
 
-## **Outputs**
+### **Outputs**
 - Updated plots and summaries  
 
-## **Internal Logic**
+### **Internal Logic**
 - Each tab has its own figure or label  
 - `update_visualizations()` dispatches to specific update methods  
 
-## **Interactions**
+### **Interactions**
 - AnalyzerLoop → VisualizationTabs  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/visualization_tabs.py
@@ -1402,23 +1402,23 @@ class VisualizationTabs(QWidget):
         self.xai_label.setText(text)
 ```
 
-# **7.6 `analyzer/gui/log_panel.py`**
+## **7.6 `analyzer/gui/log_panel.py`**
 
-## **Purpose**
+### **Purpose**
 Provides a timestamped, append‑only log console.
 
-## **Responsibilities**
+### **Responsibilities**
 - Display system logs  
 - Timestamp each entry  
 - Auto‑scroll  
 
-## **Inputs**
+### **Inputs**
 - Log messages from AnalyzerLoop and AlertListener  
 
-## **Outputs**
+### **Outputs**
 - Updated log console  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 # analyzer/gui/log_panel.py
 
@@ -1482,21 +1482,21 @@ class LogPanel(QWidget):
         self.text_area.ensureCursorVisible()
 ```
 
-# **7.7 `analyzer/gui/health_summary.py`**
+## **7.7 `analyzer/gui/health_summary.py`**
 
-## **Purpose**
+### **Purpose**
 Displays system health:
 
 - OK / Warning / Error  
 - Last update timestamp  
 - Generator state  
 
-## **Responsibilities**
+### **Responsibilities**
 - React to module‑derived health  
 - React to generator alerts  
 - Color‑code status  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/health_summary.py
@@ -1625,34 +1625,34 @@ class HealthSummary(QWidget):
 
 ```
 
-# **7.8 `analyzer/gui/progress_bar.py`**
+## **7.8 `analyzer/gui/progress_bar.py`**
 
-## **Purpose**
+### **Purpose**
 The `ProgressBar` widget provides a compact, activity‑based progress indicator for the Analyzer.  
 Because the Analyzer processes telemetry incrementally — without knowing the total number of rows in advance — the progress bar reflects **activity**, not completion.
 
-## **Responsibilities**
+### **Responsibilities**
 - Display progress percentage (0–100%)  
 - Display status messages (e.g., “Waiting for new data…”, “Processed 200000 rows.”)  
 - Provide a clean, unobtrusive UI element at the bottom of the main window  
 
-## **Inputs**
+### **Inputs**
 - `update_progress(percent, message)` from `AnalyzerLoop`  
 
-## **Outputs**
+### **Outputs**
 - Updated progress bar  
 - Updated status label  
 
-## **Internal Logic**
+### **Internal Logic**
 - Converts float percentage to integer  
 - Updates the bar’s internal text (e.g., “27%”)  
 - Updates the message label if provided  
 
-## **Interactions**
+### **Interactions**
 - Called exclusively by `AnalyzerLoop`  
 - Displayed in `MainWindow`  
 
-## **Full Code Listing**
+### **Full Code Listing**
 
 ```python
 # analyzer/gui/progress_bar.py
@@ -1725,7 +1725,7 @@ class ProgressBar(QWidget):
             self.message_label.setText(message)
 ```
 
-# **7.9 Summary of the GUI Layer**
+## **7.9 Summary of the GUI Layer**
 
 The GUI layer of the Digital Twin Analyzer is designed with **clarity**, **responsiveness**, and **operator‑grade usability** in mind.  
 Each component plays a distinct role:
@@ -1744,7 +1744,7 @@ Together, these components form a **real‑time analytics dashboard** capable of
 
 ---
 
-# **8. File‑by‑File Analysis — Core Layer**
+## **8. File‑by‑File Analysis — Core Layer**
 
 The **Core Layer** is the operational backbone of the Digital Twin Analyzer.  
 It handles:
@@ -1767,15 +1767,15 @@ The core layer consists of:
 
 Each file is analyzed below.
 
-# **8.1 `analyzer/core/analyzer_loop.py` — The Analysis Engine**
+## **8.1 `analyzer/core/analyzer_loop.py` — The Analysis Engine**
 
-## **Purpose**
+### **Purpose**
 The `AnalyzerLoop` is the **central engine** of the Analyzer.  
 It runs in a background thread, periodically reads new telemetry rows, dispatches them to analysis modules, aggregates health signals, and updates the GUI.
 
 It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
 
-## **Responsibilities**
+### **Responsibilities**
 - Read new rows incrementally from CSV/Parquet  
 - Run selected analysis modules  
 - Aggregate health signals (OK / Warning / Error)  
@@ -1785,7 +1785,7 @@ It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
 - Handle errors gracefully  
 - Run continuously until stopped  
 
-## **Inputs**
+### **Inputs**
 - `analysis_config` (file path, refresh interval, row limit)  
 - `selected_modules` (list of module names)  
 - Callbacks for:
@@ -1794,13 +1794,13 @@ It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
   - visualizations  
   - health  
 
-## **Outputs**
+### **Outputs**
 - Visualization results  
 - Health summaries  
 - Log entries  
 - Progress updates  
 
-## **Internal Logic**
+### **Internal Logic**
 - Runs in a dedicated background thread  
 - Uses `TelemetryReader` to read only *new* rows  
 - Each module returns:
@@ -1810,7 +1810,7 @@ It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
   - Error > Warning > OK  
 - Progress is activity‑based (0–100%)  
 
-## **Interactions**
+### **Interactions**
 - `TelemetryReader` → incremental row ingestion  
 - Analysis modules → statistics, clustering, forecasting, NLP, deep learning, XAI  
 - `VisualizationTabs` → receives results  
@@ -1820,7 +1820,7 @@ It is the Analyzer’s equivalent of the Generator’s `TelemetryGenerator`.
 
 ---
 
-## **Full Code Listing — `analyzer_loop.py`**
+### **Full Code Listing — `analyzer_loop.py`**
 
 
 ```python
@@ -2052,36 +2052,34 @@ class AnalyzerLoop:
         }
 ```
 
-# **8.2 `analyzer/core/reader.py` — Incremental Telemetry Reader**
+## **8.2 `analyzer/core/reader.py` — Incremental Telemetry Reader**
 
-## **Purpose**
+### **Purpose**
 The `TelemetryReader` is a **tail‑reader** for CSV and Parquet files.  
 It reads **only new rows** appended since the last read — essential for real‑time streaming.
 
-## **Responsibilities**
+### **Responsibilities**
 - Detect file format (CSV/Parquet)  
 - Track last read row index  
 - Read only new rows  
 - Handle large files efficiently  
 - Avoid re‑reading entire datasets  
 
-## **Inputs**
+### **Inputs**
 - File path  
 - Row limit per refresh  
 
-## **Outputs**
+### **Outputs**
 - A DataFrame containing only new rows  
 
-## **Internal Logic**
+### **Internal Logic**
 - For CSV: counts lines, skips previously read rows  
 - For Parquet: uses metadata to slice rows efficiently  
 
-## **Interactions**
+### **Interactions**
 - Used exclusively by `AnalyzerLoop`  
 
----
-
-## **Full Code Listing — `reader.py`**
+### **Full Code Listing — `reader.py`**
 
 ```python
 # analyzer/core/reader.py
@@ -2219,37 +2217,35 @@ class TelemetryReader:
             raise RuntimeError(f"Parquet read error: {e}")
 ```
 
-# **8.3 `analyzer/core/alert_listener.py` — Generator Alert Listener**
+## **8.3 `analyzer/core/alert_listener.py` — Generator Alert Listener**
 
-## **Purpose**
+### **Purpose**
 The `AlertListener` listens for TCP alerts sent by the Generator’s `AlertSocketClient`.  
 It runs in a background thread and forwards parsed JSON alerts to the GUI.
 
-## **Responsibilities**
+### **Responsibilities**
 - Bind to a TCP socket  
 - Accept incoming connections  
 - Parse JSON alert messages  
 - Forward alerts to GUI callback  
 - Never crash the Analyzer  
 
-## **Inputs**
+### **Inputs**
 - Host, port  
 - `alert_callback`  
 
-## **Outputs**
+### **Outputs**
 - Parsed alert dicts  
 
-## **Internal Logic**
+### **Internal Logic**
 - Uses a non‑blocking socket with timeout  
 - Runs in a daemon thread  
 - Silently disables itself if binding fails  
 
-## **Interactions**
+### **Interactions**
 - `MainWindow._handle_alert()`  
 
----
-
-## **Full Code Listing — `alert_listener.py`**
+### **Full Code Listing — `alert_listener.py`**
 
 ```python
 # analyzer/core/alert_listener.py
@@ -2373,9 +2369,9 @@ class AlertListener:
                 continue
 ```
 
-# **8.4 `analyzer/core/config_loader.py` — Shared Configuration Loader**
+## **8.4 `analyzer/core/config_loader.py` — Shared Configuration Loader**
 
-## **Purpose**
+### **Purpose**
 The `config_loader.py` module provides a **safe, validated loader** for the shared `config.json` file written by the Digital Twin Telemetry Generator.  
 This ensures that the Analyzer always starts with a consistent, governance‑ready configuration describing:
 
@@ -2387,7 +2383,7 @@ This ensures that the Analyzer always starts with a consistent, governance‑rea
 
 It is the Analyzer’s bridge to the Generator’s metadata.
 
-## **Responsibilities**
+### **Responsibilities**
 - Validate that the configuration file exists  
 - Parse JSON safely  
 - Provide clear error messages  
@@ -2395,13 +2391,13 @@ It is the Analyzer’s bridge to the Generator’s metadata.
 - Apply sensible defaults for optional fields  
 - Return a clean configuration dictionary  
 
-## **Inputs**
+### **Inputs**
 - Path to `config.json` (provided by `MainWindow`)  
 
-## **Outputs**
+### **Outputs**
 - A validated configuration dictionary  
 
-## **Internal Logic**
+### **Internal Logic**
 - Raises `FileNotFoundError` if the file is missing  
 - Raises `ValueError` for malformed JSON  
 - Ensures `output.file_path` exists  
@@ -2411,16 +2407,14 @@ It is the Analyzer’s bridge to the Generator’s metadata.
   - `timestamp_format`  
   - `alerts`  
 
-## **Interactions**
+### **Interactions**
 - Called by `MainWindow._safe_load_config()`  
 - Its output is passed to:
   - `SettingsPanel` (for file path)  
   - `AnalyzerLoop` (for alert socket config)  
   - `AlertListener` (for host/port)  
 
----
-
-## **Full Code Listing — `config_loader.py`**
+### **Full Code Listing — `config_loader.py`**
 
 ```python
 # analyzer/core/config_loader.py
@@ -2487,7 +2481,7 @@ def load_config(path: str) -> Dict[str, Any]:
     return config
 ```
 
-# **8.5 Summary of the Core Layer**
+## **8.5 Summary of the Core Layer**
 
 The Core Layer transforms the Analyzer from a GUI into a **real‑time analytical engine**.  
 Each component plays a distinct role:
@@ -2511,7 +2505,7 @@ This completes the operational backbone of the Analyzer.
 
 ---
 
-# **9. File‑by‑File Analysis — Analysis Modules**
+## **9. File‑by‑File Analysis — Analysis Modules**
 
 The **Modules Layer** contains the Analyzer’s analytical capabilities.  
 Each module is:
@@ -2546,9 +2540,9 @@ The modules are:
 
 Each is analyzed below.
 
-# **9.1 `statistics.py` — Rolling Statistics & FFT**
+## **9.1 `statistics.py` — Rolling Statistics & FFT**
 
-## **Purpose**
+### **Purpose**
 Provides lightweight statistical analysis for the primary numeric column:
 
 - rolling mean  
@@ -2556,13 +2550,13 @@ Provides lightweight statistical analysis for the primary numeric column:
 - FFT peak detection  
 - anomaly detection based on variance or invalid values  
 
-## **Responsibilities**
+### **Responsibilities**
 - Select first numeric column  
 - Compute basic statistics  
 - Detect anomalies  
 - Provide time‑series data for plotting  
 
-## **Outputs**
+### **Outputs**
 ```python
 {
     "x": [...],
@@ -2571,11 +2565,11 @@ Provides lightweight statistical analysis for the primary numeric column:
 }
 ```
 
-## **Health Logic**
+### **Health Logic**
 - High variance → Warning  
 - NaN/Inf values → Error  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 
 # analyzer/modules/statistics.py
@@ -2672,9 +2666,9 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
     return result, health
 ```
 
-# **9.2 `clustering.py` — KMeans / DBSCAN Clustering**
+## **9.2 `clustering.py` — KMeans / DBSCAN Clustering**
 
-## **Purpose**
+### **Purpose**
 Provides 2D clustering for the first two numeric columns.  
 Useful for:
 
@@ -2682,14 +2676,14 @@ Useful for:
 - anomaly detection  
 - visualizing multi‑sensor relationships  
 
-## **Responsibilities**
+### **Responsibilities**
 - Select two numeric columns  
 - Standardize data  
 - Run KMeans (default)  
 - Fallback to DBSCAN if KMeans fails  
 - Detect high cluster count or noise ratio  
 
-## **Outputs**
+### **Outputs**
 ```python
 {
     "x": [...],
@@ -2700,11 +2694,11 @@ Useful for:
 }
 ```
 
-## **Health Logic**
+### **Health Logic**
 - Too many clusters → Warning  
 - High DBSCAN noise ratio → Warning  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/modules/clustering.py
 
@@ -2814,19 +2808,19 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
     return result, health
 ```
 
-# **9.3 `forecasting.py` — Lightweight Linear Forecasting**
+## **9.3 `forecasting.py` — Lightweight Linear Forecasting**
 
-## **Purpose**
+### **Purpose**
 Provides short‑term forecasting using a simple linear regression model.  
 This is intentionally lightweight to remain real‑time capable.
 
-## **Responsibilities**
+### **Responsibilities**
 - Select primary numeric column  
 - Fit linear regression on last N points  
 - Predict next 20 steps  
 - Detect unstable trends or unrealistic forecasts  
 
-## **Outputs**
+### **Outputs**
 ```python
 {
     "history_x": [...],
@@ -2837,11 +2831,11 @@ This is intentionally lightweight to remain real‑time capable.
 }
 ```
 
-## **Health Logic**
+### **Health Logic**
 - Slope too large → Warning  
 - Forecast values explode → Error  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/modules/clustering.py
 
@@ -2951,22 +2945,22 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
     return result, health
 ```
 
-# **9.4 `nlp.py` — Keyword Extraction for Log Messages**
+## **9.4 `nlp.py` — Keyword Extraction for Log Messages**
 
-## **Purpose**
+### **Purpose**
 Provides lightweight NLP for text‑like telemetry columns:
 
 - tokenization  
 - keyword frequency analysis  
 - error keyword detection  
 
-## **Responsibilities**
+### **Responsibilities**
 - Identify text columns  
 - Extract tokens  
 - Count frequencies  
 - Detect error‑related terms  
 
-## **Outputs**
+### **Outputs**
 A human‑readable summary string.
 
 Example:
@@ -2978,10 +2972,10 @@ NLP Summary (Top Keywords):
   - idle: 5
 ```
 
-## **Health Logic**
+### **Health Logic**
 - High frequency of error‑related terms → Warning  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/modules/nlp.py
 
@@ -3082,9 +3076,9 @@ def run(df: pd.DataFrame) -> Tuple[str, Optional[Dict[str, str]]]:
     return summary, health
 ````
 
-# **9.5 `deep_learning.py` — IsolationForest Anomaly Scoring**
+## **9.5 `deep_learning.py` — IsolationForest Anomaly Scoring**
 
-## **Purpose**
+### **Purpose**
 Provides a lightweight approximation of deep‑learning anomaly detection using `IsolationForest`.
 
 Why not a real autoencoder?
@@ -3099,13 +3093,13 @@ IsolationForest gives:
 - robust behavior on small batches  
 - conceptually similar output  
 
-## **Responsibilities**
+### **Responsibilities**
 - Select numeric columns  
 - Fit IsolationForest  
 - Compute anomaly scores  
 - Detect high anomaly ratio  
 
-## **Outputs**
+### **Outputs**
 ```python
 {
     "x": [...],
@@ -3114,10 +3108,10 @@ IsolationForest gives:
 }
 ```
 
-## **Health Logic**
+### **Health Logic**
 - >30% anomalies → Warning  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/modules/deep_learning.py
 
@@ -3326,22 +3320,22 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
     return result, health
 ```
 
-# **9.6 `xai.py` — Explainable AI (Feature Attribution)**
+## **9.6 `xai.py` — Explainable AI (Feature Attribution)**
 
-## **Purpose**
+### **Purpose**
 Provides lightweight explainability using a small `RandomForestRegressor`:
 
 - predicts the first numeric column from the others  
 - uses `feature_importances_` as attribution  
 - produces a human‑readable summary  
 
-## **Responsibilities**
+### **Responsibilities**
 - Select numeric columns  
 - Train small RandomForest  
 - Normalize importances  
 - Detect degenerate or unstable attribution  
 
-## **Outputs**
+### **Outputs**
 A human‑readable summary string.
 
 Example:
@@ -3353,11 +3347,11 @@ XAI Summary for target: Temperature
   - Pressure / Load: 0.003
 ```
 
-## **Health Logic**
+### **Health Logic**
 - One feature dominates >0.9 → Warning  
 - All importances zero → Warning  
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/modules/xai.py
 
@@ -3640,7 +3634,7 @@ def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
 
 ---
 
-# **10. File‑by‑File Analysis — Utilities**
+## **10. File‑by‑File Analysis — Utilities**
 
 The utilities provide essential support functions for:
 
@@ -3650,20 +3644,20 @@ The utilities provide essential support functions for:
 
 These helpers keep the Analyzer robust and maintainable.
 
-# **10.1 `alert_manager.py` — Alert Formatter & History Buffer**
+## **10.1 `alert_manager.py` — Alert Formatter & History Buffer**
 
-## **Purpose**
+### **Purpose**
 Formats raw alerts from the Generator into human‑readable messages and stores them in a rolling history.
 
-## **Responsibilities**
+### **Responsibilities**
 - Format alerts  
 - Store up to N recent alerts  
 - Provide retrieval for debugging  
 
-## **Outputs**
+### **Outputs**
 Formatted alert strings.
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/utils/alert_manager.py
 
@@ -3744,9 +3738,9 @@ class AlertManager:
 
 ```
 
-# **10.2 `file_monitor.py` — Lightweight File State Tracker**
+## **10.2 `file_monitor.py` — Lightweight File State Tracker**
 
-## **Purpose**
+### **Purpose**
 Tracks:
 
 - file size  
@@ -3755,12 +3749,12 @@ Tracks:
 
 Useful for debugging and potential future features (e.g., progress estimation).
 
-## **Responsibilities**
+### **Responsibilities**
 - Detect CSV/Parquet format  
 - Count rows efficiently  
 - Detect file truncation  
 
-## **Outputs**
+### **Outputs**
 ```python
 {
     "size_bytes": int,
@@ -3769,7 +3763,7 @@ Useful for debugging and potential future features (e.g., progress estimation).
 }
 ```
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/utils/file_monitor.py
 
@@ -3888,9 +3882,9 @@ class FileMonitor:
 
 ```
 
-# **10.3 `plot_helpers.py` — Visualization Data Normalization**
+## **10.3 `plot_helpers.py` — Visualization Data Normalization**
 
-## **Purpose**
+### **Purpose**
 Ensures that all visualization data structures are:
 
 - well‑formed  
@@ -3898,16 +3892,16 @@ Ensures that all visualization data structures are:
 - safe to plot  
 - robust against malformed module output  
 
-## **Responsibilities**
+### **Responsibilities**
 - Normalize time‑series data  
 - Normalize clustering scatter data  
 - Normalize forecasting data  
 - Normalize anomaly score curves  
 
-## **Outputs**
+### **Outputs**
 Clean dictionaries ready for Matplotlib.
 
-## **Full Code Listing**
+### **Full Code Listing**
 ```python
 # analyzer/utils/plot_helpers.py
 
@@ -4073,12 +4067,12 @@ class PlotHelpers:
 
 ---
 
-# **11. Running the Generator from a Jupyter Notebook**
+## **11. Running the Generator from a Jupyter Notebook**
 
 This section provides a clean, reproducible workflow for launching the Telemetry Generator from Jupyter.
 
 
-## **✅ 11.1  Step 1: Download the folder and Environment Setup**
+### **✅ 11.1  Step 1: Download the folder and Environment Setup**
 
 Before running the generator from Jupyter, ensure the environment contains:
 
@@ -4092,9 +4086,9 @@ which has the following structure:
 
    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/b6c0d1b62a5de7c9b0c16346dd70e6ed5e231555/DigitalTwinsGeneratorGUI/DigitalTwinProjectFolder.png" width="400" height="200"/>
 
-## ✅ **11.2 Step 2: Run the application**
+### ✅ **11.2 Step 2: Run the application**
 
-### **11.2.1 Launching the GUI from Jupyter**
+#### **11.2.1 Launching the GUI from Jupyter**
 
 You can launch the full GUI directly from a notebook cell:
 
@@ -4111,7 +4105,7 @@ This will:
 The notebook cell will remain “busy” while the GUI is open — this is normal for Qt applications.
 
 
-### **11.2.2 Running the Analyzer Programmatically (Headless Mode)**
+#### **11.2.2 Running the Analyzer Programmatically (Headless Mode)**
 
 The Analyzer can be launched programmatically from a Jupyter notebook, enabling:
 
@@ -4120,7 +4114,7 @@ The Analyzer can be launched programmatically from a Jupyter notebook, enabling:
 - integration with the Generator notebook  
 - demonstration workflows  
 
-### **Basic Example**
+##### **Basic Example**
 
 ```python
 from analyzer.core.analyzer_loop import AnalyzerLoop
@@ -4149,7 +4143,7 @@ loop.start(
 This allows you to run the Analyzer headlessly for testing or integration.
 
 
-## 11.3 ✅ Step 3: Interact with the Telemetry Analyzer
+### 11.3 ✅ Step 3: Interact with the Telemetry Analyzer
 
 Interact with the Digital Twin Telemetry Analyzer by adjusting check boxes for **analysis module selection (statistics, clustering, forecasting, nlp, deep learning, etc)**, 
 adjusting the **row processing parameters (refresh interval in ms, rows per refresh)**, and pressing the **Start Analysis** button.  
@@ -4157,15 +4151,12 @@ Visual outputs of each selected numerical column update in real time within the 
 
 ---
 
-
-$$$$$
-
-# **12. Interpretation of Results**
+## **12. Interpretation of Results**
 
 The Digital Twin Analyzer transforms raw telemetry into a structured, multi‑layered analytical narrative. 
 Each module contributes a different lens on the virtual drilling machine’s behavior. Below is a unified interpretation of what the Analyzer reveals when operating on real‑time telemetry streams.
 
-## **12.1 Time Series Interpretation**
+### **12.1 Time Series Interpretation**
 
 The **Time Series** tab provides the most immediate view of the machine’s state:
 
@@ -4188,7 +4179,7 @@ Anomalies appear as:
 
 This tab is the operator’s “heartbeat monitor” for the digital twin.
 
-## **12.2 Clustering Interpretation**
+### **12.2 Clustering Interpretation**
 
 The **Clustering** tab visualizes the machine’s operational regimes in 2D feature space.
 
@@ -4206,7 +4197,7 @@ If DBSCAN is used, a high noise ratio suggests:
 
 Clustering is the Analyzer’s way of discovering the machine’s “behavioral vocabulary.”
 
-## **12.3 Forecasting Interpretation**
+### **12.3 Forecasting Interpretation**
 
 The **Forecasting** tab overlays:
 
@@ -4232,7 +4223,7 @@ Warnings appear when:
 
 Forecasting provides a glimpse into the machine’s *near future*.
 
-## **12.4 NLP Interpretation**
+### **12.4 NLP Interpretation**
 
 The **NLP** tab extracts patterns from log messages or categorical states.
 
@@ -4250,7 +4241,7 @@ This module is especially useful when telemetry includes:
 
 NLP gives the Analyzer a *linguistic* understanding of the machine.
 
-## **12.5 Deep Learning Interpretation**
+### **12.5 Deep Learning Interpretation**
 
 The **Deep Learning** tab shows anomaly scores computed via IsolationForest.
 
@@ -4268,7 +4259,7 @@ This module is sensitive to:
 
 It provides a lightweight approximation of deep anomaly detection without heavy compute.
 
-## **12.6 XAI Interpretation**
+### **12.6 XAI Interpretation**
 
 The **XAI** tab provides feature attribution for the primary numeric column.
 
@@ -4286,7 +4277,7 @@ Warnings appear when:
 
 XAI provides transparency and governance‑ready interpretability.
 
-## **12.7 System Health Interpretation**
+### **12.7 System Health Interpretation**
 
 The **System Health** panel integrates:
 
@@ -4304,70 +4295,70 @@ Statuses:
 This panel is the Analyzer’s “mission control.”
 
 
-## 12.5 Sample outputs
+### 12.8 Sample outputs
 
 Here is a polished, publication‑ready section that deals with the widget and file output structure of our Digital Twin Analyzer GUI.
 
 
-### **12.5.1. Screenshots of GUI in Action**
+#### **12.8.1. Screenshots of GUI in Action**
 
 ![Digital_Twin_Telemetry_Generator_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/43d1f8e62509ac40c20b21b49e445a5e22629260/DigitalTwinsGeneratorGUI/Generator_GUI_operational.png)
 
-#### **Time Series Tab**  
+##### **Time Series Tab**  
 Shows temperature fluctuations over 10,000 samples.
 
-#### **Clustering Tab**  
+##### **Clustering Tab**  
 Displays three distinct operational clusters.
 
-#### **Forecasting Tab**  
+##### **Forecasting Tab**  
 Shows a stable temperature trend with a short forecast horizon.
 
-#### **NLP Tab**  
+##### **NLP Tab**  
 Highlights frequent log keywords such as “low”, “minor”, “detected”.
 
-#### **Deep Learning Tab**  
+##### **Deep Learning Tab**  
 Shows anomaly score spikes during high‑load periods.
 
-#### **XAI Tab**  
+##### **XAI Tab**  
 Reveals Cycle Counter as the dominant feature (0.93).
 
-#### **System Health**  
+##### **System Health**  
 Displays warnings when attribution is unstable.
 
-#### **System Log**  
+##### **System Log**  
 Shows incremental row ingestion up to 550,000 rows.
 
 
-### **11.5.2 Snippets from the Analyzer outputs**
+#### **12.8.2 Snippets from the Analyzer outputs**
 
 Below are representative excerpts from the files produced by the Digital Twin Telemetry Analyzer.
 
-#### **Example Time Series Output**
+##### **Example Time Series Output**
 ```
 Temperature: smooth drift with bounded noise
 ```
 
-#### **Example Clustering Output**
+##### **Example Clustering Output**
 ```
 3 clusters detected (Idle, Low, High)
 ```
 
-#### **Example Forecasting Output**
+##### **Example Forecasting Output**
 ```
 Forecast stable: slope = 0.02
 ```
 
-#### **Example NLP Output**
+##### **Example NLP Output**
 ```
 Top keywords: low (4951), detected (3388), minor (2078)
 ```
 
-#### **Example Deep Learning Output**
+##### **Example Deep Learning Output**
 ```
 Anomaly spikes at indices 1200, 3400, 8900
 ```
 
-#### **Example XAI Output**
+##### **Example XAI Output**
 ```
 Cycle Counter: 0.927
 Motor RPM: 0.069
@@ -4375,11 +4366,11 @@ Pressure / Load: 0.003
 ```
 
 
-## 12.6 Use cases
+### 12.9 Use cases
 
 The Digital Twin Analyzer is not a toy — it is a conceptual blueprint for real industrial analytics systems. Below are the primary use cases.
 
-## **12.6.1 Real‑Time Monitoring**
+#### **12.9.1 Real‑Time Monitoring**
 
 The Analyzer acts as a live dashboard for:
 
@@ -4391,7 +4382,7 @@ The Analyzer acts as a live dashboard for:
 
 It provides immediate insight into system behavior.
 
-## **12.6.2 Predictive Maintenance**
+#### **12.9.2 Predictive Maintenance**
 
 Modules such as:
 
@@ -4409,7 +4400,7 @@ enable early detection of:
 
 This mirrors real predictive maintenance workflows.
 
-## **12.6.3 Streaming Analytics Prototyping**
+#### **12.9.3 Streaming Analytics Prototyping**
 
 The Analyzer is ideal for:
 
@@ -4420,7 +4411,7 @@ The Analyzer is ideal for:
 
 It provides a safe, reproducible environment.
 
-## **12.6.4 Educational Demonstrations**
+#### **12.9.4 Educational Demonstrations**
 
 The Analyzer is a perfect teaching tool for:
 
@@ -4432,7 +4423,7 @@ The Analyzer is a perfect teaching tool for:
 
 It makes abstract concepts tangible.
 
-## **12.6.5 Governance & Explainability**
+#### **12.9.5 Governance & Explainability**
 
 The Analyzer includes:
 
@@ -4449,7 +4440,7 @@ This aligns with modern requirements for:
 
 ---
 
-# 13. Future work
+## 13. Future work
 
 **13.1 Deeper models and richer analytics**  
 - **Richer forecasting:** integrate ARIMA/Prophet or lightweight sequence models (e.g. small GRUs) with configurable horizons.  
@@ -4487,18 +4478,17 @@ at the same time, a **teaching and research environment** for digital twins, rea
 
 ---
 
-
-# 13. 🔗 Results and Conclusions
+## 14. 🔗 Results and Conclusions
 
 
 Here is a polished, parallel section for the **Digital Twin Telemetry Analyzer GUI**.  
 
 
-## **13.1 🧠 Interpretation of Results**
+### **14.1 🧠 Interpretation of Results**
 
 ![Telemetry_Output_Csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b4e4787b881fe4912376cb7208bb7d60cd497aea/DigitalTwinsGeneratorGUI/Telemetry_Output_Csv_File.png)
 
-### **The Digital Twin Telemetry Analyzer GUI...**
+#### **The Digital Twin Telemetry Analyzer GUI...**
 
 The Digital Twin Analyzer GUI is the **operator’s real‑time control center**, designed to interpret high‑volume telemetry streams with clarity, responsiveness, and analytical depth.  
 Where the Generator simulates the machine, the Analyzer *understands* it.
@@ -4664,7 +4654,7 @@ The Digital Twin Analyzer GUI is a **real‑time analytical cockpit** that trans
 It is modular, responsive, transparent, and engineered for both **industrial realism** and **educational clarity**.
 
 
-## 13.2 🏁 Final Thoughts
+## 14.2 🏁 Final Thoughts
 
 The Digital Twin Analyzer is more than a GUI — it is a conceptual demonstration of how modern industrial analytics systems are built.
 
@@ -4759,7 +4749,7 @@ It is robust, modular, and extensible — a complete analytical control center f
 
 ---
 
-# 14. 📚 References
+# 15. 📚 References
 1. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4); 
 Grieves, M. (2015). *Digital Twin: Manufacturing Excellence through Virtual Factory Replication.*; 
 Rasheed, A., San, O., & Kvamsdal, T. (2020). *Digital Twin: Values, Challenges and Enablers.* IEEE Access.;    
@@ -4849,6 +4839,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
