@@ -4029,6 +4029,8 @@ Visual outputs of each selected numerical column update in real time within the 
 
 ## **12. Interpretation of Results**
 
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
+
 The Digital Twin Analyzer transforms raw telemetry into a structured, multi‑layered analytical narrative. 
 Each module contributes a different lens on the virtual drilling machine’s behavior. Below is a unified interpretation of what the Analyzer reveals when operating on real‑time telemetry streams.
 
@@ -4178,7 +4180,7 @@ Here is a polished, publication‑ready section that deals with the widget and f
 
 #### **12.8.1. Screenshots of GUI in Action**
 
-![Digital_Twin_Telemetry_Generator_GUI](https://github.com/NenadBalaneskovic/ExternalProjects/blob/43d1f8e62509ac40c20b21b49e445a5e22629260/DigitalTwinsGeneratorGUI/Generator_GUI_operational.png)
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
 
 ##### **Time Series Tab**  
 Shows temperature fluctuations over 10,000 samples.
@@ -4360,7 +4362,7 @@ at the same time, a **teaching and research environment** for digital twins, rea
 Here is a polished, parallel section for the **Digital Twin Telemetry Analyzer GUI**.  
 
 
-### **14.1 🧠 Interpretation of Results**
+### **14.1 🧠 Interpretation of Results (telemetry output file, csv or parquet)**
 
 ![Telemetry_Output_Csv](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b4e4787b881fe4912376cb7208bb7d60cd497aea/DigitalTwinsGeneratorGUI/Telemetry_Output_Csv_File.png)
 
@@ -4715,6 +4717,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
