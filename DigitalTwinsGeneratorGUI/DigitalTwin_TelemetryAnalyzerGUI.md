@@ -94,7 +94,7 @@ The Analyzer completes the digital twin loop by transforming raw telemetry into 
 In the following we address our full GUI sketch, a clean, structured layout for our Digital Twin Telemetry Analyzer GUI. It includes all the key modules we discussed: 
 objective and constraint input, method selection of forecasting models), result display, visualization, and diagnostics.
 
-![DigitalTwinGeneratorGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7eef7c6bba937d70043bf103d266a1a0fbde06c7/DigitalTwinsGeneratorGUI/3D%20isometric%20view%20of.png)
+![DigitalTwinAnalyzerGUI_sketch.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/3D%20isometric%20view2.png)
 
 The GUI sketch for the Digital Twin Telemetry Analyzer establishes a **clear, engineering‑oriented workflow** that mirrors how real industrial telemetry systems are configured and monitored. 
 The Analyzer GUI is structured around a **two‑panel layout** with a bottom progress bar:
@@ -129,7 +129,7 @@ By simulating both layers, your two‑project suite provides a complete, pedagog
 
 # **4. Operating GUI Screenshot Interpretation**  
 
-![DigitalTwinGeneratorGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ef215a9cd85b128c607e4cea07cb03728eac9b0e/DigitalTwinsGeneratorGUI/Generator_GUI_operational.png)
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
 
 
 The **Digital Twin Analyzer GUI** is structured as a professional, operator‑grade dashboard — the kind you would expect in industrial control rooms, monitoring centers, 
@@ -4839,6 +4839,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
