@@ -4029,7 +4029,7 @@ Visual outputs of each selected numerical column update in real time within the 
 
 ## **12. Interpretation of Results**
 
-![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/90923bed699cf69b55cd8600d926ccd06b70a865/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
 
 The Digital Twin Analyzer transforms raw telemetry into a structured, multi‑layered analytical narrative. 
 Each module contributes a different lens on the virtual drilling machine’s behavior. Below is a unified interpretation of what the Analyzer reveals when operating on real‑time telemetry streams.
@@ -4180,7 +4180,7 @@ Here is a polished, publication‑ready section that deals with the widget and f
 
 #### **12.8.1. Screenshots of GUI in Action**
 
-![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/32d109aa039f4fb35a40607263fd49734ea42caa/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
+![DigitalTwinAnalyzerGUI_operational.png](https://github.com/NenadBalaneskovic/ExternalProjects/blob/90923bed699cf69b55cd8600d926ccd06b70a865/DigitalTwinsGeneratorGUI/Analyzer_GUI_operational.png)
 
 ##### **Time Series Tab**  
 Shows temperature fluctuations over 10,000 samples.
@@ -4717,6 +4717,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
