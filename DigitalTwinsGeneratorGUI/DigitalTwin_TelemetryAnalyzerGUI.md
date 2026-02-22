@@ -4,7 +4,7 @@
 ### *A Real‑Time Telemetry Interpretation and Analytics Platform for Digital Twin Ecosystems*
 
 The **Digital Twin Analyzer** is a modular, GUI‑driven analytics platform designed to interpret, visualize, and characterize real‑time telemetry streams produced by the 
-Digital Twin Telemetry Generator. Together, these two applications form a complete digital‑twin ecosystem:
+[Digital Twin Telemetry Generator](https://github.com/NenadBalaneskovic/ExternalProjects/blob/206108395744c4360c72f5e8da0228a7547568fe/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md). Together, these two applications form a complete digital‑twin ecosystem:
 
 - **Generator →** simulates a virtual electric drilling machine  
 - **Analyzer →** interprets the resulting telemetry in real time  
@@ -4707,6 +4707,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
