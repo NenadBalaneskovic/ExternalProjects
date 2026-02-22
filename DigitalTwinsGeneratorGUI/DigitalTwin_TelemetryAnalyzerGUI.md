@@ -4629,8 +4629,8 @@ It is robust, modular, and extensible — a complete analytical control center f
 
 # 15. 📚 References
 1. Grieves, M. (2015). *Digital Twin: Manufacturing Excellence through Virtual Factory Replication.*; Rasheed, A., San, O., & Kvamsdal, T. (2020). *Digital Twin: Values, Challenges and Enablers.* IEEE Access.; Jones, D., Snider, C., Nassehi, A., Yon, J., & Hicks, B. (2020). *Characterising the Digital Twin: A systematic literature review.* CIRP Journal of Manufacturing Science and Technology; Tao, F., & Zhang, M. (2017). *Digital Twin Shop‑Floor: A new shop‑floor paradigm towards smart manufacturing.* IEEE Access; Glaessgen, E., & Stargel, D. (2012). *The Digital Twin Paradigm for Future NASA and U.S. Air Force Vehicles.*; Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning.* MIT Press; Molnar, C. (2020). *Interpretable Machine Learning.*; Microsoft. *PySide6 Documentation.*: https://pypi.org/project/PySide6/; Apache Arrow. *Parquet File Format Specification.*: https://arrow.apache.org/docs/python/parquet.html; NumPy Developers. *NumPy Reference Guide.*: https://numpy.org/doc/stable/reference/; Matplotlib Developers. *Matplotlib Plotting Library.*: https://matplotlib.org/;
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d1c12b9ade1c8d44754166589934d2d542cf6d2c/DigitalTwinsGeneratorGUI/DigitalTwinGenerator.ipynb)
-3. [![DigitalTwinTelemetryGenerator_Report | English](https://img.shields.io/badge/DigitalTwinTelemetryGenerator%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d1c12b9ade1c8d44754166589934d2d542cf6d2c/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.pdf)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3432250399c1d23d04bbf39ac36cdf14f51cfae2/DigitalTwinsGeneratorGUI/DigitalTwinAnalyzer.ipynb)
+3. [![DigitalTwinTelemetryAnalyzer_Report | English](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3432250399c1d23d04bbf39ac36cdf14f51cfae2/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
@@ -4707,6 +4707,7 @@ https://builtin.com/data-science/python-ocr, https://www.analyticsvidhya.com/blo
 FEM-packages (Python): https://pypi.org/project/scikit-fem/, https://sfepy.org/doc-devel/index.html, https://getfem-examples.readthedocs.io/en/latest/demo_unit_disk.html, 
 https://github.com/mlp6/fem.
 LLM vs LRM: https://www.aryaxai.com/article/llm-vs-lrm-vs-lam-understanding-the-future-of-language-based-ai-systems, https://magazine.sebastianraschka.com/p/understanding-reasoning-llms
+
 
 
 
