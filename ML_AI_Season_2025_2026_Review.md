@@ -643,7 +643,7 @@ This section provides a deep, structured analysis of the first half of the ML/AI
 
 The goal is to reveal not only *what* each project does, but *why* it matters — scientifically, operationally, and strategically.
 
-## **3.1 Project 1 — Bank Marketing Dataset Classification**
+## **3.1 Project 1 — Bank Marketing Dataset Classification** (Feb 2025)
 
 ### **Scientific Foundations**  
 This project applies **supervised machine learning** to predict customer subscription behavior in a real‑world marketing context. It integrates:
@@ -695,7 +695,7 @@ This project is especially useful for organizations seeking **data‑driven mark
 - **Managers** gain interpretable metrics for campaign performance evaluation  
 
 
-## **3.2 Project 2 — Border Crossings Dataset & SARIMAX Forecasting**
+## **3.2 Project 2 — Border Crossings Dataset & SARIMAX Forecasting** (Feb 2025)
 
 ### **Scientific Foundations**  
 This project applies **classical econometric forecasting** to a real‑world public‑sector dataset: monthly U.S. border‑crossing volumes. It integrates:
@@ -749,7 +749,7 @@ The dataset’s strong seasonality makes it ideal for demonstrating SARIMAX’s 
 - **Data scientists** gain a baseline model for comparing ML approaches  
  
 
-## **3.3 Project 3 — Stock Price Dataset & SARIMAX Forecasting (Akima Interpolation)**
+## **3.3 Project 3 — Stock Price Dataset & SARIMAX Forecasting (Akima Interpolation)** (Mar 2025)
 
 ### **Scientific Foundations**  
 This project combines **time‑series econometrics** with **interpolation‑based data smoothing** to create a robust forecasting pipeline for stock price movements. It integrates:
@@ -803,7 +803,7 @@ The combination of SARIMAX + Akima is especially useful for markets with:
 - **Consultants** gain a clean, workshop‑ready forecasting demo  
 - **Portfolio managers** gain interpretable forecasts with confidence intervals  
 
-## **3.4 Project 4 — Sentiment Analysis Dataset Builder (NLTK, spaCy, BeautifulSoup)**
+## **3.4 Project 4 — Sentiment Analysis Dataset Builder (NLTK, spaCy, BeautifulSoup)** (Mar 2025)
 
 ### **Scientific Foundations**  
 This project operationalizes the core principles of **Natural Language Processing (NLP)** and **sentiment classification**, focusing on the construction of a clean, labeled dataset from raw online text sources. It integrates:
@@ -855,7 +855,7 @@ This project is especially useful when organizations need **domain‑specific se
 - **Product teams** gain a foundation for sentiment‑aware features  
 
 
-## **3.5 Project 5 — GAN vs OpenCV Chessboard Reconstruction**
+## **3.5 Project 5 — GAN vs OpenCV Chessboard Reconstruction** (Apr 2025)
 
 ### **Scientific Foundations**  
 This project explores:
@@ -886,7 +886,7 @@ It demonstrates the trade‑off between:
 - **Managers** understand cost‑accuracy trade‑offs  
 - **Consultants** gain a compelling demo of DL vs classical CV  
 
-## **3.6 Project 6 — Real Estate Data Analysis**
+## **3.6 Project 6 — Real Estate Data Analysis** (Apr 2025)
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -914,7 +914,7 @@ It demonstrates how classical econometrics can outperform naive ML models in str
 - **Investors** gain risk‑adjusted forecasts  
 - **Consultants** gain a reproducible forecasting pipeline  
 
-## **3.7 Project 7 — Advanced Signal Denoising Framework**
+## **3.7 Project 7 — Advanced Signal Denoising Framework** (May 2025)
 
 ### **Scientific Foundations**  
 This project is a deep dive into signal processing:
@@ -942,7 +942,7 @@ It introduces the first **multi‑method analytical ensemble** of the season.
 - **Engineers** improve sensor reliability  
 - **Consultants** gain a robust signal‑processing demo  
 
-## **3.8 Project 8 — Quantum Optimization with Qiskit**
+## **3.8 Project 8 — Quantum Optimization with Qiskit** (May 2025)
 
 ### **Scientific Foundations**  
 This project introduces:
@@ -969,7 +969,7 @@ It demonstrates how quantum methods can approximate NP‑hard problems.
 - **Researchers** gain a hybrid optimization template  
 - **Consultants** gain a future‑ready demo  
 
-## **3.9 Project 9 — Balanced Gauge Study GUI**
+## **3.9 Project 9 — Balanced Gauge Study GUI** (Jun 2025)
 
 ### **Scientific Foundations**  
 This project formalizes:
@@ -994,7 +994,7 @@ It provides a GUI‑driven interface for statistical rigor.
 - **Auditors** gain transparent reports  
 - **Consultants** gain a workshop‑ready tool  
 
-## **3.10 Project 10 — Encryption Pipeline with Dagster**
+## **3.10 Project 10 — Encryption Pipeline with Dagster** (Jun 2025)
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -1021,7 +1021,7 @@ It emphasizes cryptographic correctness and auditability.
 - **Auditors** gain traceability  
 - **Consultants** gain a compliance‑ready demo  
 
-## **3.11 Project 11 — Forex Arbitrage Seeker GUI (CCXT)**
+## **3.11 Project 11 — Forex Arbitrage Seeker GUI (CCXT)** (Jul 2025)
 
 ### **Scientific Foundations**  
 This project operationalizes the principles of **triangular arbitrage**, **cross‑exchange price discrepancies**, and **latency‑aware execution logic**. It formalizes:
@@ -1080,7 +1080,7 @@ The tool is especially useful for analysts exploring **market inefficiencies** o
 This section covers the second half of the ML/AI Project Season — the period where the portfolio becomes increasingly sophisticated, integrating forecasting, document intelligence, 
 environmental analytics, engineering simulation, and finally the full digital‑twin ecosystem.
 
-## **4.1 Project 12 — Score Card Evaluator GUI (Quality Management)**
+## **4.1 Project 12 — Score Card Evaluator GUI (Quality Management)** (Jul 2025)
 
 ### **Scientific Foundations**  
 This project introduces a structured approach to **quality scoring**, **criteria weighting**, and **multi‑factor evaluation**. It formalizes:
@@ -1128,7 +1128,7 @@ The tool is especially useful in environments where **qualitative assessments mu
 - **Consultants** gain a workshop‑ready decision support tool  
 - **Educators** gain a hands‑on GUI for teaching multi‑criteria evaluation  
   
-## **4.2 Project 13 — Crypto Forecasting Pipeline**
+## **4.2 Project 13 — Crypto Forecasting Pipeline** (Aug 2025)
 
 ### **Scientific Foundations**  
 This project is a deep exploration of time‑series forecasting using:
@@ -1156,7 +1156,7 @@ It demonstrates how deep learning can capture nonlinear temporal dependencies th
 - **Analysts** gain a reproducible forecasting pipeline  
 - **Consultants** gain a high‑impact ML demo  
 
-## **4.3 Project 14 — Analytics Engineer Exercise (Advanced)**
+## **4.3 Project 14 — Analytics Engineer Exercise (Advanced)** (Sep 2025)
 
 ### **Scientific Foundations**  
 This project expands on Project 1 with:
@@ -1183,7 +1183,7 @@ It reinforces analytical rigor and data governance.
 - **Consultants** gain reusable training material  
 - **Managers** gain confidence in metric correctness  
 
-## **4.4 Project 15 — Portfolio Optimization Notebook**
+## **4.4 Project 15 — Portfolio Optimization Notebook** (Oct 2025)
 
 ### **Scientific Foundations**  
 This project introduces:
@@ -1214,7 +1214,7 @@ It demonstrates the classical Markowitz framework:
 - **Consultants** gain a finance‑ready demo  
 - **Students** gain a clear introduction to OR in finance  
 
-## **4.5 Project 16 — Quantum‑Kalman Forecasting**
+## **4.5 Project 16 — Quantum‑Kalman Forecasting** (Oct 2025)
 
 ### **Scientific Foundations**  
 This hybrid forecasting pipeline integrates:
@@ -1248,7 +1248,7 @@ to reduce forecast variance.
 - **Researchers** gain a hybrid forecasting template  
 - **Consultants** gain a future‑ready demo  
 
-## **4.6 Project 17 — Linear Programming Optimization GUI**
+## **4.6 Project 17 — Linear Programming Optimization GUI** (Nov 2025)
 
 ### **Scientific Foundations**  
 This project operationalizes:
@@ -1275,7 +1275,7 @@ It brings OR theory into an interactive GUI.
 - **Consultants** gain a demo for OR workshops  
 - **Managers** gain transparent optimization tools  
 
-## **4.7 Project 18 — Tax and Invoice Tracker GUI**
+## **4.7 Project 18 — Tax and Invoice Tracker GUI** (Nov 2025)
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -1303,7 +1303,7 @@ It demonstrates how NLP can automate accounting workflows.
 - **SMEs** gain automation  
 - **Consultants** gain a compliance‑ready demo  
 
-## **4.8 Project 19 — Weather Aggregator Flask App**
+## **4.8 Project 19 — Weather Aggregator Flask App** (Dec 2025)
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -1331,7 +1331,7 @@ It demonstrates how to combine heterogeneous data sources into a unified forecas
 - **Educators** gain a teaching tool  
 - **Consultants** gain a lightweight web demo  
 
-## **4.9 Project 20 — Sensor Housing Stress Test GUI**
+## **4.9 Project 20 — Sensor Housing Stress Test GUI** (Dec 2025)
 
 ### **Scientific Foundations**  
 This project is a major leap into engineering simulation:
@@ -1359,7 +1359,7 @@ It introduces the first physics‑based simulation in the portfolio.
 - **Auditors** gain traceable reports  
 - **Consultants** gain a simulation demo  
 
-## **4.10 Project 21 — Digital Twin Telemetry Generator GUI**
+## **4.10 Project 21 — Digital Twin Telemetry Generator GUI** (Jan 2026)
 
 ### **Scientific Foundations**  
 This project simulates a virtual electric drilling machine using:
@@ -1391,7 +1391,7 @@ It introduces the first half of the digital‑twin ecosystem.
 - **Data scientists** gain reproducible telemetry  
 - **Consultants** gain scenario‑based demos  
 
-## **4.11 Project 22 — Digital Twin Telemetry Analyzer GUI**
+## **4.11 Project 22 — Digital Twin Telemetry Analyzer GUI** (Feb 2026)
 
 ### **Scientific Foundations**  
 This project completes the digital‑twin ecosystem with:
@@ -1425,7 +1425,7 @@ It is the most scientifically diverse project in the portfolio.
 - **Auditors** gain transparent logs  
 - **Consultants** gain a full digital‑twin demo  
 
-## **4.12 The Digital Twin Ecosystem (Projects 21 + 22)**
+## **4.12 The Digital Twin Ecosystem (Projects 21 + 22)** (Jan 2025 - Feb 2026)
 
 Together, Projects 21 and 22 form a **closed‑loop digital‑twin environment**:
 
@@ -2467,6 +2467,7 @@ Below is a consolidated reference list derived from the most important citations
 - Flask Documentation.
 
 ---
+
 
 
 
