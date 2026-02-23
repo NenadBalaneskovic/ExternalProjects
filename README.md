@@ -961,7 +961,7 @@ The Digital Twin Telemetry Generator is a modular, GUI‑based simulation tool f
 - **Behavioral fidelity:** Sensor models capture drift, oscillations, spikes, correlations, and rare events to mimic real machine dynamics.  
 - **Governance and reproducibility:** The system produces structured datasets (CSV/Parquet), a detailed `config.json`, and logs for traceability and auditability. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
-[![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/44a20c2bac652c4a43e3ca8449f0b7ce582b7e07/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
+[![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e2f30bac4251e38049d4f7aa1d390a3972e17f9c/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
 
 ### 22. **Digital Twin Telemetry Analyzer GUI – Feb 2026**
 
