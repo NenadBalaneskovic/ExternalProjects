@@ -643,129 +643,219 @@ This section provides a deep, structured analysis of the first half of the ML/AI
 
 The goal is to reveal not only *what* each project does, but *why* it matters — scientifically, operationally, and strategically.
 
-# **3.1 Project 1 — Analytics Engineer Exercise**
+## **3.1 Project 1 — Bank Marketing Dataset Classification**
 
 ### **Scientific Foundations**  
-This project introduces the season’s earliest exploration of **data modeling**, **ETL logic**, and **analytical reasoning**. It emphasizes:
+This project applies **supervised machine learning** to predict customer subscription behavior in a real‑world marketing context. It integrates:
 
-- dimensional modeling  
-- SQL transformations  
-- data validation  
-- metric definition  
+- binary classification  
+- feature engineering and preprocessing  
+- categorical encoding (one‑hot, ordinal)  
+- class imbalance handling  
+- model evaluation via ROC‑AUC, precision, recall, and F1  
 
-The scientific core lies in the structured decomposition of analytical workflows into:
+The core objective is to estimate the probability of a customer subscribing to a term deposit:
 
 ```math
-\text{Source Data} \rightarrow \text{Transformations} \rightarrow \text{Metrics} \rightarrow \text{Insights}
+\hat{y} = P(\text{subscribe} = 1 \mid \mathbf{x})
 ```
 
-This pipeline thinking becomes a recurring theme throughout the season.
+where $\( \mathbf{x} \)$ represents demographic, behavioral, and campaign‑related features.
+
+This enables transparent, data‑driven decision‑making in marketing operations.
 
 ### **Technological Architecture**  
-The project uses:
+- **Pandas** for preprocessing and feature engineering  
+- **scikit‑learn** for classification models (Logistic Regression, Random Forest, SVM)  
+- **Matplotlib / Seaborn** for EDA and model diagnostics  
+- **Train/test split + cross‑validation** for robust evaluation  
+- **Confusion matrix & ROC curves** for interpretability  
+- **CSV‑based dataset ingestion** for reproducibility  
 
-- Python  
-- SQL  
-- Pandas  
-- lightweight validation frameworks  
+The pipeline is modular, allowing:
 
-It establishes the first **reproducible analytical environment**, setting the tone for later GUI‑based tools.
+- interchangeable classifiers  
+- flexible preprocessing steps  
+- easy integration of new features or campaign data  
 
 ### **Practical Applications**  
-- onboarding analysts  
-- validating ETL logic  
-- teaching metric design  
-- preparing for consulting interviews  
+- predicting customer subscription likelihood  
+- optimizing marketing campaign targeting  
+- reducing outreach costs via probability‑based segmentation  
+- teaching classification fundamentals  
+- benchmarking ML models on a well‑known public dataset  
+
+This project is especially useful for organizations seeking **data‑driven marketing strategies**.
 
 ### **Stakeholder Impact**  
-- **Analysts** gain clarity on data modeling  
-- **Consultants** gain a reusable teaching artifact  
-- **Managers** gain a transparent demonstration of analytical reasoning  
+- **Marketing teams** gain actionable predictions for targeted outreach  
+- **Data scientists** gain a clean, extensible classification pipeline  
+- **Students** gain a hands‑on introduction to supervised learning  
+- **Consultants** gain a ready‑to‑use demo for customer analytics workshops  
+- **Managers** gain interpretable metrics for campaign performance evaluation  
 
-# **3.2 Project 2 — Data Cleaning & Validation Toolkit**
+
+## **3.2 Project 2 — Border Crossings Dataset & SARIMAX Forecasting**
 
 ### **Scientific Foundations**  
-This project formalizes the principles of:
+This project applies **classical econometric forecasting** to a real‑world public‑sector dataset: monthly U.S. border‑crossing volumes. It integrates:
 
-- schema validation  
-- anomaly detection  
-- missing‑value imputation  
-- outlier logic  
+- SARIMAX modeling (Seasonal ARIMA with exogenous variables)  
+- seasonal decomposition (trend, seasonality, residuals)  
+- stationarity testing (ADF)  
+- autocorrelation and partial autocorrelation diagnostics  
+- confidence interval estimation for policy‑relevant forecasting  
 
-It introduces deterministic rules that later reappear in the Telemetry Analyzer.
+The SARIMAX model captures both autoregressive structure and seasonal migration patterns:
+
+```math
+y_t = c + \sum_{i=1}^{p} \phi_i y_{t-i}
+      + \sum_{j=1}^{q} \theta_j \varepsilon_{t-j}
+      + \text{Seasonal Terms}
+      + \beta X_t
+      + \varepsilon_t
+```
+
+This provides a transparent, interpretable forecasting framework suitable for public‑sector analytics and operational planning.
 
 ### **Technological Architecture**  
-- Pandas  
-- Pydantic‑style validation  
-- logging  
-- modular cleaning functions  
+- **statsmodels** for SARIMAX modeling  
+- **Pandas** for time‑series preprocessing  
+- **Matplotlib / Seaborn** for decomposition and forecast visualization  
+- **CSV‑based dataset ingestion**  
+- **Configurable model parameters** (p, d, q, seasonal order)  
+- **Exportable forecast plots** for reporting  
+
+The pipeline is modular and reproducible, enabling:
+
+- rapid experimentation with different model orders  
+- clean separation between preprocessing and forecasting  
+- easy extension to additional exogenous variables  
 
 ### **Practical Applications**  
-- preprocessing pipelines  
-- data quality audits  
-- compliance workflows  
+- forecasting border‑crossing volumes  
+- public‑sector capacity planning  
+- transportation and logistics forecasting  
+- policy impact analysis  
+- teaching classical time‑series modeling  
+
+The dataset’s strong seasonality makes it ideal for demonstrating SARIMAX’s strengths in real‑world forecasting.
 
 ### **Stakeholder Impact**  
-- **Data engineers** benefit from reproducible cleaning logic  
-- **Auditors** gain traceability  
-- **Consultants** gain a reusable quality‑assessment module  
+- **Government analysts** gain transparent, interpretable forecasts  
+- **Policy makers** gain data‑driven insights for resource allocation  
+- **Students** gain a hands‑on introduction to SARIMAX modeling  
+- **Consultants** gain a clean, reproducible forecasting demo  
+- **Data scientists** gain a baseline model for comparing ML approaches  
+ 
 
-# **3.3 Project 3 — Exploratory Data Analysis Notebook**
-
-### **Scientific Foundations**  
-This project introduces:
-
-- descriptive statistics  
-- correlation analysis  
-- distribution modeling  
-- feature exploration  
-
-It lays the groundwork for later ML‑driven projects.
-
-### **Technological Architecture**  
-- Jupyter  
-- Seaborn  
-- Matplotlib  
-- Pandas profiling  
-
-### **Practical Applications**  
-- rapid dataset understanding  
-- hypothesis generation  
-- client workshop preparation  
-
-### **Stakeholder Impact**  
-- **Analysts** gain a structured EDA template  
-- **Consultants** gain a workshop‑ready notebook  
-- **Students** gain a reproducible learning tool  
-
-# **3.4 Project 4 — Regression Modeling Framework**
+## **3.3 Project 3 — Stock Price Dataset & SARIMAX Forecasting (Akima Interpolation)**
 
 ### **Scientific Foundations**  
-This project introduces:
+This project combines **time‑series econometrics** with **interpolation‑based data smoothing** to create a robust forecasting pipeline for stock price movements. It integrates:
 
-- linear regression  
-- regularization (Lasso/Ridge)  
-- cross‑validation  
+- SARIMAX modeling (Seasonal AutoRegressive Integrated Moving Average with eXogenous variables)  
+- Akima interpolation for smoothing irregular or missing data  
+- stationarity testing (ADF)  
 - residual diagnostics  
+- confidence interval estimation  
 
-It emphasizes model interpretability and statistical rigor.
+The SARIMAX model captures both autoregressive structure and seasonal patterns:
+
+```math
+y_t = c + \sum_{i=1}^{p} \phi_i y_{t-i} + \sum_{j=1}^{q} \theta_j \varepsilon_{t-j}
+      + \text{Seasonal Terms} + \beta X_t + \varepsilon_t
+```
+
+Akima interpolation ensures smooth, artifact‑free reconstruction of missing or noisy segments, improving model stability and forecast reliability.
 
 ### **Technological Architecture**  
-- scikit‑learn  
-- NumPy  
-- Matplotlib  
+- **statsmodels** for SARIMAX modeling  
+- **SciPy** for Akima interpolation  
+- **Pandas** for time‑series handling  
+- **Matplotlib / Seaborn** for visualization  
+- **CSV‑based dataset export** for reproducibility  
+- **Configurable forecasting parameters** (p, d, q, seasonal order)  
+
+The pipeline is modular, allowing:
+
+- interchangeable interpolation methods  
+- adjustable model hyperparameters  
+- reusable forecasting templates  
 
 ### **Practical Applications**  
-- forecasting baselines  
-- KPI modeling  
-- sensitivity analysis  
+- stock price forecasting  
+- financial time‑series analysis  
+- volatility and trend exploration  
+- data cleaning for irregular trading intervals  
+- teaching econometric modeling workflows  
+
+The combination of SARIMAX + Akima is especially useful for markets with:
+
+- missing data  
+- irregular sampling  
+- noisy intraday fluctuations  
 
 ### **Stakeholder Impact**  
-- **Business stakeholders** gain interpretable models  
-- **Data scientists** gain a modular regression template  
-- **Consultants** gain a reusable modeling framework  
+- **Financial analysts** gain a transparent, classical forecasting model  
+- **Quant researchers** gain a reproducible baseline for model comparison  
+- **Students** gain a hands‑on introduction to econometrics and interpolation  
+- **Consultants** gain a clean, workshop‑ready forecasting demo  
+- **Portfolio managers** gain interpretable forecasts with confidence intervals  
 
-# **3.5 Project 5 — GAN vs OpenCV Chessboard Reconstruction**
+## **3.4 Project 4 — Sentiment Analysis Dataset Builder (NLTK, spaCy, BeautifulSoup)**
+
+### **Scientific Foundations**  
+This project operationalizes the core principles of **Natural Language Processing (NLP)** and **sentiment classification**, focusing on the construction of a clean, labeled dataset from raw online text sources. It integrates:
+
+- tokenization and lemmatization  
+- stopword removal and text normalization  
+- polarity scoring (lexicon‑based sentiment)  
+- rule‑based sentiment heuristics  
+- dataset labeling for downstream ML models  
+
+The underlying sentiment scoring logic follows a lexicon‑weighted aggregation:
+
+```math
+\text{Sentiment Score} = \sum_{i=1}^{n} \text{polarity}(w_i) \cdot \text{weight}(w_i)
+```
+
+where each token $\( w_i \)$ contributes positively or negatively based on lexicon polarity and contextual weighting.
+
+This creates a reproducible, interpretable foundation for training ML classifiers.
+
+### **Technological Architecture**  
+- **NLTK** for tokenization, stopwords, and lexicon‑based sentiment  
+- **spaCy** for lemmatization and linguistic preprocessing  
+- **BeautifulSoup** for HTML parsing and headline extraction  
+- **Pandas** for dataset assembly and export  
+- **Config‑driven scraping rules** for reproducibility  
+- **CSV/JSON dataset output** for ML pipelines  
+
+The architecture is modular, allowing:
+
+- new sources to be added easily  
+- custom lexicons to be integrated  
+- preprocessing steps to be toggled on/off  
+
+### **Practical Applications**  
+- building sentiment datasets for ML model training  
+- analyzing news headline polarity  
+- monitoring market‑moving sentiment in finance  
+- supporting NLP coursework and workshops  
+- preparing labeled data for transformer fine‑tuning  
+
+This project is especially useful when organizations need **domain‑specific sentiment datasets** rather than generic off‑the‑shelf corpora.
+
+### **Stakeholder Impact**  
+- **Data scientists** gain a clean, customizable dataset builder  
+- **Researchers** gain a reproducible pipeline for sentiment labeling  
+- **Students** gain hands‑on exposure to NLP preprocessing  
+- **Consultants** gain a practical demo for text analytics engagements  
+- **Product teams** gain a foundation for sentiment‑aware features  
+
+
+## **3.5 Project 5 — GAN vs OpenCV Chessboard Reconstruction**
 
 ### **Scientific Foundations**  
 This project explores:
@@ -796,7 +886,7 @@ It demonstrates the trade‑off between:
 - **Managers** understand cost‑accuracy trade‑offs  
 - **Consultants** gain a compelling demo of DL vs classical CV  
 
-# **3.6 Project 6 — Real Estate Data Analysis**
+## **3.6 Project 6 — Real Estate Data Analysis**
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -824,7 +914,7 @@ It demonstrates how classical econometrics can outperform naive ML models in str
 - **Investors** gain risk‑adjusted forecasts  
 - **Consultants** gain a reproducible forecasting pipeline  
 
-# **3.7 Project 7 — Advanced Signal Denoising Framework**
+## **3.7 Project 7 — Advanced Signal Denoising Framework**
 
 ### **Scientific Foundations**  
 This project is a deep dive into signal processing:
@@ -852,7 +942,7 @@ It introduces the first **multi‑method analytical ensemble** of the season.
 - **Engineers** improve sensor reliability  
 - **Consultants** gain a robust signal‑processing demo  
 
-# **3.8 Project 8 — Quantum Optimization with Qiskit**
+## **3.8 Project 8 — Quantum Optimization with Qiskit**
 
 ### **Scientific Foundations**  
 This project introduces:
@@ -879,7 +969,7 @@ It demonstrates how quantum methods can approximate NP‑hard problems.
 - **Researchers** gain a hybrid optimization template  
 - **Consultants** gain a future‑ready demo  
 
-# **3.9 Project 9 — Balanced Gauge Study GUI**
+## **3.9 Project 9 — Balanced Gauge Study GUI**
 
 ### **Scientific Foundations**  
 This project formalizes:
@@ -904,7 +994,7 @@ It provides a GUI‑driven interface for statistical rigor.
 - **Auditors** gain transparent reports  
 - **Consultants** gain a workshop‑ready tool  
 
-# **3.10 Project 10 — Encryption Pipeline with Dagster**
+## **3.10 Project 10 — Encryption Pipeline with Dagster**
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -931,32 +1021,57 @@ It emphasizes cryptographic correctness and auditability.
 - **Auditors** gain traceability  
 - **Consultants** gain a compliance‑ready demo  
 
-# **3.11 Project 11 — Analytics Engineer SQL Challenge**
+## **3.11 Project 11 — Forex Arbitrage Seeker GUI (CCXT)**
 
 ### **Scientific Foundations**  
-This project reinforces:
+This project operationalizes the principles of **triangular arbitrage**, **cross‑exchange price discrepancies**, and **latency‑aware execution logic**. It formalizes:
 
-- SQL window functions  
-- joins  
-- aggregations  
-- metric logic  
+- bid/ask spread evaluation  
+- triangular arbitrage detection  
+- cross‑exchange price comparison  
+- slippage and fee‑adjusted profitability  
+- real‑time market data synchronization  
 
-It builds analytical muscle memory.
+The core arbitrage condition is based on evaluating whether a currency cycle yields a net gain:
+
+```math
+\text{Arbitrage Profit} = \left( \prod_{i=1}^{n} r_i \right) - 1 - \text{fees}
+```
+
+where $\( r_i \)$ are the exchange rates in the triangular cycle.  
+A positive value indicates a profitable arbitrage opportunity.
 
 ### **Technological Architecture**  
-- SQL  
-- Python validation  
-- reproducible notebooks  
+- **CCXT** for unified exchange API access  
+- **PyQt5 GUI** for real‑time visualization  
+- **Async I/O** for concurrent exchange polling  
+- **Pandas** for structured rate comparison  
+- **Matplotlib** for opportunity plotting  
+- **Config‑driven exchange selection** (JSON)  
+
+The GUI provides:
+
+- live exchange rate monitoring  
+- configurable currency pairs  
+- real‑time arbitrage alerts  
+- fee‑adjusted profitability calculations  
+- exportable opportunity logs  
 
 ### **Practical Applications**  
-- interview preparation  
-- ETL validation  
-- metric consistency checks  
+- identifying triangular arbitrage opportunities  
+- evaluating cross‑exchange inefficiencies  
+- teaching FX market microstructure  
+- backtesting arbitrage strategies  
+- demonstrating latency‑sensitive trading logic  
+
+The tool is especially useful for analysts exploring **market inefficiencies** or validating **algorithmic trading hypotheses**.
 
 ### **Stakeholder Impact**  
-- **Analysts** sharpen SQL skills  
-- **Consultants** gain reusable exercises  
-- **Teams** gain standardized SQL patterns  
+- **Quant researchers** gain a controlled environment for arbitrage exploration  
+- **Traders** gain a transparent opportunity scanner  
+- **Students** gain an intuitive introduction to FX arbitrage mechanics  
+- **Consultants** gain a live demo for financial analytics workshops  
+- **Developers** gain a modular CCXT‑based template for real‑time trading tools  
 
 ---
 
@@ -965,42 +1080,55 @@ It builds analytical muscle memory.
 This section covers the second half of the ML/AI Project Season — the period where the portfolio becomes increasingly sophisticated, integrating forecasting, document intelligence, 
 environmental analytics, engineering simulation, and finally the full digital‑twin ecosystem.
 
-# **4.1 Project 12 — Customer Segmentation & Clustering Toolkit**
+## **4.1 Project 12 — Score Card Evaluator GUI (Quality Management)**
 
 ### **Scientific Foundations**  
-This project introduces the first major clustering‑focused analytical pipeline of the season. It explores:
+This project introduces a structured approach to **quality scoring**, **criteria weighting**, and **multi‑factor evaluation**. It formalizes:
 
-- KMeans clustering  
-- DBSCAN density‑based clustering  
-- silhouette scoring  
-- PCA dimensionality reduction  
+- weighted scoring models  
+- normalization and scaling  
+- threshold logic  
+- decision matrix construction  
 
-The scientific core lies in understanding how clustering algorithms partition high‑dimensional feature spaces:
+The core mathematical idea is a weighted aggregation of normalized scores:
 
 ```math
-\text{Cluster Quality} = \frac{\text{Between-Cluster Distance}}{\text{Within-Cluster Distance}}
+\text{Final Score} = \sum_{i=1}^{n} w_i \cdot \frac{x_i - \min(x_i)}{\max(x_i) - \min(x_i)}
 ```
 
-This project establishes the mathematical intuition behind segmentation — a theme that later reappears in the Telemetry Analyzer (Project 22).
+This enables transparent, reproducible evaluation across multiple quality dimensions.
 
 ### **Technological Architecture**  
-- scikit‑learn  
-- Pandas  
-- Matplotlib  
-- modular clustering classes  
+- PyQt5 GUI  
+- Pandas for data handling  
+- Matplotlib for score visualization  
+- JSON configuration for criteria and weights  
+- CSV import/export for reproducibility  
+
+The GUI supports:
+
+- dynamic criteria definition  
+- adjustable weights  
+- real‑time score updates  
+- exportable evaluation reports  
 
 ### **Practical Applications**  
-- customer segmentation  
-- anomaly detection baselines  
-- marketing analytics  
-- exploratory clustering for IoT sensor data  
+- supplier evaluation  
+- internal quality audits  
+- performance benchmarking  
+- decision support in procurement  
+- workshop facilitation for scoring exercises  
+
+The tool is especially useful in environments where **qualitative assessments must be quantified** for governance or comparison.
 
 ### **Stakeholder Impact**  
-- **Marketing teams** gain actionable segmentation  
-- **Data scientists** gain a reusable clustering pipeline  
-- **Consultants** gain a workshop‑ready segmentation demo  
-
-# **4.2 Project 13 — Crypto Forecasting Pipeline**
+- **Quality managers** gain a transparent scoring framework  
+- **Procurement teams** gain reproducible supplier evaluations  
+- **Auditors** gain structured, exportable reports  
+- **Consultants** gain a workshop‑ready decision support tool  
+- **Educators** gain a hands‑on GUI for teaching multi‑criteria evaluation  
+  
+## **4.2 Project 13 — Crypto Forecasting Pipeline**
 
 ### **Scientific Foundations**  
 This project is a deep exploration of time‑series forecasting using:
@@ -1028,7 +1156,7 @@ It demonstrates how deep learning can capture nonlinear temporal dependencies th
 - **Analysts** gain a reproducible forecasting pipeline  
 - **Consultants** gain a high‑impact ML demo  
 
-# **4.3 Project 14 — Analytics Engineer Exercise (Advanced)**
+## **4.3 Project 14 — Analytics Engineer Exercise (Advanced)**
 
 ### **Scientific Foundations**  
 This project expands on Project 1 with:
@@ -1055,7 +1183,7 @@ It reinforces analytical rigor and data governance.
 - **Consultants** gain reusable training material  
 - **Managers** gain confidence in metric correctness  
 
-# **4.4 Project 15 — Portfolio Optimization Notebook**
+## **4.4 Project 15 — Portfolio Optimization Notebook**
 
 ### **Scientific Foundations**  
 This project introduces:
@@ -1086,7 +1214,7 @@ It demonstrates the classical Markowitz framework:
 - **Consultants** gain a finance‑ready demo  
 - **Students** gain a clear introduction to OR in finance  
 
-# **4.5 Project 16 — Quantum‑Kalman Forecasting**
+## **4.5 Project 16 — Quantum‑Kalman Forecasting**
 
 ### **Scientific Foundations**  
 This hybrid forecasting pipeline integrates:
@@ -1120,7 +1248,7 @@ to reduce forecast variance.
 - **Researchers** gain a hybrid forecasting template  
 - **Consultants** gain a future‑ready demo  
 
-# **4.6 Project 17 — Linear Programming Optimization GUI**
+## **4.6 Project 17 — Linear Programming Optimization GUI**
 
 ### **Scientific Foundations**  
 This project operationalizes:
@@ -1147,7 +1275,7 @@ It brings OR theory into an interactive GUI.
 - **Consultants** gain a demo for OR workshops  
 - **Managers** gain transparent optimization tools  
 
-# **4.7 Project 18 — Tax and Invoice Tracker GUI**
+## **4.7 Project 18 — Tax and Invoice Tracker GUI**
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -1175,7 +1303,7 @@ It demonstrates how NLP can automate accounting workflows.
 - **SMEs** gain automation  
 - **Consultants** gain a compliance‑ready demo  
 
-# **4.8 Project 19 — Weather Aggregator Flask App**
+## **4.8 Project 19 — Weather Aggregator Flask App**
 
 ### **Scientific Foundations**  
 This project integrates:
@@ -1203,7 +1331,7 @@ It demonstrates how to combine heterogeneous data sources into a unified forecas
 - **Educators** gain a teaching tool  
 - **Consultants** gain a lightweight web demo  
 
-# **4.9 Project 20 — Sensor Housing Stress Test GUI**
+## **4.9 Project 20 — Sensor Housing Stress Test GUI**
 
 ### **Scientific Foundations**  
 This project is a major leap into engineering simulation:
@@ -1231,7 +1359,7 @@ It introduces the first physics‑based simulation in the portfolio.
 - **Auditors** gain traceable reports  
 - **Consultants** gain a simulation demo  
 
-# **4.10 Project 21 — Digital Twin Telemetry Generator GUI**
+## **4.10 Project 21 — Digital Twin Telemetry Generator GUI**
 
 ### **Scientific Foundations**  
 This project simulates a virtual electric drilling machine using:
@@ -1263,7 +1391,7 @@ It introduces the first half of the digital‑twin ecosystem.
 - **Data scientists** gain reproducible telemetry  
 - **Consultants** gain scenario‑based demos  
 
-# **4.11 Project 22 — Digital Twin Telemetry Analyzer GUI**
+## **4.11 Project 22 — Digital Twin Telemetry Analyzer GUI**
 
 ### **Scientific Foundations**  
 This project completes the digital‑twin ecosystem with:
@@ -1297,7 +1425,7 @@ It is the most scientifically diverse project in the portfolio.
 - **Auditors** gain transparent logs  
 - **Consultants** gain a full digital‑twin demo  
 
-# **4.12 The Digital Twin Ecosystem (Projects 21 + 22)**
+## **4.12 The Digital Twin Ecosystem (Projects 21 + 22)**
 
 Together, Projects 21 and 22 form a **closed‑loop digital‑twin environment**:
 
@@ -2106,8 +2234,6 @@ ingests telemetry, analyzes it in real time, and produces explainable, auditable
 This is not merely a portfolio.  
 It is a **blueprint for modern, responsible ML/AI engineering**.
 
----
-
 # **6.2 Future Directions (2026–2027 Roadmap)**
 
 The next development cycle can build on the strong foundations established in this season. Below is a forward‑looking roadmap that identifies the most promising directions for expansion.
@@ -2341,6 +2467,7 @@ Below is a consolidated reference list derived from the most important citations
 - Flask Documentation.
 
 ---
+
 
 
 
