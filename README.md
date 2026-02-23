@@ -134,7 +134,7 @@ Explicit benchmarks and case studies render this portfolio **client‑ready**. T
     <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/b812ddd9bd3cad415c4e8518add2315af2f23031/SeasonalReviewsImage.png" width="300" height="300">
 </p>     
 
-### 2025–2026 Season Chronicle - [Details](https://github.com/NenadBalaneskovic/ExternalProjects/blob/923bfab4e5b24ae149d48bccafac11c5d0760031/ML_AI_Season_2025_2026_Review.md)
+### 2025–2026 Season Chronicle - [Details](https://github.com/NenadBalaneskovic/ExternalProjects/blob/249bb455b62a2e915cb200862b0d2e8ff2f63002/ML_AI_Season_2025_2026_Review.md)
 This section contains high‑level, chronological, and cross‑project analyses of the ML/AI engineering work conducted between February 2025 and February 2026. 
 These reviews provide scientific, technological, practical, and stakeholder‑oriented insights into the evolution of the portfolio, culminating in the Digital Twin Ecosystem (Projects 21 & 22).
 
