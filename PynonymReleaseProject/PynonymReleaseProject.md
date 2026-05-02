@@ -4007,7 +4007,7 @@ It covers all common issues:
 - offline model installation (wheel files)  
 - smoke test for verification  
 
-## 🚀 **1. Requirements**
+## 🚀 **17.1. Requirements**
 
 - Windows 10/11  
 - Conda / Miniconda / Anaconda  
@@ -4017,14 +4017,14 @@ It covers all common issues:
 - pynonym wheel (e.g., `pynonym‑0.1.0‑py3‑none‑any.whl`)  
 - spaCy model wheels (e.g., `de_core_news_md‑3.8.0‑py3‑none‑any.whl`)  
 
-## 🧱 **2. Create Conda environment**
+## 🧱 **17.2. Create Conda environment**
 
 ```powershell
 conda create -n py312 python=3.12 -y
 conda activate py312
 ```
 
-## 📦 **3. Install pynonym**
+## 📦 **17.3. Install pynonym**
 
 ### 📦 **How to build `pynonym‑0.1.0‑py3‑none‑any.whl`**
 
@@ -4123,7 +4123,7 @@ python -m pip install build
 python -m build --wheel --sdist
 ```
 
-## 🧠 **4. Register the Jupyter kernel for the environment**
+## 🧠 **17.4. Register the Jupyter kernel for the environment**
 
 To ensure Jupyter actually uses the `py312` environment:
 
@@ -4135,13 +4135,13 @@ In Jupyter:
 
 **Kernel → Change Kernel → Python 3.12 (py312)**
 
-## 🧩 **5. Install spaCy**
+## 🧩 **17.5. Install spaCy**
 
 ```powershell
 pip install spacy==3.8.14
 ```
 
-## 🗂️ **6. Install spaCy models (wheels, offline)**
+## 🗂️ **17.6. Install spaCy models (wheels, offline)**
 
 ⚠️ **Important:**  
 On Windows, `!pip` often installs into the wrong environment.  
@@ -4161,7 +4161,7 @@ This guarantees:
 - no user site‑packages  
 - spaCy can load the models  
 
-## 🔍 **7. Verify installation**
+## 🔍 **17.7. Verify installation**
 
 ```python
 import sys, spacy
@@ -4180,7 +4180,7 @@ spaCy: 3.8.14
 Model loaded: de_core_news_md
 ```
 
-## 🧪 **8. Full smoke test**
+## 🧪 **17.8. Full smoke test**
 
 *(I keep the code exactly as in your document — only translated headings and comments.)*
 
@@ -4285,7 +4285,7 @@ print("Appears in text:", fake_name in text_res)
 print("\n=== Smoke Test complete ===")
 ```
 
-## 🟢 **9. Common errors & solutions**
+## 🟢 **17.9. Common errors & solutions**
 
 ### ❌ *spaCy model not found*  
 ```
@@ -4322,7 +4322,7 @@ Defaulting to user installation because normal site-packages is not writeable
 !"{sys.executable}" -m pip install --force-reinstall ...
 ```
 
-## 📁 **10. Source folder structure (development)**
+## 📁 **17.10. Source folder structure (development)**
 
 *(Structure unchanged — only translated explanation.)*
 
@@ -4358,7 +4358,7 @@ pynonym-0.1.0/
 `src/pynonym/` is the only place where code lives.  
 `dist/` is generated automatically.
 
-## 📦 **11. Release folder structure (Windows distribution)**
+## 📦 **17.11. Release folder structure (Windows distribution)**
 
 ```
 pynonym-release-windows-0.1.0/
@@ -4401,7 +4401,7 @@ pynonym-release-windows-0.1.0/
 - `smoke_test/` → notebook + Python smoke test  
 - `README_INSTALL_WINDOWS.md` → installation guide  
 
-## 🧠 **12. spaCy models (offline folder structure)**
+## 🧠 **17.12. spaCy models (offline folder structure)**
 
 ```
 models/
@@ -4422,7 +4422,7 @@ models/
 !"{sys.executable}" -m pip install models/de_core_news_md-3.8.0-py3-none-any.whl
 ```
 
-## 📓 **13. Jupyter notebook folder structure**
+## 📓 **17.13. Jupyter notebook folder structure**
 
 ```
 notebooks/
@@ -4438,7 +4438,7 @@ notebooks/
 - Notebook 01 contains the smoke test  
 - Notebooks 02/03/04 are user examples  
 
-## 🧱 **14. Recommended overall structure for your Windows project**
+## 🧱 **17.14. Recommended overall structure for your Windows project**
 
 ```
 D:\Pynonym_Package\
@@ -4454,7 +4454,7 @@ D:\Pynonym_Package\
 └── notebooks\                     ← Examples & tests
 ```
 
-## 🎯 **16. Why this structure is optimal**
+## 🎯 **17.15. Why this structure is optimal**
 
 - **Clean separation of source and release**  
 - **Models available offline**  
