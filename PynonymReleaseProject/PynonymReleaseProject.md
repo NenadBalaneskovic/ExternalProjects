@@ -574,7 +574,7 @@ In practice, these two snippets are enough to:
 
 # 8. **Mermaid diagrams**
 
-## 🖼️ **1. Architecture Diagram**  
+## 🖼️ **8.1. Architecture Diagram**  
 ```mermaid
 flowchart TB
 
@@ -625,28 +625,28 @@ flowchart TB
 ```
 
 
-## 🖼️ **2. Text Anonymization Flow**  
+## 🖼️ **8.2. Text Anonymization Flow**  
 ```mermaid
 flowchart LR
-    A[Input Text] --> B[spaCy NER<br/>Entity Detection]
-    B --> C[Faker Pseudonym Generator]
-    C --> D[Deterministic Mapping<br/>(Seeded)]
-    D --> E[Replace Entities in Text]
-    E --> F[Anonymized Text Output]
+    A["Input Text"] --> B["spaCy NER — Entity Detection"]
+    B --> C["Faker Pseudonym Generator"]
+    C --> D["Deterministic Mapping — Seeded"]
+    D --> E["Replace Entities in Text"]
+    E --> F["Anonymized Text Output"]
 ```
 
-## 🖼️ **3. Table Anonymization Flow**  
+## 🖼️ **8.3. Table Anonymization Flow**  
 ```mermaid
 flowchart LR
-    A[Input DataFrame] --> B[Pseudonymize Columns]
-    B --> C[Group by Quasi-Identifiers]
-    C --> D[Analyze Sensitive Attributes]
-    D --> E[Compute Privacy Metrics<br/>(k, l, t)]
-    E --> F[Attach Metrics to DataFrame]
-    F --> G[Anonymized DataFrame Output]
+    A["Input DataFrame"] --> B["Pseudonymize Columns"]
+    B --> C["Group by Quasi-Identifiers"]
+    C --> D["Analyze Sensitive Attributes"]
+    D --> E["Compute Privacy Metrics — k, l, t"]
+    E --> F["Attach Metrics to DataFrame"]
+    F --> G["Anonymized DataFrame Output"]
 ```
 
-## 🖼️ **4. Offline Bundle Structure**  
+## 🖼️ **8.4. Offline Bundle Structure**  
 ```mermaid
 flowchart TB
     A[pynonym-offline-0.1.0.tar.gz] --> B[Extract Bundle]
@@ -667,7 +667,7 @@ flowchart TB
     F --> F2[smoke_test.ipynb]
 ```
 
-## 🧬 **5. Deterministic Engine — Sequence Diagram (Text Anonymization)**
+## 🧬 **8.5. Deterministic Engine — Sequence Diagram (Text Anonymization)**
 
 This diagram shows how text anonymization interacts with the deterministic core.
 
@@ -701,7 +701,7 @@ sequenceDiagram
     TA-->>U: anonymized_text
 ```
 
-## 🧬 **6. Deterministic Engine — Sequence Diagram (Table Anonymization)**
+## 🧬 **8.6. Deterministic Engine — Sequence Diagram (Table Anonymization)**
 
 This diagram shows how table anonymization uses the deterministic core for pseudonymization and then computes privacy metrics.
 
@@ -734,7 +734,7 @@ sequenceDiagram
     TB-->>U: anonymized_df + metrics
 ```
 
-## 🌐 **7. Combined System Overview Diagram**
+## 🌐 **8.7. Combined System Overview Diagram**
 
 This diagram shows the entire system — text engine, table engine, deterministic core, privacy metrics, and offline installation — in one integrated view.
 
@@ -742,47 +742,47 @@ This diagram shows the entire system — text engine, table engine, deterministi
 flowchart TB
 
     %% Top-level user interaction
-    U[User Code<br/>Python / Jupyter / Pipeline]
+    U["User Code — Python / Jupyter / Pipeline"]
 
     %% Text anonymization
-    subgraph TEXT[Text Anonymization]
+    subgraph TEXT["Text Anonymization"]
         direction TB
-        T1[spaCy NER]
-        T2[Faker Pseudonym Generator]
-        T3[Deterministic Mapping]
+        T1["spaCy NER"]
+        T2["Faker Pseudonym Generator"]
+        T3["Deterministic Mapping"]
     end
 
     %% Table anonymization
-    subgraph TABLE[Table Anonymization]
+    subgraph TABLE["Table Anonymization"]
         direction TB
-        A1[pandas Engine]
-        A2[Quasi-Identifier Grouping]
-        A3[Sensitive Attribute Handling]
-        A4[Deterministic Mapping]
+        A1["pandas Engine"]
+        A2["Quasi-Identifier Grouping"]
+        A3["Sensitive Attribute Handling"]
+        A4["Deterministic Mapping"]
     end
 
     %% Deterministic core
-    subgraph CORE[Deterministic Core]
+    subgraph CORE["Deterministic Core"]
         direction TB
-        C1[Seeded Pseudonym Generator]
-        C2[Global Mapping Table]
+        C1["Seeded Pseudonym Generator"]
+        C2["Global Mapping Table"]
     end
 
     %% Privacy metrics
-    subgraph METRICS[Privacy Metrics Engine]
+    subgraph METRICS["Privacy Metrics Engine"]
         direction TB
-        M1[k-Anonymity]
-        M2[l-Diversity]
-        M3[t-Closeness (EMD)]
+        M1["k-Anonymity"]
+        M2["l-Diversity"]
+        M3["t-Closeness — EMD"]
     end
 
     %% Offline installation
-    subgraph OFF[Offline Installation Bundle]
+    subgraph OFF["Offline Installation Bundle"]
         direction TB
-        O1[wheels/]
-        O2[models/]
-        O3[install.sh]
-        O4[smoke_test/]
+        O1["wheels/"]
+        O2["models/"]
+        O3["install.sh"]
+        O4["smoke_test/"]
     end
 
     %% Connections
