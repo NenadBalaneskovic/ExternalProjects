@@ -2677,7 +2677,7 @@ The notebook smoke test gives us an **interactive, visual confirmation** that al
 
 ---
 
-# 🧑‍💻 **Developer Guide**
+# 11. 🧑‍💻 **Developer Guide**
 
 The Developer Guide provides a **deep technical overview** of `pynonym`’s internal architecture.  
 It explains how the modules interact, how determinism is enforced, how privacy metrics are computed, and how developers can extend or integrate the library into larger systems.
@@ -2689,9 +2689,7 @@ This section is intended for:
 - privacy engineers who need to understand the internal guarantees,  
 - contributors who want to add new features or metrics.
 
----
-
-# 📁 **Folder Structure**
+## 📁 **Folder Structure**
 
 ```
 pynonym/
@@ -2708,8 +2706,6 @@ pynonym/
 This structure is intentionally **minimalistic and modular**.  
 Each module has a single responsibility, making the system easy to reason about, test, and extend.
 
----
-
 ## 📦 Module Overview (Deep Dive)
 
 | Module | Purpose | Deeper Explanation |
@@ -2721,15 +2717,11 @@ Each module has a single responsibility, making the system easy to reason about,
 | `utils.py` | Deterministic pseudonym generator | Implements the global mapping table, seeded pseudonym generation, and helper utilities for consistent anonymization. |
 | `version.py` | Version metadata | Stores version information for reproducibility and debugging. |
 
----
-
-# 🧠 **Core Concepts**
+## 🧠 **Core Concepts**
 
 The following concepts form the foundation of `pynonym`’s architecture.
 
----
-
-## 1. Deterministic Pseudonymization (Deep Explanation)
+### 1. Deterministic Pseudonymization (Deep Explanation)
 
 Determinism is the **central design principle** of `pynonym`.
 
@@ -2790,9 +2782,7 @@ Output:
 "Laura Becker"
 ```
 
----
-
-## 2. Language Support
+### 2. Language Support
 
 `pynonym` supports:
 
@@ -2808,9 +2798,7 @@ These models are:
 
 The design allows adding more languages in the future (FR, ES, IT, etc.).
 
----
-
-## 3. Privacy Metrics Engine (Pure Python)
+### 3. Privacy Metrics Engine (Pure Python)
 
 Implemented in `privacy.py`, this engine computes:
 
@@ -2834,17 +2822,13 @@ The table anonymization engine calls the privacy engine after pseudonymization:
 DataFrame → group by quasi-identifiers → compute metrics → attach to attrs
 ```
 
----
-
-# 📘 **API Reference (Deep Developer Version)**
+## 📘 **API Reference (Deep Developer Version)**
 
 This section describes the public APIs and how they interact with the internal architecture.
 
----
+### ✏️ **Text Anonymization API**
 
-# ✏️ **Text Anonymization API**
-
-## `anonymize_text(text: str, config: TextAnonymizerConfig) -> str`
+#### `anonymize_text(text: str, config: TextAnonymizerConfig) -> str`
 
 This function:
 
@@ -2854,7 +2838,7 @@ This function:
 4. Reconstructs the text with replacements.  
 5. Returns the anonymized string.
 
-### Example
+#### Example
 
 ```python
 from pynonym.text import anonymize_text
@@ -2864,7 +2848,7 @@ cfg = TextAnonymizerConfig(language="de", seed=42)
 anonymize_text("Angela Merkel traf Olaf Scholz.", cfg)
 ```
 
-### Configuration Options (Deep Explanation)
+#### Configuration Options (Deep Explanation)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2874,9 +2858,9 @@ anonymize_text("Angela Merkel traf Olaf Scholz.", cfg)
 
 ---
 
-# 📊 **Table Anonymization API**
+### 📊 **Table Anonymization API**
 
-## `anonymize_dataframe(df, config: TableAnonymizationConfig) -> DataFrame`
+#### `anonymize_dataframe(df, config: TableAnonymizationConfig) -> DataFrame`
 
 This function:
 
@@ -2886,7 +2870,7 @@ This function:
 4. Computes privacy metrics.  
 5. Returns a new DataFrame with metrics attached.
 
-### Example
+#### Example
 
 ```python
 from pynonym.tables import anonymize_dataframe, TableAnonymizationConfig
@@ -2901,7 +2885,7 @@ cfg = TableAnonymizationConfig(
 df_anon = anonymize_dataframe(df, cfg)
 ```
 
-### Configuration Options (Deep Explanation)
+#### Configuration Options (Deep Explanation)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2915,17 +2899,17 @@ df_anon = anonymize_dataframe(df, cfg)
 
 ---
 
-# 🔐 **Privacy Metrics API**
+### 🔐 **Privacy Metrics API**
 
 Metrics are computed automatically during table anonymization.
 
-### Example
+#### Example
 
 ```python
 df_anon.attrs
 ```
 
-### Output Example
+#### Output Example
 
 ```
 {
@@ -2937,11 +2921,9 @@ df_anon.attrs
 
 These values can be logged, audited, or used to enforce thresholds.
 
----
+### 🧮 **Metric Definitions (Deep Explanation)**
 
-# 🧮 **Metric Definitions (Deep Explanation)**
-
-### **k‑Anonymity**
+#### **k‑Anonymity**
 
 ```
 Each quasi-identifier group must contain at least k rows.
@@ -2949,7 +2931,7 @@ Each quasi-identifier group must contain at least k rows.
 
 Prevents singling out individuals.
 
-### **l‑Diversity**
+#### **l‑Diversity**
 
 ```
 Each group must contain at least l distinct sensitive values.
@@ -2957,7 +2939,7 @@ Each group must contain at least l distinct sensitive values.
 
 Prevents attribute disclosure.
 
-### **t‑Closeness**
+#### **t‑Closeness**
 
 ```
 The distribution of sensitive attributes in each group must not differ
@@ -2966,20 +2948,18 @@ from the global distribution by more than t (Earth-Mover-Distance).
 
 Prevents inference attacks.
 
----
-
-# 🧱 **Deterministic Seed Engine**
+### 🧱 **Deterministic Seed Engine**
 
 Implemented in `utils.py`.
 
-### Responsibilities
+#### Responsibilities
 
 - Generate pseudonyms using Faker.  
 - Maintain the global mapping table.  
 - Ensure deterministic behavior across calls.  
 - Provide helper functions for hashing and normalization.
 
-### Example
+#### Example
 
 ```python
 from pynonym.utils import deterministic_name
@@ -2989,9 +2969,7 @@ deterministic_name("Angela Merkel", seed=42)
 
 ---
 
-# 🧪 **Example Workflows (Deep Explanation)**
-
----
+# 12. 🧪 **Example Workflows (Deep Explanation)**
 
 ## Workflow 1 — Text Anonymization Pipeline
 
@@ -3004,8 +2982,6 @@ This pipeline ensures:
 - accurate entity detection,  
 - realistic pseudonyms,  
 - deterministic replacements.
-
----
 
 ## Workflow 2 — Table Anonymization Pipeline
 
@@ -3020,8 +2996,6 @@ This pipeline ensures:
 - measurable privacy guarantees,  
 - auditability.
 
----
-
 ## Workflow 3 — Offline Linux Deployment
 
 ```
@@ -3034,9 +3008,7 @@ This workflow ensures:
 - reproducible environments,  
 - validated functionality.
 
----
-
-# 🧩 **Module Interaction Diagram (Mermaid)**
+# 13. 🧩 **Module Interaction Diagram (Mermaid)**
 
 ```mermaid
 flowchart TB
@@ -3118,13 +3090,11 @@ flowchart TB
 
 ---
 
-# 🧠 **Deep Explanation of Module Interactions**
+# 14. 🧠 **Deep Explanation of Module Interactions**
 
 This section explains **how the modules actually talk to each other**, what data flows between them, and why the architecture is structured this way.
 
----
-
-# 1. **User Code → Config System (`config.py`)**
+## 1. **User Code → Config System (`config.py`)**
 
 ````python
 # src/pynonym/config.py
@@ -3230,7 +3200,7 @@ The config system ensures that all anonymization behavior is **explicit, reprodu
 
 ---
 
-# 2. **User Code → Text Engine (`text.py`)**
+## 2. **User Code → Text Engine (`text.py`)**
 
 ````python
 # src/pynonym/text.py
@@ -3333,9 +3303,7 @@ For each entity:
 **Why this matters:**  
 Text anonymization is **accurate**, **realistic**, and **deterministic**.
 
----
-
-# 3. **User Code → Table Engine (`tables.py`)**
+## 3. **User Code → Table Engine (`tables.py`)**
 
 ````python
 # src/pynonym/tables.py
@@ -3520,9 +3488,7 @@ This ensures **cross‑modal consistency**:
 - Extracts distributions of sensitive values (e.g., diagnoses).
 - Passes them to the privacy engine.
 
----
-
-# 4. **Deterministic Core (`utils.py`)**
+## 4. **Deterministic Core (`utils.py`)**
 
 ````python
 # src/pynonym/utils.py
@@ -3664,9 +3630,7 @@ It contains:
 **Why this matters:**  
 This module guarantees **determinism**, **consistency**, and **auditability**.
 
----
-
-# 5. **Privacy Metrics Engine (`privacy.py`)**
+## 5. **Privacy Metrics Engine (`privacy.py`)**
 
 ```python
 """
@@ -3866,9 +3830,7 @@ df_anon.attrs
 **Why this matters:**  
 This provides **quantitative privacy guarantees**, not just pseudonymization.
 
----
-
-# 6. **Version Metadata (📄 `version.py`)**
+## 6. **Version Metadata (📄 `version.py`)**
 
 ```python
 """
@@ -3903,7 +3865,7 @@ def get_version() -> str:
     return __version__
 ```
 
-# 🧠 **Why this implementation is ideal**
+## 🧠 **Why this implementation is ideal**
 
 ### ✔ Lightweight  
 `version.py` must be importable **without** loading spaCy, pandas, or any heavy dependencies.  
@@ -3935,9 +3897,7 @@ This module:
 - is included in offline bundles,  
 - ensures reproducibility across environments.
 
----
-
-# 🧩 **Why This Architecture Works**
+## 🧩 **Why This Architecture Works**
 
 This modular design provides:
 
@@ -3963,7 +3923,7 @@ Every transformation is reproducible and explainable.
 
 ---
 
-# 🧾 **Conclusion**
+# 15. 🧾 **Conclusion**
 
 The development of `pynonym` began with a simple but important observation: modern data workflows require **high‑quality anonymization**, 
 yet the tools available to practitioners are often fragmented, outdated, or unsuitable for real‑world environments. Many organizations operate in 
@@ -4043,7 +4003,7 @@ Whether you are anonymizing clinical notes, customer records, financial transact
 
 ---
 
-# 🔮 **Future Extensions**
+# 16. 🔮 **Future Extensions**
 
 Planned enhancements:
 
@@ -4055,15 +4015,13 @@ Planned enhancements:
 - 🧪 Synthetic data generation module  
 - 📦 Docker‑based offline installer  
 
----
-
-# 📜 **License**
+📜 **License**
 
 `pynonym` is released under the **MIT License**.
 
 ---
 
-# 📘 **pynonym – Installation on Windows (Jupyter + Conda + spaCy 3.8)**
+# 17. 📘 **pynonym – Installation on Windows (Jupyter + Conda + spaCy 3.8)**
 
 This document describes the **complete, tested, and stable installation** of `pynonym` in a **Windows‑based Jupyter environment**.  
 It covers all common issues:
@@ -4074,9 +4032,7 @@ It covers all common issues:
 - offline model installation (wheel files)  
 - smoke test for verification  
 
----
-
-# 🚀 **1. Requirements**
+## 🚀 **1. Requirements**
 
 - Windows 10/11  
 - Conda / Miniconda / Anaconda  
@@ -4086,20 +4042,16 @@ It covers all common issues:
 - pynonym wheel (e.g., `pynonym‑0.1.0‑py3‑none‑any.whl`)  
 - spaCy model wheels (e.g., `de_core_news_md‑3.8.0‑py3‑none‑any.whl`)  
 
----
-
-# 🧱 **2. Create Conda environment**
+## 🧱 **2. Create Conda environment**
 
 ```powershell
 conda create -n py312 python=3.12 -y
 conda activate py312
 ```
 
----
+## 📦 **3. Install pynonym**
 
-# 📦 **3. Install pynonym**
-
-## 📦 **How to build `pynonym‑0.1.0‑py3‑none‑any.whl`**
+### 📦 **How to build `pynonym‑0.1.0‑py3‑none‑any.whl`**
 
 To build the wheel package for *pynonym*, you need:
 
@@ -4196,9 +4148,7 @@ python -m pip install build
 python -m build --wheel --sdist
 ```
 
----
-
-# 🧠 **4. Register the Jupyter kernel for the environment**
+## 🧠 **4. Register the Jupyter kernel for the environment**
 
 To ensure Jupyter actually uses the `py312` environment:
 
@@ -4210,17 +4160,13 @@ In Jupyter:
 
 **Kernel → Change Kernel → Python 3.12 (py312)**
 
----
-
-# 🧩 **5. Install spaCy**
+## 🧩 **5. Install spaCy**
 
 ```powershell
 pip install spacy==3.8.14
 ```
 
----
-
-# 🗂️ **6. Install spaCy models (wheels, offline)**
+## 🗂️ **6. Install spaCy models (wheels, offline)**
 
 ⚠️ **Important:**  
 On Windows, `!pip` often installs into the wrong environment.  
@@ -4240,9 +4186,7 @@ This guarantees:
 - no user site‑packages  
 - spaCy can load the models  
 
----
-
-# 🔍 **7. Verify installation**
+## 🔍 **7. Verify installation**
 
 ```python
 import sys, spacy
@@ -4261,9 +4205,7 @@ spaCy: 3.8.14
 Model loaded: de_core_news_md
 ```
 
----
-
-# 🧪 **8. Full smoke test**
+## 🧪 **8. Full smoke test**
 
 *(I keep the code exactly as in your document — only translated headings and comments.)*
 
@@ -4368,9 +4310,7 @@ print("Appears in text:", fake_name in text_res)
 print("\n=== Smoke Test complete ===")
 ```
 
----
-
-# 🟢 **9. Common errors & solutions**
+## 🟢 **9. Common errors & solutions**
 
 ### ❌ *spaCy model not found*  
 ```
@@ -4407,9 +4347,7 @@ Defaulting to user installation because normal site-packages is not writeable
 !"{sys.executable}" -m pip install --force-reinstall ...
 ```
 
----
-
-# 📁 **10. Source folder structure (development)**
+## 📁 **10. Source folder structure (development)**
 
 *(Structure unchanged — only translated explanation.)*
 
@@ -4445,9 +4383,7 @@ pynonym-0.1.0/
 `src/pynonym/` is the only place where code lives.  
 `dist/` is generated automatically.
 
----
-
-# 📦 **11. Release folder structure (Windows distribution)**
+## 📦 **11. Release folder structure (Windows distribution)**
 
 ```
 pynonym-release-windows-0.1.0/
@@ -4490,9 +4426,7 @@ pynonym-release-windows-0.1.0/
 - `smoke_test/` → notebook + Python smoke test  
 - `README_INSTALL_WINDOWS.md` → installation guide  
 
----
-
-# 🧠 **12. spaCy models (offline folder structure)**
+## 🧠 **12. spaCy models (offline folder structure)**
 
 ```
 models/
@@ -4513,9 +4447,7 @@ models/
 !"{sys.executable}" -m pip install models/de_core_news_md-3.8.0-py3-none-any.whl
 ```
 
----
-
-# 📓 **13. Jupyter notebook folder structure**
+## 📓 **13. Jupyter notebook folder structure**
 
 ```
 notebooks/
@@ -4531,9 +4463,7 @@ notebooks/
 - Notebook 01 contains the smoke test  
 - Notebooks 02/03/04 are user examples  
 
----
-
-# 🧱 **14. Recommended overall structure for your Windows project**
+## 🧱 **14. Recommended overall structure for your Windows project**
 
 ```
 D:\Pynonym_Package\
@@ -4549,9 +4479,7 @@ D:\Pynonym_Package\
 └── notebooks\                     ← Examples & tests
 ```
 
----
-
-# 🎯 **16. Why this structure is optimal**
+## 🎯 **16. Why this structure is optimal**
 
 - **Clean separation of source and release**  
 - **Models available offline**  
@@ -4563,7 +4491,7 @@ D:\Pynonym_Package\
 
 ---
 
-# 15. 📚 References
+# 18. 📚 References
 1. Navoda Senavirathne / Vicenç Torra: "On the Role of Data Anonymization in Machine Learning Privacy", 2020 IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications (2020);
 DOI: 10.1109/TrustCom50675.2020.00093, https://ieeexplore.ieee.org/document/9343198/authors#authors; 
 https://www.datacamp.com/blog/what-is-data-anonymization; 
