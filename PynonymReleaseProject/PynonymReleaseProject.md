@@ -2266,11 +2266,9 @@ This ensures that:
 - metrics are available for auditing  
 - table anonymization is not just pseudonymization, but **privacy‑aware**  
 
-# 🧱 **6. Edge Cases**
+##### 🧱 **6. Edge Cases**
 
----
-
-## 🟦 **Empty DataFrame**
+###### 🟦 **Empty DataFrame**
 
 ```python
 def test_empty_dataframe():
@@ -2280,7 +2278,7 @@ def test_empty_dataframe():
     assert result.empty
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 - empty input should return empty output  
 - no exceptions should be raised  
@@ -2291,9 +2289,7 @@ This protects against:
 - empty SQL query results  
 - empty slices in ETL pipelines  
 
----
-
-## 🟦 **Missing columns**
+###### 🟦 **Missing columns**
 
 ```python
 def test_missing_columns():
@@ -2310,13 +2306,13 @@ def test_missing_columns():
     assert "B" in result.columns
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - missing pseudonymization columns do **not** cause errors  
 - DataFrame structure is preserved  
 - the function degrades gracefully  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 Real‑world data is messy:
 
@@ -2326,34 +2322,30 @@ Real‑world data is messy:
 
 This test ensures robustness.
 
----
-
-# 🧩 **Why This Test Suite Matters**
+##### 🧩 **Why This Test Suite Matters**
 
 This suite validates:
 
-### ✔ Core functionality  
+###### ✔ Core functionality  
 Table anonymization works in both languages.
 
-### ✔ Determinism  
+###### ✔ Determinism  
 Same seed → same DataFrame.
 
-### ✔ Cross‑modal consistency  
+###### ✔ Cross‑modal consistency  
 Text and tables share the same pseudonyms.
 
-### ✔ Privacy metrics  
+###### ✔ Privacy metrics  
 k, l, t are computed and attached.
 
-### ✔ Robustness  
+###### ✔ Robustness  
 Handles empty DataFrames and missing columns.
 
-### ✔ Isolation  
+###### ✔ Isolation  
 Global state is reset between tests.
 
-### ✔ Regression protection  
+###### ✔ Regression protection  
 If any refactor breaks determinism or mapping behavior, these tests catch it.
-
----
 
 #### 5. Privacy metrics
 
@@ -2377,8 +2369,6 @@ This confirms that:
 
 If this step fails, it usually indicates an issue in the metrics layer or in how the config was interpreted.
 
----
-
 #### 6. Determinism check
 
 ```python
@@ -2401,8 +2391,6 @@ If `Deterministic: True` is printed, you have strong evidence that:
 - the environment is suitable for reproducible pipelines.
 
 If this ever prints `False`, something is wrong with the mapping, seeding, or environment isolation.
-
----
 
 #### 7. Completion
 
@@ -2437,9 +2425,7 @@ The notebook is intentionally small, but it exercises the **entire stack**:
 - privacy metrics,  
 - determinism.
 
----
-
-### 🧩 Cell 1 — Imports
+#### 🧩 Cell 1 — Imports
 
 ```python
 import pandas as pd
@@ -2463,9 +2449,7 @@ print("Imports successful.")
 
 If this cell runs without errors and prints `Imports successful.`, your **Python environment is structurally sound** for `pynonym`.
 
----
-
-### 🧠 Cell 2 — spaCy model
+#### 🧠 Cell 2 — spaCy model
 
 ```python
 nlp = spacy.load("de_core_news_md")
@@ -2488,9 +2472,7 @@ spaCy model loaded: de_core_news_md
 
 This is a **hard requirement** for German text anonymization.
 
----
-
-### 📝 Cell 3 — Text anonymization
+#### 📝 Cell 3 — Text anonymization
 
 ```python
 cfg = TextAnonymizerConfig(language="de", seed=42)
@@ -2526,9 +2508,7 @@ This gives you an immediate, visual confirmation that:
 
 In a notebook, you can also experiment by changing the seed, language, or text and re‑running the cell.
 
----
-
-### 📊 Cell 4 — Table anonymization
+#### 📊 Cell 4 — Table anonymization
 
 ```python
 df = pd.DataFrame({
@@ -2579,9 +2559,7 @@ Because this is a notebook, `df_anon` is rendered as a **rich table**, making it
 
 This is exactly how a data scientist would validate anonymization behavior.
 
----
-
-### 📏 Cell 5 — Privacy metrics
+#### 📏 Cell 5 — Privacy metrics
 
 ```python
 df_anon.attrs
@@ -2613,9 +2591,7 @@ You can also explore these values interactively, e.g.:
 df_anon.attrs["k_anonymity"]
 ```
 
----
-
-### ♻️ Cell 6 — Determinism
+#### ♻️ Cell 6 — Determinism
 
 ```python
 cfg2 = TextAnonymizerConfig(language="de", seed=42)
@@ -2648,9 +2624,7 @@ If this ever evaluates to `False`, something is wrong with:
 - the global mapping,  
 - or the environment isolation.
 
----
-
-### 🔁 Determinism & consistency
+#### 🔁 Determinism & consistency
 
 `pynonym` guarantees:
 
