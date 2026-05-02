@@ -1111,7 +1111,7 @@ The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analyt
 ---
 
 #### **Abstract**  
-Pynonym is a deterministic, offline‑capable anonymization framework for **text** and **structured data**, designed for enterprise environments with strict compliance requirements. It unifies spaCy NER, seeded pseudonym generation, table anonymization, and privacy metrics into a transparent, reproducible workflow. The system emphasizes governance through deterministic behavior, version metadata, and offline installation bundles (see also the [Pynonym Release Project md](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md)). CLI and notebook smoke tests validate the entire environment — imports, models, anonymization, metrics, and determinism — ensuring reliability across secure deployments (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md#18--references) 1 - 3 below).
+Pynonym is a deterministic, offline‑capable anonymization framework for **text** and **structured data**, designed for enterprise environments with strict compliance requirements. It unifies spaCy NER, seeded pseudonym generation, table anonymization, and privacy metrics into a transparent, reproducible workflow. The system emphasizes governance through deterministic behavior, version metadata, and offline installation bundles (see also the [Pynonym Release Project md](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)). CLI and notebook smoke tests validate the entire environment — imports, models, anonymization, metrics, and determinism — ensuring reliability across secure deployments (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md#18--references) 1 - 3 below).
 
 - **Core goals:** Provide deterministic, compliant anonymization for text and tables, with built‑in privacy metrics and offline installation.  
 - **Audience:** Data engineers, privacy engineers, ML practitioners, consultants, and compliance teams requiring reproducible, auditable anonymization.  
@@ -1119,7 +1119,7 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 - **Governance and reproducibility:** Deterministic pseudonyms, global mapping table, version metadata, and smoke tests ensure traceability and auditability.  
 - **Offline readiness:** All wheels and models are bundled for air‑gapped environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
-[![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md)
+[![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
 
 
 
