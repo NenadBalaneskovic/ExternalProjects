@@ -1229,7 +1229,7 @@ If you see this sequence, you can be confident that:
 - spaCy models are functional,  
 - and `pynonym` behaves as intended in your air‑gapped Linux environment.
 
-### 🧪 10.2.4. CLI smoke test
+### 🧪 10.2.4. CLI smoke tests
 
 The CLI smoke test is our **one‑shot health check** for a `pynonym` installation—especially valuable on air‑gapped 
 Linux servers or freshly set‑up Windows environments.  
@@ -1308,7 +1308,7 @@ print("Deterministic:", anon == anon2)
 print("\n=== Smoke test complete ===")
 ```
 
-#### 1. Import check
+#### 10.2.4.1. Import check
 
 ```python
 import pandas as pd
@@ -1330,7 +1330,7 @@ This first block verifies that:
 If any of these imports fail, your installation is incomplete or broken.  
 Seeing `=== 1. Imports successful ===` means the Python layer is intact.
 
-#### 2. spaCy model test
+#### 10.2.4.2. spaCy model test
 
 ```python
 import spacy
@@ -1353,7 +1353,7 @@ spaCy model loaded: de_core_news_md
 
 This is crucial because text anonymization depends on spaCy’s NER.
 
-#### 3. Text anonymization
+#### 10.2.4.3. Text anonymization
 
 ```python
 cfg = TextAnonymizerConfig(language="de", seed=42)
@@ -1766,7 +1766,7 @@ The global reset fixture ensures tests do not influence each other.
 ###### ✔ Regression protection  
 If any internal refactoring breaks determinism or mapping behavior, these tests will catch it immediately.
 
-#### 6. Table anonymization
+#### 10.2.4.4. Table anonymization
 
 ```python
 df = pd.DataFrame({
@@ -2347,7 +2347,7 @@ Global state is reset between tests.
 ###### ✔ Regression protection  
 If any refactor breaks determinism or mapping behavior, these tests catch it.
 
-#### 5. Privacy metrics
+#### 10.2.4.5. Privacy metrics
 
 ```python
 print("\n=== 4. Privacy Metrics ===")
@@ -2369,7 +2369,7 @@ This confirms that:
 
 If this step fails, it usually indicates an issue in the metrics layer or in how the config was interpreted.
 
-#### 6. Determinism check
+#### 10.2.4.6. Determinism check
 
 ```python
 cfg2 = TextAnonymizerConfig(language="de", seed=42)
@@ -2392,7 +2392,7 @@ If `Deterministic: True` is printed, you have strong evidence that:
 
 If this ever prints `False`, something is wrong with the mapping, seeding, or environment isolation.
 
-#### 7. Completion
+#### 10.2.4.7. Completion
 
 ```python
 print("\n=== Smoke test complete ===")
@@ -2411,7 +2411,7 @@ In other words: the **entire `pynonym` stack is operational** in this environmen
 
 We can now confidently use `pynonym` in notebooks, scripts, or production pipelines on this machine.
 
-### 📓 Notebook smoke test (`smoke_test.ipynb`)
+### 10.3.📓 Notebook smoke test (`smoke_test.ipynb`)
 
 The notebook smoke test mirrors the CLI version, but is tailored for **interactive environments** like JupyterLab, JupyterHub, or VS Code notebooks.  
 It lets you **see** the anonymized outputs, inspect DataFrames, and explore privacy metrics inline—exactly how most data scientists actually work.
