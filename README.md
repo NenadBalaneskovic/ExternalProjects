@@ -1032,10 +1032,96 @@ The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analyt
 - **Audience:** Data scientists, reliability engineers, ML practitioners, consultants, and onboarding teams requiring transparent, repeatable analytics.  
 - **Why modular analytics:** Different sensors and behaviors require different analytical lenses; modularity ensures adaptability and extensibility.  
 - **Interpretation fidelity:** Analytics modules reveal trends, clusters, anomalies, and feature attributions, enabling a holistic understanding of machine behavior.  
-- **Governance and reproducibility:** Structured logs, deterministic modules, and config‑aware initialization ensure traceability and auditability across sessions. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
+- **Governance and reproducibility:** Structured logs, deterministic modules, and config‑aware initialization ensure traceability and auditability across sessions [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
 [![DigitalTwinTelemetryAnalyzer GUI](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/60bce5d2251cd20cadd6d757da24781b4c59c226/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md)
 
+### 23. **Customized Data Anonymization Release – Pynonym – Mar 2026**
+
+> ## Executive Summary: Customized Data Anonymization Release — Pynonym
+>
+> ### **Business Problem**  
+> Modern organizations across healthcare, finance, insurance, public sector, and industrial analytics increasingly rely on **sensitive personal data** to build dashboards, train ML models, and run analytical workflows.  
+> Yet they face a persistent challenge: **how to anonymize data in a deterministic, compliant, and reproducible way** — especially in environments where:
+>
+> - GDPR and regulatory constraints are strict  
+> - anonymization tools are fragmented or inconsistent  
+> - pseudonyms differ across datasets and sessions  
+> - internet access is restricted or fully blocked  
+> - auditability and reproducibility are mandatory  
+>
+> Traditional anonymization libraries often produce **non‑deterministic outputs**, break cross‑dataset consistency, or require online model downloads — all of which undermine compliance, reproducibility, and operational trust.
+>
+> ### **Anonymization Solution**  
+> The **Pynonym Release Project** delivers a **fully deterministic, offline‑capable, governance‑ready anonymization framework** designed for enterprise and regulated environments.
+>
+> The system integrates:
+>
+> - spaCy‑based text anonymization (German + English)  
+> - deterministic pseudonym generation (seeded Faker + global mapping)  
+> - table anonymization with column‑level control  
+> - privacy metrics (k‑anonymity, l‑diversity, t‑closeness)  
+> - offline installation bundle (wheels + spaCy models + installer)  
+> - CLI and notebook smoke tests for environment validation  
+>
+> Every transformation is deterministic: **the same input always produces the same pseudonym**, across:
+>
+> - rows  
+> - columns  
+> - DataFrames  
+> - sessions  
+> - machines  
+>
+> This makes Pynonym ideal for ML pipelines, compliance workflows, and secure enterprise deployments.
+>
+> ### **Business Impact**  
+> Pynonym enables organizations to:
+>
+> - anonymize sensitive data **without losing analytical value**  
+> - ensure **GDPR‑compliant pseudonymization**  
+> - maintain **cross‑dataset consistency** for ML training  
+> - operate in **air‑gapped or restricted environments**  
+> - provide **auditable, deterministic transformations**  
+> - reduce operational risk in data‑handling workflows  
+>
+> Its deterministic architecture strengthens governance, accelerates analytics delivery, and reduces dependency on external anonymization vendors.
+>
+> ### **Consulting Relevance**  
+> This project demonstrates how **deterministic anonymization, reproducible pipelines, and governance‑ready reporting** can be operationalized into client‑facing solutions. Consultants can:
+>
+> - prepare compliant datasets for ML prototyping  
+> - demonstrate anonymization workflows during workshops  
+> - support audits with reproducible evidence  
+> - deliver secure offline deployments for regulated industries  
+>
+> The architecture is modular, extensible, and suitable for diverse industries (healthcare, finance, insurance, public sector, manufacturing).
+>
+> ### **Compliance / ESG / Risk Management**  
+> Pynonym supports governance through:
+>
+> - deterministic pseudonymization  
+> - transparent mapping logic  
+> - built‑in privacy metrics  
+> - offline installation bundles  
+> - smoke tests for environment validation  
+> - version‑aware processing  
+>
+> This ensures anonymization pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting and reducing compliance risk.
+
+---
+
+#### **Abstract**  
+Pynonym is a deterministic, offline‑capable anonymization framework for **text** and **structured data**, designed for enterprise environments with strict compliance requirements. It unifies spaCy NER, seeded pseudonym generation, table anonymization, and privacy metrics into a transparent, reproducible workflow.  
+The system emphasizes governance through deterministic behavior, version metadata, and offline installation bundles (see also the [Pynonym Release Project md](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md)).  
+CLI and notebook smoke tests validate the entire environment — imports, models, anonymization, metrics, and determinism — ensuring reliability across secure deployments (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md#15--references) 1 - 3 below).
+
+- **Core goals:** Provide deterministic, compliant anonymization for text and tables, with built‑in privacy metrics and offline installation.  
+- **Audience:** Data engineers, privacy engineers, ML practitioners, consultants, and compliance teams requiring reproducible, auditable anonymization.  
+- **Why determinism matters:** Cross‑dataset consistency is essential for ML pipelines, audits, and reproducibility.  
+- **Governance and reproducibility:** Deterministic pseudonyms, global mapping table, version metadata, and smoke tests ensure traceability and auditability.  
+- **Offline readiness:** All wheels and models are bundled for air‑gapped environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
+
+[![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md)
 
 
 
