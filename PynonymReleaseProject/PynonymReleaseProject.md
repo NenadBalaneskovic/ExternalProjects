@@ -3,7 +3,7 @@
 
 ---
 
-# 📘 **Overview**
+# 1. 📘 **Overview**
 
 Modern data projects operate under a constant and growing tension. On one hand, organizations need **realistic, high‑quality data** to build analytics pipelines, 
 train machine‑learning models, validate hypotheses, and support operational decision‑making. On the other hand, they must **protect personal information** to comply with GDPR, 
@@ -32,9 +32,7 @@ Unlike many anonymization tools that focus on a single modality or rely on propr
 structured tabular data. It is built entirely in Python, with no native dependencies, making it portable across platforms and easy to maintain (see [References]
 (https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md#15--references) 1 - 3 below).
 
----
-
-## 🔍 **Motivation: Why `pynonym` Exists**
+## 1.1. 🔍 **Motivation: Why `pynonym` Exists**
 
 A key motivation behind `pynonym` is to **go beyond** the capabilities of the existing PyPI package `anonym`. The original `anonym` package provides only a minimal text anonymization function and includes 
 documentation for APIs that do not exist in the published version. This mismatch between documentation and implementation makes it unsuitable for production use, especially in regulated 
@@ -57,9 +55,7 @@ Where `anonym` is limited to a single text function and an outdated, non‑worki
 
 This makes `pynonym` not just a replacement for `anonym`, but a **significant upgrade** — a tool designed for real‑world data engineering and privacy workflows.
 
----
-
-## 🧠 **Methodology: How `pynonym` Approaches Anonymization**
+## 1.2. 🧠 **Methodology: How `pynonym` Approaches Anonymization**
 
 `pynonym` is built on three methodological pillars:
 
@@ -103,9 +99,7 @@ Most modern data teams work across heterogeneous environments:
 
 This ensures that the entire system can be deployed without internet access — a requirement in many enterprise settings.
 
----
-
-## 🧩 **Purpose: What `pynonym` Is Designed to Achieve**
+## 1.3. 🧩 **Purpose: What `pynonym` Is Designed to Achieve**
 
 The purpose of `pynonym` is threefold:
 
@@ -142,9 +136,7 @@ The offline bundle and pure‑Python design make it uniquely suited for these co
 
 It is designed to be extended, maintained, and integrated into larger systems.
 
----
-
-## 🧰 **Usefulness: Why Teams Choose `pynonym`**
+## 1.4. 🧰 **Usefulness: Why Teams Choose `pynonym`**
 
 `pynonym` is useful because it solves real problems that data teams face every day.
 
@@ -213,9 +205,7 @@ The smoke tests validate:
 
 This ensures that deployments are correct and stable.
 
----
-
-## 🧭 **Designed For Real Teams**
+## 1.6. 🧭 **Designed For Real Teams**
 
 `pynonym` is designed for:
 
@@ -229,7 +219,7 @@ In short: `pynonym` is a **transparent, deterministic, cross‑platform anonymiz
 
 ---
 
-# ⭐ **Key Features**
+# 2. ⭐ **Key Features**
 
 ### 🔐 **1. Deterministic Text Anonymization**
 
@@ -244,8 +234,6 @@ Unlike simplistic redaction tools or non‑deterministic pseudonymizers, `pynony
 
 This makes `pynonym` a **drop‑in upgrade** over the minimal `anonym` text functionality. Where `anonym` offers only a single function with no configuration, `pynonym` provides 
 a configurable, reproducible, and auditable text anonymization engine suitable for real‑world data pipelines.
-
----
 
 ### 📊 **2. Table Anonymization**
 
@@ -275,8 +263,6 @@ This makes `pynonym` suitable for:
 
 Unlike many anonymization libraries, `pynonym` treats table anonymization as a **first‑class citizen**, not an afterthought.
 
----
-
 ### 🧮 **3. Privacy Metrics (Pure Python)**
 
 Privacy metrics are essential for evaluating whether anonymized data meets internal or regulatory thresholds. `pynonym` includes a **pure‑Python privacy metrics engine**, 
@@ -301,8 +287,6 @@ Key advantages:
 
 This makes the privacy engine ideal for **regulated environments**, where reproducibility, transparency, and cross‑platform stability are mandatory.
 
----
-
 ### 🧱 **4. Fully Offline‑Capable**
 
 Many organizations operate in **air‑gapped** or **restricted** environments where internet access is not permitted. Installing spaCy, pandas, and their 
@@ -324,8 +308,6 @@ This enables:
 - identical behavior between online and offline installations  
 
 The offline bundle is not a workaround — it is a **core feature** designed for enterprise deployments.
-
----
 
 ### 🧪 **5. Smoke Tests Included**
 
@@ -355,7 +337,7 @@ They provide confidence that the anonymization pipeline behaves **exactly as int
 
 ---
 
-# 🏗️ **High‑Level Architecture**
+# 3. 🏗️ **High‑Level Architecture**
 
 `pynonym` is intentionally built as a **layered architecture**: each layer has a clear responsibility, minimal dependencies, and a well‑defined interface to 
 the layers above and below it. This makes the system easier to reason about, test, and extend—especially in regulated or long‑lived environments.
@@ -378,8 +360,6 @@ the layers above and below it. This makes the system easier to reason about, tes
 +-----------------------------------------------------------+
 ```
 
----
-
 ### 🔝 Top Layer: Text & Table Anonymization
 
 At the top of the stack is what most users interact with:
@@ -398,8 +378,6 @@ At the top of the stack is what most users interact with:
 
 These two sub‑systems are **peers**: they both rely on the same deterministic core and, in the case of tables, on the privacy metrics engine.
 
----
-
 ### 🧮 Middle Layer: Privacy Metrics Engine
 
 Beneath the anonymization layer sits the **Privacy Metrics Engine**, implemented in pure Python. Its responsibilities are:
@@ -417,8 +395,6 @@ and sensitive attributes. That separation makes it easier to:
 - reuse them in other contexts if needed.
 
 Because it is pure Python, it works identically on Windows and Linux, online and offline.
-
----
 
 ### 🎯 Core Layer: Deterministic Engine
 
@@ -442,8 +418,6 @@ Both the text and table anonymization layers call into this core whenever they n
 
 This is the layer that turns `pynonym` from “just another anonymizer” into a **deterministic, auditable system**.
 
----
-
 ### 📦 Bottom Layer: Offline Installation & Deployment
 
 The lowest layer is not about anonymization logic at all—it’s about **how the system gets onto the machine**:
@@ -462,8 +436,6 @@ This layer ensures that the **entire stack above it** can run:
 In other words, the offline installation layer is what makes the architecture **deployable in the real world**—not just on a developer laptop with full 
 internet access, but also in tightly controlled production environments.
 
----
-
 Taken together, these layers form a coherent system:
 
 - the **offline layer** guarantees you can install it anywhere,  
@@ -473,7 +445,7 @@ Taken together, these layers form a coherent system:
 
 ---
 
-# 🧩 **Component Overview**
+# 4. 🧩 **Component Overview**
 
 | Component | Description |
 |----------|-------------|
@@ -487,7 +459,7 @@ Taken together, these layers form a coherent system:
 
 ---
 
-# 🌍 **Supported Platforms**
+# 5. 🌍 **Supported Platforms**
 
 | Platform | Supported | Notes |
 |----------|-----------|-------|
@@ -498,7 +470,7 @@ Taken together, these layers form a coherent system:
 
 ---
 
-# 🧭 **Use Cases**
+# 6. 🧭 **Use Cases**
 
 ### 🏥 Healthcare  
 - Patient data anonymization  
@@ -523,13 +495,11 @@ Taken together, these layers form a coherent system:
 
 ---
 
-### ⚡ **Quickstart Summary**
+# 7. ⚡ **Quickstart Summary**
 
 The following two snippets show the **essence of `pynonym`** in practice:  
 one for **text anonymization**, one for **table anonymization**.  
 They are intentionally minimal, but already fully deterministic and production‑grade.
-
----
 
 ### 📝 Text anonymization in one call
 
@@ -557,8 +527,6 @@ print(anon)
 
 Result: you get a **natural‑looking, anonymized sentence** that preserves structure and meaning, but no longer contains real identities—perfect for demos, 
 notebooks, and ML experiments.
-
----
 
 ### 📊 Table anonymization with privacy context
 
@@ -596,8 +564,6 @@ df_anon
 Result: you get a **pseudonymized DataFrame** that is safe to use for analytics, plus **quantitative privacy indicators** (k‑anonymity, l‑diversity, t‑closeness) 
 that tell you how strong the anonymization is.
 
----
-
 In practice, these two snippets are enough to:
 
 - anonymize free‑text fields,
@@ -607,7 +573,9 @@ In practice, these two snippets are enough to:
 
 ---
 
-# 🖼️ **1. Architecture Diagram**  
+# 8. **Mermaid diagrams**
+
+## 🖼️ **1. Architecture Diagram**  
 ```mermaid
 flowchart TB
     subgraph P[pynonym]
@@ -656,9 +624,7 @@ flowchart TB
     OFF --> P
 ```
 
----
-
-# 🖼️ **2. Text Anonymization Flow**  
+## 🖼️ **2. Text Anonymization Flow**  
 ```mermaid
 flowchart LR
     A[Input Text] --> B[spaCy NER<br/>Entity Detection]
@@ -668,9 +634,7 @@ flowchart LR
     E --> F[Anonymized Text Output]
 ```
 
----
-
-# 🖼️ **3. Table Anonymization Flow**  
+## 🖼️ **3. Table Anonymization Flow**  
 ```mermaid
 flowchart LR
     A[Input DataFrame] --> B[Pseudonymize Columns]
@@ -681,9 +645,7 @@ flowchart LR
     F --> G[Anonymized DataFrame Output]
 ```
 
----
-
-# 🖼️ **4. Offline Bundle Structure**  
+## 🖼️ **4. Offline Bundle Structure**  
 ```mermaid
 flowchart TB
     A[pynonym-offline-0.1.0.tar.gz] --> B[Extract Bundle]
@@ -704,9 +666,7 @@ flowchart TB
     F --> F2[smoke_test.ipynb]
 ```
 
----
-
-# 🧬 **1. Deterministic Engine — Sequence Diagram (Text Anonymization)**
+## 🧬 **5. Deterministic Engine — Sequence Diagram (Text Anonymization)**
 
 This diagram shows how text anonymization interacts with the deterministic core.
 
@@ -740,9 +700,7 @@ sequenceDiagram
     TA-->>U: anonymized_text
 ```
 
----
-
-# 🧬 **2. Deterministic Engine — Sequence Diagram (Table Anonymization)**
+## 🧬 **6. Deterministic Engine — Sequence Diagram (Table Anonymization)**
 
 This diagram shows how table anonymization uses the deterministic core for pseudonymization and then computes privacy metrics.
 
@@ -775,9 +733,7 @@ sequenceDiagram
     TB-->>U: anonymized_df + metrics
 ```
 
----
-
-# 🌐 **3. Combined System Overview Diagram**
+## 🌐 **7. Combined System Overview Diagram**
 
 This diagram shows the entire system — text engine, table engine, deterministic core, privacy metrics, and offline installation — in one integrated view.
 
@@ -845,7 +801,7 @@ flowchart TB
 
 ---
 
-### 🧱 System architecture diagram (ASCII)
+# 9. 🧱 System architecture diagram (ASCII)
 
 ```text
                          +-----------------------+
@@ -918,7 +874,7 @@ In short, our **User Code** talks to the **Engines**, which rely on the **Core s
 
 ---
 
-# 🛠️ **Installation & Setup**
+# 10. 🛠️ **Installation & Setup**
 
 This section describes how to install `pynonym` on:
 
@@ -934,9 +890,7 @@ It also includes:
 - the **smoke tests** (CLI + Notebook)
 - determinism & consistency guarantees
 
----
-
-### 🪟 **1. Windows installation (online)**
+## 🪟 **10.1. Windows installation (online)**
 
 Windows supports a **straightforward, fully online installation** of `pynonym` via PyPI.  
 This path is ideal for local development, prototyping, and Jupyter‑based workflows where internet access is available.
@@ -947,9 +901,7 @@ The goal of this section is to get you to a state where:
 - **spaCy** and its **German/English models** are available,  
 - and you have **verified** that the models load correctly.
 
----
-
-### **1. Create a virtual environment**
+### ** 1. Create a virtual environment**
 
 Creating a virtual environment keeps `pynonym` and its dependencies **isolated** from your system Python and from other projects. 
 This avoids version conflicts (e.g. different pandas or spaCy versions) and makes your setup reproducible.
@@ -969,9 +921,7 @@ venv\Scripts\activate
 
 You should see a prefix like `(venv)` in your terminal prompt, indicating that the environment is active.
 
----
-
-### **2. Install pynonym, spaCy, pandas, Faker, and language models**
+### ** 2. Install pynonym, spaCy, pandas, Faker, and language models**
 
 Next, install `pynonym` and its core dependencies from PyPI, plus the spaCy language models used for text anonymization.
 
@@ -1002,8 +952,6 @@ After these commands, your environment has everything needed for:
 - German and English text anonymization,  
 - table anonymization with pandas,  
 - deterministic pseudonymization with Faker.
-
----
 
 ### **3. Test installation**
 
@@ -1042,9 +990,7 @@ At this point:
 - German and English models are available,  
 - and you can immediately run the **Quickstart** examples for text and table anonymization inside this virtual environment.
 
----
-
-### 🐧 **2. Linux installation (offline, air‑gapped)**
+## 🐧 **10.2. Linux installation (offline, air‑gapped)**
 
 Many Linux servers—especially in regulated environments (healthcare, finance, government, internal research clusters)—are **air‑gapped** or heavily restricted:
 
@@ -1064,9 +1010,7 @@ To make `pynonym` usable there, the project provides a **complete offline instal
 The idea is: you **prepare the bundle once** in a connected environment, then **transfer it as a single tar.gz** to the air‑gapped server 
 (via USB, secure copy, etc.), and install everything locally without any network access.
 
----
-
-### 📦 **Offline bundle structure**
+### 📦 10.2.1. **Offline bundle structure**
 
 ```text
 pynonym-offline-0.1.0/
@@ -1140,9 +1084,7 @@ pynonym-offline-0.1.0/
 
   These validate that the installation is correct and that `pynonym` works end‑to‑end in the offline environment.
 
----
-
-### 🧩 **`install.sh` (complete offline installer)**
+### 🧩 10.2.2. **`install.sh` (complete offline installer)**
 
 ```bash
 #!/bin/bash
@@ -1225,9 +1167,7 @@ echo "==============================================="
 - Final message:  
   Confirms that the offline installation completed successfully.
 
----
-
-### 🚀 **Offline installation workflow (Linux)**
+### 🚀 10.2.3. **Offline installation workflow (Linux)**
 
 Once you have the `pynonym-offline-0.1.0.tar.gz` bundle (prepared in a connected environment), the typical workflow on the air‑gapped Linux server looks like this:
 
@@ -1289,7 +1229,7 @@ If you see this sequence, you can be confident that:
 - spaCy models are functional,  
 - and `pynonym` behaves as intended in your air‑gapped Linux environment.
 
-### 🧪 CLI smoke test
+### 🧪 10.2.4. CLI smoke test
 
 The CLI smoke test is our **one‑shot health check** for a `pynonym` installation—especially valuable on air‑gapped 
 Linux servers or freshly set‑up Windows environments.  
@@ -1368,8 +1308,6 @@ print("Deterministic:", anon == anon2)
 print("\n=== Smoke test complete ===")
 ```
 
----
-
 #### 1. Import check
 
 ```python
@@ -1391,8 +1329,6 @@ This first block verifies that:
 
 If any of these imports fail, your installation is incomplete or broken.  
 Seeing `=== 1. Imports successful ===` means the Python layer is intact.
-
----
 
 #### 2. spaCy model test
 
@@ -1416,8 +1352,6 @@ spaCy model loaded: de_core_news_md
 ```
 
 This is crucial because text anonymization depends on spaCy’s NER.
-
----
 
 #### 3. Text anonymization
 
@@ -1580,7 +1514,7 @@ def test_no_entities():
     assert result == text
 ````
 
-# 🧪 **Deep Explanation of `tests/test_text.py`**
+##### 🧪 **Deep Explanation of `tests/test_text.py`**
 
 This test suite validates the **text anonymization subsystem** of `pynonym`.  
 It ensures that:
@@ -1593,9 +1527,7 @@ It ensures that:
 
 It is intentionally small but **high‑impact**: these tests catch almost every regression that could break text anonymization.
 
----
-
-# 🔄 **Global Reset Fixture**
+###### 🔄 **Global Reset Fixture**
 
 ```python
 @pytest.fixture(autouse=True)
@@ -1608,7 +1540,7 @@ def reset_state():
     reset_global_state()
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 This fixture runs **before and after every test**, automatically.
 
@@ -1624,7 +1556,7 @@ This is essential because:
 - tests must not leak state into each other  
 - otherwise, one test could influence another (e.g., Merkel → Laura Becker)
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 Without this fixture:
 
@@ -1634,9 +1566,7 @@ Without this fixture:
 
 This fixture guarantees **test isolation**, which is critical for deterministic systems.
 
----
-
-# 🇩🇪 **1. Basic German anonymization**
+##### 🇩🇪 **1. Basic German anonymization**
 
 ```python
 def test_anonymize_text_german_basic():
@@ -1653,21 +1583,19 @@ def test_anonymize_text_german_basic():
     assert len(result) > 0
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - spaCy’s **German model** loads correctly  
 - NER correctly identifies PERSON and GPE entities  
 - pseudonymization replaces all detected entities  
 - the output is a non‑empty string  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 This is the **minimum viable functionality** of text anonymization.  
 If this test fails, the entire text anonymization pipeline is broken.
 
----
-
-# 🇬🇧 **2. Basic English anonymization**
+##### 🇬🇧 **2. Basic English anonymization**
 
 ```python
 def test_anonymize_text_english_basic():
@@ -1681,20 +1609,18 @@ def test_anonymize_text_english_basic():
     assert "Washington" not in result
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - English spaCy model loads  
 - English NER works  
 - pseudonymization works for English entities  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 `pynonym` is explicitly bilingual.  
 This test ensures that both languages behave consistently.
 
----
-
-# 🎯 **3. Determinism (Seed)**
+##### 🎯 **3. Determinism (Seed)**
 
 ```python
 def test_anonymize_text_deterministic():
@@ -1709,13 +1635,13 @@ def test_anonymize_text_deterministic():
     assert r1 == r2
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - pseudonymization is **deterministic**  
 - the same seed produces the same pseudonyms  
 - resetting global state does not break determinism  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 Determinism is the **core guarantee** of `pynonym`.  
 If this test fails, the entire library becomes:
@@ -1726,9 +1652,7 @@ If this test fails, the entire library becomes:
 
 This is one of the most important tests in the suite.
 
----
-
-# 🔁 **4. Global Replacement Map Consistency**
+##### 🔁 **4. Global Replacement Map Consistency**
 
 ```python
 def test_global_replacement_consistency():
@@ -1750,13 +1674,13 @@ def test_global_replacement_consistency():
     assert fake_name in r2
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - the **same real person** maps to the **same pseudonym** across texts  
 - the global mapping table is working  
 - pseudonyms are consistent across multiple calls  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 This ensures:
 
@@ -1767,15 +1691,11 @@ This ensures:
 
 This test protects the **global mapping table**, one of the most critical components of the deterministic engine.
 
----
-
-# 🧱 **5. Edge Cases**
+##### 🧱 **5. Edge Cases**
 
 These tests ensure robustness.
 
----
-
-## 🟦 **Empty string**
+###### 🟦 **Empty string**
 
 ```python
 def test_empty_string():
@@ -1783,14 +1703,12 @@ def test_empty_string():
     assert anonymize_text("", config=cfg) == ""
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 - empty input should return empty output  
 - no exceptions should be raised  
 
----
-
-## 🟦 **None input**
+##### 🟦 **None input**
 
 ```python
 def test_none_input():
@@ -1799,7 +1717,7 @@ def test_none_input():
     assert result == ""
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 - `None` should not crash  
 - the function should degrade gracefully  
@@ -1810,9 +1728,7 @@ This protects against:
 - nulls in CSV imports  
 - unexpected user input  
 
----
-
-## 🟦 **No entities**
+##### 🟦 **No entities**
 
 ```python
 def test_no_entities():
@@ -1822,39 +1738,35 @@ def test_no_entities():
     assert result == text
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 - if no entities are detected, the text should remain unchanged  
 - ensures no unnecessary modifications  
 - protects against false positives  
 
----
-
-# 🧩 **Why This Test Suite Matters**
+##### 🧩 **Why This Test Suite Matters**
 
 This suite validates:
 
-### ✔ Core functionality  
+###### ✔ Core functionality  
 Text anonymization works in both languages.
 
-### ✔ Determinism  
+###### ✔ Determinism  
 Same seed → same pseudonyms.
 
-### ✔ Global consistency  
+###### ✔ Global consistency  
 Same person → same pseudonym across texts.
 
-### ✔ Robustness  
+###### ✔ Robustness  
 Handles empty strings, None, and no‑entity cases.
 
-### ✔ Isolation  
+###### ✔ Isolation  
 The global reset fixture ensures tests do not influence each other.
 
-### ✔ Regression protection  
+###### ✔ Regression protection  
 If any internal refactoring breaks determinism or mapping behavior, these tests will catch it immediately.
 
----
-
-#### 4. Table anonymization
+#### 6. Table anonymization
 
 ```python
 df = pd.DataFrame({
@@ -2119,7 +2031,7 @@ def test_missing_columns():
     assert "B" in result.columns
 ````
 
-# 🧪 **Deep Explanation of `tests/test_tables.py`**
+##### 🧪 **Deep Explanation of `tests/test_tables.py`**
 
 This test suite validates the **structured‑data anonymization pipeline** of `pynonym`.  
 It ensures that:
@@ -2133,9 +2045,7 @@ It ensures that:
 
 It is the counterpart to `test_text.py`, but for **tabular data**.
 
----
-
-# 🔄 **Global Reset Fixture**
+###### 🔄 **Global Reset Fixture**
 
 ```python
 @pytest.fixture(autouse=True)
@@ -2145,7 +2055,7 @@ def reset_state():
     reset_global_state()
 ```
 
-### ✔ Purpose
+###### ✔ Purpose
 
 This fixture runs **before and after every test**, resetting:
 
@@ -2153,7 +2063,7 @@ This fixture runs **before and after every test**, resetting:
 - the **Faker instance**  
 - any cached deterministic state  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 Table anonymization uses the **same deterministic core** as text anonymization.  
 Without resetting global state:
@@ -2164,9 +2074,7 @@ Without resetting global state:
 
 This fixture guarantees **test isolation**.
 
----
-
-# 🇩🇪 **1. Basic German table anonymization**
+##### 🇩🇪 **1. Basic German table anonymization**
 
 ```python
 def test_anonymize_dataframe_german_basic():
@@ -2193,21 +2101,19 @@ def test_anonymize_dataframe_german_basic():
     assert all(isinstance(x, str) for x in result["Name"])
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - German spaCy model loads  
 - pseudonymization replaces names  
 - output names are strings  
 - DataFrame structure is preserved  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 This is the **minimum functionality** of table anonymization.  
 If this fails, the entire table pipeline is broken.
 
----
-
-# 🇬🇧 **2. Basic English table anonymization**
+##### 🇬🇧 **2. Basic English table anonymization**
 
 ```python
 def test_anonymize_dataframe_english_basic():
@@ -2233,20 +2139,18 @@ def test_anonymize_dataframe_english_basic():
     assert "Joe Biden" not in result["Name"].tolist()
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - English model works  
 - pseudonymization works for English text  
 - table anonymization is language‑agnostic  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 `pynonym` is bilingual.  
 This test ensures both languages behave consistently.
 
----
-
-# 🎯 **3. Determinism (Seed)**
+##### 🎯 **3. Determinism (Seed)**
 
 ```python
 def test_anonymize_dataframe_deterministic():
@@ -2271,13 +2175,13 @@ def test_anonymize_dataframe_deterministic():
     assert r1.equals(r2)
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - pseudonymization is **deterministic**  
 - same seed → same pseudonymized DataFrame  
 - resetting global state does not break determinism  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 Determinism is the **core guarantee** of `pynonym`.  
 This test ensures reproducibility across:
@@ -2287,9 +2191,7 @@ This test ensures reproducibility across:
 - machines  
 - datasets  
 
----
-
-# 🔁 **4. Global Replacement Map Consistency (Text ↔ Table)**
+##### 🔁 **4. Global Replacement Map Consistency (Text ↔ Table)**
 
 ```python
 def test_global_replacement_consistency_with_text():
@@ -2308,7 +2210,7 @@ def test_global_replacement_consistency_with_text():
     assert fake_name_table in text_res
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - **same real person** → **same pseudonym** in:
   - DataFrames  
@@ -2317,7 +2219,7 @@ def test_global_replacement_consistency_with_text():
 - the deterministic core is shared across modules  
 - the global mapping table works across modalities  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 This is one of the **most important tests** in the entire suite.
 
@@ -2330,9 +2232,7 @@ It ensures:
 
 If this test fails, the deterministic engine is broken.
 
----
-
-# 🔐 **5. Privacy Metrics (k, l, t)**
+##### 🔐 **5. Privacy Metrics (k, l, t)**
 
 ```python
 def test_privacy_metrics():
@@ -2352,21 +2252,19 @@ def test_privacy_metrics():
     assert "t_closeness" in result.attrs
 ```
 
-### ✔ What this test validates
+###### ✔ What this test validates
 
 - privacy metrics engine runs  
 - metrics are attached to `df.attrs`  
 - k‑anonymity, l‑diversity, t‑closeness are computed  
 
-### ✔ Why this matters
+###### ✔ Why this matters
 
 This ensures that:
 
 - the privacy engine is integrated  
 - metrics are available for auditing  
 - table anonymization is not just pseudonymization, but **privacy‑aware**  
-
----
 
 # 🧱 **6. Edge Cases**
 
