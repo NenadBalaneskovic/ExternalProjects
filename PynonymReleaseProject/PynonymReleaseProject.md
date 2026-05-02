@@ -577,38 +577,39 @@ In practice, these two snippets are enough to:
 ## 🖼️ **1. Architecture Diagram**  
 ```mermaid
 flowchart TB
-    subgraph P[pynonym]
+
+    subgraph P["pynonym"]
         direction TB
 
-        subgraph TA[Text Anonymization]
-            spa[spaCy NER]
-            fak[Faker Pseudonyms]
-            map1[Deterministic Mapping]
+        subgraph TA["Text Anonymization"]
+            spa["spaCy NER"]
+            fak["Faker Pseudonyms"]
+            map1["Deterministic Mapping"]
         end
 
-        subgraph TBLOCK[Table Anonymization]
-            pd[pandas Engine]
-            qm[Quasi-Identifier Grouping]
-            sa[Sensitive Attribute Handling]
-            map2[Deterministic Mapping]
+        subgraph TBLOCK["Table Anonymization"]
+            pd["pandas Engine"]
+            qm["Quasi-Identifier Grouping"]
+            sa["Sensitive Attribute Handling"]
+            map2["Deterministic Mapping"]
         end
 
-        subgraph PM[Privacy Metrics Engine]
-            k[k-Anonymity]
-            l[l-Diversity]
-            t[t-Closeness (EMD)]
+        subgraph PM["Privacy Metrics Engine"]
+            k["k-Anonymity"]
+            l["l-Diversity"]
+            t["t-Closeness / EMD"]
         end
 
-        subgraph CORE[Deterministic Core]
-            seed[Seeded Pseudonym Generator]
-            gmap[Global Mapping Table]
+        subgraph CORE["Deterministic Core"]
+            seed["Seeded Pseudonym Generator"]
+            gmap["Global Mapping Table"]
         end
 
-        subgraph OFF[Offline Installation]
-            wheels[wheels/]
-            models[models/]
-            install[install.sh]
-            smoke[smoke_test/]
+        subgraph OFF["Offline Installation"]
+            wheels["wheels/"]
+            models["models/"]
+            install["install.sh"]
+            smoke["smoke_test/"]
         end
     end
 
@@ -622,6 +623,7 @@ flowchart TB
 
     OFF --> P
 ```
+
 
 ## 🖼️ **2. Text Anonymization Flow**  
 ```mermaid
