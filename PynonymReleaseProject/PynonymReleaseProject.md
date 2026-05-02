@@ -4471,8 +4471,8 @@ https://www.datacamp.com/blog/what-is-data-anonymization;
 https://tryolabs.com/blog/2020/06/11/personal-data-anonymization-key-concepts--how-it-affects-machine-learning-models;
 https://mostly.ai/what-is-data-anonymization;
 https://pypi.org/project/anonym/.
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3432250399c1d23d04bbf39ac36cdf14f51cfae2/DigitalTwinsGeneratorGUI/DigitalTwinAnalyzer.ipynb)
-3. [![DigitalTwinTelemetryAnalyzer_Report | English](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3432250399c1d23d04bbf39ac36cdf14f51cfae2/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.pdf)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ae0d058f6fc66781d9c4de423e3f67fe6542bf98/PynonymReleaseProject/pynonym_package.ipynb)
+3. [![Pynonym_Release_Report | English](https://img.shields.io/badge/Pynonym_Release%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3432250399c1d23d04bbf39ac36cdf14f51cfae2/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
