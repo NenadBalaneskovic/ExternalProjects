@@ -1,0 +1,220 @@
+Metadata-Version: 2.4
+Name: pynonym
+Version: 0.1.0
+Summary: Multilingual text and table anonymization toolkit (spaCy + Faker + pyCANON).
+Author-email: Nenad <example@bwi.de>
+License: MIT
+Project-URL: Homepage, https://nexus.bwi.de/pynonym
+Project-URL: Repository, https://nexus.bwi.de/pynonym/repo
+Keywords: anonymization,pseudonymization,privacy,nlp,spacy,faker,pycanon,k-anonymity,l-diversity,t-closeness,data-protection
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: spacy<4.0,>=3.7
+Requires-Dist: de-core-news-md @ https://example.invalid/de-core-news-md.whl ; sys_platform == "linux"
+Requires-Dist: en-core-web-md @ https://example.invalid/en-core-web-md.whl ; sys_platform == "linux"
+Requires-Dist: faker<25,>=24
+Requires-Dist: pandas<3.0,>=2.2
+Requires-Dist: pycanon<1.0,>=0.3
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Requires-Dist: build<2.0,>=1.2; extra == "dev"
+Dynamic: license-file
+
+# 📘 **README.md (professionell, zweisprachig, mit Beispielen)**
+
+> **Hinweis:**  
+> Dieses README ist so geschrieben, dass es sowohl in Nexus als auch in GitLab/GitHub perfekt funktioniert.
+
+---
+
+```markdown
+# pynonym  
+Multilingual Text & Table Anonymization Toolkit  
+*(Deutsch & English)*
+
+---
+
+## 🇩🇪 Übersicht (Deutsch)
+
+`pynonym` ist ein leichtgewichtiges, offline‑fähiges Toolkit zur Anonymisierung von:
+
+- **Texten** (Deutsch & Englisch)  
+- **Tabellen / DataFrames**  
+
+Es kombiniert:
+
+- **spaCy** (NER‑basierte Entitäten‑Erkennung)  
+- **Faker** (realistische Fake‑Daten)  
+- **pyCANON** (k‑Anonymität, l‑Diversität, t‑Closeness)  
+- **globale Pseudonymisierung**  
+  → konsistente Fake‑Namen in Texten *und* Tabellen
+
+Das Paket ist vollständig kompatibel mit:
+
+- Python **3.12** und **3.13**  
+- BWI‑Jupyter‑Umgebungen  
+- Nexus‑Proxies  
+- Air‑Gapped‑Systemen  
+
+---
+
+## 🇬🇧 Overview (English)
+
+`pynonym` is a lightweight, offline‑capable toolkit for anonymizing:
+
+- **Texts** (German & English)  
+- **Tables / DataFrames**
+
+It integrates:
+
+- **spaCy** for NER  
+- **Faker** for realistic fake data  
+- **pyCANON** for privacy metrics  
+- **Global pseudonymization**  
+  → consistent fake names across text *and* tables
+
+Fully compatible with:
+
+- Python **3.12** and **3.13**  
+- BWI Jupyter environments  
+- Nexus proxies  
+- Air‑gapped systems  
+
+---
+
+# Installation
+
+## 1. Installation in Jupyter aus `pynonym.tar.gz`
+
+Lade das Archiv in Jupyter hoch (z. B. nach `/home/jovyan/work/`).
+
+Dann:
+
+```bash
+pip install pynonym-0.1.0.tar.gz
+```
+
+oder, falls du es entpackt hast:
+
+```bash
+pip install ./pynonym
+```
+
+---
+
+## 2. Installation aus Wheel (empfohlen)
+
+```bash
+pip install pynonym-0.1.0-py3-none-any.whl
+```
+
+---
+
+## 3. spaCy‑Modelle installieren
+
+### Deutsch:
+
+```bash
+python -m spacy download de_core_news_md
+```
+
+### Englisch:
+
+```bash
+python -m spacy download en_core_web_md
+```
+
+Oder aus Nexus:
+
+```bash
+pip install de_core_news_md-3.7.0-py3-none-any.whl
+pip install en_core_web_md-3.7.0-py3-none-any.whl
+```
+
+---
+
+# Smoke‑Tests
+
+## 1. Text‑Anonymisierung (Deutsch)
+
+```python
+from pynonym import anonymize_text, PynonymConfig
+
+cfg = PynonymConfig(language="de", seed=42)
+
+text = "Angela Merkel traf Olaf Scholz in Berlin."
+
+print(anonymize_text(text, config=cfg))
+```
+
+Erwartung:
+
+- PERSON, ORG, GPE, LOC werden ersetzt  
+- deterministische Fake‑Daten (Seed)  
+
+---
+
+## 2. Text‑Anonymisierung (Englisch)
+
+```python
+cfg = PynonymConfig(language="en", seed=42)
+
+text = "Barack Obama met Joe Biden in Washington."
+
+print(anonymize_text(text, config=cfg))
+```
+
+---
+
+## 3. Tabellen‑Anonymisierung
+
+```python
+import pandas as pd
+from pynonym import anonymize_dataframe, TableAnonymizationConfig
+
+df = pd.DataFrame({
+    "Name": ["Angela Merkel", "Olaf Scholz"],
+    "Alter": [67, 65],
+    "Stadt": ["Berlin", "Berlin"],
+    "Diagnose": ["A", "B"],
+})
+
+cfg = TableAnonymizationConfig(
+    quasi_identifiers=["Alter", "Stadt"],
+    sensitive_attributes=["Diagnose"],
+    pseudonymize_columns=["Name"],
+    language="de",
+    seed=42,
+    k=2,
+)
+
+result = anonymize_dataframe(df, config=cfg)
+print(result)
+print(result.attrs["k_anonymity"])
+```
+
+---
+
+# Features
+
+- Zweisprachige Text‑Anonymisierung (DE/EN)  
+- Tabellen‑Anonymisierung mit Pandas  
+- Globale Pseudonymisierung (Text + Tabellen konsistent)  
+- Deterministische Seeds  
+- Privacy‑Metriken:
+  - k‑Anonymität  
+  - l‑Diversität  
+  - t‑Closeness  
+- Offline‑fähig  
+- Nexus‑kompatibel  
+- Python 3.12/3.13  
+
+---
+
+# Lizenz
+
+MIT License  
+© 2026 Nenad
+
+```

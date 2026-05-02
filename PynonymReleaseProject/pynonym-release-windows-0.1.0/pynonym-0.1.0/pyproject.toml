@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pynonym"
+version = "0.1.0"
+description = "Multilingual text and table anonymization toolkit (spaCy + Faker + optional pyCANON)."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Nenad", email = "example@bwi.de" }
+]
+
+keywords = [
+  "anonymization",
+  "pseudonymization",
+  "privacy",
+  "nlp",
+  "spacy",
+  "faker",
+  "pycanon",
+  "k-anonymity",
+  "l-diversity",
+  "t-closeness",
+  "data-protection"
+]
+
+dependencies = [
+  # spaCy core
+  "spacy>=3.7,<4.0",
+
+  # Faker für DE + EN
+  "faker>=24,<25",
+
+  # Tabellen
+  "pandas>=2.2,<3.0"
+]
+
+[project.optional-dependencies]
+# Linux-only privacy features (k-anonymity, l-diversity, t-closeness)
+privacy = [
+  "pycanon>=0.3,<1.0"
+]
+
+dev = [
+  "pytest>=8,<9",
+  "build>=1.2,<2.0"
+]
+
+[project.urls]
+Homepage = "https://nexus.bwi.de/pynonym"
+Repository = "https://nexus.bwi.de/pynonym/repo"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

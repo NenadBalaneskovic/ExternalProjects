@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pynonym/__init__.py
+src/pynonym/config.py
+src/pynonym/tables.py
+src/pynonym/text.py
+src/pynonym/utils.py
+src/pynonym.egg-info/PKG-INFO
+src/pynonym.egg-info/SOURCES.txt
+src/pynonym.egg-info/dependency_links.txt
+src/pynonym.egg-info/requires.txt
+src/pynonym.egg-info/top_level.txt
+tests/test_tables.py
+tests/test_text.py

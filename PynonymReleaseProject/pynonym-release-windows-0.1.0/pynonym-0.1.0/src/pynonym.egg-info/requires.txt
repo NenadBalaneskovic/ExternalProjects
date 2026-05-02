@@ -1,0 +1,10 @@
+spacy<4.0,>=3.7
+faker<25,>=24
+pandas<3.0,>=2.2
+
+[dev]
+pytest<9,>=8
+build<2.0,>=1.2
+
+[privacy]
+pycanon<1.0,>=0.3
