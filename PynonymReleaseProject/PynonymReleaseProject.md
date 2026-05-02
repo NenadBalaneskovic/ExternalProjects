@@ -2989,45 +2989,45 @@ This workflow ensures:
 flowchart TB
 
     %% User Layer
-    U[User Code<br/>Notebooks / Pipelines / Scripts]
+    U["User Code — Notebooks / Pipelines / Scripts"]
 
     %% Config System
-    subgraph CFG[config.py<br/>Configuration System]
-        C1[TextAnonymizerConfig]
-        C2[TableAnonymizationConfig]
+    subgraph CFG["config.py — Configuration System"]
+        C1["TextAnonymizerConfig"]
+        C2["TableAnonymizationConfig"]
     end
 
     %% Text Engine
-    subgraph TEXT[text.py<br/>Text Anonymization Engine]
-        T1[spaCy NER]
-        T2[Faker Pseudonym Generator]
-        T3[Text Reconstruction]
+    subgraph TEXT["text.py — Text Anonymization Engine"]
+        T1["spaCy NER"]
+        T2["Faker Pseudonym Generator"]
+        T3["Text Reconstruction"]
     end
 
     %% Table Engine
-    subgraph TABLE[tables.py<br/>Table Anonymization Engine]
-        A1[pandas Operations]
-        A2[Pseudonymize Columns]
-        A3[Group by Quasi-Identifiers]
-        A4[Prepare Sensitive Attributes]
+    subgraph TABLE["tables.py — Table Anonymization Engine"]
+        A1["pandas Operations"]
+        A2["Pseudonymize Columns"]
+        A3["Group by Quasi-Identifiers"]
+        A4["Prepare Sensitive Attributes"]
     end
 
     %% Deterministic Core
-    subgraph CORE[utils.py<br/>Deterministic Core]
-        D1[Seeded Pseudonym Generator]
-        D2[Global Mapping Table]
-        D3[Normalization & Hashing]
+    subgraph CORE["utils.py — Deterministic Core"]
+        D1["Seeded Pseudonym Generator"]
+        D2["Global Mapping Table"]
+        D3["Normalization and Hashing"]
     end
 
     %% Privacy Metrics
-    subgraph METRICS[privacy.py<br/>Privacy Metrics Engine]
-        M1[k-Anonymity]
-        M2[l-Diversity]
-        M3[t-Closeness (EMD)]
+    subgraph METRICS["privacy.py — Privacy Metrics Engine"]
+        M1["k-Anonymity"]
+        M2["l-Diversity"]
+        M3["t-Closeness — EMD"]
     end
 
     %% Version
-    V[version.py<br/>Version Metadata]
+    V["version.py — Version Metadata"]
 
     %% User interactions
     U --> CFG
