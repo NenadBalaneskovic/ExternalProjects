@@ -30,7 +30,7 @@ It is a **deterministic, production‑ready anonymization engine** designed for:
 
 Unlike many anonymization tools that focus on a single modality or rely on proprietary logic, `pynonym` provides a **unified, transparent, and extensible approach** to anonymizing both unstructured text and 
 structured tabular data. It is built entirely in Python, with no native dependencies, making it portable across platforms and easy to maintain (see [References]
-(https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md#15--references) 1 - 3 below).
+(https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md#18--references) 1 - 3 below).
 
 ## 1.1. 🔍 **Motivation: Why `pynonym` Exists**
 
