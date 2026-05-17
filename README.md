@@ -1121,7 +1121,110 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 
 [![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
 
+### 24. **MLflow Runner GUI – Apr 2026**
 
+> ## Executive Summary: MLflow Runner GUI
+>
+> **Business Problem**  
+> Modern organizations increasingly rely on machine‑learning experimentation to support analytics, forecasting, automation, and decision‑making.  
+> Yet most teams, especially in regulated, security‑sensitive, or offline environments, face a set of persistent challenges:
+>
+> - fragmented ML experimentation workflows  
+> - lack of reproducibility across runs, machines, and users  
+> - difficulty onboarding beginners into MLflow or experiment tracking  
+> - inconsistent logging of metrics, datasets, and artifacts  
+> - no safe way to execute arbitrary user scripts without risking system stability  
+> - limited tooling for offline or air‑gapped environments  
+>
+> Traditional ML experimentation setups often require:
+>
+> - manual MLflow configuration  
+> - command‑line execution  
+> - ad‑hoc logging  
+> - fragile notebook‑based workflows  
+> - inconsistent environment management  
+>
+> These issues lead to **non‑reproducible experiments**, **lost model versions**, **inconsistent metrics**, and **poor governance**, all of which slow down ML delivery and increase operational risk.
+>
+> **Solution Overview**  
+> The **MLflow Runner GUI** provides a **fully local, offline‑capable, deterministic, and transparent machine‑learning execution environment**.  
+> It combines:
+>
+> - a **Qt‑based desktop GUI**  
+> - a **subprocess‑isolated Runner**  
+> - a **strict stdout marker protocol**  
+> - a **local MLflow server** for tracking, artifacts, and model registry  
+>
+> The system allows users to:
+>
+> - upload a dataset and (optionally) a Python script  
+> - configure an MLflow experiment  
+> - run the script in a controlled subprocess  
+> - capture model + metrics via stdout markers  
+> - log everything to MLflow  
+> - inspect results directly in the GUI  
+>
+> The architecture ensures:
+>
+> - **isolation** (subprocess sandboxing)  
+> - **determinism** (marker‑based communication)  
+> - **reproducibility** (MLflow logging + environment capture)  
+> - **extensibility** (custom scripts, datasets, models)  
+>
+> The MLflow Runner GUI is not merely a convenience tool — it is a **miniature MLOps platform**, designed with clarity, transparency, and reproducibility at its core.
+>
+> **Business Impact**
+>
+> The MLflow Runner GUI enables organizations to:
+>
+> - standardize ML experimentation workflows  
+> - ensure **reproducible, auditable ML runs**  
+> - reduce onboarding time for new ML practitioners  
+> - operate in **offline or restricted environments**  
+> - maintain consistent experiment tracking across teams  
+> - version models reliably using the MLflow Model Registry  
+> - reduce operational risk by isolating user code execution  
+>
+> This strengthens governance, accelerates experimentation, and provides a foundation for scalable ML workflows, without requiring cloud infrastructure or complex MLOps stacks.
+>
+> **Consulting Relevance**
+>
+> For consultants, the MLflow Runner GUI demonstrates how to operationalize:
+>
+> - reproducible ML pipelines  
+> - experiment tracking best practices  
+> - model versioning and artifact governance  
+> - offline‑capable ML experimentation  
+> - safe execution of arbitrary user scripts  
+> - transparent, deterministic ML workflows  
+>
+> It is a practical asset for:
+>
+> - ML experimentation workshops  
+> - client demos  
+> - secure analytics environments  
+> - data‑science enablement programs  
+> - teaching MLflow fundamentals  
+> - rapid prototyping and model iteration  
+>
+> The architecture is modular, extensible, and suitable for diverse industries — from finance and healthcare to manufacturing and public sector.
+>
+> **Compliance / ESG / Risk Management**
+>
+> The MLflow Runner GUI supports governance through:
+>
+> - deterministic stdout‑based protocol  
+> - transparent logging of datasets, metrics, and models  
+> - version‑aware model registry integration  
+> - offline‑capable MLflow server  
+> - reproducible environment capture (`conda.yaml`, `requirements.txt`, `MLmodel`)  
+> - safe subprocess isolation for user code  
+>
+> This ensures ML pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware ML development.
+
+---
+
+#### **Abstract**  
 
   
 
