@@ -1272,13 +1272,13 @@ Here is a complete Mermaid diagram representing the architecture:
 ```mermaid
 flowchart TD
 
-    GUI[GUI (Qt)\nUpload | Config | Run | Results] --> Runner[Runner\nSubprocess Manager\nStdout Parser\nMLflow Logger]
+    GUI[GUI (Qt): Upload, Config, Run, Results] --> Runner[Runner: Subprocess Manager, Stdout Parser, MLflow Logger]
 
-    Runner --> Script[User Script (.py)\nLoads Dataset\nPreprocesses Data\nTrains Model\nPrints MODEL_READY\nPrints METRICS_READY]
+    Runner --> Script[User Script (.py): Loads Dataset, Preprocesses Data, Trains Model, Prints MODEL_READY & METRICS_READY]
 
     Script --> Runner
 
-    Runner --> MLflow[MLflow Server\nTracking | Artifacts | Model Registry]
+    Runner --> MLflow[MLflow Server: Tracking, Artifacts, Model Registry]
 
     MLflow --> GUI
 ```
