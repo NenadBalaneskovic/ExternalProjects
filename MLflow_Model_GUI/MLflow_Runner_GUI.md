@@ -4282,7 +4282,7 @@ Integrate:
 Generate a Jupyter notebook from a GUI run.
 
 ## 🏁 **10. Final Remarks** 
-### *Project 23 — MLflow Runner GUI*
+### *Project 24 — MLflow Runner GUI*
 
 Project 23 — the **MLflow Runner GUI** — represents a rare convergence of engineering discipline, architectural clarity, and practical machine‑learning workflow design. 
 It is more than a graphical interface, more than a wrapper around MLflow, and more than a convenience tool for running Python scripts. 
