@@ -565,7 +565,7 @@ To ensure the system is usable out of the box, there is a **template script** th
   {"accuracy": 0.70204, "f1_score": 0.69466}
   ```
 
-This template is what you see reflected in:
+This template is what we see reflected in:
 
 - the Run panel logs  
 - the Results panel model section  
@@ -707,7 +707,7 @@ Given:
 - the same script  
 - the same configuration  
 
-you can reproduce the same run and compare it to previous versions.
+we can reproduce the same run and compare it to previous versions.
 
 #### 3.5.4 Extensibility
 
@@ -774,12 +774,6 @@ What makes this architecture compelling is not that it is complex, but that it i
 - MLflow is the tracking backend—no GUI responsibilities.
 
 Each component does one thing well, and the contracts between them are explicit. That’s why the system feels both **simple to use** and **solid under the hood**.
-
-If you’d like, we can next:
-
-- add a **Mermaid diagram** version of this architecture,  
-- write a **shorter “Architecture at a Glance”** section for a README,  
-- or drill down into a **“Runner Internals”** or **“Stdout Protocol Specification”** section.
 
 ## 🔄 **4. Data Flow Overview**
 
@@ -1858,7 +1852,7 @@ Each run registers a new version of:
 local_runner_model
 ```
 
-Your screenshots show versions **1 → 6**.
+Our screenshots show versions **1 → 6**.
 
 This provides:
 
@@ -2323,7 +2317,7 @@ Prevents:
 #### ✔ **Non‑blocking GUI startup**  
 `window.show()` does not block the kernel → ideal for Jupyter.
 
-#### ✔ **Fully compatible with your architecture**  
+#### ✔ **Fully compatible with our architecture**  
 The cell uses exactly our structure:
 
 ```
@@ -2333,7 +2327,7 @@ mlflow_local_runner/
 
 ### 🚀 Bonus: Optional launcher as a function
 
-If you want it even cleaner:
+If we want it even cleaner:
 
 ```python
 def launch_local_runner():
@@ -2820,7 +2814,7 @@ This makes the GUI ideal for education, debugging, and controlled ML experiments
 > - **`script_template.py`**  
 >   **Purpose:** Fallback user script when no custom script is provided.  
 >   **Functionality:**
->   - Exactly your extended template:  
+>   - Exactly our extended template:  
 >     - `load_data`  
 >     - preprocessing (scaling, encoding, optional PCA)  
 >     - feature engineering  
@@ -2928,7 +2922,7 @@ This makes the GUI ideal for education, debugging, and controlled ML experiments
 > - **`example_script.py`**  
 >   Example training script showing:  
 >   - how a user script *can* look (if not using the template)  
->   - ideally similar in style to your template, just simpler.
+>   - ideally similar in style to our template, just simpler.
 > 
 > - **`example_dataset.csv`**  
 >   Example dataset (e.g., white wine quality) so users can run a test out of the box.
@@ -2943,7 +2937,7 @@ This makes the GUI ideal for education, debugging, and controlled ML experiments
 > ```
 > 
 > - **`architecture_diagram.png`**  
->   Your current architecture diagram (possibly the extended version with preprocessing/feature engineering).
+>   Our current architecture diagram (possibly the extended version with preprocessing/feature engineering).
 > 
 > - **`user_manual.md`**  
 >   Step‑by‑step guide:
@@ -3140,7 +3134,7 @@ The exact pipeline printed by the script, e.g.:
 
 > *“Pipeline(steps=[('preprocessing', ColumnTransformer(...)), ('model', RandomForestClassifier(...))])”*
 
-This is taken directly from your uploaded `model_repr.txt`.
+This is taken directly from our uploaded `model_repr.txt`.
 
 #### **MLflow Links**
 Three direct links:
@@ -3199,10 +3193,10 @@ Here is a step‑wise, “from zero to running GUI” description that matches w
 
 ### 8.1. Prepare the base environment
 
-**Goal:** Isolate the GUI + MLflow stack in a dedicated Python environment so it’s reproducible and doesn’t pollute your system Python.
+**Goal:** Isolate the GUI + MLflow stack in a dedicated Python environment so it’s reproducible and doesn’t pollute our system Python.
 
 1. **Install Python 3.12 (or matching version)**  
-   - Make sure `python --version` (or `py -3.12 --version` on Windows) reports the version you actually want to use (e.g. `3.12.x`).
+   - Make sure `python --version` (or `py -3.12 --version` on Windows) reports the version we actually want to use (e.g. `3.12.x`).
 
 2. **Create a virtual/conda environment**  
    Example with conda:
@@ -3210,11 +3204,11 @@ Here is a step‑wise, “from zero to running GUI” description that matches w
    conda create -n mlflow_gui python=3.12
    conda activate mlflow_gui
    ```
-   Your prompt should look similar to:
+   Ther prompt should look similar to:
    ```bash
    (mlflow_gui) PS D:\>
    ```
-   In your logs this environment is called `(py312)`.
+   In our logs this environment is called `(py312)`.
 
 3. **Upgrade pip inside the environment**  
    ```bash
@@ -3237,7 +3231,7 @@ Here is a step‑wise, “from zero to running GUI” description that matches w
    ```
 
 2. **Verify structure**  
-   You should see something like:
+   One should see something like:
    ```text
    D:\MLflow_Model_GUI
      ├─ run_gui.py
@@ -3254,7 +3248,7 @@ Here is a step‑wise, “from zero to running GUI” description that matches w
 
 **Goal:** Install the exact stack the GUI and MLflow server need.
 
-At minimum you’ll need:
+At minimum we need:
 
 - `mlflow`
 - `pyqt5` or `pyqt6` (depending on what the GUI uses)
@@ -3263,7 +3257,7 @@ At minimum you’ll need:
 - `scikit-learn`
 - `psutil`
 - `pyarrow` (for MLflow datasets / artifacts)
-- possibly `python-dotenv` or similar if you use env files
+- possibly `python-dotenv` or similar if we use env files
 
 A typical install command:
 
@@ -3277,7 +3271,7 @@ If the project includes a `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-This should match what you later see in MLflow’s `requirements.txt` artifact (e.g. `mlflow==3.12.0`, `scikit-learn==1.8.0`, etc.).
+This should match what we later see in MLflow’s `requirements.txt` artifact (e.g. `mlflow==3.12.0`, `scikit-learn==1.8.0`, etc.).
 
 ### 8.4. First start of the GUI
 
@@ -3305,20 +3299,20 @@ On first start, the log should show something like:
 ![Terminal_Log2](Terminal_Log2.png)
 
 - The GUI **actively checks** if port `5000` is already in use.  
-  If yes, it tries to terminate the process (this is why you see the warning about killing a `python.exe` on that port).
+  If yes, it tries to terminate the process (this is why we see the warning about killing a `python.exe` on that port).
 - The MLflow server is started **embedded** (as a subprocess) with something like:
   ```bash
   mlflow server --backend-store-uri <local-path-or-db> --default-artifact-root <path> --port 5000
   ```
 ![Terminal_Log3](Terminal_Log3.png)
 
-- On Windows, MLflow prints a warning about “job execution requirements not met” — this is expected and harmless for your use case (you’re not using MLflow Jobs).
+- On Windows, MLflow prints a warning about “job execution requirements not met” — this is expected and harmless for our use case (we are not using MLflow Jobs).
 
 ![Terminal_Log4](Terminal_Log4.png)
 
 ![Terminal_Log5](Terminal_Log5.png)
 
-Once the GUI window appears, you’ve passed the critical installation hurdle: Python, Qt, and MLflow are all working together.
+Once the GUI window appears, we have passed the critical installation hurdle: Python, Qt, and MLflow are all working together.
 
 ### 8.5. Configure the GUI (Konfiguration tab)
 
@@ -3326,27 +3320,27 @@ Once the GUI window appears, you’ve passed the critical installation hurdle: P
 
 **Goal:** Define project and MLflow settings so that runs are properly tracked and reproducible.
 
-In the **Konfiguration** tab you typically set:
+In the **Konfiguration** tab we typically set:
 
 - **Projektname:** e.g. `Project1`
 - **Experimentname:** e.g. `Exp1`
 - **Runname:** e.g. `WineSet1`
 - **MLflow Tracking URI:** `http://localhost:5000`
 - **MLflow Registry URI:** `http://localhost:5000`
-- **Artefakt-Ordner:** local folder where artifacts can be stored (if used by your runner)
+- **Artefakt-Ordner:** local folder where artifacts can be stored (if used by our runner)
 
 Then click **“Konfiguration speichern”**.
 
 **What happens behind the scenes:**
 
 - These values are stored (e.g. in a config file or in memory) and later passed to the Runner.
-- When you start a run, the Runner uses them to:
+- When we start a run, the Runner uses them to:
   - set `MLFLOW_TRACKING_URI`
   - set `MLFLOW_REGISTRY_URI`
   - call `mlflow.set_experiment(experiment_name)`
   - call `mlflow.start_run(run_name=...)`
 
-If the experiment doesn’t exist yet, MLflow creates it automatically — you see this in the logs:
+If the experiment doesn’t exist yet, MLflow creates it automatically — we see this in the logs:
 
 ```text
 GET /api/2.0/mlflow/experiments/get-by-name?experiment_name=Exp1 404 Not Found
@@ -3368,10 +3362,10 @@ In the **Upload** tab:
      `D:/MLflow_Model_GUI/wine_quality_white.csv`.
 
 2. **Skript auswählen (.py)** (optional)  
-   - If you don’t select a script, the GUI uses the internal `script_template.py`.  
-     You see this in the logs:  
+   - If we don’t select a script, the GUI uses the internal `script_template.py`.  
+     We see this in the logs:  
      `Kein Nutzer-Skript ausgewählt → Template wird verwendet.`
-   - If you do select a script (e.g. `modell_training.py`), that script is started instead of the template.
+   - If weu do select a script (e.g. `modell_training.py`), that script is started instead of the template.
 
 **Intricacy:**  
 The dataset path is passed to the subprocess via an environment variable like `DATASET_PATH`. The script then reads this variable to load the CSV.
@@ -3419,14 +3413,14 @@ Run beendet.
    - The Runner parses these markers and JSON deterministically.
 
 3. **MLflow interaction**  
-   - The script (or the Runner, depending on your design) calls:
+   - The script (or the Runner, depending on our design) calls:
      - `mlflow.set_experiment("Exp1")`
      - `mlflow.start_run(run_name="WineSet1")`
      - `mlflow.log_input(dataset, context="training")`
      - `mlflow.log_metrics({"accuracy": ..., "f1_score": ...})`
      - `mlflow.log_artifact(...)` or `mlflow.sklearn.log_model(...)`
      - `mlflow.register_model("runs:/<run_id>/model", "local_runner_model")`
-   - You see the corresponding HTTP calls in the logs:
+   - We see the corresponding HTTP calls in the logs:
      ```text
      POST /api/2.0/mlflow/runs/create 200 OK
      POST /api/2.0/mlflow/model-versions/create 200 OK
@@ -3465,7 +3459,7 @@ After the run finishes, the **Ergebnisse** tab shows:
   - Artefakte: `http://localhost:5000/#/experiments/2/runs/<run_id>/artifacts`
   - Modell: `http://localhost:5000/#/models/local_runner_model`
 
-Clicking these links opens the MLflow UI in your browser, where you can:
+Clicking these links opens the MLflow UI in the browser, where we can:
 
 - inspect metrics and parameters  
 
@@ -3504,18 +3498,18 @@ A few intricacies that matter for a smooth installation and usage:
 
 1. **Port handling (5000)**  
    - The GUI proactively checks and frees port 5000 before starting MLflow.
-   - If you manually run another MLflow server on the same port, you’ll see warnings or conflicts.
+   - If we manually run another MLflow server on the same port, we will see warnings or conflicts.
 
 2. **Windows‑specific MLflow warning**  
    - MLflow prints a warning about “job execution requirements not met” on Windows.  
      This is expected and does not affect tracking, artifacts, or the registry.
 
 3. **Security middleware**  
-   - MLflow’s default security middleware binds to `localhost` and warns if you want to expose it externally.  
+   - MLflow’s default security middleware binds to `localhost` and warns if we want to expose it externally.  
    - For local, single‑user development, the defaults are fine.
 
 4. **Experiment auto‑creation**  
-   - You don’t need to pre‑create experiments in the UI.  
+   - We don’t need to pre‑create experiments in the UI.  
    - The first run with a new experiment name triggers automatic creation.
 
 5. **Environment reproducibility**  
@@ -3524,11 +3518,11 @@ A few intricacies that matter for a smooth installation and usage:
      - Python version
      - package versions
      - environment dependencies  
-   - This is why it’s important to keep your environment clean and consistent.
+   - This is why it’s important to keep our environment clean and consistent.
 
 ### 8.10. Minimal “from scratch” checklist
 
-If you had to summarize everything into a quick checklist:
+If we had to summarize everything into a quick checklist:
 
 1. Install Python 3.12 (or compatible).
 2. Create and activate a dedicated environment.
@@ -3626,9 +3620,9 @@ This protocol is:
 
 It is the backbone of the entire system.
 
-## 🧪 **5. Example: Real Stdout From Your System**
+## 🧪 **5. Example: Real Stdout From Our System**
 
-Your logs show the protocol working exactly as designed:
+Our logs show the protocol working exactly as designed:
 
 ```
 [SCRIPT] MODEL_READY
@@ -3646,7 +3640,7 @@ This is precisely what the Runner expects.
 
 The script template ensures that even users without ML experience can run a complete experiment.
 
-Your uploaded `model_repr.txt` shows the exact pipeline:
+Our uploaded `model_repr.txt` shows the exact pipeline:
 
 > *“Pipeline(steps=[('preprocessing', ColumnTransformer(...)), ('model', RandomForestClassifier(...))])”*  
 > *(from the uploaded document)*
@@ -3770,7 +3764,7 @@ Each run creates a new version:
 - Version 5  
 - Version 6  
 
-Your screenshots show the full version history.
+Our screenshots show the full version history.
 
 ### **Why this is powerful**
 
@@ -3811,7 +3805,7 @@ These warnings are forwarded to the GUI for transparency.
 ## 🧪 **1. Testing Strategy Overview**
 
 A project that executes arbitrary user scripts, interacts with MLflow, and manages GUI state must be tested thoroughly.  
-Your testing approach is exemplary: **fast**, **deterministic**, **offline‑capable**, and **fully isolated**.
+Our testing approach is exemplary: **fast**, **deterministic**, **offline‑capable**, and **fully isolated**.
 
 The test suite covers:
 
@@ -4108,7 +4102,7 @@ This is the mode used throughout our screenshots and logs.
 
 ## 🖥️ **3. Deployment Mode B — Packaged Application (PyInstaller)**
 
-To distribute the GUI to non‑technical users, you can package it as a standalone executable.
+To distribute the GUI to non‑technical users, we can package it as a standalone executable.
 
 ### **PyInstaller command**
 
@@ -4118,7 +4112,7 @@ pyinstaller --noconfirm --windowed --name "MLflowLocalRunner" run_gui.py
 
 ### **Considerations**
 
-- include your `mlflow_local_runner` package  
+- include our `mlflow_local_runner` package  
 - ensure MLflow is installed in the bundled environment  
 - include icons, stylesheets, and templates  
 - test on a clean machine  
@@ -4135,7 +4129,7 @@ This makes the tool accessible to students, analysts, and non‑technical users.
 
 ## 🗄️ **4. Deployment Mode C — Portable MLflow Environment**
 
-For maximum reproducibility, you can ship:
+For maximum reproducibility, we can ship:
 
 - the GUI executable  
 - a portable MLflow server  
@@ -4188,7 +4182,7 @@ MLflow requires:
 - `requirements.txt`  
 - `model.pkl`
 
-Your screenshots confirm that MLflow logs all of these correctly.
+Our screenshots confirm that MLflow logs all of these correctly.
 
 ### **Important note**
 
@@ -4200,7 +4194,7 @@ When packaging the GUI:
 
 ## 🌐 **7. Optional: Embedded MLflow Server**
 
-For a fully self‑contained application, you can embed MLflow:
+For a fully self‑contained application, we can embed MLflow:
 
 ### **Approach**
 
