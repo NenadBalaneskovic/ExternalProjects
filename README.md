@@ -1230,7 +1230,7 @@ The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible mach
 - **Governance and reproducibility:** Subprocess isolation, stdout markers, MLflow artifact logging, and environment capture (`conda.yaml`, `requirements.txt`, `MLmodel`) ensure traceability and auditability across runs and machines.  
 - **Offline readiness:** The system runs entirely locally — MLflow server, artifact store, model registry, and GUI — making it ideal for air‑gapped or security‑restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
-[![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
+[![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
 ---
 
 
