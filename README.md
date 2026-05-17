@@ -1108,8 +1108,6 @@ The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analyt
 >
 > This ensures anonymization pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting and reducing compliance risk.
 
----
-
 #### **Abstract**  
 Pynonym is a deterministic, offline‑capable anonymization framework for **text** and **structured data**, designed for enterprise environments with strict compliance requirements. It unifies spaCy NER, seeded pseudonym generation, table anonymization, and privacy metrics into a transparent, reproducible workflow. The system emphasizes governance through deterministic behavior, version metadata, and offline installation bundles (see also the [Pynonym Release Project md](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)). CLI and notebook smoke tests validate the entire environment — imports, models, anonymization, metrics, and determinism — ensuring reliability across secure deployments (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md#18--references) 1 - 3 below).
 
@@ -1221,8 +1219,6 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 > - safe subprocess isolation for user code  
 >
 > This ensures ML pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware ML development.
-
----
 
 #### **Abstract**  
 
