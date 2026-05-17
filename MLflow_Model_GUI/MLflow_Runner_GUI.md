@@ -1270,16 +1270,18 @@ This makes the protocol resilient to:
 Here is a complete Mermaid diagram representing the architecture:
 
 ```mermaid
+
 flowchart TD
 
-    GUI[GUI (Qt): Upload, Config, Run, Results] --> Runner[Runner: Subprocess Manager, Stdout Parser, MLflow Logger]
+    GUI[GUI Qt]
+    Runner[Runner]
+    Script[User Script]
+    MLflow[MLflow Server]
 
-    Runner --> Script[User Script (.py): Loads Dataset, Preprocesses Data, Trains Model, Prints MODEL_READY & METRICS_READY]
-
+    GUI --> Runner
+    Runner --> Script
     Script --> Runner
-
-    Runner --> MLflow[MLflow Server: Tracking, Artifacts, Model Registry]
-
+    Runner --> MLflow
     MLflow --> GUI
 ```
 
