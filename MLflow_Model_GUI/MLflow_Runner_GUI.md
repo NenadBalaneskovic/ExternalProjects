@@ -4666,7 +4666,7 @@ In a landscape crowded with overly complex ML platforms, the MLflow Runner GUI i
 https://mlflow.org/docs/latest/ml/;  
 https://mlflow.org/docs/latest/ml/dataset/;  
 https://mlflow.org/docs/latest/ml/model-registry/workflow/;
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ae0d058f6fc66781d9c4de423e3f67fe6542bf98/PynonymReleaseProject/pynonym_package.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a18940d48ffa65c5e3c39105464f570c27805ee0/MLflow_Model_GUI/MLflow_Model_GUI.ipynb)
 3. [![Pynonym_Release_Report | English](https://img.shields.io/badge/Pynonym_Release%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5ad5f845befec16c729264c52e84d249a84c22d9/PynonymReleaseProject/PynonymReleaseProject.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
