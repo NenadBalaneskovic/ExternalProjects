@@ -1226,7 +1226,16 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 
 #### **Abstract**  
 
-  
+The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible machine‑learning experimentation platform designed for environments where **security, determinism, and transparency** are essential. It unifies a Qt‑based graphical interface, a subprocess‑isolated execution engine, a deterministic stdout marker protocol, and a local MLflow tracking server into a coherent, auditable workflow. The system emphasizes governance through reproducible MLflow runs, version‑aware model registration, and transparent artifact logging. It provides a safe, controlled environment for executing arbitrary ML scripts while ensuring consistent experiment tracking, model lineage, and dataset preservation. The GUI, Runner, and MLflow backend together form a **miniature MLOps platform**, suitable for secure enterprise environments, offline research labs, and consulting scenarios requiring deterministic, inspectable ML experimentation (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PynonymReleaseProject/PynonymReleaseProject.md#18--references) 1 - 3 below).
+
+- **Core goals:** Provide a safe, deterministic, offline‑capable ML experimentation environment with reproducible runs, transparent logging, and model versioning.  
+- **Audience:** ML engineers, data scientists, consultants, educators, and governance teams requiring reproducible, auditable ML workflows.  
+- **Why determinism matters:** Reliable experiment tracking, model comparison, and auditability require consistent metrics, preserved datasets, and deterministic extraction of model representations.  
+- **Governance and reproducibility:** Subprocess isolation, stdout markers, MLflow artifact logging, and environment capture (`conda.yaml`, `requirements.txt`, `MLmodel`) ensure traceability and auditability across runs and machines.  
+- **Offline readiness:** The system runs entirely locally — MLflow server, artifact store, model registry, and GUI — making it ideal for air‑gapped or security‑restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
+
+[![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
+---
 
 
 
