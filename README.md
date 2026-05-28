@@ -1356,7 +1356,7 @@ The system emphasizes governance through deterministic transformations, structur
 - **Governance and reproducibility:** Deterministic engines, structured outputs, mapping tables, and comprehensive logs ensure traceability and auditability across runs and machines.  
 - **Offline readiness:** The system runs entirely locally — no cloud, no external APIs, no proprietary SDKs — making it ideal for air‑gapped or security‑restricted environments.
 
-[![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
+[![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
 
 ---
 
