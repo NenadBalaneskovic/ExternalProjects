@@ -1,0 +1,20 @@
+Dataset selected: D:/Mostlyai_Dataset_Pipeline/mostlyai_gui/assets/datasets/sample_census.csv
+Loading dataset: D:/Mostlyai_Dataset_Pipeline/mostlyai_gui/assets/datasets/sample_census.csv
+Starting cleaning pipeline...
+AnonymizationTab: Cleaned dataset received.
+PseudonymizationTab: Cleaned dataset received.
+SyntheticTab: Cleaned dataset received.
+Cleaning completed successfully.
+Cleaned dataset saved to: output/cleaned\cleaned_dataset.csv
+Starting anonymization pipeline...
+Anonymization completed successfully.
+Anonymized dataset saved to: output/anonymized\anonymized_dataset.csv
+Starting pseudonymization pipeline...
+Pseudonymization completed successfully.
+Pseudonymized dataset saved to: output/pseudonymized\pseudonymized_dataset.csv
+Synthetic: Loaded dataset D:/Mostlyai_Dataset_Pipeline/mostlyai_gui/output/cleaned/cleaned_dataset.csv
+Training SDV model 'synthetic_model_generator'...
+Model trained successfully: synthetic_model_generator
+Generating 1000 synthetic rows...
+Synthetic data generation completed.
+Synthetic dataset saved to: output/synthetic\synthetic_dataset.csv
