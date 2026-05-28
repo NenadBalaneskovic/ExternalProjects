@@ -1231,6 +1231,133 @@ The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible mach
 - **Offline readiness:** The system runs entirely locally — MLflow server, artifact store, model registry, and GUI — making it ideal for air‑gapped or security‑restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links).
 
 [![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
+
+### 25. **Data Anonymizer GUI – May 2026**
+
+> ## Executive Summary: Data Anonymizer GUI
+>
+> **Business Problem**  
+> Organizations across all industries increasingly need to **use data without exposing identities**. Whether for analytics, reporting, machine‑learning prototyping, or data‑sharing with partners, teams must comply with:
+>
+> - GDPR (Articles 4, 5, 25, 32)  
+> - HIPAA de‑identification rules  
+> - ISO/IEC 20889 privacy‑enhancing techniques  
+> - internal data‑governance and risk‑management policies  
+>
+> Yet most teams face persistent challenges:
+>
+> - inconsistent, ad‑hoc anonymization scripts  
+> - no standardized cleaning or masking workflows  
+> - no reproducible pseudonymization logic  
+> - no transparent audit trail of privacy transformations  
+> - no safe way to generate synthetic datasets locally  
+> - reliance on proprietary or cloud‑based tools that cannot be used in secure environments  
+>
+> Traditional privacy workflows often require:
+>
+> - manual pandas scripting  
+> - inconsistent masking rules  
+> - fragile mapping‑table handling  
+> - non‑reproducible synthetic data generation  
+> - cloud‑based synthetic engines (e.g., MOSTLY AI) that cannot run offline  
+>
+> These issues lead to **regulatory exposure**, **inconsistent privacy guarantees**, **lost analytical value**, and **inability to safely share data**.
+>
+> **Solution Overview**  
+> The **Data Anonymizer GUI** provides a **fully local, offline‑capable, deterministic, and transparent privacy‑preserving data‑transformation environment**.  
+> It combines:
+>
+> - a **Qt‑based desktop GUI** (PySide6)  
+> - a **Cleaning Engine** for deterministic preprocessing  
+> - an **Anonymization Engine** for irreversible masking  
+> - a **Pseudonymization Engine** with deterministic token mapping  
+> - an **SDV CTGAN‑based Synthetic Engine** for high‑quality synthetic data  
+> - a **central Logs tab** for full auditability  
+>
+> The system allows users to:
+>
+> - load a CSV dataset  
+> - clean it using standardized rules  
+> - anonymize direct identifiers  
+> - pseudonymize quasi‑identifiers with reversible mapping tables  
+> - train a local SDV CTGAN model  
+> - generate synthetic datasets with preserved statistical structure  
+> - preview and save outputs at each stage  
+> - inspect a complete audit trail of all operations  
+>
+> The architecture ensures:
+>
+> - **strict separation** between GUI and backend engines  
+> - **deterministic, auditable transformations**  
+> - **offline‑only operation** (no cloud, no external APIs)  
+> - **extensibility** (new privacy modules can be added easily)  
+>
+> The Data Anonymizer GUI is not merely a convenience tool — it is a **miniature data‑privacy platform**, designed with clarity, transparency, and reproducibility at its core.
+>
+> **Business Impact**
+>
+> The Data Anonymizer GUI enables organizations to:
+>
+> - standardize data‑cleaning and anonymization workflows  
+> - generate **reusable, privacy‑preserving datasets** (anonymized, pseudonymized, synthetic)  
+> - reduce regulatory and compliance risk  
+> - operate in **offline, secure, or air‑gapped environments**  
+> - support analytics and ML teams with safe, high‑utility data  
+> - create synthetic datasets for demos, PoCs, and sandbox environments  
+>
+> This strengthens governance, unlocks safe data reuse, and provides a practical foundation for privacy‑aware analytics and ML — without relying on proprietary cloud services.
+>
+> **Consulting Relevance**
+>
+> For consultants, the Data Anonymizer GUI demonstrates how to operationalize:
+>
+> - privacy‑by‑design data pipelines  
+> - standardized anonymization and pseudonymization strategies  
+> - synthetic data generation using open‑source SDV (CTGAN)  
+> - offline‑capable privacy tooling for regulated industries  
+> - transparent, auditable data‑transformation workflows  
+> - migration from proprietary synthetic engines (e.g., MOSTLY AI) to SDV  
+>
+> It is a practical asset for:
+>
+> - data‑privacy workshops  
+> - secure analytics enablement projects  
+> - synthetic data PoCs  
+> - teaching anonymization and pseudonymization  
+> - building internal privacy toolkits for clients  
+>
+> The architecture is modular, extensible, and applicable across industries — from healthcare and finance to public sector and manufacturing.
+>
+> **Compliance / ESG / Risk Management**
+>
+> The Data Anonymizer GUI supports governance through:
+>
+> - deterministic cleaning, masking, and tokenization rules  
+> - clear separation between anonymization (irreversible) and pseudonymization (reversible)  
+> - structured storage of mapping tables  
+> - fully local SDV‑based synthetic generation  
+> - comprehensive logging of all operations  
+> - reproducible outputs stored in structured folders  
+>
+> This ensures privacy workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware data usage.
+
+
+---
+
+#### **Abstract**
+
+The **Data Anonymizer GUI** is a local, offline‑capable, fully reproducible privacy‑preserving data‑transformation platform designed for environments where **security, determinism, and transparency** are essential. It unifies a Qt‑based graphical interface, a modular set of privacy engines (cleaning, anonymization, pseudonymization, synthetic generation), and a comprehensive logging subsystem into a coherent, auditable workflow.
+
+The system emphasizes governance through deterministic transformations, structured mapping tables, and transparent logging. It provides a safe, controlled environment for preparing datasets for analytics and ML while ensuring consistent privacy guarantees, reproducible outputs, and full auditability. The GUI and backend engines together form a **miniature data‑privacy platform**, suitable for secure enterprise environments, offline research labs, and consulting scenarios requiring deterministic, inspectable privacy workflows.
+
+- **Core goals:** Provide a safe, deterministic, offline‑capable privacy pipeline with reproducible outputs, transparent logs, and high‑quality synthetic data.  
+- **Audience:** Data engineers, privacy officers, ML engineers, consultants, educators, and governance teams requiring reproducible, auditable privacy workflows.  
+- **Why determinism matters:** Reliable privacy transformations require consistent masking, stable pseudonymization tokens, preserved mapping tables, and reproducible synthetic data generation.  
+- **Governance and reproducibility:** Deterministic engines, structured outputs, mapping tables, and comprehensive logs ensure traceability and auditability across runs and machines.  
+- **Offline readiness:** The system runs entirely locally — no cloud, no external APIs, no proprietary SDKs — making it ideal for air‑gapped or security‑restricted environments.
+
+[![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
+
 ---
 
 
