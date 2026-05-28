@@ -443,7 +443,7 @@ The Data Anonymizer GUI is ideal for:
 
 It provides a complete privacy pipeline in a single tool.
 
-## **2,11. Summary**
+## **2.12. Summary**
 
 The Data Anonymizer GUI is a powerful, offline, privacy‑preserving data transformation platform. It unifies cleaning, anonymization, pseudonymization, and synthetic 
 generation into a single, intuitive workflow. Its modular architecture, deterministic engines, and comprehensive logging make it ideal for secure environments, research labs, and educational settings.
