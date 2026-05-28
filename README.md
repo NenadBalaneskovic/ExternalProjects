@@ -1341,9 +1341,6 @@ The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible mach
 >
 > This ensures privacy workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware data usage.
 
-
----
-
 #### **Abstract**
 
 The **Data Anonymizer GUI** is a local, offline‑capable, fully reproducible privacy‑preserving data‑transformation platform designed for environments where **security, determinism, and transparency** are essential. It unifies a Qt‑based graphical interface, a modular set of privacy engines (cleaning, anonymization, pseudonymization, synthetic generation), and a comprehensive logging subsystem into a coherent, auditable workflow.
