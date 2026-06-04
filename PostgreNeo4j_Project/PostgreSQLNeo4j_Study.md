@@ -1573,7 +1573,7 @@ And it is a shift that will only become more important as systems grow, evolve, 
 1. Links (DuckDB, PostgreSQL, Neo4j): https://www.postgresql.org/; https://duckdb.org/; https://github.com/duckdb/duckdb; https://neo4j.com/; https://github.com/neo4j/neo4j;
 Graph Data Bases: https://en.wikipedia.org/wiki/Graph_databa;
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/11793fee2ac20811564571107393576dfa12ec22/PostgreNeo4j_Project/PostgreNeo4j_Study.ipynb)
-3. [![Postgresql_Neo4j_Booster_Report | English](https://img.shields.io/badge/Postgresql_Neo4j_Booster%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8414aedf14c5bd6f0152d2c9c943e91cd6050716/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.pdf)
+3. [![Postgresql_Neo4j_Booster_Report | English](https://img.shields.io/badge/Postgresql_Neo4j_Booster%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b457ca660f7c41153f115b838e940b283d7b12d5/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
