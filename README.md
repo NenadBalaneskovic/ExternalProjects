@@ -1355,6 +1355,125 @@ The system emphasizes governance through deterministic transformations, structur
 
 [![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
 
+### **26. SQL‑Boosting via Neo4j – Jun 2026**
+
+> ## **Executive Summary: SQL‑Boosting via Neo4j**
+>
+> **Business Problem**  
+> Modern data platforms must operate under **continuous schema drift**, while maintaining performance, transparency, and governance. Whether for ingestion pipelines, analytics, reporting, or ML workflows, organizations must ensure:
+>
+> - stable OLTP performance despite frequent schema changes  
+> - predictable analytical performance across evolving datasets  
+> - transparent lineage and impact analysis for governance  
+> - reproducible DDL operations and schema‑migration workflows  
+> - compatibility with secure, offline, or restricted environments  
+>
+> Yet most teams face persistent challenges:
+>
+> - brittle SQL migrations that degrade over time  
+> - implicit, non‑queryable schema history buried in catalogs  
+> - unpredictable performance after repeated ALTER TABLE operations  
+> - dead‑tuple accumulation, bloat, and VACUUM pressure  
+> - lack of lineage visibility across schema versions  
+> - difficulty debugging downstream breakages caused by schema drift  
+>
+> Traditional relational systems (e.g., PostgreSQL) are exceptional at **data**, but they struggle when forced to also manage **metadata**, **schema evolution**, and **lineage**. This leads to:
+>
+> - **performance instability**  
+> - **operational overhead**  
+> - **governance blind spots**  
+> - **increased migration risk**  
+> - **reduced developer velocity**  
+>
+> **Solution Overview**  
+> Project 26 introduces a **modular, evolution‑aware architecture** that separates responsibilities across specialized engines:
+>
+> - **PostgreSQL** → transactional storage (OLTP)  
+> - **DuckDB** → analytical acceleration (OLAP)  
+> - **Neo4j** → schema & lineage metadata graph  
+> - **Python** → orchestration, metrics, reproducibility  
+>
+> The system externalizes schema evolution into Neo4j, enabling:
+>
+> - explicit versioning of tables and columns  
+> - lineage tracking (ADD, DROP, RENAME, ALTER TYPE)  
+> - impact analysis for downstream queries  
+> - stable PostgreSQL performance under schema drift  
+> - predictable analytical workloads via DuckDB  
+> - transparent, queryable metadata  
+>
+> The architecture allows teams to:
+>
+> - ingest data across multiple schema versions (T1–T5)  
+> - apply DDL changes reproducibly  
+> - measure storage, latency, and health metrics  
+> - visualize schema drift and lineage in Neo4j  
+> - accelerate analytics with DuckDB  
+> - maintain a clean, stable PostgreSQL instance  
+>
+> **Business Impact**
+>
+> The SQL‑Boosting architecture enables organizations to:
+>
+> - maintain **predictable performance** even under frequent schema changes  
+> - reduce operational risk by externalizing metadata  
+> - accelerate analytics with DuckDB while keeping PostgreSQL clean  
+> - improve governance through explicit lineage and versioning  
+> - simplify migrations and reduce debugging time  
+> - support both OLTP and OLAP workloads without architectural conflict  
+>
+> This strengthens platform stability, unlocks safe data reuse, and provides a practical foundation for evolution‑aware analytics and engineering — without relying on proprietary cloud services.
+>
+> **Consulting Relevance**
+>
+> For consultants, Project 26 demonstrates how to operationalize:
+>
+> - schema‑drift‑aware architectures  
+> - lineage‑driven governance  
+> - hybrid relational + graph metadata systems  
+> - analytical acceleration via DuckDB  
+> - reproducible, Python‑orchestrated pipelines  
+> - modernization of legacy SQL systems  
+>
+> It is a practical asset for:
+>
+> - data‑platform modernization engagements  
+> - governance and lineage initiatives  
+> - performance troubleshooting  
+> - analytics‑enablement projects  
+> - migration planning and risk reduction  
+>
+> The architecture is modular, extensible, and applicable across industries — from finance and telecom to public sector, manufacturing, and logistics.
+>
+> **Compliance / ESG / Risk Management**
+>
+> The SQL‑Boosting architecture supports governance through:
+>
+> - explicit schema versioning  
+> - traceable lineage across all schema changes  
+> - reproducible DDL operations  
+> - transparent metadata for audits  
+> - stable performance under regulatory‑driven schema evolution  
+> - clear impact analysis for downstream systems  
+>
+> This ensures schema evolution remains **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware data usage.
+
+---
+
+#### **Abstract**
+
+**SQL‑Boosting via Neo4j** is a modular, evolution‑aware data‑architecture pattern designed for environments where **performance stability, lineage transparency, and reproducibility** are essential. It unifies PostgreSQL (OLTP), DuckDB (OLAP), Neo4j (metadata graph), and Python (orchestration) into a coherent, resilient system capable of handling continuous schema drift.
+
+The architecture externalizes schema evolution into Neo4j, enabling explicit versioning, lineage tracking, and impact analysis. PostgreSQL remains clean and stable, DuckDB accelerates analytical workloads, and Python orchestrates reproducible ingestion, DDL, and metric‑collection pipelines. The system provides a safe, controlled environment for evaluating schema drift, measuring performance, and enabling governance through transparent metadata.
+
+- **Core goals:** Provide a modular, evolution‑aware architecture with stable performance, explicit lineage, and reproducible schema evolution.  
+- **Audience:** Data engineers, platform architects, ML engineers, governance teams, and consultants designing modern data platforms.  
+- **Why modularity matters:** Separating OLTP, OLAP, and metadata responsibilities prevents monolithic bottlenecks and improves long‑term stability.  
+- **Governance and reproducibility:** Explicit schema versions, lineage graphs, and structured metrics ensure traceability and auditability across runs.  
+- **Offline readiness:** All components (PostgreSQL, DuckDB, Neo4j, Python) run locally — no cloud, no external APIs — ideal for secure or restricted environments.
+
+[![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
+
 ---
 
 
