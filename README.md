@@ -1472,7 +1472,7 @@ The architecture externalizes schema evolution into Neo4j, enabling explicit ver
 - **Governance and reproducibility:** Explicit schema versions, lineage graphs, and structured metrics ensure traceability and auditability across runs.  
 - **Offline readiness:** All components (PostgreSQL, DuckDB, Neo4j, Python) run locally — no cloud, no external APIs — ideal for secure or restricted environments.
 
-[![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
+[![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7fa2db7e715524945a32e9bfad66b66fb463cc/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.md)
 
 ---
 
