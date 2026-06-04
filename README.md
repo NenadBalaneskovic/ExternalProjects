@@ -1458,8 +1458,6 @@ The system emphasizes governance through deterministic transformations, structur
 >
 > This ensures schema evolution remains **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware data usage.
 
----
-
 #### **Abstract**
 
 **SQL‑Boosting via Neo4j** is a modular, evolution‑aware data‑architecture pattern designed for environments where **performance stability, lineage transparency, and reproducibility** are essential. It unifies PostgreSQL (OLTP), DuckDB (OLAP), Neo4j (metadata graph), and Python (orchestration) into a coherent, resilient system capable of handling continuous schema drift.
