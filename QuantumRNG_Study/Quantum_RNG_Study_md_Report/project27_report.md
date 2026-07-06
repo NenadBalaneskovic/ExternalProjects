@@ -253,11 +253,7 @@ Thus, the rotation angle is doubly suppressed. This makes the evolution highly s
 The sensitivity of the rotation angle to the fractional order is crucial for cryptographic applications. Consider the derivative:
 
 $\frac{d\theta}{d\alpha}
-= \frac{\omega}{2}
-\left[
-(\Delta t)^\alpha \ln(\Delta t)\frac{1}{\Gamma(\alpha+1)}
-- \frac{(\Delta t)^\alpha \Gamma'(\alpha+1)}{\Gamma(\alpha+1)^2}
-\right].$
+= \frac{\omega}{2}\left[(\Delta t)^\alpha \ln(\Delta t)\frac{1}{\Gamma(\alpha+1)}- \frac{(\Delta t)^\alpha \Gamma'(\alpha+1)}{\Gamma(\alpha+1)^2}\right].$
 
 Both terms contribute to sensitivity:
 
@@ -377,8 +373,7 @@ as a robust quantum entropy engine suitable for QRNG and QKD.
 
 A qubit state can be represented as a point on the Bloch sphere:
 
-$\psi = \cos\left(\frac{\theta}{2}\right)|0\rangle
-+ e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle.$
+$\psi = \cos\left(\frac{\theta}{2}\right)|0\rangle + e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle.$
 
 The Bloch vector is:
 
