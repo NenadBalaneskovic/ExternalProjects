@@ -69,11 +69,9 @@ There are several definitions of fractional derivatives, each suited to differen
 
 The Riemann–Liouville derivative of order $\( \alpha \)$ is defined as:
 
-$
-D_t^\alpha f(t)
+$D_t^\alpha f(t)
 = \frac{1}{\Gamma(n-\alpha)}\frac{d^n}{dt^n}
-\int_0^t (t-\tau)^{n-\alpha-1} f(\tau)\, d\tau,
-$
+\int_0^t (t-\tau)^{n-\alpha-1} f(\tau)\, d\tau,$
 
 where $\( n = \lceil \alpha \rceil \)$. This definition is mathematically elegant but has the drawback that the derivative of a constant is not zero, which complicates physical interpretation.
 
@@ -81,11 +79,9 @@ where $\( n = \lceil \alpha \rceil \)$. This definition is mathematically elegan
 
 The Caputo derivative is defined as:
 
-$
-{}^C D_t^\alpha f(t)
+${}^C D_t^\alpha f(t)
 = \frac{1}{\Gamma(n-\alpha)}
-\int_0^t (t-\tau)^{n-\alpha-1} f^{(n)}(\tau)\, d\tau.
-$
+\int_0^t (t-\tau)^{n-\alpha-1} f^{(n)}(\tau)\, d\tau.$
 
 This derivative has the desirable property that the derivative of a constant is zero, making it more suitable for physical systems. For this reason, the Caputo derivative is used in the fractional Schrödinger equation in Project 27.
 
@@ -93,9 +89,7 @@ This derivative has the desirable property that the derivative of a constant is 
 
 Both definitions introduce a memory kernel:
 
-$
-(t-\tau)^{n-\alpha-1},
-$
+$(t-\tau)^{n-\alpha-1},$
 
 which weights past values of the function. When $\( \alpha = 1 \)$, the kernel collapses and the derivative becomes local. When $\( \alpha > 1 \)$, the kernel broadens, and the system becomes increasingly nonlocal in time.
 
@@ -103,9 +97,7 @@ which weights past values of the function. When $\( \alpha = 1 \)$, the kernel c
 
 The time‑fractional Schrödinger equation is:
 
-$
-i\hbar\, {}^C D_t^\alpha \psi(t) = \hat{H}\psi(t),
-$
+$i\hbar\, {}^C D_t^\alpha \psi(t) = \hat{H}\psi(t),$
 
 where $\( \alpha \in [1,2] \)$. When $\( \alpha = 1 \)$, we recover the standard Schrödinger equation. When $\( \alpha > 1 \)$, the evolution slows down and becomes non‑Markovian.
 
@@ -113,17 +105,13 @@ where $\( \alpha \in [1,2] \)$. When $\( \alpha = 1 \)$, we recover the standard
 
 The solution of the fractional Schrödinger equation involves the Mittag–Leffler function:
 
-$
-E_\alpha(z)
-= \sum_{k=0}^\infty \frac{z^k}{\Gamma(\alpha k + 1)}.
-$
+$E_\alpha(z)
+= \sum_{k=0}^\infty \frac{z^k}{\Gamma(\alpha k + 1)}.$
 
 This function generalizes the exponential function. For small time steps $\( \Delta t \)$, the propagator can be approximated as:
 
-$
-U(\alpha, \Delta t)
-= \exp\!\left(-i\,\hat{H}\,\frac{(\Delta t)^\alpha}{\Gamma(\alpha+1)}\right).
-$
+$U(\alpha, \Delta t)
+= \exp\!\left(-i\,\hat{H}\,\frac{(\Delta t)^\alpha}{\Gamma(\alpha+1)}\right).$
 
 This expression reveals the key physical insight: the fractional order $\( \alpha \)$ modifies the effective time scale nonlinearly.
 
