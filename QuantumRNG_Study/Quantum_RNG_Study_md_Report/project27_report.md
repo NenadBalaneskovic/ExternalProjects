@@ -1784,7 +1784,7 @@ The fractional‑QKD toy model used in Project 27 is intentionally minimal:
 
 In such a constrained dynamical space, the ability of fuzzy control to significantly alter the underlying physics is limited. The Bloch trajectory is governed by:
 
-$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x),$
+$U(\alpha_k) = \exp(-i\cdot\theta(\alpha_k)\sigma_x),$
 
 and the rotation angles $\( \theta(\alpha_k) \)$ are small (typically 0.005–0.05 radians). Adjusting fractional‑order variance or basis rotation can influence the trajectory, but cannot fundamentally change the noise sensitivity of a single qubit.
 
@@ -1792,7 +1792,7 @@ Therefore, fuzzy QKD naturally tracks static QKD closely across all noise levels
 
 #### **7.4 Why Fuzzy QKD Performs Slightly Better at Moderate Noise**
 
-In moderate noise regimes (typically $\( p \approx 0.3–0.5 \)$), fuzzy QKD sometimes achieves a slightly higher key rate than static QKD. This improvement arises from two adaptive mechanisms:
+In moderate noise regimes $(typically \, \( p \approx 0.3–0.5 \))$, fuzzy QKD sometimes achieves a slightly higher key rate than static QKD. This improvement arises from two adaptive mechanisms:
 
 ##### **1. Increased fractional‑order variance**
 
@@ -1809,7 +1809,7 @@ This improvement is modest but meaningful: it demonstrates that fuzzy control ca
 
 #### **7.5 Why Fuzzy QKD Performs Slightly Worse at High Noise**
 
-In high‑noise regimes (typically $\( p > 0.6 \)$), fuzzy QKD sometimes produces a slightly lower key rate than static QKD. This is also expected.
+In high‑noise regimes $(typically \, \( p > 0.6 \))$, fuzzy QKD sometimes produces a slightly lower key rate than static QKD. This is also expected.
 
 ##### **1. Over‑correction**
 
@@ -1885,7 +1885,7 @@ provides a detailed physical interpretation of how these components interact and
 
 Fractional quantum dynamics are the foundation of Project 27. They introduce a nonlinear, memory‑driven evolution of the qubit state through the fractional Schrödinger equation:
 
-$U(\alpha_k) = \exp\left(-i\,\theta(\alpha_k)\sigma_x\right),$
+$U(\alpha_k) = \exp\left(-i\cdot\theta(\alpha_k)\sigma_x\right),$
 
 where the rotation angle $\( \theta(\alpha_k) \)$ depends on the fractional order $\( \alpha_k \)$. Because $\( \alpha_k \)$ is drawn from a pseudo‑random distribution, the Bloch‑sphere trajectory becomes irregular and unpredictable.
 
@@ -2715,31 +2715,32 @@ This adaptive design is one of the novel contributions of Project 27.
 flowchart TD
 
     %% Inputs
-    A[Raw Keys KA, KB] --> B[Compute QBER]
-    B --> C[Fuzzy Controller<br/>Inputs: QBER, Noise, Entropy]
-    C --> D[qec_strength ∈ [0,1]]
+    A[Raw Keys KA and KB] --> B[Compute QBER]
+    B --> C[Fuzzy Controller using QBER, Noise, Entropy]
+    C --> D[qec_strength between 0 and 1]
 
     %% Decision split
-    D -->|qec_strength < 0.33| E[Use Hamming(7,4)<br/>Weak QEC]
-    D -->|qec_strength ≥ 0.33| F[Use LDPC<br/>Medium/Strong QEC]
+    D -->|qec_strength < 0.33| E[Use Hamming 7-4 for Weak QEC]
+    D -->|qec_strength >= 0.33| F[Use LDPC for Medium or Strong QEC]
 
     %% Hamming path
-    E --> G[Split into 4‑bit Blocks]
-    G --> H[Hamming Encode<br/>4→7 Bits]
-    H --> I[Hamming Syndrome & Correction]
+    E --> G[Split into 4-bit Blocks]
+    G --> H[Hamming Encode 4 to 7 Bits]
+    H --> I[Hamming Syndrome and Correction]
     I --> J[Corrected Key K']
 
     %% LDPC path
-    F --> K[Select LDPC Size<br/>n = 64, 128, 256]
-    K --> L[Pad KA, KB to n Bits]
-    L --> M[LDPC Encode<br/>G·bits mod 2]
-    M --> N[Belief‑Propagation Decode<br/>Check‑Node & Variable‑Node Updates]
+    F --> K[Select LDPC Size n = 64 or 128 or 256]
+    K --> L[Pad KA and KB to n Bits]
+    L --> M[LDPC Encode using Generator Matrix]
+    M --> N[Belief Propagation Decode]
     N --> O[Extract Corrected Bits]
     O --> J[Corrected Key K']
 
     %% Output
-    J --> P[Privacy Amplification<br/>SHA3‑256]
+    J --> P[Privacy Amplification using SHA3-256]
     P --> Q[Final Shared Key K]
+
 ```
 
 ##### **Interpretation of the Decision Flow**
@@ -2754,7 +2755,7 @@ The fuzzy controller evaluates:
 
 and outputs a continuous value:
 
-$qec\_strength \in [0,1].$
+$\bf{qec-strength} \in [0,1].$
 
 This value determines whether Hamming or LDPC is used.
 
@@ -2809,7 +2810,7 @@ selecting the appropriate error‑correcting code based on real‑time channel d
 
 At the heart of this adaptivity is the fuzzy controller, which outputs a continuous value:
 
-$\text{qec\_strength} \in [0,1].$
+$\text{qec-strength} \in [0,1].$
 
 This value is discretized into three operational regimes:
 
@@ -2839,7 +2840,7 @@ The fuzzy controller monitors noise indirectly through measurement statistics an
 ##### **2. QBER**
 The Quantum Bit Error Rate is the primary indicator of channel disturbance:
 
-$\text{QBER} = \frac{\#\text{mismatches}}{\text{total bits}}.$
+$\text{QBER} = \frac{nr.\,\text{mismatches}}{\text{total bits}}.$
 
 A rising QBER suggests:
 
@@ -3351,7 +3352,7 @@ Fuzzy QEC is a **controller**, not a code. It is a decision‑making mechanism t
 
 The controller outputs a continuous value:
 
-$\text{qec\_strength} \in [0,1],$
+$\text{qec-strength} \in [0,1],$
 
 which is discretized into:
 
@@ -3614,7 +3615,7 @@ The next step is classical error correction. Project 27 uses an adaptive QEC l
 
 Based on these metrics, it outputs a QEC strength:
 
-$\text{qec\_strength} \in [0,1].$
+$\text{qec-strength} \in [0,1].$
 
 This determines whether the protocol uses:
 
@@ -3711,7 +3712,7 @@ Hashing eliminates these issues:
 - It compresses the key to a uniform distribution.  
 - It ensures the final key is indistinguishable from random.  
 
-The final key \(K_{\text{final}}\) is suitable for:
+The final key $\(K_{\text{final}}\)$ is suitable for:
 
 - AES‑256‑GCM  
 - HMAC authentication  
@@ -3727,59 +3728,62 @@ This is the key that Alice and Bob ultimately use.
 flowchart TD
 
     %% Fractional QKD layer
-    A[Shared Seed] --> B[Generate αₖ Sequence<br/>Fractional Orders]
-    B --> C[Alice Fractional Encoding<br/>ψ_A = U(αₖ)...|m⟩]
-    C --> D{Quantum Channel}
-    D -->|Clean / Noise / Attacks| E[Bob Inverse Fractional Evolution<br/>Apply U⁻¹(αₖ)]
-    E --> F[Measurement in Computational Basis<br/>b ∈ {0,1}]
-    F --> G[Raw Keys<br/>K_A, K_B]
-    G --> H[Compute QBER<br/>Noise / Attack Indicator]
+    A[Shared Seed] --> B[Generate alpha k Sequence and Fractional Orders]
+    B --> C[Alice Fractional Encoding psiA uses U alpha k]
+    C --> D[Quantum Channel]
+    D -->|Clean or Noise or Attacks| E[Bob Inverse Fractional Evolution Apply U inverse alpha k]
+    E --> F[Measurement in Computational Basis bit is 0 or 1]
+    F --> G[Raw Keys KA and KB]
+    G --> H[Compute QBER Noise or Attack Indicator]
 
-    %% Fuzzy‑Adaptive QEC layer
-    H --> I[Fuzzy Controller<br/>Inputs: QBER, Noise, Entropy]
-    I --> J[qec_strength → {weak, medium, strong}]
-    J -->|weak| K[Hamming(7,4)<br/>Local Single‑Error Correction]
-    J -->|medium/strong| L[LDPC(128/256)<br/>Iterative Belief‑Propagation]
-    K --> M[Corrected Key K']
-    L --> M[Corrected Key K']
+    %% Fuzzy Adaptive QEC layer
+    H --> I[Fuzzy Controller using QBER Noise Entropy]
+    I --> J[qec strength weak medium strong]
+    J -->|weak| K[Hamming 7 4 Local Single Error Correction]
+    J -->|medium or strong| L[LDPC 128 or 256 Iterative Belief Propagation]
+    K --> M[Corrected Key K prime]
+    L --> M[Corrected Key K prime]
 
     %% Privacy amplification
-    M --> N[Privacy Amplification<br/>SHA3‑256 / HKDF]
-    N --> O[Final Shared Secret Key<br/>K_final]
+    M --> N[Privacy Amplification SHA3 256 or HKDF]
+    N --> O[Final Shared Secret Key K final]
 
     %% PQC layer
-    O --> P[HKDF Derivation<br/>AES‑256 / Kyber Keys]
-    P --> Q[AES‑256‑GCM<br/>Authenticated Encryption]
-    P --> R[Kyber512 Hybrid KEM<br/>Post‑Quantum Key Encapsulation]
+    O --> P[HKDF Derivation AES 256 or Kyber Keys]
+    P --> Q[AES 256 GCM Authenticated Encryption]
+    P --> R[Kyber512 Hybrid KEM Post Quantum Key Encapsulation]
     Q --> S[Secure Classical Channel]
     R --> S
+
 ```
 
 ```mermaid
 flowchart TD
 
-    %% QKD: fractional quantum layer
-    A1[Shared Seed] --> B1[Generate αₖ Sequence]
-    B1 --> C1[Alice Fractional Encoding<br/>ψ_A = U(αₖ)...|m⟩]
-    C1 --> D1{Quantum Channel<br/>Noise / Eve}
-    D1 --> E1[Bob Inverse Fractional Evolution<br/>U⁻¹(αₖ)]
-    E1 --> F1[Measurement → Raw Keys<br/>K_A, K_B]
-    F1 --> G1[QBER Estimation]
+    %% QKD fractional quantum layer
+    A1[Shared Seed] --> B1[Generate alpha k Sequence]
+    B1 --> C1[Alice Fractional Encoding psiA uses U alpha k]
+    C1 --> D1[Quantum Channel Noise or Eve]
+    D1 --> E1[Bob Inverse Fractional Evolution U inverse alpha k]
+    E1 --> F1[Measurement in Computational Basis bit is 0 or 1]
+    F1 --> G1[Raw Keys KA and KB]
+    G1 --> H1[QBER Estimation]
 
-    %% QEC: classical reconciliation layer
-    G1 --> H1[Fuzzy‑Adaptive QEC<br/>Hamming vs LDPC]
-    H1 --> I1[Corrected Shared Key<br/>K = K_A' = K_B']
+    %% QEC classical reconciliation layer
+    H1 --> I1[Fuzzy Adaptive QEC Hamming or LDPC]
+    I1 --> J1[Corrected Shared Key K prime]
 
     %% Privacy amplification
-    I1 --> J1[Hashing (SHA3‑256 / HKDF)<br/>Privacy Amplification]
-    J1 --> K1[Final Uniform Secret Key<br/>K_final]
+    J1 --> K1[Hashing SHA3 256 or HKDF Privacy Amplification]
+    K1 --> L1[Final Uniform Secret Key K final]
 
-    %% PQC: post‑quantum crypto layer
-    K1 --> L1[HKDF Key Derivation<br/>AES / Kyber Material]
-    L1 --> M1[AES‑256‑GCM<br/>Symmetric Encryption]
-    L1 --> N1[Kyber512 Hybrid KEM<br/>Post‑Quantum Layer]
-    M1 --> O1[Encrypted Classical Data]
-    N1 --> O1
+    %% PQC post quantum crypto layer
+    L1 --> M1[HKDF Key Derivation AES 256 or Kyber Keys]
+    M1 --> N1[AES 256 GCM Symmetric Encryption]
+    M1 --> O1[Kyber512 Hybrid KEM Post Quantum Layer]
+    N1 --> P1[Encrypted Classical Data]
+    O1 --> P1
+
 ```
 
 #### **2.7 Summary: From Fractional Dynamics to a Shared Secret Key**
@@ -3864,7 +3868,7 @@ where:
 
 HKDF provides:
 
-- **extract** step: removes any residual bias in \(K_{\text{final}}\),  
+- **extract** step: removes any residual bias in $\(K_{\text{final}}\)$,  
 - **expand** step: produces a uniformly random AES key,  
 - **context binding**: ensures keys are tied to specific protocol roles,  
 - **quantum‑resistant hashing**: SHA‑256 or SHA3‑256 remain secure under quantum attacks.
