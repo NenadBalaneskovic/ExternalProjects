@@ -2880,9 +2880,9 @@ The fuzzy controller combines the above metrics using fuzzy rules such as:
 
 The output is a continuous value, but the QEC layer interprets it as:
 
-- **weak** if $\(qec\_strength < 0.33\)$  
-- **medium** if $\(0.33 \le qec\_strength < 0.66\)$  
-- **strong** if $\(qec\_strength \ge 0.66\)$
+- **weak** if $\(qec-strength < 0.33\)$  
+- **medium** if $\(0.33 \le qec-strength < 0.66\)$  
+- **strong** if $\(qec-strength \ge 0.66\)$
 
 This discretization ensures predictable behavior while preserving the flexibility of fuzzy logic.
 
@@ -3825,10 +3825,7 @@ This key is:
 
 It is the final output of the fractional‑controlled QKD protocol and the input to the post‑quantum encryption layer.
 
-Below is a **~1000‑word**, publication‑ready expansion of your section **“3. Using the Key for AES‑256 Encryption”**, written in the same scientific tone and architectural style as the rest of Project 27.  
-The DHL tab is irrelevant, so I ignore it.
-
-### **3. Using the Key for AES‑256 Encryption (Expanded ~1000 words)**
+### **3. Using the Key for AES‑256 Encryption**
 
 Once Alice and Bob complete the fractional‑controlled QKD protocol, apply fuzzy‑adaptive QEC, and run privacy amplification, they possess a shared secret key:
 
@@ -3885,7 +3882,7 @@ Once Alice has derived $\(K_{\text{AES}}\)$, she can encrypt any classical messa
 
 The encryption process is:
 
-$C = \text{AES\_GCM\_Encrypt}(K_{\text{AES}},\ \text{nonce},\ M).$
+$C = \text{AES-GCM-Encrypt}(K_{\text{AES}},\ \text{nonce},\ M).$
 
 ##### **Components of AES‑GCM**
 
@@ -3904,7 +3901,7 @@ $C = \text{AES\_GCM\_Encrypt}(K_{\text{AES}},\ \text{nonce},\ M).$
 
 Alice transmits:
 
-- the ciphertext \(C\),  
+- the ciphertext $\(C\)$,  
 - the **nonce** (a unique per‑message value),  
 - the **authentication tag**.
 
@@ -3928,7 +3925,7 @@ This transforms the fractional‑QKD key into a fully operational secure communi
 
 Bob performs the inverse operation:
 
-$M = \text{AES\_GCM\_Decrypt}(K_{\text{AES}},\ \text{nonce},\ C).$
+$M = \text{AES-GCM-Decrypt}(K_{\text{AES}},\ \text{nonce},\ C).$
 
 During decryption, AES‑GCM:
 
@@ -4061,7 +4058,7 @@ In classical PQC, Alice would send $\(pk\)$ to Bob and keep $\(sk\)$ private. Bu
 
 Alice encrypts the Kyber secret key using AES‑256‑GCM, with the fractional‑QKD key as the AES key:
 
-$C_{\text{wrap}} = \text{AES\_GCM\_Encrypt}(K_{\text{final}},\ \text{nonce},\ sk).$
+$C_{\text{wrap}} = \text{AES-GCM-Encrypt}(K_{\text{final}},\ \text{nonce},\ sk).$
 
 This produces:
 
@@ -4098,7 +4095,7 @@ Thus, the fractional‑QKD key protects the PQC layer.
 
 Bob uses the same fractional‑QKD key to decrypt the wrapped Kyber secret key:
 
-$sk = \text{AES\_GCM\_Decrypt}(K_{\text{final}},\ \text{nonce},\ C_{\text{wrap}}).$
+$sk = \text{AES-GCM-Decrypt}(K_{\text{final}},\ \text{nonce},\ C_{\text{wrap}}).$
 
 If the authentication tag matches, Bob knows:
 
@@ -4117,14 +4114,14 @@ Once both parties share $\(pk\)$ and $\(sk\)$, they can run Kyber’s standard K
 ##### **Encapsulation**
 Bob encapsulates a shared secret:
 
-$(ct, ss) = \text{Kyber\_Encaps}(pk).$
+$(ct, ss) = \text{Kyber-Encaps}(pk).$
 
 He sends $\(ct\)$ to Alice.
 
 ##### **Decapsulation**
 Alice recovers the same shared secret:
 
-$ss = \text{Kyber\_Decaps}(ct, sk).$
+$ss = \text{Kyber-Decaps}(ct, sk).$
 
 Now both share a new PQC‑derived secret $\(ss\)$, which can be used for:
 
@@ -4190,97 +4187,34 @@ The comments appear as `%%` inside the mermaid code — they do not render visua
 ```mermaid
 flowchart TD
 
-    %% ============================
-    %%  FRACTIONAL–CONTROLLED QKD
-    %% ============================
+    %% FRACTIONAL CONTROLLED QKD
+    A[Shared Seed] --> B[Generate alpha k Sequence Fractional Orders]
+    B --> C[Alice Fractional Encoding psiA uses U alpha k]
+    C --> D[Quantum Channel Noise or Eve]
+    D --> E[Bob Inverse Fractional Evolution U inverse alpha k]
+    E --> F[Measurement Raw Keys KA KB]
+    F --> G[QBER Estimation]
 
-    A[Shared Seed] 
-        %% Alice & Bob share a classical seed → generates identical fractional orders
-        --> B[Generate αₖ Sequence<br/>Fractional Orders]
+    %% FUZZY ADAPTIVE QEC
+    G --> H[Fuzzy Adaptive QEC Hamming or LDPC]
+    H --> I[Corrected Shared Key K prime]
 
-    B 
-        %% Alice encodes each bit using fractional Schrödinger evolution
-        --> C[Alice Fractional Encoding<br/>ψ_A = U(αₖ)...|m⟩]
+    %% PRIVACY AMPLIFICATION
+    I --> J[Privacy Amplification SHA3 256 or HKDF]
+    J --> K[Final QKD Key K final]
 
-    C 
-        %% Quantum channel may include noise or eavesdropping
-        --> D{Quantum Channel<br/>Noise / Eve}
+    %% AES WRAPPING OF KYBER SECRET KEY
+    K --> L[HKDF Derivation AES 256 Key K AES]
+    L --> M[Alice Generates Kyber Keypair pk sk]
+    M --> N[AES GCM Wrap C wrap Enc K AES sk]
+    N --> O[Transmit pk C wrap nonce tag]
+    O --> P[AES GCM Unwrap sk Dec K AES C wrap]
 
-    D 
-        %% Bob applies inverse fractional evolution to recover the encoded bit
-        --> E[Bob Inverse Fractional Evolution<br/>Apply U⁻¹(αₖ)]
+    %% KYBER KEM SESSION
+    P --> Q[Kyber Encapsulation ct ss]
+    Q --> R[Kyber Decapsulation ss]
+    R --> S[Post Quantum Secure Channel AES GCM or Hybrid Encryption]
 
-    E 
-        %% Bob measures in computational basis → raw bit
-        --> F[Measurement → Raw Keys<br/>K_A, K_B]
-
-    F 
-        %% QBER reveals noise or eavesdropping
-        --> G[QBER Estimation]
-
-    %% ============================
-    %%  FUZZY–ADAPTIVE QEC
-    %% ============================
-
-    G 
-        %% Fuzzy controller decides QEC strength based on QBER, entropy, LDPC stability
-        --> H[Fuzzy‑Adaptive QEC<br/>Hamming vs LDPC]
-
-    H 
-        %% After reconciliation, Alice & Bob share identical corrected key
-        --> I[Corrected Shared Key<br/>K']
-
-    %% ============================
-    %%  PRIVACY AMPLIFICATION
-    %% ============================
-
-    I 
-        %% Hashing removes any residual information Eve might have
-        --> J[Privacy Amplification<br/>SHA3‑256 / HKDF]
-
-    J 
-        %% Final uniform, high‑entropy, cryptographically strong key
-        --> K[Final QKD Key<br/>K_final]
-
-    %% ============================
-    %%  AES‑256 WRAPPING OF KYBER SECRET KEY
-    %% ============================
-
-    K 
-        %% HKDF derives AES‑256 key from QKD key
-        --> L[HKDF Derivation<br/>AES‑256 Key K_AES]
-
-    L 
-        %% Alice generates Kyber keypair (post‑quantum KEM)
-        --> M[Alice Generates Kyber Keypair<br/>(pk, sk)]
-
-    M 
-        %% Alice encrypts Kyber secret key using AES‑256‑GCM with QKD-derived key
-        --> N[AES‑GCM Wrap<br/>C_wrap = Enc(K_AES, sk)]
-
-    N 
-        %% Alice sends pk + wrapped sk + nonce + tag
-        --> O[Transmit<br/>pk, C_wrap, nonce, tag]
-
-    O 
-        %% Bob decrypts wrapped Kyber secret key using same AES key
-        --> P[AES‑GCM Unwrap<br/>sk = Dec(K_AES, C_wrap)]
-
-    %% ============================
-    %%  KYBER KEM SESSION
-    %% ============================
-
-    P 
-        %% Now both share Kyber secret key → can run standard Kyber KEM
-        --> Q[Kyber Encapsulation<br/>(ct, ss)]
-
-    Q 
-        %% Alice decapsulates using shared sk → obtains same ss
-        --> R[Kyber Decapsulation<br/>ss]
-
-    R 
-        %% ss becomes new PQC session key
-        --> S[Post‑Quantum Secure Channel<br/>AES‑GCM or Hybrid Encryption]
 ```
 
 ##### **Interpretation of the Diagram**
@@ -4510,96 +4444,42 @@ Together, they produce a robust, multi‑layered security architecture that comb
 ```mermaid
 flowchart TD
 
-    %% ============================================================
-    %% 1. CLASSICAL ENTROPY ANCHOR — SHARED PRNG SEED
-    %% ============================================================
+    %% 1. CLASSICAL ENTROPY ANCHOR
+    A[Shared Classical Seed] --> B[PRNG Expansion Generate alpha k Sequence]
 
-    A[Shared Classical Seed s]
-        %% Alice & Bob share a secret PRNG seed.
-        %% This seed is NEVER transmitted and anchors the protocol.
-        --> B[PRNG Expansion<br/>Generate αₖ Sequence]
+    B --> C[Fractional Orders alpha k Nonlinear Time Scaling]
 
-    B
-        %% αₖ defines fractional orders for quantum evolution.
-        %% These orders are unpredictable to Eve.
-        --> C[Fractional Orders αₖ<br/>Nonlinear Time Scaling]
+    %% 2. QUANTUM ENTROPY ENGINE
+    C --> D[Alice Fractional Evolution psiA uses U alpha k]
 
-    %% ============================================================
-    %% 2. QUANTUM ENTROPY ENGINE — FRACTIONAL DYNAMICS
-    %% ============================================================
+    D --> E[Quantum Channel Noise or Eve]
 
-    C
-        %% Alice applies fractional Schrödinger evolution using αₖ.
-        %% Produces nonlinear, memory‑driven Bloch trajectories.
-        --> D[Alice Fractional Evolution<br/>ψ_A = U(αₖ)...|m⟩]
+    E --> F[Bob Inverse Evolution U inverse alpha k]
 
-    D
-        %% Quantum channel may include noise or eavesdropping.
-        --> E{Quantum Channel<br/>Noise / Eve}
+    F --> G[Measurement Outcomes High Quantum Entropy]
 
-    E
-        %% Bob applies inverse fractional evolution.
-        %% Any disturbance causes amplified deviation.
-        --> F[Bob Inverse Evolution<br/>U⁻¹(αₖ)]
+    %% 3. ADAPTIVE ENTROPY FUZZY CONTROLLER
+    G --> H[Fuzzy Controller Adaptive Randomness Injection]
 
-    F
-        %% Measurement collapses ψ into classical bits.
-        %% High min‑entropy due to nonlinear fractional dynamics.
-        --> G[Measurement Outcomes<br/>High Quantum Entropy]
+    H --> I[alpha var basis shift qec strength]
 
-    %% ============================================================
-    %% 3. ADAPTIVE ENTROPY — FUZZY CONTROLLER
-    %% ============================================================
+    I --> J[Adaptive Protocol Behavior Context Dependent Entropy]
 
-    G
-        %% QBER, entropy drift, LDPC instability feed into fuzzy logic.
-        --> H[Fuzzy Controller<br/>Adaptive Randomness Injection]
+    %% 4. ERROR DETECTION QBER SPIKES
+    G --> K[QBER Estimation Attack Detectability]
 
-    H
-        %% Fuzzy logic adjusts αₖ variance, basis shift, QEC strength.
-        --> I[alpha_var / basis_shift / qec_strength]
+    K --> H
 
-    I
-        %% Adaptive parameters feed back into the next QKD round.
-        %% Eve cannot predict these adjustments.
-        --> J[Adaptive Protocol Behavior<br/>Context‑Dependent Entropy]
+    %% 5. FINAL ENTROPY OUTPUT
+    J --> L[Corrected Key K prime]
 
-    %% ============================================================
-    %% 4. ERROR DETECTION — QBER SPIKES
-    %% ============================================================
+    L --> M[Privacy Amplification SHA3 256 HKDF]
 
-    G
-        %% QBER reveals any disturbance by Eve.
-        --> K[QBER Estimation<br/>Attack Detectability]
+    M --> N[Final Shared Secret Key K final]
 
-    K
-        %% High QBER triggers stronger QEC and entropy adjustments.
-        --> H
+    %% 6. CRYPTOGRAPHIC USE
+    N --> O[Quantum Safe Encryption AES 256 Kyber]
 
-    %% ============================================================
-    %% 5. FINAL ENTROPY OUTPUT — SHARED SECRET KEY
-    %% ============================================================
-
-    J
-        %% After fuzzy‑adaptive QEC and privacy amplification,
-        %% Alice & Bob obtain a uniform, high‑entropy secret key.
-        --> L[Corrected Key K']
-
-    L
-        %% Hashing removes any residual structure or leakage.
-        --> M[Privacy Amplification<br/>SHA3‑256 / HKDF]
-
-    M
-        %% Final cryptographically strong key.
-        --> N[Final Shared Secret Key<br/>K_final]
-
-    %% ============================================================
-    %% 6. CRYPTOGRAPHIC USE — AES‑256 / KYBER
-    %% ============================================================
-
-    N
-        %% K_final is used for AES‑256‑GCM or Kyber hybrid encryption.
-        --> O[Quantum‑Safe Encryption<br/>AES‑256 / Kyber]
 ```
 
 ##### **Interpretation of the Diagram**
@@ -4699,7 +4579,7 @@ This explains why QBER jumps sharply under partial or intercept‑resend attacks
 
 The model uses a **single Pauli operator**, σₓ, as the Hamiltonian for fractional evolution:
 
-$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x).$
+$U(\alpha_k) = \exp(-i\cdot\theta(\alpha_k)\sigma_x).$
 
 This is a deliberate simplification. Realistic quantum systems use:
 
@@ -4882,95 +4762,38 @@ Below we encounter an **explained mermaid diagram** of the **toy‑model archite
 ```mermaid
 flowchart TD
 
-    %% ============================================================
-    %% 1. CLASSICAL SEED → FRACTIONAL ORDERS
-    %% ============================================================
+    %% 1. CLASSICAL SEED TO FRACTIONAL ORDERS
+    A[Shared Classical Seed] --> B[PRNG Expansion Generate alpha k Sequence]
 
-    A[Shared Classical Seed s]
-        %% Minimal PRNG seed shared by Alice & Bob.
-        %% Generates identical αₖ sequences; never transmitted.
-        --> B[PRNG → αₖ Sequence]
+    B --> C[Fractional Orders alpha k Nonlinear Time Scaling]
 
-    B
-        %% αₖ are fractional orders controlling nonlinear time scaling.
-        %% This is the only classical-to-quantum bridge in the toy model.
-        --> C[Fractional Orders αₖ]
+    %% 2. FRACTIONAL QUANTUM LAYER SINGLE QUBIT
+    C --> D[Alice Fractional Evolution psiA uses U alpha k]
 
-    %% ============================================================
-    %% 2. FRACTIONAL QUANTUM LAYER (SINGLE QUBIT)
-    %% ============================================================
+    D --> E[Simulated Quantum Channel Depolarizing Noise]
 
-    C
-        %% Alice applies fractional Schrödinger evolution using σₓ only.
-        %% Produces smooth, planar Bloch trajectories.
-        --> D[Alice Fractional Evolution<br/>ψ_A = U(αₖ)...|m⟩]
+    E --> F[Bob Inverse Evolution U inverse alpha k]
 
-    D
-        %% Quantum channel is simulated: depolarizing noise only.
-        %% No amplitude damping, no phase drift, no photon loss.
-        --> E{Simulated Quantum Channel<br/>Depolarizing Noise}
+    F --> G[Measurement Raw Keys KA KB]
 
-    E
-        %% Bob applies inverse fractional evolution using same αₖ.
-        %% Any disturbance is amplified due to reversibility.
-        --> F[Bob Inverse Evolution<br/>U⁻¹(αₖ)]
+    %% 3. QBER ESTIMATION ATTACK DETECTION
+    G --> H[QBER Estimation]
 
-    F
-        %% Measurement in fixed computational basis.
-        %% No basis switching (unlike BB84).
-        --> G[Measurement → Raw Keys<br/>K_A, K_B]
+    %% 4. FUZZY ADAPTIVE QEC CLASSICAL ONLY
+    H --> I[Fuzzy Controller Adaptive Parameters]
 
-    %% ============================================================
-    %% 3. QBER ESTIMATION (ATTACK DETECTION)
-    %% ============================================================
+    I --> J[Classical QEC Hamming or LDPC]
 
-    G
-        %% QBER reveals mismatches caused by noise or eavesdropping.
-        %% Partial/intercept attacks produce QBER ≈ 0.47.
-        --> H[QBER Estimation]
+    J --> K[Corrected Key K prime]
 
-    %% ============================================================
-    %% 4. FUZZY-ADAPTIVE QEC (CLASSICAL ONLY)
-    %% ============================================================
+    %% 5. PRIVACY AMPLIFICATION HASHING
+    K --> L[Privacy Amplification SHA3 256 HKDF]
 
-    H
-        %% Fuzzy controller evaluates QBER, entropy, LDPC instability.
-        %% Outputs qec_strength ∈ {weak, medium, strong}.
-        --> I[Fuzzy Controller<br/>Adaptive Parameters]
+    L --> M[Final Shared Key K final]
 
-    I
-        %% Weak → Hamming(7,4)
-        %% Medium → LDPC(128)
-        %% Strong → LDPC(256)
-        --> J[Classical QEC<br/>Hamming / LDPC]
+    %% 6. CRYPTOGRAPHIC USE AES 256 KYBER
+    M --> N[Quantum Safe Encryption AES 256 Kyber]
 
-    J
-        %% After reconciliation, Alice & Bob share identical corrected key.
-        --> K[Corrected Key K']
-
-    %% ============================================================
-    %% 5. PRIVACY AMPLIFICATION (HASHING)
-    %% ============================================================
-
-    K
-        %% Hashing removes residual structure and compresses entropy.
-        --> L[Privacy Amplification<br/>SHA3-256 / HKDF]
-
-    L
-        %% Final uniform, high-entropy secret key.
-        --> M[Final Shared Key<br/>K_final]
-
-    %% ============================================================
-    %% 6. CRYPTOGRAPHIC USE (AES-256 / KYBER)
-    %% ============================================================
-
-    M
-        %% Toy model supports AES-256-GCM and Kyber hybrid wrapping.
-        --> N[Quantum-Safe Encryption<br/>AES-256 / Kyber]
-
-    %% ============================================================
-    %% END OF TOY MODEL
-    %% ============================================================
 ```
 
 ##### **Explanation of the Architecture**
@@ -5316,7 +5139,7 @@ Fuzzy inference rules evaluate:
 
 Instead of binary decisions (“use Hamming” vs “use LDPC”), the fuzzy controller outputs a continuous QEC strength:
 
-$qec\_strength \in [0,1].$
+$qec-strength \in [0,1].$
 
 This produces smooth transitions between weak, medium, and strong QEC.
 
@@ -5747,7 +5570,7 @@ def bloch_components(state: qt.Qobj):
 This file is the **core fractional‑dynamics engine** for Project 27. It encapsulates the physics of time‑fractional Schrödinger evolution for a single qubit and exposes a 
 clean API that the QRNG, QKD, fuzzy control, and QEC modules can call without re‑implementing any low‑level details.
 
-I’ll walk through it section by section.
+I will walk through it section by section.
 
 ### 1. Physical setup and Hamiltonian
 
@@ -5779,9 +5602,7 @@ H = (hbar * omega / 2.0) * sx
   H = (hbar * omega / 2.0) * sx
   ```
   This defines a simple qubit Hamiltonian:
-  \[
-  \hat{H} = \frac{\hbar \omega}{2} \sigma_x
-  \]
+  $\hat{H} = \frac{\hbar \omega}{2} \sigma_x$
   Physically, this corresponds to rotations around the x‑axis on the Bloch sphere. It’s the generator of the unitary evolution used in the fractional propagator.
 
 ### 2. Fractional rotation angle θ(α)
@@ -5795,19 +5616,17 @@ def theta(alpha: float, dt: float = dt, omega: float = omega) -> float:
     return (omega / 2.0) * (dt ** alpha) / gamma(alpha + 1)
 ```
 
-- This function computes the **effective rotation angle** for a given fractional order \( \alpha \in [1,2] \):
-  \[
-  \theta(\alpha) = \frac{\omega}{2} \frac{(\Delta t)^\alpha}{\Gamma(\alpha + 1)}.
-  \]
+- This function computes the **effective rotation angle** for a given fractional order $\( \alpha \in [1,2] \)$:
+  $\theta(\alpha) = \frac{\omega}{2} \frac{(\Delta t)^\alpha}{\Gamma(\alpha + 1)}.$
 
 - **Key points:**
-  - The dependence on \( dt^\alpha \) introduces **nonlinear time scaling**.
-  - The Gamma function \( \Gamma(\alpha + 1) \) suppresses the angle as \( \alpha \) increases.
-  - This is the core of the **fractional Schrödinger propagator**: instead of a linear \( \omega t \), you get a fractional‑time effective angle.
+  - The dependence on $\( dt^\alpha \)$ introduces **nonlinear time scaling**.
+  - The Gamma function $\( \Gamma(\alpha + 1) \)$ suppresses the angle as $\( \alpha \)$ increases.
+  - This is the core of the **fractional Schrödinger propagator**: instead of a linear $\( \omega t \)$, you get a fractional‑time effective angle.
 
 This function is used by both the forward and inverse unitaries.
 
-### 3. Fractional unitary \( U(\alpha) \)
+### 3. Fractional unitary $\( U(\alpha) \)$
 
 ```python
 def U_fractional(alpha: float) -> qt.Qobj:
@@ -5820,9 +5639,7 @@ def U_fractional(alpha: float) -> qt.Qobj:
 ```
 
 - This constructs the **fractional evolution operator**:
-  \[
-  U(\alpha) = \exp(-i\,\theta(\alpha)\,\sigma_x).
-  \]
+  $U(\alpha) = \exp(-i\,\theta(\alpha)\,\sigma_x).$
 
 - Implementation details:
   - It calls `theta(alpha)` to get the rotation angle.
@@ -5830,12 +5647,12 @@ def U_fractional(alpha: float) -> qt.Qobj:
   - Uses QuTiP’s `.expm()` to compute the matrix exponential, returning a `qt.Qobj` unitary.
 
 - Physically:
-  - This is a rotation around the x‑axis by angle \( \theta(\alpha) \).
+  - This is a rotation around the x‑axis by angle $\( \theta(\alpha) \)$.
   - Applying `U_fractional(a)` to a qubit state evolves it under the **time‑fractional Schrödinger equation** for one step.
 
 This is the main building block for the iterative evolution.
 
-### 4. Inverse fractional unitary \( U^{-1}(\alpha) \)
+### 4. Inverse fractional unitary $\( U^{-1}(\alpha) \)$
 
 ```python
 def U_inverse(alpha: float) -> qt.Qobj:
@@ -5848,22 +5665,18 @@ def U_inverse(alpha: float) -> qt.Qobj:
 ```
 
 - This constructs the **inverse evolution operator**:
-  \[
-  U^{-1}(\alpha) = \exp(+i\,\theta(\alpha)\,\sigma_x).
-  \]
+  $U^{-1}(\alpha) = \exp(+i\,\theta(\alpha)\,\sigma_x).$
 
 - It uses the same angle `theta(alpha)` but with `+1j` instead of `-1j`.
 
 - Physically:
   - This is the exact inverse of `U_fractional(alpha)`:
-    \[
-    U^{-1}(\alpha) = U(\alpha)^\dagger.
-    \]
-  - In the QKD context, Bob uses this to **decode** the state that Alice evolved with the forward fractional unitary, assuming they share the same sequence of \( \alpha_k \).
+    $U^{-1}(\alpha) = U(\alpha)^\dagger.$
+  - In the QKD context, Bob uses this to **decode** the state that Alice evolved with the forward fractional unitary, assuming they share the same sequence of $\( \alpha_k \)$.
 
 This is crucial for the **fractional‑controlled QKD** protocol.
 
-### 5. PRNG for fractional orders \( \alpha_k \)
+### 5. PRNG for fractional orders $\( \alpha_k \)$
 
 ```python
 def generate_alpha_sequence(seed: int, N: int, low: float = 1.0, high: float = 2.0):
@@ -5879,9 +5692,9 @@ def generate_alpha_sequence(seed: int, N: int, low: float = 1.0, high: float = 2
   - Draws `N` samples uniformly from `[low, high]`, typically `[1.0, 2.0]`.
 
 - Physically / cryptographically:
-  - This sequence \( \{\alpha_k\} \) drives the **fractional evolution** step by step.
+  - This sequence $\( \{\alpha_k\} \)$ drives the **fractional evolution** step by step.
   - The seed ensures that Alice and Bob can generate the **same sequence** independently (shared secret seed).
-  - The randomness in \( \alpha_k \) is what makes the Bloch trajectory **unpredictable**, turning the evolution into a **QRNG source** and a QKD modulation mechanism.
+  - The randomness in $\( \alpha_k \)$ is what makes the Bloch trajectory **unpredictable**, turning the evolution into a **QRNG source** and a QKD modulation mechanism.
 
 This is the bridge between classical PRNG and quantum fractional dynamics.
 
@@ -5910,9 +5723,7 @@ def evolve_fractional(psi_init: qt.Qobj, alpha_seq: np.ndarray):
 - Process:
   - Starts with `states = [psi_init]`.
   - For each `a` in `alpha_seq`, applies `U_fractional(a)`:
-    \[
-    \psi_{k+1} = U(\alpha_k)\psi_k.
-    \]
+    $\psi_{k+1} = U(\alpha_k)\psi_k.$
   - Appends each new state to the list.
 
 - Output:
@@ -5942,7 +5753,7 @@ def bloch_components(state: qt.Qobj):
   - Returns `(x, y, z)`.
 
 - Physically:
-  - The Bloch vector \(\vec{r} = (x, y, z)\) encodes the qubit’s state on the Bloch sphere.
+  - The Bloch vector $\(\vec{r} = (x, y, z)\)$ encodes the qubit’s state on the Bloch sphere.
   - Tracking `(x, y, z)` over the sequence `[ψ₀, …, ψ_N]` lets you:
     - visualize the fractional trajectory,
     - compute geometric properties,
@@ -6204,7 +6015,7 @@ qec_sets = {
 ```
 
 - **alpha_var:**  
-  Controls how widely \( \alpha_k \) is sampled (fractional‑order variance).
+  Controls how widely $\( \alpha_k \)$ is sampled (fractional‑order variance).
 - **basis_shift:**  
   Controls how much the measurement basis is rotated.
 - **qec_strength:**  
@@ -6315,9 +6126,7 @@ def defuzz(sets, outputs):
      - Scale it by the rule strength.
      - Take the **max** across all rules (Mamdani aggregation).
   4. Compute the **centroid**:
-     \[
-     \text{defuzzified} = \frac{\sum x_i y_i}{\sum y_i}
-     \]
+     $\text{defuzzified} = \frac{\sum x_i y_i}{\sum y_i}$
   5. If `ys` is all zeros (no activation), return `0.0`.
 
 This is standard **centroid defuzzification**.
@@ -6510,7 +6319,7 @@ def decrypt(secret_key: bytes, ciphertext: bytes) -> bytes:
 
 ````
 
-This file is a **toy, symmetric‑primitive KEM** that mimics the **Kyber512 API shape** so you can experiment with a Kyber‑like workflow on Windows without installing real lattice‑based PQC libraries. It’s explicitly **not** a real Kyber implementation, but it lets the rest of Project 27 treat it as if it were.
+This file is a **toy, symmetric‑primitive KEM** that mimics the **Kyber512 API shape** so we can experiment with a Kyber‑like workflow on Windows without installing real lattice‑based PQC libraries. It’s explicitly **not** a real Kyber implementation, but it lets the rest of Project 27 treat it as if it were.
 
 I’ll walk through its structure and behavior.
 
@@ -6834,8 +6643,8 @@ random_code(n, weight=3)
 
 which returns:
 
-- **H** — an \( n \times n \) sparse parity‑check matrix  
-- **G** — an \( n \times n \) generator matrix (identity for simplicity)
+- **H** — an $\( n \times n \)$ sparse parity‑check matrix  
+- **G** — an $\( n \times n \)$ generator matrix (identity for simplicity)
 
 This makes the module easy to use in:
 
@@ -6861,8 +6670,8 @@ The module is intentionally dependency‑minimal.
 
 This function generates a **toy LDPC code** with:
 
-- sparse parity‑check matrix \( H \)  
-- trivial generator matrix \( G = I_n \)
+- sparse parity‑check matrix $\( H \)$  
+- trivial generator matrix $\( G = I_n \)$
 
 The design is intentionally simple so that:
 
@@ -6878,7 +6687,7 @@ H = np.zeros((n, n), dtype=int)
 rng = np.random.default_rng()
 ```
 
-- Initializes an \( n \times n \) zero matrix.
+- Initializes an $\( n \times n \)$ zero matrix.
 - Uses NumPy’s modern PRNG (`default_rng`) for reproducibility and good statistical properties.
 
 #### **2.2 Column‑wise sparse population**
@@ -6913,7 +6722,7 @@ for i in range(n):
 LDPC matrices must not contain all‑zero rows, because:
 
 - an all‑zero row corresponds to a parity equation that checks nothing,  
-- it reduces the rank of \( H \),  
+- it reduces the rank of $\( H \)$,  
 - it weakens error‑detection capability.
 
 This loop ensures:
@@ -7034,7 +6843,7 @@ It is not intended for:
 
 Our LDPC generator produces:
 
-- an **\(n \times n\)** parity‑check matrix \(H\),  
+- an **$\(n \times n\)$** parity‑check matrix $\(H\)$,  
 - with **column weight = 3**,  
 - and **row weight ≈ 3** (after the “no‑zero‑row” fix).
 
@@ -7042,7 +6851,7 @@ A **Tanner graph** is the bipartite graph representation of this matrix:
 
 - **Left side:** variable nodes (bits)  
 - **Right side:** check nodes (parity constraints)  
-- **Edges:** wherever \(H_{i,j} = 1\)
+- **Edges:** wherever $\(H_{i,j} = 1\)$
 
 This graph is the structure used by:
 
@@ -7051,7 +6860,7 @@ This graph is the structure used by:
 - syndrome analysis,  
 - LDPC instability detection (your attack‑detection mechanism).
 
-Below is a **mermaid diagram** showing the Tanner graph structure for a **small example** (say \(n = 6\)).  
+Below is a **mermaid diagram** showing the Tanner graph structure for a **small example** (say $\(n = 6\)$).  
 Our real LDPC matrices (128×128, 256×256) follow the exact same pattern, just larger.
 
 #### **Mermaid Diagram: Tanner Graph (Example for n = 6)**
@@ -7107,8 +6916,8 @@ graph LR
 
 This diagram shows:
 
-- **6 variable nodes** \(v_0 \ldots v_5\)  
-- **6 check nodes** \(c_0 \ldots c_5\)  
+- **6 variable nodes** $\(v_0 \ldots v_5\)$  
+- **6 check nodes** $\(c_0 \ldots c_5\)$  
 - **3 edges per variable node** (column weight = 3)  
 - **≈3 edges per check node** (row weight ≈ 3)
 
@@ -7126,7 +6935,7 @@ These represent the **bits of your raw key**:
 - After measurement  
 - Before error correction
 
-Each variable node \(v_j\) corresponds to a single bit in the raw key.
+Each variable node $\(v_j\)$ corresponds to a single bit in the raw key.
 
 In Project 27:
 
@@ -7136,19 +6945,17 @@ In Project 27:
 
 ##### **2. Check Nodes (Right Side)**
 
-Each check node \(c_i\) represents a **parity constraint**:
+Each check node $\(c_i\)$ represents a **parity constraint**:
 
-\[
-c_i: \bigoplus_{j \in N(i)} v_j = 0
-\]
+$c_i: \bigoplus_{j \in N(i)} v_j = 0$
 
-where \(N(i)\) is the set of variable nodes connected to check node \(c_i\).
+where $\(N(i)\)$ is the set of variable nodes connected to check node $\(c_i\)$.
 
 Physically:
 
 - Each check node enforces a **redundancy condition**.
 - If the parity is violated, an error is detected.
-- The syndrome vector \(s = Hx\) tells you which checks failed.
+- The syndrome vector $\(s = Hx\)$ tells you which checks failed.
 
 In Project 27:
 
@@ -7157,12 +6964,12 @@ In Project 27:
 
 ##### **3. Edges (Connections)**
 
-An edge exists wherever \(H_{i,j} = 1\).
+An edge exists wherever $\(H_{i,j} = 1\)$.
 
 This means:
 
-- Variable node \(v_j\) participates in parity check \(c_i\).
-- Check node \(c_i\) depends on variable node \(v_j\).
+- Variable node $\(v_j\)$ participates in parity check $\(c_i\)$.
+- Check node $\(c_i\)$ depends on variable node $\(v_j\)$.
 
 The **sparsity** of the graph is what makes LDPC codes powerful:
 
@@ -7271,8 +7078,8 @@ The mermaid diagram above is a faithful visualization of the structure your gene
 
 `ldpc_codes.py` provides a **simple, clean, pedagogical LDPC code generator** for Project 27. It constructs:
 
-- a sparse parity‑check matrix \( H \),  
-- a trivial generator matrix \( G \),  
+- a sparse parity‑check matrix $\( H \)$,  
+- a trivial generator matrix $\( G \)$,  
 - with guaranteed non‑zero rows,  
 - suitable for QEC experiments in fractional‑fuzzy‑QKD.
 
@@ -7400,10 +7207,10 @@ vars_  = [np.where(H[:, j] == 1)[0] for j in range(H.shape[1])]
 This extracts the structure of the Tanner graph:
 
 ##### **Check node adjacency**
-`checks[i]` = list of variable nodes connected to check node \(c_i\).
+`checks[i]` = list of variable nodes connected to check node $\(c_i\)$.
 
 ##### **Variable node adjacency**
-`vars_[j]` = list of check nodes connected to variable node \(v_j\).
+`vars_[j]` = list of check nodes connected to variable node $\(v_j\)$.
 
 This precomputation speeds up decoding and makes the update loops clean.
 
@@ -7439,9 +7246,7 @@ for i, cn in enumerate(checks):
 
 Each check node enforces:
 
-\[
-\bigoplus_{j \in cn} x_j = 0
-\]
+$\bigoplus_{j \in cn} x_j = 0$
 
 If the parity is wrong:
 
@@ -7513,9 +7318,7 @@ if np.sum(syndrome) == 0:
 
 The syndrome vector is:
 
-\[
-s = Hx \mod 2
-\]
+$s = Hx \mod 2$
 
 If all parity checks are satisfied (`sum(s) == 0`):
 
@@ -7601,16 +7404,14 @@ This makes it ideal for:
 
 The syndrome vector is:
 
-\[
-s^{(t)} = H x^{(t)} \bmod 2
-\]
+$s^{(t)} = H x^{(t)} \bmod 2$
 
 where:
 
-- \(H\) is your LDPC parity‑check matrix,  
-- \(x^{(t)}\) is the decoder’s estimate of the codeword at iteration \(t\),  
-- \(s^{(t)}\) is the syndrome at iteration \(t\),  
-- \(\sum s^{(t)}\) is the **syndrome weight**, i.e., number of violated parity checks.
+- $\(H\)$ is our LDPC parity‑check matrix,  
+- $\(x^{(t)}\)$ is the decoder’s estimate of the codeword at iteration $\(t\)$,  
+- $\(s^{(t)}\)$ is the syndrome at iteration $\(t\)$,  
+- $\(\sum s^{(t)}\)$ is the **syndrome weight**, i.e., number of violated parity checks.
 
 Syndrome evolution is one of the most important diagnostic signals in Project 27:
 
@@ -7724,9 +7525,7 @@ This is exactly why LDPC is part of your **attack‑detection layer**.
 ###### **Iteration 9: Syndrome weight = 0**
 All parity checks are satisfied:
 
-\[
-H x^{(9)} = 0
-\]
+$H x^{(9)} = 0$
 
 This means:
 
@@ -7829,9 +7628,9 @@ def encode(G, bits):
 ````
 
 This module implements the **lightweight LDPC encoder** used in Project 27’s QEC layer. It is intentionally minimal, pedagogical, and easy to integrate with your fractional‑QKD and fuzzy‑controlled pipeline. 
-The encoder performs **pure linear encoding** using the generator matrix \(G\), producing a codeword \(y\) from an input bit vector \(bits\).
+The encoder performs **pure linear encoding** using the generator matrix $\(G\)$, producing a codeword $\(y\)$ from an input bit vector $\(bits\)$.
 
-Because your LDPC generator (`ldpc_codes.py`) currently returns a **trivial generator matrix** \(G = I_n\), the encoder behaves like an identity mapping. This is intentional: Project 27 focuses on 
+Because your LDPC generator (`ldpc_codes.py`) currently returns a **trivial generator matrix** $\(G = I_n\)$, the encoder behaves like an identity mapping. This is intentional: Project 27 focuses on 
 **error correction and LDPC instability**, not on high‑rate LDPC encoding. The encoder is therefore kept simple so that the QEC layer remains transparent and easy to analyze.
 
 Let’s break down the file.
@@ -7888,35 +7687,29 @@ y = (G @ bits) % 2
 
 This is the core operation:
 
-\[
-y = G \cdot bits \mod 2
-\]
+$y = G \cdot bits \mod 2$
 
 ##### **What this means mathematically**
 
-- \(G\) is the **generator matrix** of the LDPC code.  
-- Multiplying \(G\) by the bit vector produces a **codeword** in the LDPC code space.  
+- $\(G\)$ is the **generator matrix** of the LDPC code.  
+- Multiplying $\(G\)$ by the bit vector produces a **codeword** in the LDPC code space.  
 - Taking modulo 2 ensures binary arithmetic.
 
 ##### **What this means in your implementation**
 
 Because your LDPC generator currently sets:
 
-\[
-G = I_n,
-\]
+$G = I_n,$
 
 the encoding becomes:
 
-\[
-y = bits.
-\]
+$y = bits.$
 
 This is intentional:
 
 - You are not focusing on LDPC encoding performance.  
 - You are focusing on **LDPC parity checking**, **syndrome evolution**, and **decoder instability**.  
-- Using \(G = I\) keeps the encoder trivial and the QEC layer transparent.
+- Using $\(G = I\)$ keeps the encoder trivial and the QEC layer transparent.
 
 ##### **Why this is acceptable**
 
@@ -7924,8 +7717,8 @@ In QKD:
 
 - The raw key is already a random bitstring.  
 - LDPC encoding is not strictly required; LDPC **decoding** is the important part.  
-- The parity‑check matrix \(H\) is what matters for error correction.  
-- The generator matrix \(G\) is only needed for completeness.
+- The parity‑check matrix $\(H\)$ is what matters for error correction.  
+- The generator matrix $\(G\)$ is only needed for completeness.
 
 Thus, a trivial encoder is perfectly fine for research and experimentation.
 
@@ -7937,7 +7730,7 @@ return y
 
 - Returns the encoded bitstring.  
 - In your current setup, this is identical to the input.  
-- It is still formally a “codeword” because \(G = I\).
+- It is still formally a “codeword” because $\(G = I\)$.
 
 ### **3. How This Encoder Fits Into Project 27**
 
@@ -7945,12 +7738,12 @@ Even though the encoder is minimal, it plays an important role in the architectu
 
 #### **3.1 Completes the LDPC code definition**
 
-Your LDPC generator returns:
+Our LDPC generator returns:
 
-- \(H\): parity‑check matrix  
-- \(G\): generator matrix  
+- $\(H\)$: parity‑check matrix  
+- $\(G\)$: generator matrix  
 
-The encoder uses \(G\) to produce codewords.  
+The encoder uses $\(G\)$ to produce codewords.  
 This keeps the LDPC code mathematically complete.
 
 #### **3.2 Integrates with the QKD pipeline**
@@ -7969,7 +7762,7 @@ Even though encoding is trivial, it maintains the structure of a full QEC pipeli
 
 You can later replace:
 
-- \(G = I\)  
+- $\(G = I\)$  
 with  
 - a real LDPC generator matrix (systematic or non‑systematic)
 
@@ -7993,7 +7786,7 @@ This is ideal for fractional‑QKD research.
 `ldpc_encoder.py` implements a **minimal, clean LDPC encoder**:
 
 - Converts input bits to a NumPy vector  
-- Multiplies by generator matrix \(G\)  
+- Multiplies by generator matrix $\(G\)$  
 - Applies modulo‑2 arithmetic  
 - Returns the encoded codeword  
 
@@ -8903,9 +8696,7 @@ These differ due to:
 
 The system computes:
 
-\[
-\text{QBER} = \frac{\text{bit mismatches}}{\text{total bits}}
-\]
+$\text{QBER} = \frac{\text{bit mismatches}}{\text{total bits}}$
 
 QBER is the primary indicator of:
 
@@ -8985,9 +8776,7 @@ Hamming uses:
 
 The corrected key is compressed using:
 
-\[
-K = \text{SHA3‑256}(K')
-\]
+$K = \text{SHA3‑256}(K')$
 
 This:
 
@@ -9269,11 +9058,9 @@ Encode a classical bit \(m \in \{0,1\}\) using **fractional Schrödinger evoluti
 #### **Physical meaning**
 Alice’s encoding is:
 
-\[
-\psi_A = U(\alpha_{N-1}) \cdots U(\alpha_1) U(\alpha_0) |m\rangle
-\]
+$\psi_A = U(\alpha_{N-1}) \cdots U(\alpha_1) U(\alpha_0) |m\rangle$
 
-The sequence \( \{\alpha_k\} \) is shared with Bob via a classical seed.
+The sequence $\( \{\alpha_k\} \)$ is shared with Bob via a classical seed.
 
 #### **Role in Project 27**
 This is the **quantum modulation** step.  
@@ -9315,15 +9102,11 @@ Undo Alice’s fractional evolution using the **inverse fractional unitary**.
 #### **Physical meaning**
 Bob performs:
 
-\[
-|b\rangle = U^{-1}(\alpha_0) U^{-1}(\alpha_1) \cdots U^{-1}(\alpha_{N-1}) \psi_A
-\]
+$|b\rangle = U^{-1}(\alpha_0) U^{-1}(\alpha_1) \cdots U^{-1}(\alpha_{N-1}) \psi_A$
 
 If the channel is clean:
 
-\[
-b = m
-\]
+$b = m$
 
 #### **Role in Project 27**
 Bob’s decoding is the **inverse fractional evolution** step.  
@@ -9346,9 +9129,7 @@ def depolarize(psi, p):
 
 Implements:
 
-\[
-\rho \rightarrow (1-p)\rho + p\frac{I}{2}
-\]
+$\rho \rightarrow (1-p)\rho + p\frac{I}{2}$
 
 ##### **Meaning**
 Depolarizing noise pushes the qubit toward the maximally mixed state.
@@ -9384,7 +9165,7 @@ def eve_partial_inverse(psi, alpha_seq, knowledge_prob=0.3):
 ```
 
 ##### **Process**
-For each fractional order \(a\):
+For each fractional order $\(a\)$:
 
 - With probability `knowledge_prob`, Eve applies correct inverse.  
 - Otherwise she applies a **perturbed inverse**:
@@ -9554,9 +9335,7 @@ This replaces basis‑announcement steps in BB84.
 ##### **Alice Encoding**
 Alice encodes bit \(m\) by applying a chain of fractional unitaries:
 
-\[
-\psi_A = U(\alpha_{N-1}) \cdots U(\alpha_0)|m\rangle
-\]
+$\psi_A = U(\alpha_{N-1}) \cdots U(\alpha_0)|m\rangle$
 
 This produces a nonlinear, memory‑driven Bloch trajectory.
 
@@ -9572,9 +9351,7 @@ Each modifies the state differently.
 ##### **Bob Decoding**
 Bob applies the inverse fractional evolution:
 
-\[
-U^{-1}(\alpha_0) \cdots U^{-1}(\alpha_{N-1})
-\]
+$U^{-1}(\alpha_0) \cdots U^{-1}(\alpha_{N-1})$
 
 If the channel is clean, Bob recovers Alice’s bit.
 
@@ -9622,17 +9399,13 @@ flowchart LR
 ##### **Interpretation of the Bloch‑Trajectory Diagram**
 
 ###### **Step‑wise Fractional Evolution**
-Each fractional order \( \alpha_k \) produces a rotation:
+Each fractional order $\( \alpha_k \)$ produces a rotation:
 
-\[
-U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)
-\]
+$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)$
 
 with:
 
-\[
-\theta(\alpha_k) = \frac{\omega}{2}\frac{dt^{\alpha_k}}{\Gamma(\alpha_k+1)}
-\]
+$\theta(\alpha_k) = \frac{\omega}{2}\frac{dt^{\alpha_k}}{\Gamma(\alpha_k+1)}$
 
 This makes the trajectory:
 
@@ -9652,9 +9425,7 @@ After N steps, the qubit reaches a final state whose Bloch vector encodes:
 ###### **Bloch Vector Extraction**
 The Bloch vector:
 
-\[
-r = (x, y, z)
-\]
+$r = (x, y, z)$
 
 is used for:
 
@@ -9908,15 +9679,11 @@ def measure_povm(psi):
 ##### **Process**
 Uses projectors:
 
-\[
-P_0 = |0\rangle\langle 0|,\quad P_1 = |1\rangle\langle 1|
-\]
+$P_0 = |0\rangle\langle 0|,\quad P_1 = |1\rangle\langle 1|$
 
 Computes:
 
-\[
-p_0 = \langle \psi | P_0 | \psi \rangle
-\]
+$p_0 = \langle \psi | P_0 | \psi \rangle$
 
 Samples bit accordingly.
 
@@ -9957,9 +9724,7 @@ This is the **core QRNG function**.
 #### **Physical meaning**
 Fractional evolution produces a nonlinear, memory‑driven Bloch trajectory:
 
-\[
-\psi_{\text{final}} = U(\alpha_{N-1})\cdots U(\alpha_0)|0\rangle
-\]
+$\psi_{\text{final}} = U(\alpha_{N-1})\cdots U(\alpha_0)|0\rangle$
 
 Measurement collapses this state into a classical bit.
 
@@ -9986,8 +9751,8 @@ def frequency_test(bits):
 
 Returns:
 
-- \(p_0\)  
-- \(p_1\)
+- $\(p_0\)$  
+- $\(p_1\)$
 
 Used to detect bias.
 
@@ -9999,9 +9764,7 @@ def autocorrelation(bits, lag=1):
 
 Computes:
 
-\[
-\text{corr}(bits_t, bits_{t+lag})
-\]
+$\text{corr}(bits_t, bits_{t+lag})$
 
 Used to detect temporal structure.
 
@@ -10013,9 +9776,7 @@ def shannon_entropy(bits):
 
 Computes:
 
-\[
-H = -\sum p\log_2 p
-\]
+$H = -\sum p\log_2 p$
 
 Measures average uncertainty.
 
@@ -10027,9 +9788,7 @@ def min_entropy(bits):
 
 Computes:
 
-\[
-H_{\min} = -\log_2(\max(p_0, p_1))
-\]
+$H_{\min} = -\log_2(\max(p_0, p_1))$
 
 Measures worst‑case unpredictability.
 
@@ -10041,9 +9800,7 @@ def collision_entropy(bits):
 
 Computes:
 
-\[
-H_2 = -\log_2(p_0^2 + p_1^2)
-\]
+$H_2 = -\log_2(p_0^2 + p_1^2)$
 
 Measures probability of collisions.
 
@@ -10124,9 +9881,7 @@ Generated from a shared seed; they determine the nonlinear time‑fractional rot
 ##### **Fractional Evolution**
 The qubit undergoes a chain of fractional unitaries:
 
-\[
-\psi_{\text{final}} = U(\alpha_{N-1})\cdots U(\alpha_0)|0\rangle
-\]
+$\psi_{\text{final}} = U(\alpha_{N-1})\cdots U(\alpha_0)|0\rangle$
 
 This produces a **nonlinear, memory‑driven Bloch trajectory**.
 
@@ -10183,23 +9938,17 @@ flowchart LR
 #### **Interpretation of the Bloch‑Trajectory Diagram**
 
 ##### **Initial Bloch Vector**
-\[
-r_0 = (0,0,1)
-\]
-corresponds to \(|0⟩\).
+$r_0 = (0,0,1)$
+corresponds to $\(|0⟩\)$.
 
 ##### **Fractional Evolution**
-Each fractional order \(α_k\) produces a rotation:
+Each fractional order $\(α_k\)$ produces a rotation:
 
-\[
-U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)
-\]
+$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)$
 
 with:
 
-\[
-\theta(\alpha_k) = \frac{\omega}{2}\frac{dt^{\alpha_k}}{\Gamma(\alpha_k+1)}
-\]
+$\theta(\alpha_k) = \frac{\omega}{2}\frac{dt^{\alpha_k}}{\Gamma(\alpha_k+1)}$
 
 This creates:
 
@@ -10210,15 +9959,11 @@ This creates:
 ##### **Final Bloch Vector**
 The final state has Bloch vector:
 
-\[
-r_N = (x, y, z)
-\]
+$r_N = (x, y, z)$
 
 which determines measurement probabilities:
 
-\[
-p_0 = \frac{1+z}{2},\quad p_1 = 1 - p_0
-\]
+$p_0 = \frac{1+z}{2},\quad p_1 = 1 - p_0$
 
 ##### **Entropy Source**
 The irregular trajectory yields:
