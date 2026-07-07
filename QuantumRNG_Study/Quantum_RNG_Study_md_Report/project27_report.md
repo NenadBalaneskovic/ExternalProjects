@@ -521,7 +521,7 @@ This imbalance is expected due to Bloch geometry but is easily corrected.
 
 #### **4.8 Randomness Tests**
 
-![fig15](output_74_0.png)
+![fig17](output_74_0.png)
 
 ##### **4.8.1 Frequency Test**
 
@@ -705,11 +705,16 @@ Fuzzy logic provides a soft‑computing framework for adaptive control.
 
 The fuzzy controller uses:
 
-- **noise_level**,  
-- **qber**,  
-- **entropy**,  
-- **basis_shift**,  
+- **noise_level**,
+![fig8](output_50_0.png) 
+- **qber**,
+![fig9](output_50_1.png) 
+- **entropy**,
+![fig10](output_50_2.png) 
+- **basis_shift**,
+![fig11](output_50_4.png) 
 - **alpha_var**.
+![fig12](output_50_3.png)
 
 These inputs reflect the state of the channel and the quality of the fractional dynamics.
 
@@ -717,7 +722,8 @@ These inputs reflect the state of the channel and the quality of the fractional 
 
 The controller produces:
 
-- **qec_strength**,  
+- **qec_strength**,
+![fig13](output_50_5.png)
 - **basis_shift**,  
 - **alpha_var**.
 
@@ -787,6 +793,8 @@ Eavesdropping produces:
 - LDPC instability.
 
 This reveals Eve’s presence.
+![fig14](output_76_0.png)
+![fig15](output_76_1.png)
 
 #### **5.6 Privacy Amplification**
 
@@ -799,6 +807,7 @@ This produces:
 - uniform bits,
 - high entropy,
 - cryptographically strong keys.
+![fig16](output_78_1.png)
 
 #### **5.7 Integration with Post‑Quantum Cryptography (PQC)**
 
