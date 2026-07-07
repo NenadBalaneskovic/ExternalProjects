@@ -891,7 +891,7 @@ This is the “control layer” of the project — a soft‑computing mechanism 
 
 ### **2. Why Fuzzy Logic in QKD?**
 
-#### **2.1 Motivation (Expanded Scientific Version, ~1000 words)**
+#### **2.1 Motivation**
 
 Quantum communication channels are inherently noisy, fluctuating, and often non‑Markovian. Unlike classical communication lines, whose noise characteristics can often be approximated as stationary or 
 at least slowly varying, quantum channels exhibit rapid, irregular changes in decoherence rates, photon loss, phase drift, and environmental coupling. These fluctuations arise from a combination of 
@@ -1035,7 +1035,7 @@ Fractional‑fuzzy QKD treats noise as a **graded, interpretable, adaptive signa
 
 This shift — from hard thresholds to soft decisions — is essential for building QKD systems that can operate reliably in real‑world environments where noise, entropy, and channel conditions fluctuate constantly.
 
-### **3. Fuzzy Membership Functions (Expanded Scientific Version, ~1000 words)**
+### **3. Fuzzy Membership Functions**
 
 In Project 27, fuzzy logic serves as the adaptive decision‑making layer that interprets noisy, fluctuating quantum‑channel conditions and translates them into smooth, proportional adjustments of 
 protocol parameters. To achieve this, the system relies on a set of **fuzzy membership functions** — mathematical constructs that map numerical inputs (noise, QBER, entropy, etc.) into linguistic categories 
@@ -1204,7 +1204,7 @@ The fuzzy membership functions in Project 27 transform raw numerical metrics —
 allow the fuzzy controller to make smooth, proportional adjustments to QEC strength, basis choice, and fractional‑order variance. Triangular membership functions provide the ideal balance 
 of simplicity, interpretability, and responsiveness, enabling a QKD protocol that adapts continuously to real‑world quantum‑channel conditions.
 
-### **4. Fuzzy Output Variables (Expanded Scientific Version, ~1000 words)**
+### **4. Fuzzy Output Variables**
 
 The fuzzy controller in Project 27 serves as the adaptive “decision engine” that interprets channel conditions and adjusts protocol parameters in real time. While the input membership functions (noise, QBER, 
 entropy, alpha_var, basis_shift, qec_strength) describe the *state* of the quantum channel and the fractional‑evolution process, the **output variables** determine how the QKD protocol should *respond*. These outputs are the 
@@ -1723,7 +1723,7 @@ The comparison between static and fuzzy‑controlled QKD in Project 27 reveals e
 
 Fuzzy control transforms QKD from a rigid protocol into a flexible, evolution‑aware system capable of responding smoothly to real‑world quantum‑channel fluctuations.
 
-### **7. Key Rate vs Noise (Expanded Scientific Version, ~1000 words)**
+### **7. Key Rate vs Noise**
 
 In quantum key distribution (QKD), the **key rate** is one of the most important performance metrics. It quantifies how many usable secret bits Alice and Bob can extract from the quantum channel after sifting, error correction, 
 and privacy amplification. In Project 27, the key rate is defined in the simplest possible way:
@@ -1875,7 +1875,7 @@ The “Key Rate vs Noise” comparison reveals exactly what a minimal fractional
 
 Fuzzy control transforms QKD from a rigid protocol into a flexible, evolution‑aware system capable of responding smoothly to real‑world quantum‑channel fluctuations.
 
-### **8. Physical Interpretation of Fuzzy‑Controlled QKD (Expanded Scientific Version, ~1000 words)**
+### **8. Physical Interpretation of Fuzzy‑Controlled QKD**
 
 Understanding the physical meaning of fuzzy‑controlled QKD requires integrating three conceptual layers: **fractional quantum dynamics**, **fuzzy logic**, and **classical reconciliation**. Each layer contributes a 
 distinct function — entropy generation, adaptive control, and correctness — and together they form a hybrid quantum‑classical system capable of responding smoothly to real‑world channel conditions. This section 
@@ -3315,7 +3315,7 @@ This means that fractional‑controlled QKD is **at least as secure** as BB84 an
 
 These values validate the protocol’s security intuition: **Eve cannot interact with the quantum state without being detected.**
 
-### **7. What “Fuzzy QEC” Really Means (Expanded ~1000 words)**
+### **7. What “Fuzzy QEC” Really Means**
 
 In the architecture of Project 27, the term **“Fuzzy QEC”** can easily be misunderstood. It does *not* refer to a new quantum error‑correcting code, nor does it modify quantum states, nor does it introduce fuzzy 
 logic into the quantum layer itself. Instead, it is a **soft‑computing control layer** that sits *on top* of classical error correction. Its purpose is to make the QEC process adaptive, context‑aware, and responsive to real‑time 
@@ -4002,7 +4002,7 @@ The final shared key from fractional‑fuzzy QKD is transformed into a cryptogra
 and authentication tag. Bob decrypts using the same key. AES‑256 remains secure even against quantum adversaries, making the combined system—fractional‑controlled QKD + fuzzy‑adaptive QEC + AES‑256‑GCM—a robust, 
 quantum‑resistant communication channel.
 
-### **4. Using the Key for Kyber Hybrid Encryption (Expanded ~1000 words)**
+### **4. Using the Key for Kyber Hybrid Encryption**
 
 Once Alice and Bob complete the fractional‑controlled QKD protocol, reconcile their raw keys using fuzzy‑adaptive QEC, and compress the corrected key through privacy amplification, they obtain a shared secret key:
 
@@ -4288,7 +4288,7 @@ Using the fractional‑QKD key to wrap Kyber’s secret key creates a hybrid qua
 
 This layered design combines physics‑based security, lattice‑based security, and symmetric cryptography into a unified quantum‑safe communication protocol.
 
-### **5. Entropy Sources and Security Intuition (Expanded ~1000 words)**
+### **5. Entropy Sources and Security Intuition**
 
 The security of Project 27 does not rely on a single mechanism, nor on a single hardness assumption, nor on a single randomness generator. Instead, it is built on **three independent entropy sources**, each arising from a different 
 layer of the architecture: quantum dynamics, classical randomness, and adaptive fuzzy control. These sources interact in a way that amplifies unpredictability, strengthens resistance to eavesdropping, and ensures that the final 
