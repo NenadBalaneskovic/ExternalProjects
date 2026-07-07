@@ -9028,7 +9028,7 @@ Encode a classical bit $\(m \in \{0,1\}\)$ using **fractional Schrödinger evolu
    ```python
    psi_init = qt.basis(2, m)
    ```
-   - $\(|0\rangle\)4 or $\(|1\rangle\)4
+   - $\(|0\rangle\)$ or $\(|1\rangle\)$
 
 2. Apply fractional evolution:
    ```python
@@ -9269,7 +9269,7 @@ This module is the **quantum foundation** of the entire architecture.
 
 Everything downstream depends on the raw keys generated here.
 
-### **8. QKD and fractional Bloch-trajectory diagrams
+### **8. QKD and fractional Bloch-trajectory diagrams**
 
 #### **1. Full Fractional‑Controlled QKD Pipeline (Mermaid Diagram)**
 
