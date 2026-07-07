@@ -9278,36 +9278,37 @@ This diagram shows the *entire quantum‑layer workflow* of Project 27, from f
 flowchart TD
 
     %% Shared seed and fractional orders
-    A[Shared Seed] --> B[Generate αₖ Sequence<br/>Fractional Orders]
+    A[Shared Seed] --> B[Generate alpha k Sequence Fractional Orders]
 
     %% Alice encoding
-    B --> C[Alice Encoding<br/>Fractional Evolution<br/>ψ_A = U(αₖ)...|m⟩]
+    B --> C[Alice Encoding Fractional Evolution psiA uses U alpha k]
 
     %% Channel
-    C --> D{Quantum Channel}
+    C --> D[Quantum Channel]
 
     %% Noise and attacks
-    D -->|Clean| E[ψ_channel = ψ_A]
-    D -->|Depolarizing Noise| F[Depolarize<br/>ρ → (1-p)ρ + pI/2]
-    D -->|Intercept-Resend| G[Eve Measures & Resends<br/>|0⟩ or |1⟩]
-    D -->|Partial-Knowledge Attack| H[Eve Partial Inverse<br/>Correct/Incorrect U⁻¹(αₖ)]
+    D --> E[Clean Channel]
+    D --> F[Depolarizing Noise apply p mixing]
+    D --> G[Intercept Resend Eve measures and resends]
+    D --> H[Partial Knowledge Attack Eve partial inverse]
 
     %% Bob decoding
-    E --> I[Bob Decoding<br/>Apply U⁻¹(αₖ) in Reverse]
+    E --> I[Bob Decoding apply U inverse alpha k]
     F --> I
     G --> I
     H --> I
 
     %% Measurement
-    I --> J[Computational-Basis Measurement<br/>b ∈ {0,1}]
+    I --> J[Computational Basis Measurement bit is 0 or 1]
 
     %% Raw keys
-    J --> K_A[KA (Alice's Bits)]
-    J --> K_B[KB (Bob's Bits)]
+    J --> KA[KA Alice Bits]
+    J --> KB[KB Bob Bits]
 
     %% QBER
-    K_A --> L[Compute QBER<br/>QBER = mismatches / L]
-    K_B --> L
+    KA --> L[Compute QBER mismatches over length]
+    KB --> L
+
 ```
 
 #### **Interpretation of the QKD Pipeline Diagram**
@@ -9363,21 +9364,22 @@ It shows how the Bloch vector moves through state space as αₖ modulates the r
 flowchart LR
 
     %% Initial state
-    A[Initial State<br/>|m⟩ on Bloch Sphere] --> B[Step 1<br/>Apply U(α₀)]
+    A[Initial State m on Bloch Sphere] --> B[Step 1 Apply U alpha0]
 
     %% Fractional evolution steps
-    B --> C[Step 2<br/>Apply U(α₁)]
-    C --> D[Step 3<br/>Apply U(α₂)]
-    D --> E[⋯ Fractional Steps ⋯]
-    E --> F[Final State ψ_A<br/>After N Steps]
+    B --> C[Step 2 Apply U alpha1]
+    C --> D[Step 3 Apply U alpha2]
+    D --> E[Fractional Steps]
+    E --> F[Final State psiA After N Steps]
 
     %% Bloch vector extraction
-    F --> G[Bloch Vector r = (x,y,z)]
+    F --> G[Bloch Vector r x y z]
 
     %% Interpretation
-    G --> H[Irregular Trajectory<br/>Nonlinear, Memory-Driven]
-    G --> I[Entropy Source<br/>QRNG Bits]
-    G --> J[Channel Sensitivity<br/>Noise & Attacks]
+    G --> H[Irregular Trajectory Nonlinear Memory Driven]
+    G --> I[Entropy Source QRNG Bits]
+    G --> J[Channel Sensitivity Noise and Attacks]
+
 ```
 
 ##### **Interpretation of the Bloch‑Trajectory Diagram**
