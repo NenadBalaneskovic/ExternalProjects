@@ -1,4 +1,4 @@
-# 0. Project Ideas: Fractional Quantm Random Number Generator
+# 0. Project Ideas: Fractional-Fuzzy Quantm Cryptographic stack
 
 I was thinking about a study demonstrating how to link fractional calculus of a Schrödinger equation and fuzzy logic with post quantum encription - we could start with a fractional Schrödinger equation and randomly select fractional derivative orders from a certain interval (for instance [1,2]) for each iterative run starting with a certain initial quantum state. After N iterations we could use the resulting quantum state to generate a reliable encrypted version of a certain message sent through a quantum channel... We could even, in addition, design a reliable quantum error correction and quantum key-distribution method... 
 
@@ -192,7 +192,7 @@ Now they share a **correlated raw key** $\(K_A \approx K_B\)$.
 1. **Error‑correction code:** They agree on a classical error‑correcting code (or a simple parity‑check scheme).  
 2. **Syndrome exchange:** Alice sends parity/syndrome information; Bob corrects his key to match Alice’s.  
 3. **Fuzzy decoding:** If the error pattern is irregular (e.g. bursts, non‑Markovian), a fuzzy decoder can choose between different decoding strategies or code parameters (e.g. “if error rate is high but localized, use stronger local correction; otherwise use global code”).  
-4. After reconciliation, Bob’s corrected key \(K_B'\) should equal Alice’s $\(K_A'\)$.
+4. After reconciliation, Bob’s corrected key $\(K_B'\)$ should equal Alice’s $\(K_A'\)$.
 
 Now they have a **shared, error‑corrected key**.
 
@@ -2578,7 +2578,7 @@ These rules allow the protocol to adapt smoothly to channel conditions.
 
 ### --- Define Fuzzy Rules (Simpful, Python 3.12 compatible) ---
 
-#### These rules exactly replicate your original scikit-fuzzy logic
+#### These rules exactly replicate our original scikit-fuzzy logic
 
 ````python
 FS.add_rules([
@@ -3985,7 +3985,7 @@ This appendix contains supplementary material for reproducibility and deeper stu
 
 ## 12.1 Full Code Listings
 
-All code cells from Sections 2–9 can be exported as standalone Python modules:
+All code cells from Sections 2–10 can be exported as standalone Python modules:
 
 - `fractional_dynamics.py`
 - `qrng.py`
@@ -4062,7 +4062,7 @@ Location: Frankfurt, Germany
 
 ## Contact
 
-Author: **Nenad Balaneskovic**  
+Author: **Dr. rer. nat. Nenad Balaneskovic**  
 Field: Scientific Computing & Quantum Information  
 E-Mail: balaneskovic@gmx.net 
 
@@ -4091,37 +4091,6 @@ This notebook provides a complete, modular, reproducible foundation for
 further research and experimentation.
 
 ---
-
-
-
-```python
-import sys
-print(sys.executable)
-```
-
-    C:\Users\Nenad Balaneskovic\.conda\envs\py310\python.exe
-    
-
-
-```python
-import shutil
-print(shutil.which("pandoc"))
-```
-
-    None
-    
-
-
-```python
-import os
-os.system("pandoc --version")
-```
-
-
-
-
-    1
-
 
 
 
