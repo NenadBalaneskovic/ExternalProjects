@@ -408,6 +408,8 @@ Because $\( \theta_k \)$ varies pseudo‑randomly, the trajectory is no longer a
 
 This combination produces a trajectory that is geometrically rich and cryptographically useful.
 
+![fig4](output_25_1.png)
+
 #### **4.3 Memory Effects and Non‑Markovian Trajectories**
 
 Fractional derivatives introduce temporal nonlocality. The Caputo derivative integrates over the past evolution of the wavefunction:
@@ -493,6 +495,8 @@ Fractional evolution produces a random walk on the Bloch sphere. The walk is:
 This random walk is the source of quantum randomness.
 
 #### **4.7 QRNG Bit Extraction**
+
+![fig5](output_30_1.png)
 
 ##### **4.7.1 Measurement Model**
 
