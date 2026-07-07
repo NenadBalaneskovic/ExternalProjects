@@ -5639,7 +5639,7 @@ def U_fractional(alpha: float) -> qt.Qobj:
 ```
 
 - This constructs the **fractional evolution operator**:
-  $U(\alpha) = \exp(-i\,\theta(\alpha)\,\sigma_x).$
+  $U(\alpha) = \exp(-i\cdot\theta(\alpha)\cdot\sigma_x).$
 
 - Implementation details:
   - It calls `theta(alpha)` to get the rotation angle.
@@ -5665,7 +5665,7 @@ def U_inverse(alpha: float) -> qt.Qobj:
 ```
 
 - This constructs the **inverse evolution operator**:
-  $U^{-1}(\alpha) = \exp(+i\,\theta(\alpha)\,\sigma_x).$
+  $U^{-1}(\alpha) = \exp(+i\cdot\theta(\alpha)\cdot\sigma_x).$
 
 - It uses the same angle `theta(alpha)` but with `+1j` instead of `-1j`.
 
@@ -5717,8 +5717,8 @@ def evolve_fractional(psi_init: qt.Qobj, alpha_seq: np.ndarray):
 - This function performs the **step‑by‑step evolution** of a qubit state under the fractional unitaries.
 
 - Inputs:
-  - `psi_init`: initial qubit state \( \psi_0 \) as a `qt.Qobj`.
-  - `alpha_seq`: NumPy array of fractional orders \( \{\alpha_k\} \).
+  - `psi_init`: initial qubit state $\( \psi_0 \)$ as a `qt.Qobj`.
+  - `alpha_seq`: NumPy array of fractional orders $\( \{\alpha_k\} \)$.
 
 - Process:
   - Starts with `states = [psi_init]`.
@@ -6153,7 +6153,7 @@ return {
     → how strong the QEC should be (mapped later to Hamming vs LDPC).
 
 - These values are then interpreted by the rest of the system:
-  - `alpha_var` → adjust distribution of \( \alpha_k \).
+  - `alpha_var` → adjust distribution of $\( \alpha_k \)$.
   - `basis_shift` → adjust basis rotation angle.
   - `qec_strength` → choose QEC code (e.g., thresholds: weak/medium/strong).
 
@@ -6319,11 +6319,10 @@ def decrypt(secret_key: bytes, ciphertext: bytes) -> bytes:
 
 ````
 
-This file is a **toy, symmetric‑primitive KEM** that mimics the **Kyber512 API shape** so we can experiment with a Kyber‑like workflow on Windows without installing real lattice‑based PQC libraries. It’s explicitly **not** a real Kyber implementation, but it lets the rest of Project 27 treat it as if it were.
+This file is a **toy, symmetric‑primitive KEM** that mimics the **Kyber512 API shape** so we can experiment with a Kyber‑like workflow on Windows without installing real lattice‑based PQC libraries. 
+It’s explicitly **not** a real Kyber implementation, but it lets the rest of Project 27 treat it as if it were.
 
 I’ll walk through its structure and behavior.
-
----
 
 ### 1. Imports and dataclass
 
@@ -6347,8 +6346,6 @@ class KyberKeypair:
 ```
 
 This is just a typed container for `(pk, sk)`.
-
----
 
 ### 2. The `Kyber512` class: API shape
 
@@ -6392,8 +6389,6 @@ def __init__(self, pk_len: int = 32, sk_len: int = 32, ss_len: int = 32):
   - secret key length,
   - shared secret length.
 
----
-
 ### 3. Internal helpers
 
 ```python
@@ -6430,8 +6425,6 @@ def _hkdf(self, ikm: bytes, salt: bytes = b"", info: bytes = b"kyber-ss") -> byt
 
 These helpers are the **cryptographic core** of the toy KEM.
 
----
-
 ### 4. `generate_keypair()`
 
 ```python
@@ -6457,8 +6450,6 @@ def generate_keypair(self) -> KyberKeypair:
 So the public key is a **hash of the secret key**. This is *not* how real Kyber works, but it gives you a deterministic mapping and a simple “public” identifier.
 
 Returned as a `KyberKeypair`.
-
----
 
 ### 5. `encaps(public_key)`
 
@@ -6500,8 +6491,6 @@ So encapsulation is:
 
 This gives you a **deterministic shared secret** tied to the ciphertext, but there is no real public‑key structure—just symmetric hashing.
 
----
-
 ### 6. `decaps(secret_key, ciphertext)`
 
 ```python
@@ -6537,8 +6526,6 @@ ss_dec = kyber.decaps(sk, ct)
 ```
 
 but the security model is purely symmetric and does not rely on `sk`.
-
----
 
 ### 7. Convenience functions (pqcrypto‑style)
 
@@ -6576,8 +6563,6 @@ ss_dec = decrypt(sk, ct)
 ```
 
 without instantiating the class manually.
-
----
 
 ### 8. Role in Project 27
 
@@ -6797,7 +6782,7 @@ In Project 27:
 
 are used as **signatures of eavesdropping**.
 
-The random sparse structure of \( H \) makes these behaviors easy to observe.
+The random sparse structure of $\( H \)$ makes these behaviors easy to observe.
 
 #### **3.4 Integration with fractional dynamics**
 
@@ -8506,7 +8491,7 @@ yA = encode(G, KA_pad)
 yB = encode(G, KB_pad)
 ```
 
-Encoding is trivial because \(G = I\).
+Encoding is trivial because $\(G = I\)$.
 
 #### **Decode**
 ```python
@@ -9036,14 +9021,14 @@ def alice_encode_bit(m, alpha_seq):
 ```
 
 #### **Purpose**
-Encode a classical bit \(m \in \{0,1\}\) using **fractional Schrödinger evolution**.
+Encode a classical bit $\(m \in \{0,1\}\)$ using **fractional Schrödinger evolution**.
 
 #### **Process**
 1. Prepare initial state:
    ```python
    psi_init = qt.basis(2, m)
    ```
-   - \(|0\rangle\) or \(|1\rangle\)
+   - $\(|0\rangle\)4 or $\(|1\rangle\)4
 
 2. Apply fractional evolution:
    ```python
@@ -9329,11 +9314,11 @@ flowchart TD
 #### **Interpretation of the QKD Pipeline Diagram**
 
 ##### **Shared Seed → Fractional Orders**
-Alice and Bob generate identical fractional‑order sequences \( \alpha_k \) using a shared seed.  
+Alice and Bob generate identical fractional‑order sequences $\( \alpha_k \)$ using a shared seed.  
 This replaces basis‑announcement steps in BB84.
 
 ##### **Alice Encoding**
-Alice encodes bit \(m\) by applying a chain of fractional unitaries:
+Alice encodes bit $\(m\)$ by applying a chain of fractional unitaries:
 
 $\psi_A = U(\alpha_{N-1}) \cdots U(\alpha_0)|m\rangle$
 
@@ -9458,7 +9443,7 @@ Noise and attacks distort the trajectory, increasing QBER.
 
 It is the **quantum engine** of Project 27, producing the raw keys that drive fuzzy control, adaptive QEC, LDPC decoding, privacy amplification, and PQC hybrid encryption.
 
-## 5.10
+## 5.10 qrng.py
 
 ````python 
 """
@@ -9944,7 +9929,7 @@ corresponds to $\(|0⟩\)$.
 ##### **Fractional Evolution**
 Each fractional order $\(α_k\)$ produces a rotation:
 
-$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)$
+$U(\alpha_k) = \exp(-i\cdot\theta(\alpha_k)\sigma_x)$
 
 with:
 
