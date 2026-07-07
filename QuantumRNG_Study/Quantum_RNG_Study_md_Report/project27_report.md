@@ -9832,31 +9832,32 @@ This diagram shows the complete flow from fractional orders → fractional evolu
 ```mermaid
 flowchart TD
 
-    %% Fractional orders
-    A[Shared Seed] --> B[Generate αₖ Sequence<br/>Fractional Orders]
+    %% Shared seed and fractional orders
+    A[Shared Seed] --> B[Generate alpha k Sequence Fractional Orders]
 
     %% Initial state
-    B --> C[Prepare Initial State |0⟩]
+    B --> C[Prepare Initial State 0]
 
     %% Fractional evolution
-    C --> D[Evolve via Fractional Schrödinger Dynamics<br/>ψ_final = U(αₖ)...|0⟩]
+    C --> D[Evolve via Fractional Dynamics psi final uses U alpha k]
 
     %% Measurement
-    D --> E[Computational or POVM Measurement<br/>bit ∈ {0,1}]
+    D --> E[Computational or POVM Measurement bit is 0 or 1]
 
     %% Bitstring
     E --> F[Append Bit to Bitstring]
 
     %% Loop
-    F -->|Repeat L Times| C
+    F --> C
 
     %% Randomness tests
     F --> G[Randomness Tests]
-    G --> H[Frequency Test<br/>p0, p1]
-    G --> I[Autocorrelation<br/>lag=1]
+    G --> H[Frequency Test p0 p1]
+    G --> I[Autocorrelation lag 1]
     G --> J[Shannon Entropy]
-    G --> K[Min-Entropy]
+    G --> K[Min Entropy]
     G --> L[Collision Entropy]
+
 ```
 
 #### **Interpretation of the QRNG Pipeline**
@@ -9901,24 +9902,25 @@ This diagram shows how fractional evolution moves the qubit through Bloch space,
 flowchart LR
 
     %% Initial state
-    A[Initial Bloch Vector<br/>r₀ = (0,0,1)] --> B[Apply U(α₀)<br/>Fractional Rotation]
+    A[Initial Bloch Vector r0 0 0 1] --> B[Apply U alpha0 Fractional Rotation]
 
     %% Evolution steps
-    B --> C[Apply U(α₁)]
-    C --> D[Apply U(α₂)]
-    D --> E[⋯ Continue for N Steps ⋯]
+    B --> C[Apply U alpha1]
+    C --> D[Apply U alpha2]
+    D --> E[Continue for N Steps]
 
     %% Final state
-    E --> F[Final Bloch Vector r_N = (x,y,z)]
+    E --> F[Final Bloch Vector rN x y z]
 
     %% Entropy extraction
-    F --> G[Compute Measurement Probabilities<br/>p0 = (1+z)/2]
-    G --> H[Quantum Measurement<br/>bit ∈ {0,1}]
+    F --> G[Compute Measurement Probabilities p0 equals 1 plus z over 2]
+    G --> H[Quantum Measurement bit is 0 or 1]
 
     %% Entropy interpretation
-    F --> I[Trajectory Irregularity<br/>Nonlinear, Memory-Driven]
-    F --> J[Entropy Source<br/>High Shannon & Min-Entropy]
-    F --> K[Noise Sensitivity<br/>Trajectory Distortion → QBER]
+    F --> I[Trajectory Irregularity Nonlinear Memory Driven]
+    F --> J[Entropy Source High Shannon and Min Entropy]
+    F --> K[Noise Sensitivity Trajectory Distortion QBER]
+
 ```
 
 #### **Interpretation of the Bloch‑Trajectory Diagram**
