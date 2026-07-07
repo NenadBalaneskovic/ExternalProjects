@@ -9284,7 +9284,7 @@ This module is the **quantum foundation** of the entire architecture.
 
 Everything downstream depends on the raw keys generated here.
 
-### **8. *QKD and fractional Bloch-trajectory diagrams*
+### **8. QKD and fractional Bloch-trajectory diagrams
 
 #### **1. Full Fractional‑Controlled QKD Pipeline (Mermaid Diagram)**
 
@@ -9401,7 +9401,7 @@ flowchart LR
 ###### **Step‑wise Fractional Evolution**
 Each fractional order $\( \alpha_k \)$ produces a rotation:
 
-$U(\alpha_k) = \exp(-i\,\theta(\alpha_k)\sigma_x)$
+$U(\alpha_k) = \exp(-i\cdot\theta(\alpha_k)\sigma_x)$
 
 with:
 
