@@ -517,7 +517,11 @@ Empirical bitstrings show:
 
 This imbalance is expected due to Bloch geometry but is easily corrected.
 
+![fig15](output_74_1.png)
+
 #### **4.8 Randomness Tests**
+
+![fig15](output_74_0.png)
 
 ##### **4.8.1 Frequency Test**
 
