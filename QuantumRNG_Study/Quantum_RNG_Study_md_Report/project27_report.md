@@ -6640,8 +6640,6 @@ This makes the module easy to use in:
 
 Below is a detailed breakdown of the functionality.
 
----
-
 ### **1. Imports**
 
 ```python
