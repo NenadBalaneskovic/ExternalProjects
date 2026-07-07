@@ -685,7 +685,8 @@ $\text{QBER} = \frac{1}{n}\sum_{i=1}^n (K_A[i] \neq K_B[i]).$
 
 Fractional dynamics amplify the disturbance caused by eavesdropping.
 
-![fig6](output_71_1.png)
+![fig6](output_43_0.png)
+![fig7](output_71_1.png)
 
 #### **5.4 Fuzzy Logic as an Adaptive Controller**
 
