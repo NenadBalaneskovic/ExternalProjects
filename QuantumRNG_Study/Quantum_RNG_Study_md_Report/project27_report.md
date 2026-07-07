@@ -8632,27 +8632,28 @@ This is one of the most important modules in Project 27.
 flowchart TD
 
     %% Raw keys
-    A[Raw Keys from Fractional–QKD<br/>KA (Alice), KB (Bob)] --> B[Compute QBER]
+    A[Raw Keys from Fractional QKD KA Alice KB Bob] --> B[Compute QBER]
 
     %% Fuzzy controller
-    B --> C[Fuzzy Controller<br/>Inputs: noise, QBER, entropy]
-    C --> D[qec_strength ∈ [0,1]]
+    B --> C[Fuzzy Controller Inputs noise QBER entropy]
+    C --> D[qec strength between 0 and 1]
 
-    %% Branch: Hamming vs LDPC
-    D -->|qec_strength < 0.33| E[Hamming(7,4) Reconciliation]
-    D -->|qec_strength ≥ 0.33| F[LDPC Reconciliation<br/>n = 64/128/256]
+    %% Branch Hamming vs LDPC
+    D -->|qec strength less than 0.33| E[Hamming 7 4 Reconciliation]
+    D -->|qec strength greater equal 0.33| F[LDPC Reconciliation n 64 128 256]
 
     %% Hamming path
-    E --> G[Corrected Key K']
+    E --> G[Corrected Key K prime]
 
     %% LDPC path
-    F --> G[Corrected Key K']
+    F --> G[Corrected Key K prime]
 
     %% Privacy amplification
-    G --> H[SHA3‑256 Privacy Amplification]
+    G --> H[SHA3 256 Privacy Amplification]
 
     %% Final key
-    H --> I[Final Shared Key K<br/>Used for AES‑256‑GCM + Kyber512]
+    H --> I[Final Shared Key K used for AES 256 GCM and Kyber512]
+
 ```
 
 #### **Interpretation of the Diagram**
