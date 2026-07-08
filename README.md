@@ -1559,7 +1559,7 @@ The architecture externalizes schema evolution into Neo4j, enabling explicit ver
 >
 > This ensures quantum‑era security remains **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware secure communication.
 
-## **Abstract**
+#### **Abstract**
 
 **Fractional‑Fuzzy Quantum Cryptography** is a modular, hybrid quantum–classical architecture designed for environments where **entropy strength, adaptive control, and long‑term confidentiality** are essential. It unifies fractional Schrödinger dynamics (QRNG), PRNG‑driven fractional orders (synchronization), fuzzy logic (adaptive control), QKD (secure distribution), QEC (reconciliation), and PQC (AES‑256, Kyber) into a coherent, resilient cryptographic stack.
 
