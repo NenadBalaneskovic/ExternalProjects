@@ -963,7 +963,7 @@ The Digital Twin Telemetry Generator is a modular, GUI‑based simulation tool f
 
 [![DigitalTwinTelemetryGenerator GUI](https://img.shields.io/badge/DigitalTwinTelemetryGenerator_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e2f30bac4251e38049d4f7aa1d390a3972e17f9c/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryGeneratorGUI.md)
 
-### 22. **Digital Twin Telemetry Analyzer GUI – Feb 2026**
+- ### 22. **Digital Twin Telemetry Analyzer GUI – Feb 2026**
 
 > ## Executive Summary: Digital Twin Telemetry Analyzer GUI
 >
@@ -1036,7 +1036,7 @@ The Digital Twin Telemetry Analyzer is a modular, GUI‑based real‑time analyt
 
 [![DigitalTwinTelemetryAnalyzer GUI](https://img.shields.io/badge/DigitalTwinTelemetryAnalyzer_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/60bce5d2251cd20cadd6d757da24781b4c59c226/DigitalTwinsGeneratorGUI/DigitalTwin_TelemetryAnalyzerGUI.md)
 
-### 23. **Customized Data Anonymization Release – Pynonym – Mar 2026**
+- ### 23. **Customized Data Anonymization Release – Pynonym – Mar 2026**
 
 > ## Executive Summary: Customized Data Anonymization Release — Pynonym
 >
@@ -1119,7 +1119,7 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 
 [![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
 
-### 24. **MLflow Runner GUI – Apr 2026**
+- ### 24. **MLflow Runner GUI – Apr 2026**
 
 > ## Executive Summary: MLflow Runner GUI
 >
@@ -1232,7 +1232,7 @@ The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible mach
 
 [![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
 
-### 25. **Data Anonymizer GUI – May 2026**
+- ### 25. **Data Anonymizer GUI – May 2026**
 
 > ## Executive Summary: Data Anonymizer GUI
 >
@@ -1355,7 +1355,7 @@ The system emphasizes governance through deterministic transformations, structur
 
 [![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
 
-### **26. SQL‑Boosting via Neo4j – Jun 2026**
+- ### **26. SQL‑Boosting via Neo4j – Jun 2026**
 
 > ## **Executive Summary: SQL‑Boosting via Neo4j**
 >
@@ -1472,7 +1472,7 @@ The architecture externalizes schema evolution into Neo4j, enabling explicit ver
 
 [![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7fa2db7e715524945a32e9bfad66b66fb463cc/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.md)
 
-### **27. Fractional‑Fuzzy Quantum Cryptographic Stack – Jul 2026**
+- ### **27. Fractional‑Fuzzy Quantum Cryptographic Stack – Jul 2026**
 
 > ## **Executive Summary: Fractional‑Fuzzy Quantum Cryptography**
 >
