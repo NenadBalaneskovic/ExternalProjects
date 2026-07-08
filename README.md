@@ -1571,7 +1571,7 @@ Fractional dynamics introduce nonlinear time scaling and temporal nonlocality, p
 - **Governance and reproducibility:** Deterministic αₖ sequences, explicit randomness generation, and structured QEC outputs ensure traceability and auditability.  
 - **Offline readiness:** All components (fractional dynamics, fuzzy logic, QEC, PQC) run locally — ideal for secure or restricted environments.
 
-[![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7fa2db7e715524945a32e9bfad66b66fb463cc/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.md)
+[![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45c40698c2622dd380188519d19185d99c8229a9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/project27_report.md)
 
 ---
 
