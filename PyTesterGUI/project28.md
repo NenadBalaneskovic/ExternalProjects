@@ -9,7 +9,7 @@ is difficult to sustain across large projects.
 
 The **PyTester GUI** project was born from this tension. It aims to transform testing from a chore into an automated, intelligent, and visually guided workflow. Instead of forcing developers to manually craft test cases, 
 PyTester analyzes Python code, infers structure and behavior, generates a complete suite of tests, executes them, logs results, and visualizes outcomes—all through a clean, intuitive graphical interface. The motivation is not 
-merely convenience; it is a deeper vision of what testing could become when combined with meta‑programming, inference engines, and reproducible scientific workflows.
+merely convenience; it is a deeper vision of what testing could become when combined with meta‑programming, inference engines, and reproducible scientific workflows (see also [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PyTesterGUI/project28.md#10--references) 1-3 below).
 
 ## **1.1 The Problem: Testing Is Essential, Yet Rarely Done Well**
 
