@@ -14783,6 +14783,13 @@ When the user clicks **Generate Plots**:
 ```
 workspace/plots/
 ```
+![Coverage](https://github.com/NenadBalaneskovic/ExternalProjects/blob/154605a455a4fc2be433c3b8358a4b8c962d4d33/PyTesterGUI/Results/coverage_plot.png)
+
+![Durations](https://github.com/NenadBalaneskovic/ExternalProjects/blob/154605a455a4fc2be433c3b8358a4b8c962d4d33/PyTesterGUI/Results/durations_plot.png)
+
+![Failures](https://github.com/NenadBalaneskovic/ExternalProjects/blob/154605a455a4fc2be433c3b8358a4b8c962d4d33/PyTesterGUI/Results/failures_plot.png)
+
+![Results](https://github.com/NenadBalaneskovic/ExternalProjects/blob/154605a455a4fc2be433c3b8358a4b8c962d4d33/PyTesterGUI/Results/results_plot.png)
 
 Our PNGs show:
 
