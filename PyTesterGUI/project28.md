@@ -11,8 +11,6 @@ The **PyTester GUI** project was born from this tension. It aims to transform te
 PyTester analyzes Python code, infers structure and behavior, generates a complete suite of tests, executes them, logs results, and visualizes outcomes—all through a clean, intuitive graphical interface. The motivation is not 
 merely convenience; it is a deeper vision of what testing could become when combined with meta‑programming, inference engines, and reproducible scientific workflows.
 
----
-
 ## **1.1 The Problem: Testing Is Essential, Yet Rarely Done Well**
 
 In modern software development, testing is the backbone of reliability. Without tests, codebases become fragile, regressions slip through unnoticed, and refactoring becomes dangerous. Yet despite this universal understanding, 
@@ -29,8 +27,6 @@ Why?
 
 The result is a landscape where testing is acknowledged as important but rarely practiced with rigor. PyTester GUI addresses this gap by automating the entire process—from inspection to execution—making testing accessible even 
 to those who have never written a test manually.
-
----
 
 ## **1.2 The Opportunity: Python’s Introspection Capabilities**
 
@@ -56,8 +52,6 @@ For example:
 
 This synergy between static and dynamic analysis is the intellectual core of PyTester.
 
----
-
 ## **1.3 The Vision: A Fully Automated Testing Ecosystem**
 
 PyTester GUI is not just a convenience tool—it represents a conceptual shift. Instead of treating testing as a separate discipline, PyTester integrates it directly into the development workflow. The GUI embodies a philosophy:
@@ -77,8 +71,6 @@ The system is designed as a pipeline:
 
 This pipeline transforms testing from a manual task into a deterministic process. Every step is logged, every artifact is saved, and every result is visualized. The GUI becomes a pedagogical tool, a debugging assistant, and a reproducibility engine.
 
----
-
 ## **1.4 Why a GUI?**
 
 Command‑line tools are powerful, but they are not always intuitive. A GUI offers:
@@ -93,8 +85,6 @@ Command‑line tools are powerful, but they are not always intuitive. A GUI offe
 The GUI also encourages experimentation. Users can upload multiple files, compare versions with and without annotations, inspect differences in inferred types, and observe how test coverage changes across variants. 
 This makes PyTester not only a testing tool but also a research instrument for studying code quality.
 
----
-
 ## **1.5 The Role of Meta‑Programming**
 
 Meta‑programming is the art of writing code that manipulates code. PyTester leverages meta‑programming in several ways:
@@ -107,8 +97,6 @@ Meta‑programming is the art of writing code that manipulates code. PyTester le
 - using decorators and higher‑order functions to build test templates  
 
 This approach ensures that tests are not merely boilerplate—they are structurally aligned with the code under test. The system becomes self‑reflective: it analyzes code, generates tests, executes them, and uses results to refine inference.
-
----
 
 ## **1.6 Reproducibility and Scientific Workflows**
 
@@ -130,8 +118,6 @@ This makes PyTester ideal for:
 
 The GUI becomes a bridge between scientific rigor and software engineering best practices.
 
----
-
 ## **1.7 A Non‑Obvious Insight: Testing as Inference**
 
 Traditional testing is manual: developers write tests based on their understanding of the code. PyTester flips this paradigm. It treats testing as an inference problem:
@@ -146,8 +132,6 @@ Traditional testing is manual: developers write tests based on their understandi
 By combining static analysis, semantic heuristics, and dynamic probing, PyTester constructs a probabilistic type schema. This schema informs test generation, making tests semantically meaningful rather than syntactic.
 
 This is where PyTester becomes more than a tool—it becomes an intelligent system.
-
----
 
 ## **1.8 Why This Project Matters**
 
@@ -166,16 +150,12 @@ PyTester GUI is important because it:
 
 It is a project that looks simple on the surface but reveals deep conceptual elegance. It aligns perfectly with modern programming values: modularity, clarity, reproducibility, and automation.
 
----
-
 ## **1.9 The Human Element**
 
 Behind the technical architecture lies a human motivation: to make programming more enjoyable. Developers often avoid testing because it feels like a chore. PyTester transforms testing into an interactive, visual, 
 and automated experience. It reduces friction, encourages exploration, and provides immediate gratification through plots and summaries.
 
 In this sense, PyTester is not just a tool—it is a companion for developers, guiding them toward better practices without imposing burdens.
-
----
 
 ## **1.10 Summary**
 
@@ -197,8 +177,6 @@ minimal coupling. This section provides a comprehensive overview of the architec
 how data flows through the system, and how the GUI orchestrates the entire testing pipeline.
 
 ![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/214864eed8a246f84654f18bc337ee199b0e2dd2/PyTesterGUI/Results/fig1.png)
-
----
 
 ## **2.1 Architectural Philosophy**
 
@@ -240,8 +218,6 @@ The architecture is designed to accommodate future features:
 
 The modular folder structure makes these extensions straightforward.
 
----
-
 ## **2.2 High‑Level System Overview**
 
 At a high level, PyTester GUI consists of:
@@ -276,8 +252,6 @@ Workspace (persistent artifacts)
 
 Each layer is implemented in its own folder, described in detail below.
 
----
-
 # **2.3 Folder Structure Overview**
 
 ![FolderStructure](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0790c1c14fbc4163ff3c01f85dc663a2c2a3829e/PyTesterGUI/Results/folder_structure.png)
@@ -301,8 +275,6 @@ PyTester/
 
 Each folder contains modules that implement a specific subsystem. Below is a detailed explanation of each folder and its purpose.
 
----
-
 # **2.4 Folder‑by‑Folder Breakdown**
 
 ## **2.4.1 `config/` — Configuration Layer**
@@ -320,8 +292,6 @@ The GUI loads these settings at startup. They define:
 - test generation options  
 
 This folder ensures that PyTester is configurable without modifying code.
-
----
 
 ## **2.4.2 `core/` — Code Inspection Layer**
 
@@ -351,8 +321,6 @@ This layer converts raw Python files into structured metadata:
 
 This metadata is consumed by the inference engine and test generators.
 
----
-
 ## **2.4.3 `inference/` — Type‑Inference Engine**
 
 This folder contains the intelligent subsystem that infers types and behaviors:
@@ -380,8 +348,6 @@ The inference engine produces a structured schema like:
 ```
 
 This schema drives type‑based test generation.
-
----
 
 ## **2.4.4 `testgen/` — Test Generation Engine**
 
@@ -412,8 +378,6 @@ These files are written into:
 workspace/generated_tests/
 ```
 
----
-
 ## **2.4.5 `executor/` — Execution Layer**
 
 This folder contains modules that run tests and collect results:
@@ -439,8 +403,6 @@ workspace/test_reports/
 workspace/test_logs/
 ```
 
----
-
 ## **2.4.6 `visualization/` — Plotting Layer**
 
 This folder contains modules that generate PNG plots:
@@ -461,8 +423,6 @@ workspace/plots/
 
 These visualizations appear in the GUI’s Results panel.
 
----
-
 ## **2.4.7 `gui/` — Graphical User Interface Layer**
 
 This folder contains all GUI panels:
@@ -480,8 +440,6 @@ This folder contains all GUI panels:
 The GUI orchestrates the entire pipeline.  
 Each panel corresponds to a subsystem and provides interactive controls.
 
----
-
 ## **2.4.8 `tests/` — Automated Test Suite Layer**
 
 This folder contains all internal test modules used to validate the PyTester system itself.
@@ -496,8 +454,6 @@ This folder contains all internal test modules used to validate the PyTester sys
 ### **Purpose:**
 The `tests/` directory provides a structured, automated test suite for PyTester’s internal architecture.  
 Each module targets a specific subsystem, ensuring reliability, regression safety, and consistent behavior across updates.
-
----
 
 ## **2.4.9 `workspace/` — Persistent Artifact Storage**
 
@@ -534,16 +490,12 @@ The GUI is structured into six panels, each representing a stage in the pipeline
 
 ![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6674314725367b0ca13a145a6bde5aef860b6cf1/PyTesterGUI/Results/fig2.png)
 
----
-
 ## **2.5.1 Upload Panel**
 
 - Select Python files  
 - Copy them into `workspace/uploaded_files/`  
 - Run syntax validation  
 - Prepare files for inspection  
-
----
 
 ## **2.5.2 Inspection Panel**
 
@@ -552,16 +504,12 @@ The GUI is structured into six panels, each representing a stage in the pipeline
 - Show docstrings and annotations  
 - Provide a human‑readable overview  
 
----
-
 ## **2.5.3 Inference Panel**
 
 - Run static, semantic, and dynamic analysis  
 - Display inferred types and behaviors  
 - Show confidence scores  
 - Build unified type schema  
-
----
 
 ## **2.5.4 Test Generation Panel**
 
@@ -573,8 +521,6 @@ The GUI is structured into six panels, each representing a stage in the pipeline
 - Render final test file  
 - Save to `workspace/generated_tests/`  
 
----
-
 ## **2.5.5 Execution Panel**
 
 - Run pytest on generated tests  
@@ -582,8 +528,6 @@ The GUI is structured into six panels, each representing a stage in the pipeline
 - Run coverage analysis  
 - Collect unified report  
 - Display execution results  
-
----
 
 ## **2.5.6 Results Panel**
 
@@ -621,24 +565,131 @@ Each stage produces artifacts stored in the workspace.
 
 ---
 
-# **2.7 Why This Architecture Works**
-
-### **1. Clear separation of concerns**
-Each subsystem is isolated, making the codebase maintainable.
-
-### **2. Deterministic pipeline**
-Every step produces predictable outputs.
-
-### **3. Reproducibility**
-All artifacts are stored in a structured workspace.
-
-### **4. Extensibility**
-New test generators or inference modules can be added easily.
-
-### **5. GUI‑driven orchestration**
-The user interacts with a clean interface while the system handles complexity.
+Here is a polished **≈1000‑word English expansion** of your content.  
+It keeps your original five points but develops them into a full architectural explanation suitable for documentation, whitepapers, or GitHub project pages.
 
 ---
+
+# **2.7 Why This Architecture Works**
+
+Designing a system like PyTester requires more than simply assembling subsystems. It demands a coherent architectural philosophy—one that balances determinism, modularity, extensibility, and usability. The architecture described in this manual succeeds because it is intentionally structured around these principles. Each layer contributes to a pipeline that is predictable, transparent, and easy to reason about. Below is a detailed explanation of why this architecture works so effectively.
+
+## **2.7.1. Clear Separation of Concerns**
+
+A major strength of PyTester’s architecture is its strict separation of concerns. Every subsystem is isolated and responsible for a single conceptual domain. This makes the codebase easier to maintain, easier to extend, and easier to debug.
+
+The **core layer** handles structural analysis: loading files, checking syntax, extracting AST nodes, and registering symbols. It does not concern itself with inference or test generation.  
+The **inference layer** focuses exclusively on understanding the meaning of code—static types, semantic intent, dynamic behavior, and type fusion. It does not generate tests or execute them.  
+The **test generation layer** transforms the schema into concrete pytest files. It does not run tests or visualize results.  
+The **execution layer** runs pytest and coverage, collects logs, and produces unified reports. It does not interpret or visualize those reports.  
+Finally, the **visualization layer** converts execution data into deterministic plots, without touching inference or test generation.
+
+This modularity ensures that changes in one subsystem do not cascade unpredictably into others. Developers can modify the inference engine without worrying about breaking the GUI. They can extend test generation without altering execution logic. This isolation is essential for long‑term maintainability and scalability.
+
+## **2.7.2. Deterministic Pipeline**
+
+PyTester’s pipeline is deterministic by design. Given the same input, it always produces the same output. This is not merely a convenience—it is a foundational requirement for reproducible testing and scientific workflows.
+
+Determinism is achieved through several architectural choices:
+
+- **Static analysis** is purely structural and does not depend on runtime state.  
+- **Semantic analysis** uses rule‑based heuristics rather than probabilistic models.  
+- **Dynamic probing** is conservative and avoids executing user code with side effects.  
+- **Test generation** follows strict templates and does not rely on randomness.  
+- **Visualization** uses the Agg backend to ensure identical PNG output across platforms.  
+- **Workspace artifacts** are written to predictable locations with stable filenames.
+
+This deterministic behavior allows PyTester to be used in:
+
+- regression testing  
+- CI/CD pipelines  
+- educational environments  
+- reproducible research  
+- code audits  
+
+Users can trust that PyTester will behave consistently, which is essential for debugging and long‑term reliability.
+
+## **2.7.3. Reproducibility Through Structured Artifacts**
+
+Reproducibility is not just about deterministic behavior—it is also about preserving artifacts in a structured, inspectable format. PyTester achieves this through its workspace directory, which acts as a living record of the entire pipeline.
+
+The workspace contains:
+
+- **uploaded_files/** — raw user input  
+- **source/** — safe import copies  
+- **generated_tests/** — all pytest files created by the system  
+- **test_logs/** — execution logs  
+- **test_reports/** — JSON and XML reports  
+- **plots/** — deterministic PNG visualizations  
+
+This structure ensures that every stage of the pipeline leaves behind a traceable artifact. Users can inspect the AST output, inference results, generated tests, execution logs, and coverage reports at any time. This transparency is invaluable for debugging, auditing, and teaching.
+
+Moreover, because the workspace is file‑based rather than ephemeral, it integrates seamlessly with version control systems. Users can commit entire workspaces to Git, enabling historical comparison, regression analysis, and collaborative review.
+
+## **2.7.4. Extensibility at Every Layer**
+
+PyTester’s architecture is intentionally designed for extensibility. New features can be added without disrupting existing functionality.
+
+### **Extending the inference engine**
+Developers can add:
+
+- new static analysis modules  
+- new semantic heuristics  
+- new dynamic probes  
+- new type‑fusion strategies  
+
+Each module plugs into the inference pipeline without requiring changes to other layers.
+
+### **Extending test generation**
+New test generators can be added simply by:
+
+1. implementing a generator class  
+2. registering it in the subsystem initializer  
+3. adding it to the template renderer  
+
+This makes PyTester adaptable to new domains, such as machine learning, data science, or web development.
+
+### **Extending visualization**
+New plot types can be added by:
+
+- creating a plotter class  
+- registering it in the visualization subsystem  
+- exporting PNGs through the existing exporter  
+
+### **Extending the GUI**
+Because each panel corresponds to a subsystem, new panels can be added without modifying existing ones. The GUI acts as an orchestrator rather than a monolithic interface.
+
+This extensibility ensures that PyTester can evolve over time, supporting new workflows, new languages, and new testing paradigms.
+
+## **2.7.5. GUI‑Driven Orchestration**
+
+The GUI is not just a front‑end—it is the orchestrator of the entire pipeline. It provides a clean, intuitive interface that hides complexity while exposing meaningful controls.
+
+Users interact with:
+
+- **Upload Panel** — selecting Python files  
+- **Inspection Panel** — viewing AST structure  
+- **Inference Panel** — running type and semantic inference  
+- **Test Generation Panel** — creating pytest suites  
+- **Execution Panel** — running tests and coverage  
+- **Results Panel** — viewing plots and summaries  
+
+This step‑by‑step workflow mirrors how developers think about testing:
+
+1. What code do I have?  
+2. What does it contain?  
+3. What does it mean?  
+4. What tests should exist?  
+5. Do the tests pass?  
+6. What do the results tell me?
+
+The GUI makes this progression explicit, reducing cognitive load and making PyTester accessible to beginners and experts alike.
+
+Because the GUI delegates all heavy lifting to subsystems, it remains lightweight and maintainable. It does not perform inference, generate tests, or execute code—it simply coordinates the pipeline.
+
+## **2.7.6 Conclusion**
+
+This architecture works because it is built on strong principles: modularity, determinism, reproducibility, extensibility, and usability. Each subsystem is isolated yet integrated into a coherent pipeline. The workspace preserves artifacts for inspection and versioning. The GUI provides a natural workflow that mirrors human reasoning. Together, these elements form a system that is powerful, predictable, and easy to extend—an architecture that will remain robust as PyTester evolves.
 
 # **2.8 Summary**
 
@@ -656,8 +707,6 @@ process‑driven, making it an ideal candidate for diagrammatic representation. 
 architecture to subsystem interactions, data flow, inference logic, test generation pipelines, execution processes, and GUI orchestration.
 
 Each diagram is accompanied by detailed explanations to ensure clarity and to help readers understand how the system operates as a cohesive whole.
-
----
 
 # **3.1 High‑Level System Architecture**
 
@@ -849,8 +898,6 @@ Each generator produces Python code strings:
 
 The **Template Renderer** assembles all test fragments into a final pytest module.
 
----
-
 # **3.6 Execution Layer Diagram**
 
 ```mermaid
@@ -878,8 +925,6 @@ The execution layer:
 - merges results into a unified report  
 
 The final report is stored in `workspace/test_reports/`.
-
----
 
 # **3.7 Visualization Layer Diagram**
 
@@ -909,8 +954,6 @@ The visualization layer generates:
 
 All plots are saved as PNG files.
 
----
-
 # **3.8 GUI Panel Interaction Diagram**
 
 ```mermaid
@@ -934,8 +977,6 @@ Each GUI panel corresponds to a subsystem:
 - Results → Visualization Layer  
 
 The GUI orchestrates the entire pipeline.
-
----
 
 # **3.9 Data Flow Diagram (Detailed)**
 
@@ -975,8 +1016,6 @@ sequenceDiagram
 
 This sequence diagram shows the chronological flow of data through the system.
 
----
-
 # **3.10 Type‑Inference Decision Tree**
 
 ```mermaid
@@ -1012,8 +1051,6 @@ This decision tree illustrates how PyTester infers types:
 
 All signals converge in the type‑fusion layer.
 
----
-
 # **3.11 Test Assembly Diagram**
 
 ```mermaid
@@ -1031,8 +1068,6 @@ flowchart TD
 ### **Explanation**
 
 The renderer combines all test fragments into a single cohesive pytest module.
-
----
 
 # **3.12 Execution + Coverage Pipeline (Detailed)**
 
@@ -1059,8 +1094,6 @@ flowchart TD
 
 This diagram shows how pytest and coverage interact to produce unified execution results.
 
----
-
 # **3.13 Results Panel Rendering Pipeline**
 
 ```mermaid
@@ -1081,8 +1114,6 @@ flowchart TD
 ### **Explanation**
 
 The Results Panel loads structured reports and generates visualizations for the user.
-
----
 
 # **3.14 Summary**
 
@@ -1111,8 +1142,6 @@ statistical properties, and implementation details of the dataset generator.
 
 The generator is intentionally simple, deterministic in structure, and expressive enough to support a wide range of test scenarios. It is also fully self‑contained, requiring only NumPy and pandas, making it 
 ideal for automated testing environments.
-
----
 
 ## **4.1 Design Goals**
 
@@ -1162,8 +1191,6 @@ The dataset is ideal for:
 - inference engine evaluation  
 
 It provides enough structure for the inference engine to detect numeric types, time‑series patterns, and correlations.
-
----
 
 ## **4.2 Statistical Structure of the Dataset**
 
@@ -1231,8 +1258,6 @@ The event flag is a sparse binary indicator:
 - ideal for categorical tests  
 - useful for conditional analysis  
 
----
-
 ## **4.3 Why This Dataset Is Ideal for PyTester GUI**
 
 The dataset is intentionally crafted to support the full PyTester pipeline:
@@ -1273,8 +1298,6 @@ The dataset produces:
 - smooth time‑series plots  
 - clear correlation scatter plots  
 - interpretable statistics  
-
----
 
 ## **4.4 Full Dataset Generator Code**
 
@@ -1339,8 +1362,6 @@ if __name__ == "__main__":
     print("Dataset saved as fictitious_measurements.csv")
 ```
 
----
-
 ## **4.5 Summary**
 
 The fictitious dataset generator is a foundational component of the PyTester GUI project. It provides a realistic, reproducible, and statistically rich dataset that supports:
@@ -1391,16 +1412,12 @@ foundation for future extensions, refactoring, or research built on top of PyTes
 Absolutely, Nenad — let’s begin the **per‑file analysis section** with the first three configuration files you provided.  
 Below is the **introductory analysis for Post 5**, followed by detailed interpretations of each file you sent.
 
----
-
 # **5.1 PyTester Configuration Files — PyTester/config/**
 
 Before diving into the Python modules themselves, it is essential to understand the configuration files that govern PyTester’s behavior. These files define global settings for pytest, the GUI, logging, 
 test generation, inference, and execution. They are foundational: every subsystem reads from them, and they ensure that PyTester behaves consistently across runs.
 
 Below you will find a detailed interpretation of each configuration file you provided.
-
----
 
 # **5.1.1 `pytest.ini` — Global Pytest Configuration**
 
@@ -1521,8 +1538,6 @@ This enforces:
 - no deprecated constructs  
 
 It ensures high‑quality test execution.
-
----
 
 # **5.1.2 `settings.yaml` — Global PyTester Configuration**
 
@@ -1785,8 +1800,6 @@ logging:
 ```
 Central log file for PyTester itself.
 
----
-
 # **5.1.3 `logging.conf` — Logging Configuration**
 
 ````plaintext
@@ -1862,16 +1875,12 @@ format=[%(asctime)s] %(levelname)s: %(message)s
 ```
 Human‑readable timestamps and severity levels.
 
----
-
 # **5.2 Core Subsystem — PyTester/core/**
 
 The `core/` folder is the foundation of PyTester’s structural analysis pipeline. It is responsible for transforming raw Python source code into structured metadata that downstream subsystems—especially 
 inference and test generation—can consume. The modules in this folder are intentionally pure, deterministic, and side‑effect‑free. They do not execute user code; instead, they analyze it statically using Python’s `ast` module.
 
 Below are detailed interpretations of the two core modules you provided.
-
----
 
 # **5.2.1 `ast_inspector.py` — Structural Extraction via AST**
 
@@ -2070,8 +2079,6 @@ The `ASTInspector` is the central structural analysis engine of PyTester. It par
 
 This module provides the structural backbone for the inference engine and test generation subsystem.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. AST Parsing with Parent Attachment**
@@ -2099,8 +2106,6 @@ This method reads a Python file, parses it, and returns a dictionary:
 ```
 
 This dictionary becomes the canonical structural representation of the file.
-
----
 
 ## **Class Extraction**
 
@@ -2132,8 +2137,6 @@ This is extremely valuable for:
 - test generation  
 - GUI inspection panel  
 
----
-
 ## **Function Extraction**
 
 The method `_extract_functions()` extracts **top‑level** functions only.
@@ -2150,8 +2153,6 @@ This ensures that:
 - class methods are handled separately  
 - top‑level utilities are recognized correctly  
 
----
-
 ## **Parameter Extraction**
 
 The method `_extract_parameters()` extracts argument names and annotations.
@@ -2163,8 +2164,6 @@ Important details:
 - unknown annotations are marked as `"<unknown>"`
 
 This produces clean, human‑readable parameter dictionaries.
-
----
 
 ## **Docstring Extraction**
 
@@ -2180,8 +2179,6 @@ This is essential for:
 - semantic inference  
 - GUI display  
 
----
-
 ## **Return Annotation Extraction**
 
 The method `_extract_annotations()` collects return type annotations.
@@ -2191,8 +2188,6 @@ This is used by:
 - type inference  
 - type‑based test generation  
 - GUI annotation display  
-
----
 
 ## **Inclusion Rules**
 
@@ -2210,8 +2205,6 @@ include_magic_methods: false
 
 This keeps the structural output clean and focused on user‑facing API elements.
 
----
-
 ## **Summary**
 
 `ASTInspector` is a highly refined structural analysis tool.  
@@ -2224,8 +2217,6 @@ It provides:
 - parent‑aware AST traversal  
 
 It is the first major subsystem in the PyTester pipeline and provides the raw structural metadata that all other subsystems rely on.
-
----
 
 # **5.2.2 `annotation_extractor.py` — Pure Annotation Extraction**
 
@@ -2358,8 +2349,6 @@ class AnnotationExtractor:
 The `AnnotationExtractor` is a pure, deterministic subsystem dedicated exclusively to extracting type annotations from Python source files. Unlike the inference engine, it does not execute code or perform semantic analysis. 
 It simply reads annotations from the AST.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. Main Entrypoint: `extract()`**
@@ -2382,8 +2371,6 @@ It extracts:
 
 for **all functions**, including methods.
 
----
-
 ## **2. Argument Annotation Extraction**
 
 For each function:
@@ -2400,8 +2387,6 @@ This produces readable annotation strings such as:
 - `"Dict[str, float]"`  
 - `"pd.DataFrame"`  
 
----
-
 ## **3. Return Annotation Extraction**
 
 Return annotations are extracted similarly:
@@ -2417,8 +2402,6 @@ This is essential for:
 - inference engine validation  
 - GUI annotation display  
 
----
-
 ## **4. Convenience Method: `get_annotations()`**
 
 This helper retrieves annotations for a specific function:
@@ -2433,22 +2416,16 @@ This is used by:
 - test generators  
 - GUI panels  
 
----
-
 ## **5. Annotation Formatting**
 
 The helper `_annotation_to_str()` converts AST nodes into readable strings.
 
 If conversion fails, it returns `"<unknown>"`.
 
----
-
 ## **Summary**
 
 `AnnotationExtractor` is a pure, side‑effect‑free module that provides deterministic annotation extraction.  
 It complements `ASTInspector` by focusing exclusively on type annotations, making it a key component for type inference and test generation.
-
----
 
 # **5.2.3 `input_loader.py` — Minimal, Safe File Loading Layer**
 
@@ -2541,8 +2518,6 @@ but to provide a **safe, minimal, deterministic interface** for reading Python s
 Despite its simplicity, `InputLoader` plays a crucial architectural role. It ensures that upstream modules such as the AST inspector, annotation extractor, 
 and docstring extractor receive clean, validated text input without having to worry about file existence, encoding, or I/O exceptions.
 
----
-
 ## **High‑Level Purpose**
 
 The module provides:
@@ -2561,8 +2536,6 @@ It deliberately avoids:
 
 This separation of concerns keeps the architecture clean and prevents accidental side effects.
 
----
-
 ## **Key Functional Components**
 
 ### **1. Constructor**
@@ -2574,8 +2547,6 @@ def __init__(self, settings: Dict[str, Any]) -> None:
 
 The loader receives the global configuration dictionary.  
 This allows it to locate the workspace paths defined in `settings.yaml`.
-
----
 
 ### **2. File Loading: `load()`**
 
@@ -2597,8 +2568,6 @@ This is important because:
 - upstream modules should not crash on I/O errors  
 - the GUI can display meaningful warnings  
 
----
-
 ### **3. Workspace Helper: `load_from_workspace()`**
 
 ```python
@@ -2616,8 +2585,6 @@ This is used heavily in:
 - Inspection Panel  
 - Inference Panel  
 
----
-
 ## **Architectural Role**
 
 `InputLoader` is the first step in the pipeline:
@@ -2633,15 +2600,11 @@ It ensures that:
 - upstream modules remain pure  
 - the system is robust against malformed input  
 
----
-
 ## **Summary**
 
 `InputLoader` is a small but essential module.  
 It provides a safe, deterministic interface for reading Python source files and ensures that the rest of the pipeline receives clean text input.  
 Its simplicity is a deliberate architectural choice that contributes to PyTester’s reliability and modularity.
-
----
 
 # **5.2.4 `docstring_extractor.py` — Pure Docstring Extraction Layer**
 `
@@ -2746,8 +2709,6 @@ class DocstringExtractor:
 The `DocstringExtractor` is another pure, deterministic module in the `core/` subsystem. Its purpose is to extract docstrings from Python source files without executing any code. 
 It complements the AST inspector by focusing exclusively on documentation.
 
----
-
 ## **High‑Level Purpose**
 
 The module extracts:
@@ -2764,8 +2725,6 @@ This is essential for:
 - semantic inference  
 - GUI inspection display  
 - documentation analysis  
-
----
 
 ## **Key Functional Components**
 
@@ -2786,8 +2745,6 @@ ast.get_docstring(node)
 
 This is the canonical way to retrieve docstrings in Python.
 
----
-
 ### **2. Module‑Level Docstring**
 
 ```python
@@ -2803,8 +2760,6 @@ This captures the top‑level docstring, which often describes:
 - design notes  
 
 This is useful for generating module‑level tests or documentation summaries.
-
----
 
 ### **3. Class and Function Docstrings**
 
@@ -2835,8 +2790,6 @@ This produces a dictionary such as:
 }
 ```
 
----
-
 ### **4. Convenience Method: `get_docstring()`**
 
 This helper retrieves a specific docstring by name:
@@ -2850,8 +2803,6 @@ This is used by:
 - inference engine  
 - test generators  
 - GUI panels  
-
----
 
 ## **Architectural Role**
 
@@ -2868,15 +2819,11 @@ It provides semantic hints that the inference engine can use to:
 - identify example usage  
 - generate docstring‑based tests  
 
----
-
 ## **Summary**
 
 `DocstringExtractor` is a pure, deterministic module that extracts documentation from Python source files.  
 It plays a crucial role in semantic inference and docstring‑based test generation.  
 Its simplicity and purity ensure that PyTester can analyze documentation safely and reliably.
-
----
 
 # **5.2.5 `safe_import.py` — Secure, Sandboxed Module Importer**
 
@@ -3028,8 +2975,6 @@ This module is intentionally conservative, restrictive, and defensive. It is one
 
 Below is a detailed interpretation of its architecture, behavior, and role within the PyTester pipeline.
 
----
-
 ## **High‑Level Purpose**
 
 The `SafeImporter` provides:
@@ -3048,8 +2993,6 @@ This module is used by:
 
 It is *never* used for executing user functions directly — only for importing them.
 
----
-
 ## **Architectural Role**
 
 The import pipeline looks like this:
@@ -3066,8 +3009,6 @@ The SafeImporter ensures that:
 - import errors do not crash PyTester  
 
 It is a crucial part of the system’s robustness.
-
----
 
 ## **Key Functional Components**
 
@@ -3088,8 +3029,6 @@ core:
 ```
 
 This determines how long the importer will allow an import to run.
-
----
 
 ## **2. Restricted Builtins**
 
@@ -3125,8 +3064,6 @@ This prevents user code from:
 
 This is essential for sandboxing.
 
----
-
 ## **3. Timeout‑Controlled Execution**
 
 The method `_run_with_timeout()` wraps the import operation in a thread:
@@ -3152,8 +3089,6 @@ This prevents:
 
 The import is treated as failed if it exceeds the timeout.
 
----
-
 ## **4. Safe Import Logic**
 
 The core import logic is inside `do_import()`:
@@ -3174,8 +3109,6 @@ This performs:
 
 If any step fails, the importer returns `None`.
 
----
-
 ## **5. Failure Behavior**
 
 The importer returns `None` on:
@@ -3187,8 +3120,6 @@ The importer returns `None` on:
 - exceptions during import  
 
 This is intentional: PyTester must never crash due to user code.
-
----
 
 ## **6. Why SafeImporter Is Critical**
 
@@ -3202,8 +3133,6 @@ Without SafeImporter, PyTester would risk:
 
 SafeImporter ensures that dynamic probing is safe, controlled, and predictable.
 
----
-
 ## **Summary**
 
 `SafeImporter` is one of the most important modules in PyTester’s architecture.  
@@ -3215,16 +3144,6 @@ It provides:
 - safe fallback behavior  
 
 It is the security backbone of the inference engine and ensures that PyTester can analyze user code without exposing the system to risk.
-
----
-
-Below is the next section of **Post 5 — Core Subsystem Analysis**, now covering the file you provided:
-
-- `structure_registry.py`
-
-As always, the explanation is written in publication‑grade English, structured for your GitHub report, and focused on deep architectural interpretation.
-
----
 
 # **5.2.6 `structure_registry.py` — Central In‑Memory Database for Structural Metadata**
 
@@ -3376,8 +3295,6 @@ and execution module has fast, consistent access to the structural metadata extr
 This module is intentionally simple, deterministic, and side‑effect‑free. It does not perform analysis itself; instead, it stores and serves the results of other subsystems. Its design reflects a clean 
 separation of concerns: analysis modules produce data, and the registry stores it.
 
----
-
 ## **High‑Level Purpose**
 
 The registry stores two major categories of information:
@@ -3409,8 +3326,6 @@ These schemas describe:
 - dynamic probe results  
 
 Together, these two categories form the complete structural and semantic representation of a Python file.
-
----
 
 ## **Architectural Role**
 
@@ -3445,8 +3360,6 @@ Every GUI panel reads from the registry:
 
 This makes the registry the **single source of truth** for all structural and semantic information.
 
----
-
 ## **Key Functional Components**
 
 ### **1. Constructor**
@@ -3462,8 +3375,6 @@ Two internal dictionaries store:
 - schemas  
 
 Keys are always **absolute POSIX paths**, ensuring consistency across platforms.
-
----
 
 ### **2. Storing Structures**
 
@@ -3484,8 +3395,6 @@ The structure dictionary typically contains:
 
 This is the raw structural metadata.
 
----
-
 ### **3. Retrieving Structures**
 
 ```python
@@ -3502,8 +3411,6 @@ This is used by:
 
 If no structure exists, `None` is returned.
 
----
-
 ### **4. Storing Schemas**
 
 ```python
@@ -3519,8 +3426,6 @@ Schemas are stored separately from structures because:
 - schemas may evolve over time  
 
 This separation allows PyTester to update schemas without re‑parsing ASTs.
-
----
 
 ### **5. Retrieving Schemas**
 
@@ -3543,8 +3448,6 @@ Schemas often contain:
 - semantic hints  
 - dynamic probe results  
 
----
-
 ### **6. Clearing the Registry**
 
 ```python
@@ -3560,8 +3463,6 @@ This is used when:
 - the GUI reloads the project  
 
 It ensures that stale data does not persist.
-
----
 
 ### **7. Introspection Helpers**
 
@@ -3584,8 +3485,6 @@ They are used in:
 - Inference Panel  
 - Results Panel  
 
----
-
 ## **Summary**
 
 `StructureRegistry` is the central in‑memory database of PyTester.  
@@ -3596,8 +3495,6 @@ It stores:
 
 and provides fast, deterministic access to them for all subsystems.  
 Its simplicity is intentional: it acts as a clean, reliable backbone for the entire testing pipeline.
-
----
 
 # **5.2.7 `utils.py` — Pure Utility Layer for Safe I/O, Merging, Formatting, and Flattening**
 
@@ -3807,8 +3704,6 @@ Their purpose is to centralize common operations so that other modules remain cl
 This module is not tied to any specific subsystem — it is used by the GUI, inference engine, test generation, executor, and visualization layers. Its design reflects a philosophy of **functional purity** 
 and **predictable behavior**, which is essential in a testing framework.
 
----
-
 ## **High‑Level Purpose**
 
 The module provides utilities in four categories:
@@ -3819,8 +3714,6 @@ The module provides utilities in four categories:
 4. **Formatting utilities**
 
 Each category supports a different part of the PyTester pipeline.
-
----
 
 ## **1. Path Utilities**
 
@@ -3862,8 +3755,6 @@ Used by:
 
 This ensures that PyTester can write logs, reports, and generated tests without raising exceptions.
 
----
-
 ## **2. Dictionary Utilities**
 
 ### **`merge_dicts(a, b)`**
@@ -3885,8 +3776,6 @@ This is essential for merging:
 - inference schemas  
 - test generation metadata  
 
----
-
 ## **3. List Utilities**
 
 ### **`flatten(items)`**
@@ -3898,8 +3787,6 @@ Used by:
 - inference engine (flattening probe results)  
 
 This keeps downstream code clean and readable.
-
----
 
 ## **4. Formatting Utilities**
 
@@ -3925,14 +3812,10 @@ Used by:
 
 This prevents crashes when representing complex or un‑repr‑able objects.
 
----
-
 ## **Summary**
 
 `utils.py` is a foundational support module that provides safe, deterministic helper functions used across the entire PyTester ecosystem. Its design reflects a commitment to robustness, 
 clarity, and functional purity. By centralizing common operations, it keeps other modules clean and focused.
-
----
 
 # **5.2.8 `syntax_checker.py` — Safe, Pure Syntax Validation Layer**
 
@@ -4034,8 +3917,6 @@ The `SyntaxChecker` is a crucial early‑stage validation module in the PyTester
 
 This module is intentionally pure and non‑executing. It uses Python’s built‑in `ast.parse()` to validate syntax without running any user code.
 
----
-
 ## **High‑Level Purpose**
 
 The module provides:
@@ -4045,8 +3926,6 @@ The module provides:
 3. **Safe file reading**  
 
 It ensures that PyTester does not attempt to inspect or infer types from invalid Python code.
-
----
 
 ## **1. Syntax Validation: `check_file()`**
 
@@ -4069,8 +3948,6 @@ This is used by:
 - Inference Engine (to skip invalid files)  
 - Test Generation (to avoid generating tests for broken code)  
 
----
-
 ## **2. Detailed Error Reporting: `get_syntax_errors()`**
 
 If syntax is invalid, the method returns a detailed message:
@@ -4089,8 +3966,6 @@ Used by:
 
 It allows PyTester to show meaningful feedback instead of generic “invalid file” messages.
 
----
-
 ## **3. Safe File Reading**
 
 The module handles file reading errors gracefully:
@@ -4105,8 +3980,6 @@ This prevents crashes when:
 - files have encoding issues  
 - files are locked  
 
----
-
 ## **Architectural Role**
 
 The syntax checker sits at the very beginning of the pipeline:
@@ -4117,13 +3990,9 @@ InputLoader → SyntaxChecker → ASTInspector → AnnotationExtractor → Docst
 
 It acts as a **gatekeeper**, ensuring that only valid Python code proceeds.
 
----
-
 ## **Summary**
 
 `SyntaxChecker` is a pure, safe, deterministic module that validates Python syntax using AST parsing. It provides both boolean validation and detailed error messages, making it essential for GUI feedback and pipeline stability.
-
----
 
 # **5.3 Executor Subsystem — PyTest/executor/**
 
@@ -4131,8 +4000,6 @@ The `/executor` folder contains the modules responsible for actually running tes
 controlled subprocess environment, meaning they never import or execute user code directly — they delegate execution to external tools (`pytest`, `coverage.py`) and then parse the results.
 
 This design ensures safety, determinism, and reproducibility.
-
----
 
 # **5.3.1 `report_collector.py` — Unified Execution Report Aggregator**
 
@@ -4329,8 +4196,6 @@ It does not capture logs.
 
 It only **merges** and **normalizes** results produced by other executor modules.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. Main Entrypoint: `collect()`**
@@ -4357,8 +4222,6 @@ and returns a unified report:
 
 If either pytest or coverage results are missing, it returns a structured error report.
 
----
-
 ## **2. Status Merging**
 
 The method `_merge_status()` determines the global status:
@@ -4368,8 +4231,6 @@ The method `_merge_status()` determines the global status:
 - otherwise → `"ok"`  
 
 This ensures that the GUI displays a single unified status.
-
----
 
 ## **3. Summary Builder**
 
@@ -4386,8 +4247,6 @@ This summary is used by:
 - Visualization Layer  
 - GUI dashboards  
 
----
-
 ## **4. Human‑Readable Summary**
 
 The method `summarize()` converts the unified report into a readable text block.
@@ -4398,14 +4257,10 @@ This is used for:
 - GUI text areas  
 - debugging  
 
----
-
 ## **Summary**
 
 `ReportCollector` is the **final aggregator** in the execution pipeline.  
 It merges all execution‑related data into a single, deterministic structure that the GUI can display and the visualization layer can use.
-
----
 
 # **5.3.2 `coverage_runner.py` — Controlled Coverage Execution via Subprocess**
 
@@ -4665,8 +4520,6 @@ python -m coverage report -m
 
 This ensures safety and reproducibility.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. Input Normalization**
@@ -4677,8 +4530,6 @@ The runner accepts:
 - a list of paths  
 
 If input is invalid, it returns a structured error.
-
----
 
 ### **2. Running Coverage**
 
@@ -4700,8 +4551,6 @@ This prevents:
 - hanging tests  
 - environment pollution  
 
----
-
 ### **3. Generating Coverage Report**
 
 It then executes:
@@ -4715,8 +4564,6 @@ and captures:
 - stdout  
 - stderr  
 - exit code  
-
----
 
 ### **4. Parsing Coverage Output**
 
@@ -4736,8 +4583,6 @@ Missing lines are parsed into:
 
 - individual numbers  
 - ranges (e.g., `12-20`)  
-
----
 
 ### **5. Structured Output**
 
@@ -4766,14 +4611,10 @@ This structure is consumed by:
 - Visualization Layer  
 - Results Panel  
 
----
-
 ## **Summary**
 
 `CoverageRunner` is a deterministic, subprocess‑based coverage executor.  
 It provides structured coverage metrics without ever importing user code directly.
-
----
 
 # **5.3.3 `log_capture.py` — Unified Log Capture for Subprocess + Python Logging**
 
@@ -4922,8 +4763,6 @@ The `LogCapture` module collects:
 
 It does not execute tests — it only captures logs produced by other executor modules.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. Python Logging Capture**
@@ -4948,8 +4787,6 @@ This is used by:
 - CoverageRunner  
 - GUI Execution Panel  
 
----
-
 ### **2. Subprocess Log Capture**
 
 The method `capture_subprocess_logs()` formats:
@@ -4968,8 +4805,6 @@ stdout:
 stderr:
 <...>
 ```
-
----
 
 ### **3. Unified Log Merging**
 
@@ -4992,8 +4827,6 @@ into:
 
 This unified log is displayed in the GUI.
 
----
-
 ### **4. `read_logs()`**
 
 Returns the last unified logs.
@@ -5003,14 +4836,10 @@ Used by:
 - Execution Panel  
 - Results Panel  
 
----
-
 ## **Summary**
 
 `LogCapture` is a pure, deterministic log aggregator.  
 It ensures that all logs — subprocess and Python — are normalized into a single readable format.
-
----
 
 # **5.3.4 `pytest_runner.py` — Controlled Pytest Execution via Subprocess**
 
@@ -5296,8 +5125,6 @@ python -m pytest <test_files>
 
 This ensures safety and reproducibility.
 
----
-
 ## **High‑Level Behavior**
 
 ### **1. Input Normalization**
@@ -5308,8 +5135,6 @@ Accepts:
 - a list of paths  
 
 Invalid input → structured error.
-
----
 
 ### **2. PYTHONPATH Injection**
 
@@ -5326,8 +5151,6 @@ This ensures that generated tests can import:
 ```python
 from workspace.source import statistical_analysis_minimal
 ```
-
----
 
 ### **3. Running Pytest**
 
@@ -5349,8 +5172,6 @@ Captures:
 - stderr  
 - exit code  
 
----
-
 ### **4. Extracting Pass/Fail Counts**
 
 The method `_extract_pass_fail()` parses pytest output to determine:
@@ -5363,8 +5184,6 @@ This is used by:
 - GUI Results Panel  
 - Visualization Layer  
 
----
-
 ### **5. Extracting Failure Messages**
 
 The method `_extract_failures()` collects lines like:
@@ -5374,8 +5193,6 @@ FAILED test_statistical_analysis_minimal.py::test_smoke_StatisticalAnalyzer
 ```
 
 These are displayed in the GUI.
-
----
 
 ### **6. Writing JSON Report**
 
@@ -5400,14 +5217,10 @@ This file is consumed by:
 - ReportCollector  
 - GUI Results Panel  
 
----
-
 ## **Summary**
 
 `PytestRunner` is the core test execution engine of PyTester.  
 It runs pytest safely in a subprocess, collects structured results, and writes a deterministic JSON report.
-
----
 
 # **5.4 GUI Subsystem — PyTest/gui/**
 
@@ -5416,8 +5229,6 @@ Its job is to connect user actions (button clicks, file selections) to backend s
 The GUI itself contains **no analysis logic** — it delegates everything to the subsystems passed in via `subsystems`.
 
 Below is a detailed, code‑level interpretation of each GUI module you provided.
-
----
 
 ## **5.4.1 `main_window.py` — Top‑Level GUI Container**
 
@@ -5571,8 +5382,6 @@ class MainWindow(QMainWindow):
 - Does not run QApplication (done in `run.py`).
 - Does not perform any analysis — only arranges widgets.
 - Passes `settings` and `subsystems` to each panel so they can call backend logic.
-
----
 
 ## **5.4.2 `upload_panel.py` — File Selection, Copying, Syntax Check, AST Extraction**
 
@@ -5742,8 +5551,6 @@ class UploadPanel(QWidget):
 - Converts user‑selected files into workspace artifacts.
 - Validates syntax and extracts AST structure.
 - Makes files available to Inspection, Inference, TestGen, Execution.
-
----
 
 ## **5.4.3 `inspection_panel.py` — Display AST Structure, Docstrings, Annotations**
 
@@ -5958,8 +5765,6 @@ class InspectionPanel(QWidget):
 - Pure visualization.
 - Shows exactly what ASTInspector extracted.
 - Helps users understand the code before inference.
-
----
 
 ## **5.4.4 `inference_panel.py` — Run Static, Semantic, Dynamic, Fusion, Schema**
 
@@ -6180,8 +5985,6 @@ class InferencePanel(QWidget):
 - Executes the entire inference pipeline.
 - Displays all intermediate inference results.
 - Produces the final schema used by test generation.
-
----
 
 ## **5.4.5 `test_generation_panel.py` — GUI Wrapper for All Test Generators**
 
@@ -6434,8 +6237,6 @@ Executed in `generate_tests()`:
 - Bridges inference → test generation → file creation.
 - Ensures all generators run in correct order.
 - Provides visibility into the generated test code.
-
----
 
 ## **5.4.6 `execution_panel.py` — GUI Wrapper for Pytest + Coverage + Logs + ReportCollector**
 
@@ -6699,8 +6500,6 @@ Executed in `run_tests()`:
 - Collects all execution artifacts.
 - Displays everything in a single GUI panel.
 
----
-
 ## **5.4.7 `results_panel.py` — Final Summary + Plot Generation**
 
 ````Python
@@ -6912,8 +6711,6 @@ It is the GUI front‑end for the **visualization subsystem**.
   - Buttons: “Load Results” and “Generate Plots”
   - Read‑only output area
 
----
-
 ### **Loading Results**
 Executed in `load_results()`:
 
@@ -6943,8 +6740,6 @@ Executed in `load_results()`:
    - pytest summary  
    - coverage summary  
    - metadata (if present)
-
----
 
 ### **Generating Plots**
 Executed in `generate_plots()`:
@@ -6982,8 +6777,6 @@ Executed in `generate_plots()`:
   - failures  
   - coverage  
 
----
-
 ## **5.4.8 Summary of GUI Modules**
 
 | GUI Module | What It Does | Backend Used |
@@ -6996,8 +6789,6 @@ Executed in `generate_plots()`:
 | **ExecutionPanel** | Run pytest + coverage + logs | PytestRunner, CoverageRunner, LogCapture, ReportCollector |
 | **ResultsPanel** | Load results + generate plots | CoverageRunner, ReportCollector, Visualization subsystem |
 
----
-
 # **5.5 Inference Subsystem — PyTester/inference/**
 
 The inference subsystem enriches the raw AST structure with meaning, runtime behavior, and a canonical schema.  
@@ -7008,8 +6799,6 @@ The three modules you provided correspond to:
 - **schema building** (canonical representation for test generation)
 
 Below is a detailed interpretation of each file.
-
----
 
 ## **5.5.1 `semantic_analysis.py` — Docstring‑ and Annotation‑Driven Semantic Inference**
 
@@ -7295,8 +7084,6 @@ Keyword‑based behavior inference:
 ### **Output**
 A dictionary mapping each callable to semantic metadata used later by TypeFusion and SchemaBuilder.
 
----
-
 ## **5.5.2 `dynamic_probe.py` — Safe Runtime Inspection via Restricted Import**
 
 ````Python
@@ -7547,8 +7334,6 @@ Maps runtime values to semantic categories.
 ### **Output**
 A dictionary mapping each callable to dynamic metadata used by TypeFusion.
 
----
-
 ## **5.5.3 `schema_builder.py` — Canonical Schema Construction**
 
 ````Python
@@ -7721,8 +7506,6 @@ A canonical schema consumed by:
 - PropertyTestGenerator  
 - DocstringTestGenerator  
 - TemplateRenderer  
-
----
 
 ## **5.5.4 `static_analysis.py` — Structural + Annotation‑Based Static Inference**
 
@@ -7897,8 +7680,6 @@ settings
 ```
 These allow it to enrich ASTInspector’s structure with file‑level annotations and docstrings.
 
----
-
 ### **`analyze(structure)`**
 This is the primary static analysis pass.
 
@@ -7949,8 +7730,6 @@ StaticAnalyzer therefore provides:
 - docstrings  
 - simple structural properties  
 
----
-
 ### **`analyze_file(file_path, structure)`**
 This is an *optional enrichment pass*.
 
@@ -7976,8 +7755,6 @@ It merges file‑level annotations and docstrings into the base static info:
 
 This ensures static analysis is complete even if ASTInspector missed something.
 
----
-
 ### **Output**
 A dictionary mapping each callable to:
 
@@ -7988,8 +7765,6 @@ A dictionary mapping each callable to:
 - structural properties  
 
 This is the **most precise** inference layer and has highest priority in TypeFusion.
-
----
 
 ## **5.5.5 `type_fusion.py` — Merging Static + Semantic + Dynamic Inference**
 
@@ -8183,8 +7958,6 @@ It computes:
 - intent  
 - confidence score  
 
----
-
 ### **Argument Fusion — `_fuse_args()`**
 
 Priority order:
@@ -8211,8 +7984,6 @@ This ensures:
 - semantic hints fill gaps  
 - dynamic probing fills remaining gaps  
 
----
-
 ### **Return Fusion — `_fuse_return()`**
 
 Priority:
@@ -8228,8 +7999,6 @@ if dynamic_ret and dynamic_ret != "unknown": return dynamic_ret
 return None
 ```
 
----
-
 ### **Behavior Fusion — `_fuse_behavior()`**
 
 Static properties + semantic behavior:
@@ -8241,8 +8010,6 @@ for k, v in semantic_behavior.items():
 
 Dynamic behavior is not included here (dynamic probing does not infer behavior).
 
----
-
 ### **Confidence Score — `_compute_confidence()`**
 
 Weights:
@@ -8253,8 +8020,6 @@ Weights:
 Capped at 1.0.
 
 This gives test generators a measure of how reliable the inferred type is.
-
----
 
 ### **Output**
 Each fused entry contains:
@@ -8274,8 +8039,6 @@ Each fused entry contains:
 
 This is the **final inference layer** before schema building.
 
----
-
 # **5.6 Test Generation Subsystem — PyTester/testgen/**
 
 The test generation subsystem transforms the canonical schema (from `SchemaBuilder`) into concrete pytest test files.  
@@ -8294,8 +8057,6 @@ All generators follow strict safety rules:
 - **Remain deterministic and side‑effect‑free**
 
 Below is the detailed interpretation of each generator.
-
----
 
 # **5.6.1 `property_tests_generator.py` — Behavioral Property Tests**
 
@@ -8617,8 +8378,6 @@ For methods:
 ### **Output**
 A string containing pytest test functions.
 
----
-
 # **5.6.2 `boundary_tests_generator.py` — Boundary Value Tests**
 
 ````python
@@ -8867,8 +8626,6 @@ assert True
 
 ### **Output**
 A pytest file containing boundary tests.
-
----
 
 # **5.6.3 `docstring_tests_generator.py` — Tests Derived from Docstring Claims**
 
@@ -9231,8 +8988,6 @@ Rules enforced:
 ### **Output**
 A pytest file containing docstring‑derived tests.
 
----
-
 # **5.6.4 `type_tests_generator.py` — Type‑Oriented Tests**
 
 ````python
@@ -9419,8 +9174,6 @@ It follows strict safety rules:
   - Only for `kind == "function"` or `kind == "method"`
 - Delegates to `_generate_test_case`.
 
----
-
 ### **Free functions**
 ```python
 func = module.func_name
@@ -9451,8 +9204,6 @@ Dummy values are simple defaults:
 - dict → `{}`  
 - unknown → `None`
 
----
-
 ### **Methods**
 Rules enforced:
 
@@ -9467,12 +9218,8 @@ assert callable(cls)
 assert hasattr(cls, 'method')
 ```
 
----
-
 ### **Output**
 A pytest file containing type‑oriented tests.
-
----
 
 # **5.6.5 `smoke_generator.py` — Minimal Smoke Tests**
 
@@ -9604,8 +9351,6 @@ assert hasattr(cls, 'method')
 ### **Output**
 A pytest file containing smoke tests.
 
----
-
 # **5.6.6 `template_renderer.py` — Final Test File Assembly**
 
 ````python
@@ -9731,8 +9476,6 @@ Combines all test sections into a single deterministic pytest file.
 ### **Output**
 A single string representing the final pytest test file.
 
----
-
 ## **5.6.7 Updated Summary of Test Generators**
 
 | Generator | What It Produces | Runtime Calls Allowed? | Class Instantiation? |
@@ -9753,9 +9496,7 @@ All generators:
 - never mutate state  
 - never perform arbitrary calls  
 
----
-
-# **5.7 Tests Subsystem — Code‑Level Functional Description**
+# **5.7 Tests Subsystem — PyTester/tests/**
 
 The `/tests` folder contains **unit tests** for all major subsystems:
 
@@ -9768,8 +9509,6 @@ These tests do **not** execute arbitrary user code.
 They validate correctness, determinism, and API behavior of PyTester’s internal modules.
 
 Below is a precise interpretation of each test file.
-
----
 
 # **5.7.1 `test_inference_engine.py` — Tests for Inference Modules**
 
@@ -9998,8 +9737,6 @@ Checks:
 - return type preserved  
 - kind set correctly (“function”)
 
----
-
 # **5.7.2 `test_testgen_pipeline.py` — Tests for Test Generation Modules**
 
 ````python
@@ -10209,8 +9946,6 @@ Two tests:
    assert "def test_x" in wrapped
    ```
 
----
-
 # **5.7.3 `test_core_modules.py` — Tests for Core Subsystem**
 
 ````python
@@ -10414,8 +10149,6 @@ Tests:
 - indent  
 - ensure_dir  
 - write_text_safe  
-
----
 
 # **5.7.4 `test_gui_components.py` — Tests for GUI Panels**
 
@@ -10631,16 +10364,6 @@ Checks:
 - presence of `coverage_label`, `status_label`, `plots_area`  
 - summary update logic  
 
----
-
-Nenad — here is the **final file from `/tests`**, interpreted precisely and added to the **updated Section 5.7.6 Summary of Tests Subsystem** exactly as you requested.
-
-No fluff.  
-No architecture digressions.  
-Just strict, code‑level functional description.
-
----
-
 # **5.7.5 `test_executor.py` — Tests for Executor Subsystem**
 
 ````Python
@@ -10838,8 +10561,6 @@ All subprocess calls are **mocked** using `unittest.mock.patch` to ensure:
 
 ### **Code‑Level Interpretation**
 
----
-
 ## **PytestRunner Tests**
 
 ### **`test_pytest_runner_basic()`**
@@ -10869,8 +10590,6 @@ All subprocess calls are **mocked** using `unittest.mock.patch` to ensure:
 
 This verifies correct timeout handling.
 
----
-
 ## **CoverageRunner Tests**
 
 ### **`test_coverage_runner_basic()`**
@@ -10892,8 +10611,6 @@ This verifies correct timeout handling.
   - status `"error"`
   - exit code `-1`
 
----
-
 ## **ReportCollector Tests**
 
 ### **`test_report_collector_merges_results()`**
@@ -10909,8 +10626,6 @@ This verifies correct timeout handling.
   - logs preserved
 
 This verifies correct aggregation.
-
----
 
 ## **LogCapture Tests**
 
@@ -10937,8 +10652,6 @@ This verifies correct aggregation.
   ```
 - Asserts both `"SUB"` and `"PY"` appear.
 
----
-
 # **5.7.6 Updated Summary of Tests Subsystem**
 
 | Test File | What It Validates |
@@ -10960,24 +10673,12 @@ All tests:
 - mock subprocess calls for safety  
 - verify correct parsing, merging, and logging behavior  
 
----
-
-Nenad — here is **Section 5.8 — Visualization Subsystem**, starting with the file you provided:  
-**`plot_coverage.py` (PlotCoverage)**
-
-This is a **precise, code‑level functional description**, exactly matching the style of Sections 5.4–5.7.
-
----
-
 # **5.8 Visualization Subsystem — PyTester/visualization/**
 
 The visualization subsystem converts execution results (pytest + coverage) into **matplotlib Figures** and **PNG files**.  
 It never executes tests, never imports user code, and never interacts with Qt.  
 It is purely a deterministic plotting layer.
 
-Below is the detailed interpretation of the first visualization module you provided.
-
----
 
 # **5.8.1 `plot_coverage.py` — Coverage Visualization**
 
@@ -11007,8 +10708,6 @@ ensure_dir(self.output_dir)
 - Ensures the output directory exists  
 - Does **not** create any Qt objects  
 - Does **not** import user code  
-
----
 
 ## **1. `create(coverage_files)` — GUI Figure Generation**
 
@@ -11047,8 +10746,6 @@ if cov is None:
 ### **Output**
 A **matplotlib Figure** (not saved), ready for embedding in the GUI.
 
----
-
 ## **2. `plot(coverage_files)` — PNG Export**
 
 Returns a dictionary:
@@ -11065,8 +10762,6 @@ Internally calls:
 - `_plot_bar()`  
 - `_plot_missing()`  
 
----
-
 ## **3. `_plot_bar(coverage_files)` — Coverage Percentage PNG**
 
 ### **Behavior**
@@ -11079,8 +10774,6 @@ Internally calls:
 ### **Output**
 `workspace/plots/coverage_bar_plot.png`
 
----
-
 ## **4. `_plot_missing(coverage_files)` — Missing Lines PNG**
 
 ### **Behavior**
@@ -11092,8 +10785,6 @@ Internally calls:
 
 ### **Output**
 `workspace/plots/coverage_missing_plot.png`
-
----
 
 ## **Functional Summary**
 `PlotCoverage` provides:
@@ -11112,8 +10803,6 @@ Internally calls:
 - no user‑code execution  
 - robust fallback logic  
 - safe directory handling  
-
----
 
 # **5.8.2 `plot_durations.py` — Execution Duration Visualization**
 
@@ -11267,10 +10956,6 @@ class PlotDurations:
         return output_path
 ````
 
-This is a **precise, code‑level functional description**, matching the style of the previous sections.
-
----
-
 # **PlotDurations — Code‑Level Functional Description**
 
 ### **Purpose**
@@ -11287,8 +10972,6 @@ It provides:
 
 It is deterministic, pure, and side‑effect‑aware.
 
----
-
 ## **Initialization**
 ```python
 self.output_dir = Path(settings["visualization"]["output_dir"])
@@ -11299,8 +10982,6 @@ ensure_dir(self.output_dir)
 - Ensures output directory exists  
 - Does **not** create Qt objects  
 - Does **not** execute tests  
-
----
 
 ## **1. `create(durations)` — GUI Figure Generation**
 
@@ -11339,8 +11020,6 @@ If conversion fails → fallback to `0.0`.
 ### **Output**
 A **matplotlib Figure** for GUI display.
 
----
-
 ## **2. `plot(durations)` — PNG Export**
 
 Returns:
@@ -11356,8 +11035,6 @@ Internally calls:
 
 - `_plot_bar()`  
 - `_plot_breakdown()`  
-
----
 
 ## **3. `_plot_bar(durations)` — Bar Chart PNG**
 
@@ -11376,8 +11053,6 @@ Internally calls:
 
 ### **Output**
 A PNG file showing absolute durations.
-
----
 
 ## **4. `_plot_breakdown(durations)` — Pie Chart PNG**
 
@@ -11400,8 +11075,6 @@ A PNG file showing absolute durations.
 ### **Output**
 A PNG file showing relative duration contributions.
 
----
-
 ## **Functional Summary**
 
 | Method | Output | Purpose |
@@ -11418,8 +11091,6 @@ A PNG file showing relative duration contributions.
 - no user‑code execution  
 - robust numeric fallback logic  
 - safe directory handling  
-
----
 
 # **5.8.3 `plot_failures.py` — Test Failure Visualization**
 
@@ -11624,8 +11295,6 @@ It provides:
 
 It is deterministic, pure, and side‑effect‑aware.
 
----
-
 ## **Initialization**
 ```python
 self.output_dir = Path(settings["visualization"]["output_dir"])
@@ -11636,8 +11305,6 @@ ensure_dir(self.output_dir)
 - Ensures output directory exists  
 - Does **not** create Qt objects  
 - Does **not** execute tests  
-
----
 
 ## **1. `create(pytest_stdout)` — GUI Figure Generation**
 
@@ -11679,8 +11346,6 @@ failed = int(failed) if possible else 0
 ### **Output**
 A **matplotlib Figure** for GUI display.
 
----
-
 ## **2. `plot(pytest_stdout)` — PNG Export**
 
 Returns:
@@ -11697,8 +11362,6 @@ Internally calls:
 - `_plot_bar()`  
 - `_plot_pie()`  
 
----
-
 ## **3. `_plot_bar(passed, failed)` — Bar Chart PNG**
 
 ### **Behavior**
@@ -11710,8 +11373,6 @@ Internally calls:
 
 ### **Output**
 A PNG file showing pass/fail counts.
-
----
 
 ## **4. `_plot_pie(passed, failed)` — Pie Chart PNG**
 
@@ -11733,8 +11394,6 @@ A PNG file showing pass/fail counts.
 
 ### **Output**
 A PNG file showing pass/fail ratio.
-
----
 
 ## **5. `_extract_failures(stdout)` — Failure Parsing**
 
@@ -11764,8 +11423,6 @@ per_file[file_name] += 1
 (passed: int, failed: int, per_file: Dict[str, int])
 ```
 
----
-
 ## **Functional Summary**
 
 | Method | Output | Purpose |
@@ -11783,8 +11440,6 @@ per_file[file_name] += 1
 - no user‑code execution  
 - robust parsing of pytest output  
 - safe directory handling  
-
----
 
 # **5.8.4 `plot_results.py` — Unified Execution Results Visualization**
 
@@ -11961,8 +11616,6 @@ It provides:
 
 It is deterministic, pure, and side‑effect‑aware.
 
----
-
 ## **Initialization**
 ```python
 self.output_dir = Path(settings["visualization"]["output_dir"])
@@ -11973,8 +11626,6 @@ ensure_dir(self.output_dir)
 - Ensures output directory exists  
 - Does **not** create Qt objects  
 - Does **not** execute tests  
-
----
 
 ## **1. `create(report)` — GUI Figure Generation**
 
@@ -12014,8 +11665,6 @@ total_cov = float(report["summary"]["total_coverage"] or 0.0)
 ### **Output**
 A **matplotlib Figure** for GUI display.
 
----
-
 ## **2. `plot(report)` — PNG Export**
 
 Returns:
@@ -12034,8 +11683,6 @@ Internally calls:
 - `_plot_coverage()`  
 - `_plot_missing_lines()`  
 
----
-
 ## **3. `_plot_status(report)` — Status PNG**
 
 ### **Behavior**
@@ -12051,8 +11698,6 @@ Internally calls:
 
 ### **Output**
 A PNG file showing execution status.
-
----
 
 ## **4. `_plot_coverage(report)` — Total Coverage PNG**
 
@@ -12070,8 +11715,6 @@ A PNG file showing execution status.
 
 ### **Output**
 A PNG file showing total coverage.
-
----
 
 ## **5. `_plot_missing_lines(report)` — Missing Lines PNG**
 
@@ -12099,8 +11742,6 @@ A PNG file showing total coverage.
 ### **Output**
 A PNG file showing missing lines per file.
 
----
-
 ## **Functional Summary**
 
 | Method | Output | Purpose |
@@ -12118,8 +11759,6 @@ A PNG file showing missing lines per file.
 - no user‑code execution  
 - robust fallback logic  
 - safe directory handling  
-
----
 
 # **5.8.5 `png_exporter.py` — Unified PNG Export Interface**
 
@@ -12337,8 +11976,6 @@ ensure_dir(self.output_dir)
 - Does **not** create Qt objects  
 - Does **not** generate plots  
 
----
-
 ## **1. `export(items)` — Batch Export**
 
 ### **Input**
@@ -12367,8 +12004,6 @@ for name, item in items.items():
 
 ### **Output**
 A dictionary mapping logical names to **final PNG paths** in `workspace/plots/`.
-
----
 
 ## **2. `_export_single(name, item)` — Export One Item**
 
@@ -12399,8 +12034,6 @@ If both saving and copying fail:
 return self._placeholder_png(dst_path)
 ```
 
----
-
 ## **3. `_normalize_name(name)` — Safe Filenames**
 
 Converts logical names into filesystem‑safe filenames:
@@ -12414,8 +12047,6 @@ Example:
 ```
 "duration breakdown" → "duration_breakdown"
 ```
-
----
 
 ## **4. `_placeholder_png(dst_path)` — Fallback PNG**
 
@@ -12434,8 +12065,6 @@ Used when:
 - a Figure cannot be saved  
 - item is invalid  
 
----
-
 ## **5. `summarize(exported)` — Human‑Readable Summary**
 
 Formats a simple text report:
@@ -12449,8 +12078,6 @@ failures_plot: workspace/plots/failures_plot.png
 ```
 
 Useful for logging and GUI display.
-
----
 
 ## **Functional Summary**
 
@@ -12470,10 +12097,6 @@ Useful for logging and GUI display.
 - robust fallback logic  
 - safe directory handling  
 
----
-
-Here is **Section 5.9 — Workspace Artifacts**, starting with the file you provided:
-
 # **5.9 Workspace Artifacts — PyTester/workspace/**
 
 The `workspace/` directory contains *runtime artifacts* produced by PyTester during execution:
@@ -12484,7 +12107,7 @@ The `workspace/` directory contains *runtime artifacts* produced by PyTester dur
 - coverage data  
 - unified reports  
 
-The file you provided — **`pytest_report.json`** — is the central execution artifact consumed by:
+The file **`pytest_report.json`** — is the central execution artifact consumed by:
 
 - `ResultsPanel`  
 - `PlotResults`  
@@ -12494,8 +12117,6 @@ The file you provided — **`pytest_report.json`** — is the central execution 
 - `PNGExporter`  
 
 Below is a precise, code‑level interpretation of its structure and meaning.
-
----
 
 # **5.9.1 `pytest_report.json` — Unified Pytest Execution Report**
 
@@ -12523,8 +12144,6 @@ Used by:
 - `PlotResults` (status bar)  
 - `ResultsPanel` (status label)
 
----
-
 ### **`exit_code`**
 ```json
 "exit_code": 0
@@ -12533,8 +12152,6 @@ Pytest process exit code.
 
 - `0` → success  
 - non‑zero → failure  
-
----
 
 ### **`stdout`**
 A long string containing the full pytest output:
@@ -12551,15 +12168,11 @@ Used by:
 - `PlotFailures` (pass/fail extraction)  
 - `ResultsPanel` (raw log display)
 
----
-
 ### **`stderr`**
 ```json
 "stderr": ""
 ```
 Pytest stderr output (empty here).
-
----
 
 ### **`files`**
 ```json
@@ -12575,8 +12188,6 @@ Used by:
 - `CoverageRunner`  
 - `ResultsPanel`  
 - `PlotCoverage`  
-
----
 
 ## **Durations**
 
@@ -12600,8 +12211,6 @@ Meaning:
 - `coverage` → time spent computing coverage  
 - `total` → sum of both  
 
----
-
 ## **Test Results**
 
 ### **`test_results`**
@@ -12617,8 +12226,6 @@ Used by:
 - `PlotFailures`  
 - `ResultsPanel`  
 
----
-
 ### **`failures`**
 ```json
 "failures": []
@@ -12629,8 +12236,6 @@ Used by:
 
 - `PlotFailures`  
 - `ResultsPanel`  
-
----
 
 ## **5.9.1.1 How PyTester Uses `pytest_report.json`**
 
@@ -12650,8 +12255,6 @@ Used by:
 ### **PNGExporter**
 - Saves all generated figures into `workspace/plots/`
 
----
-
 ## **5.9.1.2 Structural Summary**
 
 | Field | Meaning | Used By |
@@ -12664,8 +12267,6 @@ Used by:
 | `durations` | timing info | PlotDurations, ResultsPanel |
 | `test_results` | pass/fail counts | PlotFailures, ResultsPanel |
 | `failures` | detailed failure list | PlotFailures, ResultsPanel |
-
----
 
 # **5.9.2 Workspace Uploaded Files — PyTester/workspace/uploaded_files/**
 
@@ -12689,8 +12290,6 @@ These files are the *input corpus* for the entire PyTester pipeline:
 - **Visualization** renders results  
 
 Below is the code‑level interpretation of each uploaded file you provided.
-
----
 
 # **5.9.2.1 `statistical_analysis_with_docstrings.py` — Fully Annotated, Fully Documented Test Case**
 
@@ -12988,8 +12587,6 @@ def __init__(self, csv_path: Path, output_dir: Path = Path("analysis_output"))
 
 This file is the **best possible input** for PyTester.
 
----
-
 # **5.9.2.2 `statistical_analysis_minimal.py` — Annotated but No Docstrings**
 
 ````Python
@@ -13112,8 +12709,6 @@ A minimal version of the same class:
   - docstring tests → **none generated**  
 
 This file is ideal for testing PyTester’s behavior when docstrings are missing.
-
----
 
 # **5.9.2.3 `statistical_analysis_no_annotations.py` — Docstrings but No Type Annotations**
 
@@ -13370,8 +12965,6 @@ A version with:
 
 This file is ideal for testing PyTester’s semantic inference engine.
 
----
-
 # **5.9.2.4 `statistical_analysis_no_docstrings.py` — No Docstrings, Annotated**
 
 ````Python
@@ -13511,8 +13104,6 @@ A version with:
 
 This file is ideal for testing PyTester’s behavior when semantic hints are missing.
 
----
-
 # **5.9.2.5 Summary Table — Uploaded Statistical Analysis Files**
 
 | File | Annotations | Docstrings | Semantic Strength | Static Strength | Test Coverage |
@@ -13532,8 +13123,6 @@ All files:
 - are safe for PyTester’s dynamic probe  
 - are ideal for testing inference + test generation  
 
----
-
 # **5.9.3 Workspace Generated Tests — Code‑Level Interpretation**
 
 The directory:
@@ -13552,7 +13141,7 @@ Each generated file is composed of:
 - **Property Tests**  
 - **Docstring Tests** (only when docstrings exist)
 
-The examples you provided correspond to:
+The examples (py-files) correspond to:
 
 - `test_statistical_analysis_with_docstrings.py`
 - `test_statistical_analysis_minimal.py`
@@ -13560,8 +13149,6 @@ The examples you provided correspond to:
 - `test_statistical_analysis_no_docstrings.py`
 
 Below is a precise, code‑level interpretation of each generated file.
-
----
 
 # **5.9.3.1 `test_statistical_analysis_with_docstrings.py` — Full Test Suite**
 
@@ -13776,8 +13363,6 @@ Generated because docstrings contain claims:
 
 However, since methods require arguments, runtime checks are skipped.
 
----
-
 # **5.9.3.2 `test_statistical_analysis_minimal.py` — No Docstring Tests**
 
 ````Python
@@ -13920,8 +13505,6 @@ from workspace.source import statistical_analysis_minimal
 - Docstring tests → none  
 
 This file is ideal for testing PyTester’s behavior when semantic hints are missing.
-
----
 
 # **5.9.3.3 `test_statistical_analysis_no_annotations.py` — Semantic + Docstring Tests**
 
@@ -14095,8 +13678,6 @@ from workspace.source import statistical_analysis_no_annotations
 
 This file is ideal for testing PyTester’s semantic inference engine.
 
----
-
 # **5.9.3.4 `test_statistical_analysis_no_docstrings.py` — Static Only**
 
 ````Python
@@ -14240,8 +13821,6 @@ from workspace.source import statistical_analysis_no_docstrings
 
 This file is ideal for testing PyTester’s behavior when docstrings are missing.
 
----
-
 # **5.9.3 Summary Table — Generated Tests**
 
 | Source File | Smoke | Type | Boundary | Property | Docstring |
@@ -14260,8 +13839,6 @@ All generated test files:
 - remain deterministic  
 - avoid unsafe execution  
 - follow the exact rules of each TestGenerator subsystem  
-
----
 
 # **5.10 System Orchestration & Runtime Environment**
 
@@ -14286,8 +13863,6 @@ The orchestration entrypoint is `run.py`, which:
 6. hands control to the user  
 
 Below is the full technical description.
-
----
 
 # **5.10.1 Python Environment & Dependency Stack**
 
@@ -14376,8 +13951,6 @@ Used for:
 - CSV validation  
 - GUI icons  
 
----
-
 # **5.10.2 Runtime Orchestration (`run.py`)**
 
 The `run.py` file is the **central orchestrator** of PyTester.  
@@ -14425,8 +13998,6 @@ It performs:
    sys.exit(qt_app.exec_())
    ```
 
----
-
 # **5.10.3 Subsystem Initialization Graph**
 
 The function `initialize_subsystems(settings)` constructs **all subsystems** in dependency order.
@@ -14469,8 +14040,6 @@ The function `initialize_subsystems(settings)` constructs **all subsystems** in 
 - **PNGExporter**  
 
 All subsystems are passed to the GUI as a single dictionary.
-
----
 
 # **5.10.4 Execution Lifecycle**
 
@@ -14543,8 +14112,6 @@ This chapter explains:
 8. **Error handling and logging**  
 9. **Extensibility guidelines**
 
----
-
 # **6.1 GUI Architecture Overview**
 
 The GUI subsystem follows a **stacked‑panel architecture**:
@@ -14570,8 +14137,6 @@ This ensures:
 - reproducibility  
 - easy testing  
 - clear separation of concerns  
-
----
 
 # **6.2 MainWindow — Central Orchestrator**
 
@@ -14607,8 +14172,6 @@ It manages:
 | `execution_panel` | Test execution controls |
 | `results_panel` | Coverage + results visualization |
 
----
-
 # **6.3 Panel‑Level Documentation**
 
 Each panel is a self‑contained PyQt5 widget with:
@@ -14618,8 +14181,6 @@ Each panel is a self‑contained PyQt5 widget with:
 - its own subsystem interactions  
 
 Below is a detailed description of each panel.
-
----
 
 ## **6.3.1 UploadPanel**
 
@@ -14657,8 +14218,6 @@ workspace/uploaded_files/
 3. Panel emits `file_uploaded(path)`  
 4. MainWindow switches to **InspectionPanel**
 
----
-
 ## **6.3.2 InspectionPanel**
 
 ### **Purpose**
@@ -14686,8 +14245,6 @@ Displays the AST structure extracted from uploaded files.
 4. Tree view is populated  
 5. User clicks **Next** → InferencePanel
 
----
-
 ## **6.3.3 InferencePanel**
 
 ### **Purpose**
@@ -14714,8 +14271,6 @@ Runs the full inference pipeline and displays the canonical schema.
 2. Static analysis → semantic analysis → dynamic probe → fusion → schema building  
 3. Schema is displayed  
 4. User clicks **Next** → TestGenerationPanel
-
----
 
 ## **6.3.4 TestGenerationPanel**
 
@@ -14746,8 +14301,6 @@ Generates pytest files from the canonical schema.
 4. Files are written to `workspace/generated_tests/`  
 5. User clicks **Next** → ExecutionPanel
 
----
-
 ## **6.3.5 ExecutionPanel**
 
 ### **Purpose**
@@ -14776,8 +14329,6 @@ Runs pytest + coverage and displays logs.
 5. LogCapture collects logs  
 6. Unified report is saved to `workspace/pytest_report.json`  
 7. User clicks **Next** → ResultsPanel
-
----
 
 ## **6.3.6 ResultsPanel**
 
@@ -14808,8 +14359,6 @@ Displays coverage, pass/fail counts, durations, and plots.
 4. Panel displays results  
 5. User may restart pipeline
 
----
-
 # **6.4 Signal/Slot Wiring**
 
 Below is the complete wiring diagram.
@@ -14833,8 +14382,6 @@ ExecutionPanel.run_button.clicked
 ResultsPanel.update_summary(report)
     → ResultsPanel.render_plots()
 ```
-
----
 
 # **6.5 Interaction Flow Diagrams**
 
@@ -14865,8 +14412,6 @@ ResultsPanel.update_summary(report)
 │ ResultsPanel      │
 └──────────────────┘
 ```
-
----
 
 ## **6.5.2 Subsystem Interaction Diagram**
 
@@ -14910,8 +14455,6 @@ ResultsPanel
     → PNGExporter
 ```
 
----
-
 # **6.6 Lifecycle & Threading Considerations**
 
 PyTester intentionally avoids background threads to maintain determinism.
@@ -14931,8 +14474,6 @@ PyTester intentionally avoids background threads to maintain determinism.
 - simpler debugging  
 - no race conditions  
 - no deadlocks  
-
----
 
 # **6.7 Error Handling & Logging**
 
@@ -14955,8 +14496,6 @@ Errors are caught at panel boundaries:
 - Visualization errors → ResultsPanel  
 
 All errors are displayed in the GUI.
-
----
 
 # **6.8 Extensibility Guidelines**
 
@@ -14987,8 +14526,6 @@ All errors are displayed in the GUI.
 3. Add to ResultsPanel  
 4. Add PNGExporter support  
 
----
-
 # **6.9 Summary**
 
 The GUI subsystem is:
@@ -15003,10 +14540,7 @@ It provides a complete workflow from file upload to final visualization, with cl
 
 ---
 
-
 # **7. PyTester GUI User Manual**  
-
----
 
 ## **1. Introduction**
 
@@ -15023,8 +14557,6 @@ The GUI wraps the entire PyTester pipeline:
 - **Visualize** results using deterministic matplotlib plots  
 
 The interface is intentionally simple, but the underlying system is powerful. This manual explains every part of the GUI, using your PNGs as visual references.
-
----
 
 ## **2. System Requirements**
 
@@ -15051,8 +14583,6 @@ The GUI depends on:
 
 These are listed in your `requirements.txt` and Section 5.10.
 
----
-
 ## **3. GUI Overview**
 
 The PyTester GUI follows a **six‑tab workflow**:
@@ -15067,8 +14597,6 @@ The PyTester GUI follows a **six‑tab workflow**:
 Each tab corresponds to a major subsystem.
 
 Your screenshots show this clearly—for example, the tab bar visible in multiple PNGs.
-
----
 
 ## **4. Upload Panel**
 
@@ -15097,8 +14625,6 @@ Your PNGs show multiple uploaded files:
 - `statistical_analysis_no_annotations.py`  
 - `statistical_analysis_no_docstrings.py`  
 - `statistical_analysis_with_docstrings.py`
-
----
 
 ## **5. Inspection Panel**
 
@@ -15135,8 +14661,6 @@ Your PNGs show:
 - Docstrings for annotated versions  
 - Missing docstrings for minimal/no‑docstring versions  
 
----
-
 ## **6. Inference Panel**
 
 ### **6.1 Purpose**
@@ -15171,8 +14695,6 @@ Your PNGs show:
 
 The flowchart PNG you provided (Type‑Inference Engine diagram) fits perfectly here.
 
----
-
 ## **7. Test Generation Panel**
 
 ### **7.1 Purpose**
@@ -15204,8 +14726,6 @@ Your PNGs show:
 
 Each generated file corresponds to one uploaded file.
 
----
-
 ## **8. Execution Panel**
 
 ### **8.1 Purpose**
@@ -15231,14 +14751,12 @@ workspace/test_reports/coverage.xml
 workspace/test_logs/pytester.log
 ```
 
-Your PNGs show:
+Our PNGs show:
 
 - pytest output  
 - warnings summary  
 - coverage summary  
 - pass/fail counts  
-
----
 
 ## **9. Results Panel**
 
@@ -15270,7 +14788,7 @@ When the user clicks **Generate Plots**:
 workspace/plots/
 ```
 
-Your PNGs show:
+Our PNGs show:
 
 - Execution Results bar chart  
 - Coverage by File bar chart  
@@ -15279,11 +14797,9 @@ Your PNGs show:
 
 These are referenced as figures in the manual.
 
----
-
 ## **10. Workspace Folder Structure**
 
-Your Explorer PNGs show the full workspace structure:
+Our Explorer PNGs show the full workspace structure:
 
 ```
 workspace/
@@ -15315,8 +14831,6 @@ Contains log files.
 ### **10.6 test_reports/**
 Contains pytest_report.json and coverage.xml.
 
----
-
 ## **11. Interaction Flow Diagrams**
 
 ### **11.1 Full Pipeline Diagram**
@@ -15343,8 +14857,6 @@ MainWindow
  └── ResultsPanel
 ```
 
----
-
 ## **12. Troubleshooting**
 
 ### **12.1 Syntax Errors**
@@ -15362,8 +14874,6 @@ Displayed in Execution panel logs.
 ### **12.5 Coverage Issues**
 Displayed in Results panel.
 
----
-
 ## **13. Best Practices**
 
 ### **13.1 Write Clean Docstrings**
@@ -15378,19 +14888,9 @@ Improves dynamic probing.
 ### **13.4 Avoid Side Effects**
 Ensures deterministic test generation.
 
----
-
 ## **14. Appendix**
 
-### **14.1 Glossary**
-- AST  
-- Schema  
-- Inference  
-- Coverage  
-- Smoke tests  
-- Property tests  
-
-### **14.2 Keyboard Shortcuts**
+### **14.1 Keyboard Shortcuts**
 - Ctrl+O → Upload  
 - Ctrl+I → Inspect  
 - Ctrl+R → Run Inference  
@@ -15398,7 +14898,7 @@ Ensures deterministic test generation.
 - Ctrl+T → Run Tests  
 - Ctrl+P → Generate Plots  
 
-### **14.3 Configuration Notes**
+### **14.2 Configuration Notes**
 Settings are stored in:
 
 ```
@@ -15417,8 +14917,6 @@ there are numerous opportunities for refinement, expansion, and modernization.
 This section outlines a forward‑looking roadmap for PyTester’s evolution. It is divided into thematic categories, each addressing a different dimension of the system: inference, test generation, execution, visualization, 
 GUI ergonomics, workspace management, performance, extensibility, and ecosystem integration. The goal is to provide a clear, actionable blueprint for future development while preserving the deterministic and safety‑first 
 principles that define PyTester.
-
----
 
 ## **8.1 Enhancing the Inference Engine**
 
@@ -15469,8 +14967,6 @@ Currently, inference is file‑centric. A future version could:
 - build multi‑module schemas  
 
 This would be especially useful for larger projects.
-
----
 
 ## **8.2 Expanding Test Generation Capabilities**
 
@@ -15538,8 +15034,6 @@ Generated tests could:
 
 This would be useful for larger projects.
 
----
-
 ## **8.3 Improving Test Execution and Reporting**
 
 PyTester’s execution subsystem is stable and deterministic. It uses pytest, pytest‑cov, and JSON reporting. Future improvements could enhance usability, robustness, and integration.
@@ -15585,8 +15079,6 @@ Failures could be categorized:
 - semantic mismatches  
 
 This would allow the GUI to display more meaningful failure analysis.
-
----
 
 ## **8.4 Advancing Visualization**
 
@@ -15641,8 +15133,6 @@ Plots could reflect:
 
 Providing a holistic view of the workspace.
 
----
-
 ## **8.5 GUI Ergonomics and Workflow Enhancements**
 
 The GUI is functional and clear, but several improvements could enhance usability.
@@ -15689,8 +15179,6 @@ Add search functionality for:
 - test files  
 - logs  
 
----
-
 ## **8.6 Workspace Management Improvements**
 
 The workspace structure is clear and modular. Future improvements could include:
@@ -15720,8 +15208,6 @@ Allow exporting:
 
 As a single archive.
 
----
-
 ## **8.7 Performance and Scalability**
 
 PyTester is optimized for small to medium‑sized modules. Future improvements could target scalability.
@@ -15741,8 +15227,6 @@ Reduce memory usage for:
 - large ASTs  
 - large DataFrames  
 - large test suites  
-
----
 
 ## **8.8 Extensibility and Plugin Ecosystem**
 
@@ -15777,8 +15261,6 @@ Support:
 - hypothesis‑only runs  
 - custom runners  
 
----
-
 ## **8.9 Ecosystem Integration**
 
 PyTester could integrate with external tools.
@@ -15807,8 +15289,6 @@ Expose:
 
 Allowing PyTester to be used in automated pipelines.
 
----
-
 ## **8.10 Conclusion**
 
 PyTester is already a powerful, deterministic, and deeply introspective testing environment. The improvements outlined in this section provide a roadmap for transforming PyTester into a fully extensible, 
@@ -15835,8 +15315,6 @@ It is a coherent ecosystem — a full pipeline that unifies static analysis, sem
 
 This closing chapter reflects on the system as a whole: its philosophy, its architecture, its strengths, its limitations, and its trajectory. It also considers the broader context in which PyTester operates — the evolving 
 landscape of Python development, testing automation, reproducibility, and tooling ergonomics. Finally, it offers perspective on how PyTester fits into modern software engineering workflows and why its design principles matter.
-
----
 
 ## **9.1 A Philosophy of Determinism and Safety**
 
@@ -15880,8 +15358,6 @@ This safety‑first design makes PyTester suitable for:
 
 PyTester’s architecture demonstrates that powerful analysis does not require unsafe execution.
 
----
-
 ## **9.2 A Unified Pipeline**
 
 One of PyTester’s greatest strengths is its **pipeline architecture**.  
@@ -15905,8 +15381,6 @@ It mirrors the mental model of a developer:
 
 PyTester does not force users to think in terms of internal subsystems.  
 It presents a natural workflow.
-
----
 
 ## **9.3 The GUI as a Cognitive Lens**
 
@@ -15939,8 +15413,6 @@ This layered design mirrors how humans understand code:
 - then empirically  
 
 PyTester’s GUI makes this progression explicit.
-
----
 
 ## **9.4 The Workspace as a Living Artifact**
 
@@ -15976,8 +15448,6 @@ This structure makes PyTester:
 
 It also allows users to manually inspect intermediate artifacts — a rare feature in automated testing tools.
 
----
-
 ## **9.5 The Inference Engine: A Bridge Between Code and Tests**
 
 The inference engine is the intellectual heart of PyTester.  
@@ -16003,8 +15473,6 @@ It is a structured, machine‑readable description of the code’s behavior.
 
 PyTester’s inference engine demonstrates that automated testing does not require guesswork.  
 It requires structured understanding.
-
----
 
 ## **9.6 Test Generation: A Philosophy of Minimalism**
 
@@ -16038,8 +15506,6 @@ It ensures that generated tests are:
 PyTester does not attempt to replace human‑written tests.  
 It provides a foundation — a scaffold — that developers can build upon.
 
----
-
 ## **9.7 Execution: Deterministic, Transparent, Reproducible**
 
 PyTester’s execution subsystem uses:
@@ -16072,8 +15538,6 @@ It contains:
 
 This report is the backbone of the Results panel.
 
----
-
 ## **9.8 Visualization: Turning Data Into Insight**
 
 PyTester’s visualization subsystem transforms raw execution data into insight.
@@ -16096,8 +15560,6 @@ These plots are:
 Visualization is not an afterthought.  
 It is a core part of PyTester’s philosophy:  
 **make results visible, interpretable, and actionable.**
-
----
 
 ## **9.9 The Role of PNGs in the User Experience**
 
@@ -16125,8 +15587,6 @@ They help users understand:
 - what PyTester concludes  
 
 PyTester’s GUI is a visual narrative of the testing pipeline.
-
----
 
 ## **9.10 PyTester in the Broader Landscape**
 
@@ -16186,8 +15646,6 @@ Analysts can:
 
 PyTester is a bridge between code and understanding.
 
----
-
 ## **9.11 Limitations and Realism**
 
 No system is perfect.  
@@ -16205,8 +15663,6 @@ These limitations are intentional.
 They preserve determinism and safety.
 
 But they also define the boundaries of PyTester’s current capabilities.
-
----
 
 ## **9.12 The Road Ahead**
 
@@ -16246,8 +15702,6 @@ With:
 
 PyTester’s architecture is flexible enough to support these directions.
 
----
-
 ## **9.13 Why PyTester Matters**
 
 PyTester matters because it embodies a philosophy:
@@ -16270,8 +15724,6 @@ It helps researchers ensure reproducibility.
 
 PyTester is not just a tool.  
 It is a philosophy of software understanding.
-
----
 
 ## **9.14 Final Reflections**
 
@@ -16296,7 +15748,7 @@ It can be:
 
 PyTester is a foundation — a platform upon which richer testing ecosystems can be built.
 
-As you continue developing PyTester, refining its subsystems, expanding its capabilities, and integrating new features, the core philosophy should remain unchanged:
+As we continue developing PyTester, refining its subsystems, expanding its capabilities, and integrating new features, the core philosophy should remain unchanged:
 
 **Make code understandable.  
 Make testing accessible.  
