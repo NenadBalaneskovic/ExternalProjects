@@ -13107,7 +13107,7 @@ All files:
 - are safe for PyTester’s dynamic probe  
 - are ideal for testing inference + test generation  
 
-# **5.9.3 Workspace Generated Tests — Code‑Level Interpretation**
+# **5.9.3 Workspace Generated Tests — PyTester/workspace/generated_tests/**
 
 The directory:
 
@@ -13805,7 +13805,7 @@ from workspace.source import statistical_analysis_no_docstrings
 
 This file is ideal for testing PyTester’s behavior when docstrings are missing.
 
-# **5.9.3 Summary Table — Generated Tests**
+## **5.9.3.4 Summary Table — Generated Tests**
 
 | Source File | Smoke | Type | Boundary | Property | Docstring |
 |-------------|-------|------|----------|----------|-----------|
