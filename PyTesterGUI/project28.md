@@ -1016,12 +1016,14 @@ The renderer combines all test fragments into a single cohesive pytest module.
 # **3.12 Execution + Coverage Pipeline (Detailed)**
 
 ```mermaid
+
 flowchart TD
-    A[pytest.main()] --> B[stdout/stderr]
+
+    A[Pytest Main] --> B[Stdout Stderr]
     A --> C[JSON Report]
 
-    D[coverage run] --> E[coverage.xml]
-    D --> F[coverage.json]
+    D[Coverage Run] --> E[Coverage XML]
+    D --> F[Coverage JSON]
 
     B --> G[Log Capture]
     C --> G
@@ -1029,6 +1031,7 @@ flowchart TD
     F --> G
 
     G --> H[Unified Report]
+
 ```
 
 ### **Explanation**
