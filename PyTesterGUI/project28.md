@@ -643,7 +643,9 @@ Each diagram is accompanied by detailed explanations to ensure clarity and to he
 This diagram shows the entire PyTester pipeline from file upload to final visualization.
 
 ```mermaid
+
 flowchart TD
+
     A[Upload Python File] --> B[Code Inspection Layer]
     B --> C[Inference Engine]
     C --> D[Test Generation Engine]
@@ -651,7 +653,8 @@ flowchart TD
     E --> F[Execution Layer]
     F --> G[Logging Layer]
     G --> H[Visualization Layer]
-    H --> I[Results Panel (GUI)]
+    H --> I[Results Panel GUI]
+
 ```
 
 ### **Explanation**
