@@ -511,6 +511,8 @@ This makes PyTester ideal for scientific workflows and debugging.
 
 The GUI is structured into six panels, each representing a stage in the pipeline.
 
+![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6674314725367b0ca13a145a6bde5aef860b6cf1/PyTesterGUI/Results/fig2.png)
+
 ---
 
 ## **2.5.1 Upload Panel**
