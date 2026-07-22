@@ -1573,6 +1573,123 @@ Fractional dynamics introduce nonlinear time scaling and temporal nonlocality, p
 
 [![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45c40698c2622dd380188519d19185d99c8229a9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/project27_report.md)
 
+### **28. PyTester GUI – Aug 2026**
+
+> ## **Executive Summary: Deterministic Python Code Analysis & Automated Test Generation**
+>
+> **Business Problem**  
+>Modern organizations rely heavily on Python for:
+>
+> - analytics and data science  
+> - automation and orchestration  
+> - scientific computing  
+> - backend microservices  
+> - rapid prototyping  
+>
+>Yet Python’s flexibility introduces structural risks:
+>
+> - missing or inconsistent type annotations  
+> - undocumented functions and classes  
+> - implicit behaviors hidden behind dynamic typing  
+> - fragile or incomplete test suites  
+> - low or misleading coverage  
+> - unpredictable runtime side effects  
+> - difficulty onboarding teams to consistent testing standards  
+>
+>Traditional QA pipelines depend on:
+>
+> - manual test writing  
+> - ad‑hoc inspection  
+> - inconsistent developer discipline  
+> - non‑reproducible environments  
+> - opaque execution logs  
+>
+>These constraints reduce maintainability, increase regression risk, and expose organizations to compliance gaps.  
+>Modern software‑quality pipelines require **deterministic analysis**, **automated test generation**, and **reproducible execution** — all within offline‑capable, auditable environments.
+>
+> **Solution Overview**  
+>Project 28 introduces **PyTester GUI**, a fully orchestrated, deterministic testing ecosystem that automates:
+>
+> - **AST inspection** → structural extraction of classes, methods, docstrings  
+> - **type inference** → static + semantic + dynamic fusion  
+> - **schema generation** → canonical representation of module behavior  
+> - **automated test creation** → smoke, type, boundary, property, docstring tests  
+> - **pytest execution** → deterministic test runs with unified JSON/XML reports  
+> - **coverage analysis** → per‑file and global metrics  
+> - **PNG visualization** → deterministic plots for results, durations, failures, coverage  
+> - **GUI‑driven orchestration** → Upload → Inspection → Inference → Test Generation → Execution → Results  
+>
+>PyTester transforms code analysis into a **reproducible, explainable, and deterministic testing pipeline**, enabling:
+>
+> - complete automated test suites  
+> - transparent inference logic  
+> - reproducible execution environments  
+> - coverage‑aware quality assurance  
+> - structured artifacts for audits and compliance  
+>
+> **Business Impact**
+>
+>Organizations gain:
+>
+> - **automated test suite generation** for legacy Python code  
+> - **structural consistency** across modules  
+> - **detection of missing annotations and docstrings**  
+> - **coverage visualization** for risk‑aware development  
+> - **reduced QA overhead** through deterministic automation  
+> - **reproducible artifacts** for compliance and audits  
+> - **CI/CD‑ready testing pipeline**  
+>
+>PyTester strengthens software‑quality pipelines, future‑proofs Python codebases, and provides a practical foundation for deterministic testing — without relying on proprietary cloud services.
+>
+> **Consulting Relevance**
+>
+>For consultants, Project 28 demonstrates how to operationalize:
+>
+> - deterministic code analysis  
+> - automated test generation  
+> - reproducible execution pipelines  
+> - GUI‑driven developer workflows  
+> - coverage‑aware quality assurance  
+> - structured workspace management  
+>
+>It is directly applicable to:
+>
+> - enterprise Python modernization  
+> - secure‑development architecture design  
+> - QA automation and regression testing  
+> - code auditing in regulated industries  
+> - reproducible scientific workflows  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to finance, telecom, defense, public sector, manufacturing, and critical infrastructure.
+>
+> **Compliance / ESG / Risk Management**
+>
+>PyTester supports governance through:
+>
+> - auditable test artifacts  
+> - reproducible inference results  
+> - explainable test generation logic  
+> - transparent coverage metrics  
+> - structured workspace for long‑term retention  
+>
+>This ensures software‑quality pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware development.
+
+---
+
+#### **Abstract**
+
+**PyTester GUI** is a modular, deterministic Python testing architecture designed for environments where **structural clarity, reproducibility, and long‑term maintainability** are essential. It unifies AST inspection, docstring/annotation extraction, static/semantic/dynamic inference, schema generation, automated test creation, pytest execution, coverage analysis, and PNG visualization into a coherent, reproducible testing stack.
+
+The inference engine combines static type hints, semantic intent extraction, and safe dynamic probing into a fused schema that describes module behavior. The test‑generation engine transforms this schema into deterministic pytest suites (smoke, type, boundary, property, docstring). The execution layer produces unified JSON/XML reports, while the visualization layer generates deterministic PNG plots for coverage, durations, failures, and execution results. All artifacts are stored in a structured workspace, enabling reproducible QA pipelines and compliance‑ready documentation (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PyTesterGUI/project28.md#10--references) 1 - 3 below).
+
+- **Core goals:** Provide a deterministic, reproducible, GUI‑driven testing architecture with automated test generation and structured artifacts.  
+- **Audience:** Software‑quality architects, Python developers, platform engineers, QA teams, and consultants designing reproducible testing pipelines.  
+- **Why modularity matters:** Separating analysis, inference, test generation, execution, and visualization prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** Deterministic inference, structured test suites, and unified reports ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+
+[![PyTester_GUI](https://img.shields.io/badge/PyTester_GUI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd229e37a53c66389ed5e1f82f568bd5aad0e3c0/PyTesterGUI/project28.md)
+
 ---
 
 
