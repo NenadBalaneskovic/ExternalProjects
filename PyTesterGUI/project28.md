@@ -308,7 +308,8 @@ Each folder contains modules that implement a specific subsystem. Below is a det
 This folder contains:
 
 - `settings.yaml` — global configuration  
-- `logging.conf` — logging configuration  
+- `logging.conf` — logging configuration
+- `pytest.ini` — pytest configuration  
 
 The GUI loads these settings at startup. They define:
 - paths for workspace directories  
@@ -331,7 +332,8 @@ The `core` folder contains modules responsible for analyzing Python source files
 - `ast_inspector.py` — extracts classes, functions, methods  
 - `docstring_extractor.py` — extracts docstrings  
 - `annotation_extractor.py` — extracts type annotations  
-- `structure_registry.py` — stores inspection results for later use  
+- `structure_registry.py` — stores inspection results for later use
+- `utilsy.py` — provides utility functions for path handling, dictionary merging, list flattening and simple formatting helpers 
 
 ### **Purpose:**
 This layer converts raw Python files into structured metadata:
@@ -478,7 +480,24 @@ Each panel corresponds to a subsystem and provides interactive controls.
 
 ---
 
-## **2.4.8 `workspace/` — Persistent Artifact Storage**
+## **2.4.8 `tests/` — Automated Test Suite Layer**
+
+This folder contains all internal test modules used to validate the PyTester system itself.
+
+### **Modules:**
+- `test_core_modules.py` — verifies core utilities and foundational components  
+- `test_executor.py` — tests the pytest/coverage execution pipeline  
+- `test_gui_components.py` — checks GUI panel behavior and widget integration  
+- `test_inference_engine.py` — validates static, semantic, dynamic inference and type fusion  
+- `test_testgen_pipeline.py` — ensures correctness of the test‑generation subsystem  
+
+### **Purpose:**
+The `tests/` directory provides a structured, automated test suite for PyTester’s internal architecture.  
+Each module targets a specific subsystem, ensuring reliability, regression safety, and consistent behavior across updates.
+
+---
+
+## **2.4.9 `workspace/` — Persistent Artifact Storage**
 
 This folder contains all generated artifacts:
 
