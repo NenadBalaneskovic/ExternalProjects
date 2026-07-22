@@ -16304,8 +16304,6 @@ Make results visible.
 Make workflows reproducible.**
 
 This is the essence of PyTester.  
-This is why it matters.  
-And this is why its future is bright.
 
 ---
 
