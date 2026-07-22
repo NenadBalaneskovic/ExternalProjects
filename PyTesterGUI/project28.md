@@ -14584,6 +14584,8 @@ Our screenshots show this clearly—for example, the tab bar visible in multiple
 
 ## **4. Upload Panel**
 
+![UploadPanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig3.png)
+
 ### **4.1 Purpose**
 The Upload panel is the entry point. It allows users to select Python files and load them into:
 
@@ -14611,6 +14613,8 @@ Our PNGs show multiple uploaded files:
 - `statistical_analysis_with_docstrings.py`
 
 ## **5. Inspection Panel**
+
+![InspectionPanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig4_1.png)
 
 ### **5.1 Purpose**
 The Inspection panel displays:
@@ -14647,6 +14651,8 @@ Our PNGs show:
 
 ## **6. Inference Panel**
 
+![InferencePanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig5_1.png)
+
 ### **6.1 Purpose**
 The Inference panel runs the full inference pipeline:
 
@@ -14681,6 +14687,8 @@ Our PNGs show:
 
 ## **7. Test Generation Panel**
 
+![TestGenerationsPanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig6_1.png)
+
 ### **7.1 Purpose**
 The Test Generation panel creates pytest files from the canonical schema.
 
@@ -14711,6 +14719,8 @@ Our PNGs show:
 Each generated file corresponds to one uploaded file.
 
 ## **8. Execution Panel**
+
+![ExecutionPanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig7_1.png)
 
 ### **8.1 Purpose**
 The Execution panel runs pytest + coverage.
@@ -14743,6 +14753,8 @@ Our PNGs show:
 - pass/fail counts  
 
 ## **9. Results Panel**
+
+![ResultsPanel](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig8.png)
 
 ### **9.1 Purpose**
 The Results panel visualizes:
@@ -14783,7 +14795,9 @@ These are referenced as figures in the manual.
 
 ## **10. Workspace Folder Structure**
 
-Our Explorer PNGs show the full workspace structure:
+![WorkspaceFolder](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c302f2bec08d10f7524658c0ff1d48a8266f56bc/PyTesterGUI/Results/fig9_1.png)
+
+The full workspace structure appears as follows:
 
 ```
 workspace/
