@@ -1573,7 +1573,7 @@ Fractional dynamics introduce nonlinear time scaling and temporal nonlocality, p
 
 [![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45c40698c2622dd380188519d19185d99c8229a9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/project27_report.md)
 
-### **28. PyTester GUI – Aug 2026**
+- ### **28. PyTester GUI – Aug 2026**
 
 > ## **Executive Summary: Deterministic Python Code Analysis & Automated Test Generation**
 >
