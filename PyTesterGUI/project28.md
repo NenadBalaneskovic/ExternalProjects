@@ -563,13 +563,6 @@ Results Panel (GUI)
 
 Each stage produces artifacts stored in the workspace.
 
----
-
-Here is a polished **≈1000‑word English expansion** of your content.  
-It keeps your original five points but develops them into a full architectural explanation suitable for documentation, whitepapers, or GitHub project pages.
-
----
-
 # **2.7 Why This Architecture Works**
 
 Designing a system like PyTester requires more than simply assembling subsystems. It demands a coherent architectural philosophy—one that balances determinism, modularity, extensibility, and usability. The architecture described in this manual succeeds because it is intentionally structured around these principles. Each layer contributes to a pipeline that is predictable, transparent, and easy to reason about. Below is a detailed explanation of why this architecture works so effectively.
@@ -1396,7 +1389,7 @@ In addition to these internal modules, the project includes a set of Python file
 lacking annotations, or lacking docstrings—allowing PyTester to demonstrate its ability to infer structure and generate tests even when semantic information is sparse. Understanding these files is crucial because they showcase the 
 robustness of the inference engine and the adaptability of the test generators.
 
-This section will proceed systematically. For each Python file you provide, I will:
+This section will proceed systematically. For each Python file I will:
 
 1. **Identify its role within the project**  
 2. **Explain its internal logic and structure**  
@@ -1409,15 +1402,10 @@ This section will proceed systematically. For each Python file you provide, I wi
 The goal is to create a definitive reference that documents the entire codebase in a clear, structured, and pedagogically meaningful way. This will not only strengthen the GitHub documentation but also serve as a 
 foundation for future extensions, refactoring, or research built on top of PyTester.
 
-Absolutely, Nenad — let’s begin the **per‑file analysis section** with the first three configuration files you provided.  
-Below is the **introductory analysis for Post 5**, followed by detailed interpretations of each file you sent.
-
 # **5.1 PyTester Configuration Files — PyTester/config/**
 
 Before diving into the Python modules themselves, it is essential to understand the configuration files that govern PyTester’s behavior. These files define global settings for pytest, the GUI, logging, 
 test generation, inference, and execution. They are foundational: every subsystem reads from them, and they ensure that PyTester behaves consistently across runs.
-
-Below you will find a detailed interpretation of each configuration file you provided.
 
 # **5.1.1 `pytest.ini` — Global Pytest Configuration**
 
@@ -1879,8 +1867,6 @@ Human‑readable timestamps and severity levels.
 
 The `core/` folder is the foundation of PyTester’s structural analysis pipeline. It is responsible for transforming raw Python source code into structured metadata that downstream subsystems—especially 
 inference and test generation—can consume. The modules in this folder are intentionally pure, deterministic, and side‑effect‑free. They do not execute user code; instead, they analyze it statically using Python’s `ast` module.
-
-Below are detailed interpretations of the two core modules you provided.
 
 # **5.2.1 `ast_inspector.py` — Structural Extraction via AST**
 
@@ -5228,8 +5214,6 @@ The GUI layer is a thin orchestration surface built on PyQt5.
 Its job is to connect user actions (button clicks, file selections) to backend subsystems (AST inspection, inference, test generation, execution).  
 The GUI itself contains **no analysis logic** — it delegates everything to the subsystems passed in via `subsystems`.
 
-Below is a detailed, code‑level interpretation of each GUI module you provided.
-
 ## **5.4.1 `main_window.py` — Top‑Level GUI Container**
 
 ````python
@@ -6792,7 +6776,7 @@ Executed in `generate_plots()`:
 # **5.5 Inference Subsystem — PyTester/inference/**
 
 The inference subsystem enriches the raw AST structure with meaning, runtime behavior, and a canonical schema.  
-The three modules you provided correspond to:
+The three modules correspond to:
 
 - **semantic analysis** (docstrings + annotations → meaning)  
 - **dynamic probing** (safe runtime inspection)  
@@ -12289,7 +12273,7 @@ These files are the *input corpus* for the entire PyTester pipeline:
 - **Executor** runs tests  
 - **Visualization** renders results  
 
-Below is the code‑level interpretation of each uploaded file you provided.
+Below is the code‑level interpretation of each file.
 
 # **5.9.2.1 `statistical_analysis_with_docstrings.py` — Fully Annotated, Fully Documented Test Case**
 
@@ -14556,7 +14540,7 @@ The GUI wraps the entire PyTester pipeline:
 - **Execute** tests with pytest + coverage  
 - **Visualize** results using deterministic matplotlib plots  
 
-The interface is intentionally simple, but the underlying system is powerful. This manual explains every part of the GUI, using your PNGs as visual references.
+The interface is intentionally simple, but the underlying system is powerful. This manual explains every part of the GUI.
 
 ## **2. System Requirements**
 
@@ -14568,7 +14552,7 @@ PyTester GUI runs on:
 - Linux (Ubuntu 20.04+, Fedora 36+)  
 
 ### **2.2 Python Version**
-Python **3.12** is recommended, as shown in your execution logs.
+Python **3.12** is recommended, as shown in our execution logs.
 
 ### **2.3 Required Libraries**
 The GUI depends on:
@@ -14581,7 +14565,7 @@ The GUI depends on:
 - PyYAML  
 - rich  
 
-These are listed in your `requirements.txt` and Section 5.10.
+These are listed in our `requirements.txt` and Section 5.10.
 
 ## **3. GUI Overview**
 
@@ -14596,7 +14580,7 @@ The PyTester GUI follows a **six‑tab workflow**:
 
 Each tab corresponds to a major subsystem.
 
-Your screenshots show this clearly—for example, the tab bar visible in multiple PNGs.
+Our screenshots show this clearly—for example, the tab bar visible in multiple PNGs.
 
 ## **4. Upload Panel**
 
@@ -14610,7 +14594,7 @@ workspace/uploaded_files/
 ### **4.2 Interface Elements**
 - **Select Python Files** button  
 - **Load Files** button  
-- A list of selected files (as seen in your PNGs)
+- A list of selected files (as seen in our PNGs)
 
 ### **4.3 Behavior**
 When files are selected:
@@ -14619,7 +14603,7 @@ When files are selected:
 - Their names appear in the GUI  
 - The user can proceed to Inspection  
 
-Your PNGs show multiple uploaded files:
+Our PNGs show multiple uploaded files:
 
 - `statistical_analysis_minimal.py`  
 - `statistical_analysis_no_annotations.py`  
@@ -14637,7 +14621,7 @@ The Inspection panel displays:
 - Docstrings  
 - Type annotations  
 
-Your PNGs show detailed AST output for each file.
+Our PNGs show detailed AST output for each file.
 
 ### **5.2 Interface Elements**
 - **Inspect Files** button  
@@ -14654,7 +14638,7 @@ When the user clicks **Inspect Files**:
 5. StructureRegistry stores everything  
 6. The GUI displays the results  
 
-Your PNGs show:
+Our PNGs show:
 
 - Class `StatisticalAnalyzer`  
 - Methods like `compute_basic_statistics`, `compute_correlation`, etc.  
@@ -14685,7 +14669,7 @@ When the user clicks **Run Inference**:
 4. TypeFusion merges all signals  
 5. SchemaBuilder produces canonical schema  
 
-Your PNGs show:
+Our PNGs show:
 
 - Static analysis results  
 - Semantic analysis results  
@@ -14693,7 +14677,7 @@ Your PNGs show:
 - Type fusion results  
 - Final schema  
 
-The flowchart PNG you provided (Type‑Inference Engine diagram) fits perfectly here.
+![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/c0b99d6d0beec7b0b99084bca1a0c552b9fe29e2/PyTesterGUI/Results/fig2.png)
 
 ## **7. Test Generation Panel**
 
@@ -14716,7 +14700,7 @@ When the user clicks **Generate Tests**:
 6. TemplateRenderer merges all tests  
 7. Files are written to `workspace/generated_tests/`
 
-Your PNGs show:
+Our PNGs show:
 
 - Smoke tests  
 - Type tests  
@@ -15145,7 +15129,7 @@ Allow:
 - batch execution  
 - batch visualization  
 
-Your screenshots already show multi‑file selection; future versions could streamline multi‑file workflows.
+Our screenshots already show multi‑file selection; future versions could streamline multi‑file workflows.
 
 ### **8.5.2 Persistent Workspace Sessions**
 PyTester could:
@@ -15563,9 +15547,7 @@ It is a core part of PyTester’s philosophy:
 
 ## **9.9 The Role of PNGs in the User Experience**
 
-The PNGs you provided — coverage charts, duration charts, failure charts, GUI screenshots — illustrate how PyTester communicates information visually.
-
-They show:
+Coverage charts, duration charts, failure charts, GUI screenshots illustrate how PyTester communicates information visually and show:
 
 - coverage distribution  
 - execution durations  
