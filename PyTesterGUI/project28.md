@@ -196,6 +196,8 @@ The PyTester GUI is built on a modular, layered architecture designed for clarit
 minimal coupling. This section provides a comprehensive overview of the architectural principles, the GUI’s internal workflow, and the full folder structure of the project. It explains how each module interacts with others, 
 how data flows through the system, and how the GUI orchestrates the entire testing pipeline.
 
+![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/214864eed8a246f84654f18bc337ee199b0e2dd2/PyTesterGUI/Results/fig1.png)
+
 ---
 
 ## **2.1 Architectural Philosophy**
