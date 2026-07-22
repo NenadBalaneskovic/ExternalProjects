@@ -15766,8 +15766,8 @@ This is the essence of PyTester.
 1. PyTest links: https://docs.pytest.org/en/stable/; https://pypi.org/project/pytest/; https://github.com/pytest-dev/pytest; https://www.tutorialspoint.com/pytest/index.htm; https://gist.github.com/devops-school/c0b260e7b845dff98556511071d0bf7c;
 Books: B. Okken and videos: "Python Testing with pytest: Simple, Rapid, Effective, and Scalable", Pragmatic Bookshelf (2017); https://www.youtube.com/playlist?list=PLsszRSbzjyvm5meFiH-rDU-YiC5kcOLcK; 
 B. Oliviera: "pytest Quick Start Guide", Packt (2018); 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5b1839b29c5a318704a5e6311ff5ef0cd5ba449f/QuantumRNG_Study/Quantum_RNG_Study.ipynb)
-3. [![Quantum_Fuzzy_QKD_QEC_Report | English](https://img.shields.io/badge/Quantum_Fuzzy_QKD_QEC%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e41bab2374b38c3cf455fe46626ddc9786a5adc9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/Quantum_RNG_Study.pdf)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/91b3acd4befd5e9adea5215823be3217dd36661f/PyTesterGUI/Pytester_GUI.ipynb)
+3. [![PyTester_GUI_Report | English](https://img.shields.io/badge/PyTester_GUI%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/91b3acd4befd5e9adea5215823be3217dd36661f/PyTesterGUI/Pytester_GUI_jupyter_notebook.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
