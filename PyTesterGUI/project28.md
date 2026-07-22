@@ -280,6 +280,8 @@ Each layer is implemented in its own folder, described in detail below.
 
 # **2.3 Folder Structure Overview**
 
+![FolderStructure](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0790c1c14fbc4163ff3c01f85dc663a2c2a3829e/PyTesterGUI/Results/folder_structure.png)
+
 The project folder structure is as follows:
 
 ```
