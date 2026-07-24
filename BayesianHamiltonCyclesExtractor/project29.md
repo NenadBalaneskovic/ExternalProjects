@@ -509,7 +509,9 @@ This posterior:
 
 The extractor uses the **posterior mean**:
 
-$\hat{P}_{ij}^{(T)} = \frac{\alpha_0 + \sum a_{ij}(t)}{\alpha_0 + \beta_0 + T}$
+$$
+\hat{P}_{ij}^{(T)} = \frac{\alpha_0 + \sum_{t=1}^{T} a_{ij}(t)}{\alpha_0 + \beta_0 + T}
+$$
 
 This becomes the **posterior graph’s edge probability**.
 
@@ -530,12 +532,11 @@ where:
 
 ### **Posterior update**
 
-After observing weights \(w_{ij}(1), \dots, w_{ij}(T)\):
+After observing weights $\(w_{ij}(1), \dots, w_{ij}(T)\)$:
 
-$
-F_{ij}^{(T)} = \frac{\gamma}{\gamma + N_{ij}(T)} G_0
-+ \frac{N_{ij}(T)}{\gamma + N_{ij}(T)} \left(\frac{1}{N_{ij}(T)} \sum_{t=1}^T \delta_{w_{ij}(t)}\right)
-$
+$$
+F_{ij}^{(T)} = \frac{\gamma}{\gamma + N_{ij}(T)} G_0 + \frac{N_{ij}(T)}{\gamma + N_{ij}(T)} \left(\frac{1}{N_{ij}(T)} \sum_{t=1}^T \delta_{w_{ij}(t)}\right)
+$$
 
 This posterior is a mixture of:
 
@@ -562,11 +563,11 @@ The extractor predicts future graphs using the posterior distributions.
 
 ### **Predicted edge existence**
 
-$\hat{a}_{ij}(t+1) \sim \text{Bernoulli}\left(\hat{P}_{ij}^{(t)}\right)$
+$$\hat{a}_{ij}(t+1) \sim \text{Bernoulli}\left(\hat{P}_{ij}^{(t)}\right)$$
 
 ### **Predicted edge weight**
 
-$\hat{w}_{ij}(t+1) \sim F_{ij}^{(t)}$
+$$\hat{w}_{ij}(t+1) \sim F_{ij}^{(t)}$$
 
 Thus the predicted graph is:
 
@@ -588,13 +589,13 @@ The extractor constructs a **posterior graph** from:
 
 ### **Posterior adjacency**
 
-$
+$$
 B_{ij}^{(t)} = 
 \begin{cases}
 1 & \text{if } \hat{P}_{ij}^{(t)} > \tau \\
 0 & \text{otherwise}
 \end{cases}
-$
+$$
 
 where $\(\tau\)$ is a threshold (default: 0.5).
 
@@ -633,7 +634,7 @@ Hamiltonian cycles are extremely sensitive to drift.
 
 Define:
 
-$H(t) = \frac{\#\text{stable predicted cycles}}{\#\text{observed cycles}}$
+$H(t) = \frac{\text{nr. stable predicted cycles}}{\text{nr. observed cycles}}$
 
 A drop in $\(H(t)\)$ indicates:
 
@@ -654,15 +655,19 @@ Prediction quality is measured using four metrics:
 
 ### **1. Edge prediction accuracy**
 
-$\text{Acc}_A(t) = \frac{1}{n^2} \sum_{i,j} \mathbf{1}\{\hat{a}_{ij}(t) = a_{ij}(t)\}$
+$$\text{Acc}_A(t) = \frac{1}{n^2} \sum_{i,j} \mathbf{1}\{\hat{a}_{ij}(t) = a_{ij}(t)\}$$
 
 ### **2. Weight prediction error**
 
-$\text{Err}_W(t) = \frac{1}{N(t)} \sum_{i,j} |\hat{w}_{ij}(t) - w_{ij}(t)|$
+$$
+\mathrm{Err}_W(t)
+= \frac{1}{N(t)} \sum_{i,j} \left| \hat{w}_{ij}(t) - w_{ij}(t) \right|
+$$
+
 
 ### **3. Hamiltonian cycle prediction quality**
 
-$H(t) = \frac{\#\text{stable predicted cycles}}{\#\text{observed cycles}}$
+$H(t) = \frac{\text{nr. stable predicted cycles}}{\text{nr. observed cycles}}$
 
 ### **4. Drift score**
 
@@ -674,7 +679,7 @@ $\mathbf{Q}(t) = (\text{Acc}_A(t), \text{Err}_W(t), H(t), D(t))$
 
 The extractor is considered “trained” when:
 
-- `$\(\text{Acc}_A(t)\)$ is high  
+- $\(\text{Acc}_A(t)\)$ is high  
 - $\(\text{Err}_W(t)\)$ is low  
 - $\(H(t)\)$ is high  
 - $\(D(t)\)$ is small  
@@ -728,7 +733,7 @@ These components form the theoretical and computational core of the Hamilton Cyc
 
 # **4. System Architecture & Folder Structure**
 
-The Hamilton Cycle Extractor (HCE) is built on a **modular, layered, reproducible architecture**, mirroring the clarity and scientific rigor of our *PyTester GUI* project.  
+The Hamilton Cycle Extractor (HCE) is built on a **modular, layered, reproducible architecture**, focusing on the clarity and scientific rigor.  
 Each subsystem is isolated in its own module, with well‑defined responsibilities and minimal coupling.  
 This chapter explains:
 
@@ -2513,14 +2518,15 @@ Drift is detected by comparing consecutive posterior values.
 
 Our implementation defines:
 
-$
-D(t) = \frac{1}{n^2} \sum_{i,j} 
+$$
+D(t) = \frac{1}{n^2} 
+\sum_{i,j} 
 \left[
-(w_{\text{mean}}(i,j,t) - w_{\text{mean}}^{\text{prev}}(i,j))^2
+\left( w_{\mathrm{mean}}(i,j,t) - w_{\mathrm{mean}}^{\mathrm{prev}}(i,j) \right)^2
 +
-(w_{\text{var}}(i,j,t) - w_{\text{var}}^{\text{prev}}(i,j))^2
+\left( w_{\mathrm{var}}(i,j,t) - w_{\mathrm{var}}^{\mathrm{prev}}(i,j) \right)^2
 \right]
-$
+$$
 
 This drift score:
 
@@ -2556,11 +2562,13 @@ They are essential for scientific interpretation.
 The posterior graph is constructed using:
 
 ### **Adjacency**
-$B_{ij}(t) = 
+$$
+B_{ij}(t) =
 \begin{cases}
-1 & \text{if } p_{\text{post}}(i,j,t) > \tau \\
-0 & \text{otherwise}
-\end{cases}$
+1, & \text{if } p_{\mathrm{post}}(i,j,t) > \tau, \\
+0, & \text{otherwise}.
+\end{cases}
+$$
 
 ### **Weights**
 $W_{ij}(t) = w_{\text{mean}}(i,j,t)$
@@ -2779,7 +2787,7 @@ LK‑Bayes operates on a **learned structure**, not raw noise.
 The extractor computes four stability metrics:
 
 ### **1. Match Rate**
-$\text{match}(C) = \frac{\#\text{edges of } C \text{ present in } A(t)}{n}$
+$\text{match}(C) = \frac{\text{nr. edges of } C \text{ present in } A(t)}{n}$
 
 This measures how well the cycle matches the actual graph.
 
@@ -3229,11 +3237,11 @@ This is essential for:
 The pipeline stores:
 
 - posterior matrices ($3 × n²$ floats)  
-- time‑series arrays ($O(T)$)  
-- CSV samples ($O(T / sample_rate)$)  
+- time‑series arrays $O(T)$  
+- CSV samples $O\left(\frac{T}{\text{sample rate}}\right)$  
 
-For §\(n = 300\)§, memory usage is modest.  
-For §\(n = 2000\)§, memory usage remains manageable due to streaming design.
+For $\(n = 300\)$, memory usage is modest.  
+For $\(n = 2000\)$, memory usage remains manageable due to streaming design.
 
 ### **Performance**
 The pipeline runs in:
@@ -3371,7 +3379,7 @@ Weight dynamics often reveal drift earlier than existence probabilities.
 
 This plot shows:
 
-$\text{match}(C_t) = \frac{\#\text{edges of } C_t \text{ present in } A(t)}{n}$
+$\text{match}(C_t) = \frac{\text{nr. edges of } C_t \text{ present in } A(t)}{n}$
 
 ### **Interpretation**
 
