@@ -1790,8 +1790,6 @@ The inference engine combines static type hints, semantic intent extraction, and
 >
 >This ensures graph‑analytic pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware engineering.
 
----
-
 #### **Abstract**
 
 **Bayesian Extraction of Hamiltonian Cycles** is a modular, probabilistic graph‑analysis architecture designed for environments where **uncertainty, drift, and reproducibility** are central concerns. It unifies posterior inference, probabilistic edge scoring, LK‑Bayes cycle extraction, 2‑opt refinement, drift detection, stability metrics, and deterministic visualization into a coherent, reproducible streaming stack.
