@@ -2699,33 +2699,47 @@ results_stable = ExtractHamiltonCycles(
 #### **Posterior Mean p(t)**
 - converges smoothly  
 - no oscillations  
-- stable around ~0.5  
+- stable around ~0.5
+
+![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_1.png)
 
 #### **Posterior Mean Weight(t)**
 - converges smoothly  
-- stable around ~0.5  
+- stable around ~0.5
+
+![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_2.png)
 
 #### **Hamilton Cycle Match Rate**
 - increases over time  
 - stabilizes at a high value  
-- indicates structural consistency  
+- indicates structural consistency
+
+![fig3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_3.png)
 
 #### **Drift Score**
 - remains near zero  
 - no spikes  
-- confirms stable random source  
+- confirms stable random source
+
+![fig4(https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_4.png)
 
 #### **Cycle Posterior Score**
 - increases steadily  
-- stabilizes at high values  
+- stabilizes at high values
+
+![fig5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_5.png)
 
 #### **Cycle Variance Stability**
 - decreases slightly  
-- remains low  
+- remains low
+
+![fig6](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_6.png)
 
 #### **Cycle KL Stability**
 - near zero  
-- no drift  
+- no drift
+
+![fig7](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_7.png)
 
 ### **Graphviz Cycle Diagrams**
 - consistent cycle structure  
@@ -2736,7 +2750,9 @@ results_stable = ExtractHamiltonCycles(
 ### **Stable Hamilton Path**
 - smooth path  
 - consistent node ordering  
-- no fragmentation  
+- no fragmentation
+
+![fig8](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_8.png)
 
 ### **Scientific Interpretation**
 The extractor successfully reconstructs the underlying distribution and produces stable Hamilton cycles.  
@@ -2765,31 +2781,45 @@ results_drift_train = ExtractHamiltonCycles(
 #### **Posterior Mean p(t)**
 - unstable during training  
 - oscillations  
-- stabilizes after t = 250  
+- stabilizes after t = 250
+
+![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_1.png)
 
 #### **Posterior Mean Weight(t)**
 - fluctuates during training  
-- converges after drift stops  
+- converges after drift stops
+
+![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_2.png)
 
 #### **Hamilton Cycle Match Rate**
 - unstable early  
-- stabilizes late  
+- stabilizes late
+
+![fig3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_3.png) 
 
 #### **Drift Score**
 - elevated during training  
-- drops sharply after t = 250  
+- drops sharply after t = 250
+
+![fig4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_4.png)
 
 #### **Cycle Posterior Score**
 - unstable early  
-- stabilizes late  
+- stabilizes late
+
+![fig5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_5.png)
 
 #### **Cycle Variance Stability**
 - high variance early  
-- decreases after training  
+- decreases after training
+
+![fig6](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_6.png) 
 
 #### **Cycle KL Stability**
 - spikes during drift  
-- stabilizes after drift stops  
+- stabilizes after drift stops
+
+![fig7](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_7.png)
 
 ### **Graphviz Cycle Diagrams**
 - early diagrams show unstable edges  
@@ -2798,7 +2828,9 @@ results_drift_train = ExtractHamiltonCycles(
 
 ### **Stable Hamilton Path**
 - fragmented early  
-- stabilizes late  
+- stabilizes late
+
+![fig8](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_6_8.png)
 
 ### **Scientific Interpretation**
 The extractor learns the random source **after drift stops**.  
@@ -2826,31 +2858,45 @@ results_drift_predict = ExtractHamiltonCycles(
 
 #### **Posterior Mean p(t)**
 - stable until t = 250  
-- collapses after drift begins  
+- collapses after drift begins
+
+![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_3.png)
 
 #### **Posterior Mean Weight(t)**
 - stable until t = 250  
-- collapses after drift  
+- collapses after drift
+
+![fig2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_4.png)
 
 #### **Hamilton Cycle Match Rate**
 - stable early  
-- drops sharply after drift  
+- drops sharply after drift
+
+![fig3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_5.png)
 
 #### **Drift Score**
 - near zero until t = 250  
-- spikes abruptly  
+- spikes abruptly
+
+![fig4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_6.png)
 
 #### **Cycle Posterior Score**
 - stable early  
-- collapses after drift  
+- collapses after drift
+
+![fig5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_7.png)
 
 #### **Cycle Variance Stability**
 - low early  
-- spikes after drift  
+- spikes after drift
+
+![fig6](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_8.png)
 
 #### **Cycle KL Stability**
 - near zero early  
-- spikes sharply  
+- spikes sharply
+
+![fig7](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_9.png)
 
 ### **Graphviz Cycle Diagrams**
 - stable early  
@@ -2860,7 +2906,9 @@ results_drift_predict = ExtractHamiltonCycles(
 
 ### **Stable Hamilton Path**
 - stable early  
-- fragmented after drift  
+- fragmented after drift
+
+![fig8](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_7_10.png)  
 
 ### **Scientific Interpretation**
 This scenario demonstrates **catastrophic prediction failure** due to drift.  
@@ -2876,9 +2924,9 @@ It is ideal for:
 
 Prediction quality vector:
 
-\[
+$
 \mathbf{Q}(t) = (\text{Acc}_A(t), \text{Err}_W(t), H(t), D(t))
-\]
+$
 
 ### **Stable Source**
 - high accuracy  
