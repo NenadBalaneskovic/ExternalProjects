@@ -2,7 +2,7 @@
 
 # **Part 1/10 — Executive Summary & Motivation**  
 
-# **1. Executive Summary**
+## **1.1 Executive Summary**
 
 Modern distributed systems — sensor networks, communication infrastructures, peer‑to‑peer overlays, and autonomous multi‑agent environments — increasingly rely on **graph‑structured data streams**. 
 These systems evolve over time: edges appear, disappear, fluctuate in reliability, and carry weights that encode latency, bandwidth, trust, or signal strength. Understanding the structure of such dynamic graphs is 
@@ -36,9 +36,9 @@ This yields a robust, drift‑aware, prediction‑driven Hamilton‑cycle extrac
 
 Project 29 integrates **graph theory**, **Bayesian statistics**, **stochastic processes**, **change‑point detection**, and **heuristic optimization** into a unified, reproducible computational framework.
 
-# **1.2. Motivation**
+## **1.2. Motivation**
 
-## **1.2.1 The Problem: Hamilton Cycles in Dynamic, Noisy Graphs**
+### **1.2.1 The Problem: Hamilton Cycles in Dynamic, Noisy Graphs**
 
 Real‑world networks are not static:
 
@@ -61,7 +61,7 @@ A deterministic algorithm cannot reliably extract cycles from stochastic data.
 
 We need a **probabilistic**, **adaptive**, **stream‑based** approach.
 
-## **1.2.2 The Opportunity: Bayesian Reconstruction of Graph Streams**
+### **1.2.2 The Opportunity: Bayesian Reconstruction of Graph Streams**
 
 Every edge in a dynamic graph is governed by an underlying random process:
 
@@ -83,7 +83,7 @@ This transforms the problem:
 
 The posterior graph is smoother, more stable, and more informative than raw observations.
 
-## **1.2.3 The Vision: A Fully Bayesian Graph‑Stream Engine**
+### **1.2.3 The Vision: A Fully Bayesian Graph‑Stream Engine**
 
 Project 29 implements a complete pipeline:
 
@@ -116,7 +116,7 @@ Project 29 implements a complete pipeline:
 
 This pipeline is deterministic, reproducible, and scientifically rigorous.
 
-## **1.2.4 Why Hamilton Cycles Matter**
+### **1.2.4 Why Hamilton Cycles Matter**
 
 Hamilton cycles are powerful structural indicators:
 
@@ -136,7 +136,7 @@ In dynamic systems, the presence, stability, and weight distribution of Hamilton
 
 Thus Hamilton cycles become **diagnostic tools**, not just combinatorial objects.
 
-## **1.2.5 Why Bayesian Methods Matter**
+### **1.2.5 Why Bayesian Methods Matter**
 
 Bayesian inference provides:
 
@@ -156,7 +156,7 @@ This is essential for:
 
 Without Bayesian inference, Hamilton‑cycle extraction in noisy streams is impossible.
 
-## **1.2.6 Why This Project Matters**
+### **1.2.6 Why This Project Matters**
 
 Project 29 is scientifically significant because it:
 
@@ -179,7 +179,7 @@ It is a modern research‑grade system suitable for:
 
 Project 29 is not just an algorithm — it is a **framework** for understanding dynamic graph structures.
 
-## **1.2.7 Structure of the Full Report**
+### **1.2.7 Structure of the Full Report**
 
 The remaining parts will cover:
 
