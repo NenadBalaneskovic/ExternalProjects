@@ -728,7 +728,7 @@ These components form the theoretical and computational core of the Hamilton Cyc
 
 # **4. System Architecture & Folder Structure**
 
-The Hamilton Cycle Extractor (HCE) is built on a **modular, layered, reproducible architecture**, mirroring the clarity and scientific rigor of your *PyTester GUI* project.  
+The Hamilton Cycle Extractor (HCE) is built on a **modular, layered, reproducible architecture**, mirroring the clarity and scientific rigor of our *PyTester GUI* project.  
 Each subsystem is isolated in its own module, with well‑defined responsibilities and minimal coupling.  
 This chapter explains:
 
@@ -2394,7 +2394,7 @@ These posterior quantities form the **posterior graph**, which is the input to t
 This chapter explains:
 
 - the mathematical logic behind the posterior engine  
-- the update rules implemented in your code  
+- the update rules implemented in our code  
 - the drift‑detection mechanism  
 - the construction of the posterior graph  
 - the stability properties of the posterior  
@@ -2447,7 +2447,7 @@ These previous values are required for drift detection.
 
 ## **5.3 Posterior Update Logic**
 
-Your implementation uses **exponential smoothing**, which is a practical approximation of Bayesian updating for streaming systems.
+Our implementation uses **exponential smoothing**, which is a practical approximation of Bayesian updating for streaming systems.
 
 Given:
 
@@ -2686,7 +2686,7 @@ The extractor uses a probabilistic score for each edge:
 
 $S_{ij}= \lambda_1 \, p_{\text{post}}(i,j) - \lambda_2 \, w_{\text{var}}(i,j) - \lambda_3 \, \mathrm{KL}_{ij}$
 
-Your implementation uses:
+Our implementation uses:
 
 - $\(\lambda_1 = 2.0\)$  
 - $\(\lambda_2 = 1.0\)$  
@@ -2715,7 +2715,7 @@ $[v_i, v_{i+1}, \dots, v_k]$
 
 This yields a new cycle with potentially better score.
 
-Your implementation:
+Our implementation:
 
 ```python
 new_cycle = cycle.copy()
@@ -2733,7 +2733,7 @@ In LK‑Bayes, 2‑opt explores **posterior‑weighted neighborhoods**.
 
 ## **6.4 LK‑Bayes Optimization Loop**
 
-Your implementation:
+Our implementation:
 
 ```python
 cycle = rng.permutation(n)
@@ -2977,8 +2977,6 @@ Visualize Results
     ↓
 Return Results
 ```
-
-This structure mirrors the clarity and reproducibility of your *PyTester GUI* pipeline.
 
 ## **7.3 Step‑by‑Step Pipeline Logic**
 
@@ -3481,7 +3479,7 @@ Edges are added with:
 
 ### **Edge coloring**
 
-Your implementation:
+Our implementation:
 
 - **green** → very stable  
 - **blue** → stable  
@@ -4298,7 +4296,7 @@ A dashboard can be built using:
 
 ### **11.1.5 Integration with KServe / Docker / Crossplane**
 
-Your folder structure already supports:
+Our folder structure already supports:
 
 - Docker containerization  
 - KServe model deployment  
