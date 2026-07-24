@@ -5648,9 +5648,6 @@ Here, `B` is a binary adjacency matrix of edges deemed sufficiently probable, an
 
 ## 12.5 LK‑Bayes heuristic and stability analysis
 
-> *"Führt eine vereinfachte Lin-Kernighan-Heuristik durch,  
-> die Posterior-Informationen nutzt."*
-
 ### 12.5.1 Edge scoring: `edge_score(...)`
 
 Each edge $\((u, v)\)$ receives a posterior‑based score:
