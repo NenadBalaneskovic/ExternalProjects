@@ -2721,7 +2721,7 @@ results_stable = ExtractHamiltonCycles(
 - no spikes  
 - confirms stable random source
 
-![fig4(https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_4.png)
+![fig4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dbb6634ef6b1440631204fe9b1ce9cdab113be60/BayesianHamiltonCyclesExtractor/HCE_CODE/output_5_4.png)
 
 #### **Cycle Posterior Score**
 - increases steadily  
@@ -2924,9 +2924,7 @@ It is ideal for:
 
 Prediction quality vector:
 
-$
-\mathbf{Q}(t) = (\text{Acc}_A(t), \text{Err}_W(t), H(t), D(t))
-$
+$\mathbf{Q}(t) = (\text{Acc}_A(t), \text{Err}_W(t), H(t), D(t))$
 
 ### **Stable Source**
 - high accuracy  
