@@ -1,6 +1,6 @@
 # Project 29: Bayesian-driven Hamilton Cycle Extraction
 
-# **Part 1/10 — Executive Summary & Motivation**  
+# **Part 1 — Executive Summary & Motivation**  
 
 ## **1.1 Executive Summary**
 
@@ -195,7 +195,7 @@ The remaining parts will cover:
 
 ---
 
-# **Part 2/10 — Mathematical Foundations**  
+# **Part 2 — Mathematical Foundations**  
 
 # **2. Mathematical Foundations**
 
@@ -454,7 +454,7 @@ These foundations justify the design of the Hamilton Cycle Extractor and explain
 
 ---
 
-# **Part 3/10 — Bayesian Model for Graph Streams**  
+# **Part 3 — Bayesian Model for Graph Streams**  
 
 # **3. Bayesian Model for Graph Streams**
 
@@ -724,7 +724,7 @@ These components form the theoretical and computational core of the Hamilton Cyc
 
 ---
 
-# **Part 4/10 — System Architecture & Folder Structure**  
+# **Part 4 — System Architecture & Folder Structure**  
 
 # **4. System Architecture & Folder Structure**
 
@@ -2377,7 +2377,7 @@ The Hamilton Cycle Extractor is a **modular, Bayesian, reproducible, extensible*
 
 ---
 
-# **Part 5/10 — Posterior Engine**  
+# **Part 5 — Posterior Engine**  
 
 # **5. Posterior Engine**
 
@@ -2636,7 +2636,7 @@ The posterior engine is the **Bayesian heart** of Project 29.
 
 ---
 
-# **Part 6/10 — LK‑Bayes Hamilton Cycle Extraction**  
+# **Part 6 — LK‑Bayes Hamilton Cycle Extraction**  
 
 # **6. LK‑Bayes Hamilton Cycle Extraction**
 
@@ -2892,7 +2892,7 @@ LK‑Bayes is the **optimization engine** of Project 29, transforming posterior 
 
 ---
 
-# **Part 7/10 — Streaming Pipeline**  
+# **Part 7 — Streaming Pipeline**  
 
 # **7. Streaming Pipeline**
 
@@ -3289,7 +3289,7 @@ The streaming pipeline is the **operational backbone** of Project 29.
 
 ---
 
-# **Part 8/10 — Visualization & Graphviz Cycle Diagrams**  
+# **Part 8 — Visualization & Graphviz Cycle Diagrams**  
 
 # **8. Visualization & Graphviz Cycle Diagrams**
 
@@ -3566,7 +3566,7 @@ Visualization is the **interpretation layer** of Project 29.
 
 ---
 
-# **Part 9/10 — Experiments & Empirical Analysis**  
+# **Part 9 — Experiments & Empirical Analysis**  
 
 # **9. Experiments & Empirical Analysis**
 
@@ -3934,7 +3934,7 @@ Project 29 is not just an algorithm — it is a **scientific framework** for ana
 
 ---
 
-# **10. Mermaid Diagrams for Architecture, Pipeline, and Data Flow**
+# **Part 10 - Mermaid Diagrams for Architecture, Pipeline, and Data Flow**
 
 Mermaid diagrams provide a compact, expressive way to visualize complex systems.  
 For Project 29, they help illustrate:
@@ -4473,7 +4473,7 @@ coherent final perspective.
 
 ---
 
-# Part 12 Appendix – Functionality and inner workings of the Hamilton Cycle Extractor code
+# Part 12 - Appendix: Functionality and inner workings of the Hamilton Cycle Extractor code
 
 This appendix explains the complete pipeline implemented in the provided code: from synthetic graph-stream generation, through Bayesian posterior updates and drift detection, to Hamilton‑cycle extraction, 
 stability analysis, logging, and visualization.
@@ -5505,11 +5505,9 @@ This generator models a **stationary random graph source**:
   - `p_true` is drawn uniformly in \([0.1, 0.9]\) as edge existence probabilities.
   - `w_mean_true` and `w_var_true` define a weight distribution per edge.
 
-- **Per time step \(t\)**:
+- **Per time step $\(t\)$**:
   - `A_t` is a Bernoulli adjacency matrix:  
-    \[
-    A_{ij}^{(t)} \sim \text{Bernoulli}(p_{ij}^{\text{true}})
-    \]
+    $A_{ij}^{(t)} \sim \text{Bernoulli}(p_{ij}^{\text{true}})$
   - `W_t` is a clipped Gaussian around `w_mean_true` with variance `w_var_true`.
   - Metadata `M_t` encodes phase (`train` vs `predict`), drift flags, and the true parameters.
 
@@ -5647,7 +5645,7 @@ Here, `B` is a binary adjacency matrix of edges deemed sufficiently probable, an
 
 ### 12.5.1 Edge scoring: `edge_score(...)`
 
-Each edge \((u, v)\) receives a posterior‑based score:
+Each edge $\((u, v)\)$ receives a posterior‑based score:
 
 ```python
 Score = λ1 * p_post - λ2 * Var - λ3 * KL
@@ -5690,7 +5688,7 @@ cycle = rng.permutation(n)
 
 and iteratively applies 2‑opt moves:
 
-- For each pair \((i, k)\), it constructs `new_cycle = two_opt(cycle, i, k)`.
+- For each pair $\((i, k)\)$, it constructs `new_cycle = two_opt(cycle, i, k)`.
 - It computes `old_score` and `new_score` by summing `edge_score` over all consecutive edges in the cycle.
 - If `new_score > old_score`, the move is accepted and `cycle` is updated.
 
