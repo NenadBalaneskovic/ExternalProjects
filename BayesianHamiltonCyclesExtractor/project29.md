@@ -197,7 +197,7 @@ Project 29 is not just an algorithm — it is a **framework** for understanding 
 
 # **2.7 Structure of the Full Report**
 
-The remaining posts will cover:
+The remaining parts will cover:
 
 1. **Mathematical Foundations**  
 2. **Bayesian Model for Graph Streams**  
@@ -208,8 +208,6 @@ The remaining posts will cover:
 7. **Visualization**  
 8. **Experiments**  
 9. **Future Extensions & Conclusion**
-
-Each post is written in the same scientific style as Project 28.
 
 ---
 
@@ -993,7 +991,7 @@ This pipeline is deterministic, reproducible, and scientifically rigorous.
 
 # **4.3 Folder Structure (Actual Project Layout)**
 
-Your real project folder:
+Our real project folder:
 
 ```
 hamilton_model/
@@ -1300,11 +1298,11 @@ This chapter explains:
 
 The posterior engine transforms noisy graph‑stream observations into **stable, smoothed, drift‑aware posterior estimates**.
 
-At each time step \(t\), the extractor receives:
+At each time step $\(t\)$, the extractor receives:
 
-- incidence matrix \(A(t)\)  
-- weight matrix \(W(t)\)  
-- metadata \(M(t)\)
+- incidence matrix $\(A(t)\)$  
+- weight matrix $\(W(t)\)$  
+- metadata $\(M(t)\)$
 
 The posterior engine updates:
 
@@ -1330,24 +1328,16 @@ The posterior engine is the **learning mechanism** of the extractor.
 The extractor maintains four global posterior matrices:
 
 ### **1. Posterior existence probability**
-\[
-p_{\text{post}}(i,j,t)
-\]
+$p_{\text{post}}(i,j,t)$
 
 ### **2. Posterior mean weight**
-\[
-w_{\text{mean}}(i,j,t)
-\]
+$w_{\text{mean}}(i,j,t)$
 
 ### **3. Posterior weight variance**
-\[
-w_{\text{var}}(i,j,t)
-\]
+$w_{\text{var}}(i,j,t)$
 
 ### **4. Previous posterior values**
-\[
-w_{\text{mean}}^{\text{prev}},\quad w_{\text{var}}^{\text{prev}}
-\]
+$w_{\text{mean}}^{\text{prev}},\quad w_{\text{var}}^{\text{prev}}$
 
 These previous values are required for drift detection.
 
@@ -1365,19 +1355,13 @@ Given:
 the update rules are:
 
 ### **Existence probability update**
-\[
-p_{\text{post}} \leftarrow 0.99 \cdot p_{\text{post}} + 0.01 \cdot A
-\]
+$p_{\text{post}} \leftarrow 0.99 \cdot p_{\text{post}} + 0.01 \cdot A$
 
 ### **Mean weight update**
-\[
-w_{\text{mean}} \leftarrow 0.99 \cdot w_{\text{mean}} + 0.01 \cdot W
-\]
+$w_{\text{mean}} \leftarrow 0.99 \cdot w_{\text{mean}} + 0.01 \cdot W$
 
 ### **Variance update**
-\[
-w_{\text{var}} \leftarrow 0.99 \cdot w_{\text{var}} + 0.01 \cdot (W - w_{\text{mean}})^2
-\]
+$w_{\text{var}} \leftarrow 0.99 \cdot w_{\text{var}} + 0.01 \cdot (W - w_{\text{mean}})^2$
 
 This update scheme has several important properties:
 
@@ -1398,9 +1382,7 @@ Although classical Bayesian updates use Beta and Dirichlet‑process posteriors,
 ### **1. It behaves like a Bayesian posterior mean**
 The update:
 
-\[
-x_{t+1} = (1-\alpha)x_t + \alpha y_t
-\]
+$x_{t+1} = (1-\alpha)x_t + \alpha y_t$
 
 is equivalent to the posterior mean of a conjugate prior with fixed effective sample size.
 
@@ -1431,16 +1413,16 @@ Exponential smoothing provides exactly these.
 
 Drift is detected by comparing consecutive posterior values.
 
-Your implementation defines:
+Our implementation defines:
 
-\[
+$
 D(t) = \frac{1}{n^2} \sum_{i,j} 
 \left[
 (w_{\text{mean}}(i,j,t) - w_{\text{mean}}^{\text{prev}}(i,j))^2
 +
 (w_{\text{var}}(i,j,t) - w_{\text{var}}^{\text{prev}}(i,j))^2
 \right]
-\]
+$
 
 This drift score:
 
@@ -1459,14 +1441,10 @@ It is a **KL‑like divergence**, measuring how much the posterior changes betwe
 The extractor computes:
 
 ### **Mean existence probability**
-\[
-\bar{p}(t) = \frac{1}{n^2} \sum_{i,j} p_{\text{post}}(i,j,t)
-\]
+$\bar{p}(t) = \frac{1}{n^2} \sum_{i,j} p_{\text{post}}(i,j,t)$
 
 ### **Mean weight**
-\[
-\bar{w}(t) = \frac{1}{n^2} \sum_{i,j} w_{\text{mean}}(i,j,t)
-\]
+$\bar{w}(t) = \frac{1}{n^2} \sum_{i,j} w_{\text{mean}}(i,j,t)$
 
 These statistics:
 
@@ -1484,18 +1462,14 @@ They are essential for scientific interpretation.
 The posterior graph is constructed using:
 
 ### **Adjacency**
-\[
-B_{ij}(t) = 
+$B_{ij}(t) = 
 \begin{cases}
 1 & \text{if } p_{\text{post}}(i,j,t) > \tau \\
 0 & \text{otherwise}
-\end{cases}
-\]
+\end{cases}$
 
 ### **Weights**
-\[
-W_{ij}(t) = w_{\text{mean}}(i,j,t)
-\]
+$W_{ij}(t) = w_{\text{mean}}(i,j,t)$
 
 This posterior graph is:
 
@@ -1628,18 +1602,13 @@ Thus we introduce **LK‑Bayes**, a Bayesian‑driven variant of LK.
 
 The extractor uses a probabilistic score for each edge:
 
-\[
-S_{ij}
-= \lambda_1 \, p_{\text{post}}(i,j)
-- \lambda_2 \, w_{\text{var}}(i,j)
-- \lambda_3 \, \mathrm{KL}_{ij}
-\]
+$S_{ij}= \lambda_1 \, p_{\text{post}}(i,j) - \lambda_2 \, w_{\text{var}}(i,j) - \lambda_3 \, \mathrm{KL}_{ij}$
 
 Your implementation uses:
 
-- \(\lambda_1 = 2.0\)  
-- \(\lambda_2 = 1.0\)  
-- \(\lambda_3 = 0.5\)
+- $\(\lambda_1 = 2.0\)$  
+- $\(\lambda_2 = 1.0\)$  
+- $\(\lambda_3 = 0.5\)$
 
 ### **Interpretation**
 
@@ -1658,15 +1627,11 @@ The 2‑opt move is the fundamental operation of LK:
 
 Given a cycle:
 
-\[
-[v_1, v_2, \dots, v_i, \dots, v_k, \dots, v_n]
-\]
+$[v_1, v_2, \dots, v_i, \dots, v_k, \dots, v_n]$
 
 the 2‑opt move reverses the segment:
 
-\[
-[v_i, v_{i+1}, \dots, v_k]
-\]
+$[v_i, v_{i+1}, \dots, v_k]$
 
 This yields a new cycle with potentially better score.
 
@@ -1738,30 +1703,22 @@ LK‑Bayes operates on a **learned structure**, not raw noise.
 The extractor computes four stability metrics:
 
 ## **1. Match Rate**
-\[
-\text{match}(C) = \frac{\#\text{edges of } C \text{ present in } A(t)}{n}
-\]
+$\text{match}(C) = \frac{\#\text{edges of } C \text{ present in } A(t)}{n}$
 
 This measures how well the cycle matches the actual graph.
 
 ## **2. Posterior Score**
-\[
-\sum_{(i,j)\in C} S_{ij}
-\]
+$\sum_{(i,j)\in C} S_{ij}$
 
 This measures Bayesian stability.
 
 ## **3. Variance Stability**
-\[
-\frac{1}{n} \sum_{(i,j)\in C} w_{\text{var}}(i,j)
-\]
+$\frac{1}{n} \sum_{(i,j)\in C} w_{\text{var}}(i,j)$
 
 Low variance → stable weights.
 
 ## **4. KL Stability**
-\[
-\frac{1}{n} \sum_{(i,j)\in C} \mathrm{KL}_{ij}
-\]
+$\frac{1}{n} \sum_{(i,j)\in C} \mathrm{KL}_{ij}$
 
 Low KL → no drift.
 
@@ -1780,7 +1737,7 @@ These metrics quantify stability rigorously.
 
 # **6.6 Extracting the Most Stable Hamilton Path**
 
-Your implementation:
+Our implementation:
 
 ```python
 scores = []
@@ -1900,9 +1857,7 @@ This chapter explains:
 
 The pipeline processes a stream of weighted incidence matrices:
 
-\[
-\{A(t), W(t)\}_{t=0}^{T-1}
-\]
+$\{A(t), W(t)\}_{t=0}^{T-1}$
 
 Its goals are:
 
@@ -2237,19 +2192,17 @@ This is essential for:
 ### **Memory**
 The pipeline stores:
 
-- posterior matrices (3 × n² floats)  
-- time‑series arrays (O(T))  
-- CSV samples (O(T / sample_rate))  
+- posterior matrices ($3 × n²$ floats)  
+- time‑series arrays ($O(T)$)  
+- CSV samples ($O(T / sample_rate)$)  
 
-For \(n = 300\), memory usage is modest.  
-For \(n = 2000\), memory usage remains manageable due to streaming design.
+For §\(n = 300\)§, memory usage is modest.  
+For §\(n = 2000\)§, memory usage remains manageable due to streaming design.
 
 ### **Performance**
 The pipeline runs in:
 
-\[
-O(T \cdot n^2)
-\]
+$O(T \cdot n^2)$
 
 This is optimal for:
 
@@ -2366,9 +2319,7 @@ Each plot reveals a different aspect of the system.
 
 This plot shows:
 
-\[
-\bar{p}(t) = \frac{1}{n^2} \sum_{i,j} p_{\text{post}}(i,j,t)
-\]
+$\bar{p}(t) = \frac{1}{n^2} \sum_{i,j} p_{\text{post}}(i,j,t)$
 
 ### **Interpretation**
 
@@ -2384,9 +2335,7 @@ This plot is the **primary indicator** of posterior convergence.
 
 This plot shows:
 
-\[
-\bar{w}(t) = \frac{1}{n^2} \sum_{i,j} w_{\text{mean}}(i,j,t)
-\]
+$\bar{w}(t) = \frac{1}{n^2} \sum_{i,j} w_{\text{mean}}(i,j,t)$
 
 ### **Interpretation**
 
@@ -2402,9 +2351,7 @@ Weight dynamics often reveal drift earlier than existence probabilities.
 
 This plot shows:
 
-\[
-\text{match}(C_t) = \frac{\#\text{edges of } C_t \text{ present in } A(t)}{n}
-\]
+$\text{match}(C_t) = \frac{\#\text{edges of } C_t \text{ present in } A(t)}{n}$
 
 ### **Interpretation**
 
@@ -2420,14 +2367,7 @@ Match rate is the **structural stability indicator**.
 
 This plot shows:
 
-\[
-D(t) = \frac{1}{n^2} \sum_{i,j} 
-\left[
-(w_{\text{mean}}(i,j,t) - w_{\text{mean}}^{\text{prev}}(i,j))^2
-+
-(w_{\text{var}}(i,j,t) - w_{\text{var}}^{\text{prev}}(i,j))^2
-\right]
-\]
+$D(t) = \frac{1}{n^2} \sum_{i,j} \left[(w_{\text{mean}}(i,j,t) - w_{\text{mean}}^{\text{prev}}(i,j))^2+(w_{\text{var}}(i,j,t) - w_{\text{var}}^{\text{prev}}(i,j))^2\right]$
 
 ### **Interpretation**
 
@@ -2443,15 +2383,11 @@ Drift score is the **change‑point detector**.
 
 This plot shows:
 
-\[
-\sum_{(i,j)\in C_t} S_{ij}
-\]
+$\sum_{(i,j)\in C_t} S_{ij}$
 
 where:
 
-\[
-S_{ij} = 2p_{\text{post}} - w_{\text{var}} - 0.5\mathrm{KL}
-\]
+$S_{ij} = 2p_{\text{post}} - w_{\text{var}} - 0.5\mathrm{KL}$
 
 ### **Interpretation**
 
@@ -2467,9 +2403,7 @@ Posterior score measures **Bayesian stability** of the cycle.
 
 This plot shows:
 
-\[
-\frac{1}{n} \sum_{(i,j)\in C_t} w_{\text{var}}(i,j,t)
-\]
+$\frac{1}{n} \sum_{(i,j)\in C_t} w_{\text{var}}(i,j,t)$
 
 ### **Interpretation**
 
@@ -2485,9 +2419,7 @@ Variance stability reveals **weight fluctuations**.
 
 This plot shows:
 
-\[
-\frac{1}{n} \sum_{(i,j)\in C_t} \mathrm{KL}_{ij}(t)
-\]
+$\frac{1}{n} \sum_{(i,j)\in C_t} \mathrm{KL}_{ij}(t)$
 
 ### **Interpretation**
 
@@ -2555,9 +2487,7 @@ Your implementation:
 
 Posterior mean weight:
 
-\[
-w_{\text{mean}}(i,j)
-\]
+$w_{\text{mean}}(i,j)$
 
 ### **Interpretation**
 
