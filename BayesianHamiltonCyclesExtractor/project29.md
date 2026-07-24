@@ -2504,10 +2504,10 @@ At each time step $\(t\)$, the extractor receives:
 
 The posterior engine updates:
 
-- \(p_{\text{post}}(t)\): posterior existence probability  
-- \(w_{\text{mean}}(t)\): posterior mean weight  
-- \(w_{\text{var}}(t)\): posterior weight variance  
-- \(D(t)\): drift score  
+- $\(p_{\text{post}}(t)\)$: posterior existence probability  
+- $\(w_{\text{mean}}(t)\)$: posterior mean weight  
+- $\(w_{\text{var}}(t)\)$: posterior weight variance  
+- $\(D(t)\)$: drift score  
 
 These posterior quantities are used to:
 
