@@ -3957,18 +3957,22 @@ Each diagram below is accompanied by an explanation.
 
 ## **10.1 High‑Level System Architecture**
 
+
+
 ```mermaid
 flowchart TD
 
-A[Graph Stream<br>(A(t), W(t))] --> B[Posterior Engine<br>update_posterior()]
-B --> C[Posterior Graph<br>B_post, W_post]
-C --> D[LK‑Bayes Heuristic<br>lk_bayes_cycle()]
-D --> E[Cycle Stability<br>match, score, var, KL]
-B --> F[Drift Detection<br>compute_drift()]
-E --> G[Visualization Layer<br>Plots + Graphviz]
+A["Graph Stream\n(A(t), W(t))"] --> B["Posterior Engine\nupdate_posterior()"]
+B --> C["Posterior Graph\nB_post, W_post"]
+C --> D["LK-Bayes Heuristic\nlk_bayes_cycle()"]
+D --> E["Cycle Stability\nmatch, score, var, KL"]
+B --> F["Drift Detection\ncompute_drift()"]
+E --> G["Visualization Layer\nPlots + Graphviz"]
 F --> G
-G --> H[Workspace<br>CSV + Plots + Cycles]
+G --> H["Workspace\nCSV + Plots + Cycles"]
 ```
+
+
 
 ### **Explanation**
 This diagram shows the **full conceptual pipeline**:
@@ -4046,24 +4050,27 @@ This diagram shows **module‑level interactions**:
 
 ## **10.3 Posterior Engine Workflow**
 
+
 ```mermaid
 flowchart TD
 
-A[A(t), W(t)] --> B[update_posterior]
-B --> C[p_post]
-B --> D[w_mean_post]
-B --> E[w_var_post]
+A["A(t), W(t)"] --> B["update_posterior"]
+B --> C["p_post"]
+B --> D["w_mean_post"]
+B --> E["w_var_post"]
 
-C --> F[posterior_stats]
+C --> F["posterior_stats"]
 D --> F
 E --> F
 
-D --> G[compute_drift]
+D --> G["compute_drift"]
 E --> G
 
-C --> H[build_posterior_graph]
+C --> H["build_posterior_graph"]
 D --> H
 ```
+
+
 
 ### **Explanation**
 This diagram shows how the posterior engine:
@@ -4080,19 +4087,19 @@ This diagram shows how the posterior engine:
 ```mermaid
 flowchart TD
 
-A[Posterior Graph<br>B_post, W_post] --> B[Compute KL Matrix]
-B --> C[edge_score(u,v)]
-C --> D[Initial Random Cycle]
+A["Posterior Graph\nB_post, W_post"] --> B["Compute KL Matrix"]
+B --> C["edge_score(u,v)"]
+C --> D["Initial Random Cycle"]
 
-D --> E[2-opt Moves]
-E --> F[Score Old vs New Cycle]
+D --> E["2-opt Moves"]
+E --> F["Score Old vs New Cycle"]
 
 F -->|new_score > old_score| D
 F -->|otherwise| E
 
-D --> G[Final Hamilton Cycle]
-G --> H[cycle_stability_full]
-H --> I[extract_stable_hamilton_path]
+D --> G["Final Hamilton Cycle"]
+G --> H["cycle_stability_full"]
+H --> I["extract_stable_hamilton_path"]
 ```
 
 ### **Explanation**
@@ -4148,16 +4155,19 @@ This diagram shows the **operational flow** of the pipeline:
 
 ## **10.6 Data‑Flow Diagram**
 
+
 ```mermaid
 flowchart LR
 
-A[A(t), W(t)] --> B[p_post, w_mean_post, w_var_post]
-B --> C[B_post, W_post]
-C --> D[Hamilton Cycle]
-D --> E[Stability Metrics]
-E --> F[Plots + Graphviz]
-F --> G[Workspace]
+A["A(t), W(t)"] --> B["p_post, w_mean_post, w_var_post"]
+B --> C["B_post, W_post"]
+C --> D["Hamilton Cycle"]
+D --> E["Stability Metrics"]
+E --> F["Plots and Graphviz"]
+F --> G["Workspace"]
 ```
+
+
 
 ### **Explanation**
 This diagram shows the **data transformation chain**:
@@ -4166,18 +4176,21 @@ Raw data → posterior → posterior graph → cycle → stability → visualiza
 
 ## **10.7 Drift‑Detection Diagram**
 
+
 ```mermaid
 flowchart TD
 
-A[w_mean_post(t-1), w_var_post(t-1)] --> B[Posterior Update]
-B --> C[w_mean_post(t), w_var_post(t)]
+A["w_mean_post(t-1), w_var_post(t-1)"] --> B["Posterior Update"]
+B --> C["w_mean_post(t), w_var_post(t)"]
 
-C --> D[Compute Drift<br>(KL-like divergence)]
-D --> E[Drift Score]
+C --> D["Compute Drift\n(KL-like divergence)"]
+D --> E["Drift Score"]
 
-E -->|low| F[Stable Source]
-E -->|high| G[Drift Detected]
+E -->|low| F["Stable Source"]
+E -->|high| G["Drift Detected"]
 ```
+
+
 
 ### **Explanation**
 This diagram shows how drift detection works:
@@ -4186,7 +4199,7 @@ This diagram shows how drift detection works:
 - compute KL‑like divergence  
 - classify stability vs drift  
 
-# **10.8 Summary of Diagram Set**
+## **10.8 Summary of Diagram Set**
 
 The Mermaid diagrams in this section provide:
 
