@@ -2,8 +2,6 @@
 
 # **Part 1/10 — Executive Summary & Motivation**  
 
----
-
 # **1. Executive Summary**
 
 Modern distributed systems — sensor networks, communication infrastructures, peer‑to‑peer overlays, and autonomous multi‑agent environments — increasingly rely on **graph‑structured data streams**. 
@@ -38,11 +36,9 @@ This yields a robust, drift‑aware, prediction‑driven Hamilton‑cycle extrac
 
 Project 29 integrates **graph theory**, **Bayesian statistics**, **stochastic processes**, **change‑point detection**, and **heuristic optimization** into a unified, reproducible computational framework.
 
----
+# **1.2. Motivation**
 
-# **2. Motivation**
-
-## **2.1 The Problem: Hamilton Cycles in Dynamic, Noisy Graphs**
+## **1.2.1 The Problem: Hamilton Cycles in Dynamic, Noisy Graphs**
 
 Real‑world networks are not static:
 
@@ -65,9 +61,7 @@ A deterministic algorithm cannot reliably extract cycles from stochastic data.
 
 We need a **probabilistic**, **adaptive**, **stream‑based** approach.
 
----
-
-## **2.2 The Opportunity: Bayesian Reconstruction of Graph Streams**
+## **1.2.2 The Opportunity: Bayesian Reconstruction of Graph Streams**
 
 Every edge in a dynamic graph is governed by an underlying random process:
 
@@ -89,9 +83,7 @@ This transforms the problem:
 
 The posterior graph is smoother, more stable, and more informative than raw observations.
 
----
-
-## **2.3 The Vision: A Fully Bayesian Graph‑Stream Engine**
+## **1.2.3 The Vision: A Fully Bayesian Graph‑Stream Engine**
 
 Project 29 implements a complete pipeline:
 
@@ -124,9 +116,7 @@ Project 29 implements a complete pipeline:
 
 This pipeline is deterministic, reproducible, and scientifically rigorous.
 
----
-
-## **2.4 Why Hamilton Cycles Matter**
+## **1.2.4 Why Hamilton Cycles Matter**
 
 Hamilton cycles are powerful structural indicators:
 
@@ -146,9 +136,7 @@ In dynamic systems, the presence, stability, and weight distribution of Hamilton
 
 Thus Hamilton cycles become **diagnostic tools**, not just combinatorial objects.
 
----
-
-## **2.5 Why Bayesian Methods Matter**
+## **1.2.5 Why Bayesian Methods Matter**
 
 Bayesian inference provides:
 
@@ -168,9 +156,7 @@ This is essential for:
 
 Without Bayesian inference, Hamilton‑cycle extraction in noisy streams is impossible.
 
----
-
-## **2.6 Why This Project Matters**
+## **1.2.6 Why This Project Matters**
 
 Project 29 is scientifically significant because it:
 
@@ -193,9 +179,7 @@ It is a modern research‑grade system suitable for:
 
 Project 29 is not just an algorithm — it is a **framework** for understanding dynamic graph structures.
 
----
-
-# **2.7 Structure of the Full Report**
+## **1.2.7 Structure of the Full Report**
 
 The remaining parts will cover:
 
@@ -213,8 +197,6 @@ The remaining parts will cover:
 
 # **Part 2/10 — Mathematical Foundations**  
 
----
-
 # **2. Mathematical Foundations**
 
 The Hamilton Cycle Extractor (HCE) operates on **streams of weighted random graphs**.  
@@ -231,9 +213,7 @@ To understand why Bayesian inference, posterior graphs, and LK‑Bayes heuristic
 
 This chapter provides the theoretical backbone for the entire project.
 
----
-
-# **2.1 Random Weighted Graph Model**
+## **2.1 Random Weighted Graph Model**
 
 We consider a sequence of weighted graphs:
 
@@ -271,9 +251,7 @@ Thus each edge has its own:
 
 This is an **inhomogeneous weighted random graph model**.
 
----
-
-# **2.2 Random Distribution of Edge Probabilities**
+## **2.2 Random Distribution of Edge Probabilities**
 
 Before Bayesian reconstruction, we must understand the underlying random distribution of edge probabilities.
 
@@ -295,9 +273,7 @@ Assume:
 
 This is a standard model for random distributions.
 
----
-
-# **2.3 Glivenko–Cantelli Theorem: Convergence to Uniform**
+## **2.3 Glivenko–Cantelli Theorem: Convergence to Uniform**
 
 The Glivenko–Cantelli theorem states:
 
@@ -315,9 +291,7 @@ Consequences:
 
 This result is foundational for the Bayesian posterior model.
 
----
-
-# **2.4 Expectation of the Number of Hamiltonian Cycles**
+## **2.4 Expectation of the Number of Hamiltonian Cycles**
 
 A Hamiltonian cycle is a permutation:
 
@@ -343,9 +317,7 @@ $\mathbb{E}[X] = H_n \left(\frac{1}{2}\right)^n$
 
 This expectation is extremely small for large \(n\), but the graph is still almost surely Hamiltonian due to the phase transition threshold (Section 2.6).
 
----
-
-# **2.5 Variance of the Number of Hamiltonian Cycles**
+## **2.5 Variance of the Number of Hamiltonian Cycles**
 
 Let:
 
@@ -369,9 +341,7 @@ $\mathrm{STD}(X) \sim \frac{(n-1)!}{2^{n+1}}$
 
 This matches the expectation scale.
 
----
-
-# **2.6 Phase Transition for Hamiltonian Cycles**
+## **2.6 Phase Transition for Hamiltonian Cycles**
 
 In classical Erdős–Rényi graphs $\(G(n,p)\)$:
 
@@ -398,9 +368,7 @@ Thus:
 
 This explains why the LK‑Bayes heuristic consistently finds stable cycles.
 
----
-
-# **2.7 Weighted Hamiltonian Cycles**
+## **2.7 Weighted Hamiltonian Cycles**
 
 If edges carry weights:
 
@@ -423,9 +391,7 @@ Thus:
 
 This is relevant for stability analysis.
 
----
-
-# **2.8 Bayesian Reconstruction of Edge Processes**
+## **2.8 Bayesian Reconstruction of Edge Processes**
 
 The extractor reconstructs:
 
@@ -458,9 +424,7 @@ This yields:
 - drift‑aware updates  
 - predictive distributions for future graphs  
 
----
-
-# **2.9 Drift Detection**
+## **2.9 Drift Detection**
 
 Define drift score:
 
@@ -474,9 +438,7 @@ A sudden increase indicates:
 
 This is the mathematical basis for the drift detection module.
 
----
-
-# **2.10 Summary**
+## **2.10 Summary**
 
 This chapter established:
 
@@ -494,8 +456,6 @@ These foundations justify the design of the Hamilton Cycle Extractor and explain
 
 # **Part 3/10 — Bayesian Model for Graph Streams**  
 
----
-
 # **3. Bayesian Model for Graph Streams**
 
 The Hamilton Cycle Extractor (HCE) is fundamentally a **Bayesian streaming system**.  
@@ -503,9 +463,7 @@ Its purpose is to reconstruct the underlying random process that generates weigh
 
 This chapter explains the **Bayesian model**, the **posterior update rules**, the **predictive distributions**, and the **drift‑detection logic** that form the backbone of the entire extractor.
 
----
-
-# **3.1 Overview of the Bayesian Framework**
+## **3.1 Overview of the Bayesian Framework**
 
 We observe a stream of weighted graphs:
 
@@ -524,9 +482,7 @@ This is a **Bayesian inference problem** with two coupled components:
 
 The extractor maintains **posterior distributions** for both.
 
----
-
-# **3.2 Bayesian Model for Edge Existence**
+## **3.2 Bayesian Model for Edge Existence**
 
 Each edge has an unknown existence probability:
 
@@ -540,7 +496,7 @@ This is the conjugate prior for Bernoulli processes.
 
 ### **Posterior update**
 
-After observing \(T\) time steps:
+After observing $\(T\)$ time steps:
 
 $P_{ij}^{(T)} = \text{Beta}\left(\alpha_0 + \sum_{t=1}^T a_{ij}(t),\; \beta_0 + T - \sum_{t=1}^T a_{ij}(t)\right)$
 
@@ -557,9 +513,7 @@ $\hat{P}_{ij}^{(T)} = \frac{\alpha_0 + \sum a_{ij}(t)}{\alpha_0 + \beta_0 + T}$
 
 This becomes the **posterior graph’s edge probability**.
 
----
-
-# **3.3 Bayesian Model for Edge Weights**
+## **3.3 Bayesian Model for Edge Weights**
 
 If an edge exists, its weight is drawn from an unknown distribution:
 
@@ -602,9 +556,7 @@ These quantities drive:
 - drift detection  
 - LK‑Bayes scoring  
 
----
-
-# **3.4 Posterior Predictive Distribution**
+## **3.4 Posterior Predictive Distribution**
 
 The extractor predicts future graphs using the posterior distributions.
 
@@ -627,9 +579,7 @@ This prediction is used to:
 - determine when the extractor is “trained”  
 - compute stable Hamiltonian cycles  
 
----
-
-# **3.5 Posterior Graph Construction**
+## **3.5 Posterior Graph Construction**
 
 The extractor constructs a **posterior graph** from:
 
@@ -661,9 +611,7 @@ This posterior graph is:
 
 It is the graph on which the LK‑Bayes heuristic operates.
 
----
-
-# **3.6 Drift Detection via KL Divergence**
+## **3.6 Drift Detection via KL Divergence**
 
 Drift is detected by comparing consecutive posteriors.
 
@@ -679,9 +627,7 @@ A sudden increase indicates:
 
 This drift score is one of the key stability metrics.
 
----
-
-# **3.7 Hamiltonian Stability Index**
+## **3.7 Hamiltonian Stability Index**
 
 Hamiltonian cycles are extremely sensitive to drift.
 
@@ -702,9 +648,7 @@ This index is used to determine:
 - when drift has occurred  
 - when cycles should be recomputed  
 
----
-
-# **3.8 Prediction Quality Metrics**
+## **3.8 Prediction Quality Metrics**
 
 Prediction quality is measured using four metrics:
 
@@ -737,9 +681,7 @@ The extractor is considered “trained” when:
 
 Only then does the system compute stable Hamiltonian cycles.
 
----
-
-# **3.9 Why Bayesian Modeling Works**
+## **3.9 Why Bayesian Modeling Works**
 
 Bayesian inference provides:
 
@@ -766,9 +708,7 @@ This makes Bayesian modeling ideal for:
 - stability analysis  
 - prediction quality assessment  
 
----
-
-# **3.10 Summary**
+## **3.10 Summary**
 
 This chapter established the full Bayesian model:
 
@@ -786,8 +726,6 @@ These components form the theoretical and computational core of the Hamilton Cyc
 
 # **Part 4/10 — System Architecture & Folder Structure**  
 
----
-
 # **4. System Architecture & Folder Structure**
 
 The Hamilton Cycle Extractor (HCE) is built on a **modular, layered, reproducible architecture**, mirroring the clarity and scientific rigor of your *PyTester GUI* project.  
@@ -803,9 +741,7 @@ This chapter explains:
 
 This is the blueprint for the entire project.
 
----
-
-# **4.1 Architectural Philosophy**
+## **4.1 Architectural Philosophy**
 
 The architecture of Project 29 is guided by five core principles:
 
@@ -857,9 +793,7 @@ The modular structure supports future extensions:
 
 The architecture is designed to grow.
 
----
-
-# **4.2 High‑Level System Overview**
+## **4.2 High‑Level System Overview**
 
 At a high level, the extractor consists of:
 
@@ -894,9 +828,7 @@ Workspace (CSV + cycles + posterior)
 
 This pipeline is deterministic, reproducible, and scientifically rigorous.
 
----
-
-# **4.3 Folder Structure (Actual Project Layout)**
+## **4.3 Folder Structure (Actual Project Layout)**
 
 Our real project folder:
 
@@ -916,11 +848,9 @@ hamilton_model/
 Each file corresponds to a subsystem.  
 Below is the detailed breakdown.
 
----
+## **4.4 Module‑by‑Module Breakdown**
 
-# **4.4 Module‑by‑Module Breakdown**
-
-## **4.4.1 `generators.py` — Graph Stream Generators**
+### **4.4.1 `generators.py` — Graph Stream Generators**
 
 ````python
 """
@@ -1239,7 +1169,7 @@ Contains:
 - `generate_stream_drift_prediction`  
 - `drift_random` helper  
 
-### **Responsibilities**
+#### **Responsibilities**
 - simulate weighted random graphs  
 - simulate drift in training or prediction  
 - produce structured samples:  
@@ -1248,12 +1178,10 @@ Contains:
   ```
 - provide reproducible test streams for the pipeline  
 
-### **Why it matters**
+#### **Why it matters**
 The generator layer defines the **random source** the extractor must learn.
 
----
-
-## **4.4.2 `posterior.py` — Bayesian Posterior Engine**
+### **4.4.2 `posterior.py` — Bayesian Posterior Engine**
 
 ````python
 """"
@@ -1411,19 +1339,17 @@ Contains:
 - `posterior_stats`  
 - `build_posterior_graph`  
 
-### **Responsibilities**
+#### **Responsibilities**
 - maintain posterior existence probabilities  
 - maintain posterior weight distributions  
 - compute KL‑based drift score  
 - construct posterior graph (adjacency + weights)  
 - provide posterior statistics for visualization  
 
-### **Why it matters**
+#### **Why it matters**
 This module is the **Bayesian heart** of the extractor.
 
----
-
-## **4.4.3 `lk_bayes.py` — LK‑Bayes Hamilton Cycle Heuristic**
+### **4.4.3 `lk_bayes.py` — LK‑Bayes Hamilton Cycle Heuristic**
 
 ````python
 """
@@ -1667,19 +1593,17 @@ Contains:
 - `extract_stable_hamilton_path`  
 - optional Cython hook  
 
-### **Responsibilities**
+#### **Responsibilities**
 - compute probabilistic edge scores  
 - perform 2‑opt moves  
 - run LK‑Bayes optimization  
 - compute cycle stability metrics  
 - extract the most stable Hamilton path  
 
-### **Why it matters**
+#### **Why it matters**
 This module performs the **Hamilton‑cycle extraction** using Bayesian information.
 
----
-
-## **4.4.4 `pipeline.py` — Streaming Pipeline**
+### **4.4.4 `pipeline.py` — Streaming Pipeline**
 
 ````python
 """
@@ -1994,7 +1918,7 @@ Contains:
 - pipeline orchestration  
 - plot functions  
 
-### **Responsibilities**
+#### **Responsibilities**
 - run the streaming loop  
 - update posterior at each time step  
 - compute drift score  
@@ -2003,12 +1927,10 @@ Contains:
 - store CSV samples  
 - store time‑series data  
 
-### **Why it matters**
+#### **Why it matters**
 This module is the **operational backbone** of the extractor.
 
----
-
-## **4.4.5 `graphviz_plot.py` — Graphviz Visualization**
+### **4.4.5 `graphviz_plot.py` — Graphviz Visualization**
 
 ````python
 """
@@ -2111,18 +2033,16 @@ Contains:
 
 - `plot_hamilton_graphviz`  
 
-### **Responsibilities**
+#### **Responsibilities**
 - visualize Hamilton cycles  
 - highlight stable edges  
 - annotate edges with posterior weights  
 - produce Graphviz diagrams  
 
-### **Why it matters**
+#### **Why it matters**
 This module provides **structural visualization**, essential for scientific interpretation.
 
----
-
-## **4.4.6 `model.py` — Main Function**
+### **4.4.6 `model.py` — Main Function**
 
 ````python
 """
@@ -2226,19 +2146,17 @@ Contains:
 
 - `ExtractHamiltonCycles(...)`  
 
-### **Responsibilities**
+#### **Responsibilities**
 - integrate all modules  
 - run the full pipeline  
 - produce plots  
 - return results  
 - serve as the main API entry point  
 
-### **Why it matters**
+#### **Why it matters**
 This module is the **public interface** of the extractor.
 
----
-
-## **4.4.7 `cli.py` — Command‑Line Interface**
+### **4.4.7 `cli.py` — Command‑Line Interface**
 
 ````python
 """
@@ -2344,17 +2262,15 @@ Contains:
 
 - CLI wrapper for `ExtractHamiltonCycles`  
 
-### **Responsibilities**
+#### **Responsibilities**
 - allow running the extractor from terminal  
 - support Docker / KServe deployment  
 - provide simple command‑line usage  
 
-### **Why it matters**
+#### **Why it matters**
 This module enables **operational deployment**.
 
----
-
-# **4.5 Data Flow Through the System**
+## **4.5 Data Flow Through the System**
 
 The data flow is linear and deterministic:
 
@@ -2403,23 +2319,21 @@ Stores:
 - posterior matrices  
 - plots  
 
----
+## **4.6 Why This Architecture Works**
 
-# **4.6 Why This Architecture Works**
-
-## **1. Clear Separation of Concerns**
+### **1. Clear Separation of Concerns**
 Each subsystem is isolated.  
 Changes in one module do not affect others.
 
-## **2. Deterministic Pipeline**
+### **2. Deterministic Pipeline**
 Given the same input, the extractor produces the same output.  
 This is essential for reproducible scientific workflows.
 
-## **3. Bayesian Stability**
+### **3. Bayesian Stability**
 Posterior updates smooth noise and detect drift.  
 This makes cycle extraction robust.
 
-## **4. LK‑Bayes Optimization**
+### **4. LK‑Bayes Optimization**
 Combines:
 
 - probabilistic edge scores  
@@ -2428,7 +2342,7 @@ Combines:
 
 This yields stable Hamilton cycles even in noisy graphs.
 
-## **5. Reproducible Workspace**
+### **5. Reproducible Workspace**
 All artifacts are stored.  
 This supports:
 
@@ -2437,7 +2351,7 @@ This supports:
 - versioning  
 - reproducibility  
 
-## **6. Extensibility**
+### **6. Extensibility**
 The architecture supports:
 
 - GPU acceleration  
@@ -2448,9 +2362,7 @@ The architecture supports:
 
 It is future‑proof.
 
----
-
-# **4.7 Summary**
+## **4.7 Summary**
 
 This chapter established:
 
@@ -2466,8 +2378,6 @@ The Hamilton Cycle Extractor is a **modular, Bayesian, reproducible, extensible*
 ---
 
 # **Part 5/10 — Posterior Engine**  
-
----
 
 # **5. Posterior Engine**
 
@@ -2490,9 +2400,7 @@ This chapter explains:
 - the stability properties of the posterior  
 - why this engine is essential for Hamilton‑cycle extraction  
 
----
-
-# **5.1 Purpose of the Posterior Engine**
+## **5.1 Purpose of the Posterior Engine**
 
 The posterior engine transforms noisy graph‑stream observations into **stable, smoothed, drift‑aware posterior estimates**.
 
@@ -2519,9 +2427,7 @@ These posterior quantities are used to:
 
 The posterior engine is the **learning mechanism** of the extractor.
 
----
-
-# **5.2 Posterior Parameters**
+## **5.2 Posterior Parameters**
 
 The extractor maintains four global posterior matrices:
 
@@ -2539,9 +2445,7 @@ $w_{\text{mean}}^{\text{prev}},\quad w_{\text{var}}^{\text{prev}}$
 
 These previous values are required for drift detection.
 
----
-
-# **5.3 Posterior Update Logic**
+## **5.3 Posterior Update Logic**
 
 Your implementation uses **exponential smoothing**, which is a practical approximation of Bayesian updating for streaming systems.
 
@@ -2571,9 +2475,7 @@ This update scheme has several important properties:
 
 It is ideal for real‑time graph‑stream processing.
 
----
-
-# **5.4 Why Exponential Smoothing Works**
+## **5.4 Why Exponential Smoothing Works**
 
 Although classical Bayesian updates use Beta and Dirichlet‑process posteriors, exponential smoothing is a **valid streaming approximation** because:
 
@@ -2605,9 +2507,7 @@ The LK‑Bayes heuristic requires:
 
 Exponential smoothing provides exactly these.
 
----
-
-# **5.5 Drift Detection**
+## **5.5 Drift Detection**
 
 Drift is detected by comparing consecutive posterior values.
 
@@ -2632,9 +2532,7 @@ This drift score:
 
 It is a **KL‑like divergence**, measuring how much the posterior changes between time steps.
 
----
-
-# **5.6 Posterior Statistics**
+## **5.6 Posterior Statistics**
 
 The extractor computes:
 
@@ -2653,9 +2551,7 @@ These statistics:
 
 They are essential for scientific interpretation.
 
----
-
-# **5.7 Posterior Graph Construction**
+## **5.7 Posterior Graph Construction**
 
 The posterior graph is constructed using:
 
@@ -2679,9 +2575,7 @@ This posterior graph is:
 
 It is the graph on which LK‑Bayes operates.
 
----
-
-# **5.8 Stability Properties of the Posterior**
+## **5.8 Stability Properties of the Posterior**
 
 The posterior engine has strong stability properties:
 
@@ -2705,9 +2599,7 @@ Posterior changes → drift score spikes.
 
 These properties make the posterior engine ideal for dynamic graph analysis.
 
----
-
-# **5.9 Why the Posterior Engine Is Essential**
+## **5.9 Why the Posterior Engine Is Essential**
 
 The posterior engine is the **foundation** of the Hamilton Cycle Extractor because:
 
@@ -2728,9 +2620,7 @@ Without the posterior engine, the extractor would:
 
 The posterior engine transforms raw graph streams into **learned structure**.
 
----
-
-# **5.10 Summary**
+## **5.10 Summary**
 
 This chapter established:
 
@@ -2748,8 +2638,6 @@ The posterior engine is the **Bayesian heart** of Project 29.
 
 # **Part 6/10 — LK‑Bayes Hamilton Cycle Extraction**  
 
----
-
 # **6. LK‑Bayes Hamilton Cycle Extraction**
 
 The Hamilton Cycle Extractor (HCE) uses a **Bayesian‑enhanced variant of the Lin–Kernighan (LK) heuristic**, one of the most successful algorithms for Hamiltonian cycle and TSP‑like optimization problems.
@@ -2766,9 +2654,7 @@ This chapter explains:
 - the extraction of the most stable Hamilton path  
 - why LK‑Bayes works so well in dynamic Bayesian graph streams  
 
----
-
-# **6.1 Why LK‑Bayes?**
+## **6.1 Why LK‑Bayes?**
 
 The classical LK heuristic is powerful because it:
 
@@ -2794,9 +2680,7 @@ Project 29 requires a **probabilistic version**:
 
 Thus we introduce **LK‑Bayes**, a Bayesian‑driven variant of LK.
 
----
-
-# **6.2 Edge Score Function**
+## **6.2 Edge Score Function**
 
 The extractor uses a probabilistic score for each edge:
 
@@ -2817,9 +2701,7 @@ Your implementation uses:
 
 This score transforms the graph into a **Bayesian stability landscape**.
 
----
-
-# **6.3 2‑Opt Move**
+## **6.3 2‑Opt Move**
 
 The 2‑opt move is the fundamental operation of LK:
 
@@ -2849,9 +2731,7 @@ new_cycle[i:k] = cycle[i:k][::-1]
 
 In LK‑Bayes, 2‑opt explores **posterior‑weighted neighborhoods**.
 
----
-
-# **6.4 LK‑Bayes Optimization Loop**
+## **6.4 LK‑Bayes Optimization Loop**
 
 Your implementation:
 
@@ -2894,33 +2774,31 @@ Because the posterior graph is:
 
 LK‑Bayes operates on a **learned structure**, not raw noise.
 
----
-
-# **6.5 Cycle Stability Metrics**
+## **6.5 Cycle Stability Metrics**
 
 The extractor computes four stability metrics:
 
-## **1. Match Rate**
+### **1. Match Rate**
 $\text{match}(C) = \frac{\#\text{edges of } C \text{ present in } A(t)}{n}$
 
 This measures how well the cycle matches the actual graph.
 
-## **2. Posterior Score**
+### **2. Posterior Score**
 $\sum_{(i,j)\in C} S_{ij}$
 
 This measures Bayesian stability.
 
-## **3. Variance Stability**
+### **3. Variance Stability**
 $\frac{1}{n} \sum_{(i,j)\in C} w_{\text{var}}(i,j)$
 
 Low variance → stable weights.
 
-## **4. KL Stability**
+### **4. KL Stability**
 $\frac{1}{n} \sum_{(i,j)\in C} \mathrm{KL}_{ij}$
 
 Low KL → no drift.
 
-### **Why these metrics matter**
+#### **Why these metrics matter**
 
 Hamilton cycles are extremely sensitive to:
 
@@ -2931,9 +2809,7 @@ Hamilton cycles are extremely sensitive to:
 
 These metrics quantify stability rigorously.
 
----
-
-# **6.6 Extracting the Most Stable Hamilton Path**
+## **6.6 Extracting the Most Stable Hamilton Path**
 
 Our implementation:
 
@@ -2968,9 +2844,7 @@ Because:
 
 The stable path is the **structural fingerprint** of the graph.
 
----
-
-# **6.7 Why LK‑Bayes Works**
+## **6.7 Why LK‑Bayes Works**
 
 LK‑Bayes succeeds because it combines:
 
@@ -3003,9 +2877,7 @@ This makes LK‑Bayes ideal for:
 - scientific analysis  
 - reproducible experiments  
 
----
-
-# **6.8 Summary**
+## **6.8 Summary**
 
 This chapter established:
 
@@ -3021,8 +2893,6 @@ LK‑Bayes is the **optimization engine** of Project 29, transforming posterior 
 ---
 
 # **Part 7/10 — Streaming Pipeline**  
-
----
 
 # **7. Streaming Pipeline**
 
@@ -3049,9 +2919,7 @@ This chapter explains:
 - memory and performance characteristics  
 - why streaming is essential for Bayesian graph reconstruction  
 
----
-
-# **7.1 Purpose of the Streaming Pipeline**
+## **7.1 Purpose of the Streaming Pipeline**
 
 The pipeline processes a stream of weighted incidence matrices:
 
@@ -3079,9 +2947,7 @@ Its goals are:
 
 The pipeline is the **central nervous system** of the extractor.
 
----
-
-# **7.2 Pipeline Overview**
+## **7.2 Pipeline Overview**
 
 The pipeline follows a deterministic sequence:
 
@@ -3114,15 +2980,11 @@ Return Results
 
 This structure mirrors the clarity and reproducibility of your *PyTester GUI* pipeline.
 
----
+## **7.3 Step‑by‑Step Pipeline Logic**
 
-# **7.3 Step‑by‑Step Pipeline Logic**
+Our implementation in `model.py` follows these steps:
 
-Your implementation in `model.py` follows these steps:
-
----
-
-## **Step 1 — Start Generator**
+### **Step 1 — Start Generator**
 
 ```python
 stream = generator(n=n, T=T)
@@ -3142,9 +3004,7 @@ Metadata includes:
 - true probabilities  
 - true weight distributions  
 
----
-
-## **Step 2 — Initialize Posterior**
+### **Step 2 — Initialize Posterior**
 
 ```python
 p_post = np.full((n,n), 0.5)
@@ -3160,9 +3020,7 @@ This corresponds to a **maximum‑entropy prior**:
 
 This is the correct Bayesian initialization when no structure is known.
 
----
-
-## **Step 3 — Initialize Time‑Series Containers**
+### **Step 3 — Initialize Time‑Series Containers**
 
 The pipeline tracks:
 
@@ -3191,9 +3049,7 @@ t_series
 
 These arrays form the basis for scientific visualization.
 
----
-
-## **Step 4 — Reset CSV Samples**
+### **Step 4 — Reset CSV Samples**
 
 ```python
 csv_rows = []
@@ -3201,9 +3057,7 @@ csv_rows = []
 
 CSV samples are stored separately from time‑series data.
 
----
-
-## **Step 5 — Streaming Loop**
+### **Step 5 — Streaming Loop**
 
 For each sample:
 
@@ -3213,7 +3067,7 @@ for sample in stream:
 
 The pipeline performs:
 
-### **5.1 Posterior Update**
+#### **5.1 Posterior Update**
 
 ```python
 update_posterior(A, W)
@@ -3225,7 +3079,7 @@ This applies exponential smoothing:
 - drift sensitivity  
 - stable convergence  
 
-### **5.2 Drift Score**
+#### **5.2 Drift Score**
 
 ```python
 drift_score = compute_drift()
@@ -3233,7 +3087,7 @@ drift_score = compute_drift()
 
 KL‑like divergence between consecutive posteriors.
 
-### **5.3 Posterior Graph Construction**
+#### **5.3 Posterior Graph Construction**
 
 ```python
 B_post, W_post = build_posterior_graph(p_post, w_mean_post, threshold)
@@ -3241,7 +3095,7 @@ B_post, W_post = build_posterior_graph(p_post, w_mean_post, threshold)
 
 Thresholding produces a stable adjacency matrix.
 
-### **5.4 KL Matrix**
+#### **5.4 KL Matrix**
 
 ```python
 kl = (w_mean_post - w_mean_prev)**2 + (w_var_post - w_var_prev)**2
@@ -3249,7 +3103,7 @@ kl = (w_mean_post - w_mean_prev)**2 + (w_var_post - w_var_prev)**2
 
 This matrix is used by LK‑Bayes.
 
-### **5.5 LK‑Bayes Cycle Extraction**
+#### **5.5 LK‑Bayes Cycle Extraction**
 
 ```python
 cycle = lk_bayes_cycle(p_post, w_var_post, kl)
@@ -3257,7 +3111,7 @@ cycle = lk_bayes_cycle(p_post, w_var_post, kl)
 
 Posterior‑weighted optimization.
 
-### **5.6 Cycle Stability Analysis**
+#### **5.6 Cycle Stability Analysis**
 
 ```python
 cstats = cycle_stability_full(cycle, A, p_post, w_var_post, kl)
@@ -3270,7 +3124,7 @@ Computes:
 - variance stability  
 - KL stability  
 
-### **5.7 Posterior Statistics**
+#### **5.7 Posterior Statistics**
 
 ```python
 pstats = posterior_stats()
@@ -3278,7 +3132,7 @@ pstats = posterior_stats()
 
 Mean p and mean w.
 
-### **5.8 CSV Sampling**
+#### **5.8 CSV Sampling**
 
 Every `sample_rate` steps:
 
@@ -3286,13 +3140,11 @@ Every `sample_rate` steps:
 log_csv(t, M, pstats, {"H_score": cstats["match"]}, drift_score)
 ```
 
-### **5.9 Store Time‑Series Values**
+#### **5.9 Store Time‑Series Values**
 
 All metrics are appended to their respective arrays.
 
----
-
-## **Step 6 — Extract Stable Hamilton Path**
+### **Step 6 — Extract Stable Hamilton Path**
 
 ```python
 stable_path = extract_stable_hamilton_path(cycle, p_post, w_var_post, kl)
@@ -3300,9 +3152,7 @@ stable_path = extract_stable_hamilton_path(cycle, p_post, w_var_post, kl)
 
 This path represents the **most stable structural backbone** of the graph.
 
----
-
-## **Step 7 — Generate DataFrames**
+### **Step 7 — Generate DataFrames**
 
 ```python
 df = pd.DataFrame({...})
@@ -3315,9 +3165,7 @@ These DataFrames are used for:
 - exporting  
 - scientific analysis  
 
----
-
-## **Step 8 — Save CSV Samples**
+### **Step 8 — Save CSV Samples**
 
 ```python
 df_csv.to_csv("hamilton_stream_samples.csv")
@@ -3325,9 +3173,7 @@ df_csv.to_csv("hamilton_stream_samples.csv")
 
 This ensures reproducibility.
 
----
-
-## **Step 9 — Visualization**
+### **Step 9 — Visualization**
 
 The pipeline generates:
 
@@ -3342,9 +3188,7 @@ The pipeline generates:
 
 These plots form the **visual narrative** of the learning process.
 
----
-
-## **Step 10 — Return Results**
+### **Step 10 — Return Results**
 
 The pipeline returns:
 
@@ -3364,9 +3208,7 @@ The pipeline returns:
 
 This dictionary is the **complete scientific output** of the extractor.
 
----
-
-# **7.4 Deterministic Behavior**
+## **7.4 Deterministic Behavior**
 
 The pipeline is deterministic:
 
@@ -3383,9 +3225,7 @@ This is essential for:
 - scientific publications  
 - regression testing  
 
----
-
-# **7.5 Memory & Performance Characteristics**
+## **7.5 Memory & Performance Characteristics**
 
 ### **Memory**
 The pipeline stores:
@@ -3414,9 +3254,7 @@ The system is designed for:
 - reproducible workflows  
 - large‑scale experiments  
 
----
-
-# **7.6 Why Streaming Is Essential**
+## **7.6 Why Streaming Is Essential**
 
 Streaming is not optional — it is fundamental.
 
@@ -3437,9 +3275,7 @@ Sensor networks, communication systems, P2P overlays — all are streaming envir
 
 The pipeline mirrors real‑world conditions.
 
----
-
-# **7.7 Summary**
+## **7.7 Summary**
 
 This chapter established:
 
@@ -3457,8 +3293,6 @@ The streaming pipeline is the **operational backbone** of Project 29.
 
 # **Part 8/10 — Visualization & Graphviz Cycle Diagrams**  
 
----
-
 # **8. Visualization & Graphviz Cycle Diagrams**
 
 Visualization is a central component of the Hamilton Cycle Extractor (HCE).  
@@ -3475,29 +3309,25 @@ This chapter explains:
 
 Visualization is not an optional feature — it is a **diagnostic instrument**.
 
----
-
-# **8.1 Purpose of Visualization**
+## **8.1 Purpose of Visualization**
 
 Visualization serves four scientific goals:
 
-## **1. Understanding the Learning Process**
+### **1. Understanding the Learning Process**
 Posterior convergence, drift behavior, and cycle stability become visible.
 
-## **2. Diagnosing Random Source Behavior**
+### **2. Diagnosing Random Source Behavior**
 Stable sources produce smooth curves; drift sources produce abrupt changes.
 
-## **3. Evaluating Prediction Quality**
+### **3. Evaluating Prediction Quality**
 Plots reveal whether the extractor has learned the underlying distribution.
 
-## **4. Interpreting Hamiltonian Structures**
+### **4. Interpreting Hamiltonian Structures**
 Graphviz diagrams show how cycles evolve and which edges remain stable.
 
 Visualization turns the extractor into a **research tool**, not just an algorithm.
 
----
-
-# **8.2 Time‑Series Plots**
+## **8.2 Time‑Series Plots**
 
 The pipeline generates seven time‑series plots:
 
@@ -3511,9 +3341,7 @@ The pipeline generates seven time‑series plots:
 
 Each plot reveals a different aspect of the system.
 
----
-
-# **8.3 Posterior Mean p(t)**
+## **8.3 Posterior Mean p(t)**
 
 This plot shows:
 
@@ -3527,9 +3355,7 @@ $\bar{p}(t) = \frac{1}{n^2} \sum_{i,j} p_{\text{post}}(i,j,t)$
 
 This plot is the **primary indicator** of posterior convergence.
 
----
-
-# **8.4 Posterior Mean Weight(t)**
+## **8.4 Posterior Mean Weight(t)**
 
 This plot shows:
 
@@ -3543,9 +3369,7 @@ $\bar{w}(t) = \frac{1}{n^2} \sum_{i,j} w_{\text{mean}}(i,j,t)$
 
 Weight dynamics often reveal drift earlier than existence probabilities.
 
----
-
-# **8.5 Hamilton Cycle Match Rate**
+## **8.5 Hamilton Cycle Match Rate**
 
 This plot shows:
 
@@ -3559,9 +3383,7 @@ $\text{match}(C_t) = \frac{\#\text{edges of } C_t \text{ present in } A(t)}{n}$
 
 Match rate is the **structural stability indicator**.
 
----
-
-# **8.6 Drift Score**
+## **8.6 Drift Score**
 
 This plot shows:
 
@@ -3575,9 +3397,7 @@ $D(t) = \frac{1}{n^2} \sum_{i,j} \left[(w_{\text{mean}}(i,j,t) - w_{\text{mean}}
 
 Drift score is the **change‑point detector**.
 
----
-
-# **8.7 Hamilton Cycle Posterior Score**
+## **8.7 Hamilton Cycle Posterior Score**
 
 This plot shows:
 
@@ -3595,9 +3415,7 @@ $S_{ij} = 2p_{\text{post}} - w_{\text{var}} - 0.5\mathrm{KL}$
 
 Posterior score measures **Bayesian stability** of the cycle.
 
----
-
-# **8.8 Hamilton Cycle Variance Stability**
+## **8.8 Hamilton Cycle Variance Stability**
 
 This plot shows:
 
@@ -3611,9 +3429,7 @@ $\frac{1}{n} \sum_{(i,j)\in C_t} w_{\text{var}}(i,j,t)$
 
 Variance stability reveals **weight fluctuations**.
 
----
-
-# **8.9 Hamilton Cycle KL Stability**
+## **8.9 Hamilton Cycle KL Stability**
 
 This plot shows:
 
@@ -3627,9 +3443,7 @@ $\frac{1}{n} \sum_{(i,j)\in C_t} \mathrm{KL}_{ij}(t)$
 
 KL stability is the **most sensitive drift indicator**.
 
----
-
-# **8.10 Stable Hamilton Path Plot**
+## **8.10 Stable Hamilton Path Plot**
 
 The pipeline plots the most stable Hamilton path:
 
@@ -3644,9 +3458,7 @@ The pipeline plots the most stable Hamilton path:
 
 This plot reveals the **structural backbone** of the graph.
 
----
-
-# **8.11 Graphviz Hamilton Cycle Diagrams**
+## **8.11 Graphviz Hamilton Cycle Diagrams**
 
 The extractor uses Graphviz to visualize cycles:
 
@@ -3698,9 +3510,7 @@ Graphviz diagrams reveal:
 
 They are essential for **structural diagnostics**.
 
----
-
-# **8.12 Visualizing Multiple Time Steps**
+## **8.12 Visualizing Multiple Time Steps**
 
 The extractor supports:
 
@@ -3722,9 +3532,7 @@ This is extremely useful for:
 - presentations  
 - publications  
 
----
-
-# **8.13 Why Visualization Matters**
+## **8.13 Why Visualization Matters**
 
 Visualization is essential because:
 
@@ -3745,9 +3553,7 @@ Plots are artifacts that can be stored, shared, and analyzed.
 
 Visualization transforms the extractor into a **scientific instrument**.
 
----
-
-# **8.14 Summary**
+## **8.14 Summary**
 
 This chapter established:
 
@@ -3763,8 +3569,6 @@ Visualization is the **interpretation layer** of Project 29.
 ---
 
 # **Part 9/10 — Experiments & Empirical Analysis**  
-
----
 
 # **9. Experiments & Empirical Analysis**
 
@@ -3783,9 +3587,7 @@ This chapter presents:
 
 These experiments demonstrate how the extractor behaves under stable conditions, under drift during training, and under drift during prediction.
 
----
-
-# **9.1 Experimental Setup**
+## **9.1 Experimental Setup**
 
 All experiments use:
 
@@ -3806,7 +3608,7 @@ These represent the three fundamental classes of dynamic graph sources.
 
 ---
 
-# **9.2 Experiment A — Stable Source (Best Case)**
+## **9.2 Experiment A — Stable Source (Best Case)**
 
 ### **Generator**
 ```python
@@ -3886,9 +3688,7 @@ results_stable = ExtractHamiltonCycles(
 The extractor successfully reconstructs the underlying distribution and produces stable Hamilton cycles.  
 This is the **ideal learning scenario**.
 
----
-
-# **9.3 Experiment B — Drift During Training Phase**
+## **9.3 Experiment B — Drift During Training Phase**
 
 ### **Generator**
 ```python
@@ -3964,9 +3764,7 @@ results_drift_train = ExtractHamiltonCycles(
 The extractor learns the random source **after drift stops**.  
 This scenario is ideal for **change‑point detection** and **post‑drift stabilization analysis**.
 
----
-
-# **9.4 Experiment C — Drift During Prediction Phase**
+## **9.4 Experiment C — Drift During Prediction Phase**
 
 ### **Generator**
 ```python
@@ -4046,9 +3844,7 @@ It is ideal for:
 - anomaly detection  
 - structural collapse analysis  
 
----
-
-# **9.5 Prediction Quality Analysis**
+## **9.5 Prediction Quality Analysis**
 
 Prediction quality vector:
 
@@ -4075,9 +3871,7 @@ $\mathbf{Q}(t) = (\text{Acc}_A(t), \text{Err}_W(t), H(t), D(t))$
 
 Prediction quality reveals **how well the extractor has learned the underlying process**.
 
----
-
-# **9.6 Drift Detection Behavior**
+## **9.6 Drift Detection Behavior**
 
 ### **Stable Source**
 - drift score ≈ 0  
@@ -4095,9 +3889,7 @@ Prediction quality reveals **how well the extractor has learned the underlying p
 
 Drift detection is **highly sensitive** and **accurate**.
 
----
-
-# **9.7 Hamilton Cycle Stability Analysis**
+## **9.7 Hamilton Cycle Stability Analysis**
 
 ### **Stable Source**
 - stable cycles  
@@ -4116,9 +3908,7 @@ Drift detection is **highly sensitive** and **accurate**.
 
 Hamilton cycles are **excellent structural indicators** of random‑source stability.
 
----
-
-# **9.8 Scientific Conclusions**
+## **9.8 Scientific Conclusions**
 
 The experiments demonstrate:
 
@@ -4159,8 +3949,6 @@ For Project 29, they help illustrate:
 
 Each diagram below is accompanied by an explanation.
 
----
-
 ## **10.1 High‑Level System Architecture**
 
 ```mermaid
@@ -4187,8 +3975,6 @@ This diagram shows the **full conceptual pipeline**:
 6. Drift detection monitors structural change.  
 7. Visualization renders plots and diagrams.  
 8. Workspace stores all artifacts.
-
----
 
 ## **10.2 Module Interaction Diagram**
 
@@ -4252,8 +4038,6 @@ This diagram shows **module‑level interactions**:
 - LK‑Bayes produces cycles and stability metrics.  
 - Visualization renders results.
 
----
-
 ## **10.3 Posterior Engine Workflow**
 
 ```mermaid
@@ -4284,8 +4068,6 @@ This diagram shows how the posterior engine:
 - computes drift  
 - constructs the posterior graph  
 - produces posterior statistics  
-
----
 
 ## **10.4 LK‑Bayes Optimization Flow**
 
@@ -4319,8 +4101,6 @@ This diagram shows the **iterative nature** of LK‑Bayes:
 7. Produce final cycle.  
 8. Compute stability metrics.  
 9. Extract stable path.
-
----
 
 ## **10.5 Streaming Pipeline Diagram**
 
@@ -4360,8 +4140,6 @@ This diagram shows the **operational flow** of the pipeline:
 - visualization  
 - final output  
 
----
-
 ## **10.6 Data‑Flow Diagram**
 
 ```mermaid
@@ -4379,8 +4157,6 @@ F --> G[Workspace]
 This diagram shows the **data transformation chain**:
 
 Raw data → posterior → posterior graph → cycle → stability → visualization → workspace.
-
----
 
 ## **10.7 Drift‑Detection Diagram**
 
@@ -4403,8 +4179,6 @@ This diagram shows how drift detection works:
 - compare consecutive posteriors  
 - compute KL‑like divergence  
 - classify stability vs drift  
-
----
 
 # **10.8 Summary of Diagram Set**
 
@@ -4438,28 +4212,24 @@ It integrates:
 This final chapter outlines the **future extensions**, **research directions**, and **concluding insights** that elevate Project 29 from a working prototype to a 
 research‑grade framework suitable for publication, deployment, and further exploration.
 
----
-
-# **11.1 Future Extensions**
+## **11.1 Future Extensions**
 
 The modular architecture of Project 29 makes it straightforward to extend the system.  
 Below are the most promising directions.
 
----
-
-## **11.1.1 GPU Acceleration (CuPy / Numba‑CUDA)**
+### **11.1.1 GPU Acceleration (CuPy / Numba‑CUDA)**
 
 The posterior engine and LK‑Bayes heuristic operate on \(n \times n\) matrices.  
 For large graphs (e.g., \(n = 2000\)), GPU acceleration can dramatically improve performance.
 
-### **Targets for GPU acceleration**
+#### **Targets for GPU acceleration**
 - posterior updates  
 - KL drift computation  
 - edge‑score matrix computation  
 - 2‑opt scoring loops  
 - stability metrics  
 
-### **Benefits**
+#### **Benefits**
 - real‑time processing  
 - large‑scale experiments  
 - cloud deployment  
@@ -4467,9 +4237,7 @@ For large graphs (e.g., \(n = 2000\)), GPU acceleration can dramatically improve
 
 GPU acceleration transforms the extractor into a **high‑performance Bayesian graph engine**.
 
----
-
-## **11.1.2 Cython Optimization of LK‑Bayes**
+### **11.1.2 Cython Optimization of LK‑Bayes**
 
 The LK‑Bayes heuristic is computationally intensive.  
 A Cython implementation of:
@@ -4486,9 +4254,7 @@ would yield:
 
 Our code already includes a **Cython hook**, making this extension natural.
 
----
-
-## **11.1.3 Multi‑Start LK‑Bayes Optimization**
+### **11.1.3 Multi‑Start LK‑Bayes Optimization**
 
 Currently, LK‑Bayes starts from a single random permutation.  
 A multi‑start strategy:
@@ -4497,7 +4263,7 @@ A multi‑start strategy:
 - runs LK‑Bayes for each  
 - selects the best cycle by posterior score  
 
-### **Benefits**
+#### **Benefits**
 - improved cycle quality  
 - robustness under drift  
 - better stability metrics  
@@ -4505,9 +4271,7 @@ A multi‑start strategy:
 
 This extension is ideal for scientific experiments.
 
----
-
-## **11.1.4 Real‑Time Dashboard (Web UI)**
+### **11.1.4 Real‑Time Dashboard (Web UI)**
 
 A lightweight dashboard could display:
 
@@ -4532,9 +4296,7 @@ A dashboard can be built using:
 - Streamlit  
 - WebAssembly (Pyodide)  
 
----
-
-## **11.1.5 Integration with KServe / Docker / Crossplane**
+### **11.1.5 Integration with KServe / Docker / Crossplane**
 
 Your folder structure already supports:
 
@@ -4551,9 +4313,7 @@ This enables:
 
 Project 29 can become a **cloud‑native Bayesian graph‑analysis service**.
 
----
-
-## **11.1.6 Graph Neural Networks (GNNs) for Posterior Prediction**
+### **11.1.6 Graph Neural Networks (GNNs) for Posterior Prediction**
 
 A future extension could replace or augment the posterior engine with:
 
@@ -4576,9 +4336,7 @@ This hybrid approach combines:
 
 It is a promising research direction.
 
----
-
-## **11.1.7 Hamilton Cycle Ensembles**
+### **11.1.7 Hamilton Cycle Ensembles**
 
 Instead of extracting a single cycle, the system could compute:
 
@@ -4596,9 +4354,7 @@ This yields deeper insight into:
 
 This extension is ideal for network‑stability research.
 
----
-
-# **11.2 Scientific Impact**
+## **11.2 Scientific Impact**
 
 Project 29 demonstrates that:
 
@@ -4618,9 +4374,7 @@ Project 29 demonstrates that:
 
 Project 29 is not just an algorithm — it is a **research framework** for dynamic graph analysis.
 
----
-
-# **11.3 Concluding Remarks**
+## **11.3 Concluding Remarks**
 
 The Hamilton Cycle Extractor (HCE) represents a synthesis of several deep and traditionally separate fields: **graph theory**, **Bayesian statistics**, **stochastic processes**, **heuristic optimization**, 
 **change‑point detection**, **scientific visualization**, and **reproducible computing**.  
@@ -4678,9 +4432,7 @@ diagnostics, network stability analysis, anomaly detection, distributed systems,
 Project 29 stands as a **modern, Bayesian, reproducible, and extensible framework** for Hamilton‑cycle extraction in dynamic weighted graphs. It demonstrates that probabilistic learning and combinatorial optimization can be integrated 
 into a single coherent system capable of analyzing complex, noisy, drifting graph streams. It is not merely an algorithm — it is a research platform, a diagnostic tool, and a foundation for future exploration in dynamic graph analysis.
 
----
-
-# **11.4 Final Summary of the Entire Report**
+## **11.4 Final Summary of the Entire Report**
 
 Across Posts 1–10, we have constructed a complete technical report that documents the Hamilton Cycle Extractor in depth. Each chapter builds on the previous one, forming a coherent narrative that spans motivation, theory, 
 architecture, implementation, experimentation, and future development.
@@ -4723,7 +4475,7 @@ coherent final perspective.
 
 ---
 
-# 12 Appendix – Functionality and inner workings of the Hamilton Cycle Extractor code
+# Part 12 Appendix – Functionality and inner workings of the Hamilton Cycle Extractor code
 
 This appendix explains the complete pipeline implemented in the provided code: from synthetic graph-stream generation, through Bayesian posterior updates and drift detection, to Hamilton‑cycle extraction, 
 stability analysis, logging, and visualization.
@@ -5693,7 +5445,7 @@ def plot_hamilton_graphviz(
     return dot
 ````
 
-### 12.1 Imports, global configuration, and CSV logging
+## 12.1 Imports, global configuration, and CSV logging
 
 The code starts by importing numerical, data‑frame, plotting, typing, JIT‑compilation, and graph visualization libraries:
 
@@ -5710,7 +5462,7 @@ plt.style.use("seaborn-v0_8")
 
 which ensures consistent, publication‑ready time‑series plots.
 
-#### CSV logger
+### CSV logger
 
 A global list `csv_rows: List[Dict[str, Any]] = []` collects sampled statistics. The function `log_csv(...)` builds a single row per sampled time step:
 
@@ -5733,13 +5485,11 @@ csv_rows.append(row)
 This row fuses **true source parameters** (`p_true`, `F_true`) with **posterior summaries** and **cycle stability metrics** (`H_score`) plus a **drift score**. Later, these rows are converted to 
 a `DataFrame` and written to `hamilton_stream_samples.csv`, giving a compact, analyzable record of the streaming experiment.
 
----
-
-### 12.2 Stream generators and drift simulation
+## 12.2 Stream generators and drift simulation
 
 The three generator functions define different regimes of dynamic weighted graphs:
 
-#### 12.2.1 `drift_random(...)`
+### 12.2.1 `drift_random(...)`
 
 This helper produces scalar drift values from a normal distribution:
 
@@ -5749,7 +5499,7 @@ return float(np.random.normal(mu, sigma))
 
 It explicitly coerces `mu` and `sigma` to Python floats and returns a float, never a NumPy array, ensuring compatibility when applied element‑wise to arrays representing probabilities or weights.
 
-#### 12.2.2 Stable source: `generate_stream_stable(...)`
+### 12.2.2 Stable source: `generate_stream_stable(...)`
 
 This generator models a **stationary random graph source**:
 
@@ -5773,7 +5523,7 @@ yield {"A": A_t, "W": W_t, "M": M_t}
 
 which form the input stream for the main pipeline.
 
-#### 12.2.3 Drift in training: `generate_stream_drift_training(...)`
+### 12.2.3 Drift in training: `generate_stream_drift_training(...)`
 
 Here, the **training phase** is non‑stationary, while prediction is stable:
 
@@ -5784,7 +5534,7 @@ Here, the **training phase** is non‑stationary, while prediction is stable:
 
 Conceptually, this applies small random shifts to the entire parameter arrays, simulating **slow drift** in edge existence and weights. The metadata flags this as `"drift_type": "train"`.
 
-#### 12.2.4 Drift in prediction: `generate_stream_drift_prediction(...)`
+### 12.2.4 Drift in prediction: `generate_stream_drift_prediction(...)`
 
 This is symmetric to the previous case, but drift is activated for `t >= T_train`:
 
@@ -5797,9 +5547,7 @@ if t >= T_train:
 
 Thus, the model is trained on a stable source and then exposed to a drifting environment, testing its ability to detect and adapt to changes during prediction.
 
----
-
-### 12.3 Plotting utilities
+## 12.3 Plotting utilities
 
 The function `plot_time_series(df, column, title)` provides a generic time‑series visualization:
 
@@ -5815,11 +5563,9 @@ plt.show()
 
 It assumes the DataFrame has a time index `t` and a column of interest (e.g. `mean_p`, `drift`, `H_score`). This is used in the main pipeline to visualize posterior behavior, drift, and cycle stability over time.
 
----
+## 12.4 Posterior engine and drift detection
 
-### 12.4 Posterior engine and drift detection
-
-#### 12.4.1 Global posterior parameters
+### 12.4.1 Global posterior parameters
 
 The code declares global arrays:
 
@@ -5846,7 +5592,7 @@ w_mean_post = np.full((n, n), 0.5, dtype=np.float32)
 w_var_post = np.full((n, n), 0.05, dtype=np.float32)
 ```
 
-#### 12.4.2 Posterior update: `update_posterior(A, W)`
+### 12.4.2 Posterior update: `update_posterior(A, W)`
 
 This function performs **exponential smoothing** of the posterior:
 
@@ -5864,7 +5610,7 @@ Key points:
 - The **weight posterior** is updated similarly, with variance estimated from squared deviations.
 - Previous values are stored before updating, enabling drift measurement.
 
-#### 12.4.3 Drift score: `compute_drift()`
+### 12.4.3 Drift score: `compute_drift()`
 
 Drift is quantified as a mean squared change in posterior parameters:
 
@@ -5875,7 +5621,7 @@ return float(np.mean(diff))
 
 This acts as a **KL‑like proxy**: large changes in mean or variance indicate potential drift in the underlying source. The scalar drift score is logged and plotted over time.
 
-#### 12.4.4 Posterior statistics and graph construction
+### 12.4.4 Posterior statistics and graph construction
 
 `posterior_stats()` returns simple summaries:
 
@@ -5896,14 +5642,12 @@ return B, Wp
 
 Here, `B` is a binary adjacency matrix of edges deemed sufficiently probable, and `Wp` carries the posterior weights. This graph is the basis for Hamilton‑cycle extraction.
 
----
-
-### 12.5 LK‑Bayes heuristic and stability analysis
+## 12.5 LK‑Bayes heuristic and stability analysis
 
 > *"Führt eine vereinfachte Lin-Kernighan-Heuristik durch,  
 > die Posterior-Informationen nutzt."*
 
-#### 12.5.1 Edge scoring: `edge_score(...)`
+### 12.5.1 Edge scoring: `edge_score(...)`
 
 Each edge \((u, v)\) receives a posterior‑based score:
 
@@ -5926,7 +5670,7 @@ Interpretation:
 - High **existence probability** increases the score.
 - High **variance** or **KL‑change** penalizes the score, preferring stable, low‑drift edges.
 
-#### 12.5.2 Local 2‑opt move: `two_opt(...)`
+### 12.5.2 Local 2‑opt move: `two_opt(...)`
 
 `two_opt` performs a classic TSP‑style move:
 
@@ -5938,7 +5682,7 @@ return new_cycle
 
 It reverses a segment of the cycle, exploring a neighboring permutation in the Hamilton‑cycle space.
 
-#### 12.5.3 LK‑Bayes cycle optimization: `lk_bayes_cycle(...)`
+### 12.5.3 LK‑Bayes cycle optimization: `lk_bayes_cycle(...)`
 
 The heuristic starts from a random permutation:
 
@@ -5954,7 +5698,7 @@ and iteratively applies 2‑opt moves:
 
 The loop continues until no improvement is found or `max_iter` is reached. The result is a **posterior‑aware Hamilton cycle** that favors stable, high‑probability edges.
 
-#### 12.5.4 Numba‑accelerated stability: `cycle_stability_numba(...)`
+### 12.5.4 Numba‑accelerated stability: `cycle_stability_numba(...)`
 
 This JIT‑compiled function measures how well the cycle matches the current adjacency `A`:
 
@@ -5968,7 +5712,7 @@ return matches / n
 
 It returns the fraction of cycle edges that actually exist in the observed graph—an empirical **match rate**.
 
-#### 12.5.5 Full stability metrics: `cycle_stability_full(...)`
+### 12.5.5 Full stability metrics: `cycle_stability_full(...)`
 
 This function aggregates several metrics:
 
@@ -5979,7 +5723,7 @@ This function aggregates several metrics:
 
 These metrics are logged and plotted, providing a multi‑dimensional view of cycle stability.
 
-#### 12.5.6 Stable path extraction: `extract_stable_hamilton_path(...)`
+### 12.5.6 Stable path extraction: `extract_stable_hamilton_path(...)`
 
 From the final cycle, the code extracts a **sub‑path of most stable edges**:
 
@@ -5989,9 +5733,7 @@ From the final cycle, the code extracts a **sub‑path of most stable edges**:
 
 The result is a list of node indices representing the **most robust Hamilton path segment** under the posterior model.
 
----
-
-### 12.6 Main pipeline: `ExtractHamiltonCycles(...)`
+## 12.6 Main pipeline: `ExtractHamiltonCycles(...)`
 
 This function orchestrates the entire process:
 
@@ -6075,9 +5817,7 @@ This function orchestrates the entire process:
 
 This makes `ExtractHamiltonCycles` a **single entry point** for experiments, suitable for notebooks, scripts, or integration into larger systems.
 
----
-
-### 12.7 Graphviz visualization: `plot_hamilton_graphviz(...)`
+## 12.7 Graphviz visualization: `plot_hamilton_graphviz(...)`
 
 Finally, the code provides a Graphviz‑based visualization of the Hamilton cycle:
 
@@ -6110,9 +5850,7 @@ dot.attr(rankdir="LR")
 
 The function returns a `Digraph` object that can be rendered to PNG, PDF, or displayed inline in Jupyter, providing an intuitive visual summary of the **structure and stability** of the extracted Hamilton cycle.
 
----
-
-### 12.8 Summary
+## 12.8 Summary
 
 This code implements a **complete, Bayesian, streaming Hamilton‑cycle analysis pipeline**:
 
