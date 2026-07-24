@@ -1688,6 +1688,124 @@ The inference engine combines static type hints, semantic intent extraction, and
 
 [![PyTester_GUI](https://img.shields.io/badge/PyTester_GUI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd229e37a53c66389ed5e1f82f568bd5aad0e3c0/PyTesterGUI/project28.md)
 
+- ### **29. Bayesian Extraction of Hamiltonian Cycles – Sep 2026**
+
+> ## **Executive Summary: Probabilistic Graph Reconstruction, Drift Detection & Stability‑Aware Cycle Extraction**
+>
+> **Business Problem**  
+>Modern organizations increasingly rely on **dynamic, noisy, partially observed graphs** for:
+>
+> - communication networks  
+> - distributed systems  
+> - sensor networks  
+> - cyber‑monitoring  
+> - reliability engineering  
+> - streaming analytics  
+>
+>Yet real‑world graph streams introduce structural risks:
+>
+> - missing or unstable edges  
+> - fluctuating weights  
+> - temporal drift in connectivity  
+> - non‑stationary behavior  
+> - unreliable cycle extraction under noise  
+> - lack of reproducible graph‑analytic pipelines  
+>
+>Traditional graph‑analysis workflows depend on:
+>
+> - static snapshots  
+> - deterministic heuristics  
+> - non‑probabilistic scoring  
+> - ad‑hoc cycle extraction  
+> - manual stability checks  
+> - opaque visualizations  
+>
+>These constraints reduce interpretability, increase operational risk, and obscure structural changes in evolving networks.  
+>Modern graph‑analytics pipelines require **Bayesian inference**, **drift‑aware diagnostics**, and **reproducible cycle extraction** — all within offline‑capable, auditable environments.
+>
+> **Solution Overview**  
+>Project 29 introduces a **Bayesian, drift‑aware, streaming graph‑analysis ecosystem** that automates:
+>
+> - **posterior updates** → probabilistic reconstruction of weighted edges  
+> - **edge‑score matrix computation** → posterior‑driven scoring  
+> - **LK‑Bayes cycle extraction** → local optimization + 2‑opt refinement  
+> - **drift detection** → KL‑like divergence on posterior mean/variance  
+> - **cycle‑stability metrics** → score evolution + variance‑based stability  
+> - **graph‑stream visualization** → posterior evolution, drift plots, cycle snapshots  
+> - **workspace‑based reproducibility** → structured artifacts for audits  
+>
+>Project 29 transforms graph analysis into a **probabilistic, explainable, and reproducible cycle‑extraction pipeline**, enabling:
+>
+> - stable Hamiltonian cycles under noise  
+> - transparent posterior inference  
+> - drift‑aware diagnostics  
+> - reproducible streaming environments  
+> - stability‑driven decision support  
+>
+> **Business Impact**
+>
+>Organizations gain:
+>
+> - **probabilistic graph reconstruction** from noisy streams  
+> - **drift detection** for communication and sensor networks  
+> - **stable Hamiltonian cycles** for routing, monitoring, diagnostics  
+> - **cycle‑stability metrics** for risk‑aware decision‑making  
+> - **reduced operational overhead** through Bayesian automation  
+> - **reproducible artifacts** for compliance and audits  
+> - **CI/CD‑ready analytics pipeline**  
+>
+>Project 29 strengthens graph‑analytic pipelines, future‑proofs network diagnostics, and provides a practical foundation for probabilistic cycle extraction — without relying on proprietary cloud services.
+>
+> **Consulting Relevance**
+>
+>For consultants, Project 29 demonstrates how to operationalize:
+>
+> - Bayesian graph reconstruction  
+> - probabilistic cycle extraction  
+> - drift‑aware diagnostics  
+> - reproducible streaming pipelines  
+> - stability‑driven decision support  
+> - structured workspace management  
+>
+>It is directly applicable to:
+>
+> - distributed systems  
+> - secure‑network monitoring  
+> - anomaly detection  
+> - reliability engineering  
+> - cyber‑monitoring  
+> - scientific graph analysis  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to telecom, defense, public sector, manufacturing, logistics, and critical infrastructure.
+>
+> **Compliance / ESG / Risk Management**
+>
+>Project 29 supports governance through:
+>
+> - auditable posterior updates  
+> - reproducible inference results  
+> - explainable drift‑detection logic  
+> - transparent stability metrics  
+> - structured workspace for long‑term retention  
+>
+>This ensures graph‑analytic pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and risk‑aware engineering.
+
+---
+
+#### **Abstract**
+
+**Bayesian Extraction of Hamiltonian Cycles** is a modular, probabilistic graph‑analysis architecture designed for environments where **uncertainty, drift, and reproducibility** are central concerns. It unifies posterior inference, probabilistic edge scoring, LK‑Bayes cycle extraction, 2‑opt refinement, drift detection, stability metrics, and deterministic visualization into a coherent, reproducible streaming stack.
+
+The posterior engine tracks mean and variance of edge weights over time, enabling KL‑like drift detection and probabilistic scoring. The cycle‑extraction engine applies LK‑style local optimization and 2‑opt refinement to produce stable Hamiltonian cycles under noise. The stability layer quantifies robustness via score evolution and variance‑based metrics. The visualization layer generates deterministic PNG plots for posterior evolution, drift scores, and cycle stability. All artifacts are stored in a structured workspace, enabling reproducible analytics pipelines and compliance‑ready documentation (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/BayesianHamiltonCyclesExtractor/project29.md#13--references) 1 - 3 below).
+
+- **Core goals:** Provide a Bayesian, drift‑aware, reproducible cycle‑extraction architecture with structured artifacts and transparent inference logic.  
+- **Audience:** Graph‑analytics engineers, network‑diagnostics teams, reliability architects, scientific‑computing practitioners, and consultants designing reproducible graph pipelines.  
+- **Why modularity matters:** Separating posterior inference, scoring, extraction, drift detection, stability analysis, and visualization prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** Bayesian inference, structured cycle artifacts, and unified drift/stability reports ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+
+[![Bayesian_Hamilton_Cycle_Extraction](https://img.shields.io/badge/Bayesian_Hamilton_Cycle_Extraction-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3110ddbe35d8b1dc833c4086532dc0ee25090b18/BayesianHamiltonCyclesExtractor/project29.md)
+
 ---
 
 
