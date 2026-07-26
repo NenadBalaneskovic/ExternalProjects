@@ -1072,7 +1072,6 @@ Detected entities are normalized into Presidio’s internal representation.
 
 The detection workflow can be illustrated using a Mermaid diagram:
 
-````markdown
 ```mermaid
 flowchart LR
     A[Input Text] --> B[AnalyzerEngine]
@@ -1082,7 +1081,6 @@ flowchart LR
     E --> F[Entity Normalization]
     F --> G[PII Entities Detected]
 ```
-````
 
 This diagram captures the sequential flow of detection:
 
@@ -1202,7 +1200,6 @@ Below is a GitHub‑friendly benchmarking table comparing recognizers:
 | Regex             | 0.99     | 1.00      | 0.98   | 0.99     | 1            | Perfect for structured IDs |
 | GLiNER            | 0.90     | 0.92      | 0.88   | 0.90     | 18           | Fast transformer alternative |
 | SpanMarker        | 0.92     | 0.94      | 0.90   | 0.92     | 25           | Excellent span classification |
-```
 ````
 
 This table illustrates the trade‑offs between speed and accuracy.
@@ -1218,7 +1215,6 @@ This table illustrates the trade‑offs between speed and accuracy.
 | Regex        | Very Low         | Very Low         | Deterministic |
 | GLiNER       | Medium           | Low              | Good recall |
 | SpanMarker   | Low              | Low              | Strong performance |
-```
 ````
 
 ## **3.9 Domain‑Specific Tuning**
@@ -1252,7 +1248,6 @@ Presidio’s multi‑recognizer approach mitigates these challenges.
 
 ## **3.11 Mermaid Diagram: Recognizer Orchestration**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Input Text] --> B[Recognizer Registry]
@@ -1269,7 +1264,6 @@ flowchart TD
     H --> I[Entity Resolution]
     I --> J[Final PII Entities]
 ```
-````
 
 ## **3.12 Pipeline Architecture Diagram: Detection System**
 
@@ -1423,7 +1417,6 @@ This enables reversible pseudonymization.
 
 Below is a GitHub‑friendly Mermaid diagram illustrating the pseudonymization pipeline:
 
-````markdown
 ```mermaid
 flowchart LR
     A[Original Value] --> B[SHA-256 Hashing]
@@ -1432,7 +1425,6 @@ flowchart LR
     D --> E[Mapping Table Store]
     E --> F[Pseudonymized Output]
 ```
-````
 
 This diagram captures the sequential flow:
 
@@ -1554,7 +1546,6 @@ Below is a GitHub‑friendly benchmarking table evaluating pseudonymization perf
 | Prefixing                | 0.01         | Negligible         | Constant time |
 | Mapping Table Lookup     | 0.10         | Depends on size    | O(1) for hash maps |
 | Mapping Table Insert     | 0.12         | Depends on size    | O(1) for hash maps |
-```
 ````
 
 ---
@@ -1569,12 +1560,10 @@ Below is a GitHub‑friendly benchmarking table evaluating pseudonymization perf
 | 8 hex chars       | Low                    | Medium datasets |
 | 10 hex chars      | Very Low               | Large datasets |
 | 16 hex chars      | Extremely Low          | Enterprise datasets |
-```
 ````
 
 ## **4.11 Mermaid Diagram: Re‑Identification Threat Model**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Pseudonymized Data] --> B[Dictionary Attack]
@@ -1586,7 +1575,6 @@ flowchart TD
     D --> F
     E --> F
 ```
-````
 
 ## **4.12 Best Practices for Deterministic Pseudonymization**
 
@@ -1613,7 +1601,6 @@ Salting increases security but reduces determinism.
 
 ## **4.13 Mermaid Diagram: Mapping Table Governance**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Mapping Table] --> B[Encryption]
@@ -1622,7 +1609,6 @@ flowchart LR
     A --> E[Backup & Recovery]
     A --> F[Rotation & Expiration]
 ```
-````
 
 ## **4.14 Integration with Presidio**
 
@@ -1702,7 +1688,6 @@ This approach is simple, elegant, and effective for demonstration purposes. Howe
 
 Below is a GitHub‑friendly Mermaid diagram illustrating the inversion workflow:
 
-````markdown
 ```mermaid
 flowchart LR
     A[Pseudonymized Text] --> B[Mapping Table Lookup]
@@ -1710,7 +1695,6 @@ flowchart LR
     C --> D[Replace Tokens with Originals]
     D --> E[Reconstructed Output]
 ```
-````
 
 This diagram captures the essential flow:
 
@@ -1798,7 +1782,6 @@ Mapping tables must be treated as highly sensitive assets.
 
 ## **5.6 Mermaid Diagram: Mapping Table Governance**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Mapping Table] --> B[Encryption at Rest]
@@ -1807,7 +1790,6 @@ flowchart TD
     A --> E[Backup & Recovery]
     A --> F[Rotation & Expiration]
 ```
-````
 
 ## **5.7 Secure Storage of Inverse Maps**
 
@@ -1915,7 +1897,6 @@ Authorized personnel may misuse access.
 
 ## **5.10 Mermaid Diagram: Re‑Identification Threat Model**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Pseudonymized Data] --> B[Dictionary Attack]
@@ -1927,7 +1908,6 @@ flowchart LR
     D --> F
     E --> F
 ```
-````
 
 ## **5.11 Benchmarking Table: Inversion Performance**
 
@@ -1938,7 +1918,6 @@ flowchart LR
 | Token Replacement        | 0.20         | Low                | Depends on text length |
 | Full Text Inversion      | 0.35         | Low                | Very fast |
 | Mapping Table Load       | 5.00         | Medium             | Depends on storage |
-```
 ````
 
 ---
@@ -1953,7 +1932,6 @@ flowchart LR
 | Audit Logging           | High     | Storage overhead | Essential for compliance |
 | Backup & Recovery       | High     | Complexity | Must be automated |
 | Rotation Policies       | Medium   | Operational overhead | Useful for long-term security |
-```
 ````
 
 ## **5.13 Best Practices for Inversion & Recovery**
@@ -2167,7 +2145,6 @@ If keys are deleted, encryption becomes irreversible.
 
 Below is a GitHub‑friendly Mermaid diagram illustrating the branching logic between invertible and non‑invertible operators:
 
-````markdown
 ```mermaid
 flowchart TD
     A[Detected PII] --> B{Operator Type}
@@ -2184,7 +2161,6 @@ flowchart TD
     J --> I
     J --> G
 ```
-````
 
 This diagram illustrates:
 
@@ -2232,8 +2208,6 @@ This diagram illustrates:
 | Encrypt       | 0.30         | Medium             | Medium/High      | Irreversible without keys |
 ````
 
----
-
 ## **6.10 Benchmarking Table: Utility Impact**
 
 ````markdown
@@ -2266,7 +2240,6 @@ GDPR Recital 26 requires irreversible anonymization for data to be considered no
 
 ## **6.12 Mermaid Diagram: Non‑Invertible Anonymization Pipeline**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Input Text] --> B[AnalyzerEngine]
@@ -2275,7 +2248,6 @@ flowchart LR
     D --> E[Replace/Redact/Hash/Encrypt]
     E --> F[Irreversible Output]
 ```
-````
 
 ## **6.13 Threat Models for Non‑Invertible Anonymization**
 
@@ -2348,6 +2320,7 @@ Chapter 6 provides a comprehensive exploration of non‑invertible text anonymiz
 - Presidio integration  
 
 This chapter establishes the foundation for evaluating structured‑data anonymization (Chapter 7), synthetic‑data generation (Chapter 8), and threat‑model robustness (Chapter 13).
+
 ---
 
 # **7. SDV for Tabular Data: Synthetic Generation**  
@@ -2507,7 +2480,6 @@ GaussianCopula assumes that variables follow a multivariate Gaussian distributio
 
 ## **7.7 Mermaid Diagram: SDV Model Selection Flow**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Input Table] --> B[Metadata Detection]
@@ -2519,7 +2491,6 @@ flowchart TD
     E --> G
     F --> G
 ```
-````
 
 This diagram illustrates how SDV selects models based on data characteristics.
 
@@ -2632,8 +2603,6 @@ Copulas provide utility for:
 | GaussianCopula   | Very Low      | Medium   | Very Low         | Medium  | Fastest model |
 | Copula Models    | Low           | Medium   | Low              | Medium  | Good for numerical data |
 ````
-
----
 
 ## **7.12 Benchmarking Table: SDMetrics Scores**
 
@@ -3217,7 +3186,6 @@ This ensures:
 
 GitHub‑friendly diagram:
 
-````markdown
 ```mermaid
 flowchart LR
     A[Pseudonymized Table] --> B[Inverse Mapping Table]
@@ -3225,7 +3193,6 @@ flowchart LR
     C --> D[Replace Tokens with Originals]
     D --> E[Recovered Table]
 ```
-````
 
 This diagram captures the essential inversion pipeline:
 
@@ -3297,7 +3264,6 @@ Distributed storage supports:
 
 ## **9.5 Mermaid Diagram: Mapping‑Table Architecture**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Mapping Table] --> B[In-Memory Cache]
@@ -3307,7 +3273,6 @@ flowchart TD
     D --> E
     E --> F[Inversion Pipeline]
 ```
-````
 
 This diagram illustrates a scalable mapping‑table architecture.
 
@@ -3359,7 +3324,6 @@ Rare but possible if truncation length is too short.
 
 ## **9.7 Mermaid Diagram: Partial Inversion Risk Flow**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Pseudonymized Value] --> B{Mapping Exists?}
@@ -3367,7 +3331,6 @@ flowchart LR
     B --> D[No: Partial Inversion]
     D --> E[Risk: Incomplete Recovery]
 ```
-````
 
 ## **9.8 Secure Key Management**
 
@@ -3476,7 +3439,6 @@ Mapping tables must be:
 
 ## **9.10 Mermaid Diagram: Mapping‑Table Security**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Mapping Table] --> B[Encryption]
@@ -3485,7 +3447,6 @@ flowchart TD
     A --> E[Backup & Recovery]
     A --> F[Rotation & Expiration]
 ```
-````
 
 ## **9.11 Referential Integrity in Inversion**
 
@@ -3712,18 +3673,15 @@ Synthetic data satisfies this definition when properly trained and evaluated.
 
 ## **10.3 Mermaid Diagram: Synthetic Data Pipeline**
 
-GitHub‑friendly diagram:
-
-````markdown
 ```mermaid
 flowchart TD
-    A[Original Table] --> B[Metadata Detection]
-    B --> C[Model Training (CTGAN/Copula/GaussianCopula)]
-    C --> D[Synthetic Sampling]
-    D --> E[SDMetrics Evaluation]
-    E --> F[Privacy-Preserving Synthetic Table]
+    A["Original Table"] --> B["Metadata Detection"]
+    B --> C["Model Training (CTGAN / Copula / GaussianCopula)"]
+    C --> D["Synthetic Sampling"]
+    D --> E["SDMetrics Evaluation"]
+    E --> F["Privacy-Preserving Synthetic Table"]
 ```
-````
+
 
 This diagram illustrates the full synthetic‑data pipeline:
 
@@ -3809,7 +3767,6 @@ Synthetic data reproduces exact distributions of sensitive attributes.
 
 ## **10.6 Mermaid Diagram: Memorization Risk Flow**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Training Data] --> B[Model Training]
@@ -3818,7 +3775,6 @@ flowchart LR
     C --> E[No: Safe Synthetic Data]
     D --> F[Mitigation Strategies]
 ```
-````
 
 ## **10.7 Differential Privacy Extensions**
 
@@ -4022,7 +3978,6 @@ Synthetic data must avoid both.
 
 ## **10.15 Mermaid Diagram: Collapse vs. Memorization**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Model Training] --> B{Mode Collapse?}
@@ -4032,7 +3987,6 @@ flowchart LR
     D --> F[Balanced Training]
     E --> F
 ```
-````
 
 ## **10.16 Synthetic Data as Non‑Invertible Anonymization**
 
@@ -5295,7 +5249,6 @@ Presidio is naturally suited for microservice deployment.
 
 GitHub‑friendly Mermaid diagram:
 
-````markdown
 ```mermaid
 flowchart TD
     A[Client Applications] --> B[API Gateway]
@@ -5305,7 +5258,6 @@ flowchart TD
     D --> F[Anonymized Output]
     F --> G[Storage / Downstream Systems]
 ```
-````
 
 This topology separates detection and anonymization into independent services.
 
@@ -5366,7 +5318,6 @@ Airflow and Prefect are ideal orchestrators.
 
 GitHub‑friendly Mermaid diagram:
 
-````markdown
 ```mermaid
 flowchart TD
     A[Raw Data Ingestion] --> B[Airflow / Prefect Scheduler]
@@ -5378,7 +5329,6 @@ flowchart TD
     E --> H[Synthetic Data Storage]
     H --> I[Downstream ML Pipelines]
 ```
-````
 
 ## **14.4.2 Airflow DAG Example (Conceptual)**
 
@@ -5431,7 +5381,6 @@ Presidio supports real‑time anonymization via:
 
 GitHub‑friendly Mermaid diagram:
 
-````markdown
 ```mermaid
 flowchart LR
     A[Client Request] --> B[Load Balancer]
@@ -5440,7 +5389,6 @@ flowchart LR
     D --> E[AnonymizerEngine]
     E --> F[Response to Client]
 ```
-````
 
 ## **14.5.2 Latency Considerations**
 
@@ -5486,7 +5434,6 @@ This is the most powerful architecture for privacy‑preserving analytics.
 
 GitHub‑friendly Mermaid diagram:
 
-````markdown
 ```mermaid
 flowchart TD
     A[Raw Text + Tables] --> B[Presidio Detection]
@@ -5498,7 +5445,6 @@ flowchart TD
     G --> H[SDMetrics Evaluation]
     H --> I[Downstream ML Training]
 ```
-````
 
 ## **14.6.2 Benefits of Hybrid Pipelines**
 
@@ -5546,7 +5492,6 @@ Enterprise deployment requires:
 
 ## **14.7.1 Kubernetes Deployment Diagram**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Kubernetes Cluster] --> B[Presidio Analyzer Deployment]
@@ -5558,7 +5503,6 @@ flowchart TD
     D --> G[GPU Nodes]
     E --> H[Monitoring & Logging]
 ```
-````
 
 ## **14.7.2 Spark/Fabric Integration**
 
@@ -5602,7 +5546,6 @@ Integration must embed:
 
 ## **14.8.1 Mermaid Diagram: Governance Overlay**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Anonymization Pipeline] --> B[Audit Logging]
@@ -5614,7 +5557,6 @@ flowchart LR
     D --> F
     E --> F
 ```
-````
 
 # **14.9 Observability & Monitoring**
 
@@ -5758,14 +5700,12 @@ Age: 47 → Age: 40–50 (ε=0.5)
 
 ### **15.2.3 Mermaid Diagram: DP Operator Pipeline**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Detected PII] --> B[DP Noise Generator]
     B --> C[DP Replace / Hash / Redact]
     C --> D[DP-Anonymized Output]
 ```
-````
 
 # **15.3 Federated Synthetic‑Data Generation**
 
@@ -5787,7 +5727,6 @@ We propose:
 
 ### **15.3.2 Mermaid Diagram: Federated SDV**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Site A: Local Data] --> C[Local SDV Model]
@@ -5796,7 +5735,6 @@ flowchart LR
     D --> E[Federated SDV Model]
     E --> F[Synthetic Data for All Sites]
 ```
-````
 
 ### **15.3.3 Benefits**
 
@@ -5855,7 +5793,6 @@ Future operators may include:
 
 ### **15.4.4 Mermaid Diagram: Multi‑Modal Pipeline**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Raw Multi-Modal Data] --> B[Text Analyzer]
@@ -5868,7 +5805,6 @@ flowchart TD
     F --> H
     G --> H
 ```
-````
 
 # **15.5 Quantum‑Safe Anonymization Pipelines**
 
@@ -5913,7 +5849,6 @@ Synthetic data is inherently quantum‑safe because:
 
 ### **15.5.3 Mermaid Diagram: Quantum‑Safe Pipeline**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Raw Data] --> B[Quantum-Safe Detection]
@@ -5921,7 +5856,6 @@ flowchart LR
     C --> D[Quantum-Safe Storage]
     D --> E[Synthetic Data Generation]
 ```
-````
 
 # **15.6 Cross‑Modal Privacy Guarantees**
 
@@ -5959,7 +5893,6 @@ Future pipelines must support:
 
 ### **15.7.1 Hybrid ML Pipeline**
 
-````markdown
 ```mermaid
 flowchart TD
     A[Anonymized Text] --> D[ML Training]
@@ -5967,7 +5900,6 @@ flowchart TD
     C[DP Noise] --> D
     D --> E[Privacy-Preserving Model]
 ```
-````
 
 # **15.8 Governance Automation**
 
@@ -5990,7 +5922,6 @@ Generate:
 
 ### **15.8.2 Mermaid Diagram: Governance Automation**
 
-````markdown
 ```mermaid
 flowchart LR
     A[Anonymization Pipeline] --> B[Governance Engine]
@@ -5998,7 +5929,6 @@ flowchart LR
     B --> D[Audit Log Manager]
     B --> E[Compliance Dashboard]
 ```
-````
 
 # **15.9 Large‑Scale Distributed Anonymization**
 
@@ -6278,11 +6208,9 @@ display(synthetic_df)
 #   - ideal für nicht-invertierbare Tabellenanonymisierung
 #
 # → Gemeinsam bilden Presidio + SDV eine moderne, sichere Alternative zu `anonym`.
-````
+```` 
 
-## **Complete Evaluation of the Presidio + SDV Pipeline**  
-
-### **16.1.1 Introduction: A Unified, Reproducible Privacy Pipeline**
+### **16.1.1 Complete Evaluation of the Presidio + SDV Pipeline: A Unified, Reproducible Privacy Pipeline**
 
 Modern privacy engineering requires more than isolated anonymization techniques. Textual PII must be detected and transformed reliably; structured data must be pseudonymized or 
 synthesized; and the entire workflow must be reproducible, auditable, and aligned with regulatory expectations. The combined Presidio + SDV pipeline provides a modular, extensible, and production‑ready foundation for such workflows.
@@ -6638,9 +6566,6 @@ sys.executable
 
 ### **16.1.8 Mermaid Diagram: Full Pipeline**
 
-GitHub‑friendly diagram:
-
-````markdown
 ```mermaid
 flowchart TD
     A[Raw Text + Tables] --> B[Presidio Analyzer]
@@ -6655,7 +6580,6 @@ flowchart TD
     F --> J
     E --> J
 ```
-````
 
 ### **16.1.9 End‑to‑End Evaluation**
 
