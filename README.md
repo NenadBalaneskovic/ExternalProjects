@@ -1912,7 +1912,7 @@ The posterior engine tracks mean and variance of edge weights over time, enablin
 >
 >This ensures anonymization pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and privacy‑aware engineering.
 
-## **Abstract**
+#### **Abstract**
 
 **Presidio–SDV Anonymization Pipeline** is a modular, multi‑modal privacy‑engineering architecture designed for environments where **PII detection, pseudonymization, irreversible anonymization, synthetic‑data generation, and reproducibility** are central concerns. It unifies NLP‑based detection, deterministic pseudonymization, operator‑based masking, CTGAN/Copula synthetic generation, SDMetrics evaluation, and Airflow orchestration into a coherent, reproducible anonymization stack.
 
