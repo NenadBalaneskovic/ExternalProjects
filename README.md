@@ -1804,6 +1804,128 @@ The posterior engine tracks mean and variance of edge weights over time, enablin
 
 [![Bayesian_Hamilton_Cycle_Extraction](https://img.shields.io/badge/Bayesian_Hamilton_Cycle_Extraction-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3110ddbe35d8b1dc833c4086532dc0ee25090b18/BayesianHamiltonCyclesExtractor/project29.md)
 
+- ### **30. Presidio–SDV Anonymization Pipeline – Oct 2026**
+
+> ## **Executive Summary: Multi‑Modal PII Detection, Deterministic Pseudonymization, Irreversible Masking & Synthetic‑Data Generation**
+>
+> **Business Problem**  
+>Modern organizations increasingly process **heterogeneous, sensitive data** across:
+>
+> - customer communication  
+> - CRM/ERP exports  
+> - support tickets  
+> - operational logs  
+> - analytics pipelines  
+> - ML training datasets  
+>
+>These data streams contain **PII in multiple modalities**:
+>
+> - free text (names, emails, phone numbers, addresses)  
+> - structured tables (customer records, transactions, profiles)  
+> - semi‑structured logs (IP addresses, device IDs, timestamps)  
+>
+>Real‑world anonymization workflows introduce persistent risks:
+>
+> - inconsistent PII detection  
+> - brittle regex‑based masking  
+> - reversible “anonymization” that is not truly anonymous  
+> - non‑reproducible pseudonymization  
+> - missing audit trails  
+> - lack of synthetic‑data capabilities  
+> - unclear GDPR alignment  
+>
+>Traditional approaches depend on:
+>
+> - ad‑hoc scripts  
+> - manual masking  
+> - deterministic heuristics  
+> - irreversible data loss  
+> - opaque transformations  
+>
+>These constraints increase privacy leakage, reduce ML utility, and undermine compliance.  
+>Modern privacy‑engineering pipelines require **NLP‑based PII detection**, **deterministic pseudonymization**, **irreversible anonymization**, and **synthetic‑data generation** — all within reproducible, auditable environments.
+>
+> **Solution Overview**  
+>Project 30 introduces a **multi‑modal, reproducible anonymization ecosystem** that automates:
+>
+> - **text PII detection** → linguistic + pattern‑based recognition  
+> - **deterministic pseudonymization** → SHA‑256 tokens + mapping tables  
+> - **irreversible anonymization** → operator‑based masking  
+> - **synthetic table generation** → CTGAN / Copula models  
+> - **SDMetrics evaluation** → fidelity, coverage, privacy leakage  
+> - **Airflow orchestration** → reproducible DAG‑based execution  
+>
+>Project 30 transforms anonymization into a **modular, explainable, and reproducible privacy‑engineering pipeline**, enabling:
+>
+> - consistent PII detection across text and tables  
+> - reversible pseudonymization for internal workflows  
+> - irreversible anonymization for external release  
+> - synthetic datasets for ML training  
+> - privacy‑metric evaluation for governance  
+> - reproducible execution for audits  
+>
+> **Business Impact**
+>
+>Organizations gain:
+>
+> - **robust PII detection** across modalities  
+> - **deterministic pseudonymization** for controlled workflows  
+> - **irreversible anonymization** for safe data release  
+> - **synthetic datasets** for analytics and ML  
+> - **privacy‑metric evaluation** for risk reduction  
+> - **GDPR‑aligned governance**  
+> - **CI/CD‑ready anonymization pipeline**  
+>
+>Project 30 strengthens privacy‑engineering capabilities, future‑proofs data‑processing pipelines, and provides a practical foundation for compliant anonymization — without relying on proprietary cloud services.
+>
+> **Consulting Relevance**
+>
+>For consultants, Project 30 demonstrates how to operationalize:
+>
+> - NLP‑based PII detection  
+> - deterministic pseudonymization  
+> - irreversible anonymization  
+> - synthetic‑data generation  
+> - privacy‑metric evaluation  
+> - reproducible Airflow pipelines  
+>
+>It is directly applicable to:
+>
+> - customer‑support analytics  
+> - secure‑data processing  
+> - CRM/ERP anonymization  
+> - ML training pipelines  
+> - compliance‑driven data sharing  
+> - scientific data‑engineering workflows  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to finance, telecom, public sector, healthcare, manufacturing, and critical infrastructure.
+>
+> **Compliance / ESG / Risk Management**
+>
+>Project 30 supports governance through:
+>
+> - auditable anonymization operators  
+> - reproducible pseudonymization mappings  
+> - explainable PII detection  
+> - transparent privacy‑metric evaluation  
+> - structured workspace retention  
+>
+>This ensures anonymization pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and privacy‑aware engineering.
+
+## **Abstract**
+
+**Presidio–SDV Anonymization Pipeline** is a modular, multi‑modal privacy‑engineering architecture designed for environments where **PII detection, pseudonymization, irreversible anonymization, synthetic‑data generation, and reproducibility** are central concerns. It unifies NLP‑based detection, deterministic pseudonymization, operator‑based masking, CTGAN/Copula synthetic generation, SDMetrics evaluation, and Airflow orchestration into a coherent, reproducible anonymization stack.
+
+The text pipeline uses Presidio’s AnalyzerEngine to detect linguistic and structured PII, followed by deterministic SHA‑256 pseudonymization and irreversible masking. The table pipeline applies deterministic pseudonymization, reversible reconstruction, and SDV synthetic‑data generation. SDMetrics evaluates fidelity, coverage, and privacy leakage. Airflow orchestrates all components, ensuring reproducible execution and audit‑ready artifacts (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Presidio_SDV_Anonymization_Test/project30.md#18--references) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, multi‑modal anonymization architecture with structured artifacts and transparent privacy logic.  
+- **Audience:** Privacy engineers, ML practitioners, compliance teams, scientific‑computing practitioners, and consultants designing reproducible anonymization pipelines.  
+- **Why modularity matters:** Separating detection, pseudonymization, anonymization, synthetic generation, evaluation, and orchestration prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** Deterministic pseudonymization, operator‑based masking, synthetic‑data generation, and unified SDMetrics reports ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+
+[![Presidio_SDV_Anonymization_Pipeline](https://img.shields.io/badge/Presidio_SDV_Anonymization_Pipeline-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f4f402c98be16a24ed66d743e13b8d70d6597ed2/Presidio_SDV_Anonymization_Test/project30.md)
+
 ---
 
 
