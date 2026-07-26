@@ -8225,7 +8225,7 @@ Project 30 demonstrates that modern anonymization is not a single technique but 
 https://dev.to/bspann/what-is-microsoft-presidio-and-why-you-need-it-setup-first-detection-6mh; https://blog1.neuralengineer.org/microsoft-presidio-an-engineers-introduction-to-pii-detection-and-de-identification-6a7c3fed6e50; 
 Data anonymization: https://docs.sdv.dev/sdv; https://github.com/sdv-dev/sdv; https://pypi.org/project/sdv/1.4.0.dev1/; 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/397a79c35801703dc653491eb703c4d406443f90/Presidio_SDV_Anonymization_Test/Presidio_SDV_pipeline.ipynb)
-3. [![PyTester_GUI_Report | English](https://img.shields.io/badge/PyTester_GUI%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/91b3acd4befd5e9adea5215823be3217dd36661f/PyTesterGUI/Pytester_GUI_jupyter_notebook.pdf)
+3. [![Presidio_SDV_Anonymization_Report | English](https://img.shields.io/badge/Presidio_SDV_Anonymization%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6b44f6c14ad5f5a6e7d3c7a48e3ddc5c9ee7a3ef/Presidio_SDV_Anonymization_Test/Presidio_SDV_pipeline.pdf)
 4. Tao, F., Qi, Q., Liu, A., & Kusiak, A. (2018). *Digital Twins and Cyber–Physical Systems in Manufacturing.* Engineering, 5(4);
 5. A. Meister , T. Sonar: "__Numerik__", 1st Ed. Springer-Spektrum (2019); S. Chapra, R. Canale: "__Numerical Methods for Engineers__", Mcgraw-Hill, 6th Edition (2010). 
 6. J. Kilty, A. M. McAllister: "__Mathematical Modeling and Applied Calculus__", 1st Ed. Oxford University Press (2018).
