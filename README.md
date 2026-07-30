@@ -1351,7 +1351,7 @@ The system emphasizes governance through deterministic transformations, structur
 - **Audience:** Data engineers, privacy officers, ML engineers, consultants, educators, and governance teams requiring reproducible, auditable privacy workflows.  
 - **Why determinism matters:** Reliable privacy transformations require consistent masking, stable pseudonymization tokens, preserved mapping tables, and reproducible synthetic data generation.  
 - **Governance and reproducibility:** Deterministic engines, structured outputs, mapping tables, and comprehensive logs ensure traceability and auditability across runs and machines.  
-- **Offline readiness:** The system runs entirely locally — no cloud, no external APIs, no proprietary SDKs — making it ideal for air‑gapped or security‑restricted environments.
+- **Offline readiness:** The system runs entirely locally — no cloud, no external APIs, no proprietary SDKs — making it ideal for air‑gapped or security‑restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
 
@@ -1468,7 +1468,7 @@ The architecture externalizes schema evolution into Neo4j, enabling explicit ver
 - **Audience:** Data engineers, platform architects, ML engineers, governance teams, and consultants designing modern data platforms.  
 - **Why modularity matters:** Separating OLTP, OLAP, and metadata responsibilities prevents monolithic bottlenecks and improves long‑term stability.  
 - **Governance and reproducibility:** Explicit schema versions, lineage graphs, and structured metrics ensure traceability and auditability across runs.  
-- **Offline readiness:** All components (PostgreSQL, DuckDB, Neo4j, Python) run locally — no cloud, no external APIs — ideal for secure or restricted environments.
+- **Offline readiness:** All components (PostgreSQL, DuckDB, Neo4j, Python) run locally — no cloud, no external APIs — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7fa2db7e715524945a32e9bfad66b66fb463cc/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.md)
 
@@ -1569,7 +1569,7 @@ Fractional dynamics introduce nonlinear time scaling and temporal nonlocality, p
 - **Audience:** Quantum‑security architects, cryptographers, platform engineers, cybersecurity teams, and consultants designing quantum‑ready secure communication systems.  
 - **Why modularity matters:** Separating quantum dynamics, control logic, QEC, and PQC prevents monolithic bottlenecks and improves long‑term resilience.  
 - **Governance and reproducibility:** Deterministic αₖ sequences, explicit randomness generation, and structured QEC outputs ensure traceability and auditability.  
-- **Offline readiness:** All components (fractional dynamics, fuzzy logic, QEC, PQC) run locally — ideal for secure or restricted environments.
+- **Offline readiness:** All components (fractional dynamics, fuzzy logic, QEC, PQC) run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45c40698c2622dd380188519d19185d99c8229a9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/project27_report.md)
 
@@ -1684,7 +1684,7 @@ The inference engine combines static type hints, semantic intent extraction, and
 - **Audience:** Software‑quality architects, Python developers, platform engineers, QA teams, and consultants designing reproducible testing pipelines.  
 - **Why modularity matters:** Separating analysis, inference, test generation, execution, and visualization prevents monolithic bottlenecks and improves long‑term resilience.  
 - **Governance and reproducibility:** Deterministic inference, structured test suites, and unified reports ensure traceability and auditability.  
-- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![PyTester_GUI](https://img.shields.io/badge/PyTester_GUI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd229e37a53c66389ed5e1f82f568bd5aad0e3c0/PyTesterGUI/project28.md)
 
@@ -1800,7 +1800,7 @@ The posterior engine tracks mean and variance of edge weights over time, enablin
 - **Audience:** Graph‑analytics engineers, network‑diagnostics teams, reliability architects, scientific‑computing practitioners, and consultants designing reproducible graph pipelines.  
 - **Why modularity matters:** Separating posterior inference, scoring, extraction, drift detection, stability analysis, and visualization prevents monolithic bottlenecks and improves long‑term resilience.  
 - **Governance and reproducibility:** Bayesian inference, structured cycle artifacts, and unified drift/stability reports ensure traceability and auditability.  
-- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![Bayesian_Hamilton_Cycle_Extraction](https://img.shields.io/badge/Bayesian_Hamilton_Cycle_Extraction-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3110ddbe35d8b1dc833c4086532dc0ee25090b18/BayesianHamiltonCyclesExtractor/project29.md)
 
@@ -1922,7 +1922,7 @@ The text pipeline uses Presidio’s AnalyzerEngine to detect linguistic and stru
 - **Audience:** Privacy engineers, ML practitioners, compliance teams, scientific‑computing practitioners, and consultants designing reproducible anonymization pipelines.  
 - **Why modularity matters:** Separating detection, pseudonymization, anonymization, synthetic generation, evaluation, and orchestration prevents monolithic bottlenecks and improves long‑term resilience.  
 - **Governance and reproducibility:** Deterministic pseudonymization, operator‑based masking, synthetic‑data generation, and unified SDMetrics reports ensure traceability and auditability.  
-- **Offline readiness:** All components run locally — ideal for secure or restricted environments.
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![Presidio_SDV_Anonymization_Pipeline](https://img.shields.io/badge/Presidio_SDV_Anonymization_Pipeline-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f4f402c98be16a24ed66d743e13b8d70d6597ed2/Presidio_SDV_Anonymization_Test/project30.md)
 
