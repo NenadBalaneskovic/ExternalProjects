@@ -4747,8 +4747,6 @@ self.num_cols = [
 
 These columns are cleaned and imputed.
 
----
-
 ### **Cleaning**
 
 ```python
@@ -4985,8 +4983,6 @@ def ensure_dir(path):
 ````
 
 This module provides a collection of small, focused utility functions that support label encoding, probability matrix handling, JSON persistence, parameter hashing, and directory creation. These utilities are used throughout our pipeline, especially in stacking, tuning, and experiment tracking.
-
----
 
 ### **Imports**
 
