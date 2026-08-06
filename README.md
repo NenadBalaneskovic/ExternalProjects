@@ -1119,7 +1119,7 @@ Pynonym is a deterministic, offline‑capable anonymization framework for **text
 
 [![Data_Anonymization_Release_Pynonym](https://img.shields.io/badge/Data_Anonymization_Release_Pynonym%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fd38d8aa203f636bb825e947efe455b6c5919633/PynonymReleaseProject/PynonymReleaseProject.md)
 
-- ### 24. **MLflow Runner GUI – Apr 2026**
+- ### 24. **MLflow Runner GUI – Mar 2026**
 
 > ## Executive Summary: MLflow Runner GUI
 >
@@ -1232,7 +1232,7 @@ The **MLflow Runner GUI** is a local, offline‑capable, fully reproducible mach
 
 [![MLflow_Runner_GUI](https://img.shields.io/badge/MLflow_Runner_GUI%20PySide6-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1d07e432f7272d5a641c5deceb903e97f1b45e4/MLflow_Model_GUI/MLflow_Runner_GUI.md)
 
-- ### 25. **Data Anonymizer GUI – May 2026**
+- ### 25. **Data Anonymizer GUI – Apr 2026**
 
 > ## Executive Summary: Data Anonymizer GUI
 >
@@ -1355,7 +1355,7 @@ The system emphasizes governance through deterministic transformations, structur
 
 [![Data_Anonymizer_GUI](https://img.shields.io/badge/Data_Anonymizer_GUI%20PySide6_SDV_MostlyAI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ffc7e4c8cab6f0b53bc5c42108bfefb00a8069ce/Mostlyai_Dataset_Pipeline/Data_Anonymizer_GUI.md)
 
-- ### **26. SQL‑Boosting via Neo4j – Jun 2026**
+- ### **26. SQL‑Boosting via Neo4j – Apr 2026**
 
 > ## **Executive Summary: SQL‑Boosting via Neo4j**
 >
@@ -1472,7 +1472,7 @@ The architecture externalizes schema evolution into Neo4j, enabling explicit ver
 
 [![SQL_Boosting_Neo4j](https://img.shields.io/badge/SQL_Boosting_GraphDataBase%20PostgreSQL_Neo4j_DuckDB-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1b7fa2db7e715524945a32e9bfad66b66fb463cc/PostgreNeo4j_Project/PostgreSQLNeo4j_Study.md)
 
-- ### **27. Fractional‑Fuzzy Quantum Cryptographic Stack – Jul 2026**
+- ### **27. Fractional‑Fuzzy Quantum Cryptographic Stack – May 2026**
 
 > ## **Executive Summary: Fractional‑Fuzzy Quantum Cryptography**
 >
@@ -1573,7 +1573,7 @@ Fractional dynamics introduce nonlinear time scaling and temporal nonlocality, p
 
 [![Fractional‑Fuzzy Quantum Cryptography](https://img.shields.io/badge/Fractional_Fuzzy_Quantum_Cryptography-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/45c40698c2622dd380188519d19185d99c8229a9/QuantumRNG_Study/Quantum_RNG_Study_md_Report/project27_report.md)
 
-- ### **28. PyTester GUI – Aug 2026**
+- ### **28. PyTester GUI – May 2026**
 
 > ## **Executive Summary: Deterministic Python Code Analysis & Automated Test Generation**
 >
@@ -1688,7 +1688,7 @@ The inference engine combines static type hints, semantic intent extraction, and
 
 [![PyTester_GUI](https://img.shields.io/badge/PyTester_GUI-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/dd229e37a53c66389ed5e1f82f568bd5aad0e3c0/PyTesterGUI/project28.md)
 
-- ### **29. Bayesian Extraction of Hamiltonian Cycles – Sep 2026**
+- ### **29. Bayesian Extraction of Hamiltonian Cycles – Jun 2026**
 
 > ## **Executive Summary: Probabilistic Graph Reconstruction, Drift Detection & Stability‑Aware Cycle Extraction**
 >
@@ -1804,7 +1804,7 @@ The posterior engine tracks mean and variance of edge weights over time, enablin
 
 [![Bayesian_Hamilton_Cycle_Extraction](https://img.shields.io/badge/Bayesian_Hamilton_Cycle_Extraction-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/3110ddbe35d8b1dc833c4086532dc0ee25090b18/BayesianHamiltonCyclesExtractor/project29.md)
 
-- ### **30. Presidio–SDV Anonymization Pipeline – Oct 2026**
+- ### **30. Presidio–SDV Anonymization Pipeline – Jun 2026**
 
 > ## **Executive Summary: Multi‑Modal PII Detection, Deterministic Pseudonymization, Irreversible Masking & Synthetic‑Data Generation**
 >
@@ -1925,6 +1925,118 @@ The text pipeline uses Presidio’s AnalyzerEngine to detect linguistic and stru
 - **Offline readiness:** All components run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
 [![Presidio_SDV_Anonymization_Pipeline](https://img.shields.io/badge/Presidio_SDV_Anonymization_Pipeline-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f4f402c98be16a24ed66d743e13b8d70d6597ed2/Presidio_SDV_Anonymization_Test/project30.md)
+
+- ### **31. Pump‑It‑Up ML Pipeline v1.0 – Jul 2026**
+
+>## **Executive Summary: Feature Engineering, Multi‑Model Stacking, Optuna Optimization & Reproducible CLI‑Driven ML Architecture**
+>
+>**Business Problem**  
+>Governments, NGOs, and infrastructure organizations increasingly rely on **predictive‑maintenance analytics** to understand the operational status of rural waterpoints.  
+>These datasets are:
+>
+>- heterogeneous  
+>- noisy  
+>- partially missing  
+>- inconsistently encoded  
+>- geographically diverse  
+>
+>Real‑world predictive‑maintenance workflows face persistent challenges:
+>
+>- inconsistent feature engineering  
+>- manual hyperparameter tuning  
+>- non‑reproducible evaluation scripts  
+>- fragile model‑selection heuristics  
+>- missing experiment tracking  
+>- lack of ensemble integration  
+>
+>Traditional approaches depend on:
+>
+>- ad‑hoc notebooks  
+>- manual preprocessing  
+>- static model configurations  
+>- opaque evaluation logic  
+>- non‑auditable experimentation  
+>
+>These constraints reduce model reliability, undermine reproducibility, and limit deployment readiness.  
+>Modern ML pipelines require **automated feature engineering**, **multi‑model ensembles**, **hyperparameter optimization**, and **reproducible CLI orchestration** — all within structured, auditable environments.
+>
+>**Solution Overview**  
+>Project 31 introduces a **reproducible, modular ML ecosystem** that automates:
+>
+>- **feature engineering** → cleaning, encoding, derived features  
+>- **model pool construction** → RF, ET, LGBM, XGB, CatBoost  
+>- **Optuna hyperparameter tuning** → pruned, cross‑validated search  
+>- **stacking ensemble training** → out‑of‑fold probability fusion  
+>- **LightGBM meta‑model** → final prediction synthesis  
+>- **CLI orchestration** → baseline, tuning, stacking, submission  
+>- **JSON‑based experiment tracking** → audit‑ready logs  
+>
+>Project 31 transforms predictive‑maintenance modeling into a **modular, explainable, and reproducible ML pipeline**, enabling:
+>
+>- consistent feature engineering  
+>- optimized model configurations  
+>- robust ensemble predictions  
+>- reproducible CLI‑driven execution  
+>- transparent experiment governance  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **high‑accuracy waterpoint‑status prediction**  
+>- **automated hyperparameter optimization**  
+>- **stacking ensembles for robustness**  
+>- **reproducible CLI workflows**  
+>- **auditable experiment logs**  
+>- **deployment‑ready ML architecture**  
+>
+>Project 31 strengthens predictive‑maintenance capabilities, improves infrastructure planning, and provides a practical foundation for reproducible ML pipelines — without relying on proprietary cloud services.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 31 demonstrates how to operationalize:
+>
+>- feature engineering transformers  
+>- multi‑model stacking ensembles  
+>- Optuna‑driven optimization  
+>- reproducible CLI orchestration  
+>- JSON‑based experiment tracking  
+>
+>It is directly applicable to:
+>
+>- public‑sector analytics  
+>- infrastructure maintenance  
+>- resource‑allocation modeling  
+>- ML training pipelines  
+>- reproducible research workflows  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to utilities, public health, sustainability analytics, and scientific‑computing environments.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 31 supports governance through:
+>
+>- transparent model evaluation  
+>- reproducible training runs  
+>- structured experiment logs  
+>- explainable feature engineering  
+>- deterministic hyperparameter tuning  
+>
+>This ensures ML pipelines remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and responsible AI engineering.
+
+#### **Abstract**
+
+**Pump‑It‑Up ML Pipeline** is a modular, reproducible machine‑learning architecture designed for environments where **feature engineering, ensemble learning, hyperparameter optimization, reproducibility, and experiment governance** are central concerns. It unifies automated feature engineering, multi‑model stacking, Optuna optimization, LightGBM meta‑model fusion, CLI orchestration, and JSON‑based experiment tracking into a coherent, reproducible ML stack.
+
+The feature‑engineering pipeline cleans, imputes, encodes, and derives domain‑specific features (pump age, recorded month/year). The model pool integrates RandomForest, ExtraTrees, LightGBM, XGBoost, and CatBoost. Optuna performs pruned, cross‑validated hyperparameter optimization. The stacking ensemble generates out‑of‑fold probabilities and trains a LightGBM meta‑model. The CLI runner orchestrates baseline evaluation, tuning, stacking, and submission generation. The ExperimentTracker logs all runs in structured JSON format (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/DrivenData_Pumpit/project31.md#13--references) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, ensemble‑based ML architecture with structured artifacts and transparent model logic.  
+- **Audience:** ML engineers, scientific‑computing practitioners, infrastructure‑analytics teams, and consultants designing reproducible ML pipelines.  
+- **Why modularity matters:** Separating feature engineering, model training, tuning, stacking, and orchestration prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** Deterministic feature engineering, Optuna tuning, stacking ensembles, and unified experiment logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![Pump‑It‑Up_ML_Pipeline_v1.0](https://img.shields.io/badge/Pump‑It‑Up_ML_Pipeline_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/553ed53bcf375331df9b9d1e6e1df9d144cd450c/DrivenData_Pumpit/project31.md)
 
 ---
 
