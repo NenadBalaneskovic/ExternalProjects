@@ -1,0 +1,2 @@
+[console_scripts]
+pumpitup = pumpitup.cli:main

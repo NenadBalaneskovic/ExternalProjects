@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pumpitup
+Version: 0.1.0
+Summary: DrivenData Pump-It-Up ML pipeline with stacking and Optuna tuning
+Author: Nenad
+Requires-Python: >=3.12
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: lightgbm
+Requires-Dist: xgboost
+Requires-Dist: catboost
+Requires-Dist: optuna
+Requires-Dist: duckdb
+Requires-Dist: pyarrow
+Requires-Dist: category-encoders

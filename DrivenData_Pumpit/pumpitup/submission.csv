@@ -1,0 +1,3001 @@
+id,status_group
+1,non functional
+2,non functional
+3,functional
+4,functional needs repair
+5,functional needs repair
+6,non functional
+7,non functional
+8,functional needs repair
+9,functional needs repair
+10,non functional
+11,functional needs repair
+12,functional needs repair
+13,non functional
+14,functional
+15,functional
+16,non functional
+17,non functional
+18,functional
+19,non functional
+20,functional
+21,functional needs repair
+22,non functional
+23,functional needs repair
+24,functional needs repair
+25,functional
+26,functional needs repair
+27,non functional
+28,functional needs repair
+29,non functional
+30,functional
+31,functional needs repair
+32,non functional
+33,functional needs repair
+34,functional needs repair
+35,functional
+36,non functional
+37,non functional
+38,non functional
+39,functional
+40,functional needs repair
+41,functional needs repair
+42,non functional
+43,functional needs repair
+44,functional needs repair
+45,non functional
+46,functional needs repair
+47,functional
+48,functional
+49,non functional
+50,functional
+51,non functional
+52,functional needs repair
+53,non functional
+54,functional needs repair
+55,functional
+56,functional needs repair
+57,functional
+58,non functional
+59,non functional
+60,functional
+61,functional
+62,non functional
+63,functional needs repair
+64,functional needs repair
+65,functional needs repair
+66,functional
+67,non functional
+68,functional
+69,non functional
+70,functional
+71,functional needs repair
+72,functional needs repair
+73,functional
+74,non functional
+75,non functional
+76,functional
+77,non functional
+78,non functional
+79,non functional
+80,non functional
+81,non functional
+82,non functional
+83,functional needs repair
+84,functional needs repair
+85,non functional
+86,non functional
+87,functional needs repair
+88,functional needs repair
+89,functional needs repair
+90,non functional
+91,functional needs repair
+92,functional needs repair
+93,functional
+94,non functional
+95,non functional
+96,functional
+97,functional needs repair
+98,functional needs repair
+99,non functional
+100,functional
+101,non functional
+102,functional needs repair
+103,functional
+104,non functional
+105,functional
+106,non functional
+107,functional needs repair
+108,non functional
+109,non functional
+110,non functional
+111,functional
+112,non functional
+113,functional
+114,non functional
+115,non functional
+116,functional
+117,functional needs repair
+118,non functional
+119,functional needs repair
+120,non functional
+121,functional needs repair
+122,non functional
+123,functional
+124,functional needs repair
+125,functional
+126,functional needs repair
+127,non functional
+128,functional
+129,functional needs repair
+130,functional needs repair
+131,functional needs repair
+132,non functional
+133,functional needs repair
+134,non functional
+135,functional
+136,non functional
+137,functional
+138,non functional
+139,functional needs repair
+140,non functional
+141,functional
+142,functional needs repair
+143,functional
+144,non functional
+145,functional needs repair
+146,non functional
+147,non functional
+148,non functional
+149,functional needs repair
+150,functional
+151,functional needs repair
+152,non functional
+153,functional
+154,non functional
+155,functional needs repair
+156,functional
+157,functional needs repair
+158,functional
+159,functional needs repair
+160,non functional
+161,functional
+162,non functional
+163,non functional
+164,functional
+165,non functional
+166,functional
+167,functional
+168,functional
+169,functional needs repair
+170,non functional
+171,functional needs repair
+172,functional needs repair
+173,non functional
+174,functional
+175,functional
+176,functional needs repair
+177,non functional
+178,non functional
+179,non functional
+180,functional needs repair
+181,functional
+182,non functional
+183,functional
+184,functional needs repair
+185,functional
+186,functional
+187,functional needs repair
+188,non functional
+189,functional needs repair
+190,functional needs repair
+191,functional needs repair
+192,non functional
+193,functional needs repair
+194,non functional
+195,functional
+196,functional needs repair
+197,functional
+198,functional needs repair
+199,functional
+200,non functional
+201,functional needs repair
+202,non functional
+203,non functional
+204,functional needs repair
+205,functional
+206,non functional
+207,non functional
+208,functional
+209,functional needs repair
+210,functional needs repair
+211,non functional
+212,functional needs repair
+213,non functional
+214,functional
+215,non functional
+216,non functional
+217,functional
+218,non functional
+219,non functional
+220,functional needs repair
+221,non functional
+222,functional
+223,functional
+224,functional needs repair
+225,functional
+226,functional needs repair
+227,non functional
+228,functional needs repair
+229,functional needs repair
+230,non functional
+231,functional needs repair
+232,functional
+233,non functional
+234,functional needs repair
+235,functional needs repair
+236,non functional
+237,non functional
+238,non functional
+239,non functional
+240,non functional
+241,functional
+242,functional
+243,non functional
+244,non functional
+245,non functional
+246,functional needs repair
+247,non functional
+248,non functional
+249,functional
+250,functional
+251,functional
+252,non functional
+253,functional needs repair
+254,functional needs repair
+255,non functional
+256,functional
+257,non functional
+258,non functional
+259,functional needs repair
+260,non functional
+261,functional needs repair
+262,non functional
+263,non functional
+264,functional
+265,non functional
+266,functional
+267,functional needs repair
+268,non functional
+269,functional
+270,functional needs repair
+271,non functional
+272,functional
+273,functional
+274,non functional
+275,functional
+276,non functional
+277,non functional
+278,non functional
+279,functional
+280,non functional
+281,functional needs repair
+282,functional
+283,functional
+284,functional needs repair
+285,functional needs repair
+286,functional needs repair
+287,non functional
+288,non functional
+289,functional
+290,functional needs repair
+291,non functional
+292,functional needs repair
+293,functional needs repair
+294,functional
+295,non functional
+296,functional needs repair
+297,functional
+298,functional needs repair
+299,non functional
+300,non functional
+301,functional
+302,non functional
+303,functional
+304,non functional
+305,non functional
+306,non functional
+307,non functional
+308,functional
+309,non functional
+310,functional needs repair
+311,functional
+312,functional
+313,non functional
+314,functional
+315,functional needs repair
+316,functional needs repair
+317,functional needs repair
+318,functional needs repair
+319,functional
+320,non functional
+321,non functional
+322,functional needs repair
+323,functional
+324,functional needs repair
+325,functional needs repair
+326,functional
+327,functional needs repair
+328,functional
+329,non functional
+330,non functional
+331,functional needs repair
+332,functional
+333,non functional
+334,functional
+335,functional
+336,non functional
+337,functional needs repair
+338,functional needs repair
+339,functional
+340,functional
+341,functional needs repair
+342,functional
+343,functional
+344,functional needs repair
+345,functional
+346,functional needs repair
+347,functional needs repair
+348,functional needs repair
+349,functional needs repair
+350,functional needs repair
+351,non functional
+352,non functional
+353,functional needs repair
+354,functional needs repair
+355,non functional
+356,functional
+357,functional
+358,functional
+359,functional needs repair
+360,functional needs repair
+361,non functional
+362,functional
+363,functional needs repair
+364,non functional
+365,functional needs repair
+366,non functional
+367,functional needs repair
+368,functional needs repair
+369,non functional
+370,non functional
+371,functional
+372,functional needs repair
+373,functional needs repair
+374,non functional
+375,functional needs repair
+376,functional
+377,functional needs repair
+378,non functional
+379,non functional
+380,functional needs repair
+381,non functional
+382,non functional
+383,non functional
+384,non functional
+385,non functional
+386,non functional
+387,non functional
+388,functional
+389,non functional
+390,functional
+391,non functional
+392,non functional
+393,functional
+394,functional needs repair
+395,functional needs repair
+396,functional
+397,functional needs repair
+398,functional
+399,functional needs repair
+400,non functional
+401,functional
+402,non functional
+403,non functional
+404,functional needs repair
+405,functional needs repair
+406,non functional
+407,functional
+408,functional
+409,functional needs repair
+410,non functional
+411,non functional
+412,non functional
+413,non functional
+414,functional needs repair
+415,non functional
+416,functional needs repair
+417,functional
+418,functional
+419,non functional
+420,functional
+421,non functional
+422,functional needs repair
+423,non functional
+424,functional
+425,functional needs repair
+426,functional
+427,functional
+428,functional needs repair
+429,functional needs repair
+430,functional
+431,non functional
+432,functional needs repair
+433,functional needs repair
+434,functional needs repair
+435,functional needs repair
+436,non functional
+437,functional
+438,non functional
+439,functional needs repair
+440,functional needs repair
+441,functional needs repair
+442,functional needs repair
+443,non functional
+444,functional
+445,non functional
+446,functional
+447,functional needs repair
+448,functional needs repair
+449,non functional
+450,non functional
+451,functional
+452,functional needs repair
+453,functional
+454,non functional
+455,functional
+456,functional needs repair
+457,functional
+458,non functional
+459,functional
+460,functional needs repair
+461,non functional
+462,functional needs repair
+463,functional needs repair
+464,non functional
+465,non functional
+466,functional needs repair
+467,functional needs repair
+468,functional needs repair
+469,non functional
+470,non functional
+471,functional
+472,functional needs repair
+473,functional
+474,functional needs repair
+475,functional needs repair
+476,functional
+477,non functional
+478,non functional
+479,functional
+480,functional needs repair
+481,functional
+482,non functional
+483,functional needs repair
+484,functional
+485,functional needs repair
+486,functional needs repair
+487,functional
+488,non functional
+489,non functional
+490,non functional
+491,non functional
+492,non functional
+493,non functional
+494,functional needs repair
+495,functional needs repair
+496,functional needs repair
+497,non functional
+498,non functional
+499,non functional
+500,functional
+501,functional needs repair
+502,functional
+503,non functional
+504,functional
+505,non functional
+506,functional
+507,functional needs repair
+508,functional
+509,functional
+510,non functional
+511,functional needs repair
+512,non functional
+513,functional needs repair
+514,non functional
+515,functional needs repair
+516,non functional
+517,functional needs repair
+518,functional
+519,non functional
+520,functional
+521,functional needs repair
+522,functional
+523,non functional
+524,functional needs repair
+525,functional needs repair
+526,non functional
+527,non functional
+528,functional
+529,functional
+530,non functional
+531,non functional
+532,functional needs repair
+533,non functional
+534,functional needs repair
+535,functional needs repair
+536,non functional
+537,non functional
+538,functional
+539,non functional
+540,functional
+541,non functional
+542,functional
+543,functional
+544,non functional
+545,functional
+546,functional needs repair
+547,non functional
+548,functional needs repair
+549,functional needs repair
+550,functional
+551,non functional
+552,non functional
+553,functional needs repair
+554,non functional
+555,non functional
+556,non functional
+557,functional
+558,functional needs repair
+559,functional
+560,non functional
+561,non functional
+562,functional
+563,functional needs repair
+564,non functional
+565,functional needs repair
+566,functional needs repair
+567,functional needs repair
+568,functional needs repair
+569,non functional
+570,non functional
+571,functional needs repair
+572,functional needs repair
+573,functional needs repair
+574,functional needs repair
+575,functional
+576,functional needs repair
+577,functional needs repair
+578,functional needs repair
+579,non functional
+580,non functional
+581,functional needs repair
+582,non functional
+583,functional needs repair
+584,functional
+585,functional needs repair
+586,functional
+587,functional needs repair
+588,non functional
+589,functional
+590,non functional
+591,functional
+592,non functional
+593,non functional
+594,non functional
+595,non functional
+596,functional
+597,non functional
+598,non functional
+599,non functional
+600,non functional
+601,functional needs repair
+602,functional needs repair
+603,functional needs repair
+604,functional needs repair
+605,functional
+606,non functional
+607,functional needs repair
+608,functional needs repair
+609,functional needs repair
+610,non functional
+611,non functional
+612,functional
+613,non functional
+614,non functional
+615,functional
+616,functional needs repair
+617,non functional
+618,non functional
+619,functional needs repair
+620,functional
+621,functional needs repair
+622,functional
+623,functional needs repair
+624,non functional
+625,functional
+626,functional needs repair
+627,functional
+628,functional
+629,non functional
+630,functional needs repair
+631,non functional
+632,non functional
+633,non functional
+634,non functional
+635,functional needs repair
+636,non functional
+637,functional needs repair
+638,non functional
+639,functional needs repair
+640,functional
+641,non functional
+642,non functional
+643,functional needs repair
+644,functional
+645,functional
+646,non functional
+647,non functional
+648,functional needs repair
+649,functional needs repair
+650,non functional
+651,functional
+652,non functional
+653,non functional
+654,functional needs repair
+655,functional needs repair
+656,non functional
+657,functional
+658,non functional
+659,non functional
+660,non functional
+661,functional needs repair
+662,non functional
+663,functional needs repair
+664,functional needs repair
+665,functional needs repair
+666,functional needs repair
+667,functional needs repair
+668,functional
+669,non functional
+670,functional
+671,functional needs repair
+672,non functional
+673,non functional
+674,non functional
+675,functional
+676,non functional
+677,functional needs repair
+678,non functional
+679,functional needs repair
+680,functional
+681,non functional
+682,non functional
+683,functional needs repair
+684,functional needs repair
+685,functional
+686,functional needs repair
+687,functional needs repair
+688,non functional
+689,non functional
+690,non functional
+691,non functional
+692,functional needs repair
+693,functional needs repair
+694,functional
+695,functional needs repair
+696,functional needs repair
+697,functional needs repair
+698,functional needs repair
+699,functional needs repair
+700,non functional
+701,functional
+702,non functional
+703,functional needs repair
+704,functional needs repair
+705,functional
+706,non functional
+707,functional needs repair
+708,non functional
+709,functional
+710,functional needs repair
+711,non functional
+712,non functional
+713,functional
+714,non functional
+715,non functional
+716,non functional
+717,non functional
+718,functional needs repair
+719,non functional
+720,functional needs repair
+721,functional needs repair
+722,non functional
+723,non functional
+724,functional needs repair
+725,non functional
+726,non functional
+727,functional
+728,functional
+729,functional needs repair
+730,functional needs repair
+731,non functional
+732,non functional
+733,functional
+734,functional needs repair
+735,functional needs repair
+736,non functional
+737,non functional
+738,functional
+739,non functional
+740,functional needs repair
+741,non functional
+742,functional needs repair
+743,non functional
+744,non functional
+745,non functional
+746,functional needs repair
+747,functional needs repair
+748,functional needs repair
+749,functional needs repair
+750,non functional
+751,functional needs repair
+752,non functional
+753,functional needs repair
+754,functional needs repair
+755,functional needs repair
+756,non functional
+757,functional needs repair
+758,non functional
+759,non functional
+760,non functional
+761,functional needs repair
+762,functional
+763,functional
+764,non functional
+765,functional
+766,functional
+767,functional
+768,functional
+769,functional needs repair
+770,functional
+771,functional
+772,functional needs repair
+773,functional needs repair
+774,functional needs repair
+775,functional needs repair
+776,non functional
+777,functional needs repair
+778,functional
+779,functional
+780,functional
+781,functional needs repair
+782,non functional
+783,functional needs repair
+784,functional
+785,functional needs repair
+786,functional
+787,functional needs repair
+788,functional needs repair
+789,functional needs repair
+790,non functional
+791,non functional
+792,functional needs repair
+793,non functional
+794,non functional
+795,functional needs repair
+796,functional needs repair
+797,functional needs repair
+798,non functional
+799,functional needs repair
+800,non functional
+801,non functional
+802,non functional
+803,functional needs repair
+804,non functional
+805,functional needs repair
+806,functional needs repair
+807,non functional
+808,non functional
+809,non functional
+810,functional
+811,non functional
+812,non functional
+813,non functional
+814,non functional
+815,non functional
+816,non functional
+817,non functional
+818,functional
+819,functional
+820,functional
+821,functional needs repair
+822,functional needs repair
+823,functional
+824,non functional
+825,non functional
+826,functional needs repair
+827,non functional
+828,functional needs repair
+829,functional needs repair
+830,non functional
+831,non functional
+832,non functional
+833,non functional
+834,non functional
+835,functional needs repair
+836,functional
+837,functional
+838,functional
+839,functional needs repair
+840,functional needs repair
+841,non functional
+842,functional needs repair
+843,non functional
+844,functional
+845,functional needs repair
+846,non functional
+847,non functional
+848,functional
+849,functional
+850,functional needs repair
+851,non functional
+852,functional needs repair
+853,non functional
+854,functional needs repair
+855,functional needs repair
+856,functional needs repair
+857,functional
+858,non functional
+859,functional needs repair
+860,functional needs repair
+861,functional
+862,non functional
+863,non functional
+864,functional needs repair
+865,non functional
+866,non functional
+867,functional
+868,functional needs repair
+869,functional needs repair
+870,functional needs repair
+871,non functional
+872,functional needs repair
+873,functional
+874,non functional
+875,functional needs repair
+876,functional
+877,non functional
+878,functional
+879,non functional
+880,non functional
+881,non functional
+882,non functional
+883,non functional
+884,functional needs repair
+885,functional needs repair
+886,functional
+887,non functional
+888,non functional
+889,non functional
+890,functional needs repair
+891,functional
+892,functional
+893,functional needs repair
+894,non functional
+895,functional needs repair
+896,functional needs repair
+897,functional
+898,functional
+899,functional needs repair
+900,functional needs repair
+901,functional
+902,non functional
+903,non functional
+904,functional needs repair
+905,non functional
+906,functional needs repair
+907,functional needs repair
+908,non functional
+909,functional needs repair
+910,functional
+911,non functional
+912,functional
+913,functional
+914,non functional
+915,functional needs repair
+916,non functional
+917,non functional
+918,non functional
+919,functional
+920,functional needs repair
+921,functional needs repair
+922,non functional
+923,functional
+924,functional
+925,functional needs repair
+926,non functional
+927,non functional
+928,functional needs repair
+929,non functional
+930,functional needs repair
+931,non functional
+932,non functional
+933,functional needs repair
+934,functional
+935,functional needs repair
+936,non functional
+937,functional
+938,functional needs repair
+939,functional needs repair
+940,functional needs repair
+941,non functional
+942,functional needs repair
+943,functional
+944,functional
+945,functional needs repair
+946,functional needs repair
+947,functional needs repair
+948,functional needs repair
+949,functional needs repair
+950,functional
+951,functional
+952,non functional
+953,functional needs repair
+954,functional needs repair
+955,functional
+956,non functional
+957,functional
+958,functional
+959,functional needs repair
+960,functional
+961,non functional
+962,functional needs repair
+963,functional
+964,functional needs repair
+965,functional
+966,functional needs repair
+967,non functional
+968,non functional
+969,functional
+970,non functional
+971,non functional
+972,functional needs repair
+973,non functional
+974,functional needs repair
+975,non functional
+976,functional needs repair
+977,non functional
+978,functional
+979,non functional
+980,functional
+981,non functional
+982,functional needs repair
+983,functional
+984,non functional
+985,functional needs repair
+986,non functional
+987,functional
+988,functional
+989,non functional
+990,non functional
+991,non functional
+992,non functional
+993,non functional
+994,functional needs repair
+995,functional needs repair
+996,non functional
+997,functional needs repair
+998,functional
+999,functional needs repair
+1000,non functional
+1001,non functional
+1002,non functional
+1003,non functional
+1004,non functional
+1005,non functional
+1006,non functional
+1007,non functional
+1008,functional
+1009,functional needs repair
+1010,functional
+1011,functional
+1012,functional needs repair
+1013,non functional
+1014,functional needs repair
+1015,functional needs repair
+1016,non functional
+1017,functional needs repair
+1018,functional
+1019,non functional
+1020,functional needs repair
+1021,functional needs repair
+1022,functional
+1023,functional
+1024,functional needs repair
+1025,functional needs repair
+1026,non functional
+1027,functional
+1028,functional needs repair
+1029,functional
+1030,functional needs repair
+1031,non functional
+1032,non functional
+1033,functional needs repair
+1034,non functional
+1035,functional needs repair
+1036,functional
+1037,non functional
+1038,non functional
+1039,functional
+1040,functional
+1041,non functional
+1042,functional needs repair
+1043,functional needs repair
+1044,functional
+1045,functional needs repair
+1046,non functional
+1047,functional
+1048,functional
+1049,non functional
+1050,non functional
+1051,functional needs repair
+1052,functional
+1053,functional needs repair
+1054,functional needs repair
+1055,non functional
+1056,functional needs repair
+1057,non functional
+1058,non functional
+1059,non functional
+1060,functional
+1061,non functional
+1062,non functional
+1063,non functional
+1064,functional
+1065,functional needs repair
+1066,functional needs repair
+1067,functional
+1068,functional
+1069,functional needs repair
+1070,non functional
+1071,functional needs repair
+1072,functional needs repair
+1073,non functional
+1074,non functional
+1075,functional needs repair
+1076,non functional
+1077,non functional
+1078,functional needs repair
+1079,functional
+1080,non functional
+1081,functional
+1082,functional needs repair
+1083,functional needs repair
+1084,functional needs repair
+1085,non functional
+1086,functional
+1087,non functional
+1088,functional needs repair
+1089,functional needs repair
+1090,non functional
+1091,non functional
+1092,functional
+1093,non functional
+1094,functional
+1095,functional
+1096,functional needs repair
+1097,non functional
+1098,functional needs repair
+1099,functional
+1100,non functional
+1101,functional needs repair
+1102,non functional
+1103,functional needs repair
+1104,non functional
+1105,non functional
+1106,non functional
+1107,functional needs repair
+1108,non functional
+1109,functional needs repair
+1110,non functional
+1111,functional needs repair
+1112,non functional
+1113,functional needs repair
+1114,non functional
+1115,non functional
+1116,functional needs repair
+1117,functional needs repair
+1118,functional needs repair
+1119,functional
+1120,non functional
+1121,functional
+1122,functional
+1123,functional needs repair
+1124,functional
+1125,functional
+1126,functional
+1127,non functional
+1128,non functional
+1129,functional needs repair
+1130,functional needs repair
+1131,non functional
+1132,non functional
+1133,non functional
+1134,functional
+1135,functional
+1136,functional needs repair
+1137,functional needs repair
+1138,functional needs repair
+1139,non functional
+1140,functional
+1141,non functional
+1142,functional
+1143,functional
+1144,non functional
+1145,non functional
+1146,non functional
+1147,functional
+1148,functional needs repair
+1149,non functional
+1150,non functional
+1151,functional
+1152,non functional
+1153,functional needs repair
+1154,functional needs repair
+1155,non functional
+1156,functional needs repair
+1157,functional needs repair
+1158,functional needs repair
+1159,functional needs repair
+1160,functional needs repair
+1161,non functional
+1162,functional needs repair
+1163,functional needs repair
+1164,non functional
+1165,non functional
+1166,non functional
+1167,functional needs repair
+1168,functional needs repair
+1169,non functional
+1170,functional needs repair
+1171,non functional
+1172,functional
+1173,non functional
+1174,functional needs repair
+1175,non functional
+1176,functional needs repair
+1177,functional
+1178,non functional
+1179,non functional
+1180,functional needs repair
+1181,functional needs repair
+1182,functional needs repair
+1183,non functional
+1184,functional
+1185,functional
+1186,non functional
+1187,functional
+1188,non functional
+1189,functional
+1190,functional needs repair
+1191,functional
+1192,non functional
+1193,functional needs repair
+1194,non functional
+1195,non functional
+1196,functional needs repair
+1197,non functional
+1198,functional needs repair
+1199,non functional
+1200,functional needs repair
+1201,functional
+1202,non functional
+1203,functional
+1204,functional
+1205,non functional
+1206,functional needs repair
+1207,non functional
+1208,functional needs repair
+1209,functional needs repair
+1210,functional needs repair
+1211,functional
+1212,functional
+1213,functional needs repair
+1214,functional
+1215,non functional
+1216,non functional
+1217,non functional
+1218,functional
+1219,functional
+1220,functional
+1221,non functional
+1222,non functional
+1223,functional needs repair
+1224,functional needs repair
+1225,functional needs repair
+1226,functional needs repair
+1227,non functional
+1228,non functional
+1229,non functional
+1230,non functional
+1231,non functional
+1232,functional needs repair
+1233,functional
+1234,non functional
+1235,functional
+1236,functional needs repair
+1237,non functional
+1238,non functional
+1239,functional needs repair
+1240,non functional
+1241,functional needs repair
+1242,non functional
+1243,non functional
+1244,functional
+1245,non functional
+1246,functional needs repair
+1247,functional needs repair
+1248,functional
+1249,non functional
+1250,non functional
+1251,functional
+1252,functional needs repair
+1253,functional needs repair
+1254,functional
+1255,functional
+1256,non functional
+1257,non functional
+1258,non functional
+1259,non functional
+1260,functional
+1261,functional needs repair
+1262,functional needs repair
+1263,functional
+1264,functional needs repair
+1265,non functional
+1266,non functional
+1267,functional needs repair
+1268,functional
+1269,functional
+1270,non functional
+1271,non functional
+1272,non functional
+1273,functional needs repair
+1274,functional needs repair
+1275,non functional
+1276,functional needs repair
+1277,non functional
+1278,functional needs repair
+1279,functional needs repair
+1280,non functional
+1281,functional
+1282,functional needs repair
+1283,functional needs repair
+1284,non functional
+1285,functional needs repair
+1286,non functional
+1287,non functional
+1288,functional needs repair
+1289,functional needs repair
+1290,functional
+1291,functional needs repair
+1292,non functional
+1293,functional
+1294,functional
+1295,functional
+1296,functional needs repair
+1297,functional needs repair
+1298,functional needs repair
+1299,functional needs repair
+1300,non functional
+1301,functional needs repair
+1302,functional needs repair
+1303,non functional
+1304,functional needs repair
+1305,functional needs repair
+1306,non functional
+1307,non functional
+1308,functional needs repair
+1309,functional needs repair
+1310,functional
+1311,non functional
+1312,functional needs repair
+1313,non functional
+1314,non functional
+1315,non functional
+1316,non functional
+1317,functional
+1318,functional needs repair
+1319,non functional
+1320,functional
+1321,functional needs repair
+1322,functional
+1323,functional needs repair
+1324,functional needs repair
+1325,non functional
+1326,non functional
+1327,non functional
+1328,functional
+1329,non functional
+1330,functional
+1331,functional
+1332,non functional
+1333,non functional
+1334,non functional
+1335,functional
+1336,non functional
+1337,functional
+1338,functional
+1339,functional needs repair
+1340,functional needs repair
+1341,non functional
+1342,non functional
+1343,functional needs repair
+1344,functional needs repair
+1345,non functional
+1346,functional needs repair
+1347,functional
+1348,functional needs repair
+1349,non functional
+1350,functional needs repair
+1351,functional needs repair
+1352,functional needs repair
+1353,functional
+1354,functional
+1355,functional
+1356,functional needs repair
+1357,non functional
+1358,functional needs repair
+1359,functional needs repair
+1360,functional needs repair
+1361,non functional
+1362,non functional
+1363,functional needs repair
+1364,non functional
+1365,non functional
+1366,non functional
+1367,functional
+1368,non functional
+1369,functional needs repair
+1370,non functional
+1371,non functional
+1372,functional
+1373,functional
+1374,non functional
+1375,functional needs repair
+1376,functional
+1377,functional
+1378,functional
+1379,functional needs repair
+1380,non functional
+1381,non functional
+1382,functional
+1383,functional
+1384,non functional
+1385,non functional
+1386,functional needs repair
+1387,functional needs repair
+1388,functional needs repair
+1389,non functional
+1390,functional needs repair
+1391,non functional
+1392,functional
+1393,non functional
+1394,functional
+1395,functional needs repair
+1396,functional needs repair
+1397,functional
+1398,non functional
+1399,functional
+1400,functional needs repair
+1401,functional
+1402,functional needs repair
+1403,non functional
+1404,non functional
+1405,non functional
+1406,functional needs repair
+1407,functional needs repair
+1408,functional needs repair
+1409,non functional
+1410,functional needs repair
+1411,functional needs repair
+1412,functional needs repair
+1413,functional needs repair
+1414,functional needs repair
+1415,functional
+1416,functional
+1417,functional needs repair
+1418,functional
+1419,non functional
+1420,functional
+1421,functional needs repair
+1422,functional needs repair
+1423,functional needs repair
+1424,non functional
+1425,functional needs repair
+1426,non functional
+1427,non functional
+1428,functional
+1429,non functional
+1430,non functional
+1431,functional needs repair
+1432,non functional
+1433,functional needs repair
+1434,non functional
+1435,non functional
+1436,functional needs repair
+1437,functional needs repair
+1438,functional needs repair
+1439,functional needs repair
+1440,non functional
+1441,non functional
+1442,functional needs repair
+1443,non functional
+1444,functional
+1445,functional needs repair
+1446,functional needs repair
+1447,non functional
+1448,non functional
+1449,functional needs repair
+1450,functional
+1451,non functional
+1452,functional needs repair
+1453,non functional
+1454,functional
+1455,functional
+1456,functional needs repair
+1457,functional needs repair
+1458,non functional
+1459,non functional
+1460,non functional
+1461,functional needs repair
+1462,functional
+1463,non functional
+1464,functional
+1465,functional needs repair
+1466,functional needs repair
+1467,non functional
+1468,functional needs repair
+1469,functional needs repair
+1470,non functional
+1471,non functional
+1472,functional
+1473,non functional
+1474,non functional
+1475,functional needs repair
+1476,functional needs repair
+1477,non functional
+1478,functional
+1479,non functional
+1480,functional needs repair
+1481,non functional
+1482,non functional
+1483,non functional
+1484,functional
+1485,functional needs repair
+1486,functional
+1487,functional
+1488,non functional
+1489,functional needs repair
+1490,non functional
+1491,functional needs repair
+1492,functional
+1493,functional needs repair
+1494,functional
+1495,non functional
+1496,functional
+1497,non functional
+1498,non functional
+1499,non functional
+1500,functional
+1501,functional
+1502,non functional
+1503,functional needs repair
+1504,non functional
+1505,functional
+1506,functional
+1507,functional needs repair
+1508,functional
+1509,non functional
+1510,functional
+1511,functional needs repair
+1512,functional
+1513,non functional
+1514,functional needs repair
+1515,non functional
+1516,functional needs repair
+1517,functional
+1518,non functional
+1519,non functional
+1520,functional needs repair
+1521,non functional
+1522,non functional
+1523,functional needs repair
+1524,non functional
+1525,non functional
+1526,non functional
+1527,functional needs repair
+1528,functional needs repair
+1529,functional needs repair
+1530,functional needs repair
+1531,functional
+1532,non functional
+1533,non functional
+1534,functional
+1535,functional
+1536,functional
+1537,functional
+1538,non functional
+1539,functional
+1540,functional
+1541,non functional
+1542,functional needs repair
+1543,non functional
+1544,functional needs repair
+1545,functional needs repair
+1546,functional
+1547,functional needs repair
+1548,functional needs repair
+1549,functional
+1550,functional needs repair
+1551,non functional
+1552,functional needs repair
+1553,functional needs repair
+1554,non functional
+1555,functional needs repair
+1556,functional
+1557,non functional
+1558,functional
+1559,non functional
+1560,functional
+1561,functional needs repair
+1562,functional
+1563,functional needs repair
+1564,functional needs repair
+1565,functional
+1566,functional needs repair
+1567,functional needs repair
+1568,functional needs repair
+1569,non functional
+1570,non functional
+1571,functional needs repair
+1572,functional
+1573,non functional
+1574,functional
+1575,functional
+1576,non functional
+1577,functional
+1578,non functional
+1579,non functional
+1580,non functional
+1581,non functional
+1582,functional needs repair
+1583,functional needs repair
+1584,functional
+1585,non functional
+1586,non functional
+1587,non functional
+1588,functional
+1589,non functional
+1590,non functional
+1591,functional
+1592,functional needs repair
+1593,non functional
+1594,non functional
+1595,non functional
+1596,functional
+1597,functional
+1598,functional needs repair
+1599,non functional
+1600,functional needs repair
+1601,functional
+1602,functional needs repair
+1603,non functional
+1604,non functional
+1605,non functional
+1606,functional needs repair
+1607,functional
+1608,non functional
+1609,non functional
+1610,non functional
+1611,non functional
+1612,functional
+1613,functional needs repair
+1614,non functional
+1615,functional needs repair
+1616,functional
+1617,functional needs repair
+1618,functional needs repair
+1619,functional
+1620,functional needs repair
+1621,functional needs repair
+1622,non functional
+1623,functional
+1624,non functional
+1625,functional needs repair
+1626,non functional
+1627,functional needs repair
+1628,functional needs repair
+1629,functional
+1630,functional needs repair
+1631,functional needs repair
+1632,non functional
+1633,functional needs repair
+1634,functional
+1635,functional needs repair
+1636,non functional
+1637,functional needs repair
+1638,functional
+1639,functional needs repair
+1640,non functional
+1641,non functional
+1642,non functional
+1643,functional needs repair
+1644,non functional
+1645,functional
+1646,functional
+1647,functional needs repair
+1648,functional
+1649,functional needs repair
+1650,functional needs repair
+1651,functional
+1652,non functional
+1653,non functional
+1654,non functional
+1655,functional
+1656,non functional
+1657,functional needs repair
+1658,functional needs repair
+1659,functional
+1660,non functional
+1661,functional needs repair
+1662,functional needs repair
+1663,non functional
+1664,functional needs repair
+1665,non functional
+1666,non functional
+1667,non functional
+1668,non functional
+1669,functional needs repair
+1670,non functional
+1671,non functional
+1672,functional
+1673,functional needs repair
+1674,non functional
+1675,functional needs repair
+1676,functional
+1677,functional needs repair
+1678,functional
+1679,non functional
+1680,functional
+1681,functional needs repair
+1682,functional
+1683,non functional
+1684,functional needs repair
+1685,non functional
+1686,non functional
+1687,functional
+1688,non functional
+1689,functional needs repair
+1690,functional needs repair
+1691,functional needs repair
+1692,non functional
+1693,functional
+1694,non functional
+1695,non functional
+1696,functional needs repair
+1697,non functional
+1698,non functional
+1699,non functional
+1700,functional
+1701,non functional
+1702,non functional
+1703,non functional
+1704,non functional
+1705,non functional
+1706,non functional
+1707,functional needs repair
+1708,functional needs repair
+1709,functional needs repair
+1710,functional
+1711,non functional
+1712,non functional
+1713,functional needs repair
+1714,functional needs repair
+1715,functional needs repair
+1716,functional needs repair
+1717,non functional
+1718,functional
+1719,non functional
+1720,non functional
+1721,non functional
+1722,non functional
+1723,functional
+1724,non functional
+1725,non functional
+1726,functional needs repair
+1727,functional needs repair
+1728,non functional
+1729,non functional
+1730,non functional
+1731,non functional
+1732,non functional
+1733,functional needs repair
+1734,non functional
+1735,functional needs repair
+1736,functional needs repair
+1737,non functional
+1738,non functional
+1739,non functional
+1740,functional needs repair
+1741,functional needs repair
+1742,functional needs repair
+1743,functional needs repair
+1744,non functional
+1745,functional
+1746,non functional
+1747,functional needs repair
+1748,functional needs repair
+1749,functional needs repair
+1750,functional needs repair
+1751,functional
+1752,functional needs repair
+1753,functional needs repair
+1754,functional needs repair
+1755,functional
+1756,functional needs repair
+1757,non functional
+1758,non functional
+1759,non functional
+1760,functional
+1761,functional needs repair
+1762,functional needs repair
+1763,functional needs repair
+1764,non functional
+1765,non functional
+1766,functional
+1767,non functional
+1768,functional
+1769,functional
+1770,functional needs repair
+1771,non functional
+1772,functional needs repair
+1773,functional needs repair
+1774,non functional
+1775,non functional
+1776,non functional
+1777,functional needs repair
+1778,non functional
+1779,functional needs repair
+1780,functional
+1781,non functional
+1782,non functional
+1783,functional
+1784,functional
+1785,non functional
+1786,functional needs repair
+1787,non functional
+1788,functional needs repair
+1789,functional needs repair
+1790,functional
+1791,functional needs repair
+1792,non functional
+1793,non functional
+1794,non functional
+1795,functional
+1796,functional
+1797,functional needs repair
+1798,functional needs repair
+1799,non functional
+1800,functional
+1801,non functional
+1802,functional needs repair
+1803,non functional
+1804,non functional
+1805,non functional
+1806,functional needs repair
+1807,non functional
+1808,functional needs repair
+1809,non functional
+1810,functional needs repair
+1811,functional
+1812,functional
+1813,functional needs repair
+1814,functional
+1815,functional needs repair
+1816,functional needs repair
+1817,functional
+1818,non functional
+1819,functional
+1820,functional needs repair
+1821,non functional
+1822,non functional
+1823,functional
+1824,functional
+1825,non functional
+1826,non functional
+1827,functional needs repair
+1828,functional needs repair
+1829,functional needs repair
+1830,non functional
+1831,functional
+1832,functional
+1833,functional needs repair
+1834,non functional
+1835,non functional
+1836,functional
+1837,functional needs repair
+1838,non functional
+1839,non functional
+1840,non functional
+1841,functional needs repair
+1842,functional
+1843,non functional
+1844,functional needs repair
+1845,non functional
+1846,functional needs repair
+1847,functional needs repair
+1848,functional needs repair
+1849,functional
+1850,functional
+1851,non functional
+1852,non functional
+1853,functional needs repair
+1854,non functional
+1855,non functional
+1856,functional needs repair
+1857,non functional
+1858,non functional
+1859,functional needs repair
+1860,non functional
+1861,non functional
+1862,functional
+1863,non functional
+1864,functional
+1865,functional needs repair
+1866,functional needs repair
+1867,functional needs repair
+1868,functional needs repair
+1869,functional
+1870,non functional
+1871,functional
+1872,functional needs repair
+1873,non functional
+1874,functional
+1875,non functional
+1876,functional
+1877,functional needs repair
+1878,functional
+1879,functional
+1880,non functional
+1881,functional needs repair
+1882,functional needs repair
+1883,functional needs repair
+1884,non functional
+1885,functional needs repair
+1886,functional needs repair
+1887,functional needs repair
+1888,functional
+1889,non functional
+1890,functional needs repair
+1891,non functional
+1892,functional needs repair
+1893,functional
+1894,non functional
+1895,non functional
+1896,functional needs repair
+1897,functional needs repair
+1898,functional needs repair
+1899,functional
+1900,non functional
+1901,non functional
+1902,functional needs repair
+1903,non functional
+1904,functional
+1905,non functional
+1906,non functional
+1907,functional
+1908,non functional
+1909,functional needs repair
+1910,functional
+1911,non functional
+1912,functional needs repair
+1913,functional needs repair
+1914,functional needs repair
+1915,non functional
+1916,non functional
+1917,functional
+1918,functional
+1919,functional
+1920,functional needs repair
+1921,functional needs repair
+1922,functional needs repair
+1923,non functional
+1924,functional
+1925,functional
+1926,non functional
+1927,functional needs repair
+1928,functional needs repair
+1929,functional
+1930,non functional
+1931,functional
+1932,functional needs repair
+1933,non functional
+1934,functional
+1935,functional needs repair
+1936,functional needs repair
+1937,functional needs repair
+1938,functional needs repair
+1939,functional needs repair
+1940,functional needs repair
+1941,non functional
+1942,non functional
+1943,functional needs repair
+1944,functional needs repair
+1945,functional
+1946,functional
+1947,functional
+1948,functional needs repair
+1949,functional
+1950,non functional
+1951,non functional
+1952,non functional
+1953,non functional
+1954,functional needs repair
+1955,non functional
+1956,functional
+1957,functional
+1958,functional needs repair
+1959,non functional
+1960,functional needs repair
+1961,functional
+1962,functional needs repair
+1963,non functional
+1964,functional
+1965,functional
+1966,functional needs repair
+1967,functional needs repair
+1968,non functional
+1969,functional
+1970,functional
+1971,functional
+1972,functional needs repair
+1973,non functional
+1974,non functional
+1975,non functional
+1976,functional
+1977,functional needs repair
+1978,functional needs repair
+1979,non functional
+1980,functional
+1981,non functional
+1982,non functional
+1983,functional needs repair
+1984,functional needs repair
+1985,functional
+1986,functional needs repair
+1987,non functional
+1988,non functional
+1989,functional needs repair
+1990,non functional
+1991,functional needs repair
+1992,functional needs repair
+1993,functional
+1994,non functional
+1995,functional needs repair
+1996,non functional
+1997,non functional
+1998,functional needs repair
+1999,functional needs repair
+2000,functional needs repair
+2001,functional
+2002,non functional
+2003,non functional
+2004,non functional
+2005,non functional
+2006,non functional
+2007,non functional
+2008,functional
+2009,functional needs repair
+2010,functional needs repair
+2011,functional needs repair
+2012,functional
+2013,non functional
+2014,functional
+2015,non functional
+2016,functional needs repair
+2017,functional needs repair
+2018,non functional
+2019,functional
+2020,functional needs repair
+2021,functional
+2022,functional
+2023,non functional
+2024,non functional
+2025,functional
+2026,functional needs repair
+2027,non functional
+2028,functional
+2029,non functional
+2030,functional needs repair
+2031,functional
+2032,functional needs repair
+2033,functional
+2034,functional needs repair
+2035,non functional
+2036,non functional
+2037,functional needs repair
+2038,functional needs repair
+2039,functional
+2040,functional
+2041,non functional
+2042,functional needs repair
+2043,non functional
+2044,functional
+2045,functional needs repair
+2046,functional needs repair
+2047,functional
+2048,functional needs repair
+2049,non functional
+2050,non functional
+2051,functional needs repair
+2052,non functional
+2053,non functional
+2054,non functional
+2055,functional needs repair
+2056,non functional
+2057,functional needs repair
+2058,functional needs repair
+2059,functional needs repair
+2060,functional needs repair
+2061,functional needs repair
+2062,non functional
+2063,functional
+2064,functional
+2065,non functional
+2066,functional needs repair
+2067,functional needs repair
+2068,non functional
+2069,non functional
+2070,non functional
+2071,non functional
+2072,functional
+2073,functional needs repair
+2074,non functional
+2075,non functional
+2076,functional
+2077,functional needs repair
+2078,functional
+2079,functional
+2080,functional needs repair
+2081,non functional
+2082,functional needs repair
+2083,functional
+2084,functional needs repair
+2085,functional needs repair
+2086,non functional
+2087,non functional
+2088,functional needs repair
+2089,functional needs repair
+2090,functional needs repair
+2091,functional needs repair
+2092,functional
+2093,functional
+2094,functional
+2095,functional
+2096,non functional
+2097,non functional
+2098,functional
+2099,functional
+2100,non functional
+2101,non functional
+2102,non functional
+2103,non functional
+2104,non functional
+2105,functional needs repair
+2106,functional needs repair
+2107,non functional
+2108,functional
+2109,non functional
+2110,functional
+2111,functional needs repair
+2112,functional
+2113,functional
+2114,functional needs repair
+2115,functional needs repair
+2116,functional needs repair
+2117,non functional
+2118,functional
+2119,functional needs repair
+2120,non functional
+2121,non functional
+2122,non functional
+2123,non functional
+2124,functional needs repair
+2125,functional needs repair
+2126,non functional
+2127,non functional
+2128,non functional
+2129,functional needs repair
+2130,functional
+2131,functional
+2132,non functional
+2133,functional needs repair
+2134,functional
+2135,functional needs repair
+2136,functional needs repair
+2137,functional
+2138,functional needs repair
+2139,functional
+2140,functional
+2141,functional needs repair
+2142,functional needs repair
+2143,functional needs repair
+2144,functional
+2145,non functional
+2146,functional
+2147,functional needs repair
+2148,functional
+2149,functional needs repair
+2150,functional needs repair
+2151,non functional
+2152,functional needs repair
+2153,non functional
+2154,non functional
+2155,functional needs repair
+2156,non functional
+2157,functional needs repair
+2158,non functional
+2159,non functional
+2160,functional
+2161,functional needs repair
+2162,non functional
+2163,functional
+2164,non functional
+2165,functional needs repair
+2166,functional needs repair
+2167,functional
+2168,functional
+2169,functional
+2170,non functional
+2171,functional needs repair
+2172,non functional
+2173,non functional
+2174,functional needs repair
+2175,functional needs repair
+2176,non functional
+2177,non functional
+2178,functional needs repair
+2179,functional
+2180,non functional
+2181,non functional
+2182,functional
+2183,functional needs repair
+2184,non functional
+2185,functional needs repair
+2186,non functional
+2187,functional needs repair
+2188,functional
+2189,functional
+2190,functional needs repair
+2191,functional needs repair
+2192,functional
+2193,functional needs repair
+2194,non functional
+2195,non functional
+2196,functional
+2197,non functional
+2198,non functional
+2199,functional needs repair
+2200,functional
+2201,functional needs repair
+2202,functional needs repair
+2203,functional needs repair
+2204,functional needs repair
+2205,functional
+2206,functional needs repair
+2207,non functional
+2208,functional
+2209,functional needs repair
+2210,non functional
+2211,functional needs repair
+2212,functional needs repair
+2213,functional
+2214,functional needs repair
+2215,non functional
+2216,functional
+2217,functional
+2218,non functional
+2219,functional
+2220,non functional
+2221,functional
+2222,functional
+2223,functional needs repair
+2224,functional
+2225,functional needs repair
+2226,functional
+2227,functional needs repair
+2228,non functional
+2229,non functional
+2230,functional needs repair
+2231,functional needs repair
+2232,non functional
+2233,non functional
+2234,functional
+2235,functional needs repair
+2236,functional needs repair
+2237,functional
+2238,functional needs repair
+2239,non functional
+2240,non functional
+2241,non functional
+2242,non functional
+2243,functional
+2244,non functional
+2245,non functional
+2246,functional
+2247,functional needs repair
+2248,non functional
+2249,non functional
+2250,functional needs repair
+2251,functional needs repair
+2252,non functional
+2253,non functional
+2254,functional needs repair
+2255,functional needs repair
+2256,non functional
+2257,non functional
+2258,non functional
+2259,functional needs repair
+2260,functional
+2261,functional
+2262,functional needs repair
+2263,functional
+2264,functional
+2265,non functional
+2266,functional
+2267,functional
+2268,non functional
+2269,functional needs repair
+2270,functional needs repair
+2271,functional
+2272,functional needs repair
+2273,non functional
+2274,functional needs repair
+2275,functional
+2276,functional needs repair
+2277,functional needs repair
+2278,functional
+2279,functional
+2280,functional needs repair
+2281,functional
+2282,non functional
+2283,non functional
+2284,functional needs repair
+2285,functional
+2286,functional
+2287,functional needs repair
+2288,non functional
+2289,functional
+2290,functional needs repair
+2291,functional
+2292,functional needs repair
+2293,functional needs repair
+2294,non functional
+2295,functional needs repair
+2296,non functional
+2297,non functional
+2298,non functional
+2299,functional
+2300,functional
+2301,functional needs repair
+2302,non functional
+2303,non functional
+2304,non functional
+2305,functional needs repair
+2306,functional needs repair
+2307,functional needs repair
+2308,non functional
+2309,non functional
+2310,functional needs repair
+2311,functional
+2312,functional needs repair
+2313,functional needs repair
+2314,functional needs repair
+2315,non functional
+2316,non functional
+2317,functional needs repair
+2318,functional needs repair
+2319,functional needs repair
+2320,non functional
+2321,non functional
+2322,functional needs repair
+2323,functional
+2324,functional
+2325,non functional
+2326,functional
+2327,functional needs repair
+2328,non functional
+2329,functional
+2330,functional
+2331,functional needs repair
+2332,functional
+2333,non functional
+2334,non functional
+2335,non functional
+2336,functional
+2337,non functional
+2338,functional needs repair
+2339,functional needs repair
+2340,functional
+2341,functional needs repair
+2342,non functional
+2343,functional needs repair
+2344,non functional
+2345,functional
+2346,functional needs repair
+2347,non functional
+2348,non functional
+2349,functional needs repair
+2350,non functional
+2351,functional
+2352,non functional
+2353,non functional
+2354,functional needs repair
+2355,functional needs repair
+2356,functional
+2357,functional needs repair
+2358,functional needs repair
+2359,non functional
+2360,non functional
+2361,non functional
+2362,non functional
+2363,functional needs repair
+2364,functional needs repair
+2365,non functional
+2366,non functional
+2367,functional
+2368,non functional
+2369,non functional
+2370,functional needs repair
+2371,functional
+2372,functional needs repair
+2373,functional needs repair
+2374,non functional
+2375,functional
+2376,non functional
+2377,non functional
+2378,functional needs repair
+2379,functional needs repair
+2380,functional needs repair
+2381,non functional
+2382,functional needs repair
+2383,functional needs repair
+2384,non functional
+2385,non functional
+2386,non functional
+2387,functional
+2388,functional
+2389,functional needs repair
+2390,functional
+2391,functional needs repair
+2392,non functional
+2393,non functional
+2394,non functional
+2395,functional needs repair
+2396,functional
+2397,non functional
+2398,functional needs repair
+2399,functional needs repair
+2400,functional needs repair
+2401,functional
+2402,non functional
+2403,functional needs repair
+2404,functional needs repair
+2405,non functional
+2406,non functional
+2407,non functional
+2408,functional
+2409,non functional
+2410,non functional
+2411,non functional
+2412,functional
+2413,functional needs repair
+2414,functional
+2415,functional needs repair
+2416,functional needs repair
+2417,non functional
+2418,functional needs repair
+2419,non functional
+2420,functional needs repair
+2421,non functional
+2422,functional needs repair
+2423,functional needs repair
+2424,non functional
+2425,non functional
+2426,non functional
+2427,non functional
+2428,non functional
+2429,functional
+2430,functional needs repair
+2431,functional needs repair
+2432,non functional
+2433,non functional
+2434,functional needs repair
+2435,functional needs repair
+2436,non functional
+2437,functional
+2438,functional
+2439,functional needs repair
+2440,functional needs repair
+2441,functional needs repair
+2442,non functional
+2443,non functional
+2444,functional needs repair
+2445,functional
+2446,functional needs repair
+2447,non functional
+2448,non functional
+2449,non functional
+2450,functional
+2451,non functional
+2452,non functional
+2453,functional needs repair
+2454,non functional
+2455,non functional
+2456,non functional
+2457,non functional
+2458,functional needs repair
+2459,functional
+2460,non functional
+2461,functional needs repair
+2462,functional
+2463,functional needs repair
+2464,functional needs repair
+2465,non functional
+2466,non functional
+2467,functional needs repair
+2468,non functional
+2469,functional
+2470,functional
+2471,non functional
+2472,functional needs repair
+2473,functional
+2474,functional
+2475,non functional
+2476,non functional
+2477,non functional
+2478,functional
+2479,non functional
+2480,functional needs repair
+2481,functional
+2482,functional needs repair
+2483,functional
+2484,functional
+2485,non functional
+2486,non functional
+2487,non functional
+2488,functional needs repair
+2489,functional needs repair
+2490,non functional
+2491,functional
+2492,functional
+2493,non functional
+2494,functional needs repair
+2495,functional needs repair
+2496,functional
+2497,functional needs repair
+2498,functional needs repair
+2499,non functional
+2500,non functional
+2501,functional
+2502,functional
+2503,functional needs repair
+2504,non functional
+2505,non functional
+2506,non functional
+2507,non functional
+2508,functional
+2509,functional needs repair
+2510,functional
+2511,functional needs repair
+2512,non functional
+2513,non functional
+2514,functional
+2515,functional needs repair
+2516,functional needs repair
+2517,non functional
+2518,non functional
+2519,functional
+2520,functional
+2521,functional needs repair
+2522,non functional
+2523,functional needs repair
+2524,functional
+2525,non functional
+2526,non functional
+2527,non functional
+2528,functional
+2529,functional needs repair
+2530,functional needs repair
+2531,functional
+2532,non functional
+2533,non functional
+2534,non functional
+2535,non functional
+2536,non functional
+2537,non functional
+2538,functional needs repair
+2539,non functional
+2540,functional needs repair
+2541,functional needs repair
+2542,non functional
+2543,non functional
+2544,functional needs repair
+2545,functional needs repair
+2546,non functional
+2547,functional needs repair
+2548,non functional
+2549,functional
+2550,functional needs repair
+2551,functional
+2552,functional needs repair
+2553,functional
+2554,functional needs repair
+2555,functional needs repair
+2556,functional needs repair
+2557,functional needs repair
+2558,functional needs repair
+2559,non functional
+2560,functional needs repair
+2561,non functional
+2562,non functional
+2563,functional needs repair
+2564,functional needs repair
+2565,functional needs repair
+2566,functional
+2567,functional
+2568,non functional
+2569,non functional
+2570,functional needs repair
+2571,functional
+2572,non functional
+2573,functional
+2574,non functional
+2575,functional
+2576,functional needs repair
+2577,functional
+2578,non functional
+2579,non functional
+2580,non functional
+2581,functional needs repair
+2582,functional needs repair
+2583,functional
+2584,non functional
+2585,functional needs repair
+2586,functional needs repair
+2587,functional needs repair
+2588,functional needs repair
+2589,functional needs repair
+2590,functional
+2591,functional needs repair
+2592,functional needs repair
+2593,non functional
+2594,functional
+2595,functional needs repair
+2596,non functional
+2597,functional
+2598,functional
+2599,functional needs repair
+2600,functional needs repair
+2601,functional
+2602,functional needs repair
+2603,functional needs repair
+2604,functional
+2605,functional needs repair
+2606,non functional
+2607,non functional
+2608,non functional
+2609,non functional
+2610,functional
+2611,non functional
+2612,functional needs repair
+2613,functional needs repair
+2614,non functional
+2615,non functional
+2616,non functional
+2617,non functional
+2618,non functional
+2619,functional
+2620,non functional
+2621,non functional
+2622,non functional
+2623,functional needs repair
+2624,non functional
+2625,functional
+2626,functional
+2627,functional needs repair
+2628,functional needs repair
+2629,functional needs repair
+2630,non functional
+2631,functional needs repair
+2632,non functional
+2633,functional
+2634,functional needs repair
+2635,non functional
+2636,functional needs repair
+2637,functional needs repair
+2638,functional
+2639,functional
+2640,non functional
+2641,functional
+2642,functional
+2643,functional
+2644,functional needs repair
+2645,non functional
+2646,non functional
+2647,functional needs repair
+2648,non functional
+2649,functional
+2650,non functional
+2651,functional
+2652,functional needs repair
+2653,functional
+2654,non functional
+2655,non functional
+2656,functional needs repair
+2657,functional
+2658,non functional
+2659,functional needs repair
+2660,functional
+2661,functional needs repair
+2662,non functional
+2663,functional
+2664,non functional
+2665,non functional
+2666,non functional
+2667,functional
+2668,non functional
+2669,non functional
+2670,functional
+2671,non functional
+2672,non functional
+2673,non functional
+2674,functional needs repair
+2675,functional needs repair
+2676,functional needs repair
+2677,functional needs repair
+2678,functional
+2679,non functional
+2680,non functional
+2681,functional needs repair
+2682,functional needs repair
+2683,non functional
+2684,non functional
+2685,non functional
+2686,functional needs repair
+2687,non functional
+2688,non functional
+2689,functional needs repair
+2690,non functional
+2691,functional
+2692,functional needs repair
+2693,non functional
+2694,functional needs repair
+2695,non functional
+2696,functional needs repair
+2697,functional needs repair
+2698,non functional
+2699,functional
+2700,functional needs repair
+2701,functional needs repair
+2702,non functional
+2703,functional needs repair
+2704,non functional
+2705,functional needs repair
+2706,functional needs repair
+2707,non functional
+2708,non functional
+2709,functional
+2710,non functional
+2711,non functional
+2712,functional needs repair
+2713,non functional
+2714,non functional
+2715,functional needs repair
+2716,functional needs repair
+2717,functional needs repair
+2718,non functional
+2719,functional needs repair
+2720,non functional
+2721,functional needs repair
+2722,functional needs repair
+2723,non functional
+2724,non functional
+2725,functional
+2726,non functional
+2727,non functional
+2728,functional needs repair
+2729,non functional
+2730,non functional
+2731,non functional
+2732,functional needs repair
+2733,functional needs repair
+2734,functional needs repair
+2735,non functional
+2736,functional needs repair
+2737,non functional
+2738,functional needs repair
+2739,functional
+2740,non functional
+2741,non functional
+2742,non functional
+2743,non functional
+2744,functional needs repair
+2745,functional
+2746,functional
+2747,functional needs repair
+2748,non functional
+2749,functional needs repair
+2750,functional needs repair
+2751,functional needs repair
+2752,non functional
+2753,functional needs repair
+2754,functional needs repair
+2755,functional
+2756,functional needs repair
+2757,functional needs repair
+2758,non functional
+2759,functional needs repair
+2760,functional needs repair
+2761,functional
+2762,functional
+2763,non functional
+2764,functional
+2765,functional
+2766,functional
+2767,non functional
+2768,non functional
+2769,non functional
+2770,functional
+2771,functional needs repair
+2772,non functional
+2773,non functional
+2774,functional
+2775,functional needs repair
+2776,non functional
+2777,functional needs repair
+2778,non functional
+2779,functional
+2780,functional needs repair
+2781,non functional
+2782,non functional
+2783,non functional
+2784,non functional
+2785,non functional
+2786,non functional
+2787,functional
+2788,functional needs repair
+2789,non functional
+2790,functional needs repair
+2791,non functional
+2792,functional
+2793,functional needs repair
+2794,functional needs repair
+2795,functional needs repair
+2796,functional needs repair
+2797,functional
+2798,non functional
+2799,functional
+2800,functional needs repair
+2801,functional
+2802,functional
+2803,non functional
+2804,functional needs repair
+2805,functional needs repair
+2806,functional needs repair
+2807,non functional
+2808,non functional
+2809,non functional
+2810,functional needs repair
+2811,functional needs repair
+2812,functional
+2813,non functional
+2814,functional
+2815,functional needs repair
+2816,non functional
+2817,non functional
+2818,functional needs repair
+2819,non functional
+2820,functional needs repair
+2821,non functional
+2822,functional
+2823,non functional
+2824,functional needs repair
+2825,functional needs repair
+2826,functional
+2827,non functional
+2828,non functional
+2829,functional needs repair
+2830,functional
+2831,functional needs repair
+2832,non functional
+2833,non functional
+2834,functional
+2835,functional
+2836,functional
+2837,functional needs repair
+2838,functional
+2839,functional needs repair
+2840,non functional
+2841,non functional
+2842,functional needs repair
+2843,functional
+2844,non functional
+2845,functional
+2846,non functional
+2847,non functional
+2848,functional
+2849,functional
+2850,non functional
+2851,non functional
+2852,functional needs repair
+2853,non functional
+2854,functional
+2855,functional
+2856,functional needs repair
+2857,functional
+2858,functional
+2859,non functional
+2860,functional needs repair
+2861,functional
+2862,non functional
+2863,functional needs repair
+2864,functional needs repair
+2865,non functional
+2866,functional
+2867,functional needs repair
+2868,functional
+2869,non functional
+2870,functional needs repair
+2871,functional needs repair
+2872,non functional
+2873,functional needs repair
+2874,non functional
+2875,non functional
+2876,functional needs repair
+2877,non functional
+2878,functional
+2879,functional
+2880,functional
+2881,non functional
+2882,functional needs repair
+2883,functional
+2884,functional
+2885,functional needs repair
+2886,functional
+2887,functional
+2888,non functional
+2889,functional needs repair
+2890,non functional
+2891,non functional
+2892,non functional
+2893,non functional
+2894,functional
+2895,non functional
+2896,non functional
+2897,functional
+2898,functional needs repair
+2899,functional needs repair
+2900,non functional
+2901,non functional
+2902,functional
+2903,functional
+2904,non functional
+2905,non functional
+2906,functional
+2907,functional
+2908,functional needs repair
+2909,non functional
+2910,non functional
+2911,functional
+2912,non functional
+2913,functional needs repair
+2914,functional needs repair
+2915,non functional
+2916,functional needs repair
+2917,functional needs repair
+2918,functional needs repair
+2919,non functional
+2920,functional
+2921,functional
+2922,non functional
+2923,non functional
+2924,functional
+2925,functional needs repair
+2926,non functional
+2927,functional needs repair
+2928,non functional
+2929,non functional
+2930,non functional
+2931,functional
+2932,non functional
+2933,functional needs repair
+2934,non functional
+2935,non functional
+2936,functional needs repair
+2937,non functional
+2938,non functional
+2939,functional needs repair
+2940,functional needs repair
+2941,non functional
+2942,functional
+2943,functional needs repair
+2944,functional
+2945,non functional
+2946,functional
+2947,non functional
+2948,functional needs repair
+2949,non functional
+2950,functional needs repair
+2951,non functional
+2952,non functional
+2953,functional
+2954,non functional
+2955,non functional
+2956,non functional
+2957,non functional
+2958,functional
+2959,non functional
+2960,functional needs repair
+2961,functional
+2962,functional
+2963,functional
+2964,functional needs repair
+2965,non functional
+2966,functional needs repair
+2967,functional
+2968,functional
+2969,non functional
+2970,non functional
+2971,functional
+2972,functional needs repair
+2973,functional needs repair
+2974,functional
+2975,functional needs repair
+2976,non functional
+2977,functional needs repair
+2978,non functional
+2979,non functional
+2980,non functional
+2981,functional needs repair
+2982,functional needs repair
+2983,functional needs repair
+2984,functional
+2985,functional
+2986,functional needs repair
+2987,non functional
+2988,non functional
+2989,non functional
+2990,functional needs repair
+2991,functional
+2992,functional
+2993,non functional
+2994,functional
+2995,non functional
+2996,functional
+2997,non functional
+2998,non functional
+2999,functional needs repair
+3000,functional needs repair

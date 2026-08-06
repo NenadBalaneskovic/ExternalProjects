@@ -1,0 +1,22 @@
+[project]
+name = "pumpitup"
+version = "0.1.0"
+description = "DrivenData Pump-It-Up ML pipeline with stacking and Optuna tuning"
+authors = [{ name = "Nenad" }]
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "lightgbm",
+    "xgboost",
+    "catboost",
+    "optuna",
+    "duckdb",
+    "pyarrow",
+    "category-encoders"
+]
+
+[project.scripts]
+pumpitup = "pumpitup.cli:main"
