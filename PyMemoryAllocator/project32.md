@@ -4102,8 +4102,6 @@ The discussion is structured around five major themes:
 
 This chapter provides a deep, reflective, and integrative perspective on Project 32, connecting empirical results with theoretical foundations and practical considerations.
 
----
-
 ## **11.2. The Nature of Memory Inefficiency in Python**
 
 ### **11.2.1 Python’s Memory Model Is Not Designed for HPC**
