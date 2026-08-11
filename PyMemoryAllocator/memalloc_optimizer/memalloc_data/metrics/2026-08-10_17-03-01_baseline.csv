@@ -1,0 +1,2 @@
+timestamp,script_hash,runtime_seconds,peak_memory_mb,optimized,speedup,strategy_summary
+2026-08-10 17:03:01,a8972f7d42f3495ac40c9ae2f6908359b9db174113e953efe35d0502b76d8cf3,0.9663691001478583,99.734375,False,1.0,baseline
