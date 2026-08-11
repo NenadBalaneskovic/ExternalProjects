@@ -169,7 +169,7 @@ This keeps it feasible, robust, and extremely useful for ranking workloads.
 ---
 
 
-![fig_0.png](8c3cb6ae-3768-4036-9f21-cc4b7d13aa72.png)
+![fig_0.png](c078a5ee-2e83-4fa6-85ce-a6c3542bdcbc.png)
 
 ## 🧩 **Functional Overview**
 Let us unpack the **MemAlloc Optimizer GUI** in full technical and functional depth. 
