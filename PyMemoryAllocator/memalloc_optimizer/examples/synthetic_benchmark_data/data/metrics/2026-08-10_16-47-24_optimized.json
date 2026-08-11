@@ -1,0 +1,9 @@
+{
+    "timestamp": "2026-08-10 16:47:24",
+    "script_hash": "ca1d1a376a1e12ea739fa9510f6caa07c739a4063338afec1bd9f4dd507060f1",
+    "runtime_seconds": 0.14487469987943769,
+    "peak_memory_mb": 31.421875,
+    "optimized": true,
+    "speedup": 1.0940474787271421,
+    "strategy_summary": "cython_memoryviews, numba_jit, preallocate_buffers, optimize_layout"
+}
