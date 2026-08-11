@@ -1,0 +1,56 @@
+memalloc_optimizer/
+├─ memalloc_gui/              # GUI application (frontend + orchestration)
+├─ memalloc_core/             # Analysis, profiling, optimization engine
+├─ memalloc_data/             # Configs, metrics, plots, cache
+├─ examples/                  # Example scripts (ranking, ML, etc.)
+├─ tests/                     # Unit/integration tests
+├─ docs/                      # Documentation, architecture notes
+├─ pyproject.toml / setup.cfg # Packaging
+└─ README.md                  # Project overview
+
+memalloc_gui/
+├─ __init__.py
+├─ app.py                 # Main entry point for the GUI
+├─ layout.py              # Window layout definition (PySimpleGUI/Tkinter)
+├─ controllers.py         # Event handlers, orchestration logic
+├─ view_models.py         # Data structures bound to GUI widgets
+└─ theming.py             # Colors, fonts, icons (optional)
+
+memalloc_core/
+├─ __init__.py
+├─ script_manager.py       # File handling, metadata, caching
+├─ static_analysis.py      # AST-based hotspot detection
+├─ runtime_profiler.py     # tracemalloc, psutil, timing
+├─ optimization_engine.py  # Cython/Numba/layout strategies
+├─ codegen.py              # Code generation & AST rewriting
+├─ execution_sandbox.py    # Safe script execution
+├─ metrics_store.py        # Persist metrics (SQLite/DuckDB)
+└─ plots.py                # Plot generation (Matplotlib/Plotly)
+
+memalloc_data/
+├─ configs/
+│  └─ ranking_script.json      # Strategy choices, last run settings
+├─ metrics/
+│  └─ memalloc_metrics.db      # SQLite/DuckDB database
+├─ plots/
+│  ├─ ranking_script_memory.png
+│  └─ ranking_script_speedup.png
+└─ cache/
+   └─ analysis_cache.json      # Cached AST/hotspot info by script hash
+
+examples/
+├─ ranking_script.py
+├─ ml_pipeline.py
+└─ synthetic_benchmark.py
+
+tests/
+├─ test_static_analysis.py
+├─ test_runtime_profiler.py
+├─ test_optimization_engine.py
+├─ test_codegen.py
+└─ test_integration_gui_core.py
+
+docs/
+├─ architecture.md
+├─ usage.md
+└─ dev_notes.md
