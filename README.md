@@ -2038,6 +2038,122 @@ The feature‑engineering pipeline cleans, imputes, encodes, and derives domain�
 
 [![Pump‑It‑Up_ML_Pipeline_v1.0](https://img.shields.io/badge/Pump‑It‑Up_ML_Pipeline_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/553ed53bcf375331df9b9d1e6e1df9d144cd450c/DrivenData_Pumpit/project31.md)
 
+- ### **32. Memory Allocator Advisor GUI v1.0 – Jul 2026**
+
+>## **Executive Summary: Static Hotspot Detection, Hybrid Memory Profiling, Automated Code Generation & Deterministic Scientific‑Computing Architecture**
+>
+>**Business Problem**  
+>Modern scientific‑computing environments — spanning **machine learning**, **numerical simulation**, and **quantum algorithm development** — increasingly rely on Python as the orchestration layer.  
+>These workloads are:
+>
+>- memory‑intensive  
+>- allocation‑heavy  
+>- fragmentation‑prone  
+>- dominated by NumPy temporaries  
+>- sensitive to simulator‑driven memory spikes  
+>- difficult to optimize manually  
+>
+>Real‑world scientific workflows face persistent challenges:
+>
+>- hidden temporary arrays in NumPy operations  
+>- repeated buffer allocations inside loops  
+>- unpredictable garbage‑collection cycles  
+>- non‑deterministic memory usage across runs  
+>- opaque CPython allocator behavior  
+>- fragile manual optimization attempts  
+>- lack of reproducible profiling  
+>
+>Traditional approaches depend on:
+>
+>- ad‑hoc Numba kernels  
+>- manual Cython rewriting  
+>- non‑systematic profiling  
+>- domain‑specific heuristics  
+>- notebook‑based experimentation  
+>
+>These constraints reduce numerical stability, undermine reproducibility, and limit deployment readiness.  
+>Modern scientific pipelines require **static hotspot detection**, **hybrid profiling**, **automated code generation**, and **deterministic sandbox execution** — all within structured, auditable environments.
+>
+>**Solution Overview**  
+>Project 32 introduces a **reproducible, modular memory‑optimization ecosystem** that automates:
+>
+>- **static hotspot detection** → AST parsing, bytecode inspection, taxonomy classification  
+>- **hybrid profiling** → RSS tracking, tracemalloc snapshots, perf‑counter timing  
+>- **automated code generation** → Python, Cython, Numba modules  
+>- **arena‑based buffer preallocation** → deterministic memory reuse  
+>- **contiguous‑layout enforcement** → cache‑friendly numerical arrays  
+>- **sandbox execution** → isolated baseline/optimized runs  
+>- **DuckDB‑backed metrics storage** → audit‑ready logs  
+>- **GUI orchestration** → reproducible, user‑friendly workflow control  
+>
+>Project 32 transforms Python memory optimization into a **modular, explainable, and reproducible performance‑engineering pipeline**, enabling:
+>
+>- consistent hotspot detection  
+>- optimized memory behavior  
+>- deterministic runtime characteristics  
+>- reproducible sandbox‑driven execution  
+>- transparent experiment governance  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **significant peak‑memory reduction** (up to 80%)  
+>- **major runtime acceleration** (3×–20×)  
+>- **stable quantum‑simulation pipelines**  
+>- **deterministic memory behavior** across runs  
+>- **automatically generated optimized modules**  
+>- **reproducible scientific workflows**  
+>- **audit‑ready performance logs**  
+>
+>Project 32 strengthens scientific‑computing capabilities, improves HPC readiness, and provides a practical foundation for reproducible memory‑optimization pipelines — without relying on proprietary cloud services.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 32 demonstrates how to operationalize:
+>
+>- static memory‑hotspot detection  
+>- hybrid profiling methodologies  
+>- automated Python/Cython/Numba code generation  
+>- reproducible sandbox execution  
+>- DuckDB‑based metrics governance  
+>
+>It is directly applicable to:
+>
+>- scientific‑computing consulting  
+>- ML pipeline optimization  
+>- quantum‑algorithm acceleration  
+>- HPC workflow stabilization  
+>- reproducible research environments  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to ML, physics, quantum computing, finance, and large‑scale numerical simulation.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 32 supports governance through:
+>
+>- transparent performance evaluation  
+>- reproducible memory‑usage reporting  
+>- structured experiment logs  
+>- explainable optimization strategies  
+>- deterministic code‑generation pipelines  
+>
+>This ensures scientific workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and responsible AI engineering.
+
+#### **Abstract**
+
+**Memory Allocator Advisor GUI v1.0** is a modular, reproducible performance‑engineering architecture designed for environments where **memory determinism, automated optimization, reproducibility, and experiment governance** are central concerns. It unifies static hotspot detection, hybrid profiling, automated Python/Cython/Numba code generation, sandbox execution, and DuckDB‑based metrics storage into a coherent, reproducible optimization stack.
+
+The static‑analysis pipeline parses ASTs, inspects bytecode, and classifies memory hotspots (temporary allocations, repeated allocations, nested loops, layout inefficiencies, quantum‑specific patterns). The strategy engine synthesizes an optimization plan using Cython memoryviews, Numba JIT kernels, buffer preallocation, and contiguous‑layout enforcement. The code‑generation engine rewrites ASTs and produces optimized Python/Cython/Numba modules. The sandbox executes baseline and optimized scripts with deterministic memory tracking. The profiler measures runtime, peak memory, and allocation traces. The metrics store persists results in DuckDB, and the plot generator visualizes memory/runtime/speedup curves (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PyMemoryAllocator/project32.md#13-references) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, automated memory‑optimization architecture with structured artifacts and transparent logic.  
+- **Audience:** scientific‑computing practitioners, ML engineers, quantum‑algorithm developers, HPC architects, and consultants designing reproducible performance pipelines.  
+- **Why modularity matters:** Separating analysis, optimization, execution, and visualization prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** deterministic sandbox execution, automated code generation, and unified metrics logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![Memory_Allocator_Advisor_GUI_v1.0](https://img.shields.io/badge/Memory_Allocator_Advisor_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7185be45e64f397d3ef6d53f9b3823f1ca460389/PyMemoryAllocator/project32.md)
+
 ---
 
 
