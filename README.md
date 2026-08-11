@@ -2152,7 +2152,7 @@ The static‑analysis pipeline parses ASTs, inspects bytecode, and classifies me
 - **Governance and reproducibility:** deterministic sandbox execution, automated code generation, and unified metrics logs ensure traceability and auditability.  
 - **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
-[![Memory_Allocator_Advisor_GUI_v1.0](https://img.shields.io/badge/Memory_Allocator_Advisor_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/e1bec70c98a45181259cea9a2eec9b05f3cd1df2/PyMemoryAllocator/project32.md)
+[![Memory_Allocator_Advisor_GUI_v1.0](https://img.shields.io/badge/Memory_Allocator_Advisor_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9d46326a07621b83981c1e3ed52ce832015ecf5c/PyMemoryAllocator/project32.md)
 
 ---
 
