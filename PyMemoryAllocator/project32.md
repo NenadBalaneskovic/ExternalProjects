@@ -817,11 +817,6 @@ This chapter establishes the scientific and engineering background that motivate
 
 ---
 
-Nenad, here is **Chapter 3/12: System Architecture**, written in a publication‑grade, deeply technical style, with **GitHub‑ready Mermaid diagrams**, and approximately **3500 words**.  
-It follows the structure established in Chapters 1 and 2 and integrates the architectural concepts from your PDF.
-
----
-
 ## **Chapter 3 — System Architecture**  
 
 ## **3.1. Introduction**
