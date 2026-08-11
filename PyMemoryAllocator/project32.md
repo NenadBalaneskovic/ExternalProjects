@@ -3329,6 +3329,10 @@ These workloads validate the hotspot taxonomy and optimization strategies.
 
 ### **9.3.1 Workload Definitions**
 
+![fig2_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig2_1.png)
+
+![fig2_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig2_2.png)
+
 #### **9.3.1.1 Temporary Allocation**
 
 ```python
@@ -3363,6 +3367,8 @@ Combination of repeated allocations + nested loops.
 
 ## **9.4. Synthetic Workload Results**
 
+![fig3](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig3.png)
+
 ### **9.4.1 Runtime Comparison**
 
 | Workload | Baseline (s) | Optimized (s) | Speedup |
@@ -3391,6 +3397,12 @@ Combination of repeated allocations + nested loops.
 - Mixed workloads benefit from combined strategies.
 
 ## **9.5. Machine Learning Pipeline Evaluation**
+
+![fig1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig1.png)
+
+![fig1_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig1_2.png)
+
+![fig1_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig1_3.png)
 
 The ML pipeline (`ml_pipeline.py`) includes:
 
@@ -3445,6 +3457,10 @@ These workflows involve:
 
 ### **9.6.1 VQE Workflow**
 
+![fig6](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig6.png)
+
+![fig7](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig7.png)
+
 #### **9.6.1.1 Hotspots**
 
 - repeated parameter binding  
@@ -3466,6 +3482,8 @@ These workflows involve:
 
 ### **9.6.2 QAOA Workflow**
 
+![fig5](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig5.png)
+
 #### **9.6.2.1 Hotspots**
 
 - repeated circuit evaluation  
@@ -3486,6 +3504,8 @@ These workflows involve:
 | Peak Memory | 75 MB | 32 MB | 57% reduction |
 
 ### **9.6.3 QNN Workflow**
+
+![fig4](https://github.com/NenadBalaneskovic/ExternalProjects/blob/fbc0a3b86dd2d57d4aa1c948e0ffd2ce71a3e676/PyMemoryAllocator/figures/fig4.png)
 
 #### **9.6.3.1 Hotspots**
 
