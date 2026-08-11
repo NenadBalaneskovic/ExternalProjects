@@ -4007,6 +4007,8 @@ Mixed workloads benefit from:
 
 ### **10.8.1 Runtime Improvements**
 
+![Runtime_graph](https://github.com/NenadBalaneskovic/ExternalProjects/blob/110c7c71e8f7c074fa7e37ddbaaf67b78e24b8b7/PyMemoryAllocator/figures/runtime.png)
+
 ```mermaid
 graph LR
     A[ML Pipeline] -->|20.9×| B[Optimized]
@@ -4019,6 +4021,8 @@ graph LR
 
 ### **10.8.2 Memory Improvements**
 
+![Memory_graph](https://github.com/NenadBalaneskovic/ExternalProjects/blob/110c7c71e8f7c074fa7e37ddbaaf67b78e24b8b7/PyMemoryAllocator/figures/memory_usage.png)
+
 ```mermaid
 graph LR
     A[ML Pipeline] -->|82%| B[Optimized]
@@ -4030,6 +4034,8 @@ graph LR
 ```
 
 ### **10.8.3 Interpretation**
+
+![Speedup_graph](https://github.com/NenadBalaneskovic/ExternalProjects/blob/110c7c71e8f7c074fa7e37ddbaaf67b78e24b8b7/PyMemoryAllocator/figures/speedup.png)
 
 - ML pipelines benefit most due to heavy numerical workloads.  
 - Ranking algorithms benefit from memoryviews and preallocation.  
