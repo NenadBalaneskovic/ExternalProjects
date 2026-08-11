@@ -5360,9 +5360,9 @@ https://arxiv.org/abs/2406.12371
 - **“Scientific Workflow Optimization”** — [Nature Computational Science](https://link.springer.com/rwe/10.1007/978-0-387-39940-9_1471) and https://www.nature.com/articles/s41598-024-75859-3, https://www.nature.com/natcomputsci,
 https://link.springer.com/article/10.1186/s44147-024-00512-9  
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b8127546f14ff998df7258ece7b330812933781e/DrivenData_Pumpit/PumpIt_Project_Concepts.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d82798b3b0160f2653d250ba6a9926cb9a024fca/PyMemoryAllocator/PythonMemoryAllocator.ipynb)
 
-3. [![Memory_Allocation_Advisor_GUI_Report | English](https://img.shields.io/badge/Memory_Allocation_Advisor_GUI%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f079310a365aab064f1b17ce688a32e507c0969c/DrivenData_Pumpit/project31.pdf)
+3. [![Memory_Allocation_Advisor_GUI_Report | English](https://img.shields.io/badge/Memory_Allocation_Advisor_GUI%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/83962f26e6f7d6bf848b1090fb4b8ba9e657fc12/PyMemoryAllocator/project32.pdf)
 
 ---
 
