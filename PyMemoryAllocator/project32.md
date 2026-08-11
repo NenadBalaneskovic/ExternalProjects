@@ -5392,7 +5392,7 @@ https://arxiv.org/abs/2406.12371
 - **“Scientific Workflow Optimization”** — [Nature Computational Science](https://link.springer.com/rwe/10.1007/978-0-387-39940-9_1471) and https://www.nature.com/articles/s41598-024-75859-3, https://www.nature.com/natcomputsci,
 https://link.springer.com/article/10.1186/s44147-024-00512-9  
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/d82798b3b0160f2653d250ba6a9926cb9a024fca/PyMemoryAllocator/PythonMemoryAllocator.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a1562a20320efa7631fc4478e60022c6456f4473/PyMemoryAllocator/PythonMemoryAllocator.ipynb)
 
 3. [![Memory_Allocation_Advisor_GUI_Report | English](https://img.shields.io/badge/Memory_Allocation_Advisor_GUI%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0f0be1c7de954fcf19f6edcce632429ef5969284/PyMemoryAllocator/project32.pdf)
 
