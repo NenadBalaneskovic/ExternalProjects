@@ -6,6 +6,8 @@
 
 ## **1.1. Introduction**
 
+![fig0](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a6fe174d3bed63ceae0145700b72223f0cc87c01/PyMemoryAllocator/fig_0.png)
+
 Modern scientific computing, machine learning pipelines, and quantum‑algorithm workflows increasingly rely on Python as their primary orchestration language. Python’s flexibility, readability, and rich ecosystem make it the 
 de‑facto standard for rapid prototyping and production‑grade experimentation. However, Python’s memory model — dynamic, object‑centric, and interpreter‑driven — introduces significant inefficiencies when workloads scale. 
 Temporary allocations, repeated buffer creation, nested loops, and NumPy array churn can silently degrade performance, inflate memory usage, and destabilize long‑running processes.
@@ -85,6 +87,10 @@ Project 32 combines both approaches:
 This hybrid design is the core innovation of the Memory Allocator Advisor GUI.
 
 ## **1.3. System Overview**
+
+![fig0_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a6fe174d3bed63ceae0145700b72223f0cc87c01/PyMemoryAllocator/fig_0_1.png)
+
+![fig0_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a6fe174d3bed63ceae0145700b72223f0cc87c01/PyMemoryAllocator/fig_0_2.png)
 
 The Memory Allocator Advisor GUI is composed of seven major subsystems:
 
