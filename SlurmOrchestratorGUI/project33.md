@@ -3814,6 +3814,10 @@ These features can be added without architectural disruption.
 
 # **6.3 GUI Layout Structure**
 
+![fig0_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig0_1.png)
+
+![fig0_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig0_2.png)
+
 The GUI layout is defined in `build_main_window()` and follows a structured, panel‑based design. The layout is divided into four major sections.
 
 ## **6.3.1 Section 1 — Workflow Upload Panel**
@@ -4735,6 +4739,10 @@ This part introduced:
 
 # **7.6 HPC Execution Model**
 
+![fig1_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig1_1.png)
+
+![fig1_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig1_2.png)
+
 The HPC execution model defines how classical computation is performed on high‑performance clusters. Hybrid workflows rely heavily on classical computation for optimization, preprocessing, 
 and orchestration. The orchestrator must generate Slurm scripts that correctly encode HPC resource requirements.
 
@@ -4845,6 +4853,10 @@ This diagram illustrates the deterministic HPC execution pipeline.
 
 # **7.7 QPU Runtime Interaction**
 
+![fig2_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig2_1.png)
+
+![fig2_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig2_2.png)
+
 Quantum runtime interaction is the mechanism through which workflows communicate with quantum backends. The orchestrator must ensure that QPU credentials and runtime URLs are correctly encoded in Slurm scripts.
 
 ## **7.7.1 Quantum Runtime Components**
@@ -4930,6 +4942,10 @@ This diagram illustrates the deterministic QPU interaction pipeline.
 
 # **7.8 Hybrid Algorithm Coordination**
 
+![fig3_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig3_1.png)
+
+![fig3_2](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig3_2.png)
+
 Hybrid algorithms require tight coordination between classical and quantum execution. The orchestrator must ensure that classical loops and quantum calls interact deterministically.
 
 ## **7.8.1 Hybrid Algorithm Structure**
@@ -4996,7 +5012,9 @@ This part examined:
 - QPU runtime interaction  
 - hybrid algorithm coordination  
 
-These mechanisms ensure that hybrid workflows execute deterministically, reproducibly, and transparently.
+These mechanisms ensure that hybrid workflows execute deterministically, reproducibly, and transparently. All generated slurm files are stored into the folder `generated_slurm_jobs/` 
+
+![fig4_1](https://github.com/NenadBalaneskovic/ExternalProjects/blob/65b9c88e05da873a000e2cfcbd4a07d644b9d3bb/SlurmOrchestratorGUI/fig4_1.png)
 
 # **7.10 HPC/QPU Failure Modes**
 
@@ -5797,10 +5815,10 @@ Quantum calls use stable SDK APIs.
 ```mermaid
 flowchart TD
 
-    A[Classical Loop] --> B[Quantum Call]
-    B --> C[Quantum Backend]
-    C --> D[Measurement Results]
-    D --> E[Classical Optimizer]
+    A["Classical Loop"] --> B["Quantum Call"]
+    B --> C["Quantum Backend"]
+    C --> D["Measurement Results"]
+    D --> E["Classical Optimizer"]
     E --> A
 ```
 
