@@ -8,6 +8,8 @@
 
 # **1. Overview**
 
+![fig0](https://github.com/NenadBalaneskovic/ExternalProjects/blob/51ffc508c853a605df0086249c2a9cee686c947d/SlurmOrchestratorGUI/fig0.png)
+
 The Slurm HPC–QPU Workflow Orchestrator GUI (Project 33) represents a significant step toward unifying classical high‑performance computing (HPC) workflows with emerging quantum processing unit (QPU) workloads. 
 As hybrid quantum‑classical algorithms become increasingly relevant—particularly in optimization, chemistry, and machine learning—scientific users require tools that simplify the orchestration of heterogeneous compute resources. 
 This project addresses that need by providing a graphical interface that performs static workflow analysis, classifies Python workloads, and generates Slurm job scripts tailored to classical, quantum, or hybrid execution environments.
