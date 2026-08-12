@@ -1,0 +1,80 @@
+# ======================================================================
+# Default configuration for the Slurm HPC–QPU Workflow Orchestrator
+# ======================================================================
+
+# ----------------------------------------------------------------------
+# General GUI settings
+# ----------------------------------------------------------------------
+gui:
+  theme: "DarkBlue"
+  show_workflow_graph: true
+  enable_manual_credentials_section: false
+  default_output_directory: "./generated_slurm_jobs"
+
+# ----------------------------------------------------------------------
+# Workflow classification defaults
+# ----------------------------------------------------------------------
+workflow_detection:
+  quantum_imports:
+    - qiskit
+    - qiskit_ibm_runtime
+    - qiskit_serverless
+    - qiskit_aer
+    - qiskit.providers
+
+  classical_imports:
+    - numpy
+    - scipy
+    - torch
+    - tensorflow
+    - jax
+
+  quantum_calls:
+    - Sampler
+    - Estimator
+    - Session
+    - execute
+    - run
+
+# ----------------------------------------------------------------------
+# Slurm defaults (user can override in GUI)
+# ----------------------------------------------------------------------
+slurm_defaults:
+  job_name: "quantum_workflow"
+  partition: "compute"
+  nodes: "1"
+  cpus_per_node: "4"
+  time_limit: "01:00:00"
+  output_log: "logs/%x_%j.out"
+
+# ----------------------------------------------------------------------
+# QPU credential placeholders (never real values)
+# ----------------------------------------------------------------------
+qpu_credentials:
+  api_key: "{{API_KEY}}"
+  runtime_url: "{{RUNTIME_URL}}"
+  provider: "IBM_Quantum"
+
+# ----------------------------------------------------------------------
+# Template library paths (relative to project root)
+# ----------------------------------------------------------------------
+template_library:
+  classical_template: "core/template_library/classical_template.slurm"
+  quantum_template: "core/template_library/quantum_template.slurm"
+  hybrid_template: "core/template_library/hybrid_template.slurm"
+
+# ----------------------------------------------------------------------
+# Python environment defaults
+# ----------------------------------------------------------------------
+python_environment:
+  module_load: "python/3.10"
+  venv_path: "{{PYTHON_ENV}}"
+
+# ----------------------------------------------------------------------
+# Security and safety
+# ----------------------------------------------------------------------
+security:
+  allow_manual_credentials: true
+  never_store_api_keys: true
+  never_execute_user_code: true
+  sanitize_user_inputs: true

@@ -1,0 +1,136 @@
+/* ======================================================================
+   Slurm HPC–QPU Workflow Orchestrator — Global Stylesheet
+   ====================================================================== */
+
+/* ----------------------------------------------------------------------
+   Color Palette (DarkBlue3 Theme)
+   ---------------------------------------------------------------------- */
+:root {
+    --background: #0D1B2A;
+    --text: #E0E1DD;
+    --input-background: #1B263B;
+    --input-text: #E0E1DD;
+    --button-background: #415A77;
+    --button-text: #E0E1DD;
+    --frame-background: #1B263B;
+    --progress-bar: #778DA9;
+    --progress-background: #0D1B2A;
+
+    --accent-green: #2ECC71;
+    --accent-red: #E74C3C;
+    --accent-blue: #3498DB;
+}
+
+/* ----------------------------------------------------------------------
+   Global Layout
+   ---------------------------------------------------------------------- */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------------
+   Headings
+   ---------------------------------------------------------------------- */
+h1, h2, h3 {
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------------
+   Buttons
+   ---------------------------------------------------------------------- */
+button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: var(--accent-blue);
+}
+
+/* ----------------------------------------------------------------------
+   Inputs
+   ---------------------------------------------------------------------- */
+input[type="text"], input[type="password"], textarea {
+    background-color: var(--input-background);
+    color: var(--input-text);
+    border: 1px solid var(--progress-bar);
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* ----------------------------------------------------------------------
+   Frames / Panels
+   ---------------------------------------------------------------------- */
+.frame {
+    background-color: var(--frame-background);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------------------
+   Slurm Preview Box
+   ---------------------------------------------------------------------- */
+#slurm-preview {
+    background-color: var(--input-background);
+    color: var(--input-text);
+    border: 1px solid var(--progress-bar);
+    padding: 10px;
+    border-radius: 4px;
+    font-family: "Consolas", monospace;
+    white-space: pre-wrap;
+}
+
+/* ----------------------------------------------------------------------
+   Progress Bar
+   ---------------------------------------------------------------------- */
+.progress {
+    background-color: var(--progress-background);
+    border-radius: 4px;
+    height: 20px;
+    width: 100%;
+}
+
+.progress-fill {
+    background-color: var(--progress-bar);
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+}
+
+/* ----------------------------------------------------------------------
+   Credential Section
+   ---------------------------------------------------------------------- */
+.credentials {
+    background-color: var(--frame-background);
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+/* ----------------------------------------------------------------------
+   Utility Classes
+   ---------------------------------------------------------------------- */
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}

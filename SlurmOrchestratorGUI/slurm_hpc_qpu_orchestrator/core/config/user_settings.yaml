@@ -1,0 +1,75 @@
+# ======================================================================
+# User-specific settings for the Slurm HPC–QPU Workflow Orchestrator
+# ======================================================================
+# This file stores ONLY user preferences and overrides.
+# It NEVER stores sensitive credentials such as real API keys.
+# ======================================================================
+
+# ----------------------------------------------------------------------
+# GUI preferences
+# ----------------------------------------------------------------------
+gui:
+  theme: "DarkBlue"
+  window_size: [1200, 800]
+  remember_last_opened_file: true
+  auto_open_slurm_preview: true
+  enable_manual_credentials_section: false
+
+# ----------------------------------------------------------------------
+# Slurm configuration overrides
+# ----------------------------------------------------------------------
+slurm:
+  job_name: "my_slurm_job"
+  partition: "compute"
+  nodes: "1"
+  cpus_per_node: "4"
+  time_limit: "01:00:00"
+  output_log: "logs/%x_%j.out"
+
+# ----------------------------------------------------------------------
+# Python environment settings
+# ----------------------------------------------------------------------
+python_environment:
+  module_load: "python/3.10"
+  venv_path: "~/venvs/qpu_env"
+
+# ----------------------------------------------------------------------
+# QPU configuration (placeholders only)
+# ----------------------------------------------------------------------
+qpu:
+  provider: "IBM_Quantum"
+  api_key: "{{API_KEY}}"        # User enters manually in GUI
+  runtime_url: "{{RUNTIME_URL}}" # User enters manually in GUI
+
+# ----------------------------------------------------------------------
+# Template paths (user may override)
+# ----------------------------------------------------------------------
+template_library:
+  classical_template: "core/template_library/classical_template.slurm"
+  quantum_template: "core/template_library/quantum_template.slurm"
+  hybrid_template: "core/template_library/hybrid_template.slurm"
+
+# ----------------------------------------------------------------------
+# Workflow analysis preferences
+# ----------------------------------------------------------------------
+workflow_analysis:
+  show_imports: true
+  show_function_calls: true
+  show_loop_detection: true
+  show_workflow_graph: true
+
+# ----------------------------------------------------------------------
+# Security preferences
+# ----------------------------------------------------------------------
+security:
+  allow_manual_credentials: true
+  never_store_api_keys: true
+  sanitize_user_inputs: true
+  warn_on_missing_credentials: true
+
+# ----------------------------------------------------------------------
+# Output settings
+# ----------------------------------------------------------------------
+output:
+  slurm_output_directory: "./generated_slurm_jobs"
+  overwrite_existing_files: false
