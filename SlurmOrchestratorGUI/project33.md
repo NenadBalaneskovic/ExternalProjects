@@ -1504,7 +1504,7 @@ The AST parsing workflow consists of four steps:
 flowchart TD
 
     A[Python File] --> B[Read Contents]
-    B --> C[ast.parse()]
+    B --> C[ast_parse]
     C --> D[AST Tree]
     D --> E[Walk AST]
     E --> F[Extract Imports, Calls, Loops]
@@ -4671,19 +4671,19 @@ Each step is deterministic and reproducible.
 ```mermaid
 flowchart TD
 
-    A[Static Analysis] --> B[Workflow Classification]
-    B --> C{Workflow Type}
-    C -- CLASSICAL --> D[Classical Template]
-    C -- QUANTUM --> E[Quantum Template]
-    C -- HYBRID --> F[Hybrid Template]
+    A["Static Analysis"] --> B["Workflow Classification"]
+    B --> C{"Workflow Type"}
+    C -- CLASSICAL --> D["Classical Template"]
+    C -- QUANTUM --> E["Quantum Template"]
+    C -- HYBRID --> F["Hybrid Template"]
 
-    D --> G[Placeholder Substitution]
+    D --> G["Placeholder Substitution"]
     E --> G
     F --> G
 
-    G --> H[Slurm Script]
-    H --> I[HPC Execution]
-    I --> J[QPU Runtime (if needed)]
+    G --> H["Slurm Script"]
+    H --> I["HPC Execution"]
+    I --> J["QPU Runtime (if needed)"]
 ```
 
 This diagram illustrates the deterministic integration pipeline.
@@ -8626,7 +8626,6 @@ The QA subsystem ensures:
 ---
 
 # **12. Deployment, Distribution, and Future Extensions**  
-### *Part 1 of 3 (~1200 words)*
 
 This final chapter examines how the orchestrator is deployed, distributed, and extended across heterogeneous environments. While previous chapters focused on analysis, 
 classification, template generation, runtime execution, logging, security, and testing, this chapter addresses the practical realities of delivering the orchestrator to users, maintaining version 
