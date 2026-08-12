@@ -2154,6 +2154,125 @@ The static‑analysis pipeline parses ASTs, inspects bytecode, and classifies me
 
 [![Memory_Allocator_Advisor_GUI_v1.0](https://img.shields.io/badge/Memory_Allocator_Advisor_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/9d46326a07621b83981c1e3ed52ce832015ecf5c/PyMemoryAllocator/project32.md)
 
+- ### **33. Slurm Orchestrator GUI v1.0 – Aug 2026**
+
+>## **Executive Summary: Static Workflow Analysis, Hybrid HPC–QPU Classification, Deterministic Slurm Generation & Reproducible Scientific‑Computing Architecture**
+>
+>**Business Problem**  
+>Modern scientific‑computing environments — spanning **numerical simulation**, **quantum algorithm development**, **hybrid optimization loops**, and **HPC‑driven research pipelines** — increasingly rely on Python as the orchestration layer.  
+>These workloads are:
+>
+>- structurally complex  
+>- hybrid in nature (classical + quantum)  
+>- sensitive to environment drift  
+>- dependent on reproducible Slurm execution  
+>- reliant on secure quantum‑runtime credentials  
+>- difficult to orchestrate manually  
+>
+>Real‑world scientific workflows face persistent challenges:
+>
+>- opaque structural patterns in Python scripts  
+>- implicit quantum‑runtime initialization  
+>- non‑deterministic Slurm script generation  
+>- inconsistent HPC environment activation  
+>- unsafe API‑key handling  
+>- fragile hybrid‑loop coordination  
+>- missing audit trails for scientific governance  
+>
+>Traditional approaches depend on:
+>
+>- manual Slurm scripting  
+>- ad‑hoc environment configuration  
+>- notebook‑based experimentation  
+>- undocumented hybrid loops  
+>- implicit backend selection  
+>- non‑systematic workflow inspection  
+>
+>These constraints reduce reproducibility, undermine HPC/QPU stability, and limit deployment readiness.  
+>Modern scientific pipelines require **static workflow analysis**, **hybrid classification**, **deterministic Slurm generation**, and **secure credential handling** — all within structured, auditable environments.
+>
+>**Solution Overview**  
+>Project 33 introduces a **reproducible, modular hybrid‑workflow orchestration ecosystem** that automates:
+>
+>- **static workflow analysis** → AST parsing, import taxonomy, quantum‑call detection  
+>- **hybrid workflow classification** → rule‑based HPC / Quantum / Hybrid decision logic  
+>- **deterministic Slurm generation** → reproducible templates, stable directives  
+>- **secure credential handling** → redaction, non‑persistence, environment‑variable export  
+>- **HPC environment activation** → deterministic module loading & Miniforge/Mamba paths  
+>- **QPU‑runtime initialization** → safe backend selection & explicit provider setup  
+>- **hybrid‑loop coordination** → structured iteration logging  
+>- **scientific logging & metadata storage** → audit‑ready workflow records  
+>- **GUI orchestration** → reproducible, user‑friendly workflow control  
+>
+>Project 33 transforms hybrid HPC–QPU orchestration into a **modular, explainable, and reproducible scientific‑computing pipeline**, enabling:
+>
+>- consistent workflow classification  
+>- deterministic Slurm script generation  
+>- secure quantum‑credential usage  
+>- reproducible HPC/QPU execution  
+>- transparent experiment governance  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **stable hybrid HPC–QPU pipelines**  
+>- **deterministic Slurm execution** across clusters  
+>- **secure quantum‑runtime credential handling**  
+>- **transparent workflow logs** for auditability  
+>- **reproducible hybrid‑algorithm behavior**  
+>- **cluster‑safe environment activation**  
+>- **scientific governance & traceability**  
+>
+>Project 33 strengthens hybrid‑computing capabilities, improves HPC/QPU readiness, and provides a practical foundation for reproducible hybrid‑workflow orchestration — without relying on proprietary cloud services.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 33 demonstrates how to operationalize:
+>
+>- static workflow analysis  
+>- hybrid HPC–QPU classification  
+>- deterministic Slurm‑template generation  
+>- secure credential‑handling pipelines  
+>- reproducible hybrid‑workflow execution  
+>- structured logging & metadata governance  
+>
+>It is directly applicable to:
+>
+>- HPC consulting  
+>- quantum‑algorithm acceleration  
+>- hybrid‑workflow modernization  
+>- reproducible research environments  
+>- enterprise scientific‑computing governance  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to physics, ML, quantum computing, finance, and large‑scale numerical simulation.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 33 supports governance through:
+>
+>- transparent workflow evaluation  
+>- reproducible Slurm‑script generation  
+>- structured execution logs  
+>- explainable hybrid‑workflow decisions  
+>- deterministic credential‑handling pipelines  
+>
+>This ensures scientific workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and responsible quantum‑resource usage.
+
+#### **Abstract**
+
+**Slurm Orchestrator GUI v1.0** is a modular, reproducible hybrid‑workflow orchestration architecture designed for environments where **workflow determinism, secure credential handling, reproducibility, and scientific governance** are central concerns. It unifies static workflow analysis, hybrid classification, deterministic Slurm generation, secure quantum‑runtime initialization, and structured logging into a coherent, reproducible orchestration stack.
+
+The static‑analysis pipeline parses ASTs, detects quantum calls (`Sampler.run`, `Estimator.run`), identifies loop structures, and classifies workflows as Classical, Quantum, or Hybrid. The template engine selects deterministic Slurm templates and substitutes HPC/QPU parameters reproducibly. The credential manager ensures safe API‑key handling through redaction and environment‑variable export. The execution orchestrator coordinates HPC execution and optional QPU runtime initialization. The logging subsystem records all decisions, and the metadata store preserves workflow hashes, template versions, and backend information (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SlurmOrchestratorGUI/project33.md#13-references-project-33) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, automated hybrid‑workflow orchestration architecture with structured artifacts and transparent logic.  
+- **Audience:** HPC architects, quantum‑algorithm developers, scientific‑computing practitioners, and consultants designing reproducible hybrid pipelines.  
+- **Why modularity matters:** Separating analysis, classification, template generation, execution, and logging prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** deterministic Slurm generation, secure credential handling, and unified metadata logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![Slurm_Orchestrator_GUI_v1.0](https://img.shields.io/badge/Slurm_Orchestrator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f6992bdcbc3fcba7aede07b494538ef0edebf0/SlurmOrchestratorGUI/project33.md)
+
 ---
 
 
