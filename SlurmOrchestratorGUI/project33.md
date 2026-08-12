@@ -6931,8 +6931,7 @@ The logging subsystem ensures:
 
 ---
 
-# **10. Security, Safety, and Credential Handling**  
-### *Part 1 of 3 (~1200 words)*
+# **10. Security, Safety, and Credential Handling** 
 
 Hybrid HPC–QPU workflows require rigorous security guarantees. The orchestrator processes sensitive information such as QPU API keys, runtime URLs, backend identifiers, and HPC configuration parameters. 
 Although the orchestrator never executes user code during analysis, it must still ensure that credential handling, template generation, and runtime orchestration follow strict security and safety principles. 
