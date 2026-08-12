@@ -629,11 +629,6 @@ With Chapter 1 complete, the report now transitions to deeper technical analysis
 
 ---
 
-Nenad — confirmed.  
-We continue with **Chapter 2/12 — System Architecture**, **Part 1 of 3**, ~1200 words, fully numbered (2., 2.1, 2.1.1, …), scientific tone, GitHub‑ready Markdown, mermaid diagrams where appropriate, no images.
-
----
-
 # **2. System Architecture**  
 
 The architecture of the Slurm HPC–QPU Workflow Orchestrator GUI is deliberately modular, deterministic, and scientifically rigorous. It is designed to support reproducible hybrid quantum‑classical workflows 
