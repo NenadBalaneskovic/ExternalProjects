@@ -9454,7 +9454,7 @@ ensuring that hybrid workflows remain auditable, extensible, and scientifically 
 - **Michael A. Nielsen — *Superconducting Qubits and Quantum Circuits***  
   Deep coverage of physical qubit implementations relevant for backend behavior.
 
-- **Qiskit Textbook**  
+- [**Qiskit Textbook**](https://github.com/Qiskit/textbook)  
   Comprehensive introduction to circuits, backends, noise models, and hybrid algorithm primitives.
 
 - **Preskill — *Quantum Computing in the NISQ Era***  
@@ -9466,31 +9466,31 @@ ensuring that hybrid workflows remain auditable, extensible, and scientifically 
 - **Peruzzo et al. — *Variational Quantum Eigensolver (VQE)***  
   The archetypal hybrid algorithm used throughout Project 33’s structural analysis.
 
-- **Slurm Workload Manager Documentation**  
+- [**Slurm Workload Manager Documentation**](https://slurm.schedmd.com/documentation.html)  
   Authoritative reference for deterministic scheduling, resource allocation, and script semantics.
 
 - **Kurtzer et al. — *Singularity: Scientific Containers for HPC***  
   Essential for reproducible environment deployment across clusters.
 
-- **HPC Carpentry — *HPC Fundamentals***  
+- [**HPC Carpentry — *HPC Fundamentals***](https://www.hpc-carpentry.org/)  
   Practical guide to modules, environment activation, and cluster reproducibility.
 
 - **D. Thain — *Distributed Computing in Practice***  
   Covers reproducibility, determinism, and resource isolation in HPC systems.
 
-- **IBM Quantum Runtime Documentation**  
+- [**IBM Quantum Runtime Documentation**](https://quantum.cloud.ibm.com/docs/en/guides)  
   Primary reference for `Sampler`, `Estimator`, backend selection, and credential models.
 
-- **AWS Braket Hybrid Jobs**  
+- [**AWS Braket Hybrid Jobs**](https://docs.aws.amazon.com/braket/latest/developerguide/braket-jobs.html)  
   Useful for future multi‑provider extensions.
 
-- **Azure Quantum Documentation**  
+- [**Azure Quantum Documentation**](https://learn.microsoft.com/en-us/azure/quantum/)  
   Covers QPU access models, job submission, and hybrid orchestration patterns.
 
 - **McClean et al. — *Hybrid Quantum–Classical Algorithms and Their Structure***  
   Theoretical foundation for structural loop‑based hybrid workflows.
 
-- **Python AST Module Documentation**  
+- [**Python AST Module Documentation**](https://docs.python.org/3/library/ast.html)  
   Authoritative reference for structural parsing used in Project 33.
 
 - **David Beazley — *Python Parsing Techniques***  
@@ -9511,49 +9511,49 @@ ensuring that hybrid workflows remain auditable, extensible, and scientifically 
 - **Wilson et al. — *Good Enough Practices in Scientific Computing***  
   Covers logging, metadata, and workflow transparency.
 
-- **NIST SP 800‑63 — Digital Identity Guidelines**  
+- [**NIST SP 800‑63 — Digital Identity Guidelines**](https://pages.nist.gov/800-63-4/)  
   Foundational reference for safe credential handling.
 
-- **OWASP Cheat Sheets — Secrets Management**  
+- [**OWASP Cheat Sheets — Secrets Management**](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)  
   Practical guidance for API key safety and non‑persistence.
 
-- **IBM Quantum Security Model**  
+- [**IBM Quantum Security Model**](https://www.ibm.com/quantum/quantum-safe)  
   Covers backend access control, credential models, and safe runtime initialization.
 
-- **HPC Security Best Practices**  
+- [**HPC Security Best Practices**](https://www.techtarget.com/cybersecurity/resources/Security-Operations-Management?utm_source=bing&int=off&pre=off&utm_medium=cpc&utm_term=GAW&utm_content=sy_lp06232026GOOGOTHR_GsidsSecurity_CompoundGrowth_KTO_IO344275_LI3020203&utm_campaign=Compound_KTO_sSecurity_EMEA&Offer=sy_lp06232026GOOGOTHR_GsidsSecurity_CompoundGrowth_KTO_IO344275_LI3020203&msclkid=ac58aaefa6ac1fd70308c093f6b09012)  
   Cluster‑level safety guidelines for Slurm, modules, and environment activation.
 
-- **pytest Documentation**  
+- [**pytest Documentation**](https://docs.pytest.org/en/stable/)  
   Core framework for deterministic unit and integration testing.
 
 - **Meszaros — *xUnit Test Patterns***  
   Structural patterns for regression and deterministic behavior testing.
 
-- **IEEE Std 829 — Software Test Documentation**  
+- [**IEEE Std 829 — Software Test Documentation**](https://ieeexplore.ieee.org/document/4578383)  
   Formal structure for scientific QA documentation.
 
-- **Docker Documentation**  
+- [**Docker Documentation**](https://docs.docker.com/get-started/)  
   Containerization reference for reproducible environments.
 
-- **Singularity / Apptainer Documentation**  
+- [**Singularity / Apptainer Documentation**](https://apptainer.org/documentation/)  
   HPC‑grade containerization essential for cluster deployment.
 
-- **Conda / Mamba Documentation**  
+- [**Conda / Mamba Documentation**](https://mamba.readthedocs.io/en/latest/index.html)  
   Deterministic environment management aligned with your Miniforge/Mamba workflows.
 
-- **GitHub Actions Documentation**  
+- [**GitHub Actions Documentation**](https://docs.github.com/en/actions)  
   CI/CD reference for reproducible builds and automated testing.
 
-- **Quantum Error Mitigation Survey**  
+- [**Quantum Error Mitigation Survey**](https://arxiv.org/html/2210.00921v3)  
   Relevant for future extensions involving noise‑aware hybrid workflows.
 
-- **Hybrid Quantum Machine Learning Review**  
+- [**Hybrid Quantum Machine Learning Review**](https://arxiv.org/html/2402.10540v1)  
   Useful for structural pattern extensions beyond VQE/QAOA.
 
-- **Scientific Workflow Engines (Nextflow, Snakemake)**  
+- [**Scientific Workflow Engines (Nextflow, Snakemake)**](https://marcsingleton.github.io/posts/workflow-managers-in-data-science-nextflow-and-snakemake/)  
   Inspiration for future multi‑workflow orchestration features.
   
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/a1562a20320efa7631fc4478e60022c6456f4473/PyMemoryAllocator/PythonMemoryAllocator.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/1c575fa935a7fee286437a7cd837daa183881362/SlurmOrchestratorGUI/SlurmOrchestratorGUI.ipynb)
 
 3. [![Slurm_Orchestrator_GUI_Report | English](https://img.shields.io/badge/Slurm_Orchestrator_GUI_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/0f0be1c7de954fcf19f6edcce632429ef5969284/PyMemoryAllocator/project32.pdf)
 
