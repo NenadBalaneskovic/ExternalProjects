@@ -2271,7 +2271,7 @@ The static‑analysis pipeline parses ASTs, detects quantum calls (`Sampler.run`
 - **Governance and reproducibility:** deterministic Slurm generation, secure credential handling, and unified metadata logs ensure traceability and auditability.  
 - **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
-[![Slurm_Orchestrator_GUI_v1.0](https://img.shields.io/badge/Slurm_Orchestrator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/f8f6992bdcbc3fcba7aede07b494538ef0edebf0/SlurmOrchestratorGUI/project33.md)
+[![Slurm_Orchestrator_GUI_v1.0](https://img.shields.io/badge/Slurm_Orchestrator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/51b17aa36502e8f03c872f2f29033bcf04868c6e/SlurmOrchestratorGUI/project33.md)
 
 ---
 
