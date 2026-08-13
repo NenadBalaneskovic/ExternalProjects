@@ -1,0 +1,6 @@
+{
+    "backend": "torch",
+    "entry_point": "simple_torch_model.py",
+    "type": "onnx",
+    "description": "PyTorch model exported via torch.onnx.export."
+}

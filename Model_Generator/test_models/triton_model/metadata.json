@@ -1,0 +1,6 @@
+{
+    "backend": "triton",
+    "entry_point": "triton_model.py",
+    "type": "onnx",
+    "description": "Triton Inference Server ONNX model."
+}

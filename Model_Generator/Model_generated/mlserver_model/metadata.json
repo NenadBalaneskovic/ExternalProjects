@@ -1,0 +1,6 @@
+{
+    "backend": "mlserver",
+    "entry_point": "ml_server_model.py",
+    "type": "onnx",
+    "description": "MLServer-compatible ONNX model."
+}

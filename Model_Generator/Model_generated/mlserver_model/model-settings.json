@@ -1,0 +1,23 @@
+{
+    "name": "custom-model",
+    "version": "1.0.0",
+    "platform": "onnx",
+    "inputs": [
+        {
+            "name": "input",
+            "datatype": "FP32",
+            "shape": [
+                1
+            ]
+        }
+    ],
+    "outputs": [
+        {
+            "name": "output",
+            "datatype": "FP32",
+            "shape": [
+                1
+            ]
+        }
+    ]
+}

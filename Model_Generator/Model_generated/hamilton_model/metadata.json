@@ -1,0 +1,6 @@
+{
+    "backend": "custom",
+    "entry_point": "generators.py",
+    "type": "custom_python",
+    "description": "Algorithmic model exported via custom ONNX converter."
+}
