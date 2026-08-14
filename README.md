@@ -2388,7 +2388,7 @@ The ingestion pipeline loads Python modules in isolated execution contexts, infe
 - **Governance and reproducibility:** deterministic ONNX export, backend‑agnostic conversion, and unified metadata logs ensure traceability and auditability.  
 - **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
 
-[![ONNX_Model_Generator_GUI_v1.0](https://img.shields.io/badge/ONNX_Model_Generator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/51b17aa36502e8f03c872f2f29033bcf04868c6e/SlurmOrchestratorGUI/project33.md)
+[![ONNX_Model_Generator_GUI_v1.0](https://img.shields.io/badge/ONNX_Model_Generator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/41df5e761c1362c1dc35e83a25d637d74fb8aded/Model_Generator/project34.md)
 
 ---
 
