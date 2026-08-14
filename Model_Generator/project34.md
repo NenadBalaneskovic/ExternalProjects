@@ -7660,6 +7660,6 @@ Across these 8 chapters, we built a complete, publication‑grade, deeply techni
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/69b91266601dd6b241003ae3274a26112a13c4cf/Model_Generator/ModelGenerator.ipynb)
 
-3. [![ONNX_Model_Generator_GUI_Report | English](https://img.shields.io/badge/ONNX_Model_Generator_GUI_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/bd308ca8d5ce50be75fdd37c4048646f69ae69a2/SlurmOrchestratorGUI/project33.pdf)
+3. [![ONNX_Model_Generator_GUI_Report | English](https://img.shields.io/badge/ONNX_Model_Generator_GUI_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5c1218083e62250d2e0a2ff11c225b46c2fb8dde/Model_Generator/project34.pdf)
 
 ---
