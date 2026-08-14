@@ -2273,6 +2273,123 @@ The static‑analysis pipeline parses ASTs, detects quantum calls (`Sampler.run`
 
 [![Slurm_Orchestrator_GUI_v1.0](https://img.shields.io/badge/Slurm_Orchestrator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/51b17aa36502e8f03c872f2f29033bcf04868c6e/SlurmOrchestratorGUI/project33.md)
 
+- ### **34. ONNX Model Generator GUI v1.0 – Aug 2026**
+
+>## **Executive Summary: Deterministic ONNX Export, Backend‑Agnostic Conversion, Cloud‑Native Repository Generation & Reproducible Scientific‑Computing Architecture**
+>
+>**Business Problem**  
+>Modern scientific‑computing environments — spanning **machine learning**, **graph‑theoretic research**, **quantum‑information preprocessing**, **hybrid HPC/QPU workflows**, and **cloud‑native inference pipelines** — increasingly rely on Python as the orchestration layer.  
+>These workloads are:
+>
+>- structurally diverse  
+>- backend‑heterogeneous (Torch, Sklearn, Custom)  
+>- sensitive to environment drift  
+>- dependent on deterministic ONNX export  
+>- reliant on stable repository generation (Triton/MLServer/KServe)  
+>- difficult to orchestrate manually  
+>
+>Real‑world model‑lifecycle pipelines face persistent challenges:
+>
+>- inconsistent ONNX export behavior  
+>- backend‑specific conversion failures  
+>- missing dummy‑input inference  
+>- opset mismatches across machines  
+>- non‑deterministic Triton/MLServer repository generation  
+>- fragile KServe deployment readiness  
+>- opaque converter logs  
+>- missing metadata for scientific governance  
+>
+>Traditional approaches depend on:
+>
+>- manual ONNX export scripts  
+>- ad‑hoc environment configuration  
+>- notebook‑based experimentation  
+>- undocumented preprocessing steps  
+>- implicit backend selection  
+>- non‑systematic repository generation  
+>
+>These constraints reduce reproducibility, undermine inference stability, and limit deployment readiness.  
+>Modern scientific pipelines require **deterministic ONNX export**, **backend‑agnostic conversion**, **cloud‑native repository generation**, and **structured metadata governance** — all within reproducible, auditable environments.
+>
+>**Solution Overview**  
+>Project 34 introduces a **reproducible, modular ONNX‑export and model‑lifecycle orchestration ecosystem** that automates:
+>
+>- **backend‑agnostic model ingestion** → dynamic module loading, isolated execution  
+>- **dummy‑input inference** → user‑provided, structural inference, deterministic fallback  
+>- **deterministic ONNX export** → stable opset, constant folding, reproducible naming  
+>- **repository generation** → Triton/MLServer/KServe‑ready artifacts  
+>- **environment validation** → ONNX Runtime, Torch, Sklearn, Triton, MLServer, Podman  
+>- **GUI‑driven orchestration** → reproducible, user‑friendly model‑lifecycle control  
+>- **scientific logging & metadata storage** → audit‑ready model records  
+>
+>Project 34 transforms ONNX export and model‑lifecycle orchestration into a **modular, explainable, and reproducible scientific‑computing pipeline**, enabling:
+>
+>- consistent backend conversion  
+>- deterministic ONNX graph generation  
+>- reproducible repository structure  
+>- transparent converter logs  
+>- stable cloud‑native inference deployment  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **deterministic ONNX export pipelines**  
+>- **backend‑agnostic conversion stability**  
+>- **reproducible Triton/MLServer/KServe repositories**  
+>- **transparent model‑lifecycle logs** for auditability  
+>- **stable inference behavior across environments**  
+>- **cluster‑safe environment validation**  
+>- **scientific governance & traceability**  
+>
+>Project 34 strengthens ML‑computing capabilities, improves cloud‑native readiness, and provides a practical foundation for reproducible model‑lifecycle orchestration — without relying on proprietary cloud services.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 34 demonstrates how to operationalize:
+>
+>- deterministic ONNX export  
+>- backend‑agnostic conversion pipelines  
+>- reproducible repository generation  
+>- cloud‑native inference readiness  
+>- structured logging & metadata governance  
+>
+>It is directly applicable to:
+>
+>- ML engineering consulting  
+>- HPC/QPU hybrid‑workflow modernization  
+>- cloud‑native inference deployment  
+>- reproducible research environments  
+>- enterprise model‑governance frameworks  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to physics, ML, quantum computing, finance, and large‑scale scientific simulation.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 34 supports governance through:
+>
+>- transparent model‑export evaluation  
+>- reproducible ONNX‑graph generation  
+>- structured repository metadata  
+>- explainable backend‑conversion decisions  
+>- deterministic environment‑validation pipelines  
+>
+>This ensures scientific workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, model governance, and responsible compute‑resource usage.
+
+#### **Abstract**
+
+**ONNX Model Generator GUI v1.0** is a modular, reproducible model‑lifecycle orchestration architecture designed for environments where **deterministic ONNX export, backend‑agnostic conversion, reproducibility, and scientific governance** are central concerns. It unifies dynamic module loading, dummy‑input inference, opset‑stable ONNX export, backend‑specific repository generation, environment validation, and structured logging into a coherent, reproducible orchestration stack.
+
+The ingestion pipeline loads Python modules in isolated execution contexts, infers dummy inputs deterministically, and exports ONNX graphs with stable opset semantics. The repository generator produces Triton/MLServer/KServe‑ready artifacts with deterministic folder structures. The environment validator ensures consistent dependency availability. The logging subsystem records all converter actions, and the metadata store preserves backend information, opset versions, and repository structure (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/Model_Generator/project34.md#9-references) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, automated ONNX‑export and repository‑generation architecture with structured artifacts and transparent logic.  
+- **Audience:** ML engineers, scientific‑computing practitioners, HPC/QPU architects, and consultants designing reproducible model‑lifecycle pipelines.  
+- **Why modularity matters:** Separating ingestion, conversion, export, repository generation, validation, and logging prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** deterministic ONNX export, backend‑agnostic conversion, and unified metadata logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally — ideal for secure or restricted scientific environments. [[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![ONNX_Model_Generator_GUI_v1.0](https://img.shields.io/badge/ONNX_Model_Generator_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/51b17aa36502e8f03c872f2f29033bcf04868c6e/SlurmOrchestratorGUI/project33.md)
+
 ---
 
 
