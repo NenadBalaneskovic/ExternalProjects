@@ -902,7 +902,7 @@ Every transformation is visible and traceable.
 
 ---
 
-# ** 2.0: Folder Structure (Deep Explanation)**
+# **2.0: Folder Structure (Deep Explanation)**
 
 ## **2.0.1 Purpose of the Folder Structure**
 
@@ -3897,11 +3897,11 @@ The **Environment Repair Pipeline** is triggered automatically when the System I
 - failed pods  
 - failed controllers  
 
-Its purpose is to **restore the entire local ML inference environment** to a stable, reproducible state.
+Its purpose is to **restore the entire local ML inference environmentto a stable, reproducible state.
 
 This pipeline is:
 
-- **idempotent** — running it twice converges the system  
+- **idempotent— running it twice converges the system  
 - **non‑destructive** — preserves user data, models, datasets  
 - **modular** — each repair step is isolated  
 - **transparent** — logs every action  
@@ -4500,7 +4500,7 @@ No cloud providers required.
 #### **Reason 6 — Scientific Stability**
 Crossplane provisioning becomes predictable and auditable.
 
-## ** 3.4: KServe Deployment Pipeline (Detailed)**
+## **3.4: KServe Deployment Pipeline (Detailed)**
 
 ### **3.4.1 Purpose of the KServe Deployment Pipeline**
 
@@ -5071,7 +5071,7 @@ Images are built specifically for KServe predictor runtimes.
 #### **Reason 5 — Scientific Transparency**
 Logs and snapshots ensure full traceability.
 
-## ** 3.6: InferenceService YAML Generator (Deep Explanation)**
+## **3.6: InferenceService YAML Generator (Deep Explanation)**
 
 ### **3.6.1 Purpose of the YAML Generator**
 
@@ -5699,7 +5699,7 @@ No external health checks required.
 #### **Reason 6 — Idempotency**
 Running the pipeline twice converges the system.
 
-## ** 3.8: Runtime Validation Pipeline (Detailed)**
+## **3.8: Runtime Validation Pipeline (Detailed)**
 
 ### **3.8.1 Purpose of the Runtime Validation Pipeline**
 
@@ -6890,7 +6890,7 @@ Extracting metadata twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external ONNX services required.
 
-## ** 4.2: Dataset Analysis Pipeline (Detailed)**
+## **4.2: Dataset Analysis Pipeline (Detailed)**
 
 ### **4.2.1 Purpose of the Dataset Analysis Pipeline**
 
@@ -7227,7 +7227,7 @@ Analyzing the same dataset produces identical metadata.
 #### **Reason 6 — Local‑Only Execution**
 No external dataset services required.
 
-## ** 4.3: Feature Engineering Engine (Deep Explanation)**
+## **4.3: Feature Engineering Engine (Deep Explanation)**
 
 ### **4.3.1 Purpose of the Feature Engineering Engine**
 
@@ -7882,7 +7882,7 @@ Running the pipeline twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external feature stores or schema registries required.
 
-## ** 4.5: Scientific Reporting Engine (Deep Explanation)**
+## **4.5: Scientific Reporting Engine (Deep Explanation)**
 
 ### **4.5.1 Purpose of the Scientific Reporting Engine**
 
@@ -8488,7 +8488,7 @@ Running drift detection twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**  
 No external drift services required.
 
-## ** 5.1: PSI Drift Engine (Detailed)**
+## **5.1: PSI Drift Engine (Detailed)**
 
 ### **5.1.1 Purpose of the PSI Drift Engine**
 
@@ -9033,7 +9033,7 @@ Running KS drift twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**  
 No external statistical services required.
 
-## ** 5.3: JS Divergence Drift Engine (Detailed)**
+## **5.3: JS Divergence Drift Engine (Detailed)**
 
 ### **5.3.1 Purpose of the JS Divergence Drift Engine**
 
@@ -9307,7 +9307,7 @@ JS drift reports provide full visibility.
 #### **Reason 6 — Local‑Only Execution**  
 No external statistical services required.
 
-## ** 5.4: Feature Drift Aggregation Engine (Deep Explanation)**
+## **5.4: Feature Drift Aggregation Engine (Deep Explanation)**
 
 ### **5.4.1 Purpose of the Feature Drift Aggregation Engine**
 
@@ -9873,7 +9873,7 @@ Output drift reports provide full visibility.
 #### **Reason 6 — Local‑Only Execution**  
 No external statistical services required.
 
-## ** 5.6: Drift Reporter (Deep Explanation)**
+## **5.6: Drift Reporter (Deep Explanation)**
 
 ### **5.6.1 Purpose of the Drift Reporter**
 
@@ -10368,7 +10368,7 @@ Logs and snapshots provide complete visibility.
 ### **Reason 6 — Idempotency**
 Running the pipeline twice converges the system.
 
-## ** 6.1: InferenceService YAML Generator (Detailed)**
+## **6.1: InferenceService YAML Generator (Detailed)**
 
 ### **6.1.1 Purpose of the YAML Generator**
 
@@ -12976,7 +12976,7 @@ No external reporting services required.
 
 ---
 
-## ** 8.0: Scientific Reporting Engine (Deep Overview)**
+## **8.0: Scientific Reporting Engine (Deep Overview)**
 
 ### **8.0.1 Purpose of the Scientific Reporting Engine**
 
@@ -13314,7 +13314,7 @@ Generating the same report twice produces identical output.
 #### **Reason 6 — Local‑Only Execution**
 No external reporting services required.
 
-## ** 8.1: Scientific Commentary Engine (Detailed)**
+## **8.1: Scientific Commentary Engine (Detailed)**
 
 ### **8.1.1 Purpose of the Scientific Commentary Engine**
 
@@ -13646,7 +13646,7 @@ Generating commentary twice produces identical output.
 #### **Reason 6 — Local‑Only Execution**
 No external interpretation services required.
 
-## ** 8.2: Report Template Architecture (Deep Explanation)**
+## **8.2: Report Template Architecture (Deep Explanation)**
 
 ### **8.2.1 Purpose of the Report Template Architecture**
 
@@ -14255,7 +14255,7 @@ Rendering the same content twice produces identical output.
 #### **Reason 6 — Local‑Only Execution**
 No external rendering services required.
 
-## ** 8.4: Report Versioning Engine (Deep Explanation)**
+## **8.4: Report Versioning Engine (Deep Explanation)**
 
 ### **8.4.1 Purpose of the Report Versioning Engine**
 
@@ -15542,7 +15542,7 @@ Repeating an event produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external lifecycle services required.
 
-## ** 9.3: Lifecycle Controller (Detailed)**
+## **9.3: Lifecycle Controller (Detailed)**
 
 ### **9.3.1 Purpose of the Lifecycle Controller**
 
@@ -16217,7 +16217,7 @@ Validating the same transition twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external validation services required.
 
-## ** 9.5: Lifecycle Reporter (Detailed)**
+## **9.5: Lifecycle Reporter (Detailed)**
 
 ### **9.5.1 Purpose of the Lifecycle Reporter**
 
@@ -16893,7 +16893,7 @@ Repeating orchestration actions produces identical results.
 ### **Reason 6 — Local‑Only Execution**
 No external orchestration services required.
 
-## ** 10.1: Orchestration State Machine (Detailed)**
+## **10.1: Orchestration State Machine (Detailed)**
 
 ### **10.1.1 Purpose of the Orchestration State Machine**
 
@@ -17486,7 +17486,7 @@ Scheduling the same event twice produces identical plans.
 #### **Reason 6 — Local‑Only Execution**
 No external scheduling services required.
 
-## ** 10.3: Orchestration Validator (Detailed)**
+## **10.3: Orchestration Validator (Detailed)**
 
 ### **10.3.1 Purpose of the Orchestration Validator**
 
@@ -17821,7 +17821,7 @@ Validating the same transition twice produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external validation services required.
 
-## ** 10.4: Orchestration Reporter (Deep Explanation)**
+## **10.4: Orchestration Reporter (Deep Explanation)**
 
 ### **10.4.1 Purpose of the Orchestration Reporter**
 
@@ -18151,7 +18151,7 @@ No external reporting services required.
 
 ---
 
-# ** 11.0: Scientific Safety Guarantees (Deep Overview)**
+# **11.0: Scientific Safety Guarantees (Deep Overview)**
 
 ## **11.0.1 Purpose of the Scientific Safety Layer**
 
@@ -18474,7 +18474,7 @@ Repeating safety checks produces identical results.
 ### **Reason 6 — Local‑Only Execution**
 No external safety services required.
 
-## ** 11.1: Scientific Rules Engine (Detailed)**
+## **11.1: Scientific Rules Engine (Detailed)**
 
 ### **11.1.1 Purpose of the Scientific Rules Engine**
 
@@ -19143,7 +19143,7 @@ Evaluating invariants twice produces identical results.
 #### **Reason 6 — Cross‑Pipeline Enforcement**
 Invariants apply globally across all subsystems.
 
-## ** 11.3: Scientific Safety Validator (Detailed)**
+## **11.3: Scientific Safety Validator (Detailed)**
 
 ### **11.3.1 Purpose of the Scientific Safety Validator**
 
@@ -19464,7 +19464,7 @@ Validating the same action twice produces identical results.
 #### **Reason 6 — Cross‑Pipeline Enforcement**
 Validator applies globally across all subsystems.
 
-## ** 11.4: Scientific Safety Reporter (Deep Explanation)**
+## **11.4: Scientific Safety Reporter (Deep Explanation)**
 
 ### **11.4.1 Purpose of the Scientific Safety Reporter**
 
@@ -19781,7 +19781,7 @@ No external reporting services required.
 
 ---
 
-# ** 12.0: GUI Architecture (Deep Overview)**
+# **12.0: GUI Architecture (Deep Overview)**
 
 ## **12.0.1 Purpose of the GUI Layer**
 
@@ -20971,7 +20971,7 @@ Repeating controller actions produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 Controllers require no external services.
 
-## ** 12.4: GUI Panels (Deep Explanation)**
+## **12.4: GUI Panels (Deep Explanation)**
 
 ### **12.4.1 Purpose of GUI Panels**
 
@@ -21817,7 +21817,7 @@ Applying the same theme twice produces identical visuals.
 #### **Reason 6 — Accessibility**
 High‑contrast and large‑font themes are supported.
 
-## ** 12.7: Scientific Report Viewer (Detailed)**
+## **12.7: Scientific Report Viewer (Detailed)**
 
 ### **12.7.1 Purpose of the Scientific Report Viewer**
 
@@ -22102,7 +22102,7 @@ All reports share the same visual and structural conventions.
 
 ---
 
-## ** 13.0: Deployment & Packaging Architecture (Deep Overview)**
+## **13.0: Deployment & Packaging Architecture (Deep Overview)**
 
 ### **13.0.1 Purpose of the Deployment & Packaging Layer**
 
@@ -22413,7 +22413,7 @@ Repeating deployment packaging produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 Deployment requires no external services.
 
-## ** 13.1: Packaging Engine (Detailed)**
+## **13.1: Packaging Engine (Detailed)**
 
 ### **13.1.1 Purpose of the Packaging Engine**
 
@@ -23025,7 +23025,7 @@ Same artifacts → same metadata.
 #### **Reason 6 — Local‑Only Execution**
 Metadata generation requires no external services.
 
-## ** 13.3: Deployment Validator (Detailed)**
+## **13.3: Deployment Validator (Detailed)**
 
 ### **13.3.1 Purpose of the Deployment Validator**
 
@@ -23603,7 +23603,7 @@ Repeating a transition produces identical results.
 #### **Reason 6 — Local‑Only Execution**
 No external deployment services required.
 
-## ** 13.5: Deployment Reporter (Detailed)**
+## **13.5: Deployment Reporter (Detailed)**
 
 ### **13.5.1 Purpose of the Deployment Reporter**
 
@@ -24211,7 +24211,7 @@ Same artifacts → same safety verdict.
 
 ---
 
-## ** 14.0: Appendices & Full Pipelines (Deep Overview)**
+## **14.0: Appendices & Full Pipelines (Deep Overview)**
 
 ### **14.0.1 Purpose of the Appendices**
 
@@ -25055,7 +25055,7 @@ Runtime validation is mandatory before deployment.
 #### **Reason 5 — Idempotency**  
 Repeated validation produces identical results.
 
-## **14. 3: Appendix C, Full Autoscaling Pipeline (Complete)**
+## **14.3: Appendix C, Full Autoscaling Pipeline (Complete)**
 
 ### **C.1 Purpose of the Autoscaling Pipeline**
 
@@ -25385,7 +25385,7 @@ Autoscaling requires runtime validation.
 #### **Reason 5 — Idempotency**  
 Repeated profiling produces identical results.
 
-## **14. 4: Appendix D, Full Deployment Pipeline (Complete)**
+## **14.4: Appendix D, Full Deployment Pipeline (Complete)**
 
 ### **D.1 Purpose of the Deployment Pipeline**
 
@@ -26564,7 +26564,7 @@ Each is a small, deterministic JSON structure.
 - **We can prove scientific ordering** (drift → validation → autoscaling → deployment).  
 - **We can audit governance decisions** without touching raw logs.  
 
-## **14. 9: Appendix I, Governance Rules (Complete)**
+## **14.9: Appendix I, Governance Rules (Complete)**
 
 ### **I.1 Purpose of Governance Rules**
 
