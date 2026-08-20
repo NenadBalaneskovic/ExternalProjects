@@ -27412,7 +27412,7 @@ Together, they form a **single unified scientific system**.
 - **Monitoring ML Systems** — Monteiro, 2023  
 - **Applied Machine Learning Systems** — AWS Labs, 2024  
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/69b91266601dd6b241003ae3274a26112a13c4cf/Model_Generator/ModelGenerator.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7a74ddde6962e6e07c8302448e4af4d76e42f891/CrossplaneKServeModelInferGUI/CrossplaneKServeModelInfer.ipynb)
 
 3. [![CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_Report | English](https://img.shields.io/badge/CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_%20BLUEPRINT-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7998a81e78cd763c92558b555d10834e0e3dbd87/CrossplaneKServeModelInferGUI/CrossplaneKServeModelInfer.pdf)
 
