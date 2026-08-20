@@ -1,4 +1,4 @@
-# **📘 Crossplane‑Driven KServe Model Inferencer GUI v1.0 — Full Technical Blueprint**
+# **📘 Prohect 35: Crossplane‑Driven KServe Model Inferencer GUI v1.0 — Full Technical Blueprint**
 
 ---
 
