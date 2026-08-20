@@ -27414,7 +27414,7 @@ Together, they form a **single unified scientific system**.
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/69b91266601dd6b241003ae3274a26112a13c4cf/Model_Generator/ModelGenerator.ipynb)
 
-3. [![CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_Report | English](https://img.shields.io/badge/CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5c1218083e62250d2e0a2ff11c225b46c2fb8dde/Model_Generator/project34.pdf)
+3. [![CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_Report | English](https://img.shields.io/badge/CrossplaneDriven_KServe_Model_Inferencer_GUIv1.0_%20BLUEPRINT-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/7998a81e78cd763c92558b555d10834e0e3dbd87/CrossplaneKServeModelInferGUI/CrossplaneKServeModelInfer.pdf)
 
 
 ---
