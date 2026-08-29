@@ -4385,7 +4385,7 @@ Explore these:
 - “Machine Learning for Software Dependency Prediction” — ACM SIGSOFT  
 - “Heuristics for Dependency Conflict Resolution” — IEEE Software  
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/69b91266601dd6b241003ae3274a26112a13c4cf/Model_Generator/ModelGenerator.ipynb)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/460c501a74be43e13b5fbd6fe203a08d608ba9ab/GenericPyDependencyInspector/Generic_PyDependencyInspector.pdf)
 
 3. [![PyDependency_Inspector_GUIv1.0_Report | English](https://img.shields.io/badge/PyDependency_Inspector_GUIv1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5c1218083e62250d2e0a2ff11c225b46c2fb8dde/Model_Generator/project34.pdf)
 
