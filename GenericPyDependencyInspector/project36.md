@@ -4499,12 +4499,21 @@ pytz>=2023.3               # timezone support
 ## **D.1 Mermaid Graph**
 
 ```mermaid
+
 graph TD
-    P[pandas] --> N[numpy]
-    P --> D[python-dateutil]
-    P --> T[pytz]
-    N --> C[cython (optional)]
+
+    P[pandas]
+    N[numpy]
+    D[python-dateutil]
+    T[pytz]
+    C[cython optional]
+
+    P --> N
+    P --> D
+    P --> T
+    N --> C
 ```
+
 
 ## **D.2 ASCII Graph**
 
