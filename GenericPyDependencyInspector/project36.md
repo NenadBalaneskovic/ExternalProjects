@@ -4387,7 +4387,7 @@ Explore these:
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/460c501a74be43e13b5fbd6fe203a08d608ba9ab/GenericPyDependencyInspector/Generic_PyDependencyInspector.pdf)
 
-3. [![PyDependency_Inspector_GUIv1.0_Report | English](https://img.shields.io/badge/PyDependency_Inspector_GUIv1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/5c1218083e62250d2e0a2ff11c225b46c2fb8dde/Model_Generator/project34.pdf)
+3. [![PyDependency_Inspector_GUIv1.0_Report | English](https://img.shields.io/badge/PyDependency_Inspector_GUIv1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/99ee3b45161fc4a19eef1d59f011cc9978637341/GenericPyDependencyInspector/project36.pdf)
 
 ---
 
