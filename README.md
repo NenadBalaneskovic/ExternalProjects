@@ -2507,6 +2507,125 @@ The system provisions cloud resources declaratively via Crossplane, deploys KSer
 
 [![Crossplane‑Driven_KServe_Inference_GUI_v1.0_(BLUEPRINT)](https://img.shields.io/badge/Crossplane‑Driven_KServe_Inference_GUI_v1.0_(BLUEPRINT)-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/145bd85b324c6dd579e9f8a8dcd3385625590df6/CrossplaneKServeModelInferGUI/project35.md)
 
+- ### **36. Py‑Dependency Inspector GUI v1.0 – Apr–Sep 2026**
+
+>## **Executive Summary: Deterministic Dependency Analysis, Wheel/ABI Inspection, Native‑Library Detection & Reproducible Container‑Ready Build Intelligence**
+>
+>**Business Problem**  
+>Modern Python ecosystems — spanning **machine learning pipelines**, **scientific‑computing workloads**, **enterprise microservices**, **containerized environments**, and **hybrid HPC/ML workflows** — increasingly rely on **deterministic dependency management** and **platform‑aware wheel selection**.  
+>These environments are:
+>
+>- dependency‑dense  
+>- platform‑heterogeneous (Windows, Linux, macOS, ARM)  
+>- sensitive to native‑library compatibility  
+>- reliant on stable wheel availability  
+>- dependent on reproducible build pipelines  
+>- difficult to debug when dependency metadata is incomplete  
+>
+>Real‑world Python dependency‑lifecycle pipelines face persistent challenges:
+>
+>- opaque transitive dependencies  
+>- missing wheels for critical platforms  
+>- native‑library incompatibilities  
+>- non‑deterministic resolver behavior  
+>- fragile container builds  
+>- incomplete documentation retrieval  
+>- inconsistent metadata across versions  
+>- unstructured logs and error propagation  
+>
+>Traditional approaches depend on:
+>
+>- manual pip installs  
+>- ad‑hoc dependency inspection  
+>- trial‑and‑error wheel collection  
+>- fragile Dockerfile debugging  
+>- notebook‑based experimentation  
+>- undocumented dependency constraints  
+>
+>These constraints reduce reproducibility, undermine container stability, and limit scientific‑computing readiness.  
+>Modern Python pipelines require **deterministic dependency analysis**, **platform‑aware wheel inspection**, **native‑library detection**, and **structured metadata governance** — all within reproducible, auditable environments.
+>
+>**Solution Overview**  
+>Project 36 introduces a **modular, deterministic Python dependency‑intelligence ecosystem** that automates:
+>
+>- **metadata extraction** → PyPI JSON, classifiers, version constraints  
+>- **dependency resolution** → hierarchical trees, optional dependencies, cycle detection  
+>- **wheel inspection** → ABI tags, platform tags, Python‑version tags  
+>- **native‑library detection** → `.so`, `.pyd`, `.dylib` identification  
+>- **platform compatibility evaluation** → OS‑profile matching, manylinux/win_amd64 checks  
+>- **documentation retrieval** → README/homepage extraction, HTML sanitization  
+>- **build‑report generation** → structured dependency intelligence  
+>- **export workflows** → requirements.txt, wheel lists, logs, documentation bundles  
+>- **GUI‑driven orchestration** → reproducible, user‑friendly dependency‑lifecycle control  
+>
+>Project 36 transforms Python dependency analysis into a **transparent, explainable, reproducible scientific‑computing pipeline**, enabling:
+>
+>- deterministic dependency resolution  
+>- predictable wheel/ABI compatibility  
+>- reproducible container preparation  
+>- transparent documentation retrieval  
+>- structured dependency intelligence  
+>- stable cross‑platform behavior  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **deterministic dependency‑analysis pipelines**  
+>- **platform‑aware wheel selection**  
+>- **reproducible container‑ready requirements.txt**  
+>- **transparent dependency‑lifecycle logs**  
+>- **native‑library risk visibility**  
+>- **scientific governance & traceability**  
+>
+>Project 36 strengthens Python‑computing capabilities, improves container readiness, and provides a practical foundation for reproducible dependency analysis — without relying on proprietary cloud services.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 36 demonstrates how to operationalize:
+>
+>- deterministic dependency resolution  
+>- reproducible wheel/ABI selection  
+>- structured documentation retrieval  
+>- build‑report governance  
+>- native‑library risk assessment  
+>
+>It is directly applicable to:
+>
+>- ML engineering consulting  
+>- containerization modernization  
+>- reproducible research environments  
+>- enterprise Python governance  
+>- scientific‑computing dependency analysis  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to physics, ML, finance, HPC, and large‑scale scientific simulation.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 36 supports governance through:
+>
+>- transparent dependency‑pipeline evaluation  
+>- reproducible wheel/ABI selection  
+>- structured metadata and logs  
+>- explainable compatibility decisions  
+>- deterministic environment‑validation pipelines  
+>
+>This ensures scientific and enterprise workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, dependency governance, and responsible compute‑resource usage.
+
+## **Abstract**
+
+**Py‑Dependency Inspector GUI v1.0** is a modular, deterministic dependency‑analysis architecture designed for environments where **reproducibility, platform compatibility, dependency transparency, and scientific governance** are central concerns. It unifies metadata extraction, dependency resolution, wheel/ABI inspection, native‑library detection, documentation retrieval, compatibility evaluation, build‑report generation, and structured logging into a coherent, reproducible dependency‑intelligence stack.
+
+The system resolves dependency trees deterministically, inspects wheels for ABI/platform compatibility, detects native libraries, evaluates OS‑profile compatibility, retrieves documentation safely, and generates structured build reports through a unified GUI. The logging subsystem records all analysis actions, and the metadata layer preserves dependency metadata, wheel availability, native‑library flags, compatibility matrices, and documentation summaries (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/GenericPyDependencyInspector/project36.md#17-references--pydependency-inspector-gui-v10-project-36) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, deterministic dependency‑analysis architecture with structured artifacts and transparent logic.  
+- **Audience:** ML engineers, scientific‑computing practitioners, HPC architects, containerization specialists, and consultants designing reproducible Python environments.  
+- **Why modularity matters:** Separating metadata extraction, dependency resolution, wheel inspection, native‑library detection, documentation retrieval, compatibility evaluation, reporting, and export prevents monolithic bottlenecks and improves long‑term resilience.  
+- **Governance and reproducibility:** deterministic dependency trees, structured build reports, and unified metadata logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally or on‑prem clusters — ideal for secure or restricted scientific environments.[[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![Py_Dependency_Inspector_GUI_v1.0](https://img.shields.io/badge/Py_Dependency_Inspector_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/86704078654d9bb270be569cfe3922ef1d4f8a98/GenericPyDependencyInspector/project36.md)
+
 ---
 
 
