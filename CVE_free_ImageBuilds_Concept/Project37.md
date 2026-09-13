@@ -9329,3 +9329,175 @@ In this final chapter, we:
 
 ---
 
+Below is a **clean, professional, publication‑ready reference section** for **Project 37**, formatted similarly to academic/engineering whitepapers and fully aligned with the style of Project 36.  
+All entries are **brief**, **non‑copyrighted**, and include **books, articles, standards, and authoritative links**.
+
+---
+
+## 📚 **31. References — Project 37: GUI & Streamlit App for API‑Driven Deployment of Containerized Services**
+
+1. 
+### **1. Books (Containerization, Kubernetes, Microservices, API Design)**
+
+- **Burns, B., Beda, J., Hightower, K.**  
+  *Kubernetes: Up and Running* (O’Reilly, 2023).  
+  A foundational text on Kubernetes architecture, deployments, and service orchestration.
+
+- **Merkel, D.**  
+  *Docker: Lightweight Linux Containers for Consistent Development and Deployment* (Linux Journal, 2014).  
+  The original conceptual introduction to Docker and containerization.
+
+- **Newman, S.**  
+  *Building Microservices: Designing Fine‑Grained Systems* (O’Reilly, 2021).  
+  A comprehensive guide to microservice architecture and operational patterns.
+
+- **Richardson, C.**  
+  *Microservices Patterns: With Examples in Java* (Manning, 2018).  
+  Covers service discovery, API gateways, and deployment pipelines.
+
+- **Gruver, G.**  
+  *Starting and Scaling DevOps in the Enterprise* (IT Revolution Press, 2016).  
+  Relevant for CI/CD orchestration and deployment governance.
+
+### **2. Academic & Industry Articles (Deployment, Observability, API‑Driven Systems)**
+
+- **Google SRE Team**  
+  *Site Reliability Engineering: Principles and Practices* (Google Research).  
+  `https://sre.google/sre-book/table-of-contents/` [(sre.google in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fsre.google%2Fsre-book%2Ftable-of-contents%2F")  
+  Canonical reference for service health, observability, and deployment reliability.
+
+- **Red Hat Engineering**  
+  *Kubernetes Deployment Best Practices*.  
+  `https://www.redhat.com/en/blog/kubernetes-deployment-best-practices` [(redhat.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fwww.redhat.com%2Fen%2Fblog%2Fkubernetes-deployment-best-practices")  
+  Practical guidance for production‑grade deployments.
+
+- **CNCF (Cloud Native Computing Foundation)**  
+  *Cloud Native Definition & Landscape*.  
+  [https://www.cncf.io/projects/](https://www.cncf.io/projects/)  
+  Overview of cloud‑native components relevant to Project 37.
+
+- **Microsoft Engineering**  
+  *Designing REST APIs for Scalable Microservices*.  
+  `https://learn.microsoft.com/azure/architecture/best-practices/api-design` [(learn.microsoft.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Flearn.microsoft.com%2Fazure%2Farchitecture%2Fbest-practices%2Fapi-design")  
+  Authoritative API‑design patterns for service orchestration.
+
+- **IBM Research**  
+  *Container Security: Best Practices for Hardened Images*.  
+  `https://www.ibm.com/cloud/blog/container-security-best-practices` [(ibm.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fwww.ibm.com%2Fcloud%2Fblog%2Fcontainer-security-best-practices")  
+  Relevant for CVE scanning, SBOM, and secure deployment.
+
+### **3. Official Documentation (Docker, Kubernetes, Streamlit, FastAPI)**
+
+### **Docker**
+- Docker Docs — [https://docs.docker.com/](https://docs.docker.com/)  
+- Dockerfile Reference — `https://docs.docker.com/engine/reference/builder/` [(docs.docker.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdocs.docker.com%2Fengine%2Freference%2Fbuilder%2F")  
+- Docker Registry API — `https://docs.docker.com/registry/spec/api/` [(docs.docker.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdocs.docker.com%2Fregistry%2Fspec%2Fapi%2F")
+
+### **Kubernetes**
+- Kubernetes Docs — [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/)  
+- Deployments — `https://kubernetes.io/docs/concepts/workloads/controllers/deployment/` [(kubernetes.io in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkubernetes.io%2Fdocs%2Fconcepts%2Fworkloads%2Fcontrollers%2Fdeployment%2F")  
+- Services — `https://kubernetes.io/docs/concepts/services-networking/service/` [(kubernetes.io in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkubernetes.io%2Fdocs%2Fconcepts%2Fservices-networking%2Fservice%2F")  
+- Probes — `https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/` [(kubernetes.io in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkubernetes.io%2Fdocs%2Ftasks%2Fconfigure-pod-container%2Fconfigure-liveness-readiness-startup-probes%2F")  
+- RBAC — `https://kubernetes.io/docs/reference/access-authn-authz/rbac/` [(kubernetes.io in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkubernetes.io%2Fdocs%2Freference%2Faccess-authn-authz%2Frbac%2F")
+
+### **Streamlit**
+- Streamlit Docs — [https://docs.streamlit.io/](https://docs.streamlit.io/)  
+- Streamlit Components — [https://docs.streamlit.io/library/components](https://docs.streamlit.io/library/components)  
+- Streamlit Deployment — `https://docs.streamlit.io/streamlit-community-cloud` [(docs.streamlit.io in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdocs.streamlit.io%2Fstreamlit-community-cloud")
+
+### **FastAPI**
+- FastAPI Docs — [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)  
+- Dependency Injection — `https://fastapi.tiangolo.com/tutorial/dependencies/` [(fastapi.tiangolo.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Ffastapi.tiangolo.com%2Ftutorial%2Fdependencies%2F")  
+- Background Tasks — `https://fastapi.tiangolo.com/tutorial/background-tasks/` [(fastapi.tiangolo.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Ffastapi.tiangolo.com%2Ftutorial%2Fbackground-tasks%2F")
+
+### **4. Standards & Specifications (CVE, SBOM, OCI, API)**
+
+- **CVE Program (MITRE)**  
+  [https://cve.mitre.org/](https://cve.mitre.org/)  
+  Standard for vulnerability identification.
+
+- **NIST National Vulnerability Database (NVD)**  
+  [https://nvd.nist.gov/](https://nvd.nist.gov/)  
+  Authoritative vulnerability scoring and metadata.
+
+- **CycloneDX SBOM Specification**  
+  `https://cyclonedx.org/specification/` [(cyclonedx.org in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fcyclonedx.org%2Fspecification%2F")  
+  Used for SBOM generation in hardened images.
+
+- **Open Container Initiative (OCI)**  
+  [https://opencontainers.org/](https://opencontainers.org/)  
+  Standards for container image formats and runtimes.
+
+- **OpenAPI Specification**  
+  [https://www.openapis.org/](https://www.openapis.org/)  
+  Standard for API‑driven service orchestration.
+
+### **5. Privacy, Anonymization & Presidio**
+
+- **Microsoft Presidio Documentation**  
+  [https://microsoft.github.io/presidio/](https://microsoft.github.io/presidio/)  
+  Official docs for text & table anonymization workflows.
+
+- **GDPR Regulation (EU)**  
+  [https://gdpr.eu/](https://gdpr.eu/)  
+  Relevant for anonymization, PII handling, and compliance.
+
+- **NIST Privacy Engineering Framework**  
+  `https://www.nist.gov/privacy-framework` [(nist.gov in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fwww.nist.gov%2Fprivacy-framework")  
+  Guidance for privacy‑preserving system design.
+
+### **6. Workflow Engines & Automation**
+
+- **Apache Airflow Documentation**  
+  [https://airflow.apache.org/docs/](https://airflow.apache.org/docs/)  
+  Canonical reference for DAG‑based workflow orchestration.
+
+- **Prefect Documentation**  
+  [https://docs.prefect.io/](https://docs.prefect.io/)  
+  Modern workflow engine relevant for API‑driven pipelines.
+
+- **Dagster Documentation**  
+  [https://docs.dagster.io/](https://docs.dagster.io/)  
+  Data‑orchestration patterns applicable to Project 37.
+
+### **7. Observability & Telemetry**
+
+- **Prometheus Documentation**  
+  [https://prometheus.io/docs/](https://prometheus.io/docs/)  
+  Metrics collection for containerized services.
+
+- **OpenTelemetry Specification**  
+  [https://opentelemetry.io/docs/](https://opentelemetry.io/docs/)  
+  Standard for tracing, metrics, and logs.
+
+- **Grafana Documentation**  
+  [https://grafana.com/docs/](https://grafana.com/docs/)  
+  Visualization of metrics and logs.
+
+### **8. Additional Engineering References**
+
+- **Twelve‑Factor App Methodology**  
+  [https://12factor.net/](https://12factor.net/)  
+  Foundational principles for microservice deployment.
+
+- **GitHub Actions Documentation**  
+  [https://docs.github.com/actions](https://docs.github.com/actions)  
+  CI/CD automation for image builds and deployments.
+
+- **HashiCorp Vault Documentation**  
+  [https://developer.hashicorp.com/vault/docs](https://developer.hashicorp.com/vault/docs)  
+  Secret management for containerized services.
+
+### **9. Recommended Further Reading**
+
+- *Distributed Systems Observability* — Cindy Sridharan  
+- *Designing Data‑Intensive Applications* — Martin Kleppmann  
+- *The DevOps Handbook* — Kim, Humble, Debois, Willis  
+- *Cloud Native Patterns* — Cornelia Davis
+
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6499b42b9b1c1e835c00b7b8f44c5460f94b5ff0/CVE_free_ImageBuilds_Concept/Project37.pdf)
+
+3. [![Container_Orchestration_GUI_v1.0_Report | English](https://img.shields.io/badge/Container_Orchestration_GUI_v1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6499b42b9b1c1e835c00b7b8f44c5460f94b5ff0/CVE_free_ImageBuilds_Concept/Project37.pdf)
+
+
+---
