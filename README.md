@@ -2627,7 +2627,7 @@ The system resolves dependency trees deterministically, inspects wheels for ABI/
 [![Py_Dependency_Inspector_GUI_v1.0](https://img.shields.io/badge/Py_Dependency_Inspector_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/86704078654d9bb270be569cfe3922ef1d4f8a98/GenericPyDependencyInspector/project36.md)
 
 
-- ### **37. Container‑Orchestration GUI v1.0 – May–Oct 2026**
+- ### **37. Container‑Orchestration GUI v1.0 (BLUEPRINT) – May–Oct 2026**
 
 >## **Executive Summary: Deterministic Image‑Build Automation, Registry/Tag Governance, API‑Driven Deployment, Cluster‑Service Lifecycle Control & Streamlit‑Based Operational Interaction**
 >
