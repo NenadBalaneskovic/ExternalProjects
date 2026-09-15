@@ -131,8 +131,9 @@ Explicit benchmarks and case studies render this portfolio **client‑ready**. T
 ## ML/AI Seasonal Reviews
 
 <p align="center">
-    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/b812ddd9bd3cad415c4e8518add2315af2f23031/SeasonalReviewsImage.png" width="300" height="300">
-</p>     
+    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/88b2054f8ba678395be6d5e5451cc7a8e93fe3da/SeasonalReviewsImage2.png" width="300" height="300" style="display:inline-block; margin-right:10px;">
+    <img src="https://github.com/NenadBalaneskovic/ExternalProjects/blob/ece17ac177b3199206b8ddd4f920184f4678de6c/linux_detective.png" width="300" height="300" style="display:inline-block; margin-right:10px;">
+</p>      
 
 ### 2025–2026 Season Chronicle - [Details](https://github.com/NenadBalaneskovic/ExternalProjects/blob/18aa962b3fa254ce89a7500694e3f00186060321/ML_AI_Season_2025_2026_Review.md)
 This section contains high‑level, chronological, and cross‑project analyses of the ML/AI engineering work conducted between February 2025 and February 2026. 
