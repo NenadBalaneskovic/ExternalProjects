@@ -2576,7 +2576,7 @@ If referencing this project series in your own work, we suggest a citation of th
 with individual chapters cited by their number and title as listed in Chapter 13's series index.
 
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6499b42b9b1c1e835c00b7b8f44c5460f94b5ff0/CVE_free_ImageBuilds_Concept/Project37.pdf)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8c2655a30963ad65a1a2c2983f37d85c29a84510/PQC_SignatureLab/PQC_SignatureLab.ipynb)
 
 3. [![PQC_Signature_Lab_&_Crypto_Agility_v1.0_Report | English](https://img.shields.io/badge/PQC_Signature_Lab_&_Crypto_Agility_v1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6499b42b9b1c1e835c00b7b8f44c5460f94b5ff0/CVE_free_ImageBuilds_Concept/Project37.pdf)
 
