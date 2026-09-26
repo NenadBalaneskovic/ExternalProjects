@@ -1,0 +1,12 @@
+git+https://github.com/open-quantum-safe/liboqs-python.git
+#oqs-python
+cryptography
+pandas
+matplotlib
+fastapi
+uvicorn
+aiohttp
+requests
+notebook
+jupyterlab
+ipywidgets

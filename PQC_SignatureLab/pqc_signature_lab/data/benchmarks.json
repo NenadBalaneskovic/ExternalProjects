@@ -1,0 +1,14 @@
+[
+  {
+    "algorithm":"ML-DSA-65",
+    "keygen":0.000260258,
+    "sign":0.000301832,
+    "verify":0.000192689
+  },
+  {
+    "algorithm":"Falcon-512",
+    "keygen":0.00839713,
+    "sign":0.000343169,
+    "verify":0.000096909
+  }
+]

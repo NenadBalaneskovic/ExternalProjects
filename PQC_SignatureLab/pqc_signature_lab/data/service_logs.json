@@ -1,0 +1,17 @@
+[
+  {
+    "algorithm": "ecdsa",
+    "latency": 0.018361698001172044,
+    "signature_length": 71
+  },
+  {
+    "algorithm": "dilithium3",
+    "latency": 0.006029471998772351,
+    "signature_length": 3309
+  },
+  {
+    "algorithm": "falcon512",
+    "latency": 0.005262209000647999,
+    "signature_length": 657
+  }
+]
