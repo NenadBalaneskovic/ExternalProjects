@@ -1,14 +1,10 @@
 # Project 38 — PQC Signature Lab & Crypto-Agility
 ## Chapter 1/13: Introduction & Motivation — Why Post-Quantum Cryptography Now
 
----
-
 ### Abstract
 
-In this opening post, we motivate the need for post-quantum cryptographic (PQC) signature schemes, introduce the "harvest-now-decrypt-later" threat model, summarize the NIST PQC standardization outcome, 
-and outline the goals and structure of the *PQC Signature Lab & Crypto-Agility* project. We close with a roadmap of the remaining twelve posts in this series.
-
----
+In this opening chapter, we motivate the need for post-quantum cryptographic (PQC) signature schemes, introduce the "harvest-now-decrypt-later" threat model, summarize the NIST PQC standardization outcome, 
+and outline the goals and structure of the *PQC Signature Lab & Crypto-Agility* project. We close with a roadmap of the remaining twelve chapters in this series.
 
 ## 1. The Quantum Threat to Classical Public-Key Cryptography
 
@@ -27,8 +23,6 @@ We want to be precise about what is, and is not, already true today:
 - The uncertainty itself is the operational problem: security architectures must be updated *before* the threat materializes, not after, because cryptographic migrations across large organizations routinely take five to fifteen years.
 
 This is the reasoning that underlies every serious PQC migration roadmap we have reviewed while scoping this project, including guidance from NIST, ENISA, and the EU cybersecurity agencies.
-
----
 
 ## 2. Harvest-Now-Decrypt-Later (HNDL)
 
@@ -62,8 +56,6 @@ private key today and use it later unless they already possess quantum capabilit
 than for key exchange — but it is not absent, because certificate chains, code-signing infrastructure, and firmware-update mechanisms often have multi-decade trust lifetimes of their own. A root certificate signed with ECDSA today 
 may still be relied upon in 2045.
 
----
-
 ## 3. NIST's Post-Quantum Cryptography Standardization
 
 In response to this risk, the U.S. National Institute of Standards and Technology (NIST) ran a multi-year, public standardization process, evaluating dozens of candidate algorithms across international academic and industry teams. 
@@ -85,10 +77,8 @@ Within the signature family, we chose to compare three concrete algorithms acros
 - **ML-DSA-65** (the NIST-finalized name for what was informally called "Dilithium3" during standardization) — a lattice-based scheme built on Module-LWE and Module-SIS hardness.
 - **Falcon-512** — a lattice-based scheme built on NTRU lattices with a fundamentally different internal structure (Fast Fourier sampling over a GPV-style trapdoor).
 
-We will examine the mathematics behind both PQC candidates in depth in Posts 8–10 of this series; for now, it suffices to note that they represent two structurally distinct approaches to lattice-based signatures, which is precisely why 
+We will examine the mathematics behind both PQC candidates in depth in chapters 8–10 of this series; for now, it suffices to note that they represent two structurally distinct approaches to lattice-based signatures, which is precisely why 
 comparing them side by side is instructive.
-
----
 
 ## 4. Why Crypto-Agility, Not a "Big-Bang Migration"
 
@@ -111,8 +101,6 @@ flowchart LR
 ```
 
 This single design principle — one interface, many interchangeable algorithm backends — is the technical core that the rest of this project builds toward.
-
----
 
 ## 5. Project Origin: From Seven Ideas to One Lab
 
@@ -147,8 +135,6 @@ flowchart TD
     Merge --> Project["PQC Signature Lab & Crypto-Agility"]
 ```
 
----
-
 ## 6. Goals of This Project
 
 We set out with four concrete, falsifiable goals:
@@ -161,11 +147,9 @@ these obstacles as scientifically informative as the benchmark numbers themselve
 
 We executed this work entirely on a single Fedora Linux workstation, deliberately avoiding cloud dependencies, to keep the project self-contained and reproducible by anyone with a comparable machine.
 
----
-
 ## 7. Structure of This Series
 
-This is Chapter 1 of a thirteen-part series documenting the project end to end. The remaining posts are organized as follows:
+This is Chapter 1 of a thirteen-part series documenting the project end to end. The remaining chapters are organized as follows:
 
 ```mermaid
 flowchart TD
@@ -183,13 +167,11 @@ flowchart TD
     P12 --> P13[Chapter 13: Conclusion, Outlook, and References]
 ```
 
-Posts 2–7 follow the project's engineering narrative in the order it was actually built: design decisions first, then environment setup, then each notebook in turn, ending with the integrated presentation notebook. 
-Posts 8–10 step back from the engineering and provide the mathematical grounding for the two PQC algorithms under study — readers who want the "why does this work" answer before the "how fast is it" answer may choose to 
-read this block first; we have written each Chapter to stand reasonably well on its own. Chapter 11 pulls together every quantitative result from the earlier posts into one comparative discussion. Chapter 12 is, in our view, the most 
+chapters 2–7 follow the project's engineering narrative in the order it was actually built: design decisions first, then environment setup, then each notebook in turn, ending with the integrated presentation notebook. 
+chapters 8–10 step back from the engineering and provide the mathematical grounding for the two PQC algorithms under study — readers who want the "why does this work" answer before the "how fast is it" answer may choose to 
+read this block first; we have written each Chapter to stand reasonably well on its own. Chapter 11 pulls together every quantitative result from the earlier chapters into one comparative discussion. Chapter 12 is, in our view, the most 
 practically useful Chapter for anyone attempting a similar project: a candid account of every build failure, linker error, API rename, and subtle cryptographic bug we hit, and how we diagnosed and fixed each one. Chapter 13 closes the 
 series with a summary and pointers to further work.
-
----
 
 ## 8. What Comes Next
 
@@ -201,15 +183,11 @@ notebooks having been run first.
 
 ## Chapter 2/13: Architecture & Design Decisions
 
----
-
 ### Abstract
 
-In this post, we walk through the architectural decisions that shaped the project before a single line of benchmarking code was written. We explain why we split the work into four development notebooks 
+In this chapter, we walk through the architectural decisions that shaped the project before a single line of benchmarking code was written. We explain why we split the work into four development notebooks 
 plus one integrated presentation notebook, why notebooks are connected through shared modules and on-disk artifacts rather than direct notebook-to-notebook imports, why every notebook performs its own dependency setup check, 
 and how the final project folder is organized. We close with the folder structure and `requirements.txt` that ground the rest of this series.
-
----
 
 ## 1. From Project Ideas to a Concrete Architecture
 
@@ -222,8 +200,6 @@ We evaluated the problem along two axes that turned out to be in tension with ea
 - **Presentation ergonomics** — we wanted a single, linear, scrollable narrative for live demos to an audience, without forcing a presenter to jump between five separate notebook windows.
 
 Resolving this tension is the central architectural decision of the whole project, and we describe it in Section 4 below.
-
----
 
 ## 2. Four Development Notebooks
 
@@ -252,8 +228,6 @@ flowchart LR
     N03["03_service_demo.ipynb"] -->|reads| CA
     N03 -->|writes| SL["data/service_logs.json"]
 ```
-
----
 
 ## 3. Connection via Artifacts, Not Direct Imports
 
@@ -292,8 +266,6 @@ flowchart TD
 This design has a useful consequence we did not fully appreciate until later in the project: because every intermediate result is a plain file on disk, **this documentation series itself** could be written directly from 
 those artifacts — the CSVs, the JSON logs, and the PNG plots — without needing to re-run any notebook. The filesystem-as-interface decision paid for itself twice.
 
----
-
 ## 4. One Notebook or Four? The Presentation Dilemma
 
 Once the four development notebooks existed, we faced a second, separate question: how should the material be *presented* to an audience? We considered two extremes.
@@ -314,8 +286,6 @@ flowchart TD
     B --> Hybrid[Hybrid Architecture]
     A --> Hybrid
 ```
-
----
 
 ## 5. The Hybrid Solution: `99_presentation.ipynb`
 
@@ -339,8 +309,6 @@ contain exactly this `if exists(path): load() else: generate()` pattern for ever
 
 The naming convention `99_` for the presentation notebook is deliberate: in a directory listing sorted alphabetically, it sorts last, after `00_` through `03_`, signaling "this is the integration point, not a development step" purely 
 through the filename.
-
----
 
 ## 6. Every Notebook Performs Its Own Setup Check
 
@@ -370,8 +338,6 @@ check at the top of the presentation notebook fails fast and loud, before the au
 
 The trade-off, of course, is code duplication: the same `check_package` / `exists` helper functions appear, nearly verbatim, in all five notebooks. We accepted this duplication as the right price for independence, rather than importing yet 
 another shared "meta-setup" module — doing so would have reintroduced exactly the cross-notebook coupling we were trying to avoid in Section 3.
-
----
 
 ## 7. Project Folder Structure
 
@@ -416,8 +382,6 @@ where we needed to persist raw Python objects (actual signature bytes) rather th
 - **`plots/`** — every rendered figure, in PNG form, produced by `matplotlib` via the shared `utils.plot_bar` / `utils.plot_line` helpers (introduced in Chapter 3).
 - **`requirements.txt`** and **`README.md`** — the entry points for a new reader: what to install, and what the project does.
 
----
-
 ## 8. `requirements.txt`: Fedora-Specific Considerations
 
 Our `requirements.txt` deliberately separates pure-Python dependencies (installable via `pip` alone) from `liboqs-python`, which — as we detail in full in Chapter 3 — additionally requires system-level build tools that `pip` cannot provide:
@@ -440,8 +404,6 @@ We chose to comment out the `liboqs-python` installation line rather than list i
 that is easy to misdiagnose as a Python packaging problem, when it is in fact a missing system toolchain. Chapter 3 walks through the full resolution of this issue, including the dynamic linker configuration step that a plain `requirements.txt` 
 cannot express at all.
 
----
-
 ## 9. What Each Notebook Produces, at a Glance
 
 Summarizing Sections 2 and 7 together, the complete artifact inventory the project accumulates by the time all five notebooks have been run once is:
@@ -456,8 +418,6 @@ Summarizing Sections 2 and 7 together, the complete artifact inventory the proje
 
 We will reference every one of these artifacts by name throughout the rest of this series, so this table doubles as a lookup reference for later posts.
 
----
-
 ## 10. What Comes Next
 
 Chapter 3 turns from architecture to the concrete, occasionally painful reality of standing up this environment on a real Fedora workstation: building `liboqs` from source, configuring the dynamic linker to find a library installed 
@@ -468,15 +428,11 @@ is real, was encountered in exactly this project, and is documented with the act
 
 ## Chapter 3/13: Environment Setup on Fedora
 
----
-
 ### Abstract
 
-In this post, we document the complete process of standing up `liboqs` and its Python bindings on a Fedora workstation, exactly as it unfolded — including every build failure, linker error, and interpreter mismatch we encountered, with the 
+In this chapter, we document the complete process of standing up `liboqs` and its Python bindings on a Fedora workstation, exactly as it unfolded — including every build failure, linker error, and interpreter mismatch we encountered, with the 
 actual diagnostic reasoning and fix for each. We treat this as primary source material rather than a cleaned-up tutorial, because in our experience the failure modes are at least as instructive as the eventual success. We close with the finished 
 `00_setup_environment.ipynb` notebook and its verified output.
-
----
 
 ## 1. Scope of Notebook 00
 
@@ -485,8 +441,6 @@ that every later notebook imports. It also performs a small "smoke test" benchma
 
 We deliberately front-load all environment risk into this single notebook. If something is going to fail because of a missing system library or a misconfigured `PATH`, we want that failure to happen here, with a clear, isolated error message, 
 not three notebooks later, buried inside an unrelated benchmarking loop.
-
----
 
 ## 2. Issue 1 — `pip install cmake` Does Not Provide a `cmake` Binary
 
@@ -524,8 +478,6 @@ flowchart TD
     F --> G["sudo dnf install cmake gcc gcc-c++ ninja-build git openssl-devel make"]
     G --> H["liboqs source build succeeds"]
 ```
-
----
 
 ## 3. Issue 2 — The Dynamic Linker Cannot Find the Freshly Built Library
 
@@ -603,8 +555,6 @@ print(oqs.oqs_version())   # → 0.16.0
 via `rpm -qa | grep -i liboqs`) or to force our build's priority via `LD_LIBRARY_PATH` scoped only to the Jupyter-launching shell, since `LD_LIBRARY_PATH` takes precedence over the `ldconfig` cache. We record this contingency here because 
 a version conflict of this shape can just as easily go the other way on a different machine, and the diagnostic step (`ldconfig -p | grep <library>`, followed by a direct version check) generalizes to any "which shared library actually loaded" question.
 
----
-
 ## 4. Issue 3 — Multiple Python Interpreters, One Confused Terminal
 
 A third class of problem appeared later, when installing `fastapi` and `uvicorn` for the service demo (Chapter 6). A `pip install fastapi uvicorn` run directly in a terminal reported:
@@ -638,8 +588,6 @@ flowchart LR
     Fix["!{sys.executable} -m pip install ..."] -->|"targets kernel's own interpreter"| KP
 ```
 
----
-
 ## 5. Issue 4 — API Naming Drift: `Dilithium3` → `ML-DSA-65`
 
 With the environment otherwise functional, our first attempt to benchmark the lattice-based signature scheme used the name we had seen in older `liboqs` documentation:
@@ -662,8 +610,6 @@ print(oqs.get_enabled_sig_mechanisms())
 This returned a long tuple that included `'ML-DSA-44'`, `'ML-DSA-65'`, `'ML-DSA-87'`, `'Falcon-512'`, `'Falcon-1024'`, and many others (SLH-DSA variants, MAYO, Cross-RSDP, SNOVA, and further NIST Round 4 signature candidates). `ML-DSA-65` is 
 the correct replacement for the old "Dilithium3" security level, and it is the identifier we use for the remainder of this project. `Falcon-512`, by contrast, had not been renamed in this `liboqs` version and continued to work as originally expected.
 
----
-
 ## 6. Issue 5 — `oqs.__version__` Does Not Exist
 
 A smaller, quicker issue: our first version-logging attempt used the common Python convention:
@@ -682,8 +628,6 @@ oqs.oqs_python_version()   # → the Python binding package's own version
 
 We capture both in our environment log, since they can, in principle, drift independently of each other across `liboqs-python` releases.
 
----
-
 ## 7. Summary Table: Every Setup Issue and Its Fix
 
 | # | Symptom | Root Cause | Fix |
@@ -694,8 +638,6 @@ We capture both in our environment log, since they can, in principle, drift inde
 | 3 | `pip install fastapi` "succeeds" but notebook still reports it missing | Terminal `pip` and Jupyter kernel resolve to different Python interpreters | `!{sys.executable} -m pip install fastapi uvicorn` from inside the notebook |
 | 4 | `MechanismNotSupportedError: Dilithium3` | NIST standardization renamed Dilithium to ML-DSA; `liboqs` dropped the old alias | Use `oqs.get_enabled_sig_mechanisms()` to get exact current names; use `"ML-DSA-65"` |
 | 5 | `AttributeError: module 'oqs' has no attribute '__version__'` | `liboqs-python` does not follow the `__version__` convention | Use `oqs.oqs_version()` and `oqs.oqs_python_version()` |
-
----
 
 ## 8. The Finished Notebook: Verified Output
 
@@ -753,10 +695,8 @@ for alg in algorithms:
 ```
 
 We added this explicit guard *after* encountering Issue 4 above — it converts a future naming drift (should NIST or `liboqs` rename something again) from a cryptic `MechanismNotSupportedError` deep inside a `with` block into 
-an immediate, actionable `ValueError` that prints the exact list of currently valid names. We consider this defensive check a direct, permanent artifact of the debugging process described in this post, and we carry the same pattern 
+an immediate, actionable `ValueError` that prints the exact list of currently valid names. We consider this defensive check a direct, permanent artifact of the debugging process described in this chapter, and we carry the same pattern 
 forward into the crypto-agility module discussed in Chapter 5.
-
----
 
 ## 9. What Comes Next
 
@@ -768,15 +708,11 @@ which we walk through in full, since they generalize to any signature-benchmarki
 
 ## Chapter 4/13: Signature Lab — ECDSA vs. ML-DSA-65 vs. Falcon-512
 
----
-
 ### Abstract
 
-In this post, we implement and benchmark three digital signature algorithms — ECDSA-P256, ML-DSA-65, and Falcon-512 — inside `01_signature_lab.ipynb`, measuring key generation, signing, and verification time, 
+In this chapter, we implement and benchmark three digital signature algorithms — ECDSA-P256, ML-DSA-65, and Falcon-512 — inside `01_signature_lab.ipynb`, measuring key generation, signing, and verification time, 
 as well as signature size, for each. We walk through two correctness bugs we introduced and then fixed during this notebook's development, since both generalize beyond this specific project: a key-reuse bug in the ECDSA branch, 
 and an incorrect assumption about the `liboqs-python` `Signature` API's public-key export mechanism. We close with the full benchmark results and their interpretation.
-
----
 
 ## 1. Goal of This Notebook
 
@@ -788,8 +724,6 @@ We benchmark:
 - **ECDSA (P-256)** — via Python's `cryptography` library, our classical baseline.
 - **ML-DSA-65** — via `liboqs-python`, using the NIST-standardized name established in Chapter 3.
 - **Falcon-512** — via `liboqs-python`.
-
----
 
 ## 2. Initial Signature Functions
 
@@ -817,8 +751,6 @@ def sign_falcon(msg):
 Two details are worth flagging even at this early, "just testing the API" stage, since both foreshadow issues we return to below. First, `sign_dilithium` still uses the pre-standardization name `"Dilithium3"` — a direct carry-over from 
 before we resolved the naming drift in Chapter 3, and something we correct once we move to the actual benchmark function. Second, and more importantly, notice that **each function returns both the signature and the public key together** — 
 this pairing is the detail that the next section's bug hinges on.
-
----
 
 ## 3. The Benchmark Function
 
@@ -897,8 +829,6 @@ separation of concerns we carry forward unchanged into the crypto-agility layer 
 
 We arrived at this version only after fixing two distinct bugs, which we now walk through in the order we actually encountered them.
 
----
-
 ## 4. Bug 1 — Reusing the Wrong Key Between Sign and Verify
 
 Our first working draft of the ECDSA branch read:
@@ -937,8 +867,6 @@ flowchart TD
 The fix is to generate exactly one private key per benchmark run and reuse it for both signing and public-key derivation, exactly as shown in the corrected `benchmark_signature` listing in Section 3 above. We consider 
 this bug the single most instructive one in this entire project: it is easy to introduce by writing "keygen" and "sign" as two textually separate steps that *look* independent, but a correct ECDSA benchmark absolutely requires them to share state.
 
----
-
 ## 5. Bug 2 — `Signature` Has No `export_public_key()` Method
 
 The second bug surfaced in the PQC branches, once we attempted to mirror the ECDSA pattern of "derive the public key, then verify against it explicitly":
@@ -970,8 +898,6 @@ _, t_verify = timer(sig.verify, msg, signature, public_key)
 
 This is reflected in the final `benchmark_signature` code in Section 3, where every PQC branch captures `pk` directly from `sig.generate_keypair()`.
 
----
-
 ## 6. Saving Artifacts
 
 Once the benchmark loop completes for all three algorithms, the notebook persists results in three complementary formats, matching the "right format for the right consumer" principle established in Chapter 2:
@@ -989,13 +915,11 @@ df_timings.to_csv("../data/timings.csv", index=False)  # tabular, for pandas/plo
 
 It then generates three plots via the shared `utils.plot_bar` / `utils.plot_line` helpers from Chapter 3.
 
----
-
 ## 7. Results
 
 ### 7.1 Signature Sizes
 
-![Signature Sizes](plots/signature_sizes.png)
+![Signature Sizes](signature_sizes.png)
 
 | Algorithm | Signature Size |
 |---|---|
@@ -1004,12 +928,12 @@ It then generates three plots via the shared `utils.plot_bar` / `utils.plot_line
 | Falcon-512 | 657 bytes |
 
 The spread here is substantial: ML-DSA-65 signatures are roughly **46 times larger** than ECDSA, while Falcon-512, despite also being a lattice-based scheme, is roughly **5 times smaller than ML-DSA-65** and 
-only about **9 times larger than ECDSA**. This size difference is a direct, structural consequence of each algorithm's internal design, which we examine mathematically in Posts 8 and 9 — Falcon's compactness comes at the 
+only about **9 times larger than ECDSA**. This size difference is a direct, structural consequence of each algorithm's internal design, which we examine mathematically in chapters 8 and 9 — Falcon's compactness comes at the 
 cost of a considerably more complex and failure-sensitive signing procedure (floating-point Gaussian sampling over an NTRU trapdoor), a trade-off we will make precise later in this series.
 
 ### 7.2 Key Generation Times
 
-![Keygen Times](plots/key_sizes.png)
+![Keygen Times](key_sizes.png)
 
 Key generation cost differs sharply across the three algorithms: ECDSA and ML-DSA-65 both complete key generation quickly and land in a broadly similar range, while Falcon-512 is markedly more expensive to key-generate than either of 
 the other two, by roughly an order of magnitude. This matches Falcon's known algorithmic profile: its key generation involves sampling a full NTRU trapdoor basis, which is intrinsically more work than ML-DSA's simpler lattice sampling or 
@@ -1017,13 +941,11 @@ ECDSA's single scalar multiplication.
 
 ### 7.3 Verification Times
 
-![Verification Times](plots/verification_times.png)
+![Verification Times](verification_times.png)
 
 Somewhat counter to a naïve "classical must be fastest" intuition, **ECDSA verification was the slowest of the three** in our measurements, with both PQC algorithms verifying faster. Falcon-512 verified marginally faster than ML-DSA-65. 
 We want to be precise about scope here: these are wall-clock measurements on one specific machine, for one specific message size, using one specific pair of Python bindings — not a general claim that "PQC verification is always faster than 
 ECDSA" across all hardware and implementations. We revisit this caveat, and aggregate all timing results side by side, in Chapter 11.
-
----
 
 ## 8. Interpreting the Trade-offs
 
@@ -1038,8 +960,6 @@ replacement for an ECDSA one in bandwidth-constrained contexts.
 These three observations, taken together, are precisely why a *fixed* choice of "the" PQC signature algorithm is premature, and why the next post's crypto-agility layer — letting the algorithm be a runtime parameter rather than a compile-time 
 decision — is the architecturally correct response to this data, not merely a convenient abstraction.
 
----
-
 ## 9. What Comes Next
 
 Chapter 5 builds directly on top of the `benchmark_signature` function developed here, generalizing it into the `crypto_agility.py` module: a single, algorithm-parameterized `sign()` / `verify()` interface that Notebooks 02, 03, 
@@ -1050,15 +970,11 @@ generate-once pattern we adopted to fix it permanently.
 
 ## Chapter 5/13: The Crypto-Agility Layer
 
----
-
 ### Abstract
 
-In this post, we build `crypto_agility.py`, the algorithm-agnostic `sign()` / `verify()` abstraction that turns the per-algorithm code from Chapter 4 into a single, unified interface. We document a critical correctness bug we 
+In this chapter, we build `crypto_agility.py`, the algorithm-agnostic `sign()` / `verify()` abstraction that turns the per-algorithm code from Chapter 4 into a single, unified interface. We document a critical correctness bug we 
 introduced during its first draft — every `verify()` call generated a brand-new, unrelated keypair, causing every single verification to fail deterministically — and the module-level "generate once, reuse always" fix that resolves 
 it permanently. We close with the algorithm-switching test results and the two plots this notebook produces.
-
----
 
 ## 1. From Per-Algorithm Functions to a Single Interface
 
@@ -1081,8 +997,6 @@ flowchart LR
     CA -->|"alg == dilithium3"| MLDSA["oqs.Signature ML-DSA-65"]
     CA -->|"alg == falcon512"| FALCON["oqs.Signature Falcon-512"]
 ```
-
----
 
 ## 2. First Draft — and a Critical Bug
 
@@ -1147,8 +1061,6 @@ flowchart TD
 
 This is structurally the same class of error as Bug 1 in Chapter 4 (an ECDSA benchmark that regenerated its key between signing and verifying) — but here it is more severe, because it affects **every algorithm, on every call**, 
 rather than one branch of one function.
-
----
 
 ## 3. The Fix — Generate Once, at Import Time, Reuse Always
 
@@ -1218,8 +1130,6 @@ sequenceDiagram
     State-->>Verify: return True/False (matches, because state is shared)
 ```
 
----
-
 ## 4. A Deployment Pitfall We Also Hit: Stale Module Caching
 
 While iterating on this fix, we encountered a second, entirely separate problem that is worth flagging here even though we treat it fully in Chapter 12: our first attempt to apply the fix only rewrote `crypto_agility.py` **on disk**, 
@@ -1230,8 +1140,6 @@ after the first import.
 
 We flag this here, adjacent to the bug it was masking, precisely because a naïve reading of "the file on disk is correct now" can mislead a developer into believing a fix has taken effect when it has not — the notebook state and the filesystem 
 state had silently diverged. Chapter 12 walks through the exact diagnostic sequence we used to catch this.
-
----
 
 ## 5. Algorithm-Switching Tests
 
@@ -1256,13 +1164,11 @@ for alg in algorithms:
 This test suite is deliberately structured differently from Chapter 4's `benchmark_signature`: it does not measure key generation at all (since keys are now generated once, at import time, outside the timed section), and it calls `sign()` and `verify()` 
 exclusively through the public module interface, exactly as any downstream consumer — including the FastAPI service in Chapter 6 — will.
 
----
-
 ## 6. Results
 
 ### 6.1 Signature Sizes via the Agility Layer
 
-![Crypto-Agility Signature Sizes](plots/agility_matrix.png)
+![Crypto-Agility Signature Sizes](agility_matrix.png)
 
 The measured signature lengths — 72 bytes (ECDSA), 3,309 bytes (ML-DSA-65 / "dilithium3"), and 657 bytes (Falcon-512) — are numerically identical to those measured directly in Chapter 4. This is an important sanity check, not a redundant one: 
 it confirms that the abstraction layer introduces **no observable overhead or distortion** in the cryptographic output itself. The `crypto_agility` module is a pure routing and lifecycle-management layer around the same underlying library 
@@ -1270,14 +1176,12 @@ calls exercised in Chapter 4 — exactly the property we want from an abstractio
 
 ### 6.2 Algorithm Switch Cost (Sign Time)
 
-![Algorithm Switch Cost](plots/algorithm_switch_cost.png)
+![Algorithm Switch Cost](algorithm_switch_cost.png)
 
 Measuring sign time specifically through the agility layer — with key generation excluded, since it happens once at import — shows ECDSA taking noticeably longer to sign than either PQC algorithm in this measurement, with ML-DSA-65 and 
 Falcon-512 landing close to each other. We defer detailed cross-Chapter timing comparison (including how these numbers relate to the raw benchmark from Chapter 4) to Chapter 11, where we assemble every timing result from this series into one consolidated 
 table; the point we want to establish here is narrower and structural: **switching which algorithm signs a given message costs nothing beyond the algorithm's own intrinsic sign time** — there is no "agility tax" imposed by the abstraction 
 layer itself, since `sign()` and `verify()` are simple dispatch functions with no per-call setup cost of their own.
-
----
 
 ## 7. Why This Design Choice Matters Beyond This Project
 
@@ -1285,8 +1189,6 @@ We want to state the general principle this notebook embodies, since it is the l
 algorithms: **a crypto-agile system must treat "which algorithm" as data, and "how to use that algorithm correctly" (key lifecycle, object lifetime, exact mechanism-name strings) as an implementation detail hidden entirely behind the interface.** 
 Every bug documented in this Chapter — the accidental key regeneration, the premature `with`-block closure, the stale mechanism name — was a leak of that implementation detail into the interface's behavior. Fixing each one was, in 
 every case, a matter of tightening the boundary between "what the caller specifies" (an algorithm label and a message) and "what the module manages internally" (key lifecycle and library-specific calling conventions).
-
----
 
 ## 8. What Comes Next
 
@@ -1297,23 +1199,17 @@ once real network and web-framework overhead enters the picture.
 
 ## Chapter 6/13: The Mini-Service Demo
 
----
-
 ### Abstract
 
-In this post, we wrap the `crypto_agility` module from Chapter 5 in a small FastAPI microservice (`03_service_demo.ipynb`), exposing signature generation over HTTP. We walk through the service's evolution from a 
+In this chapter, we wrap the `crypto_agility` module from Chapter 5 in a small FastAPI microservice (`03_service_demo.ipynb`), exposing signature generation over HTTP. We walk through the service's evolution from a 
 bare single-endpoint app to one with request logging middleware and a self-documenting root route, and we flag an honest, unresolved design flaw in the `/verify` endpoint that we believe is more instructive left 
 visible than silently patched. We close with end-to-end HTTP latency measurements for all three algorithms.
 
----
-
 ## 1. Goal of This Notebook
 
-Posts 4 and 5 measured signing and verification as direct, in-process Python function calls. Real systems, of course, rarely call a signing library directly from the same process that needs a signature — they go 
+chapters 4 and 5 measured signing and verification as direct, in-process Python function calls. Real systems, of course, rarely call a signing library directly from the same process that needs a signature — they go 
 through a service boundary: an internal microservice, a signing API, a certificate authority endpoint. `03_service_demo.ipynb` closes that gap by placing `crypto_agility.sign()` and `crypto_agility.verify()` behind 
 a FastAPI HTTP interface, and then measuring what changes once network and web-framework overhead enter the picture.
-
----
 
 ## 2. The Minimal Service
 
@@ -1364,8 +1260,6 @@ sequenceDiagram
     API-->>Client: {"algorithm": ..., "signature_length": ...}
 ```
 
----
-
 ## 3. A Non-Bug: `GET /` Returns 404
 
 Opening `http://127.0.0.1:8000/` directly in a browser at this stage returns:
@@ -1379,8 +1273,6 @@ We want to be explicit that this is **expected FastAPI behavior, not a defect**.
 valid `200 OK` with a correctly structured JSON body; a genuinely broken service would instead raise a `ConnectionError` on the client side, not a well-formed 404 from a *different* endpoint.
 
 That said, a bare 404 at the root is poor operator ergonomics — a colleague opening the URL for the first time has no way to discover what the service actually offers. We addressed this directly in the next revision.
-
----
 
 ## 4. Adding Observability: Root Route, Middleware, and a Request Log
 
@@ -1445,8 +1337,6 @@ separation of concerns: request observability is a cross-cutting service-layer p
 We also confirmed, via FastAPI's automatically generated OpenAPI documentation at `/docs` (Swagger UI), that both `/sign` and the new `/requests` endpoint declare their query parameters correctly — `msg` and `alg` as required 
 strings for `/sign`, and an optional `limit` integer (default 50) for `/requests` — which makes the service self-describing for any client without needing to read the source code.
 
----
-
 ## 5. An Honest, Unresolved Flaw in `/verify`
 
 We want to flag something in the `/verify` endpoint's design that we did not fix, and explain why we consider it worth leaving visible in this documentation rather than silently correcting after the fact:
@@ -1484,8 +1374,6 @@ A `/verify` endpoint that cannot fail is a realistic and common mistake in early
 handles "succeeds." We record the fix that *would* be needed (accepting a caller-supplied, base64-encoded signature parameter) as a concrete, actionable item, without implementing it here, since it is not exercised by any of the benchmark 
 or latency measurements in this Chapter — those measurements (Section 6, below) only exercise `/sign`.
 
----
-
 ## 6. Measuring End-to-End Service Latency
 
 With the service running, the notebook issues one HTTP request per algorithm and measures wall-clock round-trip time from the client side:
@@ -1515,7 +1403,7 @@ for alg in algorithms:
 | ML-DSA-65 ("dilithium3") | 6.029 ms |
 | Falcon-512 | 5.262 ms |
 
-![Service Latency per Algorithm](plots/service_latency.png)
+![Service Latency per Algorithm](service_latency.png)
 
 The relative ranking matches the in-process verification-time results from Chapter 4: ECDSA is the slowest of the three, with both PQC algorithms landing close together and noticeably faster. What has changed is the **absolute scale**: 
 recall from Chapter 4 that in-process verification times were on the order of hundreds of microseconds to roughly one millisecond. Here, every request — including the fastest, Falcon-512 — takes several milliseconds. This gap is expected 
@@ -1523,14 +1411,10 @@ and informative: it is the combined cost of Python's `requests` library opening 
 cryptographic operation being measured. We measure this same service again from the presentation notebook in Chapter 7, on a separate port, and compare both runs directly in Chapter 11's consolidated results table, where the run-to-run variability 
 itself becomes a useful data point about how much of "service latency" is fixed HTTP/ASGI overhead versus algorithm-dependent cost.
 
----
-
 ## 7. Saved Artifacts
 
 The notebook persists its results to `data/service_logs.json` and renders the latency comparison to `plots/service_latency.png`, following the same artifact-based coupling convention established in Chapter 2 — allowing the presentation notebook in 
 Chapter 7 to either reuse these exact files or regenerate equivalent ones from its own, independently run service instance.
-
----
 
 ## 8. What Comes Next
 
@@ -1541,23 +1425,17 @@ rather than 8000, so it does not collide with a still-running Notebook 03 servic
 
 ## Chapter 7/13: The Presentation Notebook and Live Demo
 
----
-
 ### Abstract
 
-In this post, we examine `99_presentation.ipynb`, the integration notebook designed in Chapter 2 to stand on its own as a single, linear narrative for live demonstrations. We show its artifact-loading fallback logic actually 
+In this chapter, we examine `99_presentation.ipynb`, the integration notebook designed in Chapter 2 to stand on its own as a single, linear narrative for live demonstrations. We show its artifact-loading fallback logic actually 
 running, present its live crypto-agility and mini-service demos, and — in the spirit of the candor we committed to in Chapter 1 — flag two real inconsistencies we found between this notebook's fallback code paths and the corrected 
-modules from Posts 3 and 5. Both inconsistencies never triggered during our own runs, precisely because the correct artifacts already existed on disk, but they represent a latent risk worth surfacing rather than quietly fixing after the fact.
-
----
+modules from chapters 3 and 5. Both inconsistencies never triggered during our own runs, precisely because the correct artifacts already existed on disk, but they represent a latent risk worth surfacing rather than quietly fixing after the fact.
 
 ## 1. Purpose, Recapped
 
 Chapter 2 described the design goal for this notebook: a single scrollable narrative, runnable by a presenter with no dependency on Notebooks 00–03 having been executed first, achieved via a fallback pattern of 
 `if exists(artifact): load() else: generate_inline()` applied to every module, data file, and plot the notebook needs. This Chapter shows that pattern as it actually appears in the finished notebook, and reports what we found 
 when we looked closely at both branches of that fallback — not just the one that executed.
-
----
 
 ## 2. Loading Modules, With a Fallback That Never Ran (and a Reason to Care Anyway)
 
@@ -1614,10 +1492,8 @@ flowchart TD
 The practical consequence: if this presentation notebook were handed to a colleague on a genuinely fresh machine — the exact scenario the fallback mechanism was designed to support — the very fallback intended to make the 
 demo "just work" would instead regenerate a module that fails immediately, for two independent reasons already solved earlier in this series. We record this here as a concrete illustration of a general risk with fallback/inline-regeneration 
 code: **it silently drifts out of sync with the primary implementation it shadows, unless the two are actively kept in lockstep or, better, the fallback is generated by importing and serializing the real module rather than duplicating its 
-source as a separate string literal.** We did not go back and patch this fallback before writing this post, for the same reason we left the `/verify` design flaw visible in Chapter 6: it is a real artifact of how the project evolved, and 
+source as a separate string literal.** We did not go back and patch this fallback before writing this chapter, for the same reason we left the `/verify` design flaw visible in Chapter 6: it is a real artifact of how the project evolved, and 
 patching it silently would understate a failure mode worth naming explicitly for anyone building a similar fallback pattern.
-
----
 
 ## 3. Loading Data Artifacts, With a Subtler Fallback Risk
 
@@ -1642,8 +1518,6 @@ genuinely measured data (`"✓ Loaded timings.csv"` differs by exactly one word,
 closely could unknowingly narrate fabricated placeholder numbers as if they were the real benchmark results from Chapter 4. In every run we performed, `timings.csv` already existed from Notebook 01, so this branch never fired — but we 
 flag it here as the second of two "silent fallback divergence" risks this notebook carries, both of which we believe are more useful documented than quietly removed.
 
----
-
 ## 4. Loading Plots, and the Genuinely Robust Part of the Pattern
 
 Section 4's plot-loading fallback is, by contrast, fully sound: it calls the *same* `utils.plot_bar` / `utils.plot_line` helpers used by the original notebooks, operating on whatever DataFrame Section 3 produced (real or placeholder), 
@@ -1657,8 +1531,6 @@ Our own run loaded all three existing plots directly, with no regeneration:
 ✓ Loaded ../plots/verification_times.png
 ✓ Loaded ../plots/agility_matrix.png
 ```
-
----
 
 ## 5. Live Demo — Crypto-Agility
 
@@ -1677,10 +1549,8 @@ dilithium3: signature length = 3309, sign time = 0.000289 sec
 falcon512:  signature length = 657,  sign time = 0.000311 sec
 ```
 
-The signature lengths match Posts 4 and 5 exactly, as expected — this is the same underlying module. The sign times are new measurements from this specific run, and are consistent in ranking (ECDSA slower than both PQC algorithms) with, 
-though not numerically identical to, the corresponding measurements in Posts 4 and 5 — the kind of run-to-run variation we address explicitly in Chapter 11's consolidated results discussion.
-
----
+The signature lengths match chapters 4 and 5 exactly, as expected — this is the same underlying module. The sign times are new measurements from this specific run, and are consistent in ranking (ECDSA slower than both PQC algorithms) with, 
+though not numerically identical to, the corresponding measurements in chapters 4 and 5 — the kind of run-to-run variation we address explicitly in Chapter 11's consolidated results discussion.
 
 ## 6. Live Demo — Mini-Service on Port 8001
 
@@ -1701,8 +1571,6 @@ the situation this notebook is designed for, where a presenter might have Notebo
 
 We separately confirmed, via a browser visit to `http://127.0.0.1:8001/docs`, that FastAPI's automatically generated Swagger UI correctly lists all three routes — `GET /`, `GET /sign`, and `GET /requests` — with accurate parameter documentation 
 for each, including the `limit: int = 50` default on `/requests`.
-
----
 
 ## 7. Measuring Service Latency, Again
 
@@ -1726,8 +1594,6 @@ We attribute this gap to ordinary process-level variance (JIT/cache warm-up in t
 any structural difference between the two service instances, since the underlying `crypto_agility` module and endpoint code are identical between them. We return to this variance explicitly, alongside every other timing result in this 
 series, in Chapter 11.
 
----
-
 ## 8. Completion, and What This Notebook Demonstrates
 
 The notebook's final cell prints a simple completion message:
@@ -1743,34 +1609,26 @@ re-derives them when not, and layers two genuinely live demonstrations (in-proce
 in effect, a maintenance debt specific to the fallback branches rather than a flaw in the fallback *pattern* itself, and we surface them here precisely so that pattern can be reused correctly elsewhere: fallback code that duplicates 
 a primary implementation's source, rather than importing and serializing it, needs an explicit synchronization discipline (a shared source of truth, or a test that fails when the two diverge) that this project did not originally include.
 
----
-
 ## 9. What Comes Next
 
-Having now covered the full engineering arc of the project — architecture, environment, benchmarking, the agility layer, the service, and the integration notebook — the series turns, in Posts 8 through 10, to the mathematical foundations 
+Having now covered the full engineering arc of the project — architecture, environment, benchmarking, the agility layer, the service, and the integration notebook — the series turns, in chapters 8 through 10, to the mathematical foundations 
 underneath the two PQC algorithms we have been measuring throughout. Chapter 8 begins with ML-DSA (Dilithium): its Module-LWE and Module-SIS hardness assumptions, and how its signing and verification procedures are built from them.
 
 ---
 
 ## Chapter 8/13: Mathematical Background I — Dilithium / ML-DSA
 
----
-
 ### Abstract
 
-In this post, we step back from engineering and examine the mathematics underlying ML-DSA — the NIST-standardized signature scheme we have been benchmarking since Chapter 4 under its pre-standardization name, 
+In this chapter, we step back from engineering and examine the mathematics underlying ML-DSA — the NIST-standardized signature scheme we have been benchmarking since Chapter 4 under its pre-standardization name, 
 "Dilithium3." We cover its algebraic setting, the two lattice problems it relies on (Module-LWE and Module-SIS), its key generation, signing, and verification procedures, and we reconcile commonly cited textbook 
 signature sizes against the concrete 3,309-byte figure we measured ourselves in Chapter 4.
-
----
 
 ## 1. Why We Start Here
 
 Of the three algorithms compared throughout this series, ML-DSA is the one NIST's own guidance recommends as the default, general-purpose choice for most PQC migrations — a recommendation that also matches our 
 own empirical results from Chapter 4, where it delivered competitive verification speed without Falcon's markedly higher key-generation cost. Understanding *why* it behaves the way it does requires understanding the 
 two hardness assumptions it is built on, which is the purpose of this post.
-
----
 
 ## 2. The Algebraic Setting: A Cyclotomic Ring
 
@@ -1790,8 +1648,6 @@ can be fast enough for real-world deployment at all — every key generation, si
 
 "Module" in Module-LWE and Module-SIS (Sections 3–4 below) refers to working with **vectors and matrices whose entries are themselves elements of $R_q$**, rather than with plain scalars modulo $q$ — a middle ground between plain LWE (scalars) 
 and ring-LWE restricted to a single ring element, chosen because it gives implementers a tunable security/efficiency trade-off via the matrix dimensions $k \times \ell$.
-
----
 
 ## 3. Module-LWE: The Assumption Behind the Public Key
 
@@ -1823,8 +1679,6 @@ flowchart LR
     style T fill:#ccf,stroke:#336
 ```
 
----
-
 ## 4. Module-SIS: The Assumption Behind Short Vectors
 
 The second hardness assumption is **Module Short Integer Solution (Module-SIS)**:
@@ -1834,8 +1688,6 @@ $$A x = 0 \pmod q, \qquad \|x\| \le \beta$$
 The task here is: *find a nonzero vector $x$, no longer than some bound $\beta$, satisfying this homogeneous linear system.* This is provably equivalent to finding a short vector in a structured lattice — an instance of the 
 **Shortest Vector Problem (SVP)**, which is believed to be hard even for quantum computers (no known quantum algorithm, including variants of Shor's or Grover's algorithm, solves SVP in polynomial time for the lattice dimensions used here). 
 ML-DSA uses Module-SIS internally to guarantee that the final signature vector produced during signing is provably short — which is exactly the property the verifier checks, as we detail in Section 7.
-
----
 
 ## 5. Key Generation
 
@@ -1858,8 +1710,6 @@ sequenceDiagram
     KG-->>KG: public key = (seed, compressed t)
     KG-->>KG: private key = (s1, s2)
 ```
-
----
 
 ## 6. Signing: A Fiat–Shamir Transform Over Lattices
 
@@ -1893,8 +1743,6 @@ flowchart TD
     style Check fill:#ffd,stroke:#960
 ```
 
----
-
 ## 7. Verification
 
 Verification reverses the commitment step using the public data, and checks consistency against the challenge embedded in the signature:
@@ -1905,8 +1753,6 @@ The verifier reconstructs an approximation $w'$ of the original commitment from 
 It additionally checks that $z$ satisfies the same bound the signer's rejection-sampling step enforced — a signature with an out-of-bound $z$ is rejected outright, since a legitimately generated signature could never have passed 
 the signer's own rejection check with such a value.
 
----
-
 ## 8. Security Rationale, Summarized
 
 ML-DSA's security rests on three pillars, each already introduced above:
@@ -1914,8 +1760,6 @@ ML-DSA's security rests on three pillars, each already introduced above:
 1. **Worst-case-to-average-case reduction** — breaking a randomly sampled instance is provably as hard as breaking the hardest instance of the underlying lattice problem, not merely "empirically hard so far."
 2. **No known efficient quantum algorithm** for Module-LWE or Module-SIS at the parameter sizes used — unlike factoring and discrete log, which Shor's algorithm solves efficiently.
 3. **Rejection sampling** — closes a specific statistical side channel that would otherwise leak the secret key across many observed signatures, independent of the two hardness assumptions above.
-
----
 
 ## 9. Reconciling Textbook Figures With Our Own Measurements
 
@@ -1928,8 +1772,6 @@ measured **ML-DSA-65** (security category 3, the mid-tier, and the level we chos
 signature size in the same range as our measured 3,309 bytes, which confirms our own benchmark is consistent with the standard once the correct parameter set is compared against the correct reference figure — a small but, in our view, 
 worthwhile piece of due diligence, since conflating parameter sets is an easy mistake to make when moving between general PQC literature and a specific, concrete implementation.
 
----
-
 ## 10. Practical Use Cases
 
 Consistent with its balance of moderate signature size, competitive speed, and the strongest standardization backing among lattice-based signature schemes, ML-DSA is generally positioned as the default choice for:
@@ -1940,8 +1782,6 @@ Consistent with its balance of moderate signature size, competitive speed, and t
 
 We revisit this positioning quantitatively, alongside Falcon and our ECDSA baseline, in Chapter 11's consolidated comparison.
 
----
-
 ## 11. What Comes Next
 
 Chapter 9 turns to Falcon-512 — mathematically the more intricate of the two PQC algorithms in this project, built on NTRU lattices and the GPV Gaussian sampler, with signing that depends on floating-point stability in a way 
@@ -1951,23 +1791,17 @@ ML-DSA's integer-only arithmetic never has to contend with.
 
 ## Chapter 9/13: Mathematical Background II — Falcon
 
----
-
 ### Abstract
 
-In this post, we examine Falcon-512, the second of the two PQC signature algorithms benchmarked throughout this series. We cover its NTRU lattice foundation, the GPV trapdoor sampler and the discrete Gaussian 
+In this chapter, we examine Falcon-512, the second of the two PQC signature algorithms benchmarked throughout this series. We cover its NTRU lattice foundation, the GPV trapdoor sampler and the discrete Gaussian 
 sampling it requires, and why Falcon's signing procedure depends on floating-point arithmetic in a way no other algorithm in this project does. We connect this mathematical structure directly back to two of our 
 own empirical results from Chapter 4: Falcon's markedly higher key-generation cost, and its 657-byte measured signature size against a commonly cited ~666-byte reference figure.
-
----
 
 ## 1. What Sets Falcon Apart
 
 Every other algorithm discussed in this series — ECDSA, and ML-DSA in Chapter 8 — performs its core signing arithmetic entirely over integers modulo a fixed prime or modulus. Falcon is the exception: its signing procedure requires 
 **floating-point Gaussian sampling** over a lattice basis, computed via a Fast Fourier Transform. This is unusual enough in cryptographic engineering that it is worth stating plainly up front, since it explains several of Falcon's 
 most distinctive practical properties — including, as we show in Section 5, why its key generation is so much more expensive than ML-DSA's or ECDSA's.
-
----
 
 ## 2. NTRU Lattices
 
@@ -1998,8 +1832,6 @@ flowchart TD
     style Lattice fill:#eef,stroke:#336
 ```
 
----
-
 ## 3. The GPV Trapdoor Sampler
 
 Knowing a short basis for a lattice is what enables the **Gentry–Peikert–Vaikuntanathan (GPV) sampler**: a procedure that, given a target point and a short lattice basis, samples a lattice point close to that target, distributed 
@@ -2010,8 +1842,6 @@ $$z \sim D_{\Lambda, \sigma}$$
 The security intuition is the mirror image of ML-DSA's rejection sampling from Chapter 8, arrived at from a different mathematical direction: a GPV-sampled signature must be statistically indistinguishable from a sample that reveals *nothing* 
 about which particular short basis (i.e., which particular secret key) produced it — otherwise, an adversary observing many signatures could gradually recover a good approximation of the private trapdoor from statistical bias alone. 
 Achieving this requires the sampling procedure to be extremely precise; small numerical errors in the sampling distribution are exactly the kind of leakage this scheme must avoid.
-
----
 
 ## 4. Key Generation: Why It Is So Expensive
 
@@ -2039,8 +1869,6 @@ sequenceDiagram
     Note over KG: also expensive -- explains high measured keygen time
     KG-->>KG: private key = FFT tree over (f,g,F,G)
 ```
-
----
 
 ## 5. Signing via Fast Fourier Sampling
 
@@ -2072,23 +1900,17 @@ flowchart TD
     style Check fill:#ffd,stroke:#960
 ```
 
----
-
 ## 6. Verification
 
 Verification is comparatively simple, and involves no floating-point arithmetic at all: the verifier recomputes $s_1 = c - s_2 \cdot h \pmod q$ from the public key, the received $s_2$, and the challenge $c$, 
 then checks two things — that the signature relation holds exactly, and that the norm (length) of the vector $(s_1, s_2)$ is within the bound a legitimately GPV-sampled signature could have produced. A forged or corrupted signature will, 
 with overwhelming probability, either fail the modular equation outright or exceed the norm bound, since satisfying both simultaneously without knowledge of the trapdoor is equivalent to solving the underlying NTRU lattice problem directly.
 
----
-
 ## 7. Security Basis, Summarized
 
 Falcon's security rests on the hardness of the **Shortest Vector Problem (SVP)** and **Closest Vector Problem (CVP)** in NTRU lattices — both believed hard for quantum computers at the parameter sizes used, with no known efficient 
 quantum algorithm analogous to Shor's algorithm for factoring or discrete log. This is the same category of hardness assumption (structured-lattice SVP/CVP) that underlies ML-DSA's Module-SIS problem from Chapter 8, applied to a differently 
 structured lattice family.
-
----
 
 ## 8. Reconciling Our Measurement Against the Textbook Figure
 
@@ -2099,8 +1921,6 @@ slightly by implementation — Falcon's reference specification defines a **comp
 message to the next, depending on the specific values sampled during that particular signing operation, rather than the 657-byte figure being wrong or the 666-byte figure being wrong. Both numbers are consistent with Falcon-512 operating correctly; 
 the discrepancy here is measurement-level noise inherent to a variable-length encoding, not a structural error of the kind we identified in Chapter 8.
 
----
-
 ## 9. A Nuance on Falcon's "Ideal for IoT" Reputation
 
 General PQC literature — including our own project's early research notes, quoted in Chapter 1's origin story — commonly recommends Falcon specifically for IoT and embedded deployment, citing its small signature size and fast verification. 
@@ -2110,33 +1930,25 @@ to avoid timing side-channels in floating-point code is substantially harder tha
 concerns with fixed-point approximations and careful constant-time engineering — but it means the "small signature → good for constrained devices" reasoning, taken alone, understates the implementation complexity that a genuinely constrained 
 device would need to absorb elsewhere. We consider this a useful corrective to keep in mind for Chapter 11's cross-cutting recommendations.
 
----
-
 ## 10. What Comes Next
 
-Chapter 10 returns to the algebraic object shared by both algorithms in this project — the ring $R_q = \mathbb{Z}_q[x]/(x^n+1)$ — and works through its arithmetic in more concrete, computational detail than Posts 8 and 9 needed individually, 
+Chapter 10 returns to the algebraic object shared by both algorithms in this project — the ring $R_q = \mathbb{Z}_q[x]/(x^n+1)$ — and works through its arithmetic in more concrete, computational detail than chapters 8 and 9 needed individually, 
 including a worked example of polynomial reduction modulo $x^n + 1$.
 
 ---
 
 ## Chapter 10/13: The Ring $R_q$ and Algebraic Foundations
 
----
-
 ### Abstract
 
-In this post, we work through the single algebraic structure shared by both PQC algorithms in this project — the ring $R_q = \mathbb{Z}_q[x]/(x^n+1)$ — in more computational detail than Posts 8 and 9 needed individually. 
+In this chapter, we work through the single algebraic structure shared by both PQC algorithms in this project — the ring $R_q = \mathbb{Z}_q[x]/(x^n+1)$ — in more computational detail than chapters 8 and 9 needed individually. 
 We build the ring up layer by layer, derive the negacyclic "fold-back-with-sign-flip" rule from first principles via two independent methods, work a complete numerical example of a polynomial multiplication inside this ring, 
 and correct one inaccuracy in our own project's early research notes regarding which modulus polynomial Falcon actually uses.
 
----
-
 ## 1. Why We Return to This Ring
 
-Posts 8 and 9 each referenced $R_q = \mathbb{Z}_q[x]/(x^n+1)$ as "the ring both algorithms operate in," but treated it as a given structure rather than deriving its properties. This Chapter fills that gap. Understanding this ring 
+chapters 8 and 9 each referenced $R_q = \mathbb{Z}_q[x]/(x^n+1)$ as "the ring both algorithms operate in," but treated it as a given structure rather than deriving its properties. This Chapter fills that gap. Understanding this ring 
 concretely — not just naming it — is what makes claims like "ML-DSA's polynomial multiplication runs in $O(n \log n)$ time" (Chapter 8) or "Falcon's FFT tree operates over the same cyclotomic structure" (Chapter 9) verifiable rather than asserted.
-
----
 
 ## 2. Building $R_q$ Layer by Layer
 
@@ -2171,8 +1983,6 @@ flowchart TD
     Zqx -->|"reduce mod (xⁿ+1)"| Rq["R_q = ℤ_q[x]/(xⁿ+1)\n(degree bounded by n-1)"]
 ```
 
----
-
 ## 3. Deriving the Negacyclic Wrap-Around Rule
 
 We now derive, explicitly, what happens to $x^{n+1}$ — the first term past the defining identity $x^n \equiv -1$ — using two independent methods, both of which must agree if the ring is consistently defined.
@@ -2194,7 +2004,7 @@ x^{n+1} &\equiv -x \\
 x^{n+2} &\equiv -x^2 \\
 &\ \ \vdots \\
 x^{2n-1} &\equiv -x^{n-1} \\
-x^{2n}   &\equiv \phantom{-}1 \qquad \text{(since } x^{2n} = x^n \cdot x^n \equiv (-1)(-1) = 1\text{)}
+x^{2n}   &\equiv 1 \qquad \text{(since } x^{2n} = x^n \cdot x^n \equiv (-1)(-1) = 1\text{)}
 \end{aligned}
 $$
 
@@ -2210,18 +2020,14 @@ Contributes to:  -a_n, -a_{n+1}, -a_{n+2}, ..., -a_{2n-1}
                  (added into positions 0, 1, 2, ..., n-1 respectively)
 ```
 
----
-
 ## 4. Correcting Our Own Notes: Which Modulus Does Falcon Actually Use?
 
-Our project's early research notes (referenced in Posts 8 and 9) included a claim we want to correct explicitly here, in keeping with the same standard of verification we applied to the signature-size figures in those two posts: 
+Our project's early research notes (referenced in chapters 8 and 9) included a claim we want to correct explicitly here, in keeping with the same standard of verification we applied to the signature-size figures in those two posts: 
 the notes stated that "Falcon uses $x^n - 1$" while "Dilithium uses $x^n + 1$." Checking this against Falcon's actual NIST specification shows this is not correct for the standardized scheme: 
 **Falcon operates over the same negacyclic ring $R_q = \mathbb{Z}_q[x]/(x^n+1)$ as ML-DSA**, using power-of-two cyclotomics for exactly the security and FFT-efficiency reasons developed in this post. The confusion in our original 
 notes most likely stems from the *original 1996 NTRU cryptosystem* (NTRUEncrypt), whose classical convolution ring is indeed $\mathbb{Z}[x]/(x^n-1)$ — a genuinely cyclic (not negacyclic) ring. Falcon borrows the "NTRU lattice" *idea* 
 from that older scheme (Chapter 9), but implements it over the negacyclic ring, not the original cyclic one. We flag this correction here because propagating it uncorrected into a comparison table — as our own early notes did — would 
 understate a genuine structural similarity between the two PQC algorithms this project studies: both, in fact, share the exact same ring construction, differing only in their choice of $n$ and $q$.
-
----
 
 ## 5. Geometric Interpretation
 
@@ -2231,8 +2037,6 @@ $$a(x) = a_0 + a_1 x + \dots + a_{n-1}x^{n-1} \quad \longleftrightarrow \quad (a
 
 Under this correspondence, polynomial addition is ordinary vector addition, and polynomial multiplication becomes a specific structured linear operation on that vector — a **negacyclic convolution**. This is precisely what turns 
 "Module-LWE over $R_q$" (Chapter 8) and "the NTRU lattice $\Lambda$ over $R_q$" (Chapter 9) into genuine, well-studied lattice problems in $n$-dimensional space: the algebra and the geometry are two descriptions of the same object.
-
----
 
 ## 6. A Complete Worked Example
 
@@ -2283,8 +2087,6 @@ $$a(x) \cdot b(x) \equiv 7 + 8x + 5x^2 + 7x^3 \pmod{q,\ x^4+1}$$
 This four-coefficient result is the complete, final answer in $R_{17}$ for $n=4$ — no further reduction is possible or needed, illustrating directly the property claimed in Section 2.3: multiplication in $R_q$ never produces a 
 result with more than $n$ coefficients, regardless of the degree the raw, unreduced product would otherwise reach.
 
----
-
 ## 7. Why This Enables Fast Arithmetic
 
 The negacyclic structure derived in Section 3 is not an incidental convenience — it is the specific property that permits multiplication in $R_q$ to be computed via a **Number-Theoretic Transform (NTT)**, an integer-arithmetic 
@@ -2293,26 +2095,20 @@ the difference between an operation costing on the order of thousands of multipl
 production TLS or code-signing infrastructure. This is the concrete mathematical justification behind a claim we made without proof in both Chapter 8 and Chapter 9: that the choice of $x^n+1$ specifically (rather than an arbitrary modulus polynomial) 
 is what makes lattice-based PQC practically fast enough to deploy at all.
 
----
-
 ## 8. What Comes Next
 
-With the mathematical foundations of both PQC algorithms now established, Chapter 11 returns to empirical ground: we assemble every timing, size, and latency measurement from Posts 4 through 7 into one consolidated comparison, 
-address the run-to-run variance we flagged but deferred in Posts 5 and 7, and connect each observed performance characteristic back to the specific algorithmic step — from this post, and from Posts 8 and 9 — responsible for it.
+With the mathematical foundations of both PQC algorithms now established, Chapter 11 returns to empirical ground: we assemble every timing, size, and latency measurement from chapters 4 through 7 into one consolidated comparison, 
+address the run-to-run variance we flagged but deferred in chapters 5 and 7, and connect each observed performance characteristic back to the specific algorithmic step — from this chapter, and from chapters 8 and 9 — responsible for it.
 
 ---
 
 ## Chapter 11/13: Comparative Results and Discussion
 
----
-
 ### Abstract
 
-In this post, we consolidate every timing, size, and latency measurement produced across Posts 4 through 7 into one comparison, decompose measured service latency into its cryptographic and non-cryptographic components, 
-and connect each observed performance characteristic back to the specific algorithmic mechanism identified in Posts 8 through 10. We also address, directly, the run-to-run variance we flagged but deferred in earlier posts, 
+In this chapter, we consolidate every timing, size, and latency measurement produced across chapters 4 through 7 into one comparison, decompose measured service latency into its cryptographic and non-cryptographic components, 
+and connect each observed performance characteristic back to the specific algorithmic mechanism identified in chapters 8 through 10. We also address, directly, the run-to-run variance we flagged but deferred in earlier posts, 
 and state plainly what our measurement methodology can and cannot support.
-
----
 
 ## 1. Signature Size — The One Fully Consistent Metric
 
@@ -2328,16 +2124,12 @@ This consistency is expected, and it is worth stating plainly why: signature siz
 scheduling noise. Chapter 10 established why this is architecturally guaranteed for the two lattice-based schemes — every element of $R_q$ is representable in exactly $n$ coefficients, and a signature's encoded size follows directly from $n$, 
 $q$, and the scheme's specific packing format, none of which vary between runs on the same build. This is the single metric in our entire dataset with zero measurement uncertainty.
 
----
-
 ## 2. Key Generation Time
 
 Key generation times, read from the `key_sizes.png` chart produced in Chapter 4, showed ECDSA and ML-DSA-65 landing in a broadly similar, low range, with **Falcon-512 markedly higher — roughly an order of magnitude above the other two**. 
 This is not a measurement artifact; it is a direct, predicted consequence of the mathematics developed in Chapter 9: Falcon's key generation must solve the NTRU equation $fG - gF = q$ for short $F, G$ and then construct a full FFT tree over 
 the resulting basis, both non-trivial computational steps with no equivalent in ECDSA's single scalar multiplication or ML-DSA's one matrix-vector product (Chapter 8, Section 5). We consider this one of the cleanest examples in the whole project 
 of a measured result directly explained by the underlying algorithm's structure, rather than by implementation quirks.
-
----
 
 ## 3. Signing Time — Three Independent Measurement Contexts
 
@@ -2353,21 +2145,17 @@ The qualitative ranking is identical across all three independent runs: **ECDSA 
 in this specific measurement. This is worth pausing on, since it runs counter to a common intuition that "post-quantum must mean slower." At least for signing, on this hardware, with these specific library implementations, the opposite holds. 
 We are careful, however, to scope this claim precisely — Section 6 below discusses exactly what this result does and does not generalize to.
 
----
-
 ## 4. Verification Time
 
 Chapter 4's `verification_times.png` chart showed the same qualitative pattern as signing: **ECDSA verification was the slowest of the three**, with both PQC algorithms verifying faster, and Falcon-512 marginally faster than ML-DSA-65. Connecting 
-this to the mathematics from Posts 8 and 9: ML-DSA verification (Chapter 8, Section 7) requires reconstructing a commitment and checking a hash equality — comparatively cheap polynomial arithmetic in $R_q$. Falcon verification (Chapter 9, Section 6) 
+this to the mathematics from chapters 8 and 9: ML-DSA verification (Chapter 8, Section 7) requires reconstructing a commitment and checking a hash equality — comparatively cheap polynomial arithmetic in $R_q$. Falcon verification (Chapter 9, Section 6) 
 is, notably, **entirely free of floating-point arithmetic** — only the signing side requires the FFT-based Gaussian sampler — leaving a single modular equation check and a norm bound check, which explains why Falcon's verification is not 
 penalized by the same numerical complexity that makes its key generation and signing more involved. ECDSA verification, by contrast, requires an elliptic-curve point multiplication, which — despite ECDSA's much smaller key and signature 
 sizes — is not necessarily cheaper in wall-clock terms than the lattice arithmetic underlying either PQC scheme at these parameter sizes.
 
----
-
 ## 5. Service Latency, Decomposed
 
-Posts 6 and 7 each measured end-to-end HTTP latency for a `/sign` request, on different ports, in different notebook runs:
+chapters 6 and 7 each measured end-to-end HTTP latency for a `/sign` request, on different ports, in different notebook runs:
 
 | Algorithm | Notebook 03 (port 8000) | Notebook 99 (port 8001) |
 |---|---|---|
@@ -2404,8 +2192,6 @@ of total request time, while even for the comparatively slower ECDSA it remains 
 "it barely matters" — a materially different conclusion from "which algorithm signs fastest in a tight in-process loop," where the differences documented in Sections 3–4 are large and directly consequential (e.g., for batch-signing workloads 
 with no network hop per operation at all).
 
----
-
 ## 6. Addressing Run-to-Run Variance Directly
 
 We flagged, in both Chapter 5 and Chapter 7, that our measured numbers vary somewhat between separate runs of conceptually identical code — ECDSA's signing time, for instance, ranged from roughly 6.7 ms (Chapter 5) to 7.4 ms (Chapter 7), and its 
@@ -2423,11 +2209,9 @@ imply a level of statistical confidence the underlying single-shot methodology d
 We consider this level of honesty about measurement limitations to be consistent with the standard we set for this entire series in Chapter 1: reporting what we actually measured, including its limitations, rather than presenting a cleaner story 
 than the data supports.
 
----
-
 ## 7. Consolidated Summary Table
 
-Pulling every dimension discussed across Posts 4 through 11 into one place:
+Pulling every dimension discussed across chapters 4 through 11 into one place:
 
 | Dimension | ECDSA (P-256) | ML-DSA-65 | Falcon-512 |
 |---|---|---|---|
@@ -2441,34 +2225,26 @@ Pulling every dimension discussed across Posts 4 through 11 into one place:
 | NIST standardization | pre-quantum baseline | FIPS 204 | Round 4 selection (FN-DSA pending) |
 | Hardness assumption | ECDLP (broken by Shor's algorithm) | Module-LWE / Module-SIS | NTRU lattice SVP/CVP |
 
----
-
 ## 8. What Comes Next
 
 Chapter 12 shifts from results to process: a complete, chronological account of every build failure, linker error, API rename, and correctness bug we encountered while producing this project — including the ones 
-referenced only briefly in earlier posts — together with the diagnostic reasoning that led to each fix. We consider it the most directly reusable Chapter in this series for anyone attempting a comparable project on their own machine.
+referenced only briefly in earlier chapters — together with the diagnostic reasoning that led to each fix. We consider it the most directly reusable Chapter in this series for anyone attempting a comparable project on their own machine.
 
 ---
 
 ## Chapter 12/13: Lessons Learned and Debugging History
 
----
-
 ### Abstract
 
-In this post, we assemble every build failure, linker error, API rename, and correctness bug encountered across this entire project into one chronological, categorized account. We group the sixteen distinct issues we 
+In this chapter, we assemble every build failure, linker error, API rename, and correctness bug encountered across this entire project into one chronological, categorized account. We group the sixteen distinct issues we 
 hit into six categories, extract the cross-cutting diagnostic patterns that recur across categories, and close with a general troubleshooting decision tree distilled from the experience. As stated in Chapter 1, we consider this 
 the most directly reusable Chapter in the series for anyone attempting a comparable project.
-
----
 
 ## 1. Why We Document Bugs As Rigorously As Results
 
 A conventional project write-up presents a clean, working final state and quietly omits the path taken to reach it. We made a deliberate choice not to do that, for a reason grounded in this project's own goals (Chapter 1, Section 6): 
 every issue documented here is scientifically informative in its own right — each one reveals a genuine property of the tools, libraries, or language runtime involved, not merely "a mistake we happened to make." Several of these issues 
 (stale module caching, silently drifting fallback code, single-keypair reuse bugs) generalize directly to any Python cryptography or scientific-computing project, well beyond PQC specifically.
-
----
 
 ## 2. Complete Issue Inventory
 
@@ -2506,8 +2282,6 @@ timeline
     Presentation Notebook : Issues 17-18 (fallback drift)
 ```
 
----
-
 ## 3. Category A — Environment and Toolchain (Issues 1–5)
 
 **Pattern:** Python package managers cannot see, install, or version-check anything outside the Python ecosystem itself — native compilers, system shared libraries, and the dynamic linker's search path are all invisible to `pip`, and 
@@ -2516,8 +2290,6 @@ confusing "installed via `pip`" with "usable by the OS" was the root of three se
 
 **Generalizable lesson:** whenever a Python binding wraps a native library, budget separate diagnostic effort for "is the Python package importable" versus "is the underlying native library correctly built, installed, and resolvable 
 by the OS" — these are genuinely independent failure surfaces.
-
----
 
 ## 4. Category B — Python Import Mechanics (Issues 6, 13, 14)
 
@@ -2528,8 +2300,6 @@ module already loaded into `sys.modules` within a running kernel (Issue 14).
 **Generalizable lesson:** in any long-lived interactive session (a Jupyter kernel, a REPL, a running server with hot-reload disabled), "I changed the file" and "the running process is using my change" are two separate claims, and only the second 
 one matters for behavior. Verifying the second claim — via a fresh kernel restart, an explicit `importlib.reload()`, or printing the actual source the running process holds in memory — is the direct fix whenever a fix "doesn't seem to take effect."
 
----
-
 ## 5. Category C — API Naming and Library Interface Assumptions (Issues 7, 8)
 
 **Pattern:** Both issues resulted from trusting a *remembered* or *externally documented* API surface rather than querying the actual installed library directly. "Dilithium3" was correct terminology at one point in `liboqs`'s history and 
@@ -2537,8 +2307,6 @@ stopped being correct once NIST finalized FIPS 204; `export_public_key()` was a 
 
 **Generalizable lesson:** for any library still under active development or recent standardization, treat `dir(obj)`, `help(obj)`, or an explicit "list available options" call (here, `oqs.get_enabled_sig_mechanisms()`) as the source of truth, 
 and treat memory, older documentation, or a superficially similar sibling API as a hypothesis to verify, not a fact to build on directly.
-
----
 
 ## 6. Category D — Cryptographic Correctness Bugs (Issues 9, 10, 11, 12)
 
@@ -2560,8 +2328,6 @@ flowchart TD
 used by the other half of this pair?" A deterministic, 100%-reproducible failure (as in Issue 12) is actually the *easy* case to diagnose, precisely because it rules out flaky, load-dependent causes immediately; the harder version 
 of this bug class would be an intermittent key mismatch under concurrent access, which none of our single-threaded notebooks were structured to expose, but which a production multi-worker deployment of this same code absolutely could.
 
----
-
 ## 7. Category E — Service and API Design (Issues 15, 16)
 
 **Pattern:** Both issues in this category are less "bugs" in the traditional sense than **incomplete API surfaces**: a 404 at an undefined route is the framework working exactly as designed, and a `/verify` endpoint that verifies its own 
@@ -2572,8 +2338,6 @@ human reading the endpoint's logic and asking "does this actually do what its na
 documented contract. This is exactly the gap integration tests with deliberately adversarial inputs (e.g., calling `/verify` with a signature you know to be invalid, and checking that it actually returns `false`) are designed to close, 
 and which this project's demonstration-focused notebooks did not include.
 
----
-
 ## 8. Category F — Fallback and Documentation Drift (Issues 17, 18)
 
 **Pattern:** Both issues concern code paths that exist specifically to handle an edge case (a missing file) but were never exercised during normal development, and therefore never benefited from the same iterative bug-fixing the "main path" 
@@ -2582,8 +2346,6 @@ code received. The inline fallback in `99_presentation.ipynb` is, quite literall
 **Generalizable lesson:** any fallback, default, or "if missing, regenerate" code path is untested by definition until the condition that triggers it actually occurs — and if that condition is rare (a fresh machine, a deleted file), 
 the fallback can silently rot for the entire lifetime of a project without anyone noticing. Where possible, fallback logic should derive from the same source as the primary path (e.g., importing and serializing the real module, rather than 
 duplicating its source as a separate string) specifically to eliminate this class of drift structurally, rather than relying on manual synchronization discipline that this project itself demonstrates is easy to forget.
-
----
 
 ## 9. A Distilled Diagnostic Decision Tree
 
@@ -2603,8 +2365,6 @@ flowchart TD
     Q5 -->|Yes| Logic["Read the logic line by line —\nthis is a design gap, not a crash\n(Category E/F)"]
 ```
 
----
-
 ## 10. What Comes Next
 
 Chapter 13, the final Chapter in this series, closes with a summary of the project's overall findings, a candid assessment of what we would do differently on a second iteration, and pointers toward the further work — additional algorithms, 
@@ -2614,22 +2374,16 @@ hybrid signatures, and load testing — that this project's scope deliberately l
 
 ## Chapter 13/13: Conclusion, Outlook, and References
 
----
-
 ### Abstract
 
 This final Chapter closes the series with a summary of what we set out to do, what we actually found, a candid list of what we would change on a second iteration, the future work this project's scope deliberately 
 left out, and how the underlying notebooks translate into the 30-minute live presentation they were originally built to support. We close with a full index of the series and our references.
 
----
-
 ## 1. What We Set Out to Do
 
 Chapter 1 stated four concrete goals: measure ECDSA, ML-DSA-65, and Falcon-512 head to head; build a crypto-agility abstraction layer; expose that layer through a live HTTP service; and document every practical obstacle honestly, treating 
-the debugging history as scientifically informative in its own right. Twelve posts later, we can say plainly: all four goals were met, and the fourth one — documentation of obstacles — ended up producing the single Chapter (Chapter 12) we 
+the debugging history as scientifically informative in its own right. Twelve chapters later, we can say plainly: all four goals were met, and the fourth one — documentation of obstacles — ended up producing the single Chapter (Chapter 12) we 
 expect readers to return to most often.
-
----
 
 ## 2. What We Actually Found
 
@@ -2643,8 +2397,6 @@ we would not have discovered without explicitly decomposing service latency into
 - **Crypto-agility, as a design pattern, carries no measurable "switching tax"** — Chapter 5 showed the abstraction layer reproduces identical signature sizes to the raw benchmark, and dispatch overhead is negligible next to the algorithms' 
 own intrinsic costs.
 
----
-
 ## 3. What We Would Do Differently
 
 In the direct spirit of Chapter 12, we list this candidly rather than only in the abstract:
@@ -2655,12 +2407,10 @@ than one data point per algorithm.
 failure path with adversarial test inputs.
 3. **Eliminate fallback-code drift structurally.** Chapter 7's discovery — an inline fallback in the presentation notebook that would regenerate the *original, buggy* `crypto_agility.py` if ever triggered — should be fixed by generating fallback 
 code from the real module (e.g., reading and embedding its actual source at build time) rather than maintaining a hand-duplicated copy.
-4. **Add SPHINCS+ as a genuine third benchmarked algorithm.** Our early research notes (referenced across Posts 8–9) covered SPHINCS+'s hash-based design in comparable mathematical depth to ML-DSA and Falcon, but we never actually implemented 
+4. **Add SPHINCS+ as a genuine third benchmarked algorithm.** Our early research notes (referenced across chapters 8–9) covered SPHINCS+'s hash-based design in comparable mathematical depth to ML-DSA and Falcon, but we never actually implemented 
 or benchmarked it in any notebook. Given its role as NIST's most conservative fallback (Chapter 1, Section 3), a second iteration should close this gap rather than leave SPHINCS+ as research material only.
 5. **Test under concurrency.** Chapter 12, Category D, noted explicitly that our module-level shared-key design (Chapter 5) was never exercised under concurrent access — a production multi-worker deployment of the same code is exactly the situation 
 where a subtler version of the key-sharing bugs we found could resurface in a form single-threaded notebooks cannot expose.
-
----
 
 ## 4. Future Work Beyond a Second Iteration
 
@@ -2672,11 +2422,9 @@ Section 10), rather than a hard cutover to PQC-only.
 - **Load testing the mini-service** — Chapter 11's latency decomposition was based on single-request measurements; a proper load test (concurrent clients, sustained throughput) would reveal whether the "overhead dominates" finding 
 still holds under real production-like traffic, or whether it changes once `uvicorn`'s event loop is under sustained pressure.
 
----
-
 ## 5. From Notebooks to a 30-Minute Talk
 
-The engineering work documented across Posts 2–7 was, from the outset, built to support a live 30-minute team presentation — the storyline our own early project notes sketched out before a single benchmark was run. We close this series by 
+The engineering work documented across chapters 2–7 was, from the outset, built to support a live 30-minute team presentation — the storyline our own early project notes sketched out before a single benchmark was run. We close this series by 
 connecting that original intent back to the finished artifacts:
 
 ```mermaid
@@ -2692,11 +2440,9 @@ timeline
     28-30 min : Closing — crypto-agility as the migration strategy
 ```
 
-Every plot named in that timeline is a real artifact this series has already walked through in depth — nothing in the live talk requires material beyond what Posts 2 through 7 document. The one deliberate exception is Chapter 12's debugging 
+Every plot named in that timeline is a real artifact this series has already walked through in depth — nothing in the live talk requires material beyond what chapters 2 through 7 document. The one deliberate exception is Chapter 12's debugging 
 history: we recommend a presenter keep it in reserve rather than presenting it live, since an audience watching a 30-minute demo benefits far more from seeing things work smoothly than from a guided tour of every linker error along the way — 
 but we recommend having it open in a second window, since "what happens when I run this on a fresh machine" is reliably the first question a technically engaged audience asks once the live demo concludes.
-
----
 
 ## 6. Series Index
 
@@ -2716,8 +2462,6 @@ but we recommend having it open in a second window, since "what happens when I r
 | 12 | Lessons Learned and Debugging History |
 | 13 | Conclusion, Outlook, and References (this post) |
 
----
-
 ## 7. References
 
 - NIST, *FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)*, U.S. Department of Commerce.
@@ -2729,8 +2473,6 @@ but we recommend having it open in a second window, since "what happens when I r
 - FastAPI documentation, https://fastapi.tiangolo.com.
 - Python `cryptography` library documentation, https://cryptography.io.
 
----
-
 ## 8. Closing
 
 This project began as one of seven brainstormed ideas (Chapter 1) and ended as thirteen posts, eighteen documented bugs, three mathematically distinct signature algorithms, and one central, empirically supported thesis: crypto-agility is 
@@ -2739,7 +2481,7 @@ or standardization status changes underneath a running system. We hope this seri
 
 ---
 
-## References & Further Reading
+## 14. References & Further Reading
 
 1.
 
@@ -2778,7 +2520,7 @@ ring $\mathbb{Z}[x]/(x^n-1)$, distinct from Falcon's negacyclic $R_q = \mathbb{Z
 ### 2.3 Hash-Based Signatures (SPHINCS+ / SLH-DSA)
 
 - Bernstein, D. J., Hülsing, A., Kölbl, S., Niederhagen, R., Rijneveld, J., Schwabe, P., **"The SPHINCS+ Signature Framework"**, ACM CCS 2019 — the design SLH-DSA (FIPS 205) is based on; referenced in our early research notes 
-(Posts 8–9) though not implemented in this project's own benchmarks (see Chapter 13, Section 3, item 4).
+(chapters 8–9) though not implemented in this project's own benchmarks (see Chapter 13, Section 3, item 4).
 - Buchmann, J., Dahmen, E., Hülsing, A., **"XMSS — A Practical Forward Secure Signature Scheme based on Minimal Security Assumptions"**, PQCrypto 2011 — background on stateful hash-based signatures, a useful contrast to SPHINCS+'s 
 stateless design.
 
@@ -2805,11 +2547,11 @@ signing, and verification procedures described in Chapter 8).
 ## 5. Software and Libraries Used in This Project
 
 - Open Quantum Safe Project, **`liboqs`** — the C library providing the actual ML-DSA-65 and Falcon-512 implementations this project benchmarks: `https://github.com/open-quantum-safe/liboqs`
-- Open Quantum Safe Project, **`liboqs-python`** — the Python bindings used throughout Posts 3–7: `https://github.com/open-quantum-safe/liboqs-python`
+- Open Quantum Safe Project, **`liboqs-python`** — the Python bindings used throughout chapters 3–7: `https://github.com/open-quantum-safe/liboqs-python`
 - **`cryptography`** (pyca), the Python library providing our ECDSA baseline implementation: `https://cryptography.io`
-- **FastAPI**, the ASGI web framework used for the mini-service in Posts 6–7: `https://fastapi.tiangolo.com`
+- **FastAPI**, the ASGI web framework used for the mini-service in chapters 6–7: `https://fastapi.tiangolo.com`
 - **Uvicorn**, the ASGI server running the FastAPI service: `https://www.uvicorn.org`
-- **pandas** and **Matplotlib**, used throughout for data handling and the plots referenced in Posts 4–7.
+- **pandas** and **Matplotlib**, used throughout for data handling and the plots referenced in chapters 4–7.
 
 ## 6. Migration Guidance and Policy Documents
 
@@ -2821,8 +2563,8 @@ comparison against the general-purpose recommendations in Chapter 8, Section 10.
 
 ## 7. Articles and Practitioner Resources on Crypto-Agility
 
-- Cloudflare Blog, **"The state of the post-quantum internet"** and related posts on real-world PQC/hybrid TLS deployment — practical grounding for the "TLS 1.3 hybrid handshake" recommendation referenced in Chapter 8, Section 10.
-- Google Security Blog, posts on **Kyber/ML-KEM deployment in Chrome and BoringSSL** — a real-world crypto-agility case study at internet scale, complementary to this project's much smaller mini-service demonstration (Chapter 6).
+- Cloudflare Blog, **"The state of the post-quantum internet"** and related chapters on real-world PQC/hybrid TLS deployment — practical grounding for the "TLS 1.3 hybrid handshake" recommendation referenced in Chapter 8, Section 10.
+- Google Security Blog, chapters on **Kyber/ML-KEM deployment in Chrome and BoringSSL** — a real-world crypto-agility case study at internet scale, complementary to this project's much smaller mini-service demonstration (Chapter 6).
 - Open Quantum Safe Project documentation on **OpenSSL provider integration** — relevant follow-up reading for anyone wanting to move from this project's application-level crypto-agility layer (Chapter 5) toward transport-level (TLS) crypto-agility.
 
 ## 8. How to Cite This Series
@@ -2831,7 +2573,7 @@ If referencing this project series in your own work, we suggest a citation of th
 
 > Balaneskovic, N., *"PQC Signature Lab & Crypto-Agility" (Project 38)*, 13-part documentation series, 2026.
 
-with individual posts cited by their number and title as listed in Chapter 13's series index.
+with individual chapters cited by their number and title as listed in Chapter 13's series index.
 
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6499b42b9b1c1e835c00b7b8f44c5460f94b5ff0/CVE_free_ImageBuilds_Concept/Project37.pdf)
