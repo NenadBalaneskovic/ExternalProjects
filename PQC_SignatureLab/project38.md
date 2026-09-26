@@ -2578,7 +2578,7 @@ with individual chapters cited by their number and title as listed in Chapter 13
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/8c2655a30963ad65a1a2c2983f37d85c29a84510/PQC_SignatureLab/PQC_SignatureLab.ipynb)
 
-3. [![PQC_Signature_Lab_&_Crypto_Agility_v1.0_Report | English](https://img.shields.io/badge/PQC_Signature_Lab_&_Crypto_Agility_v1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/624e2bd3972f8167e99a20308f52fb60bead7f03/PQC_SignatureLab/project38.pdf)
+3. [![PQC_Signature_Lab_&_Crypto_Agility_v1.0_Report | English](https://img.shields.io/badge/PQC_Signature_Lab_&_Crypto_Agility_v1.0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/262de05b2c553b2def4b71f8a7832f56a9fa5f4a/PQC_SignatureLab/project38.pdf)
 
 
 ---
