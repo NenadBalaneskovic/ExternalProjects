@@ -2746,6 +2746,116 @@ The system builds container images deterministically, governs registry tags, gen
 
 [![Container_Orchestration_GUI_v1.0](https://img.shields.io/badge/Container_Orchestration_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/00e3c090ec4edacf1826f822c895db2a6915c548/CVE_free_ImageBuilds_Concept/Project37.md)
 
+- ### **38. PQC Signature Lab & Crypto‑Agility v1.0 (BLUEPRINT) – Sep–Oct 2026**
+
+>## **Executive Summary: Reproducible Benchmarking, Algorithm‑Agnostic Signing Abstraction, FastAPI Live‑Service Demonstration & Mathematical Foundations of Post‑Quantum Digital Signatures**
+>
+>**Business Problem**  
+>Modern cryptographic infrastructure — spanning **TLS/PKI systems**, **code‑ and firmware‑signing pipelines**, **certificate authorities**, and **long‑lived trust chains** — increasingly faces a looming but poorly operationalized transition to **post‑quantum digital signatures**.  
+>These environments are:
+>
+>- dependent on classical signature schemes (ECDSA, RSA) whose hardness assumptions are broken by Shor's algorithm  
+>- exposed to "harvest‑now‑decrypt‑later" and future forgery risk once a cryptographically relevant quantum computer exists  
+>- fragmented across native toolchains, OS package managers, and Python interpreter environments  
+>- sensitive to pre‑standardization naming drift as NIST finalizes algorithm names and parameter sets  
+>- reliant on unverified vendor performance claims rather than local, reproducible measurement  
+>
+>Real‑world PQC adoption efforts face persistent challenges:
+>
+>- hard‑coded, single‑algorithm signing code  
+>- native build failures (`cmake`, dynamic‑linker misconfiguration) mistaken for Python packaging problems  
+>- silent breakage when informal names ("Dilithium3") are superseded by finalized standards ("ML‑DSA‑65")  
+>- undiagnosed correctness bugs from mismatched key material between sign and verify operations  
+>- unpatched, silently drifting fallback/demo code paths  
+>
+>Traditional approaches depend on:
+>
+>- ad‑hoc, one‑off PQC proof‑of‑concept scripts  
+>- vendor whitepapers instead of local, reproducible benchmarking  
+>- undocumented environment‑setup tribal knowledge  
+>- notebook‑based experiments with no persistent, importable abstraction layer  
+>- disconnected research notes never validated against a running implementation  
+>
+>These constraints reduce migration confidence, undermine reproducibility of performance claims, and limit an organization's readiness to adopt PQC signatures on a defensible timeline.  
+>Modern PQC migration planning requires **reproducible algorithm benchmarking**, **algorithm‑agnostic architecture**, **live service demonstration**, and **documented mathematical grounding** — all within a transparent, auditable environment.
+>
+>**Solution Overview**  
+>Project 38 introduces a **modular, reproducible PQC signature‑lab ecosystem** that automates:
+>
+>- **environment & toolchain validation** → native build tooling, `liboqs` compilation, dynamic‑linker registration  
+>- **signature benchmarking** → keygen/sign/verify timing and size measurement across ECDSA, ML‑DSA‑65, and Falcon‑512  
+>- **crypto‑agility abstraction** → a single, algorithm‑parameterized `sign()`/`verify()` interface with persistent, correctly‑scoped keys  
+>- **live service demonstration** → FastAPI endpoints exposing signing over HTTP with request‑logging middleware and latency measurement  
+>- **presentation orchestration** → an autonomous notebook that loads or regenerates every artifact for live, fallback‑capable demos  
+>- **mathematical documentation** → Module‑LWE/SIS, NTRU/GPV, and ring‑algebra derivations underlying each algorithm  
+>- **debugging‑history recordkeeping** → a full, categorized account of every build failure, API rename, and correctness bug encountered  
+>
+>Project 38 transforms post‑quantum signature adoption into a **transparent, measured, reproducible engineering pipeline**, enabling:
+>
+>- deterministic environment setup  
+>- reproducible, apples‑to‑apples algorithm benchmarks  
+>- predictable, dispatch‑overhead‑free algorithm switching  
+>- transparent live‑service latency behavior  
+>- structured mathematical and operational documentation  
+>- stable cross‑machine reproducibility  
+>
+>**Business Impact**
+>
+>Organizations gain:
+>
+>- **deterministic PQC evaluation pipelines**  
+>- **algorithm‑agnostic signing architecture**  
+>- **reproducible, audit‑ready benchmark artifacts**  
+>- **transparent service‑latency behavior under HTTP**  
+>- **migration‑risk visibility ahead of NIST deprecation timelines**  
+>- **scientific & enterprise cryptographic governance**  
+>
+>Project 38 strengthens post‑quantum readiness, improves migration‑decision confidence, and provides a practical, locally reproducible foundation for PQC signature adoption — without relying on unverified third‑party performance claims.
+>
+>**Consulting Relevance**
+>
+>For consultants, Project 38 demonstrates how to operationalize:
+>
+>- reproducible, algorithm‑parameterized signature benchmarking  
+>- crypto‑agile abstraction‑layer design applicable beyond signatures (KEMs, hybrid TLS handshakes)  
+>- toolchain and environment risk isolation for native‑dependency Python projects  
+>- honest, artifact‑based technical documentation as a standalone deliverable  
+>
+>It is directly applicable to:
+>
+>- PQC migration readiness assessments  
+>- cryptographic engineering consulting  
+>- TLS/PKI modernization planning  
+>- security architecture training and onboarding  
+>- reproducible research environments  
+>
+>The architecture is modular, extensible, and industry‑agnostic — applicable to finance, government, telecom, critical infrastructure, and large‑scale enterprise PKI.
+>
+>**Compliance / ESG / Risk Management**
+>
+>Project 38 supports governance through:
+>
+>- traceable migration evidence ahead of NIST IR 8547 deprecation timelines (RSA/ECC deprecated after 2030, disallowed after 2035)  
+>- reproducible, versioned benchmark artifacts (JSON/CSV logs, plots) in place of unverifiable performance claims  
+>- explicit documentation of unresolved design gaps (e.g. the `/verify` endpoint, fallback drift) rather than silent risk  
+>- deterministic, algorithm‑diversity‑ready architecture positioned for future standards (SLH‑DSA, hybrid schemes)  
+>
+>This ensures scientific and enterprise cryptographic workflows remain **auditable, explainable, and reproducible**, supporting ESG reporting, migration governance, and responsible cryptographic‑resource planning.
+
+## **Abstract**
+
+**PQC Signature Lab & Crypto‑Agility v1.0** is a modular, reproducible post‑quantum signature architecture designed for environments where **reproducibility, algorithm independence, migration transparency, and empirical performance evidence** are central concerns. It unifies environment/toolchain setup, signature benchmarking, a crypto‑agility abstraction layer, live HTTP‑service demonstration, mathematical documentation, and a fully narrated debugging history into a coherent, reproducible PQC‑readiness stack.
+
+The system builds and registers `liboqs` deterministically, benchmarks ECDSA, ML‑DSA‑65, and Falcon‑512 under identical conditions, exposes a single algorithm‑agnostic signing interface, deploys that interface behind a FastAPI microservice with full request logging, and evaluates end‑to‑end service latency. The documentation subsystem records every architectural decision, mathematical derivation, and correctness bug encountered, and the artifact layer preserves benchmark results, plots, environment snapshots, and service logs (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/PQC_SignatureLab/project38.md#14-references--further-reading) 1 - 3 below).
+
+- **Core goals:** Provide a reproducible, algorithm‑agnostic post‑quantum signature architecture with structured artifacts and transparent, honestly documented logic.  
+- **Audience:** cryptographic engineers, security architects, PQC migration planners, DevOps practitioners, and consultants designing reproducible signature‑infrastructure transitions.  
+- **Why modularity matters:** Separating environment setup, benchmarking, crypto‑agility abstraction, live service, and mathematical documentation prevents monolithic bottlenecks and improves long‑term resilience as standards evolve.  
+- **Governance and reproducibility:** deterministic environment builds, structured benchmark metadata, and unified debugging logs ensure traceability and auditability.  
+- **Offline readiness:** All components run locally on a single Fedora Linux workstation — ideal for secure or air‑gapped enterprise evaluation environments.[[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![PQC_Signature_Lab_Crypto_Agility_v1.0](https://img.shields.io/badge/PQC_Signature_Lab_Crypto_Agility_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/4a1ce7de1aecc6d88583184fe62f33d4a08b79af/PQC_SignatureLab/project38.md)
+
 ---
 
 
