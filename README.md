@@ -2746,7 +2746,7 @@ The system builds container images deterministically, governs registry tags, gen
 
 [![Container_Orchestration_GUI_v1.0](https://img.shields.io/badge/Container_Orchestration_GUI_v1.0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/00e3c090ec4edacf1826f822c895db2a6915c548/CVE_free_ImageBuilds_Concept/Project37.md)
 
-- ### **38. PQC Signature Lab & Crypto‑Agility v1.0 (BLUEPRINT) – Sep–Oct 2026**
+- ### **38. PQC Signature Lab & Crypto‑Agility v1.0 – Sep–Oct 2026**
 
 >## **Executive Summary: Reproducible Benchmarking, Algorithm‑Agnostic Signing Abstraction, FastAPI Live‑Service Demonstration & Mathematical Foundations of Post‑Quantum Digital Signatures**
 >
