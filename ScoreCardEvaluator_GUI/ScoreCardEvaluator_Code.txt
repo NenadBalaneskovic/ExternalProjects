@@ -1,0 +1,701 @@
+import sys
+import numpy as np
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel,
+    QLineEdit, QPushButton, QTabWidget, QTextEdit, QFileDialog,
+    QSpinBox, QDoubleSpinBox, QGroupBox
+)
+from PyQt5.QtCore import Qt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+class XSChartCanvas(FigureCanvas):
+    def __init__(self):
+        self.fig = Figure(figsize=(6, 4), tight_layout=True)
+        self.ax1, self.ax2 = self.fig.subplots(2, 1)
+        super().__init__(self.fig)
+
+    def plot(self, means, stds, mu, sigma, n, out_x, out_s):
+        self.ax1.clear()
+        self.ax2.clear()
+
+        ucl_x = mu + 3 * sigma / np.sqrt(n)
+        lcl_x = mu - 3 * sigma / np.sqrt(n)
+        ucl_s = sigma + 3 * sigma / np.sqrt(2*n)
+        lcl_s = sigma - 3 * sigma / np.sqrt(2*n)
+
+        self.ax1.plot(means, marker='o', label="Means")
+        self.ax1.axhline(mu, color='black', linestyle='--', label='μ')
+        self.ax1.axhline(ucl_x, color='red', linestyle='--', label='UCL')
+        self.ax1.axhline(lcl_x, color='red', linestyle='--', label='LCL')
+        for i in out_x:
+            self.ax1.plot(i, means[i], 'ro')
+        self.ax1.set_title("X̄ Control Chart")
+        self.ax1.grid(True)
+
+        self.ax2.plot(stds, marker='o', color='orange', label="Stds")
+        self.ax2.axhline(sigma, color='black', linestyle='--', label='σ')
+        self.ax2.axhline(ucl_s, color='red', linestyle='--', label='UCL')
+        self.ax2.axhline(lcl_s, color='red', linestyle='--', label='LCL')
+        for i in out_s:
+            self.ax2.plot(i, stds[i], 'ro')
+        self.ax2.set_title("S Control Chart")
+        self.ax2.grid(True)
+        self.draw()
+
+class DChartCanvas(FigureCanvas):
+    def __init__(self):
+        self.fig = Figure(figsize=(6, 3), tight_layout=True)
+        self.ax = self.fig.subplots(1)
+        super().__init__(self.fig)
+
+    def plot(self, counts, ucl, lcl, dbar, outliers):
+        self.ax.clear()
+        self.ax.plot(counts, marker='o', label="Defects per Group")
+        self.ax.axhline(dbar, color='black', linestyle='--', label="D̄")
+        self.ax.axhline(ucl, color='red', linestyle='--', label="UCL")
+        self.ax.axhline(lcl, color='red', linestyle='--', label="LCL")
+        for i in outliers:
+            self.ax.plot(i, counts[i], 'ro')
+        self.ax.set_title("Defect Count Control Chart (D-Chart)")
+        self.ax.set_xlabel("Group Index")
+        self.ax.set_ylabel("Defect Count")
+        self.ax.grid(True)
+        self.ax.legend()
+        self.draw()
+
+class MACanvas(FigureCanvas):
+    def __init__(self):
+        self.fig = Figure(figsize=(6, 3), tight_layout=True)
+        self.ax = self.fig.subplots(1)
+        super().__init__(self.fig)
+
+    def plot(self, ma_vals, ucls, lcls, outliers):
+        self.ax.clear()
+        self.ax.plot(ma_vals, label="Moving Average", marker='o')
+        self.ax.plot(ucls, linestyle='--', color='red', label='UCL')
+        self.ax.plot(lcls, linestyle='--', color='red', label='LCL')
+        for i in outliers:
+            self.ax.plot(i, ma_vals[i], 'ro')
+        self.ax.set_title("Moving Average Control Chart")
+        self.ax.set_xlabel("Group Index")
+        self.ax.set_ylabel("Average Value")
+        self.ax.grid(True)
+        self.ax.legend()
+        self.draw()
+
+class EWMACanvas(FigureCanvas):
+    def __init__(self):
+        self.fig = Figure(figsize=(6, 3), tight_layout=True)
+        self.ax = self.fig.subplots(1)
+        super().__init__(self.fig)
+
+    def plot(self, ewma_vals, ucl_vals, lcl_vals, violations):
+        self.ax.clear()
+        self.ax.plot(ewma_vals, marker='o', label="EWMA", color='blue')
+        self.ax.plot(ucl_vals, '--', color='red', label="UCL")
+        self.ax.plot(lcl_vals, '--', color='red', label="LCL")
+        for i in violations:
+            self.ax.plot(i, ewma_vals[i], 'ro')
+        self.ax.set_title("EWMA Control Chart")
+        self.ax.set_xlabel("Group Index")
+        self.ax.set_ylabel("Smoothed Value")
+        self.ax.grid(True)
+        self.ax.legend()
+        self.draw()
+
+class ScoreCardEvaluator(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("📊 Score Card Evaluator")
+        self.setGeometry(100, 100, 1000, 650)
+        layout = QVBoxLayout()
+        self.tabs = QTabWidget()
+
+        self.tabs.addTab(self.build_tab1_xs_chart(), "X̄–S Control Chart (Tab 1)")
+        self.tabs.addTab(self.build_tab2_iterative_filtering(), "X̄–S̄ Iterative Filtering (Tab 2)")
+        self.tabs.addTab(self.build_tab3_d_chart(), "Defect Count Chart (Tab 3)")
+        self.tabs.addTab(self.build_tab4_moving_average(), "Moving Average Chart (Tab 4)")
+        self.tabs.addTab(self.build_tab5_ewma_chart(), "EWMA Chart (Tab 5)")
+
+        layout.addWidget(self.tabs)
+        self.setLayout(layout)
+
+    # TAB 1:
+    
+    def build_tab1_xs_chart(self):
+        tab = QWidget()
+        layout = QGridLayout()
+
+        # Input & parameters
+        self.tab1_input = QTextEdit()
+        self.tab1_input.setPlaceholderText("Enter scores separated by spaces, commas, or newlines")
+
+        self.group_size = QSpinBox()
+        self.group_size.setRange(2, 100)
+        self.group_size.setValue(5)
+
+        self.mu_input = QLineEdit()
+        self.sigma_input = QLineEdit()
+
+        load_btn = QPushButton("📂 Load File")
+        load_btn.clicked.connect(self.load_tab1_file)
+
+        run_btn = QPushButton("▶️ Evaluate")
+        run_btn.clicked.connect(self.evaluate_tab1)
+
+        self.log_tab1 = QTextEdit()
+        self.log_tab1.setReadOnly(True)
+
+        self.canvas1 = XSChartCanvas()
+
+        # Layout widgets
+        form = QVBoxLayout()
+        form.addWidget(QLabel("📥 Score Input"))
+        form.addWidget(self.tab1_input)
+        form.addWidget(load_btn)
+        form.addWidget(QLabel("Group Size (n):"))
+        form.addWidget(self.group_size)
+        form.addWidget(QLabel("Mean (μ):"))
+        form.addWidget(self.mu_input)
+        form.addWidget(QLabel("Std Dev (σ):"))
+        form.addWidget(self.sigma_input)
+        form.addWidget(run_btn)
+        form.addWidget(QLabel("📋 Evaluation Log"))
+        form.addWidget(self.log_tab1)
+
+        layout.addLayout(form, 0, 0)
+        layout.addWidget(self.canvas1, 0, 1)
+        tab.setLayout(layout)
+        return tab
+
+    def load_tab1_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, "Open Scores", "", "Text Files (*.txt *.csv)")
+        if fname:
+            try:
+                with open(fname) as f:
+                    lines = f.readlines()
+                    content = "\n".join(line.strip() for line in lines if not any(c.isalpha() for c in line))
+                    self.tab1_input.setPlainText(content)
+            except Exception as e:
+                self.log_tab1.append(f"❌ Error loading file: {e}")
+
+    def evaluate_tab1(self):
+        self.log_tab1.clear()
+        try:
+            raw = self.tab1_input.toPlainText().replace(",", " ")
+            data = [float(x) for x in raw.split()]
+        except:
+            self.log_tab1.append("❌ Invalid input.")
+            return
+
+        n = self.group_size.value()
+        if len(data) < n:
+            self.log_tab1.append("❌ Not enough data for even one group.")
+            return
+        
+        g = len(data) // n
+        arr = np.array(data[:g * n]).reshape((g, n))
+        means = np.mean(arr, axis=1)
+        stds = np.std(arr, axis=1, ddof=1)
+        
+        try:
+            mu = float(self.mu_input.text())
+        except:
+            mu = np.mean(means)
+            self.log_tab1.append(f"ℹ️ Estimating μ = {mu:.3f}")
+        
+        try:
+            sigma = float(self.sigma_input.text())
+        except:
+            sigma = np.mean(stds)
+            self.log_tab1.append(f"ℹ️ Estimating σ = {sigma:.3f}")
+
+
+        g = len(data) // n
+        if g < 2:
+            self.log_tab1.append("⚠️ Not enough data.")
+            return
+
+        arr = np.array(data[:g*n]).reshape((g, n))
+        means = np.mean(arr, axis=1)
+        stds = np.std(arr, axis=1, ddof=1)
+
+        ucl_x = mu + 3 * sigma / np.sqrt(n)
+        lcl_x = mu - 3 * sigma / np.sqrt(n)
+        ucl_s = sigma + 3 * sigma / np.sqrt(2 * n)
+        lcl_s = sigma - 3 * sigma / np.sqrt(2 * n)
+
+        out_x = [i for i, m in enumerate(means) if m < lcl_x or m > ucl_x]
+        out_s = [i for i, s in enumerate(stds) if s < lcl_s or s > ucl_s]
+
+        self.canvas1.plot(means, stds, mu, sigma, n, out_x, out_s)
+
+        self.log_tab1.append(f"✅ Evaluated {g} groups of size {n}")
+        self.log_tab1.append(f"X̄ bounds: [{lcl_x:.3f}, {ucl_x:.3f}]")
+        self.log_tab1.append(f"S bounds:  [{lcl_s:.3f}, {ucl_s:.3f}]")
+        self.log_tab1.append(f"❗ Mean outliers at: {out_x if out_x else 'None'}")
+        self.log_tab1.append(f"❗ Std outliers at: {out_s if out_s else 'None'}")
+
+    # TAB 2:    
+
+    def build_tab2_iterative_filtering(self):
+        tab = QWidget()
+        layout = QGridLayout()
+    
+        self.tab2_input = QTextEdit()
+        self.tab2_input.setPlaceholderText("Enter scores as numbers (e.g. 71 72 74...)")
+    
+        self.tab2_group_size = QSpinBox()
+        self.tab2_group_size.setRange(2, 100)
+        self.tab2_group_size.setValue(5)
+    
+        load_btn = QPushButton("📂 Load File")
+        load_btn.clicked.connect(self.load_tab2_file)
+    
+        run_btn = QPushButton("▶️ Run Iterative Filter")
+        run_btn.clicked.connect(self.evaluate_tab2)
+    
+        self.tab2_log = QTextEdit()
+        self.tab2_log.setReadOnly(True)
+    
+        self.canvas2 = XSChartCanvas()
+    
+        form = QVBoxLayout()
+        form.addWidget(QLabel("📥 Input Data"))
+        form.addWidget(self.tab2_input)
+        form.addWidget(load_btn)
+        form.addWidget(QLabel("Group Size (n):"))
+        form.addWidget(self.tab2_group_size)
+        form.addWidget(run_btn)
+        form.addWidget(QLabel("📋 Iteration Log"))
+        form.addWidget(self.tab2_log)
+    
+        layout.addLayout(form, 0, 0)
+        layout.addWidget(self.canvas2, 0, 1)
+        tab.setLayout(layout)
+        return tab
+
+    def load_tab2_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, "Open File", "", "Text Files (*.txt *.csv)")
+        if fname:
+            try:
+                with open(fname) as f:
+                    lines = f.readlines()
+                    content = "\n".join(
+                        line.strip() for line in lines
+                        if any(char.isdigit() for char in line)
+                    )
+                    self.tab2_input.setPlainText(content)
+            except Exception as e:
+                self.tab2_log.append(f"❌ Error loading file: {e}")
+    
+    def evaluate_tab2(self):
+        self.tab2_log.clear()
+        try:
+            raw = self.tab2_input.toPlainText().replace(",", " ")
+            data = [float(x) for x in raw.split()]
+        except:
+            self.tab2_log.append("❌ Invalid input.")
+            return
+    
+        n = self.tab2_group_size.value()
+        g = len(data) // n
+        if g < 3:
+            self.tab2_log.append("⚠️ Not enough groups.")
+            return
+    
+        arr = np.array(data[:g*n]).reshape((g, n))
+        indices = list(range(g))
+    
+        max_iter = 10
+        iter_count = 0
+        while iter_count < max_iter:
+            means = np.mean(arr, axis=1)
+            stds = np.std(arr, axis=1, ddof=1)
+            xbar = np.mean(means)
+            sbar = np.mean(stds)
+    
+            ucl_x = xbar + 3 * sbar / np.sqrt(n)
+            lcl_x = xbar - 3 * sbar / np.sqrt(n)
+            ucl_s = sbar + 3 * sbar / np.sqrt(2 * n)
+            lcl_s = sbar - 3 * sbar / np.sqrt(2 * n)
+    
+            bad_mean = [i for i, m in enumerate(means) if m < lcl_x or m > ucl_x]
+            bad_std = [i for i, s in enumerate(stds) if s < lcl_s or s > ucl_s]
+            all_bad = sorted(set(bad_mean + bad_std))
+    
+            if not all_bad:
+                self.tab2_log.append(f"✅ Converged after {iter_count + 1} iteration(s).")
+                break
+    
+            self.tab2_log.append(f"🔁 Iteration {iter_count + 1}: Removed groups {all_bad}")
+            mask = np.ones(arr.shape[0], dtype=bool)
+            mask[all_bad] = False
+            arr = arr[mask]
+            indices = [idx for i, idx in enumerate(indices) if mask[i]]
+            iter_count += 1
+    
+        # Final plot
+        means = np.mean(arr, axis=1)
+        stds = np.std(arr, axis=1, ddof=1)
+        xbar = np.mean(means)
+        sbar = np.mean(stds)
+        self.canvas2.plot(means, stds, xbar, sbar, n, [], [])
+        self.tab2_log.append(f"📈 Final X̄: {xbar:.3f}, S̄: {sbar:.3f}")
+        self.tab2_log.append(f"Remaining groups: {len(arr)}")
+
+    # TAB 3:
+
+    def build_tab3_d_chart(self):
+        tab = QWidget()
+        layout = QGridLayout()
+    
+        self.tab3_input = QTextEdit()
+        self.tab3_input.setPlaceholderText("Enter defect counts per group (e.g. 3, 5, 1, 7...)")
+    
+        load_btn = QPushButton("📂 Load Defect Data")
+        load_btn.clicked.connect(self.load_tab3_file)
+    
+        run_btn = QPushButton("▶️ Evaluate D-Chart")
+        run_btn.clicked.connect(self.evaluate_tab3)
+    
+        self.tab3_log = QTextEdit()
+        self.tab3_log.setReadOnly(True)
+    
+        self.canvas3 = DChartCanvas()
+    
+        form = QVBoxLayout()
+        form.addWidget(QLabel("📥 Defect Input"))
+        form.addWidget(self.tab3_input)
+        form.addWidget(load_btn)
+        form.addWidget(run_btn)
+        form.addWidget(QLabel("📋 Log"))
+        form.addWidget(self.tab3_log)
+    
+        layout.addLayout(form, 0, 0)
+        layout.addWidget(self.canvas3, 0, 1)
+        tab.setLayout(layout)
+        return tab
+
+    def load_tab3_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, "Open File", "", "Text Files (*.txt *.csv)")
+        if fname:
+            try:
+                with open(fname) as f:
+                    lines = f.readlines()
+                    content = "\n".join(
+                        line.strip() for line in lines
+                        if any(char.isdigit() for char in line)
+                    )
+                    self.tab3_input.setPlainText(content)
+            except Exception as e:
+                self.tab3_log.append(f"❌ File error: {e}")
+    
+    def evaluate_tab3(self):
+        self.tab3_log.clear()
+        try:
+            raw = self.tab3_input.toPlainText().replace(",", " ")
+            data = [int(float(x)) for x in raw.split()]
+        except:
+            self.tab3_log.append("❌ Invalid input.")
+            return
+    
+        if len(data) < 4:
+            self.tab3_log.append("⚠️ At least 4 groups required.")
+            return
+    
+        arr = np.array(data)
+        max_iter = 10
+        iteration = 0
+        converged = False
+    
+        while iteration < max_iter:
+            dbar = np.mean(arr)
+            ucl = dbar + 3 * np.sqrt(dbar)
+            lcl = max(0, dbar - 3 * np.sqrt(dbar))
+            outliers = [i for i, d in enumerate(arr) if d < lcl or d > ucl]
+            if not outliers:
+                self.tab3_log.append(f"✅ Converged after {iteration+1} iterations.")
+                break
+            self.tab3_log.append(f"🔁 Iter {iteration+1}: Removed {len(outliers)} outlier(s) at {outliers}")
+            mask = np.ones(len(arr), dtype=bool)
+            mask[outliers] = False
+            arr = arr[mask]
+            iteration += 1
+    
+        final_counts = arr.tolist()
+        dbar = np.mean(final_counts)
+        ucl = dbar + 3 * np.sqrt(dbar)
+        lcl = max(0, dbar - 3 * np.sqrt(dbar))
+    
+        self.canvas3.plot(final_counts, ucl, lcl, dbar, [])
+        self.tab3_log.append(f"📈 Final D̄ = {dbar:.2f}")
+        self.tab3_log.append(f"📉 UCL = {ucl:.2f}, LCL = {lcl:.2f}")
+        self.tab3_log.append(f"📊 Remaining groups: {len(final_counts)}")
+
+    # TAB 4:
+
+    def build_tab4_moving_average(self):
+        tab = QWidget()
+        layout = QGridLayout()
+    
+        self.tab4_input = QTextEdit()
+        self.tab4_input.setPlaceholderText("Enter data (e.g. 72 74 71 70 ...)")
+    
+        self.tab4_group = QSpinBox()
+        self.tab4_group.setRange(2, 100)
+        self.tab4_group.setValue(5)
+    
+        self.tab4_k = QSpinBox()
+        self.tab4_k.setRange(2, 50)
+        self.tab4_k.setValue(3)
+    
+        self.tab4_mu = QLineEdit()
+        self.tab4_sigma = QLineEdit()
+    
+        load_btn = QPushButton("📂 Load File")
+        load_btn.clicked.connect(self.load_tab4_file)
+    
+        run_btn = QPushButton("▶️ Evaluate MA Chart")
+        run_btn.clicked.connect(self.evaluate_tab4)
+    
+        self.tab4_log = QTextEdit()
+        self.tab4_log.setReadOnly(True)
+        self.canvas4 = MACanvas()
+    
+        form = QVBoxLayout()
+        form.addWidget(QLabel("📥 Input"))
+        form.addWidget(self.tab4_input)
+        form.addWidget(load_btn)
+        form.addWidget(QLabel("Group Size (n):"))
+        form.addWidget(self.tab4_group)
+        form.addWidget(QLabel("Window Size (k):"))
+        form.addWidget(self.tab4_k)
+        form.addWidget(QLabel("Mean (μ):"))
+        form.addWidget(self.tab4_mu)
+        form.addWidget(QLabel("Std Dev (σ):"))
+        form.addWidget(self.tab4_sigma)
+        form.addWidget(run_btn)
+        form.addWidget(QLabel("📋 Output Log"))
+        form.addWidget(self.tab4_log)
+    
+        layout.addLayout(form, 0, 0)
+        layout.addWidget(self.canvas4, 0, 1)
+        tab.setLayout(layout)
+        return tab
+
+    def load_tab4_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, "Open File", "", "Text Files (*.txt *.csv)")
+        if fname:
+            try:
+                with open(fname) as f:
+                    lines = f.readlines()
+                    content = "\n".join(
+                        line.strip() for line in lines
+                        if any(char.isdigit() for char in line)
+                    )
+                    self.tab4_input.setPlainText(content)
+            except Exception as e:
+                self.tab4_log.append(f"❌ Error loading file: {e}")
+
+    def evaluate_tab4(self):
+        self.tab4_log.clear()
+        try:
+            raw = self.tab4_input.toPlainText().replace(",", " ")
+            data = [float(x) for x in raw.split()]
+        except:
+            self.tab4_log.append("❌ Invalid input.")
+            return
+    
+        n = self.tab4_group.value()
+        k = self.tab4_k.value()
+        
+        g = len(data) // n
+        if g < k:
+            self.tab4_log.append("⚠️ Not enough groups for window size.")
+            return
+        
+        trimmed = np.array(data[:g * n])
+        groups = trimmed.reshape((g, n))
+        means = np.mean(groups, axis=1)
+        
+        try:
+            mu = float(self.tab4_mu.text())
+        except:
+            mu = np.mean(means)
+            self.tab4_log.append(f"ℹ️ Estimating μ = {mu:.3f}")
+        
+        try:
+            sigma = float(self.tab4_sigma.text())
+        except:
+            sigma = np.std(means, ddof=1)
+            self.tab4_log.append(f"ℹ️ Estimating σ = {sigma:.3f}")
+
+    
+        g = len(data) // n
+        if g < k:
+            self.tab4_log.append("⚠️ Not enough groups for window size.")
+            return
+    
+        trimmed = np.array(data[:g*n])
+        groups = trimmed.reshape((g, n))
+        means = np.mean(groups, axis=1)
+    
+        ma_vals = []
+        ucls, lcls, outliers = [], [], []
+    
+        for t in range(len(means)):
+            w = min(k, t + 1)
+            ma = np.mean(means[t - w + 1:t + 1])
+            ma_vals.append(ma)
+            bound = 3 * sigma / np.sqrt(w)
+            ucl = mu + bound
+            lcl = mu - bound
+            ucls.append(ucl)
+            lcls.append(lcl)
+            if ma > ucl or ma < lcl:
+                outliers.append(t)
+    
+        self.canvas4.plot(ma_vals, ucls, lcls, outliers)
+        self.tab4_log.append(f"✅ Evaluated {g} groups with k = {k}")
+        self.tab4_log.append(f"μ = {mu:.3f}, σ = {sigma:.3f}")
+        self.tab4_log.append(f"Violations at indices: {outliers if outliers else 'None'}")
+
+    # TAB 5: 
+
+    def build_tab5_ewma_chart(self):
+        tab = QWidget()
+        layout = QGridLayout()
+    
+        self.tab5_input = QTextEdit()
+        self.tab5_input.setPlaceholderText("Enter subgroup data...")
+    
+        self.tab5_n = QSpinBox()
+        self.tab5_n.setRange(2, 100)
+        self.tab5_n.setValue(5)
+    
+        self.tab5_mu = QLineEdit()
+        self.tab5_sigma = QLineEdit()
+    
+        self.tab5_alpha = QDoubleSpinBox()
+        self.tab5_alpha.setRange(0.01, 1.0)
+        self.tab5_alpha.setSingleStep(0.01)
+        self.tab5_alpha.setValue(0.25)
+    
+        load_btn = QPushButton("📂 Load File")
+        load_btn.clicked.connect(self.load_tab5_file)
+    
+        run_btn = QPushButton("▶️ Evaluate EWMA")
+        run_btn.clicked.connect(self.evaluate_tab5)
+    
+        self.tab5_log = QTextEdit()
+        self.tab5_log.setReadOnly(True)
+        self.canvas5 = EWMACanvas()
+    
+        form = QVBoxLayout()
+        form.addWidget(QLabel("📥 Input Scores"))
+        form.addWidget(self.tab5_input)
+        form.addWidget(load_btn)
+        form.addWidget(QLabel("Group Size (n):"))
+        form.addWidget(self.tab5_n)
+        form.addWidget(QLabel("Mean (μ):"))
+        form.addWidget(self.tab5_mu)
+        form.addWidget(QLabel("Std Dev (σ):"))
+        form.addWidget(self.tab5_sigma)
+        form.addWidget(QLabel("Smoothing Factor (α):"))
+        form.addWidget(self.tab5_alpha)
+        form.addWidget(run_btn)
+        form.addWidget(QLabel("📋 Log"))
+        form.addWidget(self.tab5_log)
+    
+        layout.addLayout(form, 0, 0)
+        layout.addWidget(self.canvas5, 0, 1)
+        tab.setLayout(layout)
+        return tab
+
+    def load_tab5_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, "Open File", "", "Text Files (*.txt *.csv)")
+        if fname:
+            try:
+                with open(fname) as f:
+                    lines = f.readlines()
+                    content = "\n".join(
+                        line.strip() for line in lines
+                        if any(char.isdigit() for char in line)
+                    )
+                    self.tab5_input.setPlainText(content)
+            except Exception as e:
+                self.tab5_log.append(f"❌ Error loading file: {e}")
+
+    def evaluate_tab5(self):
+        self.tab5_log.clear()
+        try:
+            raw = self.tab5_input.toPlainText().replace(",", " ")
+            data = [float(x) for x in raw.split()]
+        except:
+            self.tab5_log.append("❌ Invalid input.")
+            return
+    
+        n = self.tab5_n.value()
+        alpha = self.tab5_alpha.value()
+        
+        g = len(data) // n
+        if g < 3:
+            self.tab5_log.append("⚠️ Not enough groups.")
+            return
+        
+        trimmed = np.array(data[:g * n])
+        groups = trimmed.reshape((g, n))
+        means = np.mean(groups, axis=1)
+        
+        try:
+            mu = float(self.tab5_mu.text())
+        except:
+            mu = np.mean(means)
+            self.tab5_log.append(f"ℹ️ Estimating μ = {mu:.3f}")
+        
+        try:
+            sigma = float(self.tab5_sigma.text())
+        except:
+            sigma = np.std(means, ddof=1)
+            self.tab5_log.append(f"ℹ️ Estimating σ = {sigma:.3f}")
+
+    
+        g = len(data) // n
+        if g < 3:
+            self.tab5_log.append("⚠️ Not enough groups.")
+            return
+    
+        trimmed = np.array(data[:g*n])
+        groups = trimmed.reshape((g, n))
+        means = np.mean(groups, axis=1)
+    
+        ewma = [means[0]]
+        ucls, lcls, violations = [], [], []
+    
+        for t in range(1, len(means)):
+            wt = alpha * means[t] + (1 - alpha) * ewma[-1]
+            ewma.append(wt)
+    
+        for t, wt in enumerate(ewma):
+            factor = np.sqrt((alpha / (2 - alpha)) * (1 - (1 - alpha) ** (2 * (t + 1))))
+            bound = 3 * sigma * factor
+            ucl = mu + bound
+            lcl = mu - bound
+            ucls.append(ucl)
+            lcls.append(lcl)
+            if wt < lcl or wt > ucl:
+                violations.append(t)
+    
+        self.canvas5.plot(ewma, ucls, lcls, violations)
+        self.tab5_log.append(f"✅ Evaluated EWMA with α = {alpha:.2f}")
+        self.tab5_log.append(f"μ = {mu:.3f}, σ = {sigma:.3f}")
+        self.tab5_log.append(f"📌 Violations at: {violations if violations else 'None'}")
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = ScoreCardEvaluator()
+    window.show()
+    sys.exit(app.exec_())
