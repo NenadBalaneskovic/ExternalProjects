@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Forecast Report for {{ city }}, {{ country }}</h2>
+
+<div class="summary-section">
+    <h3>Summary Statistics</h3>
+    <ul>
+        <li><strong>Average Forecast:</strong> {{ avg_forecast }}</li>
+        <li><strong>Minimum Forecast:</strong> {{ min_forecast }}</li>
+        <li><strong>Maximum Forecast:</strong> {{ max_forecast }}</li>
+    </ul>
+</div>
+
+<div class="history-section">
+    <h3>Forecast History</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Forecast</th>
+                <th>Lower Band</th>
+                <th>Upper Band</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for forecast, lower, upper, timestamp in forecasts %}
+            <tr>
+                <td>{{ forecast }}</td>
+                <td>{{ lower }}</td>
+                <td>{{ upper }}</td>
+                <td>{{ timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="bands-section">
+    <h3>Confidence Bands</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Lower Band</th>
+                <th>Upper Band</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ts, bands in confidence_bands.items() %}
+            <tr>
+                <td>{{ ts }}</td>
+                <td>{{ bands[0] }}</td>
+                <td>{{ bands[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="back-section">
+    <a href="{{ url_for('routes.forecast', city=city, country=country) }}" class="btn">Back to Forecast</a>
+</div>
+{% endblock %}

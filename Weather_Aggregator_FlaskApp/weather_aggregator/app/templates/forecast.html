@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Forecast for {{ city }}, {{ country }}</h2>
+
+<div class="forecast-section">
+    <h3>Base Model Forecasts</h3>
+    <ul>
+        {% for model, forecast in forecasts.items() %}
+        <li><strong>{{ model }}:</strong> {{ forecast }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="ensemble-section">
+    <h3>Ensemble Forecast</h3>
+    <p>{{ ensemble }}</p>
+</div>
+
+<div class="report-section">
+    <a href="{{ url_for('routes.report', city=city, country=country) }}" class="btn">Download PDF Report</a>
+</div>
+{% endblock %}
