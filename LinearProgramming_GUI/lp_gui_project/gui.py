@@ -1,0 +1,245 @@
+from PyQt5.QtWidgets import (
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
+    QPushButton, QRadioButton, QCheckBox, QTextEdit, QSpinBox, QFormLayout,
+    QScrollArea, QGroupBox
+)
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
+
+from solver import solve_problem
+from parser import parse_input, detect_method
+
+class OptimizationApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Solve Linear Problems")
+        self.setGeometry(100, 100, 1000, 700)
+        self.init_ui()
+
+    def init_ui(self):
+        main_widget = QWidget()
+        main_layout = QHBoxLayout()
+
+        # Left Panel
+        left_panel = QVBoxLayout()
+        self.obj_input = QLineEdit("max: 3*x + 2*y")
+        self.var_count = QSpinBox()
+        self.var_count.setMinimum(2)
+        self.var_count.setMaximum(10)
+        self.var_count.valueChanged.connect(self.generate_constraints)
+
+        self.constraints_area = QScrollArea()
+        self.constraints_widget = QWidget()
+        self.constraints_layout = QFormLayout()
+        self.constraints_widget.setLayout(self.constraints_layout)
+        self.constraints_area.setWidget(self.constraints_widget)
+        self.constraints_area.setWidgetResizable(True)
+
+        # Variable type checkboxes
+        self.var_types = {
+            "Continuous": QCheckBox("Continuous"),
+            "Integer": QCheckBox("Integer"),
+            "Parametric": QCheckBox("Parametric")
+        }
+        self.var_types["Continuous"].setChecked(True)
+
+        # Group box for variable types
+        var_type_group = QGroupBox("Variable Types")
+        var_type_layout = QVBoxLayout()
+        for box in self.var_types.values():
+            var_type_layout.addWidget(box)
+            box.stateChanged.connect(self.update_method_selection)
+        var_type_group.setLayout(var_type_layout)
+
+        left_panel.addWidget(QLabel("Objective Function"))
+        left_panel.addWidget(self.obj_input)
+        left_panel.addWidget(QLabel("Number of Variables"))
+        left_panel.addWidget(self.var_count)
+        left_panel.addWidget(QLabel("Constraints"))
+        left_panel.addWidget(self.constraints_area)
+        left_panel.addWidget(var_type_group)
+
+        # Right Panel
+        right_panel = QVBoxLayout()
+        self.method_group = QGroupBox("Optimization Settings")
+        self.method_buttons = {
+            "Auto": QRadioButton("Auto-select method"),
+            "Simplex": QRadioButton("Simplex"),
+            "Dual": QRadioButton("Dual Simplex"),
+            "Dikin": QRadioButton("Dikin Method"),
+            "Parametric": QRadioButton("Parametric LP"),
+            "ILP": QRadioButton("ILP")
+        }
+        
+        for btn in self.method_buttons.values():
+            btn.toggled.connect(self.update_variable_types_from_method)
+
+        
+        self.method_buttons["Auto"].setChecked(True)
+        method_layout = QVBoxLayout()
+        for btn in self.method_buttons.values():
+            method_layout.addWidget(btn)
+        self.method_group.setLayout(method_layout)
+
+        self.result_display = QTextEdit()
+        self.result_display.setReadOnly(True)
+
+        self.plot_canvas = FigureCanvas(Figure(figsize=(5, 4)))
+        right_panel.addWidget(QLabel("Feasible Region Plot"))
+        right_panel.addWidget(self.plot_canvas)
+
+        self.run_button = QPushButton("Run Optimization")
+        self.run_button.clicked.connect(self.run_optimization)
+
+        right_panel.addWidget(self.method_group)
+        right_panel.addWidget(QLabel("Solution & Visualization"))
+        right_panel.addWidget(self.result_display)
+        right_panel.addWidget(self.run_button)
+
+        main_layout.addLayout(left_panel, 2)
+        main_layout.addLayout(right_panel, 3)
+        main_widget.setLayout(main_layout)
+        self.setCentralWidget(main_widget)
+
+        self.generate_constraints()
+
+
+    def update_variable_types_from_method(self):
+        if self.method_buttons["ILP"].isChecked():
+            self.var_types["Integer"].setChecked(True)
+            self.var_types["Parametric"].setChecked(False)
+        elif self.method_buttons["Parametric"].isChecked():
+            self.var_types["Parametric"].setChecked(True)
+            self.var_types["Integer"].setChecked(False)
+        else:
+            self.var_types["Integer"].setChecked(False)
+            self.var_types["Parametric"].setChecked(False)
+
+    
+    def generate_constraints(self):
+        while self.constraints_layout.count():
+            item = self.constraints_layout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
+
+        self.constraints_inputs = []
+        for i in range(self.var_count.value() + 1):
+            line = QLineEdit()
+            self.constraints_layout.addRow(f"Constraint {i+1}", line)
+            self.constraints_inputs.append(line)
+              
+    def update_method_selection(self):
+        if self.var_types["Integer"].isChecked():
+            self.method_buttons["ILP"].setChecked(True)
+        elif self.var_types["Parametric"].isChecked():
+            self.method_buttons["Parametric"].setChecked(True)
+        else:
+            self.method_buttons["Auto"].setChecked(True)
+        
+
+    def run_optimization(self):
+        objective = self.obj_input.text()
+        constraints = [c.text() for c in self.constraints_inputs if c.text()]
+        var_types = {k: box.isChecked() for k, box in self.var_types.items()}
+        method = next((k for k, btn in self.method_buttons.items() if btn.isChecked()), "Auto")
+
+        parsed = parse_input(objective, constraints, var_types)
+        if method == "Auto":
+            method = detect_method(parsed)
+
+        result = solve_problem(parsed, method)
+        self.result_display.setText(result if isinstance(result, str) else result[0])
+
+        if isinstance(result, tuple) and len(parsed["variables"]) == 2:
+            self.plot_canvas.figure.clear()
+            ax = self.plot_canvas.figure.add_subplot(111)
+
+            vars = parsed["variables"]
+            var_map = {str(v): i for i, v in enumerate(vars)}
+            c = np.zeros(len(vars))
+            for term in parsed["objective"].as_ordered_terms():
+                coeff = float(term.as_coeff_Mul()[0])
+                var = str(term.as_coeff_Mul()[1])
+                c[var_map[var]] += coeff
+
+            A, b = [], []
+            for expr, op, rhs in parsed["constraints"]:
+                row = np.zeros(len(vars))
+                for term in expr.as_ordered_terms():
+                    coeff = float(term.as_coeff_Mul()[0])
+                    var = str(term.as_coeff_Mul()[1])
+                    row[var_map[var]] += coeff
+                if op == "<=":
+                    A.append(row)
+                    b.append(rhs)
+                elif op == ">=":
+                    A.append(-row)
+                    b.append(-rhs)
+                elif op == "=":
+                    A.append(row)
+                    b.append(rhs)
+                    A.append(-row)
+                    b.append(-rhs)
+
+            A = np.array(A)
+            b = np.array(b)
+
+            # Plot constraints
+            x_vals = np.linspace(0, 10, 400)
+            for i in range(len(A)):
+                if A[i][1] != 0:
+                    y_vals = (b[i] - A[i][0] * x_vals) / A[i][1]
+                    ax.plot(x_vals, y_vals, label=f"Constraint {i+1}")
+                else:
+                    x_line = b[i] / A[i][0]
+                    ax.axvline(x=x_line, label=f"Constraint {i+1}")
+
+            # Plot feasible region
+            feasible_points = []
+            for x in np.linspace(0, 10, 100):
+                for y in np.linspace(0, 10, 100):
+                    point = np.array([x, y])
+                    if np.all(A @ point <= b):
+                        feasible_points.append(point)
+            if feasible_points:
+                hull = np.array(feasible_points)
+                ax.fill(hull[:, 0], hull[:, 1], alpha=0.3, color='lightgreen', label='Feasible Region')
+
+            # Plot objective direction
+            c_norm = c / np.linalg.norm(c)
+            ax.arrow(0, 0, c_norm[0]*2, c_norm[1]*2, head_width=0.3, color='red', label='Objective')
+
+            # Plot path or optimal point
+            path = result[1]
+            if path and len(path) >= 1:
+                path = np.array(path)
+                if len(path) > 1:
+                    ax.plot(path[:, 0], path[:, 1], marker='o', color='blue', label='Dikin Path')
+                opt_x, opt_y = path[-1]
+                method_colors = {
+                    "Simplex": "purple",
+                    "Dual": "orange",
+                    "Parametric": "green",
+                    "ILP": "brown",
+                    "Dikin": "blue"
+                }
+                color = method_colors.get(method, "black")
+                ax.plot(opt_x, opt_y, marker='o', color=color, label=f'Optimal Point ({method})')
+                ax.annotate(f"Opt ({opt_x:.2f}, {opt_y:.2f})", xy=(opt_x, opt_y), xytext=(opt_x+0.5, opt_y+0.5),
+                            arrowprops=dict(facecolor='black', shrink=0.05), fontsize=10)
+            else:
+                self.result_display.append("\nWarning: No valid path or optimal point to plot.")
+
+            ax.grid(True, linestyle='--', alpha=0.5)
+            ax.set_facecolor('#f9f9f9')
+            ax.spines['top'].set_visible(False)
+            ax.spines['right'].set_visible(False)
+            ax.set_xlim(0, max(b)*1.1)
+            ax.set_ylim(0, max(b)*1.1)
+            ax.set_xlabel("x")
+            ax.set_ylabel("y")
+            ax.set_title(f"Feasible Region & Optimization Path ({method})")
+            ax.legend(loc='upper left', fontsize=9)
+            self.plot_canvas.draw()
