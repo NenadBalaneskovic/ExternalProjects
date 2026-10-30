@@ -1,0 +1,2 @@
+timestamp,script_hash,runtime_seconds,peak_memory_mb,optimized,speedup,strategy_summary
+2026-08-10 15:32:51,067d22afc9071cb53c1776624eadc4d908d664a51922fa1696df955d44541616,0.4760410999879241,67.28515625,True,0.07103252261731426,"cython_memoryviews, numba_jit, preallocate_buffers, optimize_layout"

@@ -1,0 +1,31 @@
+{
+  "theme_name": "DarkBlue3",
+
+  "colors": {
+    "background": "#0D1B2A",
+    "text": "#E0E1DD",
+    "input_background": "#1B263B",
+    "input_text": "#E0E1DD",
+    "button_background": "#415A77",
+    "button_text": "#E0E1DD",
+    "frame_background": "#1B263B",
+    "progress_bar": "#778DA9",
+    "progress_background": "#0D1B2A"
+  },
+
+  "fonts": {
+    "default": "Segoe UI",
+    "text_size": 11,
+    "title_size": 14
+  },
+
+  "layout": {
+    "padding": [10, 10],
+    "element_padding": [5, 5],
+    "frame_border_width": 2
+  },
+
+  "progress_bar": {
+    "size": [300, 20]
+  }
+}

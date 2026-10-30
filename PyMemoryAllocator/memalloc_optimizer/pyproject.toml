@@ -1,0 +1,65 @@
+[project]
+name = "memalloc-optimizer"
+version = "0.1.0"
+description = "Scientific memory optimization tool with static analysis, runtime profiling, codegen, and GUI."
+authors = [{ name = "Nenad" }]
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy",
+    "psutil",
+    "duckdb",
+    "pyarrow",
+    "matplotlib",
+    "PySimpleGUI",
+    "numba",
+    "cython",
+]
+
+readme = "README.md"
+
+# Optional CLI entry point (if you want a command)
+[project.scripts]
+memalloc = "memalloc_gui.app:main"
+
+
+# ============================================================
+# Build system
+# ============================================================
+
+[build-system]
+requires = ["setuptools>=65", "wheel", "cython"]
+build-backend = "setuptools.build_meta"
+
+
+# ============================================================
+# Setuptools configuration
+# ============================================================
+
+[tool.setuptools]
+packages = ["memalloc_core", "memalloc_gui"]
+
+[tool.setuptools.package-data]
+memalloc_gui = ["assets/*.json", "assets/*.png", "assets/*.svg"]
+
+
+# ============================================================
+# Optional Cython build configuration
+# ============================================================
+
+[tool.setuptools.ext_modules]
+# Cython modules will be generated dynamically by CodeGenerator
+# This section stays empty but must exist for Cython builds
+# to be recognized by setuptools.
+# Example:
+# memalloc_core.optimized = { sources = ["memalloc_core/optimized.pyx"] }
+
+
+# ============================================================
+# Testing
+# ============================================================
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "--maxfail=1 --disable-warnings"
+testpaths = ["tests"]
