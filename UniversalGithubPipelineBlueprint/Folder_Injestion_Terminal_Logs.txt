@@ -1,0 +1,33 @@
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git init -b main     
+Initialized empty Git repository in C:/Users/Nenad Balaneskovic/Desktop/WetterApp/.git/
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git add .       
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git commit -m "initial project commit"
+[main (root-commit) 47db47e] initial project commit
+ 12 files changed, 424 insertions(+)
+ create mode 100644 .coveragerc
+ create mode 100644 .github/workflows/ci.yml
+ create mode 100644 pyproject.toml
+ create mode 100644 requirements.txt
+ create mode 100644 src/__init__.py
+ create mode 100644 src/core/__init__.py
+ create mode 100644 src/core/analyzer.py
+ create mode 100644 src/gui/__init__.py
+ create mode 100644 src/gui/window.py
+ create mode 100644 src/main.py
+ create mode 100644 tests/__init__.py
+ create mode 100644 tests/test_analyzer.py
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> 
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git remote add origin https://github.com/NenadBalaneskovic/WetterApp.git
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git branch -M main   
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> git push -u origin main    
+info: please complete authentication in your browser...
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (17/17), 6.91 KiB | 2.30 MiB/s, done.
+Total 17 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/NenadBalaneskovic/WetterApp.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+(base) (base) PS C:\Users\Nenad Balaneskovic\Desktop\WetterApp> 
