@@ -1,0 +1,158 @@
+# ============================================================
+# PyTester GUI — Global Configuration
+# ============================================================
+
+app:
+  name: PyTester GUI
+  version: "1.0.0"
+  author: "Nenad"
+  theme: "light"
+  autosave: true
+
+paths:
+  workspace: "workspace"
+  source: "workspace/source"              # REQUIRED for pytest + coverage + testgen
+  uploaded_files: "workspace/uploaded_files"
+  generated_tests: "workspace/generated_tests"
+  test_logs: "workspace/test_logs"
+  test_reports: "workspace/test_reports"
+  plots: "workspace/plots"
+  examples: "examples"
+
+gui:
+  window:
+    width: 1400
+    height: 900
+    resizable: true
+  panels:
+    upload_panel: true
+    inspection_panel: true
+    inference_panel: true
+    test_generation_panel: true
+    execution_panel: true
+    results_panel: true
+
+core:
+  safe_import:
+    enabled: true
+    timeout_seconds: 3
+  ast_inspector:
+    include_private_functions: false
+    include_magic_methods: false
+  docstring_extractor:
+    enabled: true
+  annotation_extractor:
+    enabled: true
+
+inference:
+  static_analysis:
+    enabled: true
+  semantic_analysis:
+    enabled: true
+  dynamic_probe:
+    enabled: true
+    allow_zero_arg_calls: true
+    safe_inputs:
+      - 0
+      - 1
+      - -1
+      - 0.0
+      - 1.0
+      - ""
+      - []
+      - {}
+      - null
+  type_fusion:
+    confidence_threshold: 0.6
+
+test_generation:
+  smoke_tests: true
+  type_tests: true
+  boundary_tests: true
+  property_tests: true
+  docstring_tests: true
+  max_tests_per_function: 20
+
+# ============================================================
+# REQUIRED FOR testgen/*_generator.py MODULES
+# ============================================================
+
+testgen:
+  smoke:
+    allow_zero_arg_calls: true
+    safe_inputs:
+      - 0
+      - 1
+      - -1
+      - 0.0
+      - 1.0
+      - ""
+      - []
+      - {}
+      - null
+
+  type:
+    enable_runtime_checks: true
+    allow_zero_arg_calls: true
+
+  boundary:
+    enable_runtime_checks: true
+    allow_zero_arg_calls: true
+
+  property:
+    enable_runtime_checks: true
+    allow_zero_arg_calls: true
+
+  docstring:
+    enable_runtime_checks: true
+    allow_zero_arg_calls: true
+
+  renderer:
+    indent_spaces: 4
+    output_dir: "workspace/generated_tests"
+
+# ============================================================
+# REQUIRED FOR executor/pytest_runner.py AND coverage_runner.py
+# ============================================================
+
+execution:
+  pytest:
+    python_executable: "python"
+    timeout_seconds: 10
+    max_duration_seconds: 10
+    json_report: true
+    capture_output: true
+
+  coverage:
+    python_executable: "python"
+    timeout_seconds: 10
+    max_duration_seconds: 10
+
+  logs:
+    capture_python_logs: true
+
+executor:
+  coverage:
+    enabled: true
+    include_plots: true
+
+visualization:
+  output_dir: "workspace/plots"
+  plots:
+    style: "seaborn"
+    dpi: 120
+    save_png: true
+  charts:
+    show_pass_fail: true
+    show_durations: true
+    show_failure_categories: true
+    show_coverage: true
+
+logging:
+  level: "INFO"
+  file: "workspace/test_logs/pytester.log"
+  format: "[%(asctime)s] %(levelname)s: %(message)s"
+
+developer:
+  debug_mode: false
+  show_internal_errors: true
