@@ -1,0 +1,4 @@
+Model,Hyperparameters,RMSE,Pearson_Correlation
+CNN-LSTM,{},1.0324857,0.0024159781
+Ridge Regression,{},1.0472395,0.0012965567
+Random Forest,{},1.328968,0.009042294
