@@ -1,0 +1,42 @@
+numpy>=1.26
+scipy>=1.12
+matplotlib>=3.8
+seaborn>=0.13
+numba>=0.59
+sympy>=1.12
+
+qutip>=5.0.0
+qiskit>=1.0.2
+qiskit-aer>=0.14.1
+
+mpmath>=1.3.0
+setuptools
+
+simpful==2.10.0
+
+tqdm>=4.66
+
+# LDPC libraries do NOT work on Windows
+# ldpc==0.1.60
+# python-ldpc==0.1.0
+
+# PQC libraries that DO work on Windows:
+pqcrypto==0.3.4
+pycryptodome>=3.20
+cryptography>=42.0.0
+
+# python-kyber does NOT work on Windows
+# python-kyber>=0.1.3
+
+pandas>=2.2
+h5py>=3.10
+
+notebook>=7.1
+jupyterlab>=4.1
+ipykernel>=6.29
+ipywidgets>=8.1
+plotly>=5.19
+
+numexpr>=2.9
+psutil>=5.9
+scikit-fuzzy==0.4.2
