@@ -1,0 +1,1001 @@
+name,age,gender,income,state,marital_status,education,employment_status,household_size,owns_home
+sdv-id-PAGaFi,18,M,76702,Indiana,widowed,high_school,self_employed,2,False
+sdv-id-hWwNpG,64,F,79173,Michigan,married,master,employed,3,True
+sdv-id-YGPizU,63,M,26095,Texas,widowed,bachelor,unemployed,1,False
+sdv-id-ZNxaVV,44,M,25672,Illinois,married,master,unemployed,6,False
+sdv-id-EWIvgW,65,F,25672,Idaho,divorced,master,employed,5,False
+sdv-id-oRePpQ,42,F,65114,Virginia,divorced,phd,self_employed,2,True
+sdv-id-nWGwdP,60,F,25672,Wisconsin,single,master,self_employed,5,True
+sdv-id-fTpDzl,59,F,41069,Nebraska,widowed,master,self_employed,4,True
+sdv-id-SdAXSC,23,M,25672,South Carolina,divorced,master,employed,1,False
+sdv-id-poMNxg,32,M,25672,Maryland,widowed,phd,retired,2,False
+sdv-id-SjCioZ,54,M,79895,Idaho,married,master,self_employed,2,False
+sdv-id-QvFoIb,34,M,46196,Oklahoma,widowed,master,retired,3,False
+sdv-id-DtZgZd,30,F,38514,New Hampshire,single,master,retired,2,False
+sdv-id-ghCEeT,57,F,60459,Vermont,widowed,master,employed,3,True
+sdv-id-sxoDMC,58,F,25672,Nevada,widowed,high_school,employed,2,False
+sdv-id-JbVojW,40,M,64277,Rhode Island,married,bachelor,retired,4,False
+sdv-id-JwOZpH,33,F,73895,Colorado,widowed,other,retired,5,False
+sdv-id-nmZjyX,54,M,131962,Montana,single,master,employed,5,False
+sdv-id-AivOUv,56,F,52310,Rhode Island,divorced,other,self_employed,1,False
+sdv-id-NRDaLj,27,F,47305,Arizona,single,high_school,self_employed,5,True
+sdv-id-bZwaAF,48,M,73428,Oregon,widowed,bachelor,employed,3,False
+sdv-id-PHWmdF,62,M,73574,Michigan,married,other,employed,1,True
+sdv-id-zIxetF,61,F,88715,Michigan,widowed,other,unemployed,2,True
+sdv-id-ZaKgwV,18,M,142746,New Jersey,single,phd,unemployed,5,False
+sdv-id-LkGTzi,30,F,25672,Maryland,married,phd,self_employed,1,False
+sdv-id-xhKFVq,18,M,45394,North Carolina,married,master,retired,2,False
+sdv-id-zfquWn,68,F,69972,Kentucky,married,phd,unemployed,5,True
+sdv-id-EiwjdM,18,M,89794,Montana,widowed,bachelor,self_employed,6,False
+sdv-id-pDZtDd,18,M,50096,Indiana,single,phd,unemployed,5,False
+sdv-id-HwmSim,18,M,25672,Illinois,married,bachelor,unemployed,6,False
+sdv-id-krRNAu,59,F,74273,Ohio,divorced,bachelor,unemployed,2,False
+sdv-id-tFwhEw,18,F,38874,Maine,married,master,retired,6,True
+sdv-id-jbIAYW,69,M,25672,New York,widowed,phd,self_employed,3,False
+sdv-id-ImVEEI,30,F,25672,Kansas,widowed,high_school,self_employed,3,False
+sdv-id-PRUpfs,18,M,68810,Washington,divorced,other,self_employed,6,False
+sdv-id-kegzZP,49,M,25672,Colorado,divorced,other,unemployed,5,True
+sdv-id-tEUOaf,37,F,124216,Alabama,divorced,bachelor,retired,2,False
+sdv-id-VxYwUL,62,F,115494,Florida,married,master,self_employed,3,True
+sdv-id-qkfGsk,74,M,30261,Pennsylvania,divorced,high_school,unemployed,6,False
+sdv-id-TqzUUW,53,M,178449,Nevada,single,other,retired,4,True
+sdv-id-IGLkkx,57,M,25672,Kentucky,single,master,self_employed,5,True
+sdv-id-WaOfzo,32,M,38240,Minnesota,married,other,employed,6,False
+sdv-id-iCXBiU,34,F,67305,Maryland,single,phd,employed,6,False
+sdv-id-NNykFQ,18,M,161227,Kentucky,married,bachelor,self_employed,3,False
+sdv-id-FwOdmh,35,F,25672,New Jersey,single,other,employed,4,False
+sdv-id-amkuBG,27,M,25672,Maine,single,master,unemployed,4,False
+sdv-id-VJctHB,74,M,25672,Utah,widowed,high_school,unemployed,6,False
+sdv-id-OBmMCm,41,M,25672,Maine,married,bachelor,self_employed,3,True
+sdv-id-wLLEhl,18,F,25672,Florida,divorced,phd,self_employed,2,False
+sdv-id-HjyEDM,57,M,97972,Michigan,married,bachelor,unemployed,3,False
+sdv-id-JMVZRW,39,F,25672,Indiana,married,high_school,self_employed,1,False
+sdv-id-ANnxir,64,M,37774,Oregon,divorced,other,unemployed,2,True
+sdv-id-sBmjVT,31,F,88475,Oregon,divorced,phd,retired,4,False
+sdv-id-juoKin,18,M,166147,California,single,phd,retired,2,False
+sdv-id-SnJDgX,44,F,25672,Texas,divorced,bachelor,employed,6,True
+sdv-id-UaEDLR,18,M,89880,Georgia,single,bachelor,retired,1,False
+sdv-id-TpYQRB,42,M,29919,Oklahoma,single,bachelor,retired,1,False
+sdv-id-OoPpuS,80,F,39324,Michigan,widowed,bachelor,retired,6,False
+sdv-id-zifthe,18,M,42157,Utah,divorced,master,unemployed,1,False
+sdv-id-PxAPWs,80,M,48759,Massachusetts,divorced,other,self_employed,5,False
+sdv-id-CibFbl,55,F,25672,Ohio,widowed,high_school,employed,2,False
+sdv-id-XIELAf,20,M,25672,Colorado,single,bachelor,employed,3,True
+sdv-id-nyEePQ,21,F,42906,Georgia,divorced,high_school,employed,2,False
+sdv-id-ODtlOb,18,M,25672,Georgia,divorced,master,self_employed,4,False
+sdv-id-mQWddW,29,M,25672,Rhode Island,divorced,phd,self_employed,4,True
+sdv-id-sUGNTw,18,F,25672,Vermont,single,phd,employed,5,False
+sdv-id-GmCjOq,18,M,25672,Illinois,widowed,bachelor,retired,5,False
+sdv-id-jXzalN,18,M,178449,Connecticut,widowed,master,unemployed,2,False
+sdv-id-lKMMul,45,M,144417,Arkansas,divorced,high_school,employed,5,False
+sdv-id-qRhjlX,30,F,118395,Minnesota,single,high_school,unemployed,4,False
+sdv-id-ngrwIF,51,F,33118,Ohio,single,bachelor,unemployed,3,True
+sdv-id-NHOkOd,39,F,25672,Arkansas,single,bachelor,retired,5,True
+sdv-id-ebwwNw,80,F,25672,Maine,divorced,master,self_employed,2,False
+sdv-id-rIiaon,28,F,42879,Oregon,married,high_school,employed,4,True
+sdv-id-MhduAa,49,M,43506,Nevada,single,high_school,retired,3,False
+sdv-id-ktvERN,59,M,25672,Arizona,divorced,other,self_employed,4,True
+sdv-id-QVnBYt,54,M,126608,Indiana,married,high_school,retired,1,False
+sdv-id-ermTND,41,F,51302,Ohio,single,phd,retired,5,False
+sdv-id-AvbKEX,54,M,35794,Georgia,single,master,retired,6,False
+sdv-id-nXbLFb,33,M,50476,California,married,high_school,employed,6,True
+sdv-id-uUJTCl,27,F,55380,Nevada,divorced,phd,unemployed,1,False
+sdv-id-lxwofz,64,F,25672,Connecticut,widowed,phd,employed,2,False
+sdv-id-rnwFZq,80,F,59501,North Carolina,widowed,bachelor,self_employed,5,False
+sdv-id-DDWdae,18,M,25672,Oregon,widowed,high_school,self_employed,4,False
+sdv-id-ddlKwU,45,M,25672,Washington,divorced,bachelor,self_employed,3,True
+sdv-id-woHhiV,80,M,25672,West Virginia,married,other,retired,1,False
+sdv-id-TmOPVk,30,M,25672,Missouri,married,master,retired,2,False
+sdv-id-MJiRXn,18,M,27969,Vermont,single,high_school,self_employed,6,False
+sdv-id-SiJXfi,43,M,25672,Kentucky,widowed,other,employed,1,False
+sdv-id-xkwEWE,18,F,25672,Texas,married,other,unemployed,2,False
+sdv-id-HjILcx,18,F,142455,Arizona,widowed,other,retired,4,False
+sdv-id-mTlsuS,37,F,25672,Montana,divorced,phd,employed,2,True
+sdv-id-xUPCFS,80,M,25672,North Dakota,single,master,retired,1,True
+sdv-id-bhRBFI,80,F,79098,New York,single,phd,self_employed,2,False
+sdv-id-ASGrAh,19,F,148518,Wyoming,widowed,bachelor,self_employed,4,False
+sdv-id-cXnjGo,18,F,130888,Georgia,divorced,other,employed,4,False
+sdv-id-HphHzb,50,M,25672,Kentucky,divorced,other,retired,4,False
+sdv-id-tFlKYD,46,F,59822,Pennsylvania,widowed,bachelor,self_employed,2,True
+sdv-id-mVAhYn,18,F,118838,Michigan,single,master,unemployed,3,False
+sdv-id-Qdocxa,18,M,46431,West Virginia,divorced,phd,unemployed,5,False
+sdv-id-guLZLy,18,M,66586,Colorado,single,other,retired,5,False
+sdv-id-tIGhmq,37,M,25672,South Carolina,divorced,master,unemployed,5,True
+sdv-id-VJBEmd,56,F,76348,Oregon,married,master,retired,5,False
+sdv-id-PPVeBq,18,F,45549,Vermont,married,high_school,retired,3,False
+sdv-id-KvONjH,18,F,133354,Ohio,divorced,master,self_employed,1,True
+sdv-id-EBYixq,18,F,79897,Illinois,married,master,self_employed,6,False
+sdv-id-obUZKD,80,F,102230,Wyoming,divorced,phd,retired,5,True
+sdv-id-VsSSGM,57,F,25672,Alabama,married,high_school,employed,4,False
+sdv-id-sbXVAc,66,M,25672,Kentucky,widowed,other,employed,6,False
+sdv-id-tHWmLi,18,M,25672,Missouri,single,phd,self_employed,5,False
+sdv-id-WnluhH,35,F,30774,Alabama,married,bachelor,retired,5,False
+sdv-id-UGCzMr,62,M,25672,Rhode Island,single,phd,unemployed,4,False
+sdv-id-NWqmwj,42,F,35847,South Carolina,divorced,bachelor,retired,6,True
+sdv-id-LpjrBL,18,F,60202,Michigan,married,bachelor,retired,4,False
+sdv-id-kWzMbW,35,F,25672,Nebraska,divorced,master,employed,2,False
+sdv-id-JnLFTG,18,F,25672,Nebraska,single,master,employed,1,False
+sdv-id-SZtGHQ,32,M,60452,Massachusetts,married,master,employed,4,True
+sdv-id-UzrzlH,60,M,46854,New Jersey,single,bachelor,employed,4,False
+sdv-id-PTrwXG,67,M,163592,Vermont,widowed,master,retired,6,False
+sdv-id-ulDSFs,20,F,25672,Georgia,divorced,bachelor,employed,2,True
+sdv-id-WNewtA,35,M,25672,Pennsylvania,widowed,high_school,retired,2,True
+sdv-id-aFHDhv,18,M,25672,Wisconsin,widowed,other,retired,1,True
+sdv-id-QUtmMC,40,M,105589,Minnesota,single,other,self_employed,5,True
+sdv-id-PXbpCt,44,F,54924,Vermont,widowed,phd,self_employed,2,False
+sdv-id-WZNhvr,20,M,66983,Alabama,married,master,unemployed,2,False
+sdv-id-cpnBEd,54,F,66116,Mississippi,married,bachelor,self_employed,2,True
+sdv-id-ajjXTA,58,F,58614,Missouri,single,master,unemployed,6,False
+sdv-id-bBxZfg,18,M,25672,South Carolina,married,bachelor,retired,3,True
+sdv-id-vveNad,24,M,25672,Oregon,married,other,retired,4,False
+sdv-id-SVBnxq,65,M,25672,Alaska,single,master,retired,2,False
+sdv-id-NxJDFG,18,M,68853,New Mexico,widowed,phd,employed,4,True
+sdv-id-jXZIWD,18,F,26066,Illinois,widowed,other,unemployed,6,False
+sdv-id-JFdgIE,50,F,75151,California,widowed,phd,employed,1,False
+sdv-id-EvwXOg,58,F,25672,Utah,divorced,phd,retired,4,False
+sdv-id-QgvYwy,54,F,78593,Arkansas,divorced,bachelor,unemployed,1,True
+sdv-id-EUnEvl,46,F,124255,North Carolina,divorced,other,employed,1,True
+sdv-id-lmVFts,73,M,42861,Ohio,single,other,employed,6,True
+sdv-id-tyhSos,71,F,25672,Louisiana,divorced,high_school,employed,2,False
+sdv-id-CRanvK,58,F,25672,Oregon,divorced,master,employed,5,True
+sdv-id-jWyacL,46,F,99550,Colorado,widowed,bachelor,self_employed,6,True
+sdv-id-opsAFg,18,M,114611,South Dakota,divorced,bachelor,unemployed,1,False
+sdv-id-erMMJy,18,F,57726,New Jersey,divorced,phd,unemployed,3,False
+sdv-id-agXEEa,41,F,78412,Mississippi,married,high_school,retired,4,False
+sdv-id-ihziiM,62,M,105171,Missouri,divorced,other,employed,5,True
+sdv-id-BFlcKp,69,F,48084,Pennsylvania,single,other,retired,1,True
+sdv-id-kLQmQA,18,M,25672,Indiana,single,master,employed,1,False
+sdv-id-zjNaPy,18,F,112103,Tennessee,divorced,bachelor,retired,4,True
+sdv-id-aqtTvr,18,F,178449,North Carolina,widowed,bachelor,self_employed,1,False
+sdv-id-nrDoAk,31,M,30170,Louisiana,married,phd,self_employed,2,False
+sdv-id-cmcsJt,34,M,51916,Utah,single,high_school,unemployed,1,True
+sdv-id-kiHlfl,49,M,25672,Virginia,married,other,retired,4,True
+sdv-id-WJCfIm,58,M,61640,North Dakota,married,high_school,self_employed,5,False
+sdv-id-FGNNFV,35,M,143346,Alaska,single,master,unemployed,2,True
+sdv-id-vctmPb,45,M,98539,Florida,widowed,phd,unemployed,1,False
+sdv-id-NsaYpy,80,M,107355,West Virginia,single,bachelor,unemployed,3,False
+sdv-id-AOqeei,50,M,30154,North Dakota,married,phd,self_employed,3,True
+sdv-id-HTdjRb,50,F,26400,Nebraska,widowed,high_school,employed,1,True
+sdv-id-TxOrMI,56,F,162291,Alaska,widowed,high_school,self_employed,4,False
+sdv-id-jDrPCO,18,M,25672,Alaska,divorced,phd,retired,1,False
+sdv-id-QSsxaZ,35,F,68137,Wyoming,married,other,employed,1,False
+sdv-id-oSaArv,58,F,114882,Louisiana,single,phd,employed,6,True
+sdv-id-vNTOjY,56,M,25672,Florida,widowed,phd,self_employed,4,False
+sdv-id-NisdWT,20,F,86962,Arkansas,married,phd,retired,4,False
+sdv-id-OUlBYW,33,F,25820,South Dakota,single,high_school,employed,5,True
+sdv-id-aUcDmk,61,M,111506,Montana,divorced,bachelor,retired,5,True
+sdv-id-jcQWba,51,M,84301,Utah,widowed,bachelor,unemployed,1,False
+sdv-id-hBoIPV,50,M,116494,North Dakota,divorced,other,employed,2,True
+sdv-id-HbUTQL,25,M,59702,Maryland,married,bachelor,self_employed,6,False
+sdv-id-tXswvD,48,M,71143,Virginia,divorced,high_school,retired,5,True
+sdv-id-gOaGGE,53,M,25672,Minnesota,single,other,employed,1,False
+sdv-id-KmjcEU,80,F,50397,West Virginia,married,master,employed,3,False
+sdv-id-pzQBUH,55,M,178449,Tennessee,divorced,master,employed,4,False
+sdv-id-BoZhuv,54,M,100511,North Dakota,single,bachelor,retired,2,False
+sdv-id-MmXETx,54,M,25672,Ohio,single,master,self_employed,4,False
+sdv-id-qKsbPJ,66,F,132886,Maine,married,master,employed,2,False
+sdv-id-bMDYPk,67,F,28351,Florida,married,master,retired,5,True
+sdv-id-yzuDgq,38,M,25672,North Dakota,widowed,bachelor,self_employed,4,True
+sdv-id-xvdFmO,33,M,35182,Texas,married,phd,self_employed,4,True
+sdv-id-nUiFJA,38,M,75198,Nebraska,married,other,retired,5,False
+sdv-id-CZMjOV,53,F,104204,Georgia,married,master,retired,6,False
+sdv-id-cclJET,58,M,25672,Indiana,single,master,employed,3,False
+sdv-id-JlRiOx,29,F,25672,Mississippi,divorced,master,unemployed,5,True
+sdv-id-nvkpZi,40,M,65413,Nebraska,widowed,high_school,unemployed,4,True
+sdv-id-TPXktF,24,F,25672,Utah,single,high_school,self_employed,6,False
+sdv-id-DRpndW,52,F,82468,Arkansas,widowed,bachelor,retired,2,False
+sdv-id-SRtiZJ,26,F,25672,New Mexico,divorced,other,employed,6,False
+sdv-id-tTKccn,18,M,79514,Maryland,single,other,employed,1,False
+sdv-id-sXbdLr,49,M,25672,Nebraska,widowed,master,self_employed,5,True
+sdv-id-wdIYkL,60,F,35865,Kansas,married,phd,employed,3,True
+sdv-id-wKBLDK,19,F,165451,Oklahoma,widowed,other,employed,2,True
+sdv-id-IzlTiE,18,M,130815,Tennessee,divorced,master,retired,2,False
+sdv-id-pvKyZr,18,M,178449,Oregon,married,high_school,self_employed,3,True
+sdv-id-BrnUVA,64,F,25672,Iowa,single,other,retired,2,True
+sdv-id-omLyno,18,F,94758,Minnesota,widowed,master,unemployed,5,True
+sdv-id-NajogR,24,M,32098,California,single,bachelor,retired,6,False
+sdv-id-dbJUvA,18,F,83518,West Virginia,widowed,other,self_employed,2,True
+sdv-id-oBKoUn,18,F,25672,Washington,married,master,employed,5,False
+sdv-id-jRUrEs,60,F,86315,Florida,married,high_school,self_employed,6,False
+sdv-id-AeCWQT,18,F,28204,Missouri,divorced,bachelor,retired,2,False
+sdv-id-WbGtWO,18,F,92523,Connecticut,divorced,bachelor,employed,5,False
+sdv-id-MNDaNt,41,F,57139,South Carolina,married,phd,employed,5,False
+sdv-id-rlsTTe,63,M,62911,Tennessee,single,bachelor,retired,3,False
+sdv-id-jKtjKH,50,M,25672,Pennsylvania,married,other,retired,5,False
+sdv-id-klrbSd,40,M,72515,Vermont,widowed,other,retired,2,False
+sdv-id-BNYPtG,18,F,48491,Ohio,single,bachelor,unemployed,5,False
+sdv-id-QpEKbl,18,M,77749,South Dakota,married,other,retired,5,True
+sdv-id-KvcAiR,56,F,25672,Connecticut,divorced,master,unemployed,1,False
+sdv-id-nQelhD,18,F,96949,Washington,widowed,bachelor,unemployed,6,False
+sdv-id-XFRAYB,18,F,32790,Alaska,married,bachelor,employed,4,True
+sdv-id-EiTYrN,39,M,25672,Georgia,married,master,employed,6,False
+sdv-id-NXZzty,31,F,25672,Alabama,single,other,retired,4,True
+sdv-id-dKqIwM,46,M,25672,Illinois,widowed,master,unemployed,3,True
+sdv-id-obAvED,18,F,70501,Connecticut,widowed,phd,self_employed,1,False
+sdv-id-yYNhiY,18,M,102082,Washington,single,bachelor,self_employed,2,False
+sdv-id-LDZYSC,18,F,25672,California,single,phd,employed,5,True
+sdv-id-dwaHwl,18,M,92198,Louisiana,widowed,phd,retired,4,True
+sdv-id-LFRXaG,32,F,60721,Michigan,widowed,master,self_employed,1,False
+sdv-id-FBXxpc,60,F,81159,Wisconsin,single,bachelor,self_employed,6,False
+sdv-id-hEiqRI,18,M,28018,Mississippi,divorced,high_school,unemployed,3,True
+sdv-id-ILedlE,48,M,25672,North Dakota,married,bachelor,retired,4,True
+sdv-id-ZztbhS,18,F,81764,Hawaii,widowed,phd,employed,4,True
+sdv-id-SDCVwl,41,M,178449,North Dakota,widowed,high_school,self_employed,3,False
+sdv-id-ZMyjZv,51,M,105653,Hawaii,single,master,retired,6,True
+sdv-id-hktzpE,37,M,169626,Indiana,married,master,unemployed,2,False
+sdv-id-dVHZgA,27,M,25672,New Jersey,widowed,high_school,retired,4,False
+sdv-id-DUXmHa,46,M,25672,New Mexico,single,bachelor,retired,3,False
+sdv-id-BoTbMy,54,F,61979,Arkansas,divorced,phd,self_employed,1,True
+sdv-id-opcoLy,31,M,25672,Ohio,single,bachelor,retired,4,True
+sdv-id-uHVbYE,48,M,121356,Mississippi,married,phd,self_employed,4,False
+sdv-id-dCByiN,34,M,25672,Louisiana,single,master,self_employed,6,False
+sdv-id-lHNHLe,18,M,60103,Missouri,widowed,phd,employed,2,False
+sdv-id-ttgelk,18,M,87446,West Virginia,single,phd,self_employed,2,False
+sdv-id-ptYtOJ,47,F,25672,North Carolina,married,other,unemployed,1,True
+sdv-id-GYlPeq,70,F,67924,Alabama,widowed,phd,employed,3,False
+sdv-id-QAmrfU,54,M,91461,New York,single,other,retired,2,False
+sdv-id-uUvBeN,51,M,65801,North Carolina,married,master,retired,2,False
+sdv-id-ZOsctD,18,F,107441,Oklahoma,divorced,high_school,retired,1,False
+sdv-id-bqWwtx,37,F,89363,West Virginia,married,bachelor,unemployed,5,True
+sdv-id-cqHwYf,42,M,67563,Connecticut,single,high_school,retired,1,False
+sdv-id-tNzrVm,59,F,104793,South Dakota,married,master,retired,3,False
+sdv-id-yvRRSo,62,M,46729,Florida,divorced,other,retired,2,True
+sdv-id-zZiPtX,18,F,56135,Wisconsin,single,master,retired,6,False
+sdv-id-jVjpwg,18,M,55240,Connecticut,single,other,retired,4,True
+sdv-id-WzxLQk,69,F,25672,New York,divorced,phd,employed,6,False
+sdv-id-rnkrtW,33,F,71798,Pennsylvania,divorced,bachelor,unemployed,1,False
+sdv-id-kowvtQ,51,F,98520,South Dakota,divorced,high_school,employed,1,True
+sdv-id-RdHAFV,53,F,25672,Missouri,married,other,self_employed,5,False
+sdv-id-xhjbNL,18,F,82877,Wyoming,married,other,employed,1,True
+sdv-id-rICkkM,18,M,25672,Pennsylvania,married,bachelor,retired,3,True
+sdv-id-OyBCTv,51,M,25672,Alaska,widowed,bachelor,self_employed,3,True
+sdv-id-jigWGM,18,F,85118,Ohio,divorced,master,self_employed,5,True
+sdv-id-FFSCgi,45,F,25672,Utah,married,phd,unemployed,1,True
+sdv-id-dkLWgz,43,M,54706,New York,married,bachelor,retired,5,False
+sdv-id-NDSprx,28,M,69042,Alabama,single,other,retired,5,False
+sdv-id-QoJocd,18,F,75399,Minnesota,widowed,phd,self_employed,2,True
+sdv-id-YwxAUQ,35,F,25672,Pennsylvania,divorced,other,unemployed,2,False
+sdv-id-eRULGy,73,M,30460,Tennessee,widowed,bachelor,unemployed,5,False
+sdv-id-qvwqGG,71,F,48019,Washington,single,other,employed,2,True
+sdv-id-yrZLHx,68,M,66910,Vermont,widowed,high_school,self_employed,5,True
+sdv-id-ZOzpOm,49,M,25672,Montana,divorced,high_school,self_employed,1,True
+sdv-id-pFaiEl,45,M,25672,Minnesota,married,high_school,retired,5,True
+sdv-id-uhwyRL,53,M,25672,Arizona,widowed,phd,employed,1,False
+sdv-id-sjogCG,42,M,84480,California,widowed,bachelor,unemployed,3,True
+sdv-id-smpCnS,26,M,25672,Alaska,single,other,self_employed,1,False
+sdv-id-AGcCkl,61,M,55706,North Carolina,divorced,phd,retired,2,False
+sdv-id-MpLkXl,35,M,178449,Wyoming,widowed,other,self_employed,6,True
+sdv-id-fHWqfD,32,F,55755,Kansas,widowed,bachelor,unemployed,3,False
+sdv-id-NnKBKJ,43,M,53219,Idaho,divorced,master,unemployed,2,False
+sdv-id-oDwADR,44,M,30509,Minnesota,single,phd,retired,5,False
+sdv-id-YNdVAc,29,M,62526,Florida,widowed,phd,retired,2,True
+sdv-id-vZAazt,56,F,25672,Nebraska,single,other,retired,4,False
+sdv-id-BwjLTk,18,F,57354,Vermont,married,other,retired,6,False
+sdv-id-TMlAuo,18,F,39518,New York,married,master,unemployed,1,True
+sdv-id-xsHTJD,18,F,98773,Virginia,married,bachelor,employed,4,False
+sdv-id-TjXZEo,60,M,25672,Vermont,single,master,unemployed,6,False
+sdv-id-GFNbxT,38,F,25672,Georgia,single,master,unemployed,6,True
+sdv-id-WvkWSi,34,M,30702,Virginia,widowed,bachelor,self_employed,2,True
+sdv-id-OQwSOF,69,M,30935,Rhode Island,widowed,master,self_employed,1,False
+sdv-id-aibYne,52,F,25672,Oklahoma,single,bachelor,self_employed,2,False
+sdv-id-Tyscyp,18,M,37239,New York,married,high_school,employed,1,True
+sdv-id-PwZzer,45,F,69835,Utah,divorced,master,self_employed,3,True
+sdv-id-uEkaru,75,F,136858,Ohio,single,phd,employed,6,False
+sdv-id-TlqyCB,36,F,109384,Alaska,divorced,master,retired,5,True
+sdv-id-jNuIUR,35,F,82821,Maryland,married,bachelor,employed,4,False
+sdv-id-wpDuYr,43,F,52547,Kentucky,single,other,employed,1,True
+sdv-id-YIvZdZ,64,F,30906,Montana,widowed,bachelor,retired,2,False
+sdv-id-mCLRCU,18,M,135067,Washington,divorced,high_school,employed,2,False
+sdv-id-yiIpkS,18,M,25672,Oklahoma,single,master,retired,5,True
+sdv-id-PXncxi,18,F,106313,Michigan,single,other,employed,1,False
+sdv-id-BMwyWH,67,M,28642,Iowa,single,high_school,retired,4,True
+sdv-id-bZFlib,59,F,25672,South Carolina,divorced,bachelor,employed,5,True
+sdv-id-JQRmuE,18,F,25672,West Virginia,married,master,self_employed,1,False
+sdv-id-UwowQR,54,M,25672,Georgia,single,other,employed,4,False
+sdv-id-teTtZs,56,F,162975,Delaware,single,high_school,employed,4,False
+sdv-id-PmrLAd,31,F,25672,Kentucky,single,master,employed,2,False
+sdv-id-ecmOXk,71,M,178449,Georgia,widowed,master,employed,3,True
+sdv-id-NmTKrH,18,F,71459,Michigan,widowed,phd,self_employed,2,False
+sdv-id-tAPuVG,45,F,25672,South Carolina,widowed,bachelor,unemployed,6,False
+sdv-id-cvMBna,43,M,119595,Colorado,divorced,phd,unemployed,2,False
+sdv-id-uedgeF,71,F,81072,Nevada,single,high_school,self_employed,5,False
+sdv-id-xgZHzn,69,M,125984,Nebraska,divorced,master,retired,4,True
+sdv-id-xzSIMT,80,F,84718,Oklahoma,married,other,employed,5,False
+sdv-id-mzOWjP,20,F,25672,New Hampshire,divorced,bachelor,self_employed,3,False
+sdv-id-XsACfE,18,F,48658,Montana,married,other,unemployed,4,False
+sdv-id-QMWWSN,31,F,178449,Colorado,widowed,high_school,self_employed,1,True
+sdv-id-WkrAcv,27,F,80741,Montana,widowed,phd,employed,3,False
+sdv-id-zmSDNB,59,F,25672,Mississippi,widowed,high_school,self_employed,2,True
+sdv-id-pqnnmu,18,M,25672,Texas,married,bachelor,self_employed,2,True
+sdv-id-JlHsRa,18,M,25672,Wyoming,widowed,bachelor,retired,3,False
+sdv-id-mBZzaJ,23,F,47512,California,married,high_school,employed,2,False
+sdv-id-aZIzen,47,M,125977,Alaska,divorced,master,employed,5,True
+sdv-id-yJrJqy,52,F,50815,Illinois,single,phd,self_employed,4,False
+sdv-id-jkocqz,47,M,25672,Connecticut,single,bachelor,unemployed,5,False
+sdv-id-CnlzQj,40,M,25672,Indiana,divorced,bachelor,unemployed,4,True
+sdv-id-BcuqsB,66,F,70595,Virginia,divorced,high_school,self_employed,1,False
+sdv-id-yXaBJV,37,F,25672,New Hampshire,widowed,other,retired,4,False
+sdv-id-KsFgIz,78,M,85955,Michigan,widowed,phd,self_employed,2,False
+sdv-id-OZqTnn,62,M,66209,Illinois,divorced,bachelor,unemployed,1,False
+sdv-id-KclcHT,57,F,35867,Kansas,widowed,phd,retired,5,False
+sdv-id-ebcVPA,71,F,109822,Louisiana,married,other,employed,2,False
+sdv-id-TAEAmJ,42,F,29771,Missouri,divorced,high_school,unemployed,6,True
+sdv-id-WfDfQY,49,F,124118,Oregon,widowed,bachelor,unemployed,2,False
+sdv-id-pNCfLI,36,M,35032,Louisiana,married,high_school,employed,6,True
+sdv-id-sVltsS,37,M,71637,Delaware,widowed,phd,self_employed,5,False
+sdv-id-oTwDQt,43,M,25982,Vermont,married,bachelor,employed,6,True
+sdv-id-kzAcHp,18,M,73395,Washington,single,bachelor,employed,4,True
+sdv-id-Aqvjhq,25,F,26360,Florida,widowed,phd,employed,2,False
+sdv-id-pggKvg,40,M,68718,South Dakota,widowed,master,retired,1,True
+sdv-id-mfyWVA,18,F,61170,Iowa,married,high_school,employed,1,False
+sdv-id-tKokun,31,M,67005,South Carolina,widowed,master,self_employed,2,False
+sdv-id-pTDQKA,38,M,75719,Arizona,single,master,retired,1,False
+sdv-id-imszds,37,F,25672,Delaware,married,master,self_employed,6,True
+sdv-id-pFOYen,18,F,34229,Georgia,widowed,master,unemployed,4,False
+sdv-id-YqasPq,61,F,25672,Montana,divorced,high_school,self_employed,2,False
+sdv-id-eoYZiG,35,M,25672,Kentucky,divorced,bachelor,self_employed,3,False
+sdv-id-sCjqta,49,F,129822,Tennessee,single,bachelor,employed,5,False
+sdv-id-oSsCzd,18,M,58131,California,married,phd,retired,6,True
+sdv-id-PNlWnX,40,M,94408,Hawaii,widowed,master,self_employed,2,True
+sdv-id-tUgpGh,38,F,25672,Kentucky,divorced,other,unemployed,6,False
+sdv-id-jaGakf,18,F,155067,Idaho,single,other,self_employed,5,False
+sdv-id-fXYziN,25,M,34562,Connecticut,widowed,master,retired,6,True
+sdv-id-jarDQo,41,M,118290,Ohio,divorced,phd,self_employed,4,False
+sdv-id-ltshsR,49,M,44185,Ohio,single,other,employed,3,True
+sdv-id-mbcIKJ,50,M,41109,New Mexico,divorced,phd,unemployed,1,False
+sdv-id-QoOHHP,47,F,108242,Pennsylvania,single,high_school,employed,2,False
+sdv-id-ibJJtC,45,M,156508,Arkansas,single,bachelor,retired,4,True
+sdv-id-NWZXMD,49,M,71499,Rhode Island,married,phd,employed,1,True
+sdv-id-ProCfa,36,M,25672,North Dakota,divorced,high_school,retired,2,False
+sdv-id-JvtpRT,50,F,143001,Oregon,widowed,bachelor,retired,5,True
+sdv-id-JjZuqR,61,F,98434,Wisconsin,widowed,master,employed,1,True
+sdv-id-WyKOcq,32,F,27406,Oregon,single,phd,unemployed,5,True
+sdv-id-ZunPxl,18,M,43429,Rhode Island,widowed,high_school,self_employed,6,True
+sdv-id-BawPmo,40,F,151362,Texas,divorced,phd,employed,5,False
+sdv-id-YoSwQI,39,M,25672,Nevada,divorced,master,self_employed,5,False
+sdv-id-XxuTST,40,M,42850,Utah,widowed,other,retired,3,True
+sdv-id-EOAoIk,36,M,59267,Florida,married,other,unemployed,2,True
+sdv-id-PJNsCe,62,M,25672,Ohio,single,bachelor,retired,5,True
+sdv-id-nxPmIN,40,F,25672,South Carolina,married,high_school,retired,5,False
+sdv-id-Ybtkdz,18,F,27999,Maryland,widowed,high_school,retired,2,True
+sdv-id-EEPUdL,27,M,39901,Mississippi,married,master,unemployed,6,True
+sdv-id-GYaOZL,27,M,25672,New York,widowed,other,retired,6,False
+sdv-id-sQjnnS,18,F,146530,Oregon,widowed,master,unemployed,6,False
+sdv-id-iihxhG,19,M,31661,Maryland,married,bachelor,self_employed,1,True
+sdv-id-LqAwYr,67,F,51252,Michigan,widowed,phd,self_employed,1,False
+sdv-id-giDxpI,32,F,148682,Rhode Island,divorced,phd,employed,1,True
+sdv-id-rXKTXU,18,M,106538,Louisiana,married,master,self_employed,5,False
+sdv-id-kDAfzk,18,F,84092,New York,divorced,master,retired,5,False
+sdv-id-IaWvlo,39,F,61707,New Jersey,widowed,master,retired,6,True
+sdv-id-qFaudz,54,M,25672,Mississippi,married,high_school,retired,1,True
+sdv-id-ZJbnns,18,M,138011,Idaho,married,phd,retired,3,True
+sdv-id-EysmzY,54,F,25672,Florida,married,phd,self_employed,6,True
+sdv-id-bhhcLv,18,F,29732,Georgia,married,master,retired,5,False
+sdv-id-hAYlbb,20,F,88548,Virginia,widowed,bachelor,employed,5,False
+sdv-id-WCNTfw,67,F,54382,Alabama,married,high_school,unemployed,3,False
+sdv-id-EAvCif,18,M,25672,Kentucky,widowed,phd,employed,1,False
+sdv-id-AdjwVd,44,F,90000,Missouri,single,bachelor,retired,1,False
+sdv-id-accRNI,48,M,58455,Colorado,divorced,other,retired,4,True
+sdv-id-OLkrIm,18,M,67173,Ohio,widowed,master,self_employed,6,False
+sdv-id-vsIPuh,51,M,31706,New Hampshire,widowed,other,employed,1,True
+sdv-id-fRcxMi,18,F,25672,Louisiana,widowed,other,employed,6,False
+sdv-id-iTKBIW,18,M,47442,Nebraska,single,master,employed,5,True
+sdv-id-PLzeZm,30,F,25672,Alabama,married,bachelor,retired,2,True
+sdv-id-tTUyNx,48,F,25672,Vermont,widowed,high_school,unemployed,6,True
+sdv-id-GzvWzP,56,F,25672,Washington,divorced,bachelor,self_employed,4,True
+sdv-id-vNrMdf,21,M,25672,Ohio,single,bachelor,self_employed,5,False
+sdv-id-XirCQd,58,M,58222,Indiana,single,master,self_employed,6,False
+sdv-id-gETUUC,29,F,63645,Vermont,widowed,bachelor,employed,4,False
+sdv-id-mTZrWU,33,F,25672,New Mexico,widowed,master,employed,2,True
+sdv-id-lHNWGt,38,F,110990,Ohio,married,master,retired,4,False
+sdv-id-nWOxJj,35,F,47476,New Mexico,single,bachelor,retired,5,False
+sdv-id-QHhNhI,41,F,42102,South Carolina,widowed,bachelor,employed,1,False
+sdv-id-FOIyVC,49,M,41194,Vermont,widowed,phd,self_employed,6,False
+sdv-id-pxYpLM,62,F,25672,Idaho,divorced,phd,retired,1,False
+sdv-id-OKkGNC,51,M,25672,Vermont,married,master,retired,5,True
+sdv-id-rPfkme,18,F,88209,Mississippi,married,high_school,unemployed,2,False
+sdv-id-XzHvac,18,M,41939,Illinois,single,other,employed,1,True
+sdv-id-DPLcdD,23,M,59772,South Dakota,married,other,unemployed,3,True
+sdv-id-mOZqzx,18,F,25672,Oklahoma,widowed,master,employed,1,True
+sdv-id-zlKfKG,54,M,88954,North Dakota,divorced,high_school,self_employed,5,True
+sdv-id-ZyocpZ,68,F,51635,New Jersey,married,phd,self_employed,3,True
+sdv-id-PpwKDt,78,F,73149,Nebraska,married,high_school,retired,4,False
+sdv-id-wfpLcU,21,M,25672,Alabama,widowed,master,retired,5,True
+sdv-id-ObnUpg,18,M,98299,South Dakota,divorced,other,retired,6,True
+sdv-id-rbHzGC,78,F,114454,Iowa,single,bachelor,retired,2,True
+sdv-id-yURmdN,45,M,33226,New Jersey,divorced,other,unemployed,2,True
+sdv-id-TDzCLv,36,M,88438,Massachusetts,married,phd,employed,4,True
+sdv-id-PgvLaD,18,M,42642,Michigan,married,master,retired,2,False
+sdv-id-ISPfPl,39,F,68150,Kentucky,single,phd,retired,2,True
+sdv-id-ojyWtc,43,M,25672,North Dakota,divorced,other,retired,4,False
+sdv-id-YNutOH,50,F,35124,Connecticut,widowed,other,retired,3,False
+sdv-id-KrvREp,18,M,25672,Utah,single,master,retired,1,True
+sdv-id-EGdFvR,18,F,25672,Louisiana,widowed,master,self_employed,2,False
+sdv-id-DfTyef,32,M,178449,North Dakota,married,bachelor,self_employed,5,False
+sdv-id-QIvldr,62,F,31744,Arizona,single,high_school,self_employed,1,True
+sdv-id-NFptUb,18,M,25672,Utah,widowed,other,unemployed,1,True
+sdv-id-Klpzwn,62,M,30873,Mississippi,married,master,retired,6,True
+sdv-id-mgEdCu,18,M,25672,Alabama,divorced,other,self_employed,4,False
+sdv-id-VgWuHg,68,M,72921,Massachusetts,married,phd,employed,5,False
+sdv-id-aHMSlM,80,M,81032,Pennsylvania,single,master,retired,2,False
+sdv-id-rqMhoz,48,F,54851,Texas,single,phd,retired,5,True
+sdv-id-jofCKG,18,F,152138,Arkansas,divorced,high_school,retired,6,True
+sdv-id-obwOic,18,M,85959,Maryland,single,bachelor,self_employed,4,False
+sdv-id-Kvibhx,43,F,72346,California,widowed,bachelor,self_employed,5,False
+sdv-id-JXbAWU,32,M,82927,Rhode Island,married,phd,employed,5,False
+sdv-id-bcKHAW,18,F,97601,Louisiana,divorced,bachelor,retired,5,False
+sdv-id-XvdhQl,18,F,25672,Illinois,married,other,self_employed,1,True
+sdv-id-SDIkZR,64,M,84767,South Dakota,widowed,master,self_employed,6,False
+sdv-id-XTASWu,42,F,72027,Washington,divorced,bachelor,self_employed,6,False
+sdv-id-MfWcfn,18,M,42269,Mississippi,widowed,master,self_employed,5,False
+sdv-id-IsPJSS,31,F,104935,Delaware,divorced,master,employed,5,False
+sdv-id-Dltvga,49,M,28597,Nebraska,married,master,retired,1,False
+sdv-id-jgpCWU,18,F,161229,California,single,phd,unemployed,4,False
+sdv-id-VzgzWI,73,M,25672,Hawaii,widowed,master,unemployed,2,False
+sdv-id-UNkEbE,34,M,50866,Oklahoma,single,high_school,employed,6,False
+sdv-id-mAJKIV,32,M,25672,Kentucky,single,phd,self_employed,5,True
+sdv-id-JpjfhX,22,F,57053,Indiana,divorced,bachelor,self_employed,4,False
+sdv-id-oXIJFO,46,M,26322,Arkansas,married,high_school,self_employed,2,True
+sdv-id-WDjnws,43,M,80607,Arizona,divorced,phd,self_employed,5,True
+sdv-id-nRRUOM,38,F,72345,Washington,divorced,other,retired,2,False
+sdv-id-PHwCYu,80,M,53172,Oregon,divorced,other,retired,6,True
+sdv-id-xqtvPG,47,M,95638,Oklahoma,married,high_school,employed,5,False
+sdv-id-jvWZOd,18,M,28711,Illinois,married,phd,retired,5,True
+sdv-id-AzKMAF,43,F,26428,Connecticut,widowed,master,self_employed,1,False
+sdv-id-Rvrkvk,26,M,25672,Nebraska,single,master,self_employed,6,False
+sdv-id-isTwKs,24,F,75020,Delaware,widowed,phd,retired,1,True
+sdv-id-wGxDfE,35,M,25672,Tennessee,single,other,self_employed,5,False
+sdv-id-saBtiE,49,F,30379,Virginia,single,other,self_employed,1,False
+sdv-id-OPBgWP,19,M,100308,Connecticut,widowed,high_school,self_employed,3,False
+sdv-id-kfwVds,59,M,78659,North Carolina,married,high_school,unemployed,3,True
+sdv-id-fOnmwU,18,M,33101,Arizona,divorced,master,self_employed,2,True
+sdv-id-eqdtyf,57,M,48293,Missouri,single,bachelor,employed,6,False
+sdv-id-ySMwRH,45,M,82721,Massachusetts,widowed,other,self_employed,5,True
+sdv-id-XFMaka,40,M,25672,Wyoming,divorced,other,unemployed,1,False
+sdv-id-WzhKMI,45,F,25672,Oregon,divorced,master,self_employed,2,False
+sdv-id-qFHaer,43,M,109410,Alaska,divorced,master,retired,3,False
+sdv-id-bsBAsU,78,M,25672,Rhode Island,divorced,phd,retired,4,False
+sdv-id-SJpriF,36,M,114900,New York,widowed,master,employed,4,False
+sdv-id-ePXCqT,45,F,25672,California,divorced,bachelor,unemployed,2,False
+sdv-id-uIJtwY,68,M,25672,Arkansas,widowed,bachelor,retired,2,True
+sdv-id-OnKLXH,30,F,25672,Arkansas,single,high_school,employed,6,False
+sdv-id-twpzrT,18,M,25672,Tennessee,widowed,master,employed,5,False
+sdv-id-gUiUxF,42,M,30784,Maine,married,other,retired,4,False
+sdv-id-iCYaOQ,18,M,86526,Iowa,divorced,other,employed,5,True
+sdv-id-lGicHn,35,F,25672,Kentucky,divorced,phd,unemployed,4,True
+sdv-id-cPZAoP,36,M,25672,New Hampshire,married,bachelor,retired,6,False
+sdv-id-srqpIl,45,F,33141,Kansas,widowed,other,self_employed,4,False
+sdv-id-OaXYPA,43,F,25672,Massachusetts,married,phd,unemployed,3,True
+sdv-id-GnRpwZ,60,M,82028,Georgia,divorced,bachelor,employed,4,False
+sdv-id-mNxgdw,63,F,34657,Hawaii,single,master,self_employed,2,False
+sdv-id-UFdCOq,45,F,30706,Massachusetts,widowed,phd,unemployed,5,False
+sdv-id-BKdbhq,18,M,25672,Idaho,widowed,phd,employed,6,False
+sdv-id-tDpWMQ,47,M,115786,Alaska,married,master,employed,3,False
+sdv-id-aIQDht,68,F,45381,Massachusetts,married,phd,employed,4,True
+sdv-id-OwKvwj,46,F,151678,New Jersey,widowed,phd,self_employed,1,True
+sdv-id-CneNTD,38,M,83123,New Mexico,widowed,phd,employed,3,False
+sdv-id-FekTvX,18,F,25672,Ohio,single,other,retired,2,False
+sdv-id-rcDJyA,41,M,43201,Illinois,divorced,phd,employed,2,True
+sdv-id-pCYuHc,34,M,136048,North Carolina,single,phd,unemployed,3,False
+sdv-id-yBiabo,49,F,48380,Massachusetts,divorced,other,unemployed,4,True
+sdv-id-aTeIXY,48,F,25672,Nevada,single,bachelor,employed,4,False
+sdv-id-GtLYvO,44,M,62366,Kentucky,married,phd,self_employed,4,True
+sdv-id-DBKZvN,43,F,28357,Utah,widowed,other,unemployed,6,True
+sdv-id-YImqGv,18,F,25672,Maryland,single,master,employed,3,True
+sdv-id-YIaCUq,18,M,100515,Massachusetts,widowed,master,employed,1,False
+sdv-id-OhCiJG,31,F,64791,Vermont,married,phd,employed,4,False
+sdv-id-qiDNZz,26,M,25672,Tennessee,widowed,bachelor,self_employed,6,True
+sdv-id-aVDcpH,66,F,95727,Tennessee,single,other,unemployed,4,False
+sdv-id-jUAcAC,18,M,25672,North Carolina,married,bachelor,retired,1,False
+sdv-id-VCpXAx,39,F,59869,North Carolina,single,high_school,self_employed,2,True
+sdv-id-KjDWLd,19,F,121809,Montana,divorced,high_school,self_employed,5,True
+sdv-id-OLRFAG,19,M,51629,Oregon,married,other,unemployed,2,True
+sdv-id-ZSqwKE,34,M,30682,Indiana,married,master,unemployed,4,False
+sdv-id-jxRclv,34,M,25672,Alaska,single,phd,employed,4,False
+sdv-id-SpVpiX,51,M,27576,Virginia,widowed,master,retired,3,True
+sdv-id-GjHKcT,41,M,83577,Connecticut,married,other,employed,4,False
+sdv-id-zkifKp,63,F,178449,Hawaii,married,bachelor,employed,1,False
+sdv-id-dQwNlB,18,M,32752,Oregon,widowed,phd,unemployed,5,False
+sdv-id-apULav,59,F,25672,Vermont,widowed,other,employed,1,False
+sdv-id-GexkjV,46,M,67631,Missouri,single,master,unemployed,1,False
+sdv-id-ppDphR,49,F,104780,North Dakota,single,master,unemployed,4,False
+sdv-id-UmFXTH,24,M,164275,Indiana,married,phd,employed,1,False
+sdv-id-SrJYhu,18,F,96525,Colorado,married,bachelor,retired,5,True
+sdv-id-ReFdua,69,M,25672,Kansas,single,bachelor,retired,2,False
+sdv-id-GWvKuV,55,F,82706,Kentucky,married,high_school,employed,5,False
+sdv-id-typNSX,68,M,39776,North Dakota,divorced,high_school,retired,4,False
+sdv-id-ozPaou,48,M,25672,Iowa,married,master,employed,6,False
+sdv-id-ymFBmr,53,M,175505,North Dakota,widowed,phd,employed,4,False
+sdv-id-ypRACD,18,F,25672,California,married,other,retired,2,False
+sdv-id-dYrQVS,31,F,76189,Idaho,widowed,other,retired,2,True
+sdv-id-oCTuPx,36,F,25672,Wyoming,divorced,master,retired,4,True
+sdv-id-svtixI,43,F,40745,Louisiana,divorced,phd,retired,3,False
+sdv-id-wOEEXW,38,M,178449,Idaho,married,phd,self_employed,5,False
+sdv-id-WKvEIM,35,M,25672,Arkansas,single,high_school,employed,1,False
+sdv-id-hdtQMt,53,M,25672,Wisconsin,divorced,high_school,unemployed,6,False
+sdv-id-gIxouT,21,M,87641,Kansas,divorced,bachelor,employed,5,False
+sdv-id-TnoYSa,54,M,47117,Pennsylvania,widowed,other,self_employed,4,False
+sdv-id-BncWYO,48,F,117142,Virginia,single,bachelor,retired,1,True
+sdv-id-ceQqgF,30,F,62488,Ohio,married,bachelor,employed,5,False
+sdv-id-KJfGfS,18,M,178449,Delaware,single,master,employed,1,True
+sdv-id-Jcjomw,41,F,25672,Florida,married,high_school,retired,5,True
+sdv-id-cAHTCo,42,M,34551,Arkansas,widowed,other,employed,4,True
+sdv-id-EeJgrY,18,F,97513,Tennessee,married,high_school,self_employed,3,False
+sdv-id-FpptbI,18,M,74224,Nevada,married,phd,retired,6,True
+sdv-id-ZPcpol,18,M,52110,West Virginia,widowed,phd,self_employed,2,True
+sdv-id-febjEe,55,F,45441,Iowa,divorced,phd,unemployed,3,False
+sdv-id-ILPApn,35,F,87187,West Virginia,widowed,other,unemployed,3,False
+sdv-id-mGsnYZ,62,F,33336,Wisconsin,divorced,bachelor,unemployed,3,False
+sdv-id-aBCOUY,35,F,25672,Washington,divorced,phd,retired,5,False
+sdv-id-CBGevl,59,M,25672,North Dakota,widowed,master,retired,5,True
+sdv-id-EmvXQG,36,M,34337,Florida,widowed,other,self_employed,5,True
+sdv-id-VJKVcF,80,M,25672,Alaska,divorced,phd,self_employed,3,False
+sdv-id-jltueY,35,F,173366,Utah,married,master,retired,3,False
+sdv-id-VKvFCW,42,F,25672,Alabama,married,master,employed,6,False
+sdv-id-daJNKI,42,F,43036,Utah,married,phd,self_employed,5,False
+sdv-id-KIFPko,53,F,25672,Oklahoma,single,bachelor,employed,6,False
+sdv-id-dJfWVU,18,F,44635,Vermont,widowed,master,self_employed,5,False
+sdv-id-TUmfEE,34,M,25672,Virginia,married,other,self_employed,4,False
+sdv-id-tbEIiL,58,F,52142,Wyoming,married,master,employed,1,True
+sdv-id-XKSNcn,18,F,154590,Colorado,single,phd,employed,4,True
+sdv-id-OxYMmC,18,M,27832,South Carolina,divorced,phd,unemployed,6,False
+sdv-id-vCMETi,32,M,25672,North Carolina,married,master,self_employed,1,False
+sdv-id-qHAjyr,18,F,25672,Vermont,divorced,other,retired,2,False
+sdv-id-pIVEal,18,F,25672,Vermont,widowed,master,retired,5,False
+sdv-id-KtrByv,18,F,25672,Florida,divorced,bachelor,employed,3,False
+sdv-id-pbiCMB,18,M,87621,Connecticut,widowed,other,employed,3,False
+sdv-id-zwqkCO,64,F,29041,Louisiana,widowed,master,self_employed,4,False
+sdv-id-LYejKp,63,F,25672,Arizona,widowed,phd,employed,1,False
+sdv-id-UjeQPC,54,M,25672,Texas,widowed,phd,retired,3,False
+sdv-id-JLpclw,18,F,25672,Washington,married,bachelor,employed,4,False
+sdv-id-iSQrxc,41,M,25672,Tennessee,widowed,bachelor,unemployed,1,False
+sdv-id-CytVbo,40,M,65358,Missouri,married,high_school,unemployed,2,False
+sdv-id-AYnADy,50,M,92329,Georgia,widowed,bachelor,retired,3,False
+sdv-id-WPgiJM,56,F,80547,Illinois,married,other,unemployed,5,True
+sdv-id-mXRnZv,47,F,43670,Alaska,widowed,other,employed,5,False
+sdv-id-hnjBMW,38,M,83301,Alabama,married,other,unemployed,3,False
+sdv-id-sOICgH,60,M,91602,Texas,widowed,bachelor,unemployed,3,True
+sdv-id-qPoxnS,25,F,62055,Florida,widowed,phd,retired,3,False
+sdv-id-vZbRta,33,F,25672,Delaware,married,high_school,unemployed,5,False
+sdv-id-LdoEkg,49,F,25672,New Mexico,married,master,unemployed,4,False
+sdv-id-NNknhG,80,M,25672,Louisiana,divorced,master,self_employed,2,True
+sdv-id-mkgQKb,51,M,25672,Ohio,widowed,high_school,retired,1,True
+sdv-id-AqcFbz,48,F,81658,Colorado,married,bachelor,unemployed,1,True
+sdv-id-YLbWGp,56,F,59707,Missouri,single,phd,unemployed,2,True
+sdv-id-jITsUf,43,M,76957,Arizona,married,bachelor,retired,1,True
+sdv-id-bmeLQk,66,F,60065,Tennessee,married,other,unemployed,6,True
+sdv-id-Irehwg,24,F,25672,Maryland,single,master,self_employed,6,False
+sdv-id-rMGNEa,80,F,41428,Wisconsin,widowed,bachelor,retired,1,True
+sdv-id-YdOgpX,71,M,53773,Mississippi,widowed,master,employed,4,True
+sdv-id-oNfVly,18,M,25672,South Dakota,divorced,bachelor,employed,1,False
+sdv-id-tNFzVU,20,M,25672,South Dakota,single,bachelor,unemployed,3,True
+sdv-id-UwmHLR,62,F,85503,Delaware,married,other,self_employed,1,False
+sdv-id-KXFWOv,51,F,25672,Maryland,single,bachelor,employed,2,False
+sdv-id-RwuPwJ,53,F,26820,Minnesota,widowed,high_school,unemployed,5,False
+sdv-id-BwVDag,18,F,178449,Arizona,single,other,retired,1,True
+sdv-id-EyTkeu,47,F,130293,Pennsylvania,widowed,bachelor,employed,6,False
+sdv-id-JpYmQa,49,F,25672,Alabama,married,bachelor,retired,1,False
+sdv-id-LfAjoz,18,F,25672,Georgia,married,phd,employed,4,False
+sdv-id-cqkLKl,69,F,25672,Wisconsin,widowed,master,employed,5,True
+sdv-id-tAWUtJ,52,F,25672,Ohio,divorced,high_school,employed,1,False
+sdv-id-gknSXg,25,F,110106,North Carolina,married,other,employed,5,False
+sdv-id-QmXiAO,18,M,33064,Maryland,divorced,bachelor,employed,5,False
+sdv-id-GCHwif,29,F,123919,Iowa,married,master,employed,4,False
+sdv-id-MPnABR,22,F,25672,Utah,divorced,bachelor,retired,5,False
+sdv-id-soYVgV,34,F,25672,Nebraska,divorced,master,retired,2,True
+sdv-id-ZuSFtc,18,F,53179,Ohio,single,master,employed,2,False
+sdv-id-JXpauz,30,F,25672,New Mexico,widowed,master,employed,1,False
+sdv-id-JfoShZ,42,M,58904,Alabama,single,bachelor,employed,4,False
+sdv-id-iprmli,26,M,25672,Maryland,divorced,other,self_employed,4,True
+sdv-id-qqCNkU,30,F,79161,Delaware,widowed,phd,unemployed,1,True
+sdv-id-VDjHkT,61,M,57552,Delaware,single,master,retired,6,True
+sdv-id-LhbuzY,18,M,33926,North Dakota,widowed,bachelor,employed,5,False
+sdv-id-HEwWHN,55,M,53909,Arizona,divorced,other,employed,6,False
+sdv-id-CafXFW,28,F,25672,Maryland,divorced,phd,self_employed,4,True
+sdv-id-QPInbo,34,F,25672,Nebraska,divorced,master,self_employed,5,True
+sdv-id-MIJyMU,40,F,38590,Montana,widowed,high_school,retired,5,True
+sdv-id-SqYNsK,18,F,168659,Alabama,married,bachelor,self_employed,5,False
+sdv-id-ursTzJ,37,M,25672,Vermont,divorced,high_school,employed,2,False
+sdv-id-hHdQjp,60,M,25672,Arkansas,single,phd,retired,6,True
+sdv-id-UdioKX,18,M,25672,Vermont,divorced,master,unemployed,2,False
+sdv-id-tmOKYy,56,M,34790,Georgia,divorced,master,retired,3,False
+sdv-id-cklDWI,23,F,31017,Illinois,widowed,high_school,employed,2,False
+sdv-id-JRvtRt,72,F,73198,Vermont,single,high_school,employed,6,False
+sdv-id-otBxcK,23,F,33225,New Mexico,widowed,master,retired,4,False
+sdv-id-esAcqT,80,F,25672,Kentucky,married,other,retired,6,False
+sdv-id-DYmiFn,18,F,41158,Utah,single,bachelor,employed,6,True
+sdv-id-rxBcVH,18,F,32331,Nevada,widowed,master,employed,5,False
+sdv-id-YqTQYc,69,F,25672,Nebraska,married,master,unemployed,1,False
+sdv-id-BXimMZ,18,F,90445,Wyoming,single,other,unemployed,3,True
+sdv-id-hSManW,46,F,48952,Louisiana,single,master,retired,4,False
+sdv-id-guZJSn,38,M,25672,Alabama,single,high_school,self_employed,5,False
+sdv-id-yRdTyx,46,M,63882,Hawaii,divorced,other,retired,3,True
+sdv-id-fGHGWj,31,F,25672,Oklahoma,widowed,phd,retired,3,False
+sdv-id-FANCac,47,M,25672,Kentucky,widowed,bachelor,employed,4,False
+sdv-id-vdGuey,18,F,92842,Idaho,widowed,master,retired,4,False
+sdv-id-YoPBsE,40,F,151762,Hawaii,widowed,other,self_employed,1,False
+sdv-id-KdwwKE,21,M,46279,Virginia,divorced,high_school,retired,6,False
+sdv-id-ZaCoRm,52,M,31806,South Dakota,single,bachelor,unemployed,1,False
+sdv-id-cHZeoW,18,F,50684,Nebraska,single,phd,retired,4,False
+sdv-id-XIVzuG,63,F,50226,Nebraska,divorced,bachelor,unemployed,2,False
+sdv-id-sAwVdw,53,M,134797,Hawaii,single,bachelor,unemployed,5,False
+sdv-id-XuQjHa,22,M,25672,Ohio,divorced,phd,employed,6,False
+sdv-id-aezzFm,56,F,121126,Minnesota,single,high_school,employed,2,False
+sdv-id-picZDl,18,F,55628,Rhode Island,widowed,high_school,employed,4,False
+sdv-id-CzhcJJ,30,M,77264,Michigan,married,high_school,unemployed,4,True
+sdv-id-lKTNRo,54,F,61458,Michigan,divorced,master,employed,5,True
+sdv-id-VRKPxI,42,F,90422,Illinois,single,other,employed,2,False
+sdv-id-mhWLnc,50,F,47767,Oregon,married,bachelor,employed,2,True
+sdv-id-kaWJNr,30,M,92476,Alabama,single,high_school,unemployed,6,False
+sdv-id-OKpkan,59,F,42133,Oklahoma,divorced,bachelor,employed,6,False
+sdv-id-stKabA,50,M,59134,Hawaii,divorced,master,self_employed,6,False
+sdv-id-ZiwBUa,59,M,34047,Kentucky,widowed,other,self_employed,6,True
+sdv-id-ehezvo,42,M,25672,Vermont,single,other,retired,3,True
+sdv-id-GrrYPo,42,M,25672,Oklahoma,single,bachelor,retired,5,True
+sdv-id-AYceuk,18,F,41229,New Hampshire,single,bachelor,retired,6,False
+sdv-id-pssXgQ,18,F,123522,Vermont,divorced,high_school,retired,4,True
+sdv-id-UyLuJo,19,F,28097,Hawaii,widowed,phd,self_employed,2,False
+sdv-id-tvzKzN,47,M,25672,New Jersey,married,master,unemployed,2,True
+sdv-id-IZVZlT,26,M,25672,Michigan,widowed,high_school,retired,5,False
+sdv-id-rXSkPU,43,M,45170,West Virginia,single,phd,retired,6,False
+sdv-id-aeUJhL,38,F,53991,New Mexico,married,master,self_employed,3,False
+sdv-id-cDIyJU,72,M,55150,Connecticut,married,phd,employed,4,True
+sdv-id-GylLOc,18,M,25672,Arkansas,married,master,self_employed,5,True
+sdv-id-SuMvsv,32,M,56646,Wyoming,married,phd,self_employed,2,False
+sdv-id-lsUYOb,63,M,25672,Missouri,divorced,master,retired,2,False
+sdv-id-CiKOwf,34,F,45196,South Dakota,single,master,unemployed,3,False
+sdv-id-kxOqZq,18,F,151404,Washington,single,bachelor,employed,5,True
+sdv-id-egsdwx,59,M,46838,Indiana,divorced,high_school,employed,3,False
+sdv-id-wMRwUn,50,M,96538,Connecticut,divorced,other,self_employed,1,False
+sdv-id-IFGEIp,19,M,25672,New Hampshire,divorced,bachelor,unemployed,4,False
+sdv-id-yYDuYG,18,F,25672,Pennsylvania,divorced,master,retired,2,False
+sdv-id-NjwvXj,76,M,40603,Virginia,single,bachelor,employed,4,True
+sdv-id-kpSSED,47,M,36175,Kansas,widowed,high_school,self_employed,4,True
+sdv-id-Aqgryx,18,F,53082,Indiana,widowed,master,retired,5,False
+sdv-id-OXEeqF,80,F,25672,Arizona,single,high_school,employed,6,True
+sdv-id-kvKwqa,26,F,25672,Connecticut,married,master,unemployed,5,True
+sdv-id-DRUZSb,18,F,35801,Texas,married,master,retired,5,True
+sdv-id-ktAPLQ,79,F,25672,South Carolina,divorced,phd,self_employed,1,True
+sdv-id-wjMmsg,60,M,123838,Montana,widowed,high_school,self_employed,5,True
+sdv-id-iVqBTt,42,M,50158,Ohio,single,other,self_employed,3,False
+sdv-id-emJvDf,46,F,25672,Tennessee,married,bachelor,unemployed,6,True
+sdv-id-JTYiet,18,M,25672,Maryland,divorced,high_school,self_employed,4,True
+sdv-id-zKxPvr,37,F,59668,Montana,single,other,retired,5,True
+sdv-id-MIEwsW,24,M,25672,Pennsylvania,widowed,bachelor,employed,5,True
+sdv-id-JrbfRP,42,F,68409,New Hampshire,married,other,employed,6,True
+sdv-id-UExpPf,49,M,42637,Idaho,widowed,phd,retired,4,False
+sdv-id-XYvTMd,30,F,126197,Kentucky,divorced,phd,retired,5,False
+sdv-id-ByHvOa,18,F,74522,Texas,widowed,bachelor,self_employed,4,True
+sdv-id-IpCamc,18,M,81033,Florida,widowed,other,employed,2,True
+sdv-id-sddqzz,62,M,178449,Oklahoma,single,phd,employed,5,True
+sdv-id-CrPaJa,35,M,25672,Georgia,divorced,master,employed,6,True
+sdv-id-xMorCZ,18,M,31095,South Dakota,widowed,bachelor,unemployed,4,True
+sdv-id-rsBbsw,61,M,26306,Colorado,married,bachelor,unemployed,4,False
+sdv-id-rZPWeT,18,F,59210,Alabama,widowed,phd,retired,1,False
+sdv-id-qWdJPv,74,M,48713,Montana,married,high_school,self_employed,2,False
+sdv-id-ZCYnbw,41,M,152868,Wisconsin,divorced,high_school,retired,6,True
+sdv-id-zuiwlu,18,F,25672,Mississippi,single,master,employed,4,False
+sdv-id-izCWiu,68,M,46493,Florida,single,phd,self_employed,1,True
+sdv-id-LVixze,35,M,26164,West Virginia,married,other,retired,5,True
+sdv-id-TTMLmX,33,F,124813,New Hampshire,married,master,unemployed,3,True
+sdv-id-YXYmNo,51,M,60374,South Dakota,divorced,master,self_employed,5,False
+sdv-id-GBsbIe,53,F,25672,Montana,single,high_school,retired,3,False
+sdv-id-mFJkJG,53,M,47617,Michigan,divorced,high_school,retired,4,False
+sdv-id-HzBBth,38,F,25672,Massachusetts,widowed,bachelor,retired,2,False
+sdv-id-vJVhPn,18,M,25672,Tennessee,single,master,employed,5,True
+sdv-id-eRIeoz,18,F,81089,Alaska,widowed,high_school,self_employed,2,False
+sdv-id-JUaHvR,18,F,25672,North Carolina,single,phd,employed,5,True
+sdv-id-NHyCSQ,48,F,27076,Wyoming,married,phd,employed,1,False
+sdv-id-EOvFGj,19,F,86287,Connecticut,single,phd,unemployed,2,False
+sdv-id-PPxfMX,35,F,72489,Texas,widowed,high_school,employed,6,False
+sdv-id-QQMNbz,42,M,42938,Missouri,divorced,bachelor,self_employed,5,False
+sdv-id-zmqNmJ,41,F,25672,Kansas,married,high_school,self_employed,1,True
+sdv-id-pbVeWI,45,F,127252,Massachusetts,divorced,master,retired,3,True
+sdv-id-DJQZjx,44,F,60236,Florida,single,master,unemployed,2,False
+sdv-id-zyujCq,61,F,31499,Washington,divorced,other,self_employed,1,False
+sdv-id-ATmMqE,24,F,56363,Nevada,single,bachelor,employed,1,False
+sdv-id-wnFoyj,18,M,128263,Utah,widowed,other,employed,5,True
+sdv-id-EuBOrB,44,F,129090,Minnesota,married,phd,employed,2,True
+sdv-id-kmmddk,37,M,46334,New York,single,master,retired,4,False
+sdv-id-ALzWGF,38,M,51934,Kentucky,widowed,master,retired,2,False
+sdv-id-wncRqN,76,M,25672,Wisconsin,single,phd,retired,2,True
+sdv-id-VcShcd,36,F,51764,Illinois,married,other,retired,6,False
+sdv-id-qmVqDk,45,F,49369,Kentucky,widowed,bachelor,self_employed,1,False
+sdv-id-RlEBMf,18,F,25672,Connecticut,widowed,high_school,employed,2,False
+sdv-id-ndBptN,55,M,123865,Arkansas,married,other,self_employed,2,True
+sdv-id-iLDNak,18,M,53623,Pennsylvania,divorced,phd,retired,3,False
+sdv-id-IUldeJ,18,F,74281,Delaware,married,phd,retired,2,False
+sdv-id-OdNaBw,24,M,53785,Nevada,single,master,retired,1,False
+sdv-id-OrynBc,40,M,25672,New Jersey,married,other,self_employed,1,False
+sdv-id-chQvER,31,F,25672,North Dakota,widowed,master,retired,2,False
+sdv-id-PEnVDE,33,M,25672,Wisconsin,single,other,employed,6,False
+sdv-id-xNJkZy,18,F,42790,Delaware,single,bachelor,self_employed,4,True
+sdv-id-HCBOEt,60,M,141777,Louisiana,widowed,high_school,employed,6,False
+sdv-id-rDZfDQ,18,F,45605,Ohio,single,phd,employed,2,False
+sdv-id-DXPDyu,53,M,88558,Utah,widowed,bachelor,unemployed,2,False
+sdv-id-PjymOk,18,M,25672,Maine,widowed,master,self_employed,2,False
+sdv-id-YjWEuI,18,F,25672,Arizona,single,bachelor,retired,3,False
+sdv-id-bwjSmu,50,M,39779,Michigan,married,master,unemployed,2,False
+sdv-id-OTnFNz,69,M,25672,South Carolina,divorced,other,self_employed,4,True
+sdv-id-susCex,25,F,25672,Connecticut,widowed,master,retired,5,True
+sdv-id-hZgvgF,18,M,39812,Rhode Island,married,high_school,employed,2,False
+sdv-id-IHQwxn,51,F,37807,New Hampshire,divorced,other,unemployed,1,True
+sdv-id-FPYnGS,19,M,61880,Kansas,single,bachelor,employed,5,True
+sdv-id-nXAHrW,53,M,124280,Vermont,divorced,phd,self_employed,1,True
+sdv-id-ocvRDM,51,F,125085,New Mexico,widowed,other,self_employed,2,True
+sdv-id-OoXBMV,18,M,96776,Delaware,married,high_school,retired,4,False
+sdv-id-RkPQpA,18,M,25672,Idaho,divorced,master,unemployed,4,True
+sdv-id-jwXqmQ,68,M,167341,Florida,married,other,retired,4,False
+sdv-id-nXEbaS,18,M,66133,Massachusetts,divorced,high_school,self_employed,5,False
+sdv-id-URVTud,36,M,67414,Indiana,married,other,employed,5,False
+sdv-id-MgNCou,46,M,119727,Connecticut,single,other,retired,3,True
+sdv-id-MeMOZZ,48,M,64225,Virginia,single,high_school,employed,3,False
+sdv-id-RAUuKa,18,M,74617,Georgia,widowed,high_school,employed,2,True
+sdv-id-rltDCu,35,M,90600,Oregon,single,bachelor,employed,1,True
+sdv-id-ldcJxN,18,F,118944,Rhode Island,married,master,unemployed,3,True
+sdv-id-uvNOjX,22,F,33173,Tennessee,married,other,retired,1,True
+sdv-id-sggkAL,18,M,39334,Indiana,single,phd,employed,1,False
+sdv-id-eWeNdb,53,M,56475,Georgia,divorced,phd,retired,4,True
+sdv-id-DJQdyh,36,M,178449,Virginia,single,bachelor,unemployed,3,True
+sdv-id-uAsBrv,39,M,101436,New Mexico,single,other,self_employed,4,False
+sdv-id-TQXoUe,80,F,25672,California,divorced,bachelor,retired,1,False
+sdv-id-UIGaAv,44,F,74765,North Carolina,single,master,self_employed,4,False
+sdv-id-mekBpk,34,F,56797,New Mexico,widowed,phd,employed,4,True
+sdv-id-jTAbaA,46,F,94110,Alaska,divorced,bachelor,employed,5,True
+sdv-id-pLasGq,29,M,31318,Pennsylvania,single,high_school,self_employed,4,True
+sdv-id-XXmPLA,47,F,25672,Kansas,married,high_school,retired,2,True
+sdv-id-PjMfUG,18,M,133122,Texas,single,phd,self_employed,4,True
+sdv-id-nJCPmu,47,F,159761,Idaho,married,other,retired,5,True
+sdv-id-IQNsNn,18,F,25672,Arizona,single,master,unemployed,2,False
+sdv-id-dUAnBA,34,M,38204,Virginia,married,other,unemployed,6,False
+sdv-id-rlJCBX,62,M,120259,Alaska,divorced,master,employed,2,False
+sdv-id-KORMtX,18,M,25672,Montana,widowed,high_school,self_employed,6,True
+sdv-id-McDGDH,18,F,25672,Oklahoma,married,phd,retired,4,False
+sdv-id-sRfHYF,32,M,25672,Mississippi,married,phd,employed,1,True
+sdv-id-IIYRKp,42,M,30858,Montana,widowed,phd,retired,5,True
+sdv-id-mMcyJC,40,M,42115,Maine,married,bachelor,retired,5,False
+sdv-id-ORRcQv,21,F,25672,Colorado,divorced,other,unemployed,4,False
+sdv-id-TOECdB,39,M,50821,Washington,divorced,other,retired,2,True
+sdv-id-EsbdqI,44,F,28691,South Dakota,widowed,bachelor,unemployed,1,False
+sdv-id-JdwJbM,18,F,154105,North Carolina,single,phd,retired,5,False
+sdv-id-ZTiCBe,43,F,132496,Georgia,divorced,other,self_employed,2,True
+sdv-id-pUHqjI,35,M,25672,Wyoming,divorced,master,self_employed,6,True
+sdv-id-lYXuZF,32,F,72544,Massachusetts,single,phd,retired,6,False
+sdv-id-UosekO,37,F,82381,Louisiana,widowed,other,retired,4,False
+sdv-id-NJDXED,18,M,178449,Massachusetts,divorced,bachelor,self_employed,4,False
+sdv-id-neAcqR,74,M,82549,Mississippi,married,phd,self_employed,2,False
+sdv-id-siEccF,18,F,25672,Connecticut,divorced,master,retired,6,True
+sdv-id-xFZNti,46,F,25672,New York,divorced,master,employed,5,True
+sdv-id-iWhtYY,55,M,32844,Pennsylvania,married,high_school,self_employed,1,True
+sdv-id-uRdQtC,24,M,30625,Tennessee,divorced,phd,unemployed,3,True
+sdv-id-IMJmiu,35,F,25672,Oklahoma,divorced,master,employed,3,False
+sdv-id-CfNUHu,18,M,163301,Pennsylvania,divorced,other,retired,2,False
+sdv-id-dyRkkC,68,M,25672,New York,married,bachelor,self_employed,5,True
+sdv-id-ZttEoO,18,F,57387,Oregon,divorced,master,self_employed,1,True
+sdv-id-lQZJEz,18,F,65818,Wyoming,single,bachelor,employed,3,True
+sdv-id-XtGyGh,46,M,25672,Oregon,widowed,phd,self_employed,5,True
+sdv-id-mZQrjC,40,F,25672,Oklahoma,married,other,unemployed,5,False
+sdv-id-sHaWBO,57,M,68647,Idaho,divorced,other,retired,3,True
+sdv-id-zvxpzg,45,M,163163,Wyoming,widowed,phd,unemployed,2,False
+sdv-id-hsvQWL,45,M,25672,West Virginia,single,phd,retired,2,False
+sdv-id-uPUIke,54,M,25672,California,married,high_school,self_employed,5,False
+sdv-id-bpGOsj,49,F,87234,Alaska,married,phd,self_employed,2,False
+sdv-id-EzeTER,38,M,29864,Oklahoma,divorced,master,retired,2,False
+sdv-id-vZZQvg,23,M,25672,Minnesota,single,master,employed,4,True
+sdv-id-ceIdTu,22,F,29630,Pennsylvania,widowed,phd,retired,1,False
+sdv-id-orpgeA,59,F,95274,Oklahoma,widowed,bachelor,retired,4,False
+sdv-id-GLBFaV,18,M,38175,Vermont,widowed,other,self_employed,2,False
+sdv-id-KlCZVu,74,F,25672,Rhode Island,married,bachelor,employed,4,True
+sdv-id-JrvoBe,18,F,62811,Mississippi,widowed,master,unemployed,4,False
+sdv-id-uJWWND,32,M,25672,Florida,married,master,unemployed,2,True
+sdv-id-aWtsQB,55,M,25672,Nebraska,widowed,phd,employed,3,False
+sdv-id-UhiWLR,18,M,46852,New Hampshire,single,other,unemployed,6,False
+sdv-id-emRxyD,68,F,71889,Utah,married,high_school,retired,3,False
+sdv-id-yJhbhS,43,F,25672,Delaware,widowed,other,retired,5,False
+sdv-id-YuENQh,64,F,25672,Iowa,single,master,employed,3,True
+sdv-id-yhJKwn,18,F,107516,Delaware,single,high_school,employed,5,False
+sdv-id-hvAxYv,18,M,102172,Kentucky,divorced,high_school,employed,6,True
+sdv-id-ZsIJex,64,F,25672,South Dakota,single,other,employed,6,False
+sdv-id-RqgoiA,48,M,25672,Hawaii,divorced,master,retired,5,False
+sdv-id-PPjeUi,50,F,141108,Colorado,married,other,self_employed,3,False
+sdv-id-poJJES,22,M,25672,South Carolina,single,bachelor,self_employed,2,True
+sdv-id-tWnjLF,23,F,25672,Colorado,divorced,other,unemployed,5,False
+sdv-id-OjuLLQ,51,M,28119,Arkansas,widowed,master,self_employed,1,False
+sdv-id-fGDNab,26,M,41855,Virginia,divorced,master,unemployed,3,True
+sdv-id-EbSbFt,18,F,25672,South Dakota,single,bachelor,retired,4,True
+sdv-id-QGNvSu,18,M,25672,Connecticut,widowed,master,employed,4,True
+sdv-id-mzsJAE,51,M,25672,Wyoming,married,other,self_employed,5,True
+sdv-id-UgyUDi,46,M,141952,New Mexico,single,high_school,self_employed,4,True
+sdv-id-LMENwf,46,F,42673,New Jersey,divorced,master,unemployed,2,False
+sdv-id-DEtiQG,62,F,25672,South Dakota,married,other,unemployed,3,True
+sdv-id-UIuczx,54,M,40250,Alaska,single,phd,self_employed,4,True
+sdv-id-akMwNH,41,M,39070,Wyoming,divorced,other,retired,5,False
+sdv-id-ijteoE,18,F,72042,Oklahoma,widowed,master,retired,6,True
+sdv-id-iXZQEN,18,M,25672,South Dakota,widowed,phd,retired,1,True
+sdv-id-uhdOuB,26,F,25672,Nebraska,married,master,retired,1,True
+sdv-id-aOXJEG,18,M,25672,Maryland,married,bachelor,retired,1,True
+sdv-id-SqQtVj,24,M,155442,Kansas,widowed,bachelor,retired,3,False
+sdv-id-ZuCAOB,46,M,62077,Rhode Island,divorced,other,unemployed,4,True
+sdv-id-aReoSF,18,M,25672,Georgia,married,master,unemployed,3,False
+sdv-id-WQqDTM,62,M,60387,Virginia,single,bachelor,retired,5,False
+sdv-id-vlSJCB,34,F,25672,Utah,married,master,employed,5,True
+sdv-id-KURlea,18,F,25672,Missouri,widowed,master,self_employed,1,False
+sdv-id-jJJuMu,42,F,58378,Kentucky,divorced,bachelor,retired,5,True
+sdv-id-ssJKKl,18,M,97612,Massachusetts,single,phd,employed,5,False
+sdv-id-uhOxmq,80,F,25672,Rhode Island,divorced,master,retired,2,True
+sdv-id-NcwfzK,18,F,116074,Arkansas,married,bachelor,unemployed,6,False
+sdv-id-AdHMfy,80,M,92532,Washington,married,high_school,self_employed,2,True
+sdv-id-NQEFNp,32,F,25672,Wyoming,married,phd,retired,6,False
+sdv-id-HmjeYj,72,F,25672,Oklahoma,widowed,master,retired,1,False
+sdv-id-OfemRg,52,F,33614,Iowa,married,bachelor,employed,4,False
+sdv-id-XNpBfp,23,F,171244,New Jersey,single,bachelor,retired,4,False
+sdv-id-rFLETa,18,F,38330,New Hampshire,divorced,high_school,unemployed,1,True
+sdv-id-YbrTVA,43,F,79255,Washington,married,master,retired,2,False
+sdv-id-TWDywA,18,F,48785,Vermont,married,phd,retired,6,False
+sdv-id-BOBWFp,36,F,116642,Vermont,married,master,employed,6,False
+sdv-id-TdOOUN,18,M,104445,Georgia,divorced,phd,self_employed,1,False
+sdv-id-hozhIY,21,M,118126,Kansas,married,high_school,self_employed,4,False
+sdv-id-updcxD,66,F,25672,Utah,married,master,employed,2,True
+sdv-id-jEfFlF,44,M,65749,Alabama,married,other,employed,2,True
+sdv-id-SEQaES,80,F,54920,Louisiana,divorced,high_school,retired,3,True
+sdv-id-rgcjqa,21,F,26883,Indiana,married,master,employed,1,False
+sdv-id-QUcMYy,50,M,88881,Oregon,married,phd,retired,5,True
+sdv-id-gKvDzX,63,F,25672,Connecticut,single,bachelor,unemployed,1,True
+sdv-id-BGNrLT,21,M,90709,Ohio,divorced,high_school,employed,5,False
+sdv-id-EEVEzo,48,M,42725,Oregon,single,bachelor,retired,5,True
+sdv-id-dRnvMe,46,F,143997,Utah,single,high_school,employed,2,False
+sdv-id-tRKTOh,73,F,25672,Maryland,married,phd,unemployed,6,False
+sdv-id-gzDnOK,70,M,50658,South Dakota,widowed,other,self_employed,5,True
+sdv-id-zGEOBN,22,F,66817,Alaska,single,bachelor,retired,1,False
+sdv-id-lJKESb,71,M,106073,Mississippi,single,high_school,employed,5,True
+sdv-id-xqkzOi,33,M,55320,Oregon,single,bachelor,employed,5,True
+sdv-id-YhSwCu,78,M,29844,Delaware,married,phd,self_employed,6,False
+sdv-id-ecMikU,47,F,151138,Washington,single,bachelor,employed,5,True
+sdv-id-zHefNq,66,M,42671,South Dakota,divorced,other,retired,1,True
+sdv-id-DrwoHc,47,M,75008,Missouri,married,high_school,unemployed,1,True
+sdv-id-zbLPQI,18,F,37115,South Carolina,divorced,high_school,retired,1,True
+sdv-id-kKKUwC,42,M,52919,Idaho,divorced,other,unemployed,4,True
+sdv-id-IcfYyV,48,M,25672,Kentucky,married,master,self_employed,6,False
+sdv-id-MImzFh,57,M,56422,Tennessee,widowed,master,retired,6,False
+sdv-id-ypjhCP,35,M,69679,South Carolina,single,other,self_employed,4,False
+sdv-id-yedEUE,29,M,46818,Ohio,single,phd,employed,5,False
+sdv-id-BvGQDE,39,F,52958,Virginia,single,high_school,self_employed,1,True
+sdv-id-NYgWKR,40,F,25672,South Dakota,divorced,high_school,employed,3,True
+sdv-id-YNlRJm,28,M,25672,Wyoming,divorced,phd,self_employed,6,True
+sdv-id-kmAiOs,18,F,176589,Alaska,divorced,phd,retired,4,True
+sdv-id-PYmWff,76,F,25672,New Mexico,single,high_school,retired,4,True
+sdv-id-UMwUSf,34,F,25672,Virginia,married,master,retired,5,True
+sdv-id-ItXYws,53,F,25672,Virginia,married,master,unemployed,3,False
+sdv-id-mKNZao,34,F,108629,Alabama,single,bachelor,self_employed,2,False
+sdv-id-pRJmek,42,F,27800,Texas,single,phd,self_employed,5,False
+sdv-id-PzsOrE,35,F,113357,Arkansas,widowed,phd,self_employed,3,True
+sdv-id-nBvOwR,73,M,25672,Colorado,widowed,phd,self_employed,3,False
+sdv-id-zGYhZM,80,M,25672,North Carolina,single,bachelor,retired,5,False
+sdv-id-yVSxUa,18,M,77985,Indiana,divorced,bachelor,retired,5,False
+sdv-id-zOhqSf,51,M,25672,Arkansas,divorced,other,unemployed,6,False
+sdv-id-bPaMbd,18,M,93282,Georgia,single,other,employed,1,True
+sdv-id-TfvMUt,36,F,25672,Nevada,single,master,self_employed,1,True
+sdv-id-GcmvQQ,18,F,35798,Pennsylvania,divorced,bachelor,self_employed,5,True
+sdv-id-RMKqjC,30,F,63979,Connecticut,single,phd,employed,4,True
+sdv-id-KeNAwN,42,F,63030,Pennsylvania,divorced,other,unemployed,6,True
+sdv-id-hkzDwS,66,M,40719,Arizona,single,bachelor,unemployed,3,False
+sdv-id-LrDZfb,18,M,25672,Virginia,married,bachelor,retired,4,False
+sdv-id-MJqjYh,80,F,103137,Indiana,single,bachelor,retired,2,False
+sdv-id-VVEbXy,55,M,178449,Colorado,widowed,other,self_employed,2,True
+sdv-id-ALBCSW,65,F,25672,Utah,single,phd,self_employed,3,True
+sdv-id-bTWRjt,49,F,25672,Kentucky,married,other,unemployed,5,True
+sdv-id-VJwZMl,18,M,25672,New York,divorced,bachelor,retired,1,True
+sdv-id-ueoscs,70,M,27683,Wisconsin,widowed,phd,unemployed,5,False
+sdv-id-eMYNQc,18,M,60970,Maine,widowed,high_school,self_employed,4,False
+sdv-id-WJIRtl,18,M,44146,Virginia,widowed,other,self_employed,2,True
+sdv-id-bHbMBv,56,M,126152,Rhode Island,married,high_school,retired,5,True
+sdv-id-mmVsGD,18,M,92411,Massachusetts,widowed,phd,employed,1,False
+sdv-id-zoCIvm,18,F,25672,Kentucky,divorced,master,employed,6,False
+sdv-id-DcQAYJ,30,M,71475,California,divorced,high_school,unemployed,5,True
+sdv-id-wLfKtq,36,F,25672,California,widowed,bachelor,employed,3,False
+sdv-id-uXMRDV,25,M,103041,Rhode Island,single,phd,retired,3,False
+sdv-id-OzKVrP,80,M,25672,California,single,master,self_employed,6,False
+sdv-id-zuONMh,80,F,25672,West Virginia,married,high_school,self_employed,2,True
+sdv-id-MGKveu,56,F,30629,Alabama,single,bachelor,self_employed,6,False
+sdv-id-rFUpJm,18,M,25672,Georgia,widowed,other,employed,2,True
+sdv-id-xsXmur,65,F,42368,Pennsylvania,widowed,master,self_employed,3,True
+sdv-id-WJbDnw,67,M,96873,Wyoming,divorced,master,unemployed,1,False
+sdv-id-kYEoVM,38,F,25672,North Dakota,single,other,self_employed,6,True
+sdv-id-WBvvAC,18,M,25672,Oklahoma,married,phd,unemployed,4,False
+sdv-id-wLDHvL,67,F,25672,Louisiana,divorced,master,retired,6,True
+sdv-id-sQZzJG,40,M,83904,Arizona,divorced,high_school,retired,5,False
+sdv-id-tRfnhX,18,F,79254,Pennsylvania,married,phd,unemployed,5,False
+sdv-id-dTupeZ,18,F,59603,Minnesota,widowed,bachelor,self_employed,2,True
+sdv-id-vnWwNa,39,M,25672,Texas,single,other,retired,3,False
+sdv-id-DVemaX,18,M,45582,Ohio,divorced,phd,unemployed,3,False
+sdv-id-ezebvf,18,M,101907,Florida,divorced,other,retired,2,False
+sdv-id-bGjhsy,32,F,25672,Utah,divorced,high_school,self_employed,5,False
+sdv-id-BlIyzB,29,F,73257,New Jersey,widowed,high_school,retired,5,False
+sdv-id-YCUDey,40,F,86369,Colorado,single,master,self_employed,2,False
+sdv-id-Bmanta,18,M,50815,Mississippi,widowed,phd,unemployed,6,True
+sdv-id-psBaLs,39,M,152229,Washington,widowed,high_school,unemployed,1,True
+sdv-id-AwpkCz,55,F,28329,Mississippi,married,other,self_employed,1,True
+sdv-id-PbStNu,33,M,107515,North Dakota,widowed,phd,employed,6,True
+sdv-id-mivmiZ,52,M,25672,Iowa,divorced,phd,retired,2,False
+sdv-id-zeuQWO,18,M,178449,South Dakota,married,master,self_employed,6,False
+sdv-id-WbMxFv,18,M,49639,Missouri,divorced,phd,unemployed,5,True
+sdv-id-CdjLYP,18,M,59824,West Virginia,single,master,self_employed,1,False
+sdv-id-kRDgqs,18,F,25672,Alabama,divorced,bachelor,self_employed,3,True
+sdv-id-xLOoce,18,M,44680,Kansas,widowed,bachelor,employed,5,False
+sdv-id-RYRqME,39,F,36492,Minnesota,married,master,self_employed,2,False
+sdv-id-AAMDdD,18,M,81781,Ohio,single,phd,retired,6,False
+sdv-id-QgNcxH,18,M,25672,Colorado,married,phd,retired,6,False
+sdv-id-uyhYLs,18,F,40779,Pennsylvania,divorced,phd,employed,2,False
+sdv-id-vUBmLS,35,M,54637,Connecticut,widowed,other,self_employed,4,False
+sdv-id-XEzIXI,44,M,178449,Vermont,married,bachelor,unemployed,5,False
+sdv-id-fPUkRy,61,M,33914,Rhode Island,widowed,phd,retired,5,False
+sdv-id-BsmTJr,18,M,43916,Maryland,single,other,self_employed,1,False
+sdv-id-fPPFPc,18,M,115781,South Dakota,married,bachelor,employed,4,True
+sdv-id-cfUDff,64,M,25672,Idaho,divorced,bachelor,unemployed,4,True
+sdv-id-yOXTJy,18,F,25672,Texas,single,high_school,retired,6,False
+sdv-id-mBSOSx,18,M,80793,Massachusetts,single,bachelor,retired,3,True
+sdv-id-YHJRAO,22,M,107117,Illinois,widowed,bachelor,retired,5,False
+sdv-id-UCOXKY,23,M,55898,Alaska,single,master,retired,3,False
+sdv-id-duIlFh,46,F,28044,Michigan,divorced,phd,unemployed,5,False
+sdv-id-KCqacz,18,M,58651,Florida,widowed,phd,self_employed,1,True
+sdv-id-EBTcWe,19,M,67440,Florida,divorced,master,unemployed,4,False
+sdv-id-abzVOX,33,F,48465,Illinois,single,high_school,self_employed,4,True
+sdv-id-VugYvO,18,M,171017,Pennsylvania,married,phd,retired,1,True
+sdv-id-QLKcte,49,M,42998,Wisconsin,single,high_school,self_employed,5,True
+sdv-id-GeunHp,18,M,25672,Georgia,widowed,bachelor,self_employed,5,False
+sdv-id-mmZrft,47,M,55312,Louisiana,married,bachelor,unemployed,3,True
+sdv-id-BcrehJ,18,F,108688,Vermont,single,bachelor,retired,6,False
+sdv-id-cohoXU,18,F,169375,Kentucky,divorced,bachelor,unemployed,3,True
+sdv-id-NIuEwi,40,M,25672,Maine,divorced,bachelor,retired,5,True
+sdv-id-UZCdqb,18,M,64486,Alabama,single,master,unemployed,2,True
+sdv-id-zPqent,50,F,25672,Rhode Island,widowed,other,self_employed,4,False
+sdv-id-DjRgaT,18,F,123798,Maine,single,master,retired,1,False
+sdv-id-BtSxxY,33,M,42388,Iowa,divorced,high_school,unemployed,3,False
+sdv-id-JstOaa,20,F,25672,Alaska,widowed,bachelor,retired,3,True
+sdv-id-RKctjg,50,M,25672,Pennsylvania,single,bachelor,employed,6,False
+sdv-id-TKwzZj,70,F,25672,Massachusetts,married,high_school,self_employed,6,False
+sdv-id-fBOheB,18,M,33392,Georgia,married,high_school,self_employed,2,False
+sdv-id-oeDejP,44,M,34633,Kansas,widowed,master,retired,4,True
+sdv-id-qUZlvT,18,M,64455,Iowa,widowed,phd,self_employed,4,True
+sdv-id-nxkIQm,18,M,61665,Georgia,divorced,master,employed,5,True
+sdv-id-ENkTRr,27,M,36637,Kentucky,divorced,high_school,retired,5,True
+sdv-id-oaattd,18,M,75377,Iowa,divorced,bachelor,retired,4,True
+sdv-id-CymfWO,68,M,39689,Virginia,divorced,phd,self_employed,4,True
+sdv-id-EZPKzU,46,F,45682,Delaware,divorced,high_school,retired,4,False
+sdv-id-baikBU,71,F,25672,Minnesota,single,bachelor,unemployed,5,False
+sdv-id-YiPLUU,18,F,28513,New York,widowed,master,employed,6,True
+sdv-id-QNkTyo,30,M,47922,Arkansas,single,master,retired,4,True
+sdv-id-jHNOTy,39,F,127076,Connecticut,widowed,phd,employed,6,False
+sdv-id-CfYaia,18,F,52681,Vermont,single,master,employed,5,True
+sdv-id-TBbfVP,80,M,178449,Alabama,married,phd,retired,4,False
+sdv-id-vfZMZu,76,F,172874,Indiana,married,other,unemployed,4,True
+sdv-id-TiWyGm,52,M,67149,Nebraska,single,bachelor,employed,1,True
+sdv-id-pNZCbD,35,M,90035,West Virginia,divorced,bachelor,employed,1,False
+sdv-id-RHjwDx,63,F,25672,North Dakota,married,phd,self_employed,2,True
+sdv-id-hrPmGt,48,F,44961,Maryland,single,high_school,employed,6,False
+sdv-id-UPnTmF,36,M,25854,Kentucky,married,bachelor,retired,2,False
+sdv-id-mrZjzL,18,F,31076,Minnesota,married,bachelor,self_employed,6,False
+sdv-id-BCYlOD,18,F,25672,Arizona,divorced,high_school,self_employed,1,False
+sdv-id-nGVmzC,18,M,145327,Oregon,widowed,high_school,self_employed,5,True
+sdv-id-XTdVVh,18,F,74793,Louisiana,widowed,other,retired,4,False
+sdv-id-MJcBBR,26,F,158022,Missouri,single,bachelor,unemployed,5,False
+sdv-id-okhpjL,38,F,27686,Ohio,widowed,high_school,employed,6,False
+sdv-id-iUPdKK,35,F,100109,Vermont,single,high_school,unemployed,4,False
+sdv-id-aiiXBw,43,M,52670,California,married,phd,retired,6,False
+sdv-id-IGRrRk,18,F,144441,North Carolina,married,master,employed,5,True
+sdv-id-EafEZe,18,M,28258,California,widowed,high_school,unemployed,2,False
+sdv-id-mtuNDU,50,F,72048,Wyoming,married,high_school,employed,4,True
+sdv-id-zphlcF,80,F,145007,North Dakota,divorced,bachelor,employed,6,False
+sdv-id-mMUXki,42,M,35894,Rhode Island,married,bachelor,retired,2,False
+sdv-id-uuCUqS,22,F,146733,Connecticut,married,other,retired,5,False
+sdv-id-siGLrz,18,F,68805,Oklahoma,married,master,retired,2,False
+sdv-id-IcCTYr,51,M,37083,Alaska,married,other,unemployed,1,True
+sdv-id-QZUvTe,18,F,66454,Illinois,divorced,high_school,unemployed,3,True
+sdv-id-PfbYhz,23,F,57924,Colorado,divorced,other,self_employed,2,False
+sdv-id-XelbmI,18,M,50600,Maine,widowed,bachelor,retired,5,True
+sdv-id-OgKYvH,73,F,30877,Missouri,widowed,phd,self_employed,6,False
+sdv-id-JgtiHO,40,F,92698,New Jersey,single,bachelor,unemployed,5,True
+sdv-id-afVrCO,39,F,98901,Texas,single,other,retired,2,False
+sdv-id-WzgCYy,18,F,25672,California,widowed,other,retired,5,False
+sdv-id-zoDRYq,65,M,27397,New York,married,master,retired,2,True
+sdv-id-QQMiJF,41,M,178449,Virginia,divorced,high_school,employed,3,False

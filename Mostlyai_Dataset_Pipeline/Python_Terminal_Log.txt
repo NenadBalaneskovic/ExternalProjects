@@ -1,0 +1,154 @@
+Python Terminal Log:
+
+(py312) (py312) PS D:\Mostlyai_Dataset_Pipeline\mostlyai_gui> python main.py
+[19:33:32] INFO     Starting Data Privacy Workbench GUI...            main.py:37
+           INFO     Configuration loaded successfully.                main.py:42
+           INFO     AppWindow initialized.                      app_window.py:90
+           INFO     Main window displayed successfully.               main.py:61
+[19:33:48] INFO     Cleaning: Starting cleaning pipeline...      cleaning.py:182
+           INFO     Cleaning: Removed duplicates: 0              cleaning.py:182
+           INFO     Cleaning: Normalized type: 'age' → numeric   cleaning.py:182
+           INFO     Cleaning: Normalized type: 'income' →        cleaning.py:182
+                    numeric                                                     
+           INFO     Cleaning: Normalized type: 'household_size'  cleaning.py:182
+                    → numeric                                                   
+           INFO     Cleaning: Normalized type: 'owns_home' →     cleaning.py:182
+                    numeric                                                     
+           INFO     Cleaning: Cleaning pipeline completed.       cleaning.py:182
+[19:34:35] INFO     Starting anonymization pipeline...       anonymization.py:65
+           INFO     Anonymization: Masked column: name      anonymization.py:153
+           INFO     Anonymization: Masked column: age       anonymization.py:153
+           INFO     Anonymization: Masked column: gender    anonymization.py:153
+           INFO     Anonymization: Masked column: income    anonymization.py:153
+           INFO     Anonymization: Masked column: state     anonymization.py:153
+           INFO     Anonymization: Masked column:           anonymization.py:153
+                    marital_status                                              
+           INFO     Anonymization: Masked column: education anonymization.py:153
+           INFO     Anonymization: Masked column:           anonymization.py:153
+                    employment_status                                           
+           INFO     Anonymization: Masked column:           anonymization.py:153
+                    household_size                                              
+           INFO     Anonymization: Masked column: owns_home anonymization.py:153
+           INFO     Anonymization: Anonymization pipeline   anonymization.py:153
+                    completed.                                                  
+[19:35:08] INFO     Starting pseudonymization          pseudoanonymization.py:80
+                    pipeline...                                                 
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: name                                                
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: age                                                 
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: gender                                              
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: income                                              
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: state                                               
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: marital_status                                      
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: education                                           
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: employment_status                                   
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: household_size                                      
+           INFO     Pseudonymization: Pseudonymized   pseudoanonymization.py:184
+                    column: owns_home                                           
+           INFO     Pseudonymization:                 pseudoanonymization.py:184
+                    Pseudonymization pipeline                                   
+                    completed.                                                  
+[19:36:46] INFO     Synthetic (SDV): Preparing metadata for     synthetic.py:102
+                    dataset 'synthetic_model_generator'...                      
+           INFO     Detected metadata:                       single_table.py:811
+           INFO     {                                        single_table.py:812
+                        "primary_key": "name",                                  
+                        "columns": {                                            
+                            "name": {                                           
+                                "sdtype": "id"                                  
+                            },                                                  
+                            "age": {                                            
+                                "sdtype": "numerical"                           
+                            },                                                  
+                            "gender": {                                         
+                                "sdtype": "categorical"                         
+                            },                                                  
+                            "income": {                                         
+                                "sdtype": "numerical"                           
+                            },                                                  
+                            "state": {                                          
+                                "pii": true,                                    
+                                "sdtype":                                       
+                    "administrative_unit"                                       
+                            },                                                  
+                            "marital_status": {                                 
+                                "sdtype": "categorical"                         
+                            },                                                  
+                            "education": {                                      
+                                "sdtype": "categorical"                         
+                            },                                                  
+                            "employment_status": {                              
+                                "sdtype": "categorical"                         
+                            },                                                  
+                            "household_size": {                                 
+                                "sdtype": "categorical"                         
+                            },                                                  
+                            "owns_home": {                                      
+                                "sdtype": "categorical"                         
+                            }                                                   
+                        },                                                      
+                        "METADATA_SPEC_VERSION":                                
+                    "SINGLE_TABLE_V1"                                           
+                    }                                                           
+           INFO     Synthetic (SDV): Training SDV CTGAN model   synthetic.py:102
+                    'synthetic_model_generator'...                              
+C:\Users\Nenad Balaneskovic\.conda\envs\py312\Lib\site-packages\sdv\single_table\base.py:178: FutureWarning: The 'SingleTableMetadata' is deprecated. Please use the new 'Metadata' class for synthesizers.
+  warnings.warn(DEPRECATION_MSG, FutureWarning)
+C:\Users\Nenad Balaneskovic\.conda\envs\py312\Lib\site-packages\sdv\single_table\base.py:134: UserWarning: We strongly recommend saving the metadata using 'save_to_json' for replicability in future SDV versions.
+  warnings.warn(
+[19:36:52] INFO     {'EVENT': 'Instance', 'TIMESTAMP':               base.py:213
+                    datetime.datetime(2026, 5, 27, 19, 36, 52,                  
+                    380799), 'SYNTHESIZER CLASS NAME':                          
+                    'CTGANSynthesizer', 'SYNTHESIZER ID':                       
+                    'CTGANSynthesizer_1.36.3_c7742ce4993e40d782d4057            
+                    6fdb52d63'}                                                 
+           INFO     {'EVENT': 'Fit', 'TIMESTAMP':                    base.py:700
+                    datetime.datetime(2026, 5, 27, 19, 36, 52,                  
+                    384589), 'SYNTHESIZER CLASS NAME':                          
+                    'CTGANSynthesizer', 'SYNTHESIZER ID':                       
+                    'CTGANSynthesizer_1.36.3_c7742ce4993e40d782d4057            
+                    6fdb52d63', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL             
+                    NUMBER OF ROWS': 200, 'TOTAL NUMBER OF COLUMNS':            
+                    10}                                                         
+           INFO     Fitting table  metadata                data_processor.py:846
+           INFO     Fitting formatters for table           data_processor.py:850
+           INFO     Setting the configuration for the      data_processor.py:855
+                    ``HyperTransformer`` for table                              
+           INFO     Fitting HyperTransformer for table     data_processor.py:877
+           INFO     {'EVENT': 'Fit processed data', 'TIMESTAMP':     base.py:674
+                    datetime.datetime(2026, 5, 27, 19, 36, 52,                  
+                    609140), 'SYNTHESIZER CLASS NAME':                          
+                    'CTGANSynthesizer', 'SYNTHESIZER ID':                       
+                    'CTGANSynthesizer_1.36.3_c7742ce4993e40d782d4057            
+                    6fdb52d63', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL             
+                    NUMBER OF ROWS': 200, 'TOTAL NUMBER OF COLUMNS':            
+                    8}                                                          
+           INFO     Guidance: There are no missing values in column  null.py:119
+                    age. Extra column not created.                              
+[19:36:56] INFO     Guidance: There are no missing values in column  null.py:119
+                    income. Extra column not created.                           
+[19:37:04] INFO     Synthetic (SDV): Model                      synthetic.py:102
+                    'synthetic_model_generator' trained                         
+                    successfully.                                               
+[19:37:35] INFO     Synthetic (SDV): Generating 1000 synthetic  synthetic.py:102
+                    rows...                                                     
+           INFO     {'EVENT': 'Sample', 'TIMESTAMP':                base.py:1243
+                    datetime.datetime(2026, 5, 27, 19, 37, 35,                  
+                    199954), 'SYNTHESIZER CLASS NAME':                          
+                    'CTGANSynthesizer', 'SYNTHESIZER ID':                       
+                    'CTGANSynthesizer_1.36.3_c7742ce4993e40d782d405             
+                    76fdb52d63', 'TOTAL NUMBER OF TABLES': 1,                   
+                    'TOTAL NUMBER OF ROWS': 1000, 'TOTAL NUMBER OF              
+                    COLUMNS': 10}                                               
+           INFO     Synthetic (SDV): Synthetic data generation  synthetic.py:102
+                    completed.                                                  
+[19:50:50] INFO     Application closed gracefully.                    main.py:74
+(py312) (py312) PS D:\Mostlyai_Dataset_Pipeline\mostlyai_gui> 
