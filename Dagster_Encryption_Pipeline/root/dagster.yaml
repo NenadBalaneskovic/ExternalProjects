@@ -1,0 +1,15 @@
+telemetry:
+  enabled: true
+
+python_logs:
+  dagster_handler_config:
+    handlers:
+      console:
+        class: logging.StreamHandler
+        level: INFO
+    formatters:
+      default:
+        format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    filters: {}
+  python_log_level: INFO
+
