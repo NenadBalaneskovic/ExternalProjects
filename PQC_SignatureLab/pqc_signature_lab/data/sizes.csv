@@ -1,0 +1,4 @@
+algorithm,signature_length
+ecdsa,70
+dilithium3,3309
+falcon512,660

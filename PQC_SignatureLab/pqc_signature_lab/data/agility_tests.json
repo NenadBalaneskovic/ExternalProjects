@@ -1,0 +1,20 @@
+[
+  {
+    "algorithm": "ecdsa",
+    "sign_time": 0.00670056399940222,
+    "verify_time": 0.00010944200039375573,
+    "signature_length": 70
+  },
+  {
+    "algorithm": "dilithium3",
+    "sign_time": 0.000278880001133075,
+    "verify_time": 7.456499952240847e-05,
+    "signature_length": 3309
+  },
+  {
+    "algorithm": "falcon512",
+    "sign_time": 0.00024984899937408045,
+    "verify_time": 7.850599831726868e-05,
+    "signature_length": 653
+  }
+]
