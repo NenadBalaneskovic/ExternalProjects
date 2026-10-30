@@ -1,0 +1,1610 @@
+# generator/app.py
+
+import sys
+from PySide6.QtWidgets import QApplication
+from generator.gui.main_window import MainWindow
+
+
+def main():
+    """
+    Entry point for the Telemetry Generator GUI.
+
+    Responsibilities:
+        - Create the Qt application
+        - Instantiate MainWindow
+        - Show the GUI
+        - Start the Qt event loop
+    """
+    import os
+    print("GENERATOR GUI PID:", os.getpid())
+    app = QApplication(sys.argv)
+
+    window = MainWindow()
+    window.show()
+
+    sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    main()
+	
+#------------------------
+
+# generator/gui/main_window.py
+
+from PySide6.QtWidgets import (
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QSplitter
+)
+from PySide6.QtCore import Qt
+
+from .schema_panel import SchemaPanel
+from .settings_panel import SettingsPanel
+from .preview_panel import PreviewPanel
+from .status_bar import StatusBar
+
+from ..core.generator import TelemetryGenerator
+
+
+class MainWindow(QMainWindow):
+    """
+    Main GUI window for the Telemetry Generator.
+    Assembles all panels, manages layout, and orchestrates
+    communication between GUI widgets and the generator backend.
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Telemetry Data Generator")
+        self.setMinimumSize(1200, 700)
+
+        # --- Panels ---
+        self.schema_panel = SchemaPanel()
+        self.settings_panel = SettingsPanel()
+        self.preview_panel = PreviewPanel()
+        self.status_bar = StatusBar()
+
+        # --- Generator backend (initialized later) ---
+        self.generator = None
+
+        # --- Layout ---
+        self._build_layout()
+
+        # --- Connections ---
+        self._connect_signals()
+
+    # ---------------------------------------------------------
+    # Layout Assembly
+    # ---------------------------------------------------------
+    def _build_layout(self):
+        """
+        Creates the main layout using a horizontal splitter:
+        [Schema Panel | Settings Panel | Live Preview Panel]
+        """
+        central_widget = QWidget()
+        main_layout = QVBoxLayout()
+
+        splitter = QSplitter(Qt.Horizontal)
+        splitter.addWidget(self.schema_panel)
+        splitter.addWidget(self.settings_panel)
+        splitter.addWidget(self.preview_panel)
+
+        splitter.setSizes([300, 300, 600])  # initial proportions
+
+        main_layout.addWidget(splitter)
+        main_layout.addWidget(self.status_bar)
+
+        central_widget.setLayout(main_layout)
+        self.setCentralWidget(central_widget)
+
+    # ---------------------------------------------------------
+    # Signal Connections
+    # ---------------------------------------------------------
+    def _connect_signals(self):
+        """
+        Connects GUI events to backend logic.
+        """
+        print("CONNECTING SIGNALS")
+        self.settings_panel.generate_clicked.connect(self._start_generation)
+
+        # NEW: update GB label when slider moves
+        self.settings_panel.size_slider.valueChanged.connect(
+            self.settings_panel.update_size_label
+        )
+
+    # ---------------------------------------------------------
+    # Generation Logic
+    # ---------------------------------------------------------
+    def _start_generation(self):
+        """
+        Triggered when the user presses the 'Generate' button.
+        Collects schema + settings, initializes the generator backend,
+        and starts the simulation loop.
+        """
+        print("START_GENERATION CALLED")
+        try:
+            schema = self.schema_panel.get_schema()
+            config = self.settings_panel.get_config()
+            print("SCHEMA:", schema)
+            print("CONFIG:", config)
+
+            self.generator = TelemetryGenerator(
+                schema=schema,
+                config=config,
+                preview_callback=self.preview_panel.update_preview,
+                progress_callback=self.status_bar.update_progress,
+                alert_callback=self.status_bar.show_alert
+            )
+
+            self.status_bar.show_message("Starting data generation...")
+            self.generator.start()
+            print("GENERATOR START CALLED")
+        except Exception as e:
+            print("ERROR IN _start_generation:", e)
+            import traceback
+            traceback.print_exc()
+
+
+    # ---------------------------------------------------------
+    # Cleanup
+    # ---------------------------------------------------------
+    def closeEvent(self, event):
+        """
+        Ensures generator thread stops cleanly when window closes.
+        """
+        if self.generator:
+            self.generator.stop()
+        event.accept()
+		
+#------------------------------------
+
+# generator/gui/preview_panel.py
+
+import numpy as np
+from collections import deque
+
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QLabel, QComboBox
+from PySide6.QtCore import Qt
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+
+class PreviewPanel(QWidget):
+    MAX_POINTS = 500
+
+    def __init__(self):
+        super().__init__()
+
+        self.setMinimumWidth(400)
+
+        self.buffers = {}
+        self.current_column = None
+
+        self._build_ui()
+        self._setup_plot()
+
+    # ---------------------------------------------------------
+    # UI
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        group = QGroupBox("Live Preview")
+        group_layout = QVBoxLayout()
+
+        self.column_selector = QComboBox()
+        self.column_selector.currentTextChanged.connect(self._change_column)
+
+        group_layout.addWidget(QLabel("Preview Column:"))
+        group_layout.addWidget(self.column_selector)
+
+        self.figure = Figure(figsize=(5, 3))
+        self.canvas = FigureCanvas(self.figure)
+
+        group_layout.addWidget(self.canvas)
+        group.setLayout(group_layout)
+
+        layout.addWidget(group)
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Plot Setup
+    # ---------------------------------------------------------
+    def _setup_plot(self):
+        self.ax = self.figure.add_subplot(111)
+        self.ax.set_title("Live Data Stream")
+        self.ax.set_xlabel("Samples")
+        self.ax.set_ylabel("Value")
+        self.line, = self.ax.plot([], [], lw=2)
+        self.ax.grid(True)
+        # Ensure labels and titles are fully visible
+        self.figure.tight_layout()
+
+    # ---------------------------------------------------------
+    # Column Selection
+    # ---------------------------------------------------------
+    def set_available_columns(self, columns, sample_row=None):
+        """
+        Populate dropdown with numeric-only columns.
+        sample_row: a dict from the preview callback (one row of data)
+        """
+        self.column_selector.clear()
+
+        numeric_cols = []
+
+        for col in columns:
+            if sample_row is None:
+                # Fallback: assume numeric until proven otherwise
+                numeric_cols.append(col)
+            else:
+                val = sample_row.get(col)
+                if isinstance(val, (int, float, np.number)):
+                    numeric_cols.append(col)
+
+        for col in numeric_cols:
+            self.column_selector.addItem(col)
+
+        if numeric_cols:
+            self.current_column = numeric_cols[0]
+
+    def _change_column(self, col_name):
+        self.current_column = col_name
+
+        if col_name not in self.buffers:
+            self.buffers[col_name] = deque(maxlen=self.MAX_POINTS)
+
+        # Reset the line only — do NOT clear axes
+        self.line.set_data([], [])
+
+        self.ax.set_title(f"Live Data Stream: {col_name}")
+        self.ax.set_ylabel(col_name)
+
+        self.canvas.draw()
+
+    # ---------------------------------------------------------
+    # Preview Update
+    # ---------------------------------------------------------
+    def update_preview(self, data_dict):
+        if not data_dict:
+            return
+
+        # Initialize dropdown on first update
+        if self.column_selector.count() == 0:
+           self.set_available_columns(list(data_dict.keys()), sample_row=data_dict)
+
+        if not self.current_column:
+            return
+
+        if self.current_column not in data_dict:
+            return
+
+        value = data_dict[self.current_column]
+
+        # Initialize buffer if needed
+        if self.current_column not in self.buffers:
+            self.buffers[self.current_column] = deque(maxlen=self.MAX_POINTS)
+
+        self.buffers[self.current_column].append(value)
+
+        y = list(self.buffers[self.current_column])
+        x = list(range(len(y)))
+
+        # Update the existing line — do NOT clear axes
+        self.line.set_data(x, y)
+
+        # Adjust axes limits
+        self.ax.set_xlim(max(0, len(y) - self.MAX_POINTS), max(self.MAX_POINTS, len(y)))
+
+        y_min = min(y)
+        y_max = max(y)
+        if y_max == y_min:
+            y_max = y_min + 1.0
+        self.ax.set_ylim(y_min - 1, y_max + 1)
+
+        self.canvas.draw()
+		
+#---------------------------
+
+# generator/gui/schema_panel.py
+
+from PySide6.QtWidgets import (
+    QWidget, QVBoxLayout, QGroupBox, QCheckBox, QLabel
+)
+from PySide6.QtCore import Qt
+
+
+class SchemaPanel(QWidget):
+    """
+    Panel containing the 15 predefined telemetry column checkboxes.
+    Columns are grouped into:
+        - Numeric Sensors
+        - Categorical / Boolean
+        - Auxiliary (timestamp, logs, cycle counter)
+
+    Provides:
+        get_schema() -> list of dicts describing selected columns
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self.setMinimumWidth(280)
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        # --- Numeric Sensors ---
+        numeric_group = QGroupBox("Numeric Sensors")
+        numeric_layout = QVBoxLayout()
+        self.cb_temperature = QCheckBox("Temperature")
+        self.cb_rpm = QCheckBox("Motor RPM")
+        self.cb_vibration = QCheckBox("Vibration Level")
+        self.cb_power = QCheckBox("Power Consumption")
+        self.cb_voltage = QCheckBox("Voltage")
+        self.cb_current = QCheckBox("Current")
+        self.cb_pressure = QCheckBox("Pressure / Load")
+        self.cb_noise = QCheckBox("Noise Level")
+
+        for cb in [
+            self.cb_temperature, self.cb_rpm, self.cb_vibration,
+            self.cb_power, self.cb_voltage, self.cb_current,
+            self.cb_pressure, self.cb_noise
+        ]:
+            numeric_layout.addWidget(cb)
+
+        numeric_group.setLayout(numeric_layout)
+        layout.addWidget(numeric_group)
+
+        # --- Categorical / Boolean ---
+        categorical_group = QGroupBox("Categorical / Boolean")
+        categorical_layout = QVBoxLayout()
+        self.cb_onoff = QCheckBox("Device On/Off")
+        self.cb_mode = QCheckBox("Operating Mode")
+        self.cb_error = QCheckBox("Error Code")
+        self.cb_interlock = QCheckBox("Safety Interlock")
+
+        for cb in [
+            self.cb_onoff, self.cb_mode,
+            self.cb_error, self.cb_interlock
+        ]:
+            categorical_layout.addWidget(cb)
+
+        categorical_group.setLayout(categorical_layout)
+        layout.addWidget(categorical_group)
+
+        # --- Auxiliary ---
+        auxiliary_group = QGroupBox("Auxiliary Columns")
+        auxiliary_layout = QVBoxLayout()
+        self.cb_timestamp = QCheckBox("Timestamp")
+        self.cb_log = QCheckBox("Log Message")
+        self.cb_cycle = QCheckBox("Cycle Counter")
+
+        for cb in [
+            self.cb_timestamp, self.cb_log, self.cb_cycle
+        ]:
+            auxiliary_layout.addWidget(cb)
+
+        auxiliary_group.setLayout(auxiliary_layout)
+        layout.addWidget(auxiliary_group)
+
+        layout.addStretch()
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Schema Extraction
+    # ---------------------------------------------------------
+    def get_schema(self):
+        """
+        Returns a list of dictionaries describing the selected columns.
+        Each entry has:
+            - name: column name
+            - type: float/int/categorical/boolean/text
+            - generator: name of simulation function (string)
+            - optional metadata (unit, categories)
+
+        This schema is consumed by:
+            - TelemetryGenerator
+            - config_writer (to write config.json)
+        """
+        schema = []
+
+        # Numeric sensors
+        if self.cb_temperature.isChecked():
+            schema.append({
+                "name": "Temperature",
+                "type": "float",
+                "unit": "Celsius",
+                "generator": "simulate_temperature"
+            })
+        if self.cb_rpm.isChecked():
+            schema.append({
+                "name": "Motor RPM",
+                "type": "int",
+                "unit": "rpm",
+                "generator": "simulate_rpm"
+            })
+        if self.cb_vibration.isChecked():
+            schema.append({
+                "name": "Vibration Level",
+                "type": "float",
+                "unit": "m/s2",
+                "generator": "simulate_vibration"
+            })
+        if self.cb_power.isChecked():
+            schema.append({
+                "name": "Power Consumption",
+                "type": "float",
+                "unit": "W",
+                "generator": "simulate_power"
+            })
+        if self.cb_voltage.isChecked():
+            schema.append({
+                "name": "Voltage",
+                "type": "float",
+                "unit": "V",
+                "generator": "simulate_voltage"
+            })
+        if self.cb_current.isChecked():
+            schema.append({
+                "name": "Current",
+                "type": "float",
+                "unit": "A",
+                "generator": "simulate_current"
+            })
+        if self.cb_pressure.isChecked():
+            schema.append({
+                "name": "Pressure / Load",
+                "type": "float",
+                "unit": "arb",
+                "generator": "simulate_pressure"
+            })
+        if self.cb_noise.isChecked():
+            schema.append({
+                "name": "Noise Level",
+                "type": "float",
+                "unit": "dB",
+                "generator": "simulate_noise"
+            })
+
+        # Categorical / Boolean
+        if self.cb_onoff.isChecked():
+            schema.append({
+                "name": "Device On/Off",
+                "type": "boolean",
+                "generator": "simulate_onoff"
+            })
+        if self.cb_mode.isChecked():
+            schema.append({
+                "name": "Operating Mode",
+                "type": "categorical",
+                "categories": ["Idle", "Low", "High"],
+                "generator": "simulate_mode"
+            })
+        if self.cb_error.isChecked():
+            schema.append({
+                "name": "Error Code",
+                "type": "categorical",
+                "categories": ["None", "Minor", "Major"],
+                "generator": "simulate_error"
+            })
+        if self.cb_interlock.isChecked():
+            schema.append({
+                "name": "Safety Interlock",
+                "type": "boolean",
+                "generator": "simulate_interlock"
+            })
+
+        # Auxiliary
+        if self.cb_timestamp.isChecked():
+            schema.append({
+                "name": "Timestamp",
+                "type": "timestamp",
+                "format": "ISO8601",
+                "generator": "simulate_timestamp"
+            })
+        if self.cb_log.isChecked():
+            schema.append({
+                "name": "Log Message",
+                "type": "text",
+                "generator": "simulate_log"
+            })
+        if self.cb_cycle.isChecked():
+            schema.append({
+                "name": "Cycle Counter",
+                "type": "int",
+                "generator": "simulate_cycle"
+            })
+
+        return schema
+		
+#--------------------------------
+
+# generator/gui/settings_panel.py
+
+from PySide6.QtWidgets import (
+    QWidget,
+    QGroupBox,
+    QVBoxLayout,
+    QHBoxLayout,
+    QLabel,
+    QSpinBox,
+    QLineEdit,
+    QPushButton,
+    QRadioButton,
+    QSlider,
+)
+from PySide6.QtCore import Qt, Signal
+
+
+class SettingsPanel(QWidget):
+    """
+    Settings panel for the Telemetry Generator.
+
+    Responsibilities:
+        - Configure row count
+        - Configure file format (CSV / Parquet)
+        - Configure target file size (GB)
+        - Configure sampling frequency
+        - Emit 'generate_clicked' when user presses Generate
+    """
+
+    generate_clicked = Signal()
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        # -----------------------------------------------------
+        # Row Count
+        # -----------------------------------------------------
+        row_group = QGroupBox("Row Count")
+        row_layout = QVBoxLayout()
+
+        self.row_spin = QSpinBox()
+        self.row_spin.setRange(1_000, 100_000_000)
+        self.row_spin.setValue(10_000_000)
+
+        row_layout.addWidget(QLabel("Number of rows:"))
+        row_layout.addWidget(self.row_spin)
+        row_group.setLayout(row_layout)
+
+        # -----------------------------------------------------
+        # File Format
+        # -----------------------------------------------------
+        format_group = QGroupBox("File Format")
+        format_layout = QVBoxLayout()
+
+        self.csv_radio = QRadioButton("CSV")
+        self.parquet_radio = QRadioButton("Parquet")
+        self.csv_radio.setChecked(True)
+
+        format_layout.addWidget(self.csv_radio)
+        format_layout.addWidget(self.parquet_radio)
+        format_group.setLayout(format_layout)
+
+        # -----------------------------------------------------
+        # Target File Size (GB)
+        # -----------------------------------------------------
+        size_group = QGroupBox("Target File Size")
+        size_layout = QVBoxLayout()
+
+        self.size_slider = QSlider(Qt.Horizontal)
+        self.size_slider.setRange(1, 50)   # 1–50 GB
+        self.size_slider.setValue(10)
+
+        self.size_label = QLabel("10 GB")
+
+        # Connect slider to label update
+        self.size_slider.valueChanged.connect(self.update_size_label)
+
+        size_layout.addWidget(QLabel("Desired file size:"))
+        size_layout.addWidget(self.size_slider)
+        size_layout.addWidget(self.size_label)
+        size_group.setLayout(size_layout)
+
+        # -----------------------------------------------------
+        # Sampling Frequency
+        # -----------------------------------------------------
+        freq_group = QGroupBox("Sampling Frequency")
+        freq_layout = QVBoxLayout()
+
+        self.freq_spin = QSpinBox()
+        self.freq_spin.setRange(1, 10_000)
+        self.freq_spin.setValue(10)
+        self.freq_spin.setSuffix(" Hz")
+
+        freq_layout.addWidget(QLabel("Frequency (Hz):"))
+        freq_layout.addWidget(self.freq_spin)
+        freq_group.setLayout(freq_layout)
+
+        # -----------------------------------------------------
+        # Generate Button
+        # -----------------------------------------------------
+        self.generate_btn = QPushButton("Generate")
+        self.generate_btn.clicked.connect(self._on_generate_clicked) 
+
+        # -----------------------------------------------------
+        # Assemble Layout
+        # -----------------------------------------------------
+        layout.addWidget(row_group)
+        layout.addWidget(format_group)
+        layout.addWidget(size_group)
+        layout.addWidget(freq_group)
+        layout.addWidget(self.generate_btn)
+        layout.addStretch()
+
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Slider Label Update
+    # ---------------------------------------------------------
+    def update_size_label(self, value):
+        """
+        Updates the GB label next to the file size slider.
+        """
+        self.size_label.setText(f"{value} GB")
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def get_config(self) -> dict:
+        """
+        Returns a dictionary with all generator settings.
+        """
+        return {
+            "rows": self.row_spin.value(),
+            "file_format": "csv" if self.csv_radio.isChecked() else "parquet",
+            "target_gb": self.size_slider.value(),
+            "frequency_hz": self.freq_spin.value(),
+        }
+        
+    def _on_generate_clicked(self):
+        print("GENERATE BUTTON CLICKED")
+        self.generate_clicked.emit()
+		
+#---------------------------------
+
+# generator/gui/status_bar.py
+
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QProgressBar
+from PySide6.QtCore import Qt
+
+
+class StatusBar(QWidget):
+    """
+    Status bar for the Telemetry Generator GUI.
+    Displays:
+        - Progress bar (file size or rows written)
+        - Status message (e.g., 'Generating...', 'Chunk written')
+        - Alerts from the generator backend
+
+    Methods:
+        update_progress(percent, message)
+        show_message(text)
+        show_alert(text)
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QHBoxLayout()
+
+        # Progress bar
+        self.progress = QProgressBar()
+        self.progress.setRange(0, 100)
+        self.progress.setValue(0)
+        self.progress.setFormat("0%")
+        self.progress.setTextVisible(True)
+
+        # Status message label
+        self.message_label = QLabel("Ready.")
+        self.message_label.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+        # Alert label
+        self.alert_label = QLabel("")
+        self.alert_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        self.alert_label.setStyleSheet("color: red; font-weight: bold;")
+
+        layout.addWidget(self.progress, stretch=2)
+        layout.addWidget(self.message_label, stretch=3)
+        layout.addWidget(self.alert_label, stretch=2)
+
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def update_progress(self, percent: float, message: str = ""):
+        """
+        Updates the progress bar and optional message.
+
+        Args:
+            percent (float): 0–100 progress value
+            message (str): Optional status message
+        """
+        p = int(percent)
+        self.progress.setValue(p)
+
+        # Show percentage inside the bar
+        self.progress.setFormat(f"{p}%")
+
+        # Optional external message label
+        if message:
+            self.message_label.setText(message)
+
+    def show_message(self, text: str):
+        """
+        Shows a neutral status message.
+        """
+        self.message_label.setText(text)
+        self.alert_label.setText("")
+
+    def show_alert(self, text: str):
+        """
+        Shows an alert message (e.g., from alert socket).
+        """
+        self.alert_label.setText(text)
+		
+#--------------------------------
+
+# generator/core/alert_socket.py
+
+import json
+import socket
+import threading
+from typing import Dict, Any
+
+
+class AlertSocketClient:
+    """
+    Lightweight non-blocking client for sending JSON alerts
+    from the Generator to the Analyzer.
+
+    Alerts include:
+        - "generator_started"
+        - "chunk_written"
+        - "generation_complete"
+        - "file_size_limit_reached"
+        - custom messages
+
+    The Analyzer listens on (host, port) and receives these events.
+
+    Parameters:
+        host: str
+            Target host (default: "127.0.0.1")
+        port: int
+            Target port (default: 5050)
+        enabled: bool
+            Whether socket alerts are enabled
+    """
+
+    def __init__(self, host: str, port: int, enabled: bool = True):
+        self.host = host
+        self.port = port
+        self.enabled = enabled
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def send_alert(self, event: str, payload: Dict[str, Any] | None = None):
+        """
+        Sends an alert asynchronously to avoid blocking the generator loop.
+
+        Args:
+            event: str
+                Name of the event (e.g., "chunk_written")
+            payload: dict
+                Additional data to send (optional)
+        """
+        if not self.enabled:
+            return
+
+        message = {
+            "event": event,
+            "payload": payload or {}
+        }
+
+        # Send in background thread
+        thread = threading.Thread(
+            target=self._send_message,
+            args=(message,),
+            daemon=True
+        )
+        thread.start()
+
+    # ---------------------------------------------------------
+    # Internal Socket Logic
+    # ---------------------------------------------------------
+    def _send_message(self, message: Dict[str, Any]):
+        """
+        Sends a single JSON message over TCP.
+        """
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.settimeout(0.5)  # avoid blocking
+                s.connect((self.host, self.port))
+                s.sendall(json.dumps(message).encode("utf-8"))
+        except Exception:
+            # Silent fail — alerts are optional and must not break generation
+            pass
+			
+#---------------------------
+
+# generator/core/column_models.py
+
+import numpy as np
+import random
+from datetime import datetime, timedelta
+
+
+# ---------------------------------------------------------
+# Helper functions
+# ---------------------------------------------------------
+
+def _smooth_noise(n, scale=1.0):
+    """Generates smooth noise using cumulative sum of Gaussian noise."""
+    return np.cumsum(np.random.normal(0, scale, n))
+
+
+def _bounded(values, low, high):
+    """Clips values to a given range."""
+    return np.clip(values, low, high)
+
+
+# ---------------------------------------------------------
+# Numeric Sensor Models
+# ---------------------------------------------------------
+
+def simulate_temperature(n, col, config):
+    """
+    Temperature fluctuates slowly with smooth noise and slight drift.
+    """
+    base = 40 + _smooth_noise(n, scale=0.05)
+    return _bounded(base, 20, 90)
+
+
+def simulate_rpm(n, col, config):
+    """
+    Motor RPM oscillates around a nominal value with periodic variation.
+    """
+    t = np.linspace(0, 4 * np.pi, n)
+    base = 1500 + 200 * np.sin(t) + np.random.normal(0, 20, n)
+    return _bounded(base, 0, 6000).astype(int)
+
+
+def simulate_vibration(n, col, config):
+    """
+    Vibration level: low baseline with occasional spikes.
+    """
+    base = np.abs(np.random.normal(0.2, 0.05, n))
+    spikes = np.random.choice([0, 1], size=n, p=[0.98, 0.02]) * np.random.uniform(1, 3, n)
+    return base + spikes
+
+
+def simulate_power(n, col, config):
+    """
+    Power consumption correlates with RPM + noise.
+    """
+    rpm = simulate_rpm(n, col, config)
+    power = 0.02 * rpm + np.random.normal(0, 5, n)
+    return _bounded(power, 0, 5000)
+
+
+def simulate_voltage(n, col, config):
+    """
+    Voltage: stable with tiny noise.
+    """
+    return 230 + np.random.normal(0, 0.5, n)
+
+
+def simulate_current(n, col, config):
+    """
+    Current: correlated with power consumption.
+    """
+    power = simulate_power(n, col, config)
+    current = power / 230 + np.random.normal(0, 0.1, n)
+    return _bounded(current, 0, 50)
+
+
+def simulate_pressure(n, col, config):
+    """
+    Pressure/load: slow drift + noise.
+    """
+    base = 50 + _smooth_noise(n, scale=0.1)
+    return _bounded(base, 0, 200)
+
+
+def simulate_noise(n, col, config):
+    """
+    Noise level: random with occasional peaks.
+    """
+    base = np.random.normal(40, 2, n)
+    peaks = np.random.choice([0, 1], size=n, p=[0.97, 0.03]) * np.random.uniform(10, 20, n)
+    return base + peaks
+
+
+# ---------------------------------------------------------
+# Categorical / Boolean Models
+# ---------------------------------------------------------
+
+def simulate_onoff(n, col, config):
+    """Boolean on/off with 90% uptime."""
+    return np.random.choice([0, 1], size=n, p=[0.1, 0.9])
+
+
+def simulate_mode(n, col, config):
+    """Operating mode: Idle, Low, High."""
+    categories = col.get("categories", ["Idle", "Low", "High"])
+    probs = [0.2, 0.5, 0.3]
+    return np.random.choice(categories, size=n, p=probs)
+
+
+def simulate_error(n, col, config):
+    """Error code: None, Minor, Major."""
+    categories = col.get("categories", ["None", "Minor", "Major"])
+    probs = [0.95, 0.04, 0.01]
+    return np.random.choice(categories, size=n, p=probs)
+
+
+def simulate_interlock(n, col, config):
+    """Safety interlock: mostly off."""
+    return np.random.choice([0, 1], size=n, p=[0.98, 0.02])
+
+
+# ---------------------------------------------------------
+# Auxiliary Models
+# ---------------------------------------------------------
+
+def simulate_timestamp(n, col, config):
+    """
+    Generates ISO8601 timestamps at the sampling frequency.
+    """
+    freq_hz = config.get("frequency_hz", 10)
+    dt = 1.0 / freq_hz
+
+    start = datetime.utcnow()
+    return [
+        (start + timedelta(seconds=i * dt)).isoformat()
+        for i in range(n)
+    ]
+
+
+def simulate_log(n, col, config):
+    """
+    Generates simple log messages.
+    """
+    messages = [
+        "System OK",
+        "Temperature stable",
+        "RPM nominal",
+        "Minor fluctuation detected",
+        "Sensor check passed",
+        "No anomalies detected"
+    ]
+    return np.random.choice(messages, size=n)
+
+
+def simulate_cycle(n, col, config):
+    """
+    Monotonically increasing cycle counter.
+    """
+    return np.arange(n)
+
+
+# ---------------------------------------------------------
+# Lookup Table
+# ---------------------------------------------------------
+
+COLUMN_MODEL_MAP = {
+    "simulate_temperature": simulate_temperature,
+    "simulate_rpm": simulate_rpm,
+    "simulate_vibration": simulate_vibration,
+    "simulate_power": simulate_power,
+    "simulate_voltage": simulate_voltage,
+    "simulate_current": simulate_current,
+    "simulate_pressure": simulate_pressure,
+    "simulate_noise": simulate_noise,
+
+    "simulate_onoff": simulate_onoff,
+    "simulate_mode": simulate_mode,
+    "simulate_error": simulate_error,
+    "simulate_interlock": simulate_interlock,
+
+    "simulate_timestamp": simulate_timestamp,
+    "simulate_log": simulate_log,
+    "simulate_cycle": simulate_cycle,
+}
+
+#----------------------------------
+
+# generator/core/config_writer.py
+
+import json
+from typing import Dict, Any
+
+
+def write_config(config: Dict[str, Any], schema: Any, output_path: str):
+    """
+    Writes the shared config.json for the Analyzer.
+
+    Expected structure (new schema):
+    {
+        "output": {
+            "file_path": "...",
+            "file_format": "...",
+            "estimated_size_gb": ...,
+            "chunk_size_rows": ...
+        },
+        "sampling": {
+            "frequency_hz": ...
+        },
+        "schema": {
+            "columns": [...]
+        },
+        "alerts": {
+            "socket_enabled": true,
+            "socket_host": "127.0.0.1",
+            "socket_port": 5050
+        }
+    }
+    """
+
+    config_dict = {
+        "output": {
+            "file_path": config["output"]["file_path"],
+            "file_format": config["output"]["file_format"],
+            "estimated_size_gb": config["output"]["estimated_size_gb"],
+            "chunk_size_rows": config["output"]["chunk_size_rows"],
+        },
+        "sampling": {
+            "frequency_hz": config["sampling"]["frequency_hz"],
+        },
+        "schema": {
+            "columns": schema,
+        },
+        "alerts": config["alerts"],
+    }
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(config_dict, f, indent=4)
+		
+#--------------------------------------
+
+# generator/core/generator.py
+
+import threading
+import time
+from typing import Callable, List, Dict, Any
+
+import numpy as np
+import pandas as pd
+
+from .column_models import COLUMN_MODEL_MAP
+from .writer import ChunkWriter
+from .config_writer import write_config
+from ..utils.file_tracker import FileTracker
+
+
+class TelemetryGenerator:
+    """
+    Backend engine for telemetry data generation.
+
+    Responsibilities:
+        - Run a generation loop in a background thread
+        - Use schema + config to simulate rows in chunks
+        - Write chunks to disk (CSV/Parquet)
+        - Send small samples to preview callback
+        - Update progress via progress callback
+        - Emit alerts via alert callback
+        - Write shared config.json for the analyzer
+    """
+
+    def __init__(
+        self,
+        schema: List[Dict[str, Any]],
+        config: Dict[str, Any],
+        preview_callback: Callable[[Dict[str, Any]], None],
+        progress_callback: Callable[[float, str], None],
+        alert_callback: Callable[[str], None],
+    ):
+        print("GENERATOR INITIALIZED")
+
+        self.schema = schema
+        self.config = config
+        self.preview_callback = preview_callback
+        self.progress_callback = progress_callback
+        self.alert_callback = alert_callback
+
+        self._stop_flag = threading.Event()
+        self._thread: threading.Thread | None = None
+
+        # ---------------------------------------------------------
+        # Normalize config keys (SettingsPanel → Generator backend)
+        # ---------------------------------------------------------
+        self.total_rows = config["rows"]
+        self.file_format = config["file_format"]
+        self.frequency_hz = config["frequency_hz"]
+        self.target_gb = config["target_gb"]
+
+        # Chunk size: fixed or dynamic
+        self.chunk_size = 10_000
+
+        # Output file path
+        self.output_path = (
+            "telemetry_output.csv"
+            if self.file_format == "csv"
+            else "telemetry_output.parquet"
+        )
+
+        # ---------------------------------------------------------
+        # Writer for CSV/Parquet
+        # ---------------------------------------------------------
+        self.writer = ChunkWriter(
+            file_path=self.output_path,
+            file_format=self.file_format,
+            chunk_size_rows=self.chunk_size,
+        )
+
+        # File tracker for progress estimation
+        self.file_tracker = FileTracker(self.output_path)
+
+        # ---------------------------------------------------------
+        # Write shared config.json for Analyzer
+        # ---------------------------------------------------------
+        analyzer_config = {
+            "output": {
+                "file_path": self.output_path,
+                "file_format": self.file_format,
+                "estimated_size_gb": self.target_gb,
+                "chunk_size_rows": self.chunk_size,
+            },
+            "sampling": {
+                "frequency_hz": self.frequency_hz,
+            },
+            "schema": {
+                "columns": self.schema,
+            },
+            "alerts": {
+                "socket_enabled": True,
+                "socket_host": "127.0.0.1",
+                "socket_port": 5050,
+            },
+        }
+
+        write_config(
+            config=analyzer_config,
+            schema=self.schema,
+            output_path="config.json",
+        )
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def start(self):
+        """Starts the generation loop in a background thread."""
+        if self._thread and self._thread.is_alive():
+            return
+
+        self._stop_flag.clear()
+        self._thread = threading.Thread(
+            target=self._run_loop_safe,
+            daemon=True,
+        )
+        self._thread.start()
+        self.alert_callback("Generator started")
+
+    def _run_loop_safe(self):
+        """Wrapper to catch and report exceptions from the generator thread."""
+        import os
+        print("GENERATOR THREAD PID:", os.getpid())
+        try:
+            print("ENTERING RUN LOOP")
+            self._run_loop()
+        except Exception as e:
+            print("GENERATOR THREAD CRASHED:", e)
+            import traceback
+            traceback.print_exc()
+            self.alert_callback(f"Generator crashed: {e}")
+
+    def stop(self):
+        """Signals the generation loop to stop and waits for thread to finish."""
+        self._stop_flag.set()
+        if self._thread and self._thread.is_alive():
+            self._thread.join()
+        self.alert_callback("Generator stopped")
+
+    # ---------------------------------------------------------
+    # Internal Loop
+    # ---------------------------------------------------------
+    def _run_loop(self):
+        """Main generation loop."""
+        rows_generated = 0
+        sleep_interval = 1.0 / self.frequency_hz if self.frequency_hz > 0 else 0.0
+
+        # Throttle preview updates (20 FPS max)
+        last_preview_time = time.time()
+
+        while not self._stop_flag.is_set() and rows_generated < self.total_rows:
+            print("RUN LOOP STARTED")
+            rows_to_generate = min(self.chunk_size, self.total_rows - rows_generated)
+
+            df_chunk = self._generate_chunk(rows_to_generate)
+
+            # Write to disk
+            self.writer.write_chunk(df_chunk)
+
+            rows_generated += rows_to_generate
+
+            # Update progress
+            percent = 100.0 * rows_generated / self.total_rows
+            self.progress_callback(
+                percent,
+                f"Generated {rows_generated} / {self.total_rows} rows",
+            )
+
+            # ---------------------------------------------------------
+            # Throttled preview update (max ~20 FPS)
+            # ---------------------------------------------------------
+            now = time.time()
+            if now - last_preview_time >= 0.05:  # 50 ms
+                last_row = df_chunk.iloc[-1].to_dict()
+                print("CALLING PREVIEW CALLBACK WITH:", last_row)
+                self.preview_callback(last_row)
+                last_preview_time = now
+
+            # Track file size
+            self.file_tracker.update()
+
+            # Real-time pacing
+            if sleep_interval > 0:
+                time.sleep(sleep_interval)
+
+        self.alert_callback("Generation complete")
+
+    # ---------------------------------------------------------
+    # Chunk Generation
+    # ---------------------------------------------------------
+    def _generate_chunk(self, n_rows: int) -> pd.DataFrame:
+        """Generates a DataFrame with n_rows according to the schema."""
+        data = {}
+
+        for col in self.schema:
+            name = col["name"]
+            gen_name = col.get("generator")
+            model_func = COLUMN_MODEL_MAP.get(gen_name)
+
+            if model_func is None:
+                data[name] = np.zeros(n_rows)
+                continue
+
+            data[name] = model_func(n_rows, col, self.config)
+
+        return pd.DataFrame(data)
+		
+#-----------------------------
+
+# generator/core/writer.py
+
+import os
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+
+class ChunkWriter:
+    """
+    Handles chunked writing of telemetry data to CSV or Parquet.
+
+    Features:
+        - CSV append mode with header written only once
+        - Parquet append mode using PyArrow
+        - Automatic file initialization
+        - Safe for large-scale generation (GB-level)
+
+    Parameters:
+        file_path: str
+            Output file path (e.g., "telemetry_output.csv")
+        file_format: str
+            "csv" or "parquet"
+        chunk_size_rows: int
+            Number of rows per write cycle
+    """
+
+    def __init__(self, file_path: str, file_format: str, chunk_size_rows: int):
+        self.file_path = file_path
+        self.file_format = file_format.lower()
+        self.chunk_size_rows = chunk_size_rows
+
+        # Internal state
+        self._csv_header_written = False
+        self._parquet_writer = None
+
+        # Remove existing file to avoid mixing old data
+        if os.path.exists(self.file_path):
+            os.remove(self.file_path)
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def write_chunk(self, df: pd.DataFrame):
+        """
+        Writes a DataFrame chunk to disk in the configured format.
+        """
+        if self.file_format == "csv":
+            self._write_csv(df)
+        elif self.file_format == "parquet":
+            self._write_parquet(df)
+        else:
+            raise ValueError(f"Unsupported file format: {self.file_format}")
+
+    # ---------------------------------------------------------
+    # CSV Writer
+    # ---------------------------------------------------------
+    def _write_csv(self, df: pd.DataFrame):
+        """
+        Appends a chunk to a CSV file.
+        Header is written only once.
+        """
+        df.to_csv(
+            self.file_path,
+            mode="a",
+            header=not self._csv_header_written,
+            index=False
+        )
+        self._csv_header_written = True
+
+    # ---------------------------------------------------------
+    # Parquet Writer
+    # ---------------------------------------------------------
+    def _write_parquet(self, df: pd.DataFrame):
+        """
+        Appends a chunk to a Parquet file using PyArrow.
+        Creates a ParquetWriter on first write.
+        """
+        table = pa.Table.from_pandas(df)
+
+        if self._parquet_writer is None:
+            # First write → create writer
+            self._parquet_writer = pq.ParquetWriter(
+                self.file_path,
+                table.schema,
+                compression="snappy"
+            )
+
+        self._parquet_writer.write_table(table)
+
+    # ---------------------------------------------------------
+    # Cleanup
+    # ---------------------------------------------------------
+    def close(self):
+        """
+        Closes Parquet writer if needed.
+        Called automatically by TelemetryGenerator.stop().
+        """
+        if self._parquet_writer is not None:
+            self._parquet_writer.close()
+            self._parquet_writer = None
+			
+#----------------------------------
+
+# generator/utils/file_tracker.py
+
+import os
+
+
+class FileTracker:
+    """
+    Tracks file size and (optionally) row count for the output file.
+
+    Used by:
+        - TelemetryGenerator (to update progress)
+        - StatusBar (to show file size progress)
+        - Analyzer (optional future use)
+
+    Features:
+        - Tracks file size in bytes
+        - Converts to KB, MB, GB
+        - Safe for large files (10–50 GB)
+        - Non-blocking, lightweight
+
+    Parameters:
+        file_path: str
+            Path to the output CSV/Parquet file
+    """
+
+    def __init__(self, file_path: str):
+        self.file_path = file_path
+        self.size_bytes = 0
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def update(self):
+        """
+        Updates the internal file size counter.
+        Called after each chunk write.
+        """
+        if os.path.exists(self.file_path):
+            self.size_bytes = os.path.getsize(self.file_path)
+        else:
+            self.size_bytes = 0
+
+    def get_size_bytes(self) -> int:
+        return self.size_bytes
+
+    def get_size_mb(self) -> float:
+        return self.size_bytes / (1024 * 1024)
+
+    def get_size_gb(self) -> float:
+        return self.size_bytes / (1024 * 1024 * 1024)
+
+    # ---------------------------------------------------------
+    # Optional: Row Count Estimation (CSV only)
+    # ---------------------------------------------------------
+    def estimate_row_count(self) -> int:
+        """
+        Estimates row count for CSV files by counting newline characters.
+        Not used for Parquet.
+
+        This is optional and not called by default.
+        """
+        if not os.path.exists(self.file_path):
+            return 0
+
+        count = 0
+        with open(self.file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(1024 * 1024), b""):
+                count += chunk.count(b"\n")
+
+        # Subtract header row
+        return max(0, count - 1)
+		
+#------------------------------------------
+
+# generator/utils/preview_buffer.py
+
+from collections import deque
+from typing import Dict, Any, List
+
+
+class PreviewBuffer:
+    """
+    Rolling buffer for storing recent preview samples.
+
+    Purpose:
+        - Store the last N preview samples for each column
+        - Provide fast append and fast retrieval
+        - Avoid unbounded memory growth
+        - Decouple preview storage from the GUI and generator
+
+    Parameters:
+        max_points: int
+            Maximum number of samples to keep per column
+    """
+
+    def __init__(self, max_points: int = 500):
+        self.max_points = max_points
+        self.buffers: Dict[str, deque] = {}
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def add_sample(self, sample: Dict[str, Any]):
+        """
+        Adds a new sample to the buffer.
+
+        Args:
+            sample: dict
+                Example:
+                    {
+                        "Temperature": 42.1,
+                        "Motor RPM": 1500,
+                        "Voltage": 230.5
+                    }
+        """
+        for col, value in sample.items():
+            if col not in self.buffers:
+                self.buffers[col] = deque(maxlen=self.max_points)
+            self.buffers[col].append(value)
+
+    def get_series(self, column: str) -> List[Any]:
+        """
+        Returns the rolling series for a given column.
+
+        Args:
+            column: str
+                Column name
+
+        Returns:
+            list of recent values (up to max_points)
+        """
+        if column not in self.buffers:
+            return []
+        return list(self.buffers[column])
+
+    def clear(self):
+        """
+        Clears all buffers.
+        """
+        self.buffers.clear()
+		
+#-------------------------------------
+
+# generator/utils/sampling_timer.py
+
+import time
+
+
+class SamplingTimer:
+    """
+    High‑precision drift‑corrected timer for telemetry sampling loops.
+
+    Purpose:
+        Ensures that each iteration of the generator loop runs at the
+        configured sampling frequency (Hz) without accumulating drift.
+
+    Example:
+        timer = SamplingTimer(frequency_hz=10)
+        while generating:
+            timer.sleep_until_next_tick()
+            generate_next_sample()
+
+    Parameters:
+        frequency_hz: float
+            Sampling frequency in Hertz (cycles per second)
+    """
+
+    def __init__(self, frequency_hz: float):
+        self.frequency_hz = max(0.0001, float(frequency_hz))  # avoid division by zero
+        self.interval = 1.0 / self.frequency_hz
+        self.next_tick = time.perf_counter()
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def sleep_until_next_tick(self):
+        """
+        Sleeps until the next scheduled tick time.
+        Automatically corrects for drift.
+
+        If the generator loop is slow and falls behind,
+        the timer will skip missed intervals to catch up.
+        """
+        now = time.perf_counter()
+
+        # If we are behind schedule, skip ahead
+        if now > self.next_tick:
+            self.next_tick = now + self.interval
+            return
+
+        # Otherwise sleep until the next tick
+        sleep_time = self.next_tick - now
+        if sleep_time > 0:
+            time.sleep(sleep_time)
+
+        # Schedule next tick
+        self.next_tick += self.interval
+
+    def reset(self):
+        """
+        Resets the timer to start counting from now.
+        """
+        self.next_tick = time.perf_counter()
+		

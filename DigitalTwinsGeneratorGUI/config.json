@@ -1,0 +1,114 @@
+{
+    "output": {
+        "file_path": "telemetry_output.csv",
+        "file_format": "csv",
+        "estimated_size_gb": 10,
+        "chunk_size_rows": 10000
+    },
+    "sampling": {
+        "frequency_hz": 10
+    },
+    "schema": {
+        "columns": [
+            {
+                "name": "Temperature",
+                "type": "float",
+                "unit": "Celsius",
+                "generator": "simulate_temperature"
+            },
+            {
+                "name": "Motor RPM",
+                "type": "int",
+                "unit": "rpm",
+                "generator": "simulate_rpm"
+            },
+            {
+                "name": "Vibration Level",
+                "type": "float",
+                "unit": "m/s2",
+                "generator": "simulate_vibration"
+            },
+            {
+                "name": "Power Consumption",
+                "type": "float",
+                "unit": "W",
+                "generator": "simulate_power"
+            },
+            {
+                "name": "Voltage",
+                "type": "float",
+                "unit": "V",
+                "generator": "simulate_voltage"
+            },
+            {
+                "name": "Current",
+                "type": "float",
+                "unit": "A",
+                "generator": "simulate_current"
+            },
+            {
+                "name": "Pressure / Load",
+                "type": "float",
+                "unit": "arb",
+                "generator": "simulate_pressure"
+            },
+            {
+                "name": "Noise Level",
+                "type": "float",
+                "unit": "dB",
+                "generator": "simulate_noise"
+            },
+            {
+                "name": "Device On/Off",
+                "type": "boolean",
+                "generator": "simulate_onoff"
+            },
+            {
+                "name": "Operating Mode",
+                "type": "categorical",
+                "categories": [
+                    "Idle",
+                    "Low",
+                    "High"
+                ],
+                "generator": "simulate_mode"
+            },
+            {
+                "name": "Error Code",
+                "type": "categorical",
+                "categories": [
+                    "None",
+                    "Minor",
+                    "Major"
+                ],
+                "generator": "simulate_error"
+            },
+            {
+                "name": "Safety Interlock",
+                "type": "boolean",
+                "generator": "simulate_interlock"
+            },
+            {
+                "name": "Timestamp",
+                "type": "timestamp",
+                "format": "ISO8601",
+                "generator": "simulate_timestamp"
+            },
+            {
+                "name": "Log Message",
+                "type": "text",
+                "generator": "simulate_log"
+            },
+            {
+                "name": "Cycle Counter",
+                "type": "int",
+                "generator": "simulate_cycle"
+            }
+        ]
+    },
+    "alerts": {
+        "socket_enabled": true,
+        "socket_host": "127.0.0.1",
+        "socket_port": 5050
+    }
+}

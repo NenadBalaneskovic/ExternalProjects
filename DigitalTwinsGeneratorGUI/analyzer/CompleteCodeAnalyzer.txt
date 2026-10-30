@@ -1,0 +1,2507 @@
+# analyzer/app.py
+
+import sys
+import os
+
+from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import Qt
+
+from analyzer.gui.main_window import MainWindow
+
+
+def main():
+    """
+    Entry point for the Telemetry Analyzer (Project B).
+
+    Responsibilities:
+        - Initialize Qt application
+        - Create and show MainWindow
+        - Optionally accept a config path via CLI
+    """
+    app = QApplication(sys.argv)
+    app.setApplicationName("Telemetry Analyzer")
+    #app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+
+    # Optional: config path from CLI, default: ./config.json
+    if len(sys.argv) > 1:
+        config_path = sys.argv[1]
+    else:
+        config_path = os.path.join(os.getcwd(), "config.json")
+
+    window = MainWindow(config_path=config_path)
+    window.show()
+
+    sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    main()
+	
+#------------------------------------
+
+# analyzer/gui/health_summary.py
+
+from PySide6.QtWidgets import QWidget, QGroupBox, QVBoxLayout, QLabel, QHBoxLayout
+from PySide6.QtCore import Qt
+from datetime import datetime
+
+
+class HealthSummary(QWidget):
+    """
+    Compact health indicator panel for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Display system health status (OK / Warning / Error)
+        - Show last update time
+        - React to alerts from the Generator
+        - React to analysis results (e.g., anomalies)
+
+    Methods:
+        update_health(summary: dict)
+            Called by AnalyzerLoop with module-derived health info
+
+        mark_data_updated()
+            Called when new data arrives (e.g., chunk_written alert)
+
+        mark_generation_complete()
+            Called when generator finishes producing data
+    """
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+        # Internal state
+        self.last_update = None
+        self.status = "OK"
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        group = QGroupBox("System Health")
+        group_layout = QVBoxLayout()
+
+        # Status label (color-coded)
+        self.status_label = QLabel("Status: OK")
+        self.status_label.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self._set_status_color("OK")
+
+        # Last update timestamp
+        self.update_label = QLabel("Last update: —")
+        self.update_label.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+        # Generator state
+        self.generator_label = QLabel("Generator: Active")
+        self.generator_label.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+        group_layout.addWidget(self.status_label)
+        group_layout.addWidget(self.update_label)
+        group_layout.addWidget(self.generator_label)
+
+        group.setLayout(group_layout)
+        layout.addWidget(group)
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Status Color Helper
+    # ---------------------------------------------------------
+    def _set_status_color(self, status: str):
+        """
+        Applies color coding based on status.
+        """
+        if status == "OK":
+            color = "green"
+        elif status == "Warning":
+            color = "orange"
+        else:
+            color = "red"
+
+        self.status_label.setStyleSheet(f"color: {color}; font-weight: bold;")
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def update_health(self, summary: dict):
+        """
+        Called by AnalyzerLoop with health information.
+
+        Expected summary format:
+            {
+                "status": "OK" | "Warning" | "Error",
+                "message": "Optional description"
+            }
+        """
+        status = summary.get("status", "OK")
+        message = summary.get("message", "")
+
+        self.status = status
+        self._set_status_color(status)
+
+        if message:
+            self.status_label.setText(f"Status: {status} — {message}")
+        else:
+            self.status_label.setText(f"Status: {status}")
+
+        # Update timestamp
+        self.last_update = datetime.utcnow()
+        self.update_label.setText(f"Last update: {self.last_update.strftime('%H:%M:%S')}")
+
+    def mark_data_updated(self):
+        """
+        Called when new data arrives (e.g., chunk_written alert).
+        """
+        self.last_update = datetime.utcnow()
+        self.update_label.setText(f"Last update: {self.last_update.strftime('%H:%M:%S')}")
+
+    def mark_generation_complete(self):
+        """
+        Called when generator finishes producing data.
+        """
+        self.generator_label.setText("Generator: Complete")
+        self.generator_label.setStyleSheet("color: blue; font-weight: bold;")
+		
+#--------------------------------
+
+# analyzer/gui/log_panel.py
+
+from PySide6.QtWidgets import QWidget, QGroupBox, QVBoxLayout, QTextEdit
+from PySide6.QtCore import Qt
+from datetime import datetime
+
+
+class LogPanel(QWidget):
+    """
+    Log panel for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Display system logs, alerts, and module messages
+        - Provide an append-only text console
+        - Timestamp each entry for clarity
+
+    Methods:
+        append_log(text: str)
+            Appends a timestamped log entry to the console
+    """
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        group = QGroupBox("System Log")
+        group_layout = QVBoxLayout()
+
+        self.text_area = QTextEdit()
+        self.text_area.setReadOnly(True)
+        self.text_area.setLineWrapMode(QTextEdit.NoWrap)
+
+        group_layout.addWidget(self.text_area)
+        group.setLayout(group_layout)
+
+        layout.addWidget(group)
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def append_log(self, text: str):
+        """
+        Appends a timestamped log entry to the console.
+
+        Args:
+            text (str): Log message
+        """
+        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        entry = f"[{timestamp}] {text}"
+
+        self.text_area.append(entry)
+        self.text_area.ensureCursorVisible()
+		
+#----------------------------
+
+# analyzer/gui/main_window.py
+
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QWidget,
+    QVBoxLayout,
+    QHBoxLayout,
+    QSplitter,
+    QMessageBox,
+)
+from PySide6.QtCore import Qt
+
+import os
+
+from .settings_panel import SettingsPanel
+from .module_panel import ModulePanel
+from .visualization_tabs import VisualizationTabs
+from .log_panel import LogPanel
+from .health_summary import HealthSummary
+from .progress_bar import ProgressBar
+
+from ..core.analyzer_loop import AnalyzerLoop
+from ..core.config_loader import load_config
+from ..core.alert_listener import AlertListener
+
+
+class MainWindow(QMainWindow):
+    """
+    Main window for the Telemetry Analyzer GUI.
+    """
+
+    def __init__(self, config_path=None):
+        super().__init__()
+        self.config_path = config_path
+
+        # ---------------------------------------------------------
+        # Load configuration FIRST
+        # ---------------------------------------------------------
+        if self.config_path:
+            config_path = os.path.abspath(self.config_path)
+        else:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            config_path = os.path.join(base_dir, "config.json")
+
+        self.config = self._safe_load_config(config_path)
+
+        # ---------------------------------------------------------
+        # GUI setup
+        # ---------------------------------------------------------
+        self.setWindowTitle("Telemetry Data Analyzer")
+        self.setMinimumSize(1400, 800)
+
+        self.settings_panel = SettingsPanel(self.config)
+        self.module_panel = ModulePanel()
+        self.visualization_tabs = VisualizationTabs()
+        self.log_panel = LogPanel()
+        self.health_summary = HealthSummary()
+        self.progress_bar = ProgressBar()
+
+        self.analyzer: AnalyzerLoop | None = None
+        self.alert_listener: AlertListener | None = None
+
+        self._build_layout()
+        self._connect_signals()
+        self._init_backend()
+
+    # ---------------------------------------------------------
+    # Config loading
+    # ---------------------------------------------------------
+    def _safe_load_config(self, path: str):
+        try:
+            return load_config(path)
+        except Exception as e:
+            QMessageBox.warning(
+                self,
+                "Config Error",
+                f"Could not load {path}.\n\n{e}\n\n"
+                "You can still start the Analyzer, but some features may be disabled.",
+            )
+            return {}
+
+    # ---------------------------------------------------------
+    # Layout
+    # ---------------------------------------------------------
+    def _build_layout(self):
+        central = QWidget()
+        main_layout = QVBoxLayout()
+
+        splitter = QSplitter(Qt.Horizontal)
+
+        # Left side
+        left_widget = QWidget()
+        left_layout = QVBoxLayout()
+        left_layout.addWidget(self.settings_panel)
+        left_layout.addWidget(self.module_panel)
+        left_layout.addStretch()
+        left_widget.setLayout(left_layout)
+
+        # Right side
+        right_widget = QWidget()
+        right_layout = QVBoxLayout()
+        right_layout.addWidget(self.visualization_tabs)
+        right_layout.addWidget(self.health_summary)
+        right_layout.addWidget(self.log_panel)
+        right_widget.setLayout(right_layout)
+
+        splitter.addWidget(left_widget)
+        splitter.addWidget(right_widget)
+        splitter.setStretchFactor(0, 1)
+        splitter.setStretchFactor(1, 3)
+
+        # Bottom progress bar
+        bottom_layout = QHBoxLayout()
+        bottom_layout.addWidget(self.progress_bar)
+
+        main_layout.addWidget(splitter)
+        main_layout.addLayout(bottom_layout)
+
+        central.setLayout(main_layout)
+        self.setCentralWidget(central)
+
+    # ---------------------------------------------------------
+    # Signal wiring
+    # ---------------------------------------------------------
+    def _connect_signals(self):
+        self.settings_panel.start_requested.connect(self._start_analysis)
+        self.settings_panel.stop_requested.connect(self._stop_analysis)
+        self.module_panel.modules_changed.connect(self._update_modules)
+
+    # ---------------------------------------------------------
+    # Backend initialization
+    # ---------------------------------------------------------
+    def _init_backend(self):
+        self.analyzer = AnalyzerLoop(
+            config=self.config,
+            progress_callback=self.progress_bar.update_progress,
+            log_callback=self.log_panel.append_log,
+            visualization_callback=self.visualization_tabs.update_visualizations,
+            health_callback=self.health_summary.update_health,
+        )
+
+        self.alert_listener = AlertListener(
+            host=self.config.get("alerts", {}).get("socket_host", "127.0.0.1"),
+            port=self.config.get("alerts", {}).get("socket_port", 5050),
+            enabled=self.config.get("alerts", {}).get("socket_enabled", True),
+            alert_callback=self._handle_alert,
+        )
+        self.alert_listener.start()
+
+    # ---------------------------------------------------------
+    # Analysis control
+    # ---------------------------------------------------------
+    def _start_analysis(self):
+        if not self.analyzer:
+            return
+
+        analysis_config = self.settings_panel.get_analysis_config()
+        selected_modules = self.module_panel.get_selected_modules()
+
+        self.log_panel.append_log("Starting analysis...")
+        self.analyzer.start(analysis_config, selected_modules)
+
+    def _stop_analysis(self):
+        if not self.analyzer:
+            return
+
+        self.log_panel.append_log("Stopping analysis...")
+        self.analyzer.stop()
+
+    def _update_modules(self, modules):
+        if not self.analyzer:
+            return
+        self.analyzer.set_modules(modules)
+
+    # ---------------------------------------------------------
+    # Alert handling
+    # ---------------------------------------------------------
+    def _handle_alert(self, alert: dict):
+        event = alert.get("event", "unknown")
+        payload = alert.get("payload", {})
+
+        self.log_panel.append_log(f"[ALERT] {event} - {payload}")
+
+        if event == "chunk_written":
+            self.health_summary.mark_data_updated()
+        elif event == "generation_complete":
+            self.health_summary.mark_generation_complete()
+
+    # ---------------------------------------------------------
+    # Cleanup
+    # ---------------------------------------------------------
+    def closeEvent(self, event):
+        if self.analyzer:
+            self.analyzer.stop()
+        if self.alert_listener:
+            self.alert_listener.stop()
+        super().closeEvent(event)
+		
+#-------------------------------------------
+
+# analyzer/gui/module_panel.py
+
+from PySide6.QtWidgets import (
+    QWidget,
+    QGroupBox,
+    QVBoxLayout,
+    QCheckBox,
+)
+from PySide6.QtCore import Signal
+
+
+class ModulePanel(QWidget):
+    """
+    Module selection panel for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Display toggles for each analysis module
+        - Allow user to enable/disable modules dynamically
+        - Emit a signal when module selection changes
+
+    Signals:
+        modules_changed -> emitted with a list of selected module names
+
+    Methods:
+        get_selected_modules() -> list[str]
+            Returns the list of currently enabled modules
+    """
+
+    modules_changed = Signal(list)
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        group = QGroupBox("Analysis Modules")
+        group_layout = QVBoxLayout()
+
+        # Define available modules
+        self.module_checkboxes = {
+            "statistics": QCheckBox("Statistics (rolling means, FFT)"),
+            "clustering": QCheckBox("Clustering (KMeans, DBSCAN)"),
+            "forecasting": QCheckBox("Forecasting (SARIMAX, LSTM)"),
+            "nlp": QCheckBox("NLP (logs, topic modeling)"),
+            "deep_learning": QCheckBox("Deep Learning (autoencoder anomaly detection)"),
+            "xai": QCheckBox("Explainability (SHAP, Captum)"),
+        }
+
+        # Add checkboxes to layout
+        for name, checkbox in self.module_checkboxes.items():
+            checkbox.stateChanged.connect(self._emit_change)
+            group_layout.addWidget(checkbox)
+
+        group.setLayout(group_layout)
+        layout.addWidget(group)
+        layout.addStretch()
+
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Signal emission
+    # ---------------------------------------------------------
+    def _emit_change(self):
+        """
+        Emits the modules_changed signal whenever a checkbox is toggled.
+        """
+        self.modules_changed.emit(self.get_selected_modules())
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def get_selected_modules(self) -> list:
+        """
+        Returns a list of module names that are currently enabled.
+        """
+        return [
+            name
+            for name, checkbox in self.module_checkboxes.items()
+            if checkbox.isChecked()
+        ]
+		
+#---------------------------------
+
+# analyzer/gui/progress_bar.py
+
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QProgressBar
+from PySide6.QtCore import Qt
+
+
+class ProgressBar(QWidget):
+    """
+    Progress bar for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Display progress of file processing
+        - Show status messages (e.g., "Reading...", "Analyzing...")
+        - Provide a clean, compact UI element for the bottom of MainWindow
+
+    Methods:
+        update_progress(percent, message)
+            Updates the progress bar and status label
+    """
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QHBoxLayout()
+
+        # Progress bar
+        self.progress = QProgressBar()
+        self.progress.setRange(0, 100)
+        self.progress.setValue(0)
+        self.progress.setFormat("0%")
+        self.progress.setTextVisible(True)
+
+        # Status message
+        self.message_label = QLabel("Idle.")
+        self.message_label.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+        layout.addWidget(self.progress, stretch=2)
+        layout.addWidget(self.message_label, stretch=3)
+
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def update_progress(self, percent: float, message: str = ""):
+        """
+        Updates the progress bar and optional status message.
+
+        Args:
+            percent (float): 0–100 progress value
+            message (str): Optional status message
+        """
+        p = int(percent)
+
+        # Update the bar value
+        self.progress.setValue(p)
+
+        # Show the percentage inside the bar
+        self.progress.setFormat(f"{p}%")
+
+        # Optional external message label
+        if message:
+            self.message_label.setText(message)
+
+#------------------------------
+
+# analyzer/gui/settings_panel.py
+
+from PySide6.QtWidgets import (
+    QWidget,
+    QGroupBox,
+    QVBoxLayout,
+    QHBoxLayout,
+    QLabel,
+    QSpinBox,
+    QLineEdit,
+    QPushButton,
+    QFileDialog,
+)
+from PySide6.QtCore import Qt, Signal
+
+
+class SettingsPanel(QWidget):
+    """
+    Settings panel for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Display file path (from config.json or user override)
+        - Allow user to change refresh interval (polling frequency)
+        - Allow user to limit number of rows loaded per refresh
+        - Provide Start / Stop buttons for analysis
+
+    Signals:
+        start_requested -> emitted when user presses Start
+        stop_requested  -> emitted when user presses Stop
+
+    Methods:
+        get_analysis_config() -> dict
+            Returns current analysis settings for AnalyzerLoop
+    """
+
+    start_requested = Signal()
+    stop_requested = Signal()
+
+    def __init__(self, config: dict):
+        super().__init__()
+
+        self.config = config or {}
+
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        # --- File Path ---
+        file_group = QGroupBox("Telemetry File")
+        file_layout = QVBoxLayout()
+
+        self.file_path_edit = QLineEdit()
+
+        # Load from config["output"]["file_path"]
+        default_path = (
+            self.config.get("output", {}).get("file_path", "")
+        )
+        self.file_path_edit.setText(default_path)
+
+        browse_btn = QPushButton("Browse…")
+        browse_btn.clicked.connect(self._browse_file)
+
+        file_layout.addWidget(QLabel("File path:"))
+        file_layout.addWidget(self.file_path_edit)
+        file_layout.addWidget(browse_btn)
+        file_group.setLayout(file_layout)
+
+        # --- Refresh Interval ---
+        refresh_group = QGroupBox("Refresh Settings")
+        refresh_layout = QVBoxLayout()
+
+        self.refresh_spin = QSpinBox()
+        self.refresh_spin.setRange(100, 10_000)
+        self.refresh_spin.setValue(500)  # ms
+        self.refresh_spin.setSuffix(" ms")
+
+        refresh_layout.addWidget(QLabel("Refresh interval:"))
+        refresh_layout.addWidget(self.refresh_spin)
+        refresh_group.setLayout(refresh_layout)
+
+        # --- Row Limit ---
+        row_group = QGroupBox("Row Processing")
+        row_layout = QVBoxLayout()
+
+        self.row_limit_spin = QSpinBox()
+        self.row_limit_spin.setRange(100, 1_000_000)
+        self.row_limit_spin.setValue(10_000)
+
+        row_layout.addWidget(QLabel("Rows per refresh:"))
+        row_layout.addWidget(self.row_limit_spin)
+        row_group.setLayout(row_layout)
+
+        # --- Start / Stop Buttons ---
+        btn_layout = QHBoxLayout()
+        self.start_btn = QPushButton("Start Analysis")
+        self.stop_btn = QPushButton("Stop")
+
+        self.start_btn.clicked.connect(self.start_requested.emit)
+        self.stop_btn.clicked.connect(self.stop_requested.emit)
+
+        btn_layout.addWidget(self.start_btn)
+        btn_layout.addWidget(self.stop_btn)
+
+        # Assemble layout
+        layout.addWidget(file_group)
+        layout.addWidget(refresh_group)
+        layout.addWidget(row_group)
+        layout.addLayout(btn_layout)
+        layout.addStretch()
+
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # File Browser
+    # ---------------------------------------------------------
+    def _browse_file(self):
+        """
+        Opens a file dialog to select a CSV or Parquet file.
+        """
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Select Telemetry File",
+            "",
+            "Data Files (*.csv *.parquet)"
+        )
+        if path:
+            self.file_path_edit.setText(path)
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def get_analysis_config(self) -> dict:
+        """
+        Returns a dictionary with current analysis settings.
+        Used by AnalyzerLoop.start().
+        """
+        return {
+            "file_path": self.file_path_edit.text(),
+            "refresh_interval_ms": self.refresh_spin.value(),
+            "row_limit": self.row_limit_spin.value(),
+        }
+		
+#-----------------------------
+
+# analyzer/gui/visualization_tabs.py
+
+from PySide6.QtWidgets import (
+    QWidget,
+    QTabWidget,
+    QVBoxLayout,
+    QLabel,
+)
+from PySide6.QtCore import Qt
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+
+class VisualizationTabs(QWidget):
+    """
+    Tabbed visualization interface for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Provide separate tabs for each analysis module
+        - Expose update_*() methods for AnalyzerLoop to push results
+        - Render plots using Matplotlib
+        - Keep GUI decoupled from analysis logic
+
+    Tabs:
+        - Time Series
+        - Clustering
+        - Forecasting
+        - NLP
+        - Deep Learning
+        - XAI
+    """
+
+    def __init__(self):
+        super().__init__()
+        self._build_ui()
+
+    # ---------------------------------------------------------
+    # UI Construction
+    # ---------------------------------------------------------
+    def _build_ui(self):
+        layout = QVBoxLayout()
+
+        self.tabs = QTabWidget()
+
+        # --- Time Series Tab ---
+        self.ts_fig = Figure(figsize=(5, 3))
+        self.ts_canvas = FigureCanvas(self.ts_fig)
+        self.ts_ax = self.ts_fig.add_subplot(111)
+        ts_widget = QWidget()
+        ts_layout = QVBoxLayout()
+        ts_layout.addWidget(self.ts_canvas)
+        ts_widget.setLayout(ts_layout)
+        self.tabs.addTab(ts_widget, "Time Series")
+
+        # --- Clustering Tab ---
+        self.cluster_fig = Figure(figsize=(5, 3))
+        self.cluster_canvas = FigureCanvas(self.cluster_fig)
+        self.cluster_ax = self.cluster_fig.add_subplot(111)
+        cluster_widget = QWidget()
+        cluster_layout = QVBoxLayout()
+        cluster_layout.addWidget(self.cluster_canvas)
+        cluster_widget.setLayout(cluster_layout)
+        self.tabs.addTab(cluster_widget, "Clustering")
+
+        # --- Forecasting Tab ---
+        self.forecast_fig = Figure(figsize=(5, 3))
+        self.forecast_canvas = FigureCanvas(self.forecast_fig)
+        self.forecast_ax = self.forecast_fig.add_subplot(111)
+        forecast_widget = QWidget()
+        forecast_layout = QVBoxLayout()
+        forecast_layout.addWidget(self.forecast_canvas)
+        forecast_widget.setLayout(forecast_layout)
+        self.tabs.addTab(forecast_widget, "Forecasting")
+
+        # --- NLP Tab ---
+        self.nlp_label = QLabel("NLP results will appear here.")
+        self.nlp_label.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+        nlp_widget = QWidget()
+        nlp_layout = QVBoxLayout()
+        nlp_layout.addWidget(self.nlp_label)
+        nlp_widget.setLayout(nlp_layout)
+        self.tabs.addTab(nlp_widget, "NLP")
+
+        # --- Deep Learning Tab ---
+        self.dl_fig = Figure(figsize=(5, 3))
+        self.dl_canvas = FigureCanvas(self.dl_fig)
+        self.dl_ax = self.dl_fig.add_subplot(111)
+        dl_widget = QWidget()
+        dl_layout = QVBoxLayout()
+        dl_layout.addWidget(self.dl_canvas)
+        dl_widget.setLayout(dl_layout)
+        self.tabs.addTab(dl_widget, "Deep Learning")
+
+        # --- XAI Tab ---
+        self.xai_label = QLabel("XAI feature attributions will appear here.")
+        self.xai_label.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+        xai_widget = QWidget()
+        xai_layout = QVBoxLayout()
+        xai_layout.addWidget(self.xai_label)
+        xai_widget.setLayout(xai_layout)
+        self.tabs.addTab(xai_widget, "XAI")
+
+        layout.addWidget(self.tabs)
+        self.setLayout(layout)
+
+    # ---------------------------------------------------------
+    # Update Methods (called by AnalyzerLoop)
+    # ---------------------------------------------------------
+    def update_visualizations(self, results: dict):
+        """
+        Central update entry point.
+        AnalyzerLoop sends a dict with keys:
+            - "time_series"
+            - "clustering"
+            - "forecasting"
+            - "nlp"
+            - "deep_learning"
+            - "xai"
+        Each key maps to module-specific results.
+        """
+        if "time_series" in results:
+            self.update_time_series(results["time_series"])
+
+        if "clustering" in results:
+            self.update_clustering(results["clustering"])
+
+        if "forecasting" in results:
+            self.update_forecasting(results["forecasting"])
+
+        if "nlp" in results:
+            self.update_nlp(results["nlp"])
+
+        if "deep_learning" in results:
+            self.update_deep_learning(results["deep_learning"])
+
+        if "xai" in results:
+            self.update_xai(results["xai"])
+
+    # ---------------------------------------------------------
+    # Individual Update Methods
+    # ---------------------------------------------------------
+    def update_time_series(self, data):
+        """
+        Expects:
+            data = {
+                "x": [...],
+                "y": [...],
+                "label": "Temperature"
+            }
+        """
+        self.ts_ax.clear()
+        self.ts_ax.plot(data["x"], data["y"], label=data.get("label", ""))
+        self.ts_ax.set_title("Time Series")
+        self.ts_ax.legend()
+        self.ts_canvas.draw_idle()
+
+    def update_clustering(self, data):
+        """
+        Expects:
+            data = {
+                "x": [...],
+                "y": [...],
+                "labels": [...]
+            }
+        """
+        self.cluster_ax.clear()
+        self.cluster_ax.scatter(data["x"], data["y"], c=data["labels"], cmap="viridis")
+        self.cluster_ax.set_title("Clustering")
+        self.cluster_canvas.draw_idle()
+
+    def update_forecasting(self, data):
+        """
+        Expects:
+            data = {
+                "history_x": [...],
+                "history_y": [...],
+                "forecast_x": [...],
+                "forecast_y": [...]
+            }
+        """
+        self.forecast_ax.clear()
+        self.forecast_ax.plot(data["history_x"], data["history_y"], label="History")
+        self.forecast_ax.plot(data["forecast_x"], data["forecast_y"], label="Forecast")
+        self.forecast_ax.set_title("Forecasting")
+        self.forecast_ax.legend()
+        self.forecast_canvas.draw_idle()
+
+    def update_nlp(self, text: str):
+        """
+        Expects:
+            text = "Summary of log messages..."
+        """
+        self.nlp_label.setText(text)
+
+    def update_deep_learning(self, data):
+        """
+        Expects:
+            data = {
+                "x": [...],
+                "anomaly_score": [...]
+            }
+        """
+        self.dl_ax.clear()
+        self.dl_ax.plot(data["x"], data["anomaly_score"], color="red")
+        self.dl_ax.set_title("Anomaly Score")
+        self.dl_canvas.draw_idle()
+
+    def update_xai(self, text: str):
+        """
+        Expects:
+            text = "Feature attribution summary..."
+        """
+        self.xai_label.setText(text)
+		
+#-------------------------------------------
+
+# analyzer/core/alert_listener.py
+
+import socket
+import threading
+import json
+from typing import Callable, Optional
+
+
+class AlertListener:
+    """
+    Background TCP listener for alerts sent by the Generator.
+
+    Responsibilities:
+        - Open a TCP socket on (host, port)
+        - Accept incoming connections from AlertSocketClient
+        - Parse JSON messages
+        - Forward alerts to the GUI via callback
+        - Run safely in a background thread
+
+    Alerts typically look like:
+        {
+            "event": "chunk_written",
+            "payload": {"rows": 10000}
+        }
+    """
+
+    def __init__(
+        self,
+        host: str = "127.0.0.1",
+        port: int = 5050,
+        enabled: bool = True,
+        alert_callback: Optional[Callable[[dict], None]] = None,
+    ):
+        self.host = host
+        self.port = port
+        self.enabled = enabled
+        self.alert_callback = alert_callback
+
+        self._thread: Optional[threading.Thread] = None
+        self._stop_event = threading.Event()
+
+        self._socket: Optional[socket.socket] = None
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def start(self):
+        """
+        Starts the alert listener in a background thread.
+        """
+        if not self.enabled:
+            return
+
+        if self._thread and self._thread.is_alive():
+            return  # already running
+
+        self._stop_event.clear()
+        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread.start()
+
+    def stop(self):
+        """
+        Stops the listener and closes the socket.
+        """
+        self._stop_event.set()
+
+        if self._socket:
+            try:
+                self._socket.close()
+            except Exception:
+                pass
+
+        if self._thread:
+            self._thread.join(timeout=1.0)
+
+    # ---------------------------------------------------------
+    # Internal Loop
+    # ---------------------------------------------------------
+    def _run(self):
+        """
+        Main loop:
+            - Bind to socket
+            - Accept connections
+            - Read JSON messages
+            - Forward to callback
+        """
+        try:
+            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            self._socket.bind((self.host, self.port))
+            self._socket.listen(5)
+        except Exception:
+            # If binding fails, silently disable listener
+            return
+
+        while not self._stop_event.is_set():
+            try:
+                self._socket.settimeout(0.5)
+                try:
+                    conn, _ = self._socket.accept()
+                except socket.timeout:
+                    continue  # loop again
+
+                with conn:
+                    data = conn.recv(4096)
+                    if not data:
+                        continue
+
+                    try:
+                        message = json.loads(data.decode("utf-8"))
+                    except Exception:
+                        continue  # ignore malformed JSON
+
+                    if self.alert_callback:
+                        self.alert_callback(message)
+
+            except Exception:
+                # Listener must never crash
+                continue
+				
+#----------------------------------------
+
+# analyzer/core/analyzer_loop.py
+
+import threading
+import time
+from typing import Callable, Dict, List, Any, Optional
+
+from .reader import TelemetryReader
+from ..modules import statistics, clustering, forecasting, nlp, deep_learning, xai
+
+
+class AnalyzerLoop:
+    """
+    Main analysis loop for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Periodically read new data from the telemetry file
+        - Dispatch selected analysis modules
+        - Aggregate results and send them to the GUI
+        - Report progress, logs, and health status
+
+    Lifecycle:
+        - start(analysis_config, selected_modules)
+        - loop in background thread until stop() is called
+    """
+
+    def __init__(
+        self,
+        config: dict,
+        progress_callback: Callable[[float, str], None],
+        log_callback: Callable[[str], None],
+        visualization_callback: Callable[[Dict[str, Any]], None],
+        health_callback: Callable[[Dict[str, Any]], None],
+    ):
+        self.config = config or {}
+        self.progress_callback = progress_callback
+        self.log_callback = log_callback
+        self.visualization_callback = visualization_callback
+        self.health_callback = health_callback
+
+        self.reader: Optional[TelemetryReader] = None
+        self.selected_modules: List[str] = []
+
+        self._thread: Optional[threading.Thread] = None
+        self._stop_event = threading.Event()
+
+        # Internal state
+        self.total_rows_processed = 0
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def start(self, analysis_config: dict, selected_modules: List[str]):
+        """
+        Starts the analyzer loop in a background thread.
+
+        analysis_config:
+            {
+                "file_path": str,
+                "refresh_interval_ms": int,
+                "row_limit": int
+            }
+
+        selected_modules:
+            ["statistics", "clustering", ...]
+        """
+        if self._thread and self._thread.is_alive():
+            self.log_callback("AnalyzerLoop is already running.")
+            return
+
+        file_path = analysis_config.get("file_path")
+        if not file_path:
+            self.log_callback("No file path specified for analysis.")
+            return
+
+        self.selected_modules = selected_modules
+        self.reader = TelemetryReader(
+            file_path=file_path,
+            row_limit=analysis_config.get("row_limit", 10_000),
+        )
+
+        self.refresh_interval = analysis_config.get("refresh_interval_ms", 500) / 1000.0
+
+        self.log_callback(f"Starting analysis on file: {file_path}")
+        self.total_rows_processed = 0
+        self._stop_event.clear()
+
+        self._thread = threading.Thread(target=self._run_loop, daemon=True)
+        self._thread.start()
+
+    def stop(self):
+        """
+        Requests the analyzer loop to stop and waits for thread to finish.
+        """
+        if not self._thread:
+            return
+
+        self._stop_event.set()
+        self._thread.join(timeout=2.0)
+        self.log_callback("AnalyzerLoop stopped.")
+
+    def set_modules(self, modules: List[str]):
+        """
+        Updates the list of selected modules at runtime.
+        """
+        self.selected_modules = modules
+        self.log_callback(f"Modules updated: {modules}")
+
+    # ---------------------------------------------------------
+    # Internal Loop
+    # ---------------------------------------------------------
+    def _run_loop(self):
+        """
+        Background loop:
+            - periodically reads new data
+            - runs selected modules
+            - updates GUI via callbacks
+        """
+        while not self._stop_event.is_set():
+            try:
+                # 1. Read new data
+                new_data = self.reader.read_new_rows() if self.reader else None
+                if new_data is None or new_data.empty:
+                    # No new data; sleep and continue
+                    self.progress_callback(0.0, "Waiting for new data...")
+                    time.sleep(self.refresh_interval)
+                    continue
+
+                rows = len(new_data)
+                self.total_rows_processed += rows
+                self.log_callback(f"Read {rows} new rows (total: {self.total_rows_processed}).")
+
+                # 2. Run selected modules
+                results: Dict[str, Any] = {}
+                health_updates: List[Dict[str, Any]] = []
+
+                if "statistics" in self.selected_modules:
+                    stats_result, stats_health = statistics.run(new_data)
+                    results["time_series"] = stats_result
+                    if stats_health:
+                        health_updates.append(stats_health)
+
+                if "clustering" in self.selected_modules:
+                    cluster_result, cluster_health = clustering.run(new_data)
+                    results["clustering"] = cluster_result
+                    if cluster_health:
+                        health_updates.append(cluster_health)
+
+                if "forecasting" in self.selected_modules:
+                    forecast_result, forecast_health = forecasting.run(new_data)
+                    results["forecasting"] = forecast_result
+                    if forecast_health:
+                        health_updates.append(forecast_health)
+
+                if "nlp" in self.selected_modules:
+                    nlp_result, nlp_health = nlp.run(new_data)
+                    results["nlp"] = nlp_result
+                    if nlp_health:
+                        health_updates.append(nlp_health)
+
+                if "deep_learning" in self.selected_modules:
+                    dl_result, dl_health = deep_learning.run(new_data)
+                    results["deep_learning"] = dl_result
+                    if dl_health:
+                        health_updates.append(dl_health)
+
+                if "xai" in self.selected_modules:
+                    xai_result, xai_health = xai.run(new_data)
+                    results["xai"] = xai_result
+                    if xai_health:
+                        health_updates.append(xai_health)
+
+                # 3. Push visualization updates
+                if results:
+                    self.visualization_callback(results)
+
+                # 4. Aggregate health
+                if health_updates:
+                    # Simple aggregation: worst status wins
+                    aggregated = self._aggregate_health(health_updates)
+                    self.health_callback(aggregated)
+
+                # 5. Update progress (activity-based, since total is unknown)
+                if not hasattr(self, "_activity_percent"):
+                    self._activity_percent = 0.0
+
+                # Each batch nudges the bar forward up to 100%
+                self._activity_percent = min(100.0, self._activity_percent + 1.0)
+
+                self.progress_callback(
+                    self._activity_percent,
+                    f"Processed {self.total_rows_processed} rows."
+                )
+
+                # 6. Sleep until next refresh
+                time.sleep(self.refresh_interval)
+
+            except Exception as e:
+                self.log_callback(f"Error in AnalyzerLoop: {e}")
+                self.health_callback({"status": "Error", "message": str(e)})
+                time.sleep(self.refresh_interval)
+
+    # ---------------------------------------------------------
+    # Health Aggregation
+    # ---------------------------------------------------------
+    def _aggregate_health(self, health_list: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Aggregates multiple health dicts into a single summary.
+
+        Priority: Error > Warning > OK
+        """
+        priority = {"OK": 0, "Warning": 1, "Error": 2}
+        best_status = "OK"
+        messages = []
+
+        for h in health_list:
+            status = h.get("status", "OK")
+            msg = h.get("message", "")
+            if msg:
+                messages.append(msg)
+            if priority.get(status, 0) > priority.get(best_status, 0):
+                best_status = status
+
+        return {
+            "status": best_status,
+            "message": " | ".join(messages) if messages else "",
+        }
+		
+#------------------------------------
+
+{
+  "file_path": "telemetry.parquet",
+  "columns": ["Temperature", "Motor RPM", "Error Code"],
+  "sampling_rate_hz": 10,
+  "timestamp_format": "ISO8601",
+
+  "output": {
+    "file_path": "telemetry.parquet",
+    "chunk_size": 10000
+  },
+
+  "alerts": {
+    "socket_host": "127.0.0.1",
+    "socket_port": 5050,
+    "socket_enabled": true
+  }
+}
+
+#-----------------------------
+
+# analyzer/core/config_loader.py
+
+import json
+import os
+from typing import Dict, Any
+
+
+def load_config(path: str) -> Dict[str, Any]:
+    """
+    Loads the shared config.json file written by the Generator.
+
+    Responsibilities:
+        - Validate that the file exists
+        - Parse JSON safely
+        - Provide clear error messages
+        - Return a dictionary with configuration values
+
+    Expected structure of config.json:
+        {
+            "file_path": "telemetry.parquet",
+            "columns": ["Temperature", "Motor RPM", "Error Code"],
+            "sampling_rate_hz": 10,
+            "timestamp_format": "ISO8601",
+            "alerts": {
+                "socket_host": "127.0.0.1",
+                "socket_port": 5050,
+                "socket_enabled": true
+            }
+        }
+
+    Returns:
+        dict with configuration values
+
+    Raises:
+        FileNotFoundError
+        ValueError (invalid JSON)
+    """
+
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Config file not found: {path}")
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in {path}: {e}")
+
+    # Basic validation
+    if "output" not in config or "file_path" not in config["output"]:
+        raise ValueError("config.json missing required field: output.file_path")
+
+    # Optional defaults
+    config.setdefault("columns", [])
+    config.setdefault("sampling_rate_hz", 1)
+    config.setdefault("timestamp_format", "ISO8601")
+    config.setdefault("alerts", {
+        "socket_host": "127.0.0.1",
+        "socket_port": 5050,
+        "socket_enabled": True
+    })
+
+    return config
+	
+#-------------------------------
+
+# analyzer/core/reader.py
+
+import os
+import pandas as pd
+from typing import Optional
+
+
+class TelemetryReader:
+    """
+    Efficient tail-reader for CSV or Parquet telemetry files.
+
+    Responsibilities:
+        - Track how many rows have already been processed
+        - Load only *new* rows on each refresh
+        - Support both CSV and Parquet formats
+        - Avoid re-reading the entire file (critical for large files)
+
+    Methods:
+        read_new_rows() -> pd.DataFrame | None
+            Returns only the newly appended rows since last read.
+    """
+
+    def __init__(self, file_path: str, row_limit: int = 10_000):
+        self.file_path = file_path
+        self.row_limit = row_limit
+
+        # Internal state
+        self.last_row_index = 0
+        self.file_format = self._detect_format(file_path)
+
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Telemetry file not found: {file_path}")
+
+    # ---------------------------------------------------------
+    # Format detection
+    # ---------------------------------------------------------
+    def _detect_format(self, path: str) -> str:
+        ext = os.path.splitext(path)[1].lower()
+        if ext == ".csv":
+            return "csv"
+        if ext == ".parquet":
+            return "parquet"
+        raise ValueError(f"Unsupported file format: {ext}")
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def read_new_rows(self) -> Optional[pd.DataFrame]:
+        """
+        Reads only the newly appended rows since the last call.
+
+        Returns:
+            pd.DataFrame with new rows
+            or None if file is empty or unchanged
+        """
+        if self.file_format == "csv":
+            return self._read_new_csv_rows()
+        else:
+            return self._read_new_parquet_rows()
+
+    # ---------------------------------------------------------
+    # CSV Reader (efficient tail read)
+    # ---------------------------------------------------------
+    def _read_new_csv_rows(self) -> Optional[pd.DataFrame]:
+        """
+        Efficiently reads only new rows from a CSV file.
+        """
+        try:
+            # Count total rows in file
+            with open(self.file_path, "r", encoding="utf-8") as f:
+                total_rows = sum(1 for _ in f)
+
+            # Subtract header
+            total_rows -= 1
+
+            if total_rows <= self.last_row_index:
+                return None  # No new data
+
+            # Determine how many rows to read
+            rows_to_read = min(
+                total_rows - self.last_row_index,
+                self.row_limit
+            )
+
+            skip_rows = range(1, self.last_row_index + 1)
+            df = pd.read_csv(
+                self.file_path,
+                skiprows=skip_rows,
+                nrows=rows_to_read,
+            )
+
+            # Update internal pointer
+            self.last_row_index += len(df)
+
+            return df
+
+        except Exception as e:
+            raise RuntimeError(f"CSV read error: {e}")
+
+    # ---------------------------------------------------------
+    # Parquet Reader (efficient row slicing)
+    # ---------------------------------------------------------
+    def _read_new_parquet_rows(self) -> Optional[pd.DataFrame]:
+        """
+        Efficiently reads only new rows from a Parquet file.
+        """
+        try:
+            # Load metadata only
+            meta = pd.read_parquet(self.file_path, columns=[])
+
+            total_rows = meta.shape[0]
+
+            if total_rows <= self.last_row_index:
+                return None  # No new data
+
+            rows_to_read = min(
+                total_rows - self.last_row_index,
+                self.row_limit
+            )
+
+            # Read only the required slice
+            df = pd.read_parquet(
+                self.file_path,
+                engine="pyarrow",
+                filters=None,
+            ).iloc[self.last_row_index:self.last_row_index + rows_to_read]
+
+            self.last_row_index += len(df)
+
+            return df
+
+        except Exception as e:
+            raise RuntimeError(f"Parquet read error: {e}")
+			
+#------------------------------------
+
+# analyzer/modules/clustering.py
+
+import numpy as np
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.preprocessing import StandardScaler
+
+
+def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
+    """
+    Runs lightweight clustering on the new telemetry batch.
+
+    Responsibilities:
+        - Select up to 2 numeric columns for 2D visualization
+        - Standardize data for stable clustering
+        - Run KMeans (fast) or fallback to DBSCAN for anomaly detection
+        - Return:
+            (1) Visualization-ready scatterplot data
+            (2) Optional health summary
+
+    Returns:
+        result: dict
+            {
+                "x": [...],
+                "y": [...],
+                "labels": [...]
+            }
+
+        health: dict | None
+            {
+                "status": "OK" | "Warning" | "Error",
+                "message": "..."
+            }
+    """
+
+    if df is None or df.empty:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 1. Select numeric columns
+    # ---------------------------------------------------------
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if len(numeric_cols) < 2:
+        # Not enough numeric data for clustering
+        return {}, None
+
+    # Use first two numeric columns for 2D clustering
+    cols = numeric_cols[:2]
+    data = df[cols].values
+
+    # ---------------------------------------------------------
+    # 2. Standardize data
+    # ---------------------------------------------------------
+    scaler = StandardScaler()
+    data_scaled = scaler.fit_transform(data)
+
+    # ---------------------------------------------------------
+    # 3. Run clustering
+    # ---------------------------------------------------------
+    try:
+        # KMeans is fast and stable for real-time telemetry
+        kmeans = KMeans(n_clusters=3, n_init="auto", random_state=42)
+        labels = kmeans.fit_predict(data_scaled)
+        method = "kmeans"
+    except Exception:
+        # Fallback: DBSCAN for anomaly detection
+        db = DBSCAN(eps=0.5, min_samples=5)
+        labels = db.fit_predict(data_scaled)
+        method = "dbscan"
+
+    # ---------------------------------------------------------
+    # 4. Health evaluation
+    # ---------------------------------------------------------
+    health = None
+
+    # Too many clusters → unstable data
+    unique_labels = len(set(labels)) - (1 if -1 in labels else 0)
+    if unique_labels > 5:
+        health = {
+            "status": "Warning",
+            "message": f"High cluster count ({unique_labels}) detected"
+        }
+
+    # DBSCAN noise points
+    if -1 in labels:
+        noise_ratio = np.mean(labels == -1)
+        if noise_ratio > 0.2:
+            health = {
+                "status": "Warning",
+                "message": f"High noise ratio ({noise_ratio:.2f}) in clustering"
+            }
+
+    # ---------------------------------------------------------
+    # 5. Visualization output
+    # ---------------------------------------------------------
+    result = {
+        "x": data_scaled[:, 0].tolist(),
+        "y": data_scaled[:, 1].tolist(),
+        "labels": labels.tolist(),
+        "method": method,
+        "columns": cols,
+    }
+
+    return result, health
+	
+#---------------------------------
+
+# analyzer/modules/deep_learning.py
+
+import numpy as np
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+from sklearn.ensemble import IsolationForest
+
+
+def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
+    """
+    Lightweight anomaly scoring module inspired by deep-learning autoencoders.
+
+    Rationale:
+        True deep learning (autoencoders, CNNs, LSTMs) is too heavy for
+        real-time GUI analysis loops. Instead, IsolationForest provides:
+            - fast anomaly scoring
+            - robust behavior on small batches
+            - no GPU requirement
+            - similar conceptual output: anomaly score per row
+
+    Responsibilities:
+        - Select numeric columns
+        - Fit IsolationForest on the current batch
+        - Produce anomaly scores (higher = more anomalous)
+        - Detect high anomaly ratios and emit health warnings
+
+    Returns:
+        result: dict
+            {
+                "x": [...],
+                "anomaly_score": [...],
+                "columns": [...]
+            }
+
+        health: dict | None
+            {
+                "status": "Warning" | "Error",
+                "message": "..."
+            }
+    """
+
+    if df is None or df.empty:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 1. Select numeric columns
+    # ---------------------------------------------------------
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if not numeric_cols:
+        return {}, None
+
+    data = df[numeric_cols].values
+    n = len(data)
+
+    # Need enough samples for anomaly scoring
+    if n < 10:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 2. Fit IsolationForest
+    # ---------------------------------------------------------
+    try:
+        model = IsolationForest(
+            n_estimators=100,
+            contamination="auto",
+            random_state=42,
+        )
+        model.fit(data)
+
+        # score_samples returns negative anomaly scores → invert
+        scores = -model.score_samples(data)
+
+    except Exception:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 3. Health evaluation
+    # ---------------------------------------------------------
+    health = None
+
+    # Mark top 10% as anomalies
+    threshold = np.percentile(scores, 90)
+    anomalies = scores >= threshold
+    anomaly_ratio = float(np.mean(anomalies))
+
+    if anomaly_ratio > 0.3:
+        health = {
+            "status": "Warning",
+            "message": f"High anomaly ratio detected ({anomaly_ratio:.2f})"
+        }
+
+    # ---------------------------------------------------------
+    # 4. Visualization output
+    # ---------------------------------------------------------
+    x = np.arange(n)
+
+    result = {
+        "x": x.tolist(),
+        "anomaly_score": scores.tolist(),
+        "columns": numeric_cols,
+    }
+
+    return result, health
+	
+#-----------------------------------
+
+# analyzer/modules/forecasting.py
+
+import numpy as np
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+from sklearn.linear_model import LinearRegression
+
+
+def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
+    """
+    Lightweight forecasting module for real-time telemetry.
+
+    Responsibilities:
+        - Select a primary numeric column
+        - Fit a simple linear regression on the last N points
+        - Predict short-term future values
+        - Detect unstable trends (health warnings)
+        - Return:
+            (1) Visualization-ready forecast data
+            (2) Optional health summary
+
+    Returns:
+        result: dict
+            {
+                "history_x": [...],
+                "history_y": [...],
+                "forecast_x": [...],
+                "forecast_y": [...]
+            }
+
+        health: dict | None
+    """
+
+    if df is None or df.empty:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 1. Select numeric column
+    # ---------------------------------------------------------
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if not numeric_cols:
+        return {}, None
+
+    col = numeric_cols[0]
+    y = df[col].values
+    n = len(y)
+
+    # Need at least 5 points for a meaningful trend
+    if n < 5:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 2. Prepare regression data
+    # ---------------------------------------------------------
+    x = np.arange(n).reshape(-1, 1)
+    model = LinearRegression()
+
+    try:
+        model.fit(x, y)
+    except Exception:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 3. Forecast next 20 steps
+    # ---------------------------------------------------------
+    horizon = 20
+    forecast_x = np.arange(n, n + horizon).reshape(-1, 1)
+    forecast_y = model.predict(forecast_x)
+
+    # ---------------------------------------------------------
+    # 4. Health evaluation
+    # ---------------------------------------------------------
+    health = None
+
+    slope = float(model.coef_[0])
+    if abs(slope) > 5 * np.std(y):
+        health = {
+            "status": "Warning",
+            "message": f"Unstable trend detected in {col} (slope={slope:.2f})"
+        }
+
+    # Forecast explosion
+    if np.any(np.abs(forecast_y) > 1e6):
+        health = {
+            "status": "Error",
+            "message": f"Forecast values for {col} are unrealistic"
+        }
+
+    # ---------------------------------------------------------
+    # 5. Visualization output
+    # ---------------------------------------------------------
+    result = {
+        "history_x": x.flatten().tolist(),
+        "history_y": y.tolist(),
+        "forecast_x": forecast_x.flatten().tolist(),
+        "forecast_y": forecast_y.tolist(),
+        "label": col,
+    }
+
+    return result, health
+	
+#-------------------------------
+
+# analyzer/modules/nlp.py
+
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+from collections import Counter
+import re
+
+
+def run(df: pd.DataFrame) -> Tuple[str, Optional[Dict[str, str]]]:
+    """
+    Lightweight NLP module for telemetry logs.
+
+    Responsibilities:
+        - Extract text-like columns (e.g., "Error Code", "Message")
+        - Perform keyword frequency analysis
+        - Detect spikes in error-related terms
+        - Produce a readable summary for the NLP tab
+        - Emit health warnings when necessary
+
+    Returns:
+        summary: str
+            Human-readable text summary for VisualizationTabs.update_nlp()
+
+        health: dict | None
+            {
+                "status": "Warning" | "Error",
+                "message": "..."
+            }
+    """
+
+    if df is None or df.empty:
+        return "No text data available.", None
+
+    # ---------------------------------------------------------
+    # 1. Identify text columns
+    # ---------------------------------------------------------
+    text_cols = df.select_dtypes(include=["object"]).columns.tolist()
+    if not text_cols:
+        return "No text columns found in this batch.", None
+
+    # Combine all text columns into one list of strings
+    texts = []
+    for col in text_cols:
+        texts.extend(df[col].dropna().astype(str).tolist())
+
+    if not texts:
+        return "No valid text entries found.", None
+
+    # ---------------------------------------------------------
+    # 2. Tokenization (very lightweight)
+    # ---------------------------------------------------------
+    tokens = []
+    for t in texts:
+        # Lowercase, remove punctuation, split on whitespace
+        t_clean = re.sub(r"[^a-zA-Z0-9]+", " ", t.lower())
+        tokens.extend(t_clean.split())
+
+    if not tokens:
+        return "Text found, but no valid tokens extracted.", None
+
+    # ---------------------------------------------------------
+    # 3. Keyword frequency analysis
+    # ---------------------------------------------------------
+    freq = Counter(tokens)
+    most_common = freq.most_common(10)
+
+    # ---------------------------------------------------------
+    # 4. Error keyword detection
+    # ---------------------------------------------------------
+    error_keywords = {"error", "fail", "fault", "critical", "warning", "exception"}
+    error_count = sum(freq.get(k, 0) for k in error_keywords)
+
+    health = None
+    if error_count > 5:
+        health = {
+            "status": "Warning",
+            "message": f"High frequency of error-related terms ({error_count})"
+        }
+
+    # ---------------------------------------------------------
+    # 5. Build summary text
+    # ---------------------------------------------------------
+    summary_lines = [
+        "NLP Summary (Top Keywords):",
+        "",
+    ]
+
+    for word, count in most_common:
+        summary_lines.append(f"  - {word}: {count}")
+
+    if error_count > 0:
+        summary_lines.append("")
+        summary_lines.append(f"Error-related terms detected: {error_count}")
+
+    summary = "\n".join(summary_lines)
+
+    return summary, health
+	
+#---------------------------
+
+# analyzer/modules/statistics.py
+
+import numpy as np
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+
+
+def run(df: pd.DataFrame) -> Tuple[Dict[str, Any], Optional[Dict[str, str]]]:
+    """
+    Runs lightweight statistical analysis on the new telemetry batch.
+
+    Responsibilities:
+        - Extract a primary numeric column for time-series visualization
+        - Compute rolling statistics (mean, std)
+        - Compute a simple FFT magnitude spectrum (optional)
+        - Detect anomalies based on variance spikes or out-of-range values
+        - Return:
+            (1) Visualization-ready data for VisualizationTabs
+            (2) Optional health summary for HealthSummary
+
+    Returns:
+        result: dict
+            {
+                "x": [...],
+                "y": [...],
+                "label": "Temperature"
+            }
+
+        health: dict | None
+            {
+                "status": "OK" | "Warning" | "Error",
+                "message": "..."
+            }
+    """
+
+    if df is None or df.empty:
+        return {}, None
+
+    # ---------------------------------------------------------
+    # 1. Select a numeric column for visualization
+    # ---------------------------------------------------------
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if not numeric_cols:
+        return {}, None
+
+    col = numeric_cols[0]  # primary metric
+    y = df[col].values
+    x = np.arange(len(y))
+
+    # ---------------------------------------------------------
+    # 2. Compute basic statistics
+    # ---------------------------------------------------------
+    mean_val = float(np.mean(y))
+    std_val = float(np.std(y))
+
+    # ---------------------------------------------------------
+    # 3. Optional FFT (very lightweight)
+    # ---------------------------------------------------------
+    try:
+        fft_vals = np.abs(np.fft.rfft(y))
+        fft_peak = float(np.max(fft_vals)) if len(fft_vals) > 0 else 0.0
+    except Exception:
+        fft_peak = 0.0
+
+    # ---------------------------------------------------------
+    # 4. Health evaluation
+    # ---------------------------------------------------------
+    health = None
+
+    # Simple anomaly rules
+    if std_val > 5 * (mean_val + 1e-6):
+        health = {
+            "status": "Warning",
+            "message": f"High variance detected in {col} (std={std_val:.2f})"
+        }
+
+    if np.any(np.isnan(y)) or np.any(np.isinf(y)):
+        health = {
+            "status": "Error",
+            "message": f"Invalid values detected in {col}"
+        }
+
+    # ---------------------------------------------------------
+    # 5. Visualization output
+    # ---------------------------------------------------------
+    result = {
+        "x": x.tolist(),
+        "y": y.tolist(),
+        "label": col
+    }
+
+    return result, health
+	
+#-------------------------------------
+
+# analyzer/modules/xai.py
+
+import numpy as np
+import pandas as pd
+from typing import Tuple, Dict, Any, Optional
+from sklearn.ensemble import RandomForestRegressor
+
+
+def run(df: pd.DataFrame) -> Tuple[str, Optional[Dict[str, str]]]:
+    """
+    Lightweight XAI-style feature attribution for telemetry.
+
+    Rationale:
+        Full SHAP/Captum pipelines are too heavy for a real-time GUI loop.
+        Instead, we approximate feature importance using a small
+        RandomForestRegressor and its built-in feature_importances_.
+
+    Responsibilities:
+        - Select numeric columns
+        - Choose a primary target signal (first numeric column)
+        - Train a tiny RandomForest to predict the target from the others
+        - Use feature_importances_ as a proxy for attribution
+        - Produce a human-readable explanation summary
+        - Emit health warnings if the model is unstable or attribution is degenerate
+
+    Returns:
+        summary: str
+            Human-readable explanation text for VisualizationTabs.update_xai()
+
+        health: dict | None
+            {
+                "status": "Warning" | "Error",
+                "message": "..."
+            }
+    """
+
+    if df is None or df.empty:
+        return "No data available for explainability.", None
+
+    # ---------------------------------------------------------
+    # 1. Select numeric columns
+    # ---------------------------------------------------------
+    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    if len(numeric_cols) < 2:
+        return "Not enough numeric features for XAI analysis.", None
+
+    # Target: first numeric column
+    target_col = numeric_cols[0]
+    feature_cols = numeric_cols[1:]
+
+    y = df[target_col].values
+    X = df[feature_cols].values
+
+    # Need enough samples
+    if len(X) < 20:
+        return "Too few samples for stable feature attribution.", None
+
+    # ---------------------------------------------------------
+    # 2. Train small RandomForest
+    # ---------------------------------------------------------
+    try:
+        model = RandomForestRegressor(
+            n_estimators=50,
+            max_depth=5,
+            random_state=42,
+            n_jobs=1,
+        )
+        model.fit(X, y)
+        importances = model.feature_importances_
+    except Exception:
+        return "XAI model training failed on this batch.", None
+
+    # ---------------------------------------------------------
+    # 3. Normalize and sort importances
+    # ---------------------------------------------------------
+    total_importance = float(np.sum(importances))
+    if total_importance <= 0:
+        return "Feature importances are degenerate (all zero).", {
+            "status": "Warning",
+            "message": "XAI importances are all zero; model may be unstable."
+        }
+
+    normalized = importances / total_importance
+    pairs = list(zip(feature_cols, normalized))
+    pairs.sort(key=lambda x: x[1], reverse=True)
+
+    # ---------------------------------------------------------
+    # 4. Build explanation summary
+    # ---------------------------------------------------------
+    lines = [
+        f"XAI Summary for target: {target_col}",
+        "",
+        "Relative feature importances:",
+        "",
+    ]
+
+    for name, imp in pairs:
+        lines.append(f"  - {name}: {imp:.3f}")
+
+    # Simple health heuristic: if one feature dominates > 0.9
+    health = None
+    if pairs[0][1] > 0.9:
+        health = {
+            "status": "Warning",
+            "message": f"XAI: {pairs[0][0]} dominates attribution ({pairs[0][1]:.2f})."
+        }
+
+    summary = "\n".join(lines)
+    return summary, health
+	
+#---------------------------------
+
+# analyzer/utils/alert_manager.py
+
+from typing import Dict, Any, List
+from datetime import datetime
+
+
+class AlertManager:
+    """
+    Centralized alert formatter and storage for the Telemetry Analyzer.
+
+    Responsibilities:
+        - Receive raw alert dictionaries from AlertListener
+        - Normalize and format them into human-readable messages
+        - Store recent alerts for optional display or debugging
+        - Provide helper methods for categorizing alert types
+
+    Methods:
+        add_alert(alert_dict) -> str
+            Formats and stores an alert, returns formatted message
+
+        get_recent_alerts(n=20) -> list[str]
+            Returns the last n formatted alerts
+    """
+
+    def __init__(self, max_history: int = 200):
+        self.max_history = max_history
+        self.history: List[str] = []
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def add_alert(self, alert: Dict[str, Any]) -> str:
+        """
+        Accepts a raw alert dictionary from AlertListener and returns
+        a formatted, human-readable message.
+
+        Expected alert format:
+            {
+                "event": "chunk_written",
+                "timestamp": "2026-02-17T10:42:00",
+                "payload": { "rows": 10000 }
+            }
+
+        Returns:
+            formatted_message: str
+        """
+
+        event = alert.get("event", "unknown_event")
+        timestamp = alert.get("timestamp") or datetime.utcnow().isoformat()
+        payload = alert.get("payload", {})
+
+        # Build readable message
+        payload_str = ", ".join(f"{k}={v}" for k, v in payload.items()) if payload else "no details"
+        message = f"[ALERT] {event} at {timestamp} — {payload_str}"
+
+        # Store in history
+        self._store(message)
+
+        return message
+
+    def get_recent_alerts(self, n: int = 20) -> List[str]:
+        """
+        Returns the last n formatted alerts.
+        """
+        return self.history[-n:]
+
+    # ---------------------------------------------------------
+    # Internal helpers
+    # ---------------------------------------------------------
+    def _store(self, message: str):
+        """
+        Stores a formatted alert message in the history buffer.
+        """
+        self.history.append(message)
+        if len(self.history) > self.max_history:
+            self.history.pop(0)
+			
+#-------------------------------------
+
+# analyzer/utils/file_monitor.py
+
+import os
+from typing import Optional
+import pandas as pd
+
+
+class FileMonitor:
+    """
+    Lightweight file monitor for telemetry files.
+
+    Responsibilities:
+        - Track file size changes
+        - Track row count (CSV or Parquet)
+        - Detect file resets or truncation
+        - Provide metadata for progress reporting
+
+    Methods:
+        update() -> dict
+            Returns a dictionary describing the current file state:
+                {
+                    "size_bytes": int,
+                    "rows": int,
+                    "reset_detected": bool
+                }
+    """
+
+    def __init__(self, file_path: str):
+        self.file_path = file_path
+
+        # Internal state
+        self.last_size: int = 0
+        self.last_rows: int = 0
+
+        # Detect format
+        self.format = self._detect_format(file_path)
+
+    # ---------------------------------------------------------
+    # Format detection
+    # ---------------------------------------------------------
+    def _detect_format(self, path: str) -> str:
+        ext = os.path.splitext(path)[1].lower()
+        if ext == ".csv":
+            return "csv"
+        if ext == ".parquet":
+            return "parquet"
+        raise ValueError(f"Unsupported telemetry file format: {ext}")
+
+    # ---------------------------------------------------------
+    # Public API
+    # ---------------------------------------------------------
+    def update(self) -> dict:
+        """
+        Checks the current file state and returns metadata.
+
+        Returns:
+            {
+                "size_bytes": int,
+                "rows": int,
+                "reset_detected": bool
+            }
+        """
+        if not os.path.exists(self.file_path):
+            return {
+                "size_bytes": 0,
+                "rows": 0,
+                "reset_detected": False,
+            }
+
+        size = os.path.getsize(self.file_path)
+        rows = self._count_rows()
+
+        # Detect file reset (e.g., generator restarted)
+        reset = size < self.last_size or rows < self.last_rows
+
+        # Update internal state
+        self.last_size = size
+        self.last_rows = rows
+
+        return {
+            "size_bytes": size,
+            "rows": rows,
+            "reset_detected": reset,
+        }
+
+    # ---------------------------------------------------------
+    # Row counting
+    # ---------------------------------------------------------
+    def _count_rows(self) -> int:
+        """
+        Efficient row counting for CSV and Parquet.
+        """
+        try:
+            if self.format == "csv":
+                return self._count_csv_rows()
+            else:
+                return self._count_parquet_rows()
+        except Exception:
+            return 0
+
+    def _count_csv_rows(self) -> int:
+        """
+        Counts rows in a CSV file without loading the full file.
+        """
+        with open(self.file_path, "r", encoding="utf-8") as f:
+            # subtract header
+            return max(0, sum(1 for _ in f) - 1)
+
+    def _count_parquet_rows(self) -> int:
+        """
+        Counts rows in a Parquet file using metadata only.
+        """
+        meta = pd.read_parquet(self.file_path, columns=[])
+        return meta.shape[0]
+		
+#---------------------------------
+
+# analyzer/utils/plot_helpers.py
+
+import numpy as np
+from typing import Dict, Any, List, Optional
+
+
+class PlotHelpers:
+    """
+    Utility class for preparing visualization-friendly data structures.
+
+    Responsibilities:
+        - Normalize time-series data
+        - Validate scatterplot inputs
+        - Prepare anomaly score curves
+        - Provide safe defaults for missing or malformed data
+
+    Methods:
+        prepare_time_series(result_dict)
+        prepare_scatter(result_dict)
+        prepare_forecast(result_dict)
+        prepare_anomaly_curve(result_dict)
+    """
+
+    # ---------------------------------------------------------
+    # Time-Series
+    # ---------------------------------------------------------
+    @staticmethod
+    def prepare_time_series(data: Dict[str, Any]) -> Dict[str, List[float]]:
+        """
+        Ensures time-series data is well-formed.
+
+        Expected:
+            {
+                "x": [...],
+                "y": [...],
+                "label": "Temperature"
+            }
+        """
+        if not data:
+            return {"x": [], "y": [], "label": "No Data"}
+
+        x = data.get("x", [])
+        y = data.get("y", [])
+        label = data.get("label", "Signal")
+
+        # Convert to lists of floats
+        try:
+            x = [float(v) for v in x]
+            y = [float(v) for v in y]
+        except Exception:
+            x, y = [], []
+
+        return {"x": x, "y": y, "label": label}
+
+    # ---------------------------------------------------------
+    # Scatter (Clustering)
+    # ---------------------------------------------------------
+    @staticmethod
+    def prepare_scatter(data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Ensures clustering scatterplot data is well-formed.
+
+        Expected:
+            {
+                "x": [...],
+                "y": [...],
+                "labels": [...],
+                "columns": [...],
+                "method": "kmeans"
+            }
+        """
+        if not data:
+            return {"x": [], "y": [], "labels": [], "columns": [], "method": "none"}
+
+        try:
+            x = [float(v) for v in data.get("x", [])]
+            y = [float(v) for v in data.get("y", [])]
+            labels = data.get("labels", [])
+        except Exception:
+            x, y, labels = [], [], []
+
+        return {
+            "x": x,
+            "y": y,
+            "labels": labels,
+            "columns": data.get("columns", []),
+            "method": data.get("method", "unknown"),
+        }
+
+    # ---------------------------------------------------------
+    # Forecasting
+    # ---------------------------------------------------------
+    @staticmethod
+    def prepare_forecast(data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Ensures forecast data is well-formed.
+
+        Expected:
+            {
+                "history_x": [...],
+                "history_y": [...],
+                "forecast_x": [...],
+                "forecast_y": [...],
+                "label": "Temperature"
+            }
+        """
+        if not data:
+            return {
+                "history_x": [],
+                "history_y": [],
+                "forecast_x": [],
+                "forecast_y": [],
+                "label": "No Data",
+            }
+
+        try:
+            hx = [float(v) for v in data.get("history_x", [])]
+            hy = [float(v) for v in data.get("history_y", [])]
+            fx = [float(v) for v in data.get("forecast_x", [])]
+            fy = [float(v) for v in data.get("forecast_y", [])]
+        except Exception:
+            hx, hy, fx, fy = [], [], [], []
+
+        return {
+            "history_x": hx,
+            "history_y": hy,
+            "forecast_x": fx,
+            "forecast_y": fy,
+            "label": data.get("label", "Signal"),
+        }
+
+    # ---------------------------------------------------------
+    # Anomaly Curve (Deep Learning)
+    # ---------------------------------------------------------
+    @staticmethod
+    def prepare_anomaly_curve(data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Ensures anomaly score data is well-formed.
+
+        Expected:
+            {
+                "x": [...],
+                "anomaly_score": [...],
+                "columns": [...]
+            }
+        """
+        if not data:
+            return {"x": [], "anomaly_score": [], "columns": []}
+
+        try:
+            x = [float(v) for v in data.get("x", [])]
+            scores = [float(v) for v in data.get("anomaly_score", [])]
+        except Exception:
+            x, scores = [], []
+
+        return {
+            "x": x,
+            "anomaly_score": scores,
+            "columns": data.get("columns", []),
+        }
+		
