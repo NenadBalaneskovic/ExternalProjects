@@ -1,0 +1,11 @@
+simulation:
+ model: ou
+ n_assets: 4
+ n_steps: 1000
+ theta: 0.2
+ mu: 0.0
+ sigma: 0.3
+ 
+analysis:
+  type: risk         # or "physics"
+  model: Rolling Volatility

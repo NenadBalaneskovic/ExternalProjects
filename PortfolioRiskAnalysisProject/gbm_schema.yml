@@ -1,0 +1,11 @@
+simulation:
+  model: gbm
+  n_assets: 6
+  n_steps: 1500
+  mu: 0.07
+  sigma: 0.25
+  corr: 0.6
+
+analysis:
+  type: risk         # or "physics"
+  model: Rolling Volatility

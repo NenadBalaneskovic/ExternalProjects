@@ -1,0 +1,13 @@
+simulation:
+ model: heston
+ n_assets: 2
+ n_steps: 1200
+ mu: 0.05
+ kappa: 0.6
+ theta: 0.04
+ xi: 0.1
+ rho: -0.7
+
+analysis:
+  type: risk         # or "physics"
+  model: Rolling Volatility

@@ -1,0 +1,9 @@
+simulation:
+ model: regime
+ n_assets: 3
+ n_steps: 1000
+ regimes: 2
+ 
+analysis:
+  type: risk         # or "physics"
+  model: Rolling Volatility
