@@ -1,0 +1,6 @@
+{
+    "backend": "sklearn",
+    "entry_point": "simple_sklearn_model.py",
+    "type": "onnx",
+    "description": "scikit-learn model exported via skl2onnx."
+}

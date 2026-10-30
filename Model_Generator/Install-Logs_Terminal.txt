@@ -1,0 +1,669 @@
+(base) PS C:\MLProjects\Model_Generator\onnx_model_generator> conda activate jupyter-env
+(jupyter-env) PS C:\MLProjects\Model_Generator\onnx_model_generator> pip install -r requirements.txt
+Defaulting to user installation because normal site-packages is not writeable
+Collecting PySimpleGUI>=4.60 (from -r requirements.txt (line 4))
+  Using cached pysimplegui-6.3-py3-none-any.whl.metadata (17 kB)
+Requirement already satisfied: psutil>=5.9 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from -r requirements.txt (line 5)) (7.2.2)
+Collecting tqdm>=4.66 (from -r requirements.txt (line 6))
+  Using cached tqdm-4.70.0-py3-none-any.whl.metadata (57 kB)
+Collecting onnx>=1.16 (from -r requirements.txt (line 11))
+  Using cached onnx-1.22.0-cp312-abi3-win_amd64.whl.metadata (8.5 kB)
+Collecting onnxruntime>=1.18 (from -r requirements.txt (line 12))
+  Using cached onnxruntime-1.28.0-cp312-cp312-win_amd64.whl.metadata (5.7 kB)
+Collecting torch>=2.2 (from -r requirements.txt (line 17))
+  Using cached torch-2.13.0-cp312-cp312-win_amd64.whl.metadata (39 kB)
+Collecting scikit-learn>=1.4 (from -r requirements.txt (line 22))
+  Using cached scikit_learn-1.9.0-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Collecting skl2onnx>=1.17 (from -r requirements.txt (line 23))
+  Using cached skl2onnx-1.20.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting tensorflow>=2.15 (from -r requirements.txt (line 28))
+  Using cached tensorflow-2.21.0-cp312-cp312-win_amd64.whl.metadata (4.5 kB)
+Collecting mlserver==1.3.5 (from -r requirements.txt (line 33))
+  Downloading mlserver-1.3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting tritonclient>=2.41 (from -r requirements.txt (line 38))
+  Using cached tritonclient-2.71.0-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: numpy>=1.26 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from -r requirements.txt (line 43)) (2.4.4)
+Collecting scipy>=1.12 (from -r requirements.txt (line 44))
+  Using cached scipy-1.18.0-cp312-cp312-win_amd64.whl.metadata (61 kB)
+Requirement already satisfied: pandas>=2.2 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from -r requirements.txt (line 45)) (3.0.2)
+Collecting numexpr>=2.9 (from -r requirements.txt (line 46))
+  Using cached numexpr-2.14.2-cp312-cp312-win_amd64.whl.metadata (9.2 kB)
+Collecting h5py>=3.10 (from -r requirements.txt (line 47))
+  Using cached h5py-3.16.0-cp312-cp312-win_amd64.whl.metadata (3.1 kB)
+Collecting sympy>=1.12 (from -r requirements.txt (line 52))
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting mpmath>=1.3.0 (from -r requirements.txt (line 53))
+  Using cached mpmath-1.4.1-py3-none-any.whl.metadata (9.1 kB)
+Requirement already satisfied: matplotlib>=3.8 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from -r requirements.txt (line 58)) (3.10.8)
+Requirement already satisfied: seaborn>=0.13 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from -r requirements.txt (line 59)) (0.13.2)
+Collecting plotly>=5.19 (from -r requirements.txt (line 60))
+  Using cached plotly-6.9.0-py3-none-any.whl.metadata (9.0 kB)
+Collecting ipywidgets>=8.1 (from -r requirements.txt (line 61))
+  Using cached ipywidgets-8.1.8-py3-none-any.whl.metadata (2.4 kB)
+Requirement already satisfied: ipykernel>=6.29 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from -r requirements.txt (line 62)) (7.2.0)
+Requirement already satisfied: notebook>=7.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from -r requirements.txt (line 63)) (7.5.5)
+Requirement already satisfied: jupyterlab>=4.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from -r requirements.txt (line 64)) (4.5.6)
+Collecting pycryptodome>=3.20 (from -r requirements.txt (line 69))
+  Using cached pycryptodome-3.23.0-cp37-abi3-win_amd64.whl.metadata (3.5 kB)
+Collecting cryptography>=42.0.0 (from -r requirements.txt (line 70))
+  Using cached cryptography-50.0.0-cp311-abi3-win_amd64.whl.metadata (4.3 kB)
+Collecting pqcrypto>=0.4.0 (from -r requirements.txt (line 71))
+  Using cached pqcrypto-0.4.0-cp312-cp312-win_amd64.whl.metadata (5.9 kB)
+Collecting simpful==2.10.0 (from -r requirements.txt (line 77))
+  Downloading simpful-2.10.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting ldpc==0.1.60 (from -r requirements.txt (line 82))
+  Downloading ldpc-0.1.60-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Collecting click (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting fastapi!=0.89.0,<=0.89.1,>=0.88.0 (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading fastapi-0.89.1-py3-none-any.whl.metadata (24 kB)
+Collecting python-dotenv (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting grpcio (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading grpcio-1.83.0-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Requirement already satisfied: importlib-resources in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from mlserver==1.3.5->-r requirements.txt (line 33)) (7.1.0)
+Collecting protobuf (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading protobuf-7.35.1-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Collecting uvicorn (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading uvicorn-0.52.2-py3-none-any.whl.metadata (6.6 kB)
+Collecting starlette-exporter (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading starlette_exporter-0.24.0-py3-none-any.whl.metadata (11 kB)
+Collecting py-grpc-prometheus (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading py_grpc_prometheus-0.8.0-py3-none-any.whl.metadata (5.4 kB)
+Collecting aiokafka (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading aiokafka-0.14.0-cp312-cp312-win_amd64.whl.metadata (5.2 kB)
+Collecting aiofiles (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting orjson (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading orjson-3.11.9-cp312-cp312-win_amd64.whl.metadata (43 kB)
+Requirement already satisfied: requests in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from simpful==2.10.0->-r requirements.txt (line 77)) (2.33.1)
+Collecting pydantic!=1.7,!=1.7.1,!=1.7.2,!=1.7.3,!=1.8,!=1.8.1,<2.0.0,>=1.6.2 (from fastapi!=0.89.0,<=0.89.1,>=0.88.0->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading pydantic-1.10.26-cp312-cp312-win_amd64.whl.metadata (156 kB)
+Collecting starlette==0.22.0 (from fastapi!=0.89.0,<=0.89.1,>=0.88.0->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading starlette-0.22.0-py3-none-any.whl.metadata (5.8 kB)
+Requirement already satisfied: anyio<5,>=3.4.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from starlette==0.22.0->fastapi!=0.89.0,<=0.89.1,>=0.88.0->mlserver==1.3.5->-r requirements.txt (line 33)) (4.13.0)
+Requirement already satisfied: idna>=2.8 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from anyio<5,>=3.4.0->starlette==0.22.0->fastapi!=0.89.0,<=0.89.1,>=0.88.0->mlserver==1.3.5->-r requirements.txt (line 33)) (3.11)
+Requirement already satisfied: typing_extensions>=4.5 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from anyio<5,>=3.4.0->starlette==0.22.0->fastapi!=0.89.0,<=0.89.1,>=0.88.0->mlserver==1.3.5->-r requirements.txt (line 33)) (4.15.0)
+Requirement already satisfied: colorama in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from tqdm>=4.66->-r requirements.txt (line 6)) (0.4.6)
+Collecting ml_dtypes>=0.5.4 (from onnx>=1.16->-r requirements.txt (line 11))
+  Downloading ml_dtypes-0.5.4-cp312-cp312-win_amd64.whl.metadata (9.2 kB)
+Collecting flatbuffers (from onnxruntime>=1.18->-r requirements.txt (line 12))
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Requirement already satisfied: packaging in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from onnxruntime>=1.18->-r requirements.txt (line 12)) (26.1)
+Collecting filelock (from torch>=2.2->-r requirements.txt (line 17))
+  Downloading filelock-3.32.2-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: setuptools>=77.0.3 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from torch>=2.2->-r requirements.txt (line 17)) (82.0.1)
+Collecting networkx>=2.5.1 (from torch>=2.2->-r requirements.txt (line 17))
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Requirement already satisfied: jinja2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from torch>=2.2->-r requirements.txt (line 17)) (3.1.6)
+Collecting fsspec>=0.8.5 (from torch>=2.2->-r requirements.txt (line 17))
+  Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting joblib>=1.4.0 (from scikit-learn>=1.4->-r requirements.txt (line 22))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn>=1.4->-r requirements.txt (line 22))
+  Downloading narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn>=1.4->-r requirements.txt (line 22))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting absl-py>=1.0.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading absl_py-2.5.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting astunparse>=1.6.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading gast-0.7.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting google_pasta>=0.1.1 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting libclang>=13.0.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading libclang-18.1.1-py2.py3-none-win_amd64.whl.metadata (5.3 kB)
+Collecting opt_einsum>=2.3.2 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: six>=1.12.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from tensorflow>=2.15->-r requirements.txt (line 28)) (1.17.0)
+Collecting termcolor>=1.1.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting wrapt>=1.11.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading wrapt-2.3.0-cp312-cp312-win_amd64.whl.metadata (7.6 kB)
+Collecting keras>=3.12.0 (from tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading keras-3.15.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting h5py>=3.10 (from -r requirements.txt (line 47))
+  Downloading h5py-3.14.0-cp312-cp312-win_amd64.whl.metadata (2.7 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from requests->simpful==2.10.0->-r requirements.txt (line 77)) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from requests->simpful==2.10.0->-r requirements.txt (line 77)) (2.6.3)
+Requirement already satisfied: certifi>=2023.5.7 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from requests->simpful==2.10.0->-r requirements.txt (line 77)) (2026.2.25)
+Collecting python-rapidjson>=0.9.1 (from tritonclient>=2.41->-r requirements.txt (line 38))
+  Downloading python_rapidjson-1.23-cp312-cp312-win_amd64.whl.metadata (25 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from pandas>=2.2->-r requirements.txt (line 45)) (2.9.0.post0)
+Requirement already satisfied: tzdata in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from pandas>=2.2->-r requirements.txt (line 45)) (2026.1)
+Collecting mpmath>=1.3.0 (from -r requirements.txt (line 53))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Requirement already satisfied: contourpy>=1.0.1 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (1.5.0)
+Requirement already satisfied: pillow>=8 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (12.2.0)   
+Requirement already satisfied: pyparsing>=3 in C:\Users\balan\AppData\Roaming\Python\Python312\site-packages (from matplotlib>=3.8->-r requirements.txt (line 58)) (3.3.2) 
+Requirement already satisfied: comm>=0.1.3 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipywidgets>=8.1->-r requirements.txt (line 61)) (0.2.3)
+Requirement already satisfied: ipython>=6.1.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipywidgets>=8.1->-r requirements.txt (line 61)) (9.12.0)
+Requirement already satisfied: traitlets>=4.3.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipywidgets>=8.1->-r requirements.txt (line 61)) (5.14.3)
+Collecting widgetsnbextension~=4.0.14 (from ipywidgets>=8.1->-r requirements.txt (line 61))
+  Downloading widgetsnbextension-4.0.15-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyterlab_widgets~=3.0.15 (from ipywidgets>=8.1->-r requirements.txt (line 61))
+  Downloading jupyterlab_widgets-3.0.16-py3-none-any.whl.metadata (20 kB)
+Requirement already satisfied: debugpy>=1.6.5 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (1.8.20)
+Requirement already satisfied: jupyter-client>=8.8.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (8.8.0)
+Requirement already satisfied: jupyter-core!=6.0.*,>=5.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (5.9.1)
+Requirement already satisfied: matplotlib-inline>=0.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (0.2.1)
+Requirement already satisfied: nest-asyncio>=1.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (1.6.0)
+Requirement already satisfied: pyzmq>=25 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (27.1.0)    
+Requirement already satisfied: tornado>=6.4.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipykernel>=6.29->-r requirements.txt (line 62)) (6.5.5)
+Requirement already satisfied: jupyter-server<3,>=2.4.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from notebook>=7.1->-r requirements.txt (line 63)) (2.17.0)
+Requirement already satisfied: jupyterlab-server<3,>=2.28.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from notebook>=7.1->-r requirements.txt (line 63)) (2.28.0)
+Requirement already satisfied: notebook-shim<0.3,>=0.2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from notebook>=7.1->-r requirements.txt (line 63)) (0.2.4)
+Requirement already satisfied: async-lru>=1.0.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab>=4.1->-r requirements.txt (line 64)) (2.3.0)
+Requirement already satisfied: httpx<1,>=0.25.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab>=4.1->-r requirements.txt (line 64)) (0.28.1)
+Requirement already satisfied: jupyter-lsp>=2.0.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab>=4.1->-r requirements.txt (line 64)) (2.3.1)
+Requirement already satisfied: httpcore==1.* in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from httpx<1,>=0.25.0->jupyterlab>=4.1->-r requirements.txt (line 64)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from httpcore==1.*->httpx<1,>=0.25.0->jupyterlab>=4.1->-r requirements.txt (line 64)) (0.16.0)
+Requirement already satisfied: argon2-cffi>=21.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (25.1.0)
+Requirement already satisfied: jupyter-events>=0.11.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.12.0)
+Requirement already satisfied: jupyter-server-terminals>=0.4.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.5.4)
+Requirement already satisfied: nbconvert>=6.4.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (7.17.1)
+Requirement already satisfied: nbformat>=5.3.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (5.10.4)
+Requirement already satisfied: prometheus-client>=0.9 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.25.0)
+Requirement already satisfied: pywinpty>=2.0.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (2.0.15)
+Requirement already satisfied: send2trash>=1.8.2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (2.1.0)
+Requirement already satisfied: terminado>=0.8.3 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.18.1)
+Requirement already satisfied: websocket-client>=1.7 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.9.0)
+Requirement already satisfied: babel>=2.10 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (2.18.0)
+Requirement already satisfied: json5>=0.9.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (0.14.0)
+Requirement already satisfied: jsonschema>=4.18.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (4.26.0)
+Requirement already satisfied: cffi>=2.0.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from cryptography>=42.0.0->-r requirements.txt (line 70)) (2.0.0)
+Requirement already satisfied: argon2-cffi-bindings in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from argon2-cffi>=21.1->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (25.1.0)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from astunparse>=1.6.0->tensorflow>=2.15->-r requirements.txt (line 28)) (0.46.3)
+Requirement already satisfied: pycparser in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from cffi>=2.0.0->cryptography>=42.0.0->-r requirements.txt (line 70)) (2.22)
+Requirement already satisfied: decorator>=5.1.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers>=1.0.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (1.1.1)
+Requirement already satisfied: jedi>=0.18.2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (0.19.2)
+Requirement already satisfied: prompt_toolkit<3.1.0,>=3.0.41 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (3.0.52)
+Requirement already satisfied: pygments>=2.14.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (2.20.0)
+Requirement already satisfied: stack_data>=0.6.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (0.6.3)
+Requirement already satisfied: wcwidth in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (0.6.0)
+Requirement already satisfied: parso<0.9.0,>=0.8.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jedi>=0.18.2->ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (0.8.6)
+Requirement already satisfied: MarkupSafe>=2.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jinja2->torch>=2.2->-r requirements.txt (line 17)) (3.0.3)
+Requirement already satisfied: attrs>=22.2.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->notebook>=7.1->-r requirements.txt (line 63)) (0.30.0)
+Requirement already satisfied: platformdirs>=2.5 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-core!=6.0.*,>=5.1->ipykernel>=6.29->-r requirements.txt (line 62)) (4.9.6)
+Requirement already satisfied: python-json-logger>=2.0.4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (2.0.7)
+Requirement already satisfied: pyyaml>=5.3 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (6.0.3)
+Requirement already satisfied: rfc3339-validator in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.1.4)
+Requirement already satisfied: rfc3986-validator>=0.1.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.1.1)
+Requirement already satisfied: fqdn in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.5.1)
+Requirement already satisfied: isoduration in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (20.11.0)
+Requirement already satisfied: jsonpointer>1.13 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (3.1.1)
+Requirement already satisfied: rfc3987-syntax>=1.1.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.1.0)
+Requirement already satisfied: uri-template in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.3.0)
+Requirement already satisfied: webcolors>=24.6.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (25.10.0)
+Collecting rich (from keras>=3.12.0->tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting namex (from keras>=3.12.0->tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading namex-0.1.0-py3-none-any.whl.metadata (322 bytes)
+Collecting optree (from keras>=3.12.0->tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading optree-0.19.1-cp312-cp312-win_amd64.whl.metadata (32 kB)
+Requirement already satisfied: beautifulsoup4 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (4.14.3)
+Requirement already satisfied: bleach!=5.0.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from bleach[css]!=5.0.0->nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (6.3.0)
+Requirement already satisfied: defusedxml in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.7.1)
+Requirement already satisfied: jupyterlab-pygments in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.3.0)
+Requirement already satisfied: mistune<4,>=2.0.3 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (3.2.0)
+Requirement already satisfied: nbclient>=0.5.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.10.4)
+Requirement already satisfied: pandocfilters>=1.4.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.5.0)
+Requirement already satisfied: webencodings in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from bleach!=5.0.0->bleach[css]!=5.0.0->nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (0.5.1)
+Requirement already satisfied: tinycss2<1.5,>=1.1.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from bleach[css]!=5.0.0->nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.4.0)
+Requirement already satisfied: fastjsonschema>=2.15 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from nbformat>=5.3.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (2.21.2)
+Requirement already satisfied: lark>=1.2.2 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from rfc3987-syntax>=1.1.0->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.3.1)
+Requirement already satisfied: executing>=1.2.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (2.2.1)
+Requirement already satisfied: asttokens>=2.1.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (3.0.1)
+Requirement already satisfied: pure_eval in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets>=8.1->-r requirements.txt (line 61)) (0.2.3)
+Collecting aiohttp<4.0.0,>=3.8.1 (from tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading aiohttp-3.14.3-cp312-cp312-win_amd64.whl.metadata (8.5 kB)
+Collecting geventhttpclient>=2.3.3 (from tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading geventhttpclient-2.3.9-cp312-cp312-win_amd64.whl.metadata (8.7 kB)
+Collecting greenlet<3.4.0 (from tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading greenlet-3.3.2-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading frozenlist-1.8.0-cp312-cp312-win_amd64.whl.metadata (21 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading multidict-6.7.1-cp312-cp312-win_amd64.whl.metadata (5.5 kB)
+Collecting propcache>=0.2.0 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading propcache-0.5.2-cp312-cp312-win_amd64.whl.metadata (17 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp<4.0.0,>=3.8.1->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading yarl-1.24.5-cp312-cp312-win_amd64.whl.metadata (107 kB)
+Collecting gevent (from geventhttpclient>=2.3.3->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading gevent-26.8.0-cp312-cp312-win_amd64.whl.metadata (14 kB)
+Requirement already satisfied: brotli in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from geventhttpclient>=2.3.3->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33)) (1.2.0)
+Collecting async-timeout (from aiokafka->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading async_timeout-5.0.1-py3-none-any.whl.metadata (5.1 kB)
+Requirement already satisfied: soupsieve>=1.6.1 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from beautifulsoup4->nbconvert>=6.4.4->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (2.8.3)
+Collecting cffi>=2.0.0 (from cryptography>=42.0.0->-r requirements.txt (line 70))
+  Downloading cffi-2.1.1-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+Collecting zope.event (from gevent->geventhttpclient>=2.3.3->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading zope_event-6.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting zope.interface (from gevent->geventhttpclient>=2.3.3->tritonclient[http]>=2.24->mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading zope_interface-8.5-cp312-cp312-win_amd64.whl.metadata (48 kB)
+Requirement already satisfied: arrow>=0.15.0 in C:\ProgramData\miniforge3\envs\jupyter-env\Lib\site-packages (from isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->notebook>=7.1->-r requirements.txt (line 63)) (1.4.0)
+Collecting markdown-it-py>=2.2.0 (from rich->keras>=3.12.0->tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->keras>=3.12.0->tensorflow>=2.15->-r requirements.txt (line 28))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+INFO: pip is looking at multiple versions of starlette-exporter to determine which version is compatible with other requirements. This could take a while.
+Collecting starlette-exporter (from mlserver==1.3.5->-r requirements.txt (line 33))
+  Downloading starlette_exporter-0.23.0-py3-none-any.whl.metadata (11 kB)
+  Downloading starlette_exporter-0.22.0-py3-none-any.whl.metadata (10 kB)
+  Downloading starlette_exporter-0.21.0-py3-none-any.whl.metadata (10 kB)
+  Downloading starlette_exporter-0.20.0-py3-none-any.whl.metadata (10 kB)
+  Downloading starlette_exporter-0.19.0-py3-none-any.whl.metadata (10 kB)
+  Downloading starlette_exporter-0.18.0-py3-none-any.whl.metadata (10 kB)
+  Downloading starlette_exporter-0.17.1-py3-none-any.whl.metadata (10 kB)
+Downloading mlserver-1.3.5-py3-none-any.whl (113 kB)
+Downloading simpful-2.10.0-py3-none-any.whl (31 kB)
+Downloading ldpc-0.1.60-cp312-cp312-win_amd64.whl (541 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 541.3/541.3 kB 5.9 MB/s  0:00:00
+Downloading fastapi-0.89.1-py3-none-any.whl (55 kB)
+Downloading starlette-0.22.0-py3-none-any.whl (64 kB)
+Downloading pydantic-1.10.26-cp312-cp312-win_amd64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 10.7 MB/s  0:00:00
+Downloading pysimplegui-6.3-py3-none-any.whl (496 kB)
+Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
+Downloading onnx-1.22.0-cp312-abi3-win_amd64.whl (17.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.2/17.2 MB 3.8 MB/s  0:00:04
+Downloading onnxruntime-1.28.0-cp312-cp312-win_amd64.whl (13.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 11.5 MB/s  0:00:01
+Downloading torch-2.13.0-cp312-cp312-win_amd64.whl (122.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.1/122.1 MB 11.4 MB/s  0:00:10
+Downloading scikit_learn-1.9.0-cp312-cp312-win_amd64.whl (8.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 MB 7.9 MB/s  0:00:01
+Downloading skl2onnx-1.20.0-py3-none-any.whl (317 kB)
+Downloading tensorflow-2.21.0-cp312-cp312-win_amd64.whl (350.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 350.9/350.9 MB 8.9 MB/s  0:00:38
+Downloading h5py-3.14.0-cp312-cp312-win_amd64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 6.9 MB/s  0:00:00
+Downloading grpcio-1.83.0-cp312-cp312-win_amd64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 11.2 MB/s  0:00:00
+Downloading ml_dtypes-0.5.4-cp312-cp312-win_amd64.whl (212 kB)
+Downloading protobuf-7.35.1-cp310-abi3-win_amd64.whl (439 kB)
+Downloading tritonclient-2.71.0-py3-none-any.whl (111 kB)
+Downloading scipy-1.18.0-cp312-cp312-win_amd64.whl (36.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.6/36.6 MB 12.0 MB/s  0:00:03
+Downloading numexpr-2.14.2-cp312-cp312-win_amd64.whl (157 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 11.4 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 6.0 MB/s  0:00:00
+Downloading plotly-6.9.0-py3-none-any.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 9.6 MB/s  0:00:01
+Downloading ipywidgets-8.1.8-py3-none-any.whl (139 kB)
+Downloading jupyterlab_widgets-3.0.16-py3-none-any.whl (914 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 914.9/914.9 kB 8.4 MB/s  0:00:00
+Downloading widgetsnbextension-4.0.15-py3-none-any.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 9.5 MB/s  0:00:00
+Downloading pycryptodome-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 9.9 MB/s  0:00:00
+Downloading cryptography-50.0.0-cp311-abi3-win_amd64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 11.5 MB/s  0:00:00
+Downloading pqcrypto-0.4.0-cp312-cp312-win_amd64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 11.3 MB/s  0:00:00
+Downloading absl_py-2.5.0-py3-none-any.whl (137 kB)
+Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Downloading gast-0.7.0-py3-none-any.whl (22 kB)
+Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+Downloading keras-3.15.1-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 6.8 MB/s  0:00:00
+Downloading libclang-18.1.1-py2.py3-none-win_amd64.whl (26.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.4/26.4 MB 12.0 MB/s  0:00:02
+Downloading narwhals-2.24.0-py3-none-any.whl (461 kB)
+Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 9.7 MB/s  0:00:00
+Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+Downloading python_rapidjson-1.23-cp312-cp312-win_amd64.whl (151 kB)
+Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading aiohttp-3.14.3-cp312-cp312-win_amd64.whl (476 kB)
+Downloading greenlet-3.3.2-cp312-cp312-win_amd64.whl (231 kB)
+Downloading multidict-6.7.1-cp312-cp312-win_amd64.whl (46 kB)
+Downloading yarl-1.24.5-cp312-cp312-win_amd64.whl (97 kB)
+Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading frozenlist-1.8.0-cp312-cp312-win_amd64.whl (44 kB)
+Downloading geventhttpclient-2.3.9-cp312-cp312-win_amd64.whl (49 kB)
+Downloading propcache-0.5.2-cp312-cp312-win_amd64.whl (42 kB)
+Downloading wrapt-2.3.0-cp312-cp312-win_amd64.whl (81 kB)
+Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
+Downloading aiokafka-0.14.0-cp312-cp312-win_amd64.whl (331 kB)
+Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Downloading filelock-3.32.2-py3-none-any.whl (98 kB)
+Downloading gevent-26.8.0-cp312-cp312-win_amd64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 10.2 MB/s  0:00:00
+Downloading cffi-2.1.1-cp312-cp312-win_amd64.whl (185 kB)
+Downloading namex-0.1.0-py3-none-any.whl (5.9 kB)
+Downloading optree-0.19.1-cp312-cp312-win_amd64.whl (341 kB)
+Downloading orjson-3.11.9-cp312-cp312-win_amd64.whl (127 kB)
+Downloading py_grpc_prometheus-0.8.0-py3-none-any.whl (12 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading starlette_exporter-0.17.1-py3-none-any.whl (14 kB)
+Downloading uvicorn-0.52.2-py3-none-any.whl (79 kB)
+Downloading zope_event-6.2-py3-none-any.whl (6.5 kB)
+Downloading zope_interface-8.5-cp312-cp312-win_amd64.whl (215 kB)
+Installing collected packages: namex, mpmath, libclang, flatbuffers, zope.interface, zope.event, wrapt, widgetsnbextension, tqdm, threadpoolctl, termcolor, sympy, scipy, python-rapidjson, python-dotenv, PySimpleGUI, pydantic, pycryptodome, protobuf, propcache, orjson, optree, opt_einsum, numexpr, networkx, narwhals, multidict, ml_dtypes, mdurl, jupyterlab_widgets, joblib, h5py, grpcio, greenlet, google_pasta, gast, fsspec, frozenlist, filelock, click, cffi, async-timeout, aiohappyeyeballs, aiofiles, absl-py, yarl, uvicorn, tritonclient, torch, starlette, simpful, scikit-learn, py-grpc-prometheus, pqcrypto, plotly, onnxruntime, onnx, markdown-it-py, ldpc, gevent, cryptography, astunparse, aiosignal, aiokafka, starlette-exporter, skl2onnx, rich, ipywidgets, geventhttpclient, fastapi, aiohttp, keras, tensorflow, mlserver
+   ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  8/74 [tqdm]  WARNING: The script tqdm.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11/74 [sympy]  WARNING: The script isympy.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/74 [python-dotenv]  WARNING: The script dotenv.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━ 40/74 [cffi]  WARNING: The script cffi-gen-src.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ 46/74 [uvicorn]  WARNING: The script uvicorn.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━ 48/74 [torch]  WARNING: The scripts torchfrtrace.exe and torchrun.exe are installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ 54/74 [plotly]  WARNING: The script plotly_get_chrome.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━ 55/74 [onnxruntime]  WARNING: The script onnxruntime_test.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ 56/74 [onnx]  WARNING: The scripts backend-test-tools.exe, check-model.exe and check-node.exe are installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━ 57/74 [markdown-it-py]  WARNING: The script markdown-it.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ 72/74 [tensorflow]  WARNING: The scripts saved_model_cli.exe, tf_upgrade_v2.exe, tflite_convert.exe and toco.exe are installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ 73/74 [mlserver]  WARNING: The script mlserver.exe is installed in 'C:\Users\balan\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Downloading onnxscript-0.7.1-py3-none-any.whl (721 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 722.0/722.0 kB 2.7 MB/s  0:00:00
+Downloading onnx_ir-1.0.0-py3-none-any.whl (185 kB)
+Installing collected packages: onnx_ir, onnxscript
+Successfully installed onnx_ir-1.0.0 onnxscript-0.7.1 
+Successfully installed PySimpleGUI-6.3 absl-py-2.5.0 aiofiles-25.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiokafka-0.14.0 aiosignal-1.4.0 astunparse-1.6.3 async-timeout-5.0.1 cffi-2.1.1 click-8.4.2 cryptography-50.0.0 fastapi-0.89.1 filelock-3.32.2 flatbuffers-25.12.19 frozenlist-1.8.0 fsspec-2026.7.0 gast-0.7.0 gevent-26.8.0 geventhttpclient-2.3.9 google_pasta-0.2.0 greenlet-3.3.2 grpcio-1.83.0 h5py-3.14.0 ipywidgets-8.1.8 joblib-1.5.3 jupyterlab_widgets-3.0.16 keras-3.15.1 ldpc-0.1.60 libclang-18.1.1 markdown-it-py-4.2.0 mdurl-0.1.2 ml_dtypes-0.5.4 mlserver-1.3.5 mpmath-1.3.0 multidict-6.7.1 namex-0.1.0 narwhals-2.24.0 networkx-3.6.1 numexpr-2.14.2 onnx-1.22.0 onnxruntime-1.28.0 opt_einsum-3.4.0 optree-0.19.1 orjson-3.11.9 plotly-6.9.0 pqcrypto-0.4.0 propcache-0.5.2 protobuf-7.35.1 py-grpc-prometheus-0.8.0 pycryptodome-3.23.0 pydantic-1.10.26 python-dotenv-1.2.2 python-rapidjson-1.23 rich-15.0.0 scikit-learn-1.9.0 scipy-1.18.0 simpful-2.10.0 skl2onnx-1.20.0 starlette-0.22.0 starlette-exporter-0.17.1 sympy-1.14.0 tensorflow-2.21.0 termcolor-3.3.0 threadpoolctl-3.6.0 torch-2.13.0 tqdm-4.70.0 tritonclient-2.71.0 uvicorn-0.52.2 widgetsnbextension-4.0.15 wrapt-2.3.0 yarl-1.24.5 zope.event-6.2 zope.interface-8.5
+(jupyter-env) PS C:\MLProjects\Model_Generator\onnx_model_generator>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+GUI-Ausgaben:
+
+I. Custom hamilton_model
+
+> Running PowerShell script: scripts\Validate-Environment.ps1
+2026-08-13 13:11:13  === Environment Validation Started ===
+2026-08-13 13:11:13  Adding Git to PATH: C:\Program Files\Git\cmd
+2026-08-13 13:11:13  Adding Podman to PATH: C:\Program Files\RedHat\Podman
+2026-08-13 13:11:13  Checking Python availability...
+2026-08-13 13:11:13  Python found.
+2026-08-13 13:11:13  Python version detected: 3.13
+2026-08-13 13:11:13  Python version OK.
+2026-08-13 13:11:13  Checking pip availability...
+2026-08-13 13:11:13  pip found.
+2026-08-13 13:11:13  Checking Python packages...
+2026-08-13 13:11:14  Package 'onnx' : INSTALLED
+2026-08-13 13:11:14  Package 'onnxruntime' : INSTALLED
+2026-08-13 13:11:15  Package 'torch' : INSTALLED
+2026-08-13 13:11:16  Package 'scikit-learn' : INSTALLED
+2026-08-13 13:11:17  Package 'tensorflow' : INSTALLED
+2026-08-13 13:11:17  Package 'mlserver' : INSTALLED
+2026-08-13 13:11:18  Package 'tritonclient' : INSTALLED
+2026-08-13 13:11:18  Checking Git...
+2026-08-13 13:11:18  Git found.
+2026-08-13 13:11:18  Checking Podman...
+2026-08-13 13:11:18  Podman found.
+2026-08-13 13:11:18  === Environment Validation PASSED ===
+> Environment validation PASSED.
+
+> Fixing environment...
+> Installing dependency: onnx
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:13:47  === Installing single dependency: onnx ===
+> Successfully installed onnx.
+> Installing dependency: onnxruntime
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:13:51  === Installing single dependency: onnxruntime ===
+> Successfully installed onnxruntime.
+> Installing dependency: torch
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:13:55  === Installing single dependency: torch ===
+> Successfully installed torch.
+> Installing dependency: scikit-learn
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:13:59  === Installing single dependency: scikit-learn ===
+> Successfully installed scikit-learn.
+> Installing dependency: tensorflow
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:14:03  === Installing single dependency: tensorflow ===
+> Successfully installed tensorflow.
+> Installing dependency: mlserver
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:14:07  === Installing single dependency: mlserver ===
+> Successfully installed mlserver.
+> Installing dependency: tritonclient
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:14:11  === Installing single dependency: tritonclient ===
+> Successfully installed tritonclient.
+> Installing dependency: git
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:14:15  === Installing single dependency: git ===
+> Successfully installed git.
+> Installing dependency: podman
+> Running PowerShell script: scripts\Install-Dependencies.ps1
+2026-08-13 13:14:21  === Installing single dependency: podman ===
+> Successfully installed podman.
+> Running PowerShell script: scripts\Validate-Environment.ps1
+2026-08-13 13:14:25  === Environment Validation Started ===
+2026-08-13 13:14:25  Adding Git to PATH: C:\Program Files\Git\cmd
+2026-08-13 13:14:25  Adding Podman to PATH: C:\Program Files\RedHat\Podman
+2026-08-13 13:14:25  Checking Python availability...
+2026-08-13 13:14:25  Python found.
+2026-08-13 13:14:25  Python version detected: 3.13
+2026-08-13 13:14:25  Python version OK.
+2026-08-13 13:14:25  Checking pip availability...
+2026-08-13 13:14:25  pip found.
+2026-08-13 13:14:25  Checking Python packages...
+2026-08-13 13:14:26  Package 'onnx' : INSTALLED
+2026-08-13 13:14:27  Package 'onnxruntime' : INSTALLED
+2026-08-13 13:14:27  Package 'torch' : INSTALLED
+2026-08-13 13:14:28  Package 'scikit-learn' : INSTALLED
+2026-08-13 13:14:29  Package 'tensorflow' : INSTALLED
+2026-08-13 13:14:30  Package 'mlserver' : INSTALLED
+2026-08-13 13:14:30  Package 'tritonclient' : INSTALLED
+2026-08-13 13:14:30  Checking Git...
+2026-08-13 13:14:30  Git found.
+2026-08-13 13:14:30  Checking Podman...
+2026-08-13 13:14:30  Podman found.
+2026-08-13 13:14:30  === Environment Validation PASSED ===
+> Environment validation PASSED.
+
+> Running PowerShell script: scripts\Generate-ONNXModel.ps1
+2026-08-13 13:05:54  === ONNX Model Generation Orchestrator Started ===
+2026-08-13 13:05:54  Model folder      : C:/Users/balan/OneDrive/Desktop/hamilton_model
+2026-08-13 13:05:54  Entry point       : generators.py
+2026-08-13 13:05:54  Backend           : custom
+2026-08-13 13:05:54  Output folder     : C:/Users/balan/OneDrive/Desktop/H_Model_generated
+2026-08-13 13:05:54  Script directory   : C:\MLProjects\Model_Generator\onnx_model_generator\scripts
+2026-08-13 13:05:54  Project root       : C:\MLProjects\Model_Generator\onnx_model_generator
+2026-08-13 13:05:54  Converters folder  : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters
+2026-08-13 13:05:54  Selected converter : convert_custom.py
+2026-08-13 13:05:54  Converter path     : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters\convert_custom.py
+2026-08-13 13:05:54  Invoking Python converter...
+2026-08-13 13:05:54  Backend            : custom
+2026-08-13 13:05:54  Entry point        : generators.py
+2026-08-13 13:05:54  Model folder       : C:/Users/balan/OneDrive/Desktop/hamilton_model
+2026-08-13 13:05:54  Output folder      : C:/Users/balan/OneDrive/Desktop/H_Model_generated
+> Python: starting backend conversion...
+> Custom backend: loading Python module...
+> Loaded module: generators.py
+> No main() function found. Skipping execution.
+> Building ONNX graph...
+> ONNX model written to: C:/Users/balan/OneDrive/Desktop/H_Model_generated\model.onnx
+> Writing metadata...
+> Custom ONNX conversion completed successfully.
+> Python: conversion finished. ONNX path: C:/Users/balan/OneDrive/Desktop/H_Model_generated\model.onnx
+2026-08-13 13:05:57  === ONNX Model Generation COMPLETED SUCCESSFULLY ===
+> ONNX model generation completed successfully.
+
+II. sklearn_model
+
+> Running PowerShell script: scripts\Generate-ONNXModel.ps1
+2026-08-13 15:36:35  === ONNX Model Generation Orchestrator Started ===
+2026-08-13 15:36:35  Model folder      : C:/Users/balan/OneDrive/Desktop/sklearn_model
+2026-08-13 15:36:35  Entry point       : simple_sklearn_model.py
+2026-08-13 15:36:35  Backend           : sklearn
+2026-08-13 15:36:35  Output folder     : C:/Users/balan/OneDrive/Desktop/Model_generated
+2026-08-13 15:36:35  Script directory   : C:\MLProjects\Model_Generator\onnx_model_generator\scripts
+2026-08-13 15:36:35  Project root       : C:\MLProjects\Model_Generator\onnx_model_generator
+2026-08-13 15:36:35  Converters folder  : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters
+2026-08-13 15:36:35  Selected converter : convert_sklearn.py
+2026-08-13 15:36:35  Converter path     : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters\convert_sklearn.py
+2026-08-13 15:36:35  Invoking Python converter...
+2026-08-13 15:36:35  Backend            : sklearn
+2026-08-13 15:36:35  Entry point        : simple_sklearn_model.py
+2026-08-13 15:36:35  Model folder       : C:/Users/balan/OneDrive/Desktop/sklearn_model
+2026-08-13 15:36:35  Output folder      : C:/Users/balan/OneDrive/Desktop/Model_generated
+> Python: starting backend conversion...
+> scikit-learn backend: loading Python module...
+> Loaded module: simple_sklearn_model.py
+> Extracting scikit-learn estimator...
+> Found estimator: LogisticRegression
+> Determining input shape...
+> Converting estimator to ONNX...
+> ONNX model written to: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+> Writing metadata.json...
+> scikit-learn ONNX conversion completed successfully.
+> Python: conversion finished. ONNX path: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+2026-08-13 15:36:37  === ONNX Model Generation COMPLETED SUCCESSFULLY ===
+> ONNX model generation completed successfully.
+
+III. MLServer model
+
+> Running PowerShell script: scripts\Generate-ONNXModel.ps1
+2026-08-13 16:05:35  === ONNX Model Generation Orchestrator Started ===
+2026-08-13 16:05:35  Model folder      : C:/Users/balan/OneDrive/Desktop/ml_server_model
+2026-08-13 16:05:35  Entry point       : ml_server_model.py
+2026-08-13 16:05:35  Backend           : mlserver
+2026-08-13 16:05:35  Output folder     : C:/Users/balan/OneDrive/Desktop/Model_generated
+2026-08-13 16:05:35  Script directory   : C:\MLProjects\Model_Generator\onnx_model_generator\scripts
+2026-08-13 16:05:35  Project root       : C:\MLProjects\Model_Generator\onnx_model_generator
+2026-08-13 16:05:35  Converters folder  : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters
+2026-08-13 16:05:35  Selected converter : convert_mlserver.py
+2026-08-13 16:05:35  Converter path     : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters\convert_mlserver.py
+2026-08-13 16:05:35  Invoking Python converter...
+2026-08-13 16:05:35  Backend            : mlserver
+2026-08-13 16:05:35  Entry point        : ml_server_model.py
+2026-08-13 16:05:35  Model folder       : C:/Users/balan/OneDrive/Desktop/ml_server_model
+2026-08-13 16:05:35  Output folder      : C:/Users/balan/OneDrive/Desktop/Model_generated
+> Python executable: C:\ProgramData\miniforge3\envs\jupyter-env\python.exe
+> Python: starting backend conversion...
+> MLServer backend: loading Python module...
+> Loaded module: ml_server_model.py
+> No main() function found. Skipping execution.
+> Building ONNX graph...
+> ONNX model written to: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+> Writing MLServer model-settings.json...
+> Writing metadata.json...
+> MLServer ONNX conversion completed successfully.
+> Python: conversion finished. ONNX path: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+2026-08-13 16:05:35  === ONNX Model Generation COMPLETED SUCCESSFULLY ===
+> ONNX model generation completed successfully.
+
+IV. Triton Model
+
+> Running PowerShell script: scripts\Generate-ONNXModel.ps1
+2026-08-13 16:10:40  === ONNX Model Generation Orchestrator Started ===
+2026-08-13 16:10:40  Model folder      : C:/Users/balan/OneDrive/Desktop/triton_model/1
+2026-08-13 16:10:40  Entry point       : triton_model.py
+2026-08-13 16:10:40  Backend           : triton
+2026-08-13 16:10:40  Output folder     : C:/Users/balan/OneDrive/Desktop/Model_generated
+2026-08-13 16:10:40  Script directory   : C:\MLProjects\Model_Generator\onnx_model_generator\scripts
+2026-08-13 16:10:40  Project root       : C:\MLProjects\Model_Generator\onnx_model_generator
+2026-08-13 16:10:40  Converters folder  : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters
+2026-08-13 16:10:40  Selected converter : convert_triton.py
+2026-08-13 16:10:40  Converter path     : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters\convert_triton.py
+2026-08-13 16:10:40  Invoking Python converter...
+2026-08-13 16:10:40  Backend            : triton
+2026-08-13 16:10:40  Entry point        : triton_model.py
+2026-08-13 16:10:40  Model folder       : C:/Users/balan/OneDrive/Desktop/triton_model/1
+2026-08-13 16:10:40  Output folder      : C:/Users/balan/OneDrive/Desktop/Model_generated
+> Python executable: C:\ProgramData\miniforge3\envs\jupyter-env\python.exe
+> Python: starting backend conversion...
+> Triton backend: loading Python module...
+> Loaded module: triton_model.py
+> Extracting torch model (if available)...
+> No torch model found. Using fallback ONNX graph...
+> Fallback ONNX model written to: C:/Users/balan/OneDrive/Desktop/Model_generated\model_repository\custom_model\1\model.onnx
+> Writing Triton config.pbtxt...
+> Writing metadata.json...
+> Triton ONNX conversion completed successfully.
+> Python: conversion finished. ONNX path: C:/Users/balan/OneDrive/Desktop/Model_generated\model_repository\custom_model\1\model.onnx
+2026-08-13 16:10:42  === ONNX Model Generation COMPLETED SUCCESSFULLY ===
+> ONNX model generation completed successfully.
+
+V. Torch Model
+
+> Running PowerShell script: scripts\Generate-ONNXModel.ps1
+> FULL PATH: C:\MLProjects\Model_Generator\onnx_model_generator\scripts\Generate-ONNXModel.ps1
+2026-08-13 16:58:17  === ONNX Model Generation Orchestrator Started ===
+2026-08-13 16:58:17  Model folder      : C:/Users/balan/OneDrive/Desktop/torch_model
+2026-08-13 16:58:17  Entry point       : simple_torch_model.py
+2026-08-13 16:58:17  Backend           : torch
+2026-08-13 16:58:17  Output folder     : C:/Users/balan/OneDrive/Desktop/Model_generated
+2026-08-13 16:58:17  Script directory   : C:\MLProjects\Model_Generator\onnx_model_generator\scripts
+2026-08-13 16:58:17  Project root       : C:\MLProjects\Model_Generator\onnx_model_generator
+2026-08-13 16:58:17  Converters folder  : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters
+2026-08-13 16:58:17  Selected converter : convert_torch.py
+2026-08-13 16:58:17  Converter path     : C:\MLProjects\Model_Generator\onnx_model_generator\gui\converters\convert_torch.py
+2026-08-13 16:58:17  Invoking Python converter...
+2026-08-13 16:58:17  Backend            : torch
+2026-08-13 16:58:17  Entry point        : simple_torch_model.py
+2026-08-13 16:58:17  Model folder       : C:/Users/balan/OneDrive/Desktop/torch_model
+2026-08-13 16:58:17  Output folder      : C:/Users/balan/OneDrive/Desktop/Model_generated
+> Python executable: C:\ProgramData\miniforge3\envs\jupyter-env\python.exe
+> Python: starting backend conversion...
+> Torch backend: loading Python module...
+> Loaded module: simple_torch_model.py
+> Extracting torch.nn.Module...
+> Found model: SimpleNet
+> Extracting dummy input tensor...
+> Dummy input shape: (1, 4)
+> Exporting model to ONNX...
+[torch.onnx] Obtain model graph for `SimpleNet([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleNet([...]` with `torch.export.export(..., strict=False)`... âœ…
+[torch.onnx] Run decompositions...
+[torch.onnx] Run decompositions... âœ…
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... âœ…
+[torch.onnx] Optimize the ONNX graph...
+[torch.onnx] Optimize the ONNX graph... âœ…
+> ONNX model written to: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+> Writing metadata.json...
+> Torch ONNX conversion completed successfully.
+> Python: conversion finished. ONNX path: C:/Users/balan/OneDrive/Desktop/Model_generated\model.onnx
+2026-08-13 16:58:21  Python STDERR:
+C:\\\\MLProjects\\\\Model_Generator\\\\onnx_model_generator\\\\gui\\\\converters\convert_torch.py:131: UserWarning: Exporting a model while it is in training mode. Please ensure that this is intended, as it may lead to different behavior during inference. Calling model.eval() before export is recommended.
+  torch.onnx.export(
+W0813 16:58:19.848000 6524 torch\onnx\_internal\exporter\_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0813 16:58:19.848000 6524 torch\onnx\_internal\exporter\_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0813 16:58:19.848000 6524 torch\onnx\_internal\exporter\_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0813 16:58:19.848000 6524 torch\onnx\_internal\exporter\_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+C:\ProgramData\miniforge3\envs\jupyter-env\Lib\copyreg.py:99: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+2026-08-13 16:58:21  === ONNX Model Generation COMPLETED SUCCESSFULLY ===
+> ONNX model generation completed successfully.
+
+
+

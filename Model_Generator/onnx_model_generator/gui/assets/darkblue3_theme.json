@@ -1,0 +1,38 @@
+{
+    "theme_name": "DarkBlue3",
+    "colors": {
+        "background": "#0E1A2B",
+        "text": "#FFFFFF",
+        "input_background": "#1C2B45",
+        "input_text": "#FFFFFF",
+        "button_background": "#1F3A5F",
+        "button_text": "#FFFFFF",
+        "frame_background": "#14233B",
+        "frame_text": "#FFFFFF",
+        "progress_background": "#1C2B45",
+        "progress_bar": "#4EA5F7",
+        "log_background": "#0E1A2B",
+        "log_text": "#DDE6F2",
+        "success_text": "#7CFC00",
+        "error_text": "#FF6347",
+        "warning_text": "#FFD700"
+    },
+    "fonts": {
+        "default": "Segoe UI",
+        "header_size": 12,
+        "text_size": 10,
+        "button_size": 10,
+        "log_size": 10
+    },
+    "layout": {
+        "frame_relief": "sunken",
+        "frame_border_width": 2,
+        "padding": [10, 10],
+        "element_padding": [5, 5]
+    },
+    "progress_bar": {
+        "max_value": 100,
+        "orientation": "horizontal",
+        "size": [50, 20]
+    }
+}
