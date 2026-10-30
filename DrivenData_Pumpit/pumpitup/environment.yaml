@@ -1,0 +1,18 @@
+name: pumpitup
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - lightgbm
+  - xgboost
+  - catboost
+  - optuna
+  - duckdb
+  - pyarrow
+  - ipykernel
+  - pip:
+      - category_encoders

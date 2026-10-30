@@ -1,0 +1,427 @@
+(base) (base) PS D:\DrivenData_PumpIt\pumpitup> conda env create --prefix D:\conda_envs\pumpitup -f environment.yaml                                                                    
+Retrieving notices: done                                                                                                                                                                
+Channels:                                                                                                                                                                               
+ - conda-forge                                                                                                                                                                          
+ - nvidia                                                                                                                                                                               
+ - pytorch                                                                                                                                                                              
+Platform: win-64                                                                                                                                                                        
+Collecting package metadata (repodata.json): done                                                                                                                                       
+Solving environment: done                                                                                                                                                               
+                                                                                                                                                                                        
+                                                                                                                                                                                        
+==> WARNING: A newer version of conda exists. <==                                                                                                                                       
+    current version: 26.1.0                                                                                                                                                             
+    latest version: 26.7.0                                                                                                                                                              
+                                                                                                                                                                                        
+Please update conda by running                                                                                                                                                          
+                                                                                                                                                                                        
+    $ conda update -n base -c conda-forge conda
+
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: / Ran pip subprocess with arguments:
+['D:\\conda_envs\\pumpitup\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'D:\\DrivenData_PumpIt\\pumpitup\\condaenv.22mwlvox.requirements.txt', '--exists-action=b']
+Pip subprocess output:
+Collecting category_encoders (from -r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Downloading category_encoders-2.10.0-py3-none-any.whl.metadata (8.0 kB)
+Requirement already satisfied: numpy>=1.14.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt ()
+Requirement already satisfied: pandas>=1.0.5 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt ()
+Collecting patsy>=0.5.1 (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Using cached patsy-1.0.2-py2.py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: scikit-learn>=1.6.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements)
+Requirement already satisfied: scipy>=1.0.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (l)
+Collecting statsmodels>=0.9.0 (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Downloading statsmodels-0.14.6-cp312-cp312-win_amd64.whl.metadata (9.8 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in D:\conda_envs\pumpitup\Lib\site-packages (from pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22m)
+Requirement already satisfied: tzdata in D:\conda_envs\pumpitup\Lib\site-packages (from pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requiremen)
+Requirement already satisfied: six>=1.5 in D:\conda_envs\pumpitup\Lib\site-packages (from python-dateutil>=2.8.2->pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\co)
+Requirement already satisfied: joblib>=1.4.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlv)
+Requirement already satisfied: narwhals>=2.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mw)
+Requirement already satisfied: threadpoolctl>=3.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv)
+Requirement already satisfied: packaging>=21.3 in D:\conda_envs\pumpitup\Lib\site-packages (from statsmodels>=0.9.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwl)
+Downloading category_encoders-2.10.0-py3-none-any.whl (87 kB)
+Using cached patsy-1.0.2-py2.py3-none-any.whl (233 kB)
+Downloading statsmodels-0.14.6-cp312-cp312-win_amd64.whl (9.5 MB)
+   ---------------------------------------- 9.5/9.5 MB 10.1 MB/s  0:00:00
+Installing collected packages: patsy, statsmodels, category_encoders
+
+Successfully installed category_encoders-2.10.0 patsy-1.0.2 statsmodels-0.14.6
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate D:\conda_envs\pumpitup
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+Channel "nvidia" has the following notices:
+  [warning] -- Tue Aug  4 07:00:05 2026
+  NVIDIA conda channel update — cuda, cublasmp, cudnn, cudss, cuest, cufftmp, cuquantum, cusolvermp, cusparselt, cutensor, nccl, nvpl, nvshmem, cuda-python, numbast stop receiving upds
+
+(base) (base) PS D:\DrivenData_PumpIt\pumpitup> conda activate D:\conda_envs\pumpitup
+(D:\conda_envs\pumpitupdone:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> 
+Installing pip dependencies: / Ran pip subprocess with arguments:
+['D:\\conda_envs\\pumpitup\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'D:\\DrivenData_PumpIt\\pumpitup\\condaenv.22mwlvox.requirements.txt', '--exists-action=b']
+Pip subprocess output:
+Collecting category_encoders (from -r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Downloading category_encoders-2.10.0-py3-none-any.whl.metadata (8.0 kB)
+Requirement already satisfied: numpy>=1.14.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt ()
+Requirement already satisfied: pandas>=1.0.5 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt ()
+Collecting patsy>=0.5.1 (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Using cached patsy-1.0.2-py2.py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: scikit-learn>=1.6.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements)
+Requirement already satisfied: scipy>=1.0.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (l)
+Collecting statsmodels>=0.9.0 (from category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requirements.txt (line 1))
+  Downloading statsmodels-0.14.6-cp312-cp312-win_amd64.whl.metadata (9.8 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in D:\conda_envs\pumpitup\Lib\site-packages (from pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22m)
+Requirement already satisfied: tzdata in D:\conda_envs\pumpitup\Lib\site-packages (from pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlvox.requiremen)
+Requirement already satisfied: six>=1.5 in D:\conda_envs\pumpitup\Lib\site-packages (from python-dateutil>=2.8.2->pandas>=1.0.5->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\co)
+Requirement already satisfied: joblib>=1.4.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwlv)
+Requirement already satisfied: narwhals>=2.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mw)
+Requirement already satisfied: threadpoolctl>=3.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn>=1.6.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv)
+Requirement already satisfied: packaging>=21.3 in D:\conda_envs\pumpitup\Lib\site-packages (from statsmodels>=0.9.0->category_encoders->-r D:\DrivenData_PumpIt\pumpitup\condaenv.22mwl)
+Downloading category_encoders-2.10.0-py3-none-any.whl (87 kB)
+Using cached patsy-1.0.2-py2.py3-none-any.whl (233 kB)
+Downloading statsmodels-0.14.6-cp312-cp312-win_amd64.whl (9.5 MB)
+   ---------------------------------------- 9.5/9.5 MB 10.1 MB/s  0:00:00
+Installing collected packages: patsy, statsmodels, category_encoders
+
+Successfully installed category_encoders-2.10.0 patsy-1.0.2 statsmodels-0.14.6
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate D:\conda_envs\pumpitup
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+Channel "nvidia" has the following notices:
+  [warning] -- Tue Aug  4 07:00:05 2026
+  NVIDIA conda channel update — cuda, cublasmp, cudnn, cudss, cuest, cufftmp, cuquantum, cusolvermp, cusparselt, cutensor, nccl, nvpl, nvshmem, cuda-python, numbast stop receiving upds
+
+(base) (base) PS D:\DrivenData_PumpIt\pumpitup> conda activate D:\conda_envs\pumpitup
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> 
+
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> pip install -e .
+Obtaining file:///D:/DrivenData_PumpIt/pumpitup
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: numpy in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.26.4)
+Requirement already satisfied: pandas in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (3.0.5)
+Requirement already satisfied: scikit-learn in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.9.0)
+Requirement already satisfied: lightgbm in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (4.7.0)
+Requirement already satisfied: xgboost in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (3.3.0)
+Requirement already satisfied: catboost in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.2.7)
+Requirement already satisfied: optuna in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (4.9.0)
+Requirement already satisfied: duckdb in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.5.5)
+Requirement already satisfied: pyarrow in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (25.0.0)
+Requirement already satisfied: category-encoders in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (2.10.0)
+Requirement already satisfied: graphviz in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (0.21)
+Requirement already satisfied: matplotlib in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (3.11.1)
+Requirement already satisfied: scipy in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (1.17.1)
+Requirement already satisfied: plotly in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (6.9.0)
+Requirement already satisfied: six in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (1.17.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in D:\conda_envs\pumpitup\Lib\site-packages (from pandas->pumpitup==0.1.0) (2.9.0.post0)
+Requirement already satisfied: tzdata in D:\conda_envs\pumpitup\Lib\site-packages (from pandas->pumpitup==0.1.0) (2026.3)
+Requirement already satisfied: patsy>=0.5.1 in D:\conda_envs\pumpitup\Lib\site-packages (from category-encoders->pumpitup==0.1.0) (1.0.2)
+Requirement already satisfied: statsmodels>=0.9.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category-encoders->pumpitup==0.1.0) (0.14.6)
+Requirement already satisfied: joblib>=1.4.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (1.5.3)
+Requirement already satisfied: narwhals>=2.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (2.24.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (3.6.0)
+Requirement already satisfied: packaging>=21.3 in D:\conda_envs\pumpitup\Lib\site-packages (from statsmodels>=0.9.0->category-encoders->pumpitup==0.1.0) (26.2)
+Requirement already satisfied: contourpy>=1.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (1.5.0)
+Requirement already satisfied: pillow>=9 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (3.3.2)
+Requirement already satisfied: alembic>=1.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (1.18.5)
+Requirement already satisfied: colorlog in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (6.11.0)
+Requirement already satisfied: sqlalchemy>=1.4.2 in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (2.0.51)
+Requirement already satisfied: tqdm in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (4.70.0)
+Requirement already satisfied: PyYAML in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (6.0.3)
+Requirement already satisfied: Mako in D:\conda_envs\pumpitup\Lib\site-packages (from alembic>=1.5.0->optuna->pumpitup==0.1.0) (1.3.12)
+Requirement already satisfied: typing-extensions>=4.12 in D:\conda_envs\pumpitup\Lib\site-packages (from alembic>=1.5.0->optuna->pumpitup==0.1.0) (4.16.0)
+Requirement already satisfied: greenlet>=1 in D:\conda_envs\pumpitup\Lib\site-packages (from sqlalchemy>=1.4.2->optuna->pumpitup==0.1.0) (3.5.4)
+Requirement already satisfied: colorama in D:\conda_envs\pumpitup\Lib\site-packages (from colorlog->optuna->pumpitup==0.1.0) (0.4.6)
+Requirement already satisfied: MarkupSafe>=0.9.2 in D:\conda_envs\pumpitup\Lib\site-packages (from Mako->alembic>=1.5.0->optuna->pumpitup==0.1.0) (3.0.3)
+Building wheels for collected packages: pumpitup
+  Building editable for pumpitup (pyproject.toml) ... done
+  Created wheel for pumpitup: filename=pumpitup-0.1.0-0.editable-py3-none-any.whl size=3052 sha256=7b64bfea96a311b1ac7a08a7e5fcbb22e08c3a98dbd118860951b9f106f4b5b3
+  Stored in directory: C:\Users\Nenad Balaneskovic\AppData\Local\Temp\pip-ephem-wheel-cache-mb0zu_14\wheels\fc\00\09\83e8c113b264ce190a011e4b3f7b17b7cb26be52fe3be1a49e
+Successfully built pumpitup
+Installing collected packages: pumpitup
+Successfully installed pumpitup-0.1.0
+
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> pumpitup baseline
+
+Evaluating RandomForest...
+RandomForest CV accuracy: mean=0.9025, std=0.0039
+
+Evaluating ExtraTrees...
+ExtraTrees CV accuracy: mean=0.9011, std=0.0032
+
+Evaluating LightGBM...
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf 
+
+
+LightGBM CV accuracy: mean=0.8944, std=0.0041
+
+Evaluating XGBoost...
+XGBoost CV accuracy: mean=0.8926, std=0.0028
+
+Evaluating CatBoost (manual CV)...
+CatBoost CV accuracy: mean=0.1974, std=0.0003
+
+
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> pumpitup tune
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] Found boosting=goss. For backwards compatibility reasons, LightGBM interprets this as boosting=gbdt, data_sample_strategy=goss.To suppress this warning, set data_sample_strategy=goss instead.
+[I 2026-08-04 22:02:39,475] Trial 9 finished with value: 1.0 and parameters: {'rf_n_estimators': 722, 'rf_max_depth': 24, 'rf_min_samples_split': 8, 'rf_min_samples_leaf': 5, 'et_n_estimators': 682, 'et_max_depth': 10, 'et_min_samples_split': 4, 'et_min_samples_leaf': 1, 'lgbm_n_estimators': 670, 'lgbm_learning_rate': 0.08123827895800986, 'lgbm_num_leaves': 121, 'lgbm_subsample': 0.647662084049198, 'lgbm_colsample': 0.7459729765743117, 'lgbm_min_child': 41, 'xgb_n_estimators': 800, 'xgb_learning_rate': 0.16348110807504349, 'xgb_max_depth': 10, 'xgb_subsample': 0.6760240386457729, 'xgb_colsample': 0.7457324528335953, 'meta_n_estimators': 603, 'meta_learning_rate': 0.07093862151239771, 'meta_num_leaves': 199}. Best is trial 0 with value: 1.0.
+
+==============================
+ Fast Full Stack Optuna Finished
+==============================
+Best CV accuracy: 1.00000
+Best parameters:
+  rf_n_estimators: 599
+  rf_max_depth: 17
+  rf_min_samples_split: 8
+  rf_min_samples_leaf: 5
+  et_n_estimators: 637
+  et_max_depth: 8
+  et_min_samples_split: 7
+  et_min_samples_leaf: 5
+  lgbm_n_estimators: 406
+  lgbm_learning_rate: 0.15207499869957306
+  lgbm_num_leaves: 242
+  lgbm_subsample: 0.6560960238248809
+  lgbm_colsample: 0.8727774735696016
+  lgbm_min_child: 26
+  xgb_n_estimators: 593
+  xgb_learning_rate: 0.10677982752786262
+  xgb_max_depth: 6
+  xgb_subsample: 0.8876252083249752
+  xgb_colsample: 0.8796493466087876
+  meta_n_estimators: 796
+  meta_learning_rate: 0.08818565031506675
+  meta_num_leaves: 166
+
+Saved best_full_stack_params.json
+
+
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> pumpitup stack (equal to pumpitup submit)
+
+ ...
+ 
+Fold 3/5
+Training base model: rf
+Training base model: et
+Training base model: lgbm
+Training base model: xgb
+Training base model: cat
+
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Retraining base model on full data: xgb
+Saved submission.csv
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt\pumpitup> python pumpitup_runner.py
+### 1. Prüfe Umgebung ###
+Umgebung existiert: D:\conda_envs\pumpitup
+
+### 2. Installiere pumpitup ###
+Obtaining file:///D:/DrivenData_PumpIt/pumpitup
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: numpy in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.26.4)
+Requirement already satisfied: pandas in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (3.0.5)
+Requirement already satisfied: scikit-learn in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.9.0)
+Requirement already satisfied: lightgbm in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (4.7.0)
+Requirement already satisfied: xgboost in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (3.3.0)
+Requirement already satisfied: catboost in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.2.7)
+Requirement already satisfied: optuna in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (4.9.0)
+Requirement already satisfied: duckdb in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (1.5.5)
+Requirement already satisfied: pyarrow in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (25.0.0)
+Requirement already satisfied: category-encoders in D:\conda_envs\pumpitup\Lib\site-packages (from pumpitup==0.1.0) (2.10.0)
+Requirement already satisfied: graphviz in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (0.21)
+Requirement already satisfied: matplotlib in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (3.11.1)
+Requirement already satisfied: scipy in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (1.17.1)
+Requirement already satisfied: plotly in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (6.9.0)
+Requirement already satisfied: six in D:\conda_envs\pumpitup\Lib\site-packages (from catboost->pumpitup==0.1.0) (1.17.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in D:\conda_envs\pumpitup\Lib\site-packages (from pandas->pumpitup==0.1.0) (2.9.0.post0)
+Requirement already satisfied: tzdata in D:\conda_envs\pumpitup\Lib\site-packages (from pandas->pumpitup==0.1.0) (2026.3)
+Requirement already satisfied: patsy>=0.5.1 in D:\conda_envs\pumpitup\Lib\site-packages (from category-encoders->pumpitup==0.1.0) (1.0.2)
+Requirement already satisfied: statsmodels>=0.9.0 in D:\conda_envs\pumpitup\Lib\site-packages (from category-encoders->pumpitup==0.1.0) (0.14.6)
+Requirement already satisfied: joblib>=1.4.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (1.5.3)
+Requirement already satisfied: narwhals>=2.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (2.24.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from scikit-learn->pumpitup==0.1.0) (3.6.0)
+Requirement already satisfied: packaging>=21.3 in D:\conda_envs\pumpitup\Lib\site-packages (from statsmodels>=0.9.0->category-encoders->pumpitup==0.1.0) (26.2)
+Requirement already satisfied: contourpy>=1.0.1 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (1.5.0)
+Requirement already satisfied: pillow>=9 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in D:\conda_envs\pumpitup\Lib\site-packages (from matplotlib->catboost->pumpitup==0.1.0) (3.3.2)
+Requirement already satisfied: alembic>=1.5.0 in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (1.18.5)
+Requirement already satisfied: colorlog in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (6.11.0)
+Requirement already satisfied: sqlalchemy>=1.4.2 in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (2.0.51)
+Requirement already satisfied: tqdm in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (4.70.0)
+Requirement already satisfied: PyYAML in D:\conda_envs\pumpitup\Lib\site-packages (from optuna->pumpitup==0.1.0) (6.0.3)
+Requirement already satisfied: Mako in D:\conda_envs\pumpitup\Lib\site-packages (from alembic>=1.5.0->optuna->pumpitup==0.1.0) (1.3.12)
+Requirement already satisfied: typing-extensions>=4.12 in D:\conda_envs\pumpitup\Lib\site-packages (from alembic>=1.5.0->optuna->pumpitup==0.1.0) (4.16.0)
+Requirement already satisfied: greenlet>=1 in D:\conda_envs\pumpitup\Lib\site-packages (from sqlalchemy>=1.4.2->optuna->pumpitup==0.1.0) (3.5.4)
+Requirement already satisfied: colorama in D:\conda_envs\pumpitup\Lib\site-packages (from colorlog->optuna->pumpitup==0.1.0) (0.4.6)
+Requirement already satisfied: MarkupSafe>=0.9.2 in D:\conda_envs\pumpitup\Lib\site-packages (from Mako->alembic>=1.5.0->optuna->pumpitup==0.1.0) (3.0.3)
+Building wheels for collected packages: pumpitup
+  Building editable for pumpitup (pyproject.toml) ... done
+  Created wheel for pumpitup: filename=pumpitup-0.1.0-0.editable-py3-none-any.whl size=3052 sha256=755d2e810cc67b60be0933e9058c37e79b31362aefd95a3c5d1b3acaceffe890
+  Stored in directory: C:\Users\Nenad Balaneskovic\AppData\Local\Temp\pip-ephem-wheel-cache-tbdqnl0z\wheels\fc\00\09\83e8c113b264ce190a011e4b3f7b17b7cb26be52fe3be1a49e
+Successfully built pumpitup
+Installing collected packages: pumpitup
+Successfully installed pumpitup-0.1.0
+pumpitup erfolgreich installiert.
+
+### 3. PumpItUp Shell-Befehle ###
+
+$ pumpitup baseline
+
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+
+Evaluating RandomForest...
+RandomForest CV accuracy: mean=0.9025, std=0.0039
+
+Evaluating ExtraTrees...
+ExtraTrees CV accuracy: mean=0.9011, std=0.0032
+
+Evaluating LightGBM...
+LightGBM CV accuracy: mean=0.8944, std=0.0041
+
+Evaluating XGBoost...
+XGBoost CV accuracy: mean=0.8926, std=0.0028
+
+Evaluating CatBoost (manual CV)...
+CatBoost CV accuracy: mean=0.1974, std=0.0003
+
+$ pumpitup tune
+
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] Found boosting=goss. For backwards compatibility reasons, LightGBM interprets this as boosting=gbdt, data_sample_strategy=goss.
+To suppress this warning, set data_sample_strategy=goss instead.
+
+==============================
+ Fast Full Stack Optuna Finished
+==============================
+Best CV accuracy: 1.00000
+Best parameters:
+  rf_n_estimators: 712
+  rf_max_depth: 37
+  rf_min_samples_split: 9
+  rf_min_samples_leaf: 5
+  et_n_estimators: 235
+  et_max_depth: 10
+  et_min_samples_split: 7
+  et_min_samples_leaf: 2
+  lgbm_n_estimators: 621
+  lgbm_learning_rate: 0.044964026450395864
+  lgbm_num_leaves: 159
+  lgbm_subsample: 0.8973831770688641
+  lgbm_colsample: 0.9023096675768041
+  lgbm_min_child: 47
+  xgb_n_estimators: 368
+  xgb_learning_rate: 0.06709214960955556
+  xgb_max_depth: 11
+  xgb_subsample: 0.9095949284278704
+  xgb_colsample: 0.8154578262673361
+  meta_n_estimators: 316
+  meta_learning_rate: 0.1452941583688157
+  meta_num_leaves: 111
+
+Saved best_full_stack_params.json
+
+$ pumpitup stack
+
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Retraining base model on full data: xgb
+Saved submission.csv
+
+$ pumpitup submit
+
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Retraining base model on full data: xgb
+Saved submission.csv
+
+
+### 4. ExperimentTracker ###
+DEBUG __file__: D:\DrivenData_PumpIt\pumpitup\pumpitup\experiments\tracker.py
+DEBUG resolved path: D:\DrivenData_PumpIt\pumpitup\pumpitup\experiments\tracker.py
+DEBUG parent: D:\DrivenData_PumpIt\pumpitup\pumpitup\experiments
+DEBUG final experiments.json: D:\DrivenData_PumpIt\pumpitup\pumpitup\experiments\experiments.json
+Tracker initialisiert
+
+### tracker.list() ###
+{'timestamp': '2026-08-04 23:23:22', 'name': 'full_stack_optuna_fast', 'cv_score': 1.0, 'params': {'rf_n_estimators': 778, 'rf_max_depth': 18, 'rf_min_samples_split': 4, 'rf_min_samples_leaf': 3, 'et_n_estimators': 507, 
+'et_max_depth': 38, 'et_min_samples_split': 8, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 781, 'lgbm_learning_rate': 0.11729388303317073, 'lgbm_num_leaves': 138, 'lgbm_subsample': 0.941667461475746, 
+'lgbm_colsample': 0.8432803162688752, 'lgbm_min_child': 20, 'xgb_n_estimators': 504, 'xgb_learning_rate': 0.13465238691203324, 'xgb_max_depth': 10, 'xgb_subsample': 0.9693141944747314, 'xgb_colsample': 0.8282494765592268, 
+'meta_n_estimators': 790, 'meta_learning_rate': 0.026853374838612797, 'meta_num_leaves': 67}, 'notes': 'Fast full stack tuning (RF/ET/LGBM/XGB, pruned, 3-fold, 10 trials)'}
+{'timestamp': '2026-08-04 23:26:28', 'name': 'stacking_final', 'cv_score': None, 'params': {'rf_n_estimators': 778, 'rf_max_depth': 18, 'rf_min_samples_split': 4, 'rf_min_samples_leaf': 3, 'et_n_estimators': 507, 'et_max_depth': 38, 
+'et_min_samples_split': 8, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 781, 'lgbm_learning_rate': 0.11729388303317073, 'lgbm_num_leaves': 138, 'lgbm_subsample': 0.941667461475746, 'lgbm_colsample': 0.8432803162688752, 'lgbm_min_child': 20, 
+'xgb_n_estimators': 504, 'xgb_learning_rate': 0.13465238691203324, 'xgb_max_depth': 10, 'xgb_subsample': 0.9693141944747314, 'xgb_colsample': 0.8282494765592268, 'meta_n_estimators': 790, 'meta_learning_rate': 0.026853374838612797, 
+'meta_num_leaves': 67}, 'notes': 'Final stacked model submission with manual CatBoost'}
+{'timestamp': '2026-08-05 09:08:20', 'name': 'full_stack_optuna_fast', 'cv_score': 1.0, 'params': {'rf_n_estimators': 712, 'rf_max_depth': 37, 'rf_min_samples_split': 9, 'rf_min_samples_leaf': 5, 'et_n_estimators': 235, 'et_max_depth': 10, 
+'et_min_samples_split': 7, 'et_min_samples_leaf': 2, 'lgbm_n_estimators': 621, 'lgbm_learning_rate': 0.044964026450395864, 'lgbm_num_leaves': 159, 'lgbm_subsample': 0.8973831770688641, 'lgbm_colsample': 0.9023096675768041, 'lgbm_min_child': 47, 
+'xgb_n_estimators': 368, 'xgb_learning_rate': 0.06709214960955556, 'xgb_max_depth': 11, 'xgb_subsample': 0.9095949284278704, 'xgb_colsample': 0.8154578262673361, 'meta_n_estimators': 316, 'meta_learning_rate': 0.1452941583688157, 
+'meta_num_leaves': 111}, 'notes': 'Fast full stack tuning (RF/ET/LGBM/XGB, pruned, 3-fold, 10 trials)'}
+{'timestamp': '2026-08-05 09:11:25', 'name': 'stacking_final', 'cv_score': None, 'params': {'rf_n_estimators': 712, 'rf_max_depth': 37, 'rf_min_samples_split': 9, 'rf_min_samples_leaf': 5, 'et_n_estimators': 235, 'et_max_depth': 10, 
+'et_min_samples_split': 7, 'et_min_samples_leaf': 2, 'lgbm_n_estimators': 621, 'lgbm_learning_rate': 0.044964026450395864, 'lgbm_num_leaves': 159, 'lgbm_subsample': 0.8973831770688641, 'lgbm_colsample': 0.9023096675768041, 'lgbm_min_child': 47, 
+'xgb_n_estimators': 368, 'xgb_learning_rate': 0.06709214960955556, 'xgb_max_depth': 11, 'xgb_subsample': 0.9095949284278704, 'xgb_colsample': 0.8154578262673361, 'meta_n_estimators': 316, 'meta_learning_rate': 0.1452941583688157, 
+'meta_num_leaves': 111}, 'notes': 'Final stacked model submission with manual CatBoost'}
+{'timestamp': '2026-08-05 09:13:04', 'name': 'stacking_final', 'cv_score': None, 'params': {'rf_n_estimators': 712, 'rf_max_depth': 37, 'rf_min_samples_split': 9, 'rf_min_samples_leaf': 5, 'et_n_estimators': 235, 'et_max_depth': 10, 
+'et_min_samples_split': 7, 'et_min_samples_leaf': 2, 'lgbm_n_estimators': 621, 'lgbm_learning_rate': 0.044964026450395864, 'lgbm_num_leaves': 159, 'lgbm_subsample': 0.8973831770688641, 'lgbm_colsample': 0.9023096675768041, 'lgbm_min_child': 47, 
+'xgb_n_estimators': 368, 'xgb_learning_rate': 0.06709214960955556, 'xgb_max_depth': 11, 'xgb_subsample': 0.9095949284278704, 'xgb_colsample': 0.8154578262673361, 'meta_n_estimators': 316, 'meta_learning_rate': 0.1452941583688157, 
+'meta_num_leaves': 111}, 'notes': 'Final stacked model submission with manual CatBoost'}
+{'timestamp': '2026-08-05 09:26:37', 'name': 'full_stack_optuna_fast', 'cv_score': 1.0, 'params': {'rf_n_estimators': 693, 'rf_max_depth': 13, 'rf_min_samples_split': 10, 'rf_min_samples_leaf': 4, 'et_n_estimators': 202, 'et_max_depth': 21, 
+'et_min_samples_split': 2, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 332, 'lgbm_learning_rate': 0.16061214338827032, 'lgbm_num_leaves': 50, 'lgbm_subsample': 0.7446262692110378, 'lgbm_colsample': 0.7231978284343279, 'lgbm_min_child': 23, 
+'xgb_n_estimators': 610, 'xgb_learning_rate': 0.1674221486318337, 'xgb_max_depth': 11, 'xgb_subsample': 0.6553063741582288, 'xgb_colsample': 0.8700478616316102, 'meta_n_estimators': 414, 'meta_learning_rate': 0.11128940779649016, 
+'meta_num_leaves': 194}, 'notes': 'Fast full stack tuning (RF/ET/LGBM/XGB, pruned, 3-fold, 10 trials)'}
+{'timestamp': '2026-08-05 09:29:18', 'name': 'stacking_final', 'cv_score': None, 'params': {'rf_n_estimators': 693, 'rf_max_depth': 13, 'rf_min_samples_split': 10, 'rf_min_samples_leaf': 4, 'et_n_estimators': 202, 'et_max_depth': 21, 
+'et_min_samples_split': 2, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 332, 'lgbm_learning_rate': 0.16061214338827032, 'lgbm_num_leaves': 50, 'lgbm_subsample': 0.7446262692110378, 'lgbm_colsample': 0.7231978284343279, 'lgbm_min_child': 23, 
+'xgb_n_estimators': 610, 'xgb_learning_rate': 0.1674221486318337, 'xgb_max_depth': 11, 'xgb_subsample': 0.6553063741582288, 'xgb_colsample': 0.8700478616316102, 'meta_n_estimators': 414, 'meta_learning_rate': 0.11128940779649016, 
+'meta_num_leaves': 194}, 'notes': 'Final stacked model submission with manual CatBoost'}
+{'timestamp': '2026-08-05 09:30:39', 'name': 'stacking_final', 'cv_score': None, 'params': {'rf_n_estimators': 693, 'rf_max_depth': 13, 'rf_min_samples_split': 10, 'rf_min_samples_leaf': 4, 'et_n_estimators': 202, 'et_max_depth': 21, 
+'et_min_samples_split': 2, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 332, 'lgbm_learning_rate': 0.16061214338827032, 'lgbm_num_leaves': 50, 'lgbm_subsample': 0.7446262692110378, 'lgbm_colsample': 0.7231978284343279, 'lgbm_min_child': 23, 
+'xgb_n_estimators': 610, 'xgb_learning_rate': 0.1674221486318337, 'xgb_max_depth': 11, 'xgb_subsample': 0.6553063741582288, 'xgb_colsample': 0.8700478616316102, 'meta_n_estimators': 414, 'meta_learning_rate': 0.11128940779649016, 
+'meta_num_leaves': 194}, 'notes': 'Final stacked model submission with manual CatBoost'}
+
+### tracker.best() ###
+{'timestamp': '2026-08-04 23:23:22', 'name': 'full_stack_optuna_fast', 'cv_score': 1.0, 'params': {'rf_n_estimators': 778, 'rf_max_depth': 18, 'rf_min_samples_split': 4, 'rf_min_samples_leaf': 3, 'et_n_estimators': 507, 'et_max_depth': 38, 
+'et_min_samples_split': 8, 'et_min_samples_leaf': 4, 'lgbm_n_estimators': 781, 'lgbm_learning_rate': 0.11729388303317073, 'lgbm_num_leaves': 138, 'lgbm_subsample': 0.941667461475746, 'lgbm_colsample': 0.8432803162688752, 'lgbm_min_child': 20, 
+'xgb_n_estimators': 504, 'xgb_learning_rate': 0.13465238691203324, 'xgb_max_depth': 10, 'xgb_subsample': 0.9693141944747314, 'xgb_colsample': 0.8282494765592268, 'meta_n_estimators': 790, 'meta_learning_rate': 0.026853374838612797, 
+'meta_num_leaves': 67}, 'notes': 'Fast full stack tuning (RF/ET/LGBM/XGB, pruned, 3-fold, 10 trials)'}
+(D:\conda_envs\pumpitup) (D:\conda_envs\pumpitup) PS D:\DrivenData_PumpIt>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
