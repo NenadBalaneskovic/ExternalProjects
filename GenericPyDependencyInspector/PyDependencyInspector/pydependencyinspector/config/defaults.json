@@ -1,0 +1,44 @@
+{
+  "project": {
+    "default_os_profile": "auto",
+    "default_output_directory": "build",
+    "default_log_directory": "build/logs",
+    "default_report_directory": "build/reports"
+  },
+
+  "resolver": {
+    "max_depth": 32,
+    "include_metadata": true,
+    "pypi_enrichment": false,
+    "timeout_seconds": 5
+  },
+
+  "documentation": {
+    "fetch_timeout_seconds": 5,
+    "sanitize_html": true,
+    "fallback_markdown_renderer": true
+  },
+
+  "pyinstaller": {
+    "clean_build": true,
+    "noconfirm": true,
+    "default_hidden_imports": [],
+    "default_data_files": [],
+    "default_binaries": [],
+    "default_spec_directory": "build/spec"
+  },
+
+  "export": {
+    "requirements_include_versions": true,
+    "pdf_page_size": "A4",
+    "pdf_resolution_dpi": 96
+  },
+
+  "ui": {
+    "theme": "dark",
+    "font_family": "Segoe UI",
+    "font_size": 12,
+    "show_dependency_summaries": true,
+    "show_wheel_compatibility": true
+  }
+}

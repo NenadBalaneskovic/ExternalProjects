@@ -1,0 +1,65 @@
+# ============================================================================
+# PyDependencyInspector – User Settings
+# ============================================================================
+# This file contains user‑editable configuration values.
+# It overrides defaults.json and is intended for:
+# - GUI preferences
+# - OS profile selection
+# - Build presets
+# - Export settings
+# - Paths and environment overrides
+# ============================================================================
+
+project:
+  os_profile: auto              # auto | windows | linux | macos
+  output_directory: build
+  log_directory: build/logs
+  report_directory: build/reports
+  spec_directory: build/spec
+
+resolver:
+  include_metadata: true
+  pypi_enrichment: false        # Enable PyPI metadata enrichment (requires internet)
+  timeout_seconds: 5
+
+documentation:
+  sanitize_html: true
+  markdown_renderer: auto       # auto | full | fallback
+  fetch_timeout_seconds: 5
+
+pyinstaller:
+  clean_build: true
+  noconfirm: true
+  hidden_imports: []
+  data_files: []
+  binaries: []
+  extra_args: []                # Additional PyInstaller CLI flags
+
+export:
+  requirements:
+    include_versions: true
+  pdf:
+    page_size: A4
+    resolution_dpi: 96
+    embed_fonts: false          # Future extension
+
+ui:
+  theme: dark                   # dark | light | system
+  font_family: "Segoe UI"
+  font_size: 12
+  show_dependency_summaries: true
+  show_wheel_compatibility: true
+  window:
+    width: 1280
+    height: 800
+    maximized: false
+
+paths:
+  python_interpreter: auto      # auto = sys.executable
+  temp_directory: build/tmp
+  cache_directory: build/cache
+
+advanced:
+  enable_debug_logging: false
+  offline_mode: false           # Disable all network calls
+  allow_experimental_features: false

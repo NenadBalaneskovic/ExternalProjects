@@ -1,0 +1,2 @@
+[console_scripts]
+pydependencyinspector = pydependencyinspector.entry_point:main
