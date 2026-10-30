@@ -1,0 +1,22 @@
+{
+  "status": "ok",
+  "exit_code": 0,
+  "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0\nrootdir: D:\\Pytester_GUI\\PyTester\nplugins: anyio-4.13.0, Faker-24.14.1\ncollected 74 items\n\nworkspace\\generated_tests\\test_statistical_analysis_minimal.py ......... [ 12%]\n.......                                                                  [ 21%]\nworkspace\\generated_tests\\test_statistical_analysis_no_annotations.py .. [ 24%]\n...................                                                      [ 50%]\nworkspace\\generated_tests\\test_statistical_analysis_no_docstrings.py ... [ 54%]\n.............                                                            [ 71%]\nworkspace\\generated_tests\\test_statistical_analysis_with_docstrings.py . [ 72%]\n....................                                                     [100%]\n\n============================== warnings summary ===============================\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88\n  C:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:88: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'\n    parse = parser.parseString(pattern)\n\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92\n  C:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py:92: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'\n    parser.resetCache()\n\nC:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_mathtext.py:45\n  C:\\Users\\Nenad Balaneskovic\\.conda\\envs\\py312\\Lib\\site-packages\\matplotlib\\_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'\n    ParserElement.enablePackrat()\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================= 74 passed, 13 warnings in 0.87s =======================\n",
+  "stderr": "",
+  "files": [
+    "D:\\Pytester_GUI\\PyTester\\workspace\\generated_tests\\test_statistical_analysis_minimal.py",
+    "D:\\Pytester_GUI\\PyTester\\workspace\\generated_tests\\test_statistical_analysis_no_annotations.py",
+    "D:\\Pytester_GUI\\PyTester\\workspace\\generated_tests\\test_statistical_analysis_no_docstrings.py",
+    "D:\\Pytester_GUI\\PyTester\\workspace\\generated_tests\\test_statistical_analysis_with_docstrings.py"
+  ],
+  "durations": {
+    "pytest": 1.6008596420288086,
+    "coverage": 0.0,
+    "total": 1.6008596420288086
+  },
+  "test_results": {
+    "passed": 74,
+    "failed": 0
+  },
+  "failures": []
+}
