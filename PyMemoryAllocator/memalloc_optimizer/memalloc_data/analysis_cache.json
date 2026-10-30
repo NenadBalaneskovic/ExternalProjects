@@ -1,0 +1,311 @@
+{
+  "89054e488afd1a3985612164130022f121053c0e1e4cbd19fc83f71d2bd76ba0": {
+    "imports": [
+      "numpy",
+      "time"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 1134
+  },
+  "ee6a6c34a9ef6b753ee94161277334cb53c6cce80ba726ebbad1a4b3107b018c": {
+    "imports": [
+      "numpy",
+      "time"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 1059
+  },
+  "2e699f3a6ff031027cbc152f3e9e8578afa7336224e32412b65260b9d07d7a55": {
+    "imports": [
+      "tempfile",
+      "pathlib",
+      "memalloc_gui.controllers"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 4137
+  },
+  "dfc787fc60dd40cb76199d282e00a32a3c401f72f309429dbba7129f4009ed71": {
+    "imports": [
+      "numpy",
+      "numba",
+      "qiskit",
+      "qiskit.circuit",
+      "time"
+    ],
+    "entry_points": [],
+    "size_bytes": 3136
+  },
+  "ab84b00ebccbe6542931588a9140d2c273e81b7e53e0c6f160a77c2b920b58a0": {
+    "imports": [
+      "numpy",
+      "time"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 1068
+  },
+  "ea387e231f155dcfacf79ff8a0a62d0135262f9436f2f142477c72f3b77251ac": {
+    "imports": [
+      "numpy",
+      "time"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 1214
+  },
+  "a110158c556ac80a555f1e8a44bf532813f929818ebcb5c6f863567b895a2a16": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "qiskit.circuit",
+      "time"
+    ],
+    "entry_points": [],
+    "size_bytes": 3228
+  },
+  "019a0260ba76d3ee7c6cc35ec3ea4d304ace7cacff4e2d8f9141c34526437c8c": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "qiskit.circuit",
+      "time"
+    ],
+    "entry_points": [],
+    "size_bytes": 1916
+  },
+  "6a8f490c61981ac3942ce8cfb43fdb7adbc0baad4111b11cdc8194afcfc1585f": {
+    "imports": [
+      "numpy",
+      "time"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 3696
+  },
+  "42585410439a83eeec5f2bd13786c9451f123d0777267e3c5e808ad3f1305ea0": {
+    "imports": [
+      "tempfile",
+      "pathlib",
+      "memalloc_gui.controllers"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 4009
+  },
+  "bcfb1f739c829c94da6ecf17e7ddbe36aa0cd78d4027a7b05228e8136b1218dd": {
+    "imports": [
+      "tempfile",
+      "pathlib",
+      "sys",
+      "memalloc_gui.controllers",
+      "memalloc_gui.controllers"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 4253
+  },
+  "f4e0e339892023f474564128d89d264f5108c5b45e6acbe9e507236a1c91e6c2": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "time"
+    ],
+    "entry_points": [],
+    "size_bytes": 1937
+  },
+  "7b7b3cc21f62021c5009072fe3c4f53b11c5569cb5d64dcb5e418b9de72f377a": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "time",
+      "qiskit_aer",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 2066
+  },
+  "8d55a9ba5a7d2fbbe5f06c584d7b47f654c73924afa045c685d0f67a4562652b": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "time",
+      "numpy",
+      "qiskit",
+      "qiskit.circuit",
+      "time",
+      "qiskit_aer",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 2495
+  },
+  "5f18ee1090b32aed771248b408065ca4140166f267c3af46f36bfe057181e280": {
+    "imports": [
+      "numpy",
+      "qiskit",
+      "qiskit.circuit",
+      "time",
+      "qiskit_aer",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 2045
+  },
+  "57472cea400ec6728c19804c4032eea90669c9d9c8f4525a21cc1e441b754acc": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 2909
+  },
+  "0b9b413df5fbf9340cd8d515a5cdbd3c3acbbbd48387f9b405e3052d798769ba": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 2848
+  },
+  "15bc4ea25d14f21344a8acf7816a1c9525e53011135942fd0e4938bf11bbb22e": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 4160
+  },
+  "8307a519f14a6a45ac660c7ea76a0a76eaa6671cb61816830c9cafcc33204e1f": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 4181
+  },
+  "8a88c05a12b0ea00f0bdaf8cbd83bdc96c7420049fd248d90c9b267f66727d63": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 3913
+  },
+  "76f34fc6b4d134c0e5b19b2e24cb9d72767d2450abc8a7e8f9ccf487666ab11d": {
+    "imports": [
+      "numpy",
+      "time",
+      "numba",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 4097
+  },
+  "4f2dff81d7cadf7d04532a54703f8f67c19cde0c1a790ee0231c8fe6bfe1811c": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 3809
+  },
+  "5e1d74b867a14a81ecb07648b7a06f5ec4bc72ea0d2baac903afccad3bb1a121": {
+    "imports": [
+      "numpy",
+      "time",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 3810
+  },
+  "a8972f7d42f3495ac40c9ae2f6908359b9db174113e953efe35d0502b76d8cf3": {
+    "imports": [
+      "numpy",
+      "time",
+      "numba",
+      "qiskit",
+      "qiskit.circuit",
+      "qiskit_aer",
+      "qiskit",
+      "qiskit"
+    ],
+    "entry_points": [],
+    "size_bytes": 4120
+  },
+  "5b57f5835de59316c0fe590005809d76f00cf0c0faf204b683f2e19729dd016b": {
+    "imports": [
+      "tempfile",
+      "pathlib",
+      "sys",
+      "memalloc_gui.controllers"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 3273
+  },
+  "3643416489b315461673dad3f35d4ac77d126a164460db3cc4970c8443b2165c": {
+    "imports": [
+      "tempfile",
+      "pathlib",
+      "time",
+      "runpy"
+    ],
+    "entry_points": [
+      "main"
+    ],
+    "size_bytes": 1959
+  }
+}
