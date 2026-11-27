@@ -2336,7 +2336,7 @@ The pattern we would be inclined to take away, and the one we would also be comf
 
 [4] Lenggenhager, P., Gökmen, D. E., Ringel, Z., Huber, S. D., & Koch, S., "Optimal Renormalization Group Transformation from Information Theory", Physical Review X 10 (2020).
 
-2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/550255fc044a0f0a8086f39bf9d125dacb7ebc15/UniversalGithubPipelineBlueprint/WetterApp.zip)
+2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/ae4e2e32b0d2378ff684ca89b01980831d283307/SemanticQuantumDrift/SemanticHallucinationDrift.ipynb)
 
 3. [![Physical_Hallucination_Sandbox_Report | English](https://img.shields.io/badge/Physical_Hallucination_Sandbox_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/550255fc044a0f0a8086f39bf9d125dacb7ebc15/UniversalGithubPipelineBlueprint/Blueprint%20Structure%20Overview.pdf)
 
