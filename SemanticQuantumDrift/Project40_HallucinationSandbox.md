@@ -1851,7 +1851,7 @@ def test_end_to_end_orchestrator_csv_export_and_gui_payload(tmp_path: Path) -> N
 
 ## 17. End-to-End Sandbox Entry Point (`run_sandbox.py`)
 
-To make the entire sandbox runnable from a single command—and to demonstrate how a future GUI controller will invoke the same pipeline—`run_sandbox.py` loads `configs/sandbox_defaults.yaml`, executes sweeps across both paradox payloads (`QM_PARADOX`, `SELF_REF_PARADOX`) and synthetic dynamical regimes (`stable_attractor`, `limit_cycle`, `dissipative_divergence`), exports `agent_responses.csv`, `phase_space_metrics.csv`, `run_summary.json`, and `phase_space.png`, and prints a compact diagnostic table.
+To make the entire sandbox runnable from a single command, and to demonstrate how a future GUI controller will invoke the same pipeline,`run_sandbox.py` loads `configs/sandbox_defaults.yaml`, executes sweeps across both paradox payloads (`QM_PARADOX`, `SELF_REF_PARADOX`) and synthetic dynamical regimes (`stable_attractor`, `limit_cycle`, `dissipative_divergence`), exports `agent_responses.csv`, `phase_space_metrics.csv`, `run_summary.json`, and `phase_space.png`, and prints a compact diagnostic table.
 
 ```python
 # run_sandbox.py
@@ -2120,12 +2120,11 @@ The notebook explicitly **does not** aim to provide a real API connection. The k
 
 ### The Mathematical Core (Cell 4)
 
-Identical to what later ended up in `core/metrics.py` of your production tool: Tikhonov-regularized multivariate KL divergence (`eps=1e-6`, additive rather than as a floor—this is relevant; see below), PCA-based RG coarse-graining (`dynamic_k = min(coarse_dim, n_samples)`), and PageRank-weighted graph entropy over a three-token sliding window.
+Identical to what later ended up in `core/metrics.py` of your production tool: Tikhonov-regularized multivariate KL divergence (`eps=1e-6`, additive rather than as a floor: this is relevant; see below), PCA-based RG coarse-graining (`dynamic_k = min(coarse_dim, n_samples)`), and PageRank-weighted graph entropy over a three-token sliding window.
 
 ### A striking finding in the actual results
 
-The recorded result for cell 9 is remarkable and, in my opinion, instructive: **All three agents** achieve a final H-score close to 1.0—Claude 1.0000, ChatGPT 0.9974, Gemini 1.0000—despite completely different, intentionally designed stability characteristics. This is precisely the symptom of the $n \ll d$ estimation problem: `calculate_diagonal_kl` is applied directly to `embedding_dim=1536` here,
-with only `ENSEMBLE_SIZE=5` samples and additive rather than floor-bounded regularization (`sigma + eps` instead of `max(sigma, eps)`). Even the intentionally “stable” Claude archetype artificially saturates the H-score to nearly 1 as a result. Interestingly, the **Lyapunov exponent** in cell 10 nevertheless shows the correct, intended separation (Claude −0.0058, ChatGPT ≈0, Gemini +0.092 to +0.095 per payload)—this sub-signal is unaffected by the SQD pathology because it is based directly on trajectory divergence rather than the error-prone KL formula.
+The recorded result for cell 9 is remarkable and, in my opinion, instructive: **All three agents** achieve a final H-score close to 1.0, namely Claude 1.0000, ChatGPT 0.9974, Gemini 1.0000, despite completely different, intentionally designed stability characteristics. This is precisely the symptom of the $n \ll d$ estimation problem: `calculate_diagonal_kl` is applied directly to `embedding_dim=1536` here, with only `ENSEMBLE_SIZE=5` samples and additive rather than floor-bounded regularization (`sigma + eps` instead of `max(sigma, eps)`). Even the intentionally “stable” Claude archetype artificially saturates the H-score to nearly 1 as a result. Interestingly, the **Lyapunov exponent** in cell 10 nevertheless shows the correct, intended separation (Claude −0.0058, ChatGPT ≈0, Gemini +0.092 to +0.095 per payload)—this sub-signal is unaffected by the SQD pathology because it is based directly on trajectory divergence rather than the error-prone KL formula.
 
 ## Context
 
@@ -2251,7 +2250,7 @@ Where we'd flag a caveat for ourselves going forward: the metaphor only does its
 
 RG, in its Kadanoff–Wilson form, is about tracking how a system's effective description changes as you integrate out fine detail and watch what remains at coarser scale — and, more specifically, about following that process as a *flow* toward universal fixed points. We don't attempt that flow here; we take one snapshot at full resolution and one snapshot after projecting onto 16 principal components, and compare the two.
 
-We think that's fine, precisely because we're using RG as a conceptual lens rather than claiming to compute one: the question we actually want answered — "is this disagreement structural, or does it wash out once we stop looking at fine-grained noise?" — is a good question regardless of whether we call the underlying machinery a flow. We're reassured here by Lenggenhager et al.'s (2020) result tying information-theoretically optimal RG transformations to PCA, which tells us the metaphor isn't arbitrary; it's pointing at something real about scale-dependent information content. We'd just be careful, in front of a physics-literate audience, to say "a one-step coarse-graining comparison, in the spirit of RG" rather than "an RG flow" — the metaphor earns its keep either way, but the second phrasing invites a literal expectation we're not meeting.
+We think that's fine, precisely because we're using RG as a conceptual lens rather than claiming to compute one: the question we actually want answered, "is this disagreement structural, or does it wash out once we stop looking at fine-grained noise?", is a good question regardless of whether we call the underlying machinery a flow. We're reassured here by Lenggenhager et al.'s (2020) result tying information-theoretically optimal RG transformations to PCA, which tells us the metaphor isn't arbitrary; it's pointing at something real about scale-dependent information content. We'd just be careful, in front of a physics-literate audience, to say "a one-step coarse-graining comparison, in the spirit of RG" rather than "an RG flow": the metaphor earns its keep either way, but the second phrasing invites a literal expectation we're not meeting.
 
 ##### 3. Graph Entropy via PageRank — borrowing a steady-state intuition
 
@@ -2261,7 +2260,7 @@ Here the metaphor and the mechanism line up unusually well: a PageRank vector *i
 
 ![fig6](RESULTS_SemanticHallucination/fig6.png)
 
-What we value this for, conceptually, is that it gives us a lens the embedding-space metrics don't: structural degeneracy. A repetitive or looping response can sit quite close to a stable mean embedding and still be obviously broken at the token level — the graph-entropy lens catches exactly that failure mode, which is why we designed the "hallucinated noise… infinite loop" behavior in the divergent archetype to be visible to it. The one thing we'd watch is that this lens doesn't distinguish formatting from content — code and markdown structure can move the entropy number for reasons that have nothing to do with the point we're trying to make, so we'd want to strip that out before reading too much into it.
+What we value this for, conceptually, is that it gives us a lens the embedding-space metrics don't: structural degeneracy. A repetitive or looping response can sit quite close to a stable mean embedding and still be obviously broken at the token level, the graph-entropy lens catches exactly that failure mode, which is why we designed the "hallucinated noise… infinite loop" behavior in the divergent archetype to be visible to it. The one thing we'd watch is that this lens doesn't distinguish formatting from content, code and markdown structure can move the entropy number for reasons that have nothing to do with the point we're trying to make, so we'd want to strip that out before reading too much into it.
 
 ##### 4. Semantic Phase-Space Portraits — borrowing the idea of watching an ensemble move
 
@@ -2279,7 +2278,7 @@ A positive Lyapunov exponent is the standard signature of chaotic, exponentially
 
 ![fig3](RESULTS_SemanticHallucination/fig3.png)
 
-This is one of the two places (together with the KL-divergence ensemble) where we'd say the metaphor and the formal mechanism are doing the same work: we're computing a real dynamical-systems quantity, faithfully, and it happens to be the one signal in our pipeline that wasn't contaminated by the high-dimensional sampling artifact affecting the KL-based score. We like this concept for a reason beyond its robustness, too — it captures *sensitivity*, whether small perturbations compound or dissipate, which is arguably closer to what we mean intuitively by "a model prone to running away with itself" than any single-shot divergence number is.
+This is one of the two places (together with the KL-divergence ensemble) where we'd say the metaphor and the formal mechanism are doing the same work: we're computing a real dynamical-systems quantity, faithfully, and it happens to be the one signal in our pipeline that wasn't contaminated by the high-dimensional sampling artifact affecting the KL-based score. We like this concept for a reason beyond its robustness, too, it captures *sensitivity*, whether small perturbations compound or dissipate, which is arguably closer to what we mean intuitively by "a model prone to running away with itself" than any single-shot divergence number is.
 
 ##### 6. Semantic Susceptibility vs. "Information Temperature" — borrowing the idea of noise-sensitivity
 
@@ -2287,11 +2286,11 @@ Thermodynamic susceptibility measures how strongly an order parameter responds t
 
 ![fig4](RESULTS_SemanticHallucination/fig4.png)
 
-We think the underlying intuition we wanted to transfer — "some archetypes are more rattled by randomness than others" — is a perfectly good one, and our plotted curves do show that qualitative separation. Where we'd add a caveat for ourselves is the name itself: "susceptibility" specifically primes a physics audience to look for a critical-point divergence, and our curves are monotonic, not divergent. We'd keep the underlying comparison, and just be explicit that we're not claiming a critical point — the metaphor is about *noise sensitivity*, not about locating a phase transition.
+We think the underlying intuition we wanted to transfer, "some archetypes are more rattled by randomness than others", is a perfectly good one, and our plotted curves do show that qualitative separation. Where would add a caveat for ourselves is the name itself: "susceptibility" specifically primes a physics audience to look for a critical-point divergence, and our curves are monotonic, not divergent. We'd keep the underlying comparison, and just be explicit that we're not claiming a critical point — the metaphor is about *noise sensitivity*, not about locating a phase transition.
 
 ##### 7. Riemannian Curvature & Wasserstein Distance — borrowing two different ideas at once
 
-We're doing two things here that deserve separate treatment. Wasserstein distance is not really a metaphor for us at all — it's a mathematically rigorous alternative to KL-divergence with a genuine practical advantage: where KL diverges on distributions with little shared support, Wasserstein stays finite and geometrically sensible. We'd consider that a real engineering upgrade worth exploring on its own merits.
+We're doing two things here that deserve separate treatment. Wasserstein distance is not really a metaphor for us at all, it is a mathematically rigorous alternative to KL-divergence with a genuine practical advantage: where KL diverges on distributions with little shared support, Wasserstein stays finite and geometrically sensible. We'd consider that a real engineering upgrade worth exploring on its own merits.
 
 ![fig7](RESULTS_SemanticHallucination/fig7.png)
 
@@ -2303,7 +2302,7 @@ We'll own that this is the concept where we initially second-guessed ourselves t
 
 ![fig9](RESULTS_SemanticHallucination/fig9.png)
 
-But judged as a metaphor rather than a mechanism, we think it earns its place: the *qualitative shape* of the real Zeno effect — continuous observation freezes evolution, sparse observation lets drift run away, and there's an interior optimum between the two — is exactly the shape of the real engineering trade-off our four-regime sweep demonstrates for how often a system should re-ground itself against a trusted reference. The metaphor doesn't just decorate the finding; it predicts its qualitative shape before we even run the simulation, which is what we'd ask of a good metaphor. We'd keep it, with the caveat clearly stated so a literal reading doesn't creep in.
+But judged as a metaphor rather than a mechanism, we think it earns its place: the *qualitative shape* of the real Zeno effect, continuous observation freezes evolution, sparse observation lets drift run away, and there's an interior optimum between the two, is exactly the shape of the real engineering trade-off our four-regime sweep demonstrates for how often a system should re-ground itself against a trusted reference. The metaphor doesn't just decorate the finding; it predicts its qualitative shape before we even run the simulation, which is what we'd ask of a good metaphor. We'd keep it, with the caveat clearly stated so a literal reading doesn't creep in.
 
 ##### 9. Collective Phase Transitions in N-Body Agent Networks
 
@@ -2315,7 +2314,7 @@ We're deliberately calling this a toy rather than a validated claim: there's no 
 
 ##### Where We Land Overall
 
-Grading each concept purely as a metaphor — does it transfer the right qualitative intuition and help us reason faster, regardless of formal completeness — we'd group them like this:
+Grading each concept purely as a metaphor — does it transfer the right qualitative intuition and help us reason faster, regardless of formal completeness, we group them as follows:
 
 - **Metaphors that transfer cleanly, with the mechanism doing the same work as the physics:** the Gaussian KL-divergence ensemble framing and the Lyapunov exponent. Both are faithful to their formal definitions, and both tracked our intended archetype separation in the notebook's own output.
 - **Metaphors that are conceptually apt and earn their place, provided we keep the caveat attached:** RG-style coarse-graining ("does it survive zooming out"), the Quantum Zeno grounding trade-off, semantic susceptibility, and the Riemannian-curvature reading of prompt difficulty. In each case, the qualitative shape transfers correctly even though the formal apparatus (a true flow, a true projective measurement, a true critical-point divergence, a true Ricci curvature) isn't being reproduced — and we think that's fine, since we never intended it to be.
