@@ -1668,7 +1668,7 @@ pytest -v
 
 ## 16. Automated Verification & Unit Test Suite (`tests/test_metrics_and_evaluator.py`)
 
-Because physical and information-theoretic estimators rely on covariance inversion, eigendecomposition/SVD, and graph stationary distributions, subtle edge cases—such as rank-deficient sample matrices, single-token strings, or extreme drift magnitudes—can easily trigger `NaN`, `ValueError`, or out-of-range scores if left untested.
+Because physical and information-theoretic estimators rely on covariance inversion, eigendecomposition/SVD, and graph stationary distributions, subtle edge cases, such as rank-deficient sample matrices, single-token strings, or extreme drift magnitudes, can easily trigger `NaN`, `ValueError`, or out-of-range scores if left untested.
 
 The test suite in `tests/test_metrics_and_evaluator.py` verifies six core invariants:
 
