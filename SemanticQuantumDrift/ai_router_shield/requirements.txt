@@ -1,0 +1,32 @@
+# ==============================================================================
+# PROJECT: AI Router & Hallucination Shield
+# MODULE:  requirements.txt
+# ROLE:    Production environmental manifest defining all mandatory framework
+#          dependencies for matrix algebra, graph processing, and Chromium views.
+# AI Router & Hallucination Shield - requirements (API-key based architecture)
+# QtWebEngine / Chromium cookie-harvesting is no longer used; the GUI only
+# needs plain PyQt6 widgets and a dialog for entering API keys.
+# ==============================================================================
+
+# Core Graphical Interface & Embedded Chromium Browser Architecture
+PyQt6>=6.7
+PyQt6-WebEngine>=6.4.0
+
+# High-Performance Numerical Processing & Matrix Algebra (SQD Analysis)
+numpy>=1.26
+scipy>=1.8.0
+
+# Scaling Projections & Renormalization Group Coarse-Graining (RG Flow)
+scikit-learn>=1.5
+
+# Topological Network Modeling & Power Iteration Centrality (PageRank Entropy)
+networkx>=3.3
+requests>=2.31
+
+# Persistent Data Frame Manipulation & Volatile Environment Management
+pandas>=1.4.0
+python-dotenv>=1.0
+
+# Plotting utilities
+matplotlib>=3.8
+

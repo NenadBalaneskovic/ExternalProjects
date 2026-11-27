@@ -1,0 +1,165 @@
+/*
+================================================================================
+PROJECT: AI Router & Hallucination Shield
+MODULE:  gui/styles.qss
+ROLE:    Global production stylesheet enforcing a high-contrast GitHub Dark Theme 
+         and securing uniform padding, borders, and responsive hover transitions.
+================================================================================
+*/
+
+/* --- Global App Context Framework --- */
+QMainWindow {
+    background-color: #0d1117;
+}
+
+QDialog {
+    background-color: #0d1117;
+}
+
+QWidget {
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* --- Interactive Input Components --- */
+QTextEdit {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px;
+    selection-background-color: #21262d;
+    selection-color: #58a6ff;
+}
+
+QTextEdit:focus {
+    border: 1px solid #58a6ff;
+}
+
+/* --- Telemetric Output Terminal Browser --- */
+QTextBrowser {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 1.6;
+}
+
+QLineEdit {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 6px;
+    selection-background-color: #21262d;
+}
+
+QLineEdit:focus {
+    border: 1px solid #58a6ff;
+}
+
+/* --- Control Command Buttons --- */
+QPushButton {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-weight: bold;
+    min-height: 18px;
+}
+
+QPushButton:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+}
+
+QPushButton:pressed {
+    background-color: #161b22;
+    border-color: #58a6ff;
+}
+
+QPushButton:disabled {
+    background-color: #0d1117;
+    color: #484f58;
+    border-color: #21262d;
+}
+
+/* --- Standard Structural Information Labels --- */
+QLabel {
+    color: #c9d1d9;
+    border: none;
+    background: transparent;
+}
+
+/* --- Relational History Data Grids --- */
+QTableWidget {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    gridline-color: #30363d;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    alternate-background-color: #161b22;
+}
+
+QTableWidget::item {
+    padding: 6px;
+}
+
+QTableWidget::item:selected {
+    background-color: #21262d;
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+QHeaderView::section {
+    background-color: #161b22;
+    color: #8b949e;
+    border: 1px solid #30363d;
+    padding: 6px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* --- Telemetric Scrollbars (Clean and Thin) --- */
+QScrollBar:vertical {
+    border: none;
+    background: #0d1117;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #30363d;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #8b949e;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #0d1117;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #30363d;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
