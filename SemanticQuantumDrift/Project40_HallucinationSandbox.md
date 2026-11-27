@@ -1,7 +1,5 @@
 # Project 40: Physical Hallucination Sandbox & GUI Backend Blueprint
 
----
-
 # Part I: Motivation
 
 > **Scope:** Standalone **Physical Hallucination Sandbox** for testing, calibrating, and benchmarking information- and physics-inspired hallucination metrics before exposing them as a backend telemetry engine to a future GUI.
