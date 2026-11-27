@@ -484,19 +484,24 @@ By sampling parallel response distributions using active multi-sampling loops, w
 
 #### Pillar A: Semantic Quantum Drift (SQD)
 
-We track the overall translational displacement and statistical blur of an AI agent's semantic state by calculating the analytical Kullback-Leibler (KL) Divergence $D_{\text{KL}}(P \parallel Q)$ between multivariate Gaussian response clouds. Because raw covariance matrices calculated over dense 1536-dimensional vectors inevitably suffer from numerical singularity (where the determinant shrinks to zero), we enforce strict diagonal Tikhonov regularization with a minor perturbation term ε = 10⁻⁶:
+We track the overall translational displacement and statistical blur of an AI agent's semantic state by calculating the analytical Kullback-Leibler (KL) Divergence $D_{\text{KL}}(P \parallel Q)$ between multivariate Gaussian response clouds. Because raw covariance matrices calculated over dense 1536-dimensional vectors inevitably suffer from numerical singularity (where the determinant shrinks to zero), we enforce strict diagonal Tikhonov regularization with a minor perturbation term ε = 10⁻⁶:  
+
 $$D_{\text{KL}}(P \parallel Q) \approx \frac{1}{2} \sum_{i=1}^d \left( \frac{\sigma_{0,i}^2}{\sigma_{t,i}^2 + \epsilon} + \frac{(\mu_{t,i} - \mu_{0,i})^2}{\sigma_{t,i}^2 + \epsilon} - 1 + \ln\left(\frac{\sigma_{t,i}^2 + \epsilon}{\sigma_{0,i}^2 + \epsilon}\right) \right)$$ 
 
 #### Pillar B: Renormalization Group (RG) Coarse-Graining
 
-To separate cosmetic syntactical changes from structural logical failure, we implement a macroscopic projection operator inspired by block-spin scaling transformations. We map the raw microscopic configurations from scale Λ₀ down to a compact, principal component subspace scale Λ₁ (where $k = \min(10, n_{\text{samples}})$). We define the RG Instability Coefficient ($\gamma_{\text{RG}}$) as the direct ratio of their information dissipation profiles:
-$$\gamma_{\text{RG}} = \frac{D_{\text{KL}}\left(P^{\Lambda_1} \parallel Q^{\Lambda_1}\right)}{D_{\text{KL}}\left(P^{\Lambda_0} \parallel Q^{\Lambda_0}\right) + \delta}$$ 
+To separate cosmetic syntactical changes from structural logical failure, we implement a macroscopic projection operator inspired by block-spin scaling transformations. We map the raw microscopic configurations from scale Λ₀ down to a compact, principal component subspace scale Λ₁ (where $$k = \min(10, n_{\text{samples}})$$). We define the RG Instability Coefficient ($\gamma_{\text{RG}}$) as the direct ratio of their information dissipation profiles:  
+
+$$\gamma_{\text{RG}} = \frac{D_{\text{KL}}\left(P^{\Lambda_1} \parallel Q^{\Lambda_1}\right)}{D_{\text{KL}}\left(P^{\Lambda_0} \parallel Q^{\Lambda_0}\right) + \delta}$$  
+
 An expansion of this value ($\gamma_{\text{RG}} \to 1.0$) confirms that the semantic noise generated at the token level has successfully penetrated and corrupted the core macroscopic logic of the response.
 
 #### Pillar C: Stationary PageRank Graph Entropy
 
-Independent of spatial embeddings, we measure the mathematical complexity of text topology using directed token co-occurrence networks mapped across a sliding window of 3 tokens. We isolate the stationary probability density vector $\vec{\rho}$ using the power iteration method (PageRank Centrality). The ultimate structural stability parameter is evaluated via the weighted graph entropy:
-$$S_G = -\sum_{i \in V} \rho_i \sum_{j \in V} P_{ij} \ln(P_{ij})$$ 
+Independent of spatial embeddings, we measure the mathematical complexity of text topology using directed token co-occurrence networks mapped across a sliding window of 3 tokens. We isolate the stationary probability density vector $\vec{\rho}$ using the power iteration method (PageRank Centrality). The ultimate structural stability parameter is evaluated via the weighted graph entropy:  
+
+$$S_G = -\sum_{i \in V} \rho_i \sum_{j \in V} P_{ij} \ln(P_{ij})$$   
+
 A structural collapse of this score ($\Delta S_G \gg 0$) indicates that the underlying generation loop has locked into repetitive, information-barren hallucination patterns.
 
 ### 2. Production Source: core/metrics.py
