@@ -3070,6 +3070,112 @@ The system generates deterministic SHA-256 vector ensembles, sweeps `T = 0.0` an
 
 [![Physical_Hallucination_Sandbox_Report](https://img.shields.io/badge/Physical_Hallucination_Sandbox-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/6e979ab75280bcecbdd211b5be52917f50519707/SemanticQuantumDrift/Project40_HallucinationSandbox.md)
 
+- ### **41. AI-Agent Orchestration GUI v1.0 – Dec 2026**
+
+>## **Executive Summary**
+>
+>### **The API Quota & Single-Sample Reliability Challenge**
+>
+>Engineers building desktop AI tools around free-tier LLM and search APIs face a growing operational gap between raw model calls and trustworthy, responsive diagnostics:
+>
+>| **Pain Point** | **Impact** |
+>|----------------|------------|
+>| Tight free-tier RPM/TPM quotas and burst traffic | Frequent `429`/`503` rate-limit errors and quota exhaustion during multi-call runs |
+>| Noisy single-call or single-pair consistency checks | Unstable hallucination readings that swing across repeated attempts on the same prompt |
+>| Blocking network and numerical work on the UI thread | Frozen desktop interfaces during multi-sample generation and metric evaluation |
+>| Unclear distinction between zero drift and missing data | Rate-limit failures (`< 2` successful samples) risking misinterpretation if not handled explicitly |
+>| Ad hoc session tracking and manual report copying | Fragmented prompt histories and tedious export of responses and diagnostic metrics |
+>
+>These issues undermine:
+>
+>- statistical reliability of post-generation hallucination flags
+>- responsiveness of interactive desktop workflows
+>- quota-aware pacing and retry resilience on free API tiers
+>- reproducible prompt-level trajectory tracking over time
+>- clean, shareable reporting of routing choices and diagnostics
+>
+>### **Solution Overview**
+>
+>**Project 41 introduces a PyQt6 desktop orchestration and telemetry application** that routes prompts across free-tier APIs and evaluates response consistency via multi-sample diagnostics:
+>
+>- **Keyword Intent Router (`core/router.py`)** dispatching prompts across Groq, Tavily, Mistral, and Gemini based on task intent
+>- **Official API-Key Transport (`api/web_bridge.py`)** using user-supplied API keys from `.env` with retry-with-backoff on `429`/`5xx`/timeouts
+>- **Multi-Sample Self-Consistency (`api/thread_manager.py`)** drawing `N = 8` independent samples per prompt and aggregating pairwise metrics via median
+>- **Medoid Selection & Drift Metrics (`core/metrics.py`)** surfacing the centroid-closest medoid response alongside `SQD`, `RG-Flow`, and graph entropy drift
+>- **SQLite Trajectory Store (`core/database.py`)** tracking one session per distinct prompt and appending steps on exact resubmissions
+>- **PyQt6 Dashboard & Markdown Export (`gui/`)** providing background `QThread` execution, key management, trajectory plots, and `.md` export
+>
+>The system unifies:
+>
+>| **Subsystem** | **Functionality** |
+>|---------------|------------------|
+>| Intent Router (`core/router.py`) | First-match rule routing across Groq (code), Tavily (search), Mistral (creative), and Gemini (general fallback) |
+>| Network Bridge (`api/web_bridge.py`) | Authenticated REST requests for Groq, Mistral, Gemini, and Tavily plus Gemini sentence-ensemble embeddings |
+>| Self-Consistency Orchestrator (`api/thread_manager.py`) | Draws `N = 8` samples with pacing delay, scores all pairwise combinations, aggregates medians, and picks the medoid |
+>| Mathematical Metrics Engine (`core/metrics.py`) | `QuantumRGDriftAnalyzer` and `HeterogeneousDiagnosticEngine` computing `SQD`, `RG-Flow`, graph entropy, and `H-Score` |
+>| Persistence Engine (`core/database.py`) | `SessionPersistenceManager` managing `sessions` and `metrics_log` in SQLite with bulk and full history deletion |
+>| Main Dashboard (`gui/main_window.py`) | PyQt6 UI with prompt editor, background `AgentExecutionWorker`, medoid viewer, shield gauge, and telemetry grid |
+>| Key Sync Center (`gui/auth_window.py`) | Modal dialogs (`ApiKeyEntryDialog`, `AccountStatusCenterDialog`) reading/writing provider keys in local `.env` |
+>| History & Plot Views (`gui/history_window.py`, `gui/plot_window.py`, `gui/widgets.py`) | Session table with search/restore/delete, metric & phase-space plots with PNG export, and QSS dark styling |
+>
+>### **Business Impact**
+>
+>Project 41 enables teams and individual builders to:
+>
+>- **reduce single-call variance** by aggregating pairwise self-consistency metrics via the median across `N = 8` independent generations
+>- **stay within free-tier API quotas** using official API keys, inter-sample pacing delays, and bounded retry backoff
+>- **keep desktop UIs responsive** by offloading multi-sample sampling, embeddings, and pairwise math to `QThread` workers
+>- **track prompt evolution over time** by continuing trajectories when the exact same prompt is resubmitted
+>- **export structured audit snapshots** as GitHub-flavored Markdown (`.md`) and PNG metric/phase-space charts
+>- **enforce credential hygiene** through local `.env` storage and an in-app API-Key Sync Center with zero browser automation
+>
+>### **Consulting Relevance**
+>
+>Project 41 operationalizes:
+>
+>- multi-provider routing and quota-aware orchestration for free/tiered APIs
+>- self-consistency hallucination scoring via pairwise embedding and graph-entropy metrics
+>- asynchronous PyQt6 desktop architecture with MVC separation (`core/`, `api/`, `gui/`)
+>- local SQLite telemetry persistence and trajectory visualization
+>- honest architectural gap analysis and threshold calibration planning
+>- compliant API-key authentication without unauthorized web-session scraping
+>
+>Applicable to:
+>
+>- AI reliability and self-consistency evaluation tooling
+>- desktop telemetry and diagnostic consoles in Python/PyQt6
+>- multi-model routing prototypes across LLM and search APIs
+>- local experiment logging and trajectory inspection workflows
+>- pragmatic engineering governance and limitation transparency
+>- markdown reporting of model outputs and diagnostic scores
+>
+>### **Compliance / ESG / Risk Management**
+>
+>Project 41 supports:
+>
+>- **terms-of-service & credential compliance** by using official, user-generated API keys stored locally in `.env` rather than browser cookies or automated web logins
+>- **explicit error transparency** by logging sample failures and distinguishing insufficient-sample placeholders (`< 2` samples) from scored evaluations
+>- **reproducible local records** via structured SQLite `sessions` and `metrics_log` tables and user-triggered `.md` / `.png` exports
+>- **numerical safeguards** through diagonal variance regularization (`epsilon`), dynamic PCA rank bounds, and PageRank fallback handling
+>- **clear epistemic boundaries** by documenting what self-consistency detects (confabulation/instability) versus what it cannot catch (consistently wrong answers)
+>- **deliberate scope discipline** by omitting unvalidated automated failover loops until a clear policy is designed
+>
+>The system ensures that multi-provider routing and consistency diagnostics remain **transparent, responsive, credential-safe, and grounded in measured behavior**, aligning with responsible engineering practice.
+
+## **Abstract**
+
+**AI-Agent Orchestration GUI v1.0** is a modular, responsive desktop routing and self-consistency evaluation architecture designed for environments where **free-tier API quota management, multi-sample consistency, UI thread responsiveness, trajectory persistence, and clear diagnostic boundaries** are central concerns. It unifies keyword intent routing, retry-aware official REST API transport, pairwise embedding and graph-entropy diagnostics, median/medoid aggregation, SQLite session tracking, and PyQt6 visualization/export into a cohesive desktop application.
+
+The system routes prompts across Groq, Tavily, Mistral, and Gemini, draws `N = 8` independent samples per submission with `0.6s` inter-sample pacing and `429`/`5xx`/timeout retry backoff, computes pairwise `SQD`, `RG-Flow`, and graph entropy drift alongside `H-Score` and `is_definitive_hallucination`, aggregates medians across all pairs, selects the centroid-closest medoid response, and persists step trajectories in SQLite. The interface and export layer provides `QThread` background workers, a local `.env` API-Key Sync Center, session history and trajectory/phase-space plots with `.png` export, and GitHub-Flavored Markdown (`.md`) report export (see [References](https://github.com/NenadBalaneskovic/ExternalProjects/blob/main/SemanticQuantumDrift/Project41_AI_Agent_Orchestration_GUI.md#vii-references) 1–3 below and [Jupyter Notebook](https://github.com/NenadBalaneskovic/ExternalProjects/blob/df1a5b11f322e9137f74ccc9b819f4963afd2f12/SemanticQuantumDrift/AI_Agent_Orchestration_GUI.ipynb)).
+
+- **Core goals:** Provide a transparent, non-blocking PyQt6 routing and self-consistency diagnostic hub that operates within official free-tier APIs and surfaces reliable median drift metrics and medoid responses.  
+- **Audience:** AI systems engineers, desktop Python/PyQt6 developers, applied reliability researchers, engineering leads, and technical consultants building multi-model diagnostic tools.  
+- **Why modularity matters:** Separating intent routing, mathematical diagnostics, SQLite persistence, REST transport, self-consistency orchestration, and PyQt6 views keeps UI threads responsive and isolates provider and storage logic.  
+- **Governance and reproducibility:** User-owned API keys in local `.env` without browser automation, explicit handling of `< 2` failed samples, SQLite trajectory logs, and `.md`/`.png` exports support accountable inspection and honest limitation tracking.  
+- **Cost and performance readiness:** Paced requests, retry backoff, and non-blocking `QThread` execution manage free-tier rate limits and multi-sample latency while keeping the desktop UI interactive.[[<<]](https://github.com/NenadBalaneskovic/ExternalProjects#-dataset-analysis-links)
+
+[![AI_Agent_Orchestration_GUI_v1_0_Report](https://img.shields.io/badge/AI_Agent_Orchestration_GUI_v1_0-English-blue?logo=python&logoColor=white&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/df1a5b11f322e9137f74ccc9b819f4963afd2f12/SemanticQuantumDrift/Project41_AI_Agent_Orchestration_GUI.md)
+
 
 ---
 
