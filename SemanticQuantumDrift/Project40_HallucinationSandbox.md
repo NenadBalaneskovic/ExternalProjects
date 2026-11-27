@@ -1246,7 +1246,7 @@ In **Part 4 of 6**, we will build the evaluation, CSV export, and visualization/
 
 Raw drift metrics such as `sqd_value`, `rg_instability`, and `graph_entropy_drift` operate on different numerical scales and highlight distinct failure modes. `HeterogeneousHallucinationEvaluator` unifies these signals into:
 
-1. **Bounded Composite Risk Index ($H_{\text{Score}} \in [0, 1)$):** A smooth saturating mapping over weighted normalized sub-metrics using $1 - \exp(-s)$ where $s \ge 0$ is the weighted non-negative drift sum. Because $s \ge 0$ and $\exp(-s) \in (0, 1]$, the resulting score strictly satisfies $0.0 \le H_{\text{Score}} < 1.0$ without division-by-zero or hard clipping artifacts.
+1. **Bounded Composite Risk Index ($$H_{\text{Score}} \in [0, 1)$$):** A smooth saturating mapping over weighted normalized sub-metrics using $1 - \exp(-s)$ where $s \ge 0$ is the weighted non-negative drift sum. Because $s \ge 0$ and $\exp(-s) \in (0, 1]$, the resulting score strictly satisfies $0.0 \le H_{\text{Score}} < 1.0$ without division-by-zero or hard clipping artifacts.
 2. **Definitive Flag (`definitive_flag`):** A boolean indicator triggered when one or more configured diagnostic thresholds are exceeded (`sqd_threshold`, `rg_threshold`, `graph_entropy_drift_threshold`), supporting clear triage alongside continuous $H_{\text{Score}}$ ranking.
 3. **Tabular Enrichment & CSV Export (`export_experiment_to_csv`):** Persists both `agent_responses.csv` and `phase_space_metrics.csv` (with serialized metadata where needed) so runs can be inspected in notebooks, compared across sweeps, or served to a future GUI backend.
 
