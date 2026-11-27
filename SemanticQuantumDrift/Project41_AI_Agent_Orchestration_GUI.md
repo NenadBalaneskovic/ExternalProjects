@@ -1950,4 +1950,4 @@ Measured against its original vision, this project is narrower than first concei
 
 2. [![Jupyter Notebook | English](https://img.shields.io/badge/Jupyter%20Notebook-English-yellowblue?logoColor=blue&labelColor=yellow)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/550255fc044a0f0a8086f39bf9d125dacb7ebc15/UniversalGithubPipelineBlueprint/WetterApp.zip)
 
-3. [![AI_Agent_Orchestration_GUI_v1_0_Report | English](https://img.shields.io/badge/AI_Agent_Orchestration_GUI_v1_0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/550255fc044a0f0a8086f39bf9d125dacb7ebc15/UniversalGithubPipelineBlueprint/Blueprint%20Structure%20Overview.pdf)
+3. [![AI_Agent_Orchestration_GUI_v1_0_Report | English](https://img.shields.io/badge/AI_Agent_Orchestration_GUI_v1_0_%20Report-English-yellowblue?logoColor=blue&labelColor=red)](https://github.com/NenadBalaneskovic/ExternalProjects/blob/b144564ef0e73649c014744dbf84804a7b12c19f/SemanticQuantumDrift/Project41_AI_Agent_Orchestration_GUI_Report.pdf)
