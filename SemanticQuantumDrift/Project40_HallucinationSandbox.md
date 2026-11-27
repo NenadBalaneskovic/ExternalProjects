@@ -1236,7 +1236,7 @@ We now have the complete agent and orchestration layer:
 * `agents/litellm_bridge.py` (`RealAIAgentBridge` with explicit `allow_live_api=False` safeguard and environment-based credentials).
 * `experiments/orchestrator.py` (`ExperimentOrchestrator` running dual-temperature tracks and emitting `responses` and `metrics` records).
 
-In **Part 4 of 6**, we will build the evaluation, CSV export, and visualization/GUI-telemetry layer—covering `evaluation/hallucination_evaluator.py` (`HeterogeneousHallucinationEvaluator` and `export_experiment_to_csv`) and `visualization/phase_space_plotter.py` (`PhaseSpacePlotter` plus GUI-ready telemetry payload builders).
+In **Part 4 of 6**, we will build the evaluation, CSV export, and visualization/GUI-telemetry layer, covering `evaluation/hallucination_evaluator.py` (`HeterogeneousHallucinationEvaluator` and `export_experiment_to_csv`) and `visualization/phase_space_plotter.py` (`PhaseSpacePlotter` plus GUI-ready telemetry payload builders).
 
 # Part IV: Hallucination Evaluators
 
